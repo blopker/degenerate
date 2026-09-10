@@ -20,24 +20,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList();}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiSearchAuthorResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiSearchAuthorResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get Model Schema
 ///
 /// Retrieves the input and output JSON schema definition for a Workers AI model.
@@ -58,24 +47,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return WorkersAiGetModelSchemaResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  WorkersAiGetModelSchemaResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiGetModelSchemaResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiGetModelSchemaResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Model Search
 ///
 /// `GET /accounts/{account_id}/ai/models/search`
@@ -114,24 +92,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList();}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return WorkersAiSearchModelResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiSearchModelResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute AI model
 ///
 /// This endpoint provides users with the capability to run specific AI models on-demand.
@@ -153,24 +120,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? WorkersAiPostRunModelResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? WorkersAiPostRunModelResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunModelResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunModelResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Task Search
 ///
 /// `GET /accounts/{account_id}/ai/tasks/search`
@@ -183,24 +139,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => e as Map<String, dynamic>).toList();}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return WorkersAiSearchTaskResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiSearchTaskResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Convert Files into Markdown
 ///
 /// Converts uploaded files into Markdown format using Workers AI.
@@ -219,24 +164,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => WorkersAiPostToMarkdownResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => WorkersAiPostToMarkdownResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostToMarkdownResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostToMarkdownResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get all converted formats supported
 ///
 /// Lists all file formats supported for conversion to Markdown.
@@ -251,22 +185,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => WorkersAiGetToMarkdownSupportedResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => WorkersAiGetToMarkdownSupportedResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiGetToMarkdownSupportedResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiGetToMarkdownSupportedResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

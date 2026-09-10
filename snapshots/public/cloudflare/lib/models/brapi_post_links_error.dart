@@ -7,20 +7,14 @@ sealed class BrapiPostLinksError {const BrapiPostLinksError();
 static BrapiPostLinksError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return BrapiPostLinksError400(BrapiPostLinksResponse400.fromJson(json as Map<String, dynamic>));
-case 422:
+return  BrapiPostLinksError400(BrapiPostLinksResponse400.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return BrapiPostLinksError422(BrapiPostLinksResponse422.fromJson(json as Map<String, dynamic>));
-case 429:
+return  BrapiPostLinksError422(BrapiPostLinksResponse422.fromJson(json as Map<String, dynamic>));case 429:
 final json = jsonDecode(response.body);
-return BrapiPostLinksError429(BrapiPostLinksResponse429.fromJson(json as Map<String, dynamic>));
-case 500:
+return  BrapiPostLinksError429(BrapiPostLinksResponse429.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return BrapiPostLinksError500(BrapiPostLinksResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return BrapiPostLinksErrorUnknown(response);
-}
-}
+return  BrapiPostLinksError500(BrapiPostLinksResponse500.fromJson(json as Map<String, dynamic>));default:
+return  BrapiPostLinksErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class BrapiPostLinksError400 extends BrapiPostLinksError {const BrapiPostLinksError400(this.data);

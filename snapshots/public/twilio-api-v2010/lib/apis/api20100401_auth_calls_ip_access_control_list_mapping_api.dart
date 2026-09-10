@@ -34,14 +34,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListSipAuthCallsIpAccessControlListMappingResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListSipAuthCallsIpAccessControlListMappingResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a new IP Access Control List mapping
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/IpAccessControlListMappings.json`
@@ -58,14 +53,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch a specific instance of an IP Access Control List mapping
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/IpAccessControlListMappings/{Sid}.json`
@@ -78,14 +68,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountSipSipDomainSipAuthSipAuthCallsSipAuthCallsIpAccessControlListMapping.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete an IP Access Control List mapping from the requested domain
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{DomainSid}/Auth/Calls/IpAccessControlListMappings/{Sid}.json`
@@ -98,9 +83,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

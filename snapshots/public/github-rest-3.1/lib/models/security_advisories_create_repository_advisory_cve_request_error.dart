@@ -7,30 +7,20 @@ sealed class SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError {const Se
 static SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 403:
+return  SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }case 403:
 final json = jsonDecode(response.body);
-return SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestErrorUnknown(response);
-}
-}
+return  SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError400ApplicationJson extends SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError {const SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError400ApplicationJson(this.data);

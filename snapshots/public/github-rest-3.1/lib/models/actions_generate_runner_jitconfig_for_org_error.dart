@@ -7,17 +7,12 @@ sealed class ActionsGenerateRunnerJitconfigForOrgError {const ActionsGenerateRun
 static ActionsGenerateRunnerJitconfigForOrgError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ActionsGenerateRunnerJitconfigForOrgError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 409:
+return  ActionsGenerateRunnerJitconfigForOrgError404(BasicError.fromJson(json as Map<String, dynamic>));case 409:
 final json = jsonDecode(response.body);
-return ActionsGenerateRunnerJitconfigForOrgError409(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ActionsGenerateRunnerJitconfigForOrgError409(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ActionsGenerateRunnerJitconfigForOrgError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return ActionsGenerateRunnerJitconfigForOrgErrorUnknown(response);
-}
-}
+return  ActionsGenerateRunnerJitconfigForOrgError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));default:
+return  ActionsGenerateRunnerJitconfigForOrgErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class ActionsGenerateRunnerJitconfigForOrgError404 extends ActionsGenerateRunnerJitconfigForOrgError {const ActionsGenerateRunnerJitconfigForOrgError404(this.data);

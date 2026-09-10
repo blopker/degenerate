@@ -7,23 +7,16 @@ sealed class CodeScanningUpdateDefaultSetupError {const CodeScanningUpdateDefaul
 static CodeScanningUpdateDefaultSetupError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return CodeScanningUpdateDefaultSetupError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CodeScanningUpdateDefaultSetupError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CodeScanningUpdateDefaultSetupError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 409:
+return  CodeScanningUpdateDefaultSetupError404(BasicError.fromJson(json as Map<String, dynamic>));case 409:
 final json = jsonDecode(response.body);
-return CodeScanningUpdateDefaultSetupError409(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  CodeScanningUpdateDefaultSetupError409(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return CodeScanningUpdateDefaultSetupError422(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  CodeScanningUpdateDefaultSetupError422(BasicError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return CodeScanningUpdateDefaultSetupError503(CodeScanningUpdateDefaultSetupResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return CodeScanningUpdateDefaultSetupErrorUnknown(response);
-}
-}
+return  CodeScanningUpdateDefaultSetupError503(CodeScanningUpdateDefaultSetupResponse503.fromJson(json as Map<String, dynamic>));default:
+return  CodeScanningUpdateDefaultSetupErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class CodeScanningUpdateDefaultSetupError403 extends CodeScanningUpdateDefaultSetupError {const CodeScanningUpdateDefaultSetupError403(this.data);

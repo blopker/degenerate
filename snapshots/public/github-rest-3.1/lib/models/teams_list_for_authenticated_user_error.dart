@@ -6,17 +6,12 @@ sealed class TeamsListForAuthenticatedUserError {const TeamsListForAuthenticated
 /// Decodes the payload for its declared status and content type.
 static TeamsListForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const TeamsListForAuthenticatedUserError304();
-case 403:
+return  const TeamsListForAuthenticatedUserError304();case 403:
 final json = jsonDecode(response.body);
-return TeamsListForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  TeamsListForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return TeamsListForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return TeamsListForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  TeamsListForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  TeamsListForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class TeamsListForAuthenticatedUserError304 extends TeamsListForAuthenticatedUserError {const TeamsListForAuthenticatedUserError304();

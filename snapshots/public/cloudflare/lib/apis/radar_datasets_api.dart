@@ -42,24 +42,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetReportsDatasetsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetReportsDatasetsResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetReportsDatasetsResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetReportsDatasetsResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get dataset CSV stream
 ///
 /// Retrieves the CSV content of a given dataset by alias or ID. When getting the content by alias the latest dataset is returned, optionally filtered by the latest available at a given date.
@@ -74,23 +63,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-return response.body;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {return  response.body;}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetReportsDatasetDownloadResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetReportsDatasetDownloadResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get dataset download URL
 ///
 /// Retrieves an URL to download a single dataset.
@@ -115,22 +93,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarPostReportsDatasetDownloadUrlResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarPostReportsDatasetDownloadUrlResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarPostReportsDatasetDownloadUrlResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarPostReportsDatasetDownloadUrlResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

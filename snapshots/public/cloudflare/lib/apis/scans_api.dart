@@ -20,24 +20,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>?)?.map((e) => ScanConfig.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>?)?.map((e) => ScanConfig.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure18.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure18.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create a new Scan Config
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/scans/config`
@@ -52,24 +41,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? ScanConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? ScanConfig.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure18.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure18.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update an existing Scan Config
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/scans/config/{config_id}`
@@ -84,24 +62,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? ScanConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? ScanConfig.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure18.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure18.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete a Scan Config
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/scans/config/{config_id}`
@@ -114,24 +81,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] as Map<String, dynamic>;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] as Map<String, dynamic>;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure18.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure18.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get the Latest Scan Result
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/scans/results/{config_id}`
@@ -144,22 +100,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return GetGetOpenPortsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  GetGetOpenPortsResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure18.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure18.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

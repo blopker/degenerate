@@ -22,24 +22,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return ImagesImageKeysResponse.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  ImagesImageKeysResponse.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return CloudflareImagesKeysListSigningKeysResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  CloudflareImagesKeysListSigningKeysResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create a new Signing Key
 ///
 /// Create a new signing key with specified name. Returns all keys available.
@@ -54,24 +43,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return ImagesImageKeysResponse.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  ImagesImageKeysResponse.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return CloudflareImagesKeysAddSigningKeyResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  CloudflareImagesKeysAddSigningKeyResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete Signing Key
 ///
 /// Delete signing key with specified name. Returns all keys available.
@@ -88,22 +66,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return ImagesImageKeysResponse.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  ImagesImageKeysResponse.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return CloudflareImagesKeysDeleteSigningKeyResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  CloudflareImagesKeysDeleteSigningKeyResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

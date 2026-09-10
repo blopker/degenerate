@@ -45,24 +45,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>?)?.map((e) => IamUserGroup.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>?)?.map((e) => IamUserGroup.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure38.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure38.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create User Group
 ///
 /// Create a new user group under the specified account.
@@ -79,24 +68,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? IamUserGroup.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? IamUserGroup.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure38.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure38.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// User Group Details
 ///
 /// Get information about a specific user group in an account.
@@ -111,24 +89,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? IamUserGroup.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? IamUserGroup.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure38.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure38.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update User Group
 ///
 /// Modify an existing user group.
@@ -145,24 +112,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? IamUserGroup.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? IamUserGroup.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure38.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure38.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Remove User Group
 ///
 /// Remove a user group from an account.
@@ -177,24 +133,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? ResponseSingleId4Result.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? ResponseSingleId4Result.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure38.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure38.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List User Group Members
 ///
 /// List all the members attached to a user group.
@@ -220,24 +165,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>?)?.map((e) => IamUserGroupMember.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>?)?.map((e) => IamUserGroupMember.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure38.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure38.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Add User Group Members
 ///
 /// Add members to a User Group.
@@ -254,24 +188,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? IamUserGroupMember.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? IamUserGroupMember.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure38.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure38.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update User Group Members
 ///
 /// Replace the set of members attached to a User Group.
@@ -288,24 +211,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>?)?.map((e) => IamUserGroupMember.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>?)?.map((e) => IamUserGroupMember.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure38.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure38.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Remove User Group Member
 ///
 /// Remove a member from User Group
@@ -320,22 +232,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? IamUserGroupMember.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? IamUserGroupMember.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure38.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure38.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

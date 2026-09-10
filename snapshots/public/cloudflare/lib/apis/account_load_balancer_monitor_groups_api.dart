@@ -22,24 +22,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => LoadBalancingMonitorGroup.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => LoadBalancingMonitorGroup.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return AccountLoadBalancerMonitorGroupsListMonitorGroupsResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AccountLoadBalancerMonitorGroupsListMonitorGroupsResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create Monitor Group
 ///
 /// Create a new monitor group.
@@ -56,15 +45,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return LoadBalancingMonitorGroup.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: AccountLoadBalancerMonitorGroupsCreateMonitorGroupError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  LoadBalancingMonitorGroup.fromJson(json['result'] as Map<String, dynamic>);}, onError: AccountLoadBalancerMonitorGroupsCreateMonitorGroupError.parse, );}
 /// Monitor Group Details
 ///
 /// Fetch a single configured monitor group.
@@ -79,24 +62,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return LoadBalancingMonitorGroup.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  LoadBalancingMonitorGroup.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return AccountLoadBalancerMonitorGroupsMonitorGroupDetailsResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AccountLoadBalancerMonitorGroupsMonitorGroupDetailsResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update Monitor Group
 ///
 /// Modify a configured monitor group.
@@ -113,15 +85,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return LoadBalancingMonitorGroup.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: AccountLoadBalancerMonitorGroupsUpdateMonitorGroupError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  LoadBalancingMonitorGroup.fromJson(json['result'] as Map<String, dynamic>);}, onError: AccountLoadBalancerMonitorGroupsUpdateMonitorGroupError.parse, );}
 /// Patch Monitor Group
 ///
 /// Apply changes to an existing monitor group, overwriting the supplied properties.
@@ -138,15 +104,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return LoadBalancingMonitorGroup.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: AccountLoadBalancerMonitorGroupsPatchMonitorGroupError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  LoadBalancingMonitorGroup.fromJson(json['result'] as Map<String, dynamic>);}, onError: AccountLoadBalancerMonitorGroupsPatchMonitorGroupError.parse, );}
 /// Delete Monitor Group
 ///
 /// Delete a configured monitor group.
@@ -161,15 +121,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return LoadBalancingMonitorGroup.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: AccountLoadBalancerMonitorGroupsDeleteMonitorGroupError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  LoadBalancingMonitorGroup.fromJson(json['result'] as Map<String, dynamic>);}, onError: AccountLoadBalancerMonitorGroupsDeleteMonitorGroupError.parse, );}
 /// List Monitor Group References
 ///
 /// Get the list of resources that reference the provided monitor group.
@@ -184,22 +138,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => LoadBalancingMonitorGroupReferencesResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => LoadBalancingMonitorGroupReferencesResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return AccountLoadBalancerMonitorGroupsListMonitorGroupReferencesResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AccountLoadBalancerMonitorGroupsListMonitorGroupReferencesResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

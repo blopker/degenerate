@@ -7,13 +7,9 @@ sealed class ReposGetPunchCardStatsSuccess {const ReposGetPunchCardStatsSuccess(
 static ReposGetPunchCardStatsSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final json = jsonDecode(response.body);
-return ReposGetPunchCardStatsSuccess200((json as List<dynamic>).map((e) => (e as List<dynamic>).map((e) => (e as num).toInt()).toList()).toList());
-case 204:
-return const ReposGetPunchCardStatsSuccess204();
-default:
-return ReposGetPunchCardStatsSuccessUnknown(response);
-}
-}
+return  ReposGetPunchCardStatsSuccess200((json as List<dynamic>).map((e) => (e as List<dynamic>).map((e) => (e as num).toInt()).toList()).toList());case 204:
+return  const ReposGetPunchCardStatsSuccess204();default:
+return  ReposGetPunchCardStatsSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class ReposGetPunchCardStatsSuccess200 extends ReposGetPunchCardStatsSuccess {const ReposGetPunchCardStatsSuccess200(this.data);

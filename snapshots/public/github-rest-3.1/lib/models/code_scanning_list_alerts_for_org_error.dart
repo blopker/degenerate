@@ -7,14 +7,10 @@ sealed class CodeScanningListAlertsForOrgError {const CodeScanningListAlertsForO
 static CodeScanningListAlertsForOrgError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return CodeScanningListAlertsForOrgError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  CodeScanningListAlertsForOrgError404(BasicError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return CodeScanningListAlertsForOrgError503(CodeScanningListAlertsForOrgResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return CodeScanningListAlertsForOrgErrorUnknown(response);
-}
-}
+return  CodeScanningListAlertsForOrgError503(CodeScanningListAlertsForOrgResponse503.fromJson(json as Map<String, dynamic>));default:
+return  CodeScanningListAlertsForOrgErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class CodeScanningListAlertsForOrgError404 extends CodeScanningListAlertsForOrgError {const CodeScanningListAlertsForOrgError404(this.data);

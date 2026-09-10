@@ -33,24 +33,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => ShieldTokenConfiguration.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => ShieldTokenConfiguration.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create a new Token Validation configuration
 ///
 /// `POST /zones/{zone_id}/token_validation/config`
@@ -65,24 +54,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return ShieldTokenConfiguration.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  ShieldTokenConfiguration.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get a single Token Configuration
 ///
 /// `GET /zones/{zone_id}/token_validation/config/{config_id}`
@@ -95,24 +73,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return ShieldTokenConfiguration.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  ShieldTokenConfiguration.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Edit an existing Token Configuration
 ///
 /// Edit fields of an existing Token Configuration
@@ -129,24 +96,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return TokenValidationConfigEditResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  TokenValidationConfigEditResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete Token Configuration
 ///
 /// `DELETE /zones/{zone_id}/token_validation/config/{config_id}`
@@ -159,24 +115,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return TokenValidationConfigDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  TokenValidationConfigDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update Token Configuration credentials
 ///
 /// `PUT /zones/{zone_id}/token_validation/config/{config_id}/credentials`
@@ -191,22 +136,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TokenValidationConfigCredentialsUpdateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TokenValidationConfigCredentialsUpdateResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

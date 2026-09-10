@@ -35,22 +35,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Account.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Account.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create an account link
 ///
 /// `<p>`Creates an AccountLink object that includes a single-use Stripe URL that the platform can redirect their user to in order to take them through the Connect Onboarding flow.`</p>`
@@ -80,22 +70,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountLink.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountLink.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create an Account Session
 ///
 /// `<p>`Creates a AccountSession object that includes a single-use token that the platform can use on their front-end to grant client-side API access.`</p>`
@@ -117,22 +97,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountSession.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountSession.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all connected accounts
 ///
 /// `<p>`Returns a list of accounts connected to your platform via `<a href="/docs/connect">`Connect`</a>`. If you’re not a platform, the list is empty.`</p>`
@@ -172,22 +142,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetAccountsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetAccountsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// `<p>`With `<a href="/docs/connect">`Connect`</a>`, you can create Stripe accounts for your users.
 /// To do this, you’ll first need to `<a href="https://dashboard.stripe.com/account/applications/settings">`register your platform`</a>`.`</p>`
@@ -247,22 +207,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Account.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Account.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve account
 ///
 /// `<p>`Retrieves the details of an account.`</p>`
@@ -290,22 +240,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Account.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Account.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update an account
 ///
 /// `<p>`Updates a `<a href="/connect/accounts">`connected account`</a>` by setting the values of the parameters passed. Any parameters not provided are
@@ -365,22 +305,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Account.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Account.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete an account
 ///
 /// `<p>`With `<a href="/connect">`Connect`</a>`, you can delete accounts you manage.`</p>`
@@ -404,22 +334,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedAccount.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedAccount.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create an external account
 ///
 /// `<p>`Create an external account for a given account.`</p>`
@@ -447,22 +367,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ExternalAccount.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ExternalAccount.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve an external account
 ///
 /// `<p>`Retrieve a specified external account for a given account.`</p>`
@@ -490,22 +400,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ExternalAccount.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ExternalAccount.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// `<p>`Updates the metadata, account holder name, account holder type of a bank account belonging to
 /// a connected account and optionally sets it as the default for its currency. Other bank account
@@ -561,22 +461,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ExternalAccount.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ExternalAccount.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete an external account
 ///
 /// `<p>`Delete a specified external account for a given account.`</p>`
@@ -594,22 +484,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedExternalAccount.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedExternalAccount.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all account capabilities
 ///
 /// `<p>`Returns a list of capabilities associated with the account. The capabilities are returned sorted by creation date, with the most recent capability appearing first.`</p>`
@@ -637,22 +517,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetAccountsAccountCapabilitiesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetAccountsAccountCapabilitiesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve an Account Capability
 ///
 /// `<p>`Retrieves information about the specified Account Capability.`</p>`
@@ -680,22 +550,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Capability.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Capability.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update an Account Capability
 ///
 /// `<p>`Updates an existing Account Capability. Request or remove a capability by updating its `<code>`requested`</code>` parameter.`</p>`
@@ -717,22 +577,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Capability.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Capability.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all external accounts
 ///
 /// `<p>`List external accounts for an account.`</p>`
@@ -772,22 +622,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetAccountsAccountExternalAccountsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetAccountsAccountExternalAccountsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create an external account
 ///
 /// `<p>`Create an external account for a given account.`</p>`
@@ -815,22 +655,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ExternalAccount.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ExternalAccount.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve an external account
 ///
 /// `<p>`Retrieve a specified external account for a given account.`</p>`
@@ -858,22 +688,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ExternalAccount.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ExternalAccount.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// `<p>`Updates the metadata, account holder name, account holder type of a bank account belonging to
 /// a connected account and optionally sets it as the default for its currency. Other bank account
@@ -929,22 +749,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ExternalAccount.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ExternalAccount.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete an external account
 ///
 /// `<p>`Delete a specified external account for a given account.`</p>`
@@ -962,22 +772,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedExternalAccount.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedExternalAccount.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a login link
 ///
 /// `<p>`Creates a login link for a connected account to access the Express Dashboard.`</p>`
@@ -999,22 +799,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return LoginLink.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  LoginLink.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all persons
 ///
 /// `<p>`Returns a list of people associated with the account’s legal entity. The people are returned sorted by creation date, with the most recent people appearing first.`</p>`
@@ -1059,22 +849,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetAccountsAccountPeopleResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetAccountsAccountPeopleResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a person
 ///
 /// `<p>`Creates a new person.`</p>`
@@ -1150,22 +930,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Person.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Person.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a person
 ///
 /// `<p>`Retrieves an existing person.`</p>`
@@ -1193,22 +963,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Person.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Person.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a person
 ///
 /// `<p>`Updates an existing person.`</p>`
@@ -1284,22 +1044,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Person.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Person.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete a person
 ///
 /// `<p>`Deletes an existing person’s relationship to the account’s legal entity. Any person with a relationship for an account can be deleted through the API, except if the person is the `<code>`account_opener`</code>`. If your integration is using the `<code>`executive`</code>` parameter, you cannot delete the only verified `<code>`executive`</code>` on file.`</p>`
@@ -1317,22 +1067,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedPerson.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedPerson.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all persons
 ///
 /// `<p>`Returns a list of people associated with the account’s legal entity. The people are returned sorted by creation date, with the most recent people appearing first.`</p>`
@@ -1377,22 +1117,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetAccountsAccountPersonsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetAccountsAccountPersonsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a person
 ///
 /// `<p>`Creates a new person.`</p>`
@@ -1468,22 +1198,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Person.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Person.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a person
 ///
 /// `<p>`Retrieves an existing person.`</p>`
@@ -1511,22 +1231,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Person.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Person.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a person
 ///
 /// `<p>`Updates an existing person.`</p>`
@@ -1602,22 +1312,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Person.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Person.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete a person
 ///
 /// `<p>`Deletes an existing person’s relationship to the account’s legal entity. Any person with a relationship for an account can be deleted through the API, except if the person is the `<code>`account_opener`</code>`. If your integration is using the `<code>`executive`</code>` parameter, you cannot delete the only verified `<code>`executive`</code>` on file.`</p>`
@@ -1635,22 +1335,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedPerson.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedPerson.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Reject an account
 ///
 /// `<p>`With `<a href="/connect">`Connect`</a>`, you can reject accounts that you have flagged as suspicious.`</p>`
@@ -1673,22 +1363,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Account.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Account.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// `<p>`List apple pay domains.`</p>`
 ///
@@ -1727,22 +1407,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetApplePayDomainsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetApplePayDomainsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// `<p>`Create an apple pay domain.`</p>`
 ///
@@ -1762,22 +1432,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ApplePayDomain.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ApplePayDomain.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// `<p>`Retrieve an apple pay domain.`</p>`
 ///
@@ -1804,22 +1464,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ApplePayDomain.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ApplePayDomain.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// `<p>`Delete an apple pay domain.`</p>`
 ///
@@ -1836,22 +1486,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedApplePayDomain.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedApplePayDomain.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all application fees
 ///
 /// `<p>`Returns a list of application fees you’ve previously collected. The application fees are returned in sorted order, with the most recent fees appearing first.`</p>`
@@ -1894,22 +1534,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetApplicationFeesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetApplicationFeesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve an application fee refund
 ///
 /// `<p>`By default, you can see the 10 most recent refunds stored directly on the application fee object, but you can also retrieve details about a specific refund stored on the application fee.`</p>`
@@ -1937,22 +1567,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FeeRefund.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FeeRefund.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update an application fee refund
 ///
 /// `<p>`Updates the specified application fee refund by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
@@ -1976,22 +1596,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FeeRefund.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FeeRefund.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve an application fee
 ///
 /// `<p>`Retrieves the details of an application fee that your account has collected. The same information is returned when refunding the application fee.`</p>`
@@ -2019,22 +1629,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ApplicationFee.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ApplicationFee.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// 
 ///
@@ -2057,22 +1657,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ApplicationFee.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ApplicationFee.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all application fee refunds
 ///
 /// `<p>`You can see a list of the refunds belonging to a specific application fee. Note that the 10 most recent refunds are always available by default on the application fee object. If you need more than those 10, you can use this API method and the `<code>`limit`</code>` and `<code>`starting_after`</code>` parameters to page through additional refunds.`</p>`
@@ -2109,22 +1699,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetApplicationFeesIdRefundsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetApplicationFeesIdRefundsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create an application fee refund
 ///
 /// `<p>`Refunds an application fee that has previously been collected but not yet refunded.
@@ -2156,22 +1736,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FeeRefund.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FeeRefund.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List secrets
 ///
 /// `<p>`List all secrets stored on the given scope.`</p>`
@@ -2210,22 +1780,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetAppsSecretsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetAppsSecretsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Set a Secret
 ///
 /// `<p>`Create or replace a secret in the secret store.`</p>`
@@ -2250,22 +1810,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AppsSecret.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AppsSecret.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete a Secret
 ///
 /// `<p>`Deletes a secret from the secret store by name and scope.`</p>`
@@ -2287,22 +1837,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AppsSecret.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AppsSecret.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Find a Secret
 ///
 /// `<p>`Finds a secret in the secret store by name and scope.`</p>`
@@ -2333,22 +1873,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AppsSecret.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AppsSecret.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve balance
 ///
 /// `<p>`Retrieves the current account balance, based on the authentication that was used to make the request.
@@ -2377,22 +1907,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Balance.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Balance.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all balance transactions
 ///
 /// `<p>`Returns a list of transactions that have contributed to the Stripe account balance (e.g., charges, transfers, and so forth). The transactions are returned in sorted order, with the most recent transactions appearing first.`</p>`
@@ -2446,22 +1966,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetBalanceHistoryResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetBalanceHistoryResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a balance transaction
 ///
 /// `<p>`Retrieves the balance transaction with the given ID.`</p>`
@@ -2491,22 +2001,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BalanceTransaction.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BalanceTransaction.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve balance settings
 ///
 /// `<p>`Retrieves balance settings for a given connected account.
@@ -2535,22 +2035,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BalanceSettings.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BalanceSettings.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update balance settings
 ///
 /// `<p>`Updates balance settings for a given connected account.
@@ -2573,22 +2063,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BalanceSettings.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BalanceSettings.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all balance transactions
 ///
 /// `<p>`Returns a list of transactions that have contributed to the Stripe account balance (e.g., charges, transfers, and so forth). The transactions are returned in sorted order, with the most recent transactions appearing first.`</p>`
@@ -2642,22 +2122,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetBalanceTransactionsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetBalanceTransactionsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a balance transaction
 ///
 /// `<p>`Retrieves the balance transaction with the given ID.`</p>`
@@ -2687,22 +2157,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BalanceTransaction.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BalanceTransaction.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List billing alerts
 ///
 /// `<p>`Lists billing active and inactive alerts`</p>`
@@ -2745,22 +2205,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetBillingAlertsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetBillingAlertsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a billing alert
 ///
 /// `<p>`Creates a billing alert`</p>`
@@ -2784,22 +2234,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingAlert.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingAlert.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a billing alert
 ///
 /// `<p>`Retrieves a billing alert given an ID`</p>`
@@ -2827,22 +2267,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingAlert.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingAlert.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Activate a billing alert
 ///
 /// `<p>`Reactivates this alert, allowing it to trigger again.`</p>`
@@ -2862,22 +2292,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingAlert.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingAlert.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Archive a billing alert
 ///
 /// `<p>`Archives this alert, removing it from the list view and APIs. This is non-reversible.`</p>`
@@ -2897,22 +2317,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingAlert.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingAlert.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Deactivate a billing alert
 ///
 /// `<p>`Deactivates this alert, preventing it from triggering.`</p>`
@@ -2932,22 +2342,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingAlert.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingAlert.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve the credit balance summary for a customer
 ///
 /// `<p>`Retrieves the credit balance summary for a customer.`</p>`
@@ -2984,22 +2384,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingCreditBalanceSummary.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingCreditBalanceSummary.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List credit balance transactions
 ///
 /// `<p>`Retrieve a list of credit balance transactions.`</p>`
@@ -3045,22 +2435,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetBillingCreditBalanceTransactionsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetBillingCreditBalanceTransactionsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a credit balance transaction
 ///
 /// `<p>`Retrieves a credit balance transaction.`</p>`
@@ -3088,22 +2468,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingCreditBalanceTransaction.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingCreditBalanceTransaction.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List credit grants
 ///
 /// `<p>`Retrieve a list of credit grants.`</p>`
@@ -3146,22 +2516,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetBillingCreditGrantsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetBillingCreditGrantsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a credit grant
 ///
 /// `<p>`Creates a credit grant.`</p>`
@@ -3199,22 +2559,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingCreditGrant.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingCreditGrant.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a credit grant
 ///
 /// `<p>`Retrieves a credit grant.`</p>`
@@ -3242,22 +2592,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingCreditGrant.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingCreditGrant.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a credit grant
 ///
 /// `<p>`Updates a credit grant.`</p>`
@@ -3281,22 +2621,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingCreditGrant.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingCreditGrant.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Expire a credit grant
 ///
 /// `<p>`Expires a credit grant.`</p>`
@@ -3316,22 +2646,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingCreditGrant.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingCreditGrant.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Void a credit grant
 ///
 /// `<p>`Voids a credit grant.`</p>`
@@ -3351,22 +2671,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingCreditGrant.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingCreditGrant.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a billing meter event adjustment
 ///
 /// `<p>`Creates a billing meter event adjustment.`</p>`
@@ -3390,22 +2700,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingMeterEventAdjustment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingMeterEventAdjustment.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a billing meter event
 ///
 /// `<p>`Creates a billing meter event.`</p>`
@@ -3431,22 +2731,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingMeterEvent.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingMeterEvent.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List billing meters
 ///
 /// `<p>`Retrieve a list of billing meters.`</p>`
@@ -3486,22 +2776,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetBillingMetersResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetBillingMetersResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a billing meter
 ///
 /// `<p>`Creates a billing meter.`</p>`
@@ -3530,22 +2810,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingMeter.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingMeter.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a billing meter
 ///
 /// `<p>`Retrieves a billing meter given an ID.`</p>`
@@ -3573,22 +2843,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingMeter.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingMeter.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a billing meter
 ///
 /// `<p>`Updates a billing meter.`</p>`
@@ -3610,22 +2870,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingMeter.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingMeter.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Deactivate a billing meter
 ///
 /// `<p>`When a meter is deactivated, no more meter events will be accepted for this meter. You can’t attach a deactivated meter to a price.`</p>`
@@ -3645,22 +2895,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingMeter.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingMeter.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List billing meter event summaries
 ///
 /// `<p>`Retrieve a list of billing meter event summaries.`</p>`
@@ -3703,22 +2943,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetBillingMetersIdEventSummariesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetBillingMetersIdEventSummariesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Reactivate a billing meter
 ///
 /// `<p>`When a meter is reactivated, events for this meter can be accepted and you can attach the meter to a price.`</p>`
@@ -3738,22 +2968,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingMeter.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingMeter.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List portal configurations
 ///
 /// `<p>`Returns a list of configurations that describe the functionality of the customer portal.`</p>`
@@ -3796,22 +3016,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetBillingPortalConfigurationsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetBillingPortalConfigurationsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a portal configuration
 ///
 /// `<p>`Creates a configuration that describes the functionality and behavior of a PortalSession`</p>`
@@ -3842,22 +3052,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingPortalConfiguration.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingPortalConfiguration.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a portal configuration
 ///
 /// `<p>`Retrieves a configuration that describes the functionality of the customer portal.`</p>`
@@ -3885,22 +3085,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingPortalConfiguration.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingPortalConfiguration.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a portal configuration
 ///
 /// `<p>`Updates a configuration that describes the functionality of the customer portal.`</p>`
@@ -3934,22 +3124,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingPortalConfiguration.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingPortalConfiguration.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a portal session
 ///
 /// `<p>`Creates a session of the customer portal.`</p>`
@@ -3983,22 +3163,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingPortalSession.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingPortalSession.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all charges
 ///
 /// `<p>`Returns a list of charges you’ve previously created. The charges are returned in sorted order, with the most recent charges appearing first.`</p>`
@@ -4047,22 +3217,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetChargesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetChargesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// `<p>`This method is no longer recommended—use the `<a href="/docs/api/payment_intents">`Payment Intents API`</a>`
 /// to initiate a new payment instead. Confirmation of the PaymentIntent creates the `<code>`Charge`</code>`
@@ -4121,22 +3281,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Charge.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Charge.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Search charges
 ///
 /// `<p>`Search for charges you’ve previously created using Stripe’s `<a href="/docs/search#search-query-language">`Search Query Language`</a>`.
@@ -4174,22 +3324,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetChargesSearchResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetChargesSearchResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a charge
 ///
 /// `<p>`Retrieves the details of a charge that has previously been created. Supply the unique charge ID that was returned from your previous request, and Stripe will return the corresponding charge information. The same information is returned when creating or refunding the charge.`</p>`
@@ -4217,22 +3357,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Charge.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Charge.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a charge
 ///
 /// `<p>`Updates the specified charge by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
@@ -4266,22 +3396,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Charge.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Charge.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Capture a payment
 ///
 /// `<p>`Capture the payment of an existing, uncaptured charge that was created with the `<code>`capture`</code>` option set to false.`</p>`
@@ -4321,22 +3441,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Charge.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Charge.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// `<p>`Retrieve a dispute for a specified charge.`</p>`
 ///
@@ -4363,22 +3473,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Dispute.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Dispute.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// 
 ///
@@ -4403,22 +3503,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Dispute.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Dispute.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// 
 ///
@@ -4437,22 +3527,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Dispute.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Dispute.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a refund
 ///
 /// `<p>`When you create a new refund, you must specify either a Charge or a PaymentIntent object.`</p>`
@@ -4496,22 +3576,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Charge.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Charge.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all refunds
 ///
 /// `<p>`You can see a list of the refunds belonging to a specific charge. Note that the 10 most recent refunds are always available by default on the charge object. If you need more than those 10, you can use this API method and the `<code>`limit`</code>` and `<code>`starting_after`</code>` parameters to page through additional refunds.`</p>`
@@ -4548,22 +3618,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetChargesChargeRefundsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetChargesChargeRefundsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create customer balance refund
 ///
 /// `<p>`When you create a new refund, you must specify a Charge or a PaymentIntent object on which to create it.`</p>`
@@ -4613,22 +3673,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Refund.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Refund.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// `<p>`Retrieves the details of an existing refund.`</p>`
 ///
@@ -4655,22 +3705,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Refund.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Refund.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// `<p>`Update a specified refund.`</p>`
 ///
@@ -4691,22 +3731,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Refund.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Refund.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all Checkout Sessions
 ///
 /// `<p>`Returns a list of Checkout Sessions.`</p>`
@@ -4767,22 +3797,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetCheckoutSessionsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetCheckoutSessionsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a Checkout Session
 ///
 /// `<p>`Creates a Checkout Session object.`</p>`
@@ -4898,22 +3918,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CheckoutSession.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CheckoutSession.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a Checkout Session
 ///
 /// `<p>`Retrieves a Checkout Session object.`</p>`
@@ -4941,22 +3951,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CheckoutSession.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CheckoutSession.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a Checkout Session
 ///
 /// `<p>`Updates a Checkout Session object.`</p>`
@@ -4986,22 +3986,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CheckoutSession.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CheckoutSession.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Expire a Checkout Session
 ///
 /// `<p>`A Checkout Session can be expired when it is in one of these statuses: `<code>`open`</code>` `</p>`
@@ -5023,22 +4013,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CheckoutSession.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CheckoutSession.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a Checkout Session's line items
 ///
 /// `<p>`When retrieving a Checkout Session, there is an includable `<strong>`line_items`</strong>` property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.`</p>`
@@ -5075,22 +4055,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetCheckoutSessionsSessionLineItemsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetCheckoutSessionsSessionLineItemsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List orders
 ///
 /// `<p>`Lists all Climate order objects. The orders are returned sorted by creation date, with the
@@ -5128,22 +4098,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetClimateOrdersResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetClimateOrdersResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create an order
 ///
 /// `<p>`Creates a Climate order object for a given Climate product. The order will be processed immediately
@@ -5175,22 +4135,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ClimateOrder.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ClimateOrder.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve an order
 ///
 /// `<p>`Retrieves the details of a Climate order object with the given ID.`</p>`
@@ -5218,22 +4168,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ClimateOrder.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ClimateOrder.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update an order
 ///
 /// `<p>`Updates the specified order by setting the values of the parameters passed.`</p>`
@@ -5257,22 +4197,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ClimateOrder.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ClimateOrder.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Cancel an order
 ///
 /// `<p>`Cancels a Climate order. You can cancel an order within 24 hours of creation. Stripe refunds the
@@ -5295,22 +4225,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ClimateOrder.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ClimateOrder.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List products
 ///
 /// `<p>`Lists all available Climate product objects.`</p>`
@@ -5347,22 +4267,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetClimateProductsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetClimateProductsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a product
 ///
 /// `<p>`Retrieves the details of a Climate product with the given ID.`</p>`
@@ -5390,22 +4300,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ClimateProduct.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ClimateProduct.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List suppliers
 ///
 /// `<p>`Lists all available Climate supplier objects.`</p>`
@@ -5442,22 +4342,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetClimateSuppliersResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetClimateSuppliersResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a supplier
 ///
 /// `<p>`Retrieves a Climate supplier object.`</p>`
@@ -5485,22 +4375,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ClimateSupplier.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ClimateSupplier.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a ConfirmationToken
 ///
 /// `<p>`Retrieves an existing ConfirmationToken object`</p>`
@@ -5528,22 +4408,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ConfirmationToken.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ConfirmationToken.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List Country Specs
 ///
 /// `<p>`Lists all Country Spec objects available in the API.`</p>`
@@ -5580,22 +4450,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetCountrySpecsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetCountrySpecsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a Country Spec
 ///
 /// `<p>`Returns a Country Spec for a given Country code.`</p>`
@@ -5623,22 +4483,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CountrySpec.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CountrySpec.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all coupons
 ///
 /// `<p>`Returns a list of your coupons.`</p>`
@@ -5678,22 +4528,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetCouponsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetCouponsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a coupon
 ///
 /// `<p>`You can create coupons easily via the `<a href="https://dashboard.stripe.com/coupons">`coupon management`</a>` page of the Stripe dashboard. Coupon creation is also accessible via the API if you need to create coupons on the fly.`</p>`
@@ -5739,22 +4579,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Coupon.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Coupon.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a coupon
 ///
 /// `<p>`Retrieves the coupon with the given ID.`</p>`
@@ -5782,22 +4612,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Coupon.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Coupon.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a coupon
 ///
 /// `<p>`Updates the metadata of a coupon. Other coupon details (currency, duration, amount_off) are, by design, not editable.`</p>`
@@ -5823,22 +4643,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Coupon.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Coupon.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete a coupon
 ///
 /// `<p>`You can delete coupons via the `<a href="https://dashboard.stripe.com/coupons">`coupon management`</a>` page of the Stripe dashboard. However, deleting a coupon does not affect any customers who have already applied the coupon; it means that new customers can’t redeem the coupon. You can also delete coupons via the API.`</p>`
@@ -5856,22 +4666,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedCoupon.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedCoupon.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all credit notes
 ///
 /// `<p>`Returns a list of credit notes.`</p>`
@@ -5920,22 +4720,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetCreditNotesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetCreditNotesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a credit note
 ///
 /// `<p>`Issue a credit note to adjust the amount of a finalized invoice. A credit note will first reduce the invoice’s `<code>`amount_remaining`</code>` (and `<code>`amount_due`</code>`), but not below zero.
@@ -5992,22 +4782,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CreditNote.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CreditNote.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Preview a credit note
 ///
 /// `<p>`Get a preview of a credit note without creating it.`</p>`
@@ -6078,22 +4858,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CreditNote.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CreditNote.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a credit note preview's line items
 ///
 /// `<p>`When retrieving a credit note preview, you’ll get a `<strong>`lines`</strong>` property containing the first handful of those items. This URL you can retrieve the full (paginated) list of line items.`</p>`
@@ -6173,22 +4943,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetCreditNotesPreviewLinesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetCreditNotesPreviewLinesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a credit note's line items
 ///
 /// `<p>`When retrieving a credit note, you’ll get a `<strong>`lines`</strong>` property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.`</p>`
@@ -6225,22 +4985,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetCreditNotesCreditNoteLinesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetCreditNotesCreditNoteLinesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a credit note
 ///
 /// `<p>`Retrieves the credit note object with the given identifier.`</p>`
@@ -6268,22 +5018,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CreditNote.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CreditNote.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a credit note
 ///
 /// `<p>`Updates an existing credit note.`</p>`
@@ -6307,22 +5047,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CreditNote.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CreditNote.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Void a credit note
 ///
 /// `<p>`Marks a credit note as void. Learn more about `<a href="/docs/billing/invoices/credit-notes#voiding">`voiding credit notes`</a>`.`</p>`
@@ -6342,22 +5072,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CreditNote.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CreditNote.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a Customer Session
 ///
 /// `<p>`Creates a Customer Session object that includes a single-use client secret that you can use on your front-end to grant client-side API access for certain customer resources.`</p>`
@@ -6382,22 +5102,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CustomerSession.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CustomerSession.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all customers
 ///
 /// `<p>`Returns a list of your customers. The customers are returned sorted by creation date, with the most recent customers appearing first.`</p>`
@@ -6443,22 +5153,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetCustomersResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetCustomersResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a customer
 ///
 /// `<p>`Creates a new customer object.`</p>`
@@ -6520,22 +5220,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Customer.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Customer.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Search customers
 ///
 /// `<p>`Search for customers you’ve previously created using Stripe’s `<a href="/docs/search#search-query-language">`Search Query Language`</a>`.
@@ -6573,22 +5263,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetCustomersSearchResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetCustomersSearchResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a customer
 ///
 /// `<p>`Retrieves a Customer object.`</p>`
@@ -6616,22 +5296,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetCustomersCustomerResponse.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetCustomersCustomerResponse.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a customer
 ///
 /// `<p>`Updates the specified customer by setting the values of the parameters passed. Any parameters not provided are left unchanged. For example, if you pass the `<strong>`source`</strong>` parameter, that becomes the customer’s active source (such as a card) to be used for all charges in the future. When you update a customer to a new valid card source by passing the `<strong>`source`</strong>` parameter: for each of the customer’s current subscriptions, if the subscription bills automatically and is in the `<code>`past_due`</code>` state, then the latest open invoice for the subscription with automatic collection enabled is retried. This retry doesn’t count as an automatic retry, and doesn’t affect the next regularly scheduled payment for the invoice. Changing the `<strong>`default_source`</strong>` for a customer doesn’t trigger this behavior.`</p>`
@@ -6701,22 +5371,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Customer.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Customer.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete a customer
 ///
 /// `<p>`Permanently deletes a customer. It cannot be undone. Also immediately cancels any active subscriptions on the customer.`</p>`
@@ -6734,22 +5394,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedCustomer.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedCustomer.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List customer balance transactions
 ///
 /// `<p>`Returns a list of transactions that updated the customer’s `<a href="/docs/billing/customer/balance">`balances`</a>`.`</p>`
@@ -6792,22 +5442,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetCustomersCustomerBalanceTransactionsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetCustomersCustomerBalanceTransactionsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a customer balance transaction
 ///
 /// `<p>`Creates an immutable transaction that updates the customer’s credit `<a href="/docs/billing/customer/balance">`balance`</a>`.`</p>`
@@ -6833,22 +5473,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CustomerBalanceTransaction.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CustomerBalanceTransaction.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a customer balance transaction
 ///
 /// `<p>`Retrieves a specific customer balance transaction that updated the customer’s `<a href="/docs/billing/customer/balance">`balances`</a>`.`</p>`
@@ -6876,22 +5506,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CustomerBalanceTransaction.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CustomerBalanceTransaction.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a customer credit balance transaction
 ///
 /// `<p>`Most credit balance transaction fields are immutable, but you may update its `<code>`description`</code>` and `<code>`metadata`</code>`.`</p>`
@@ -6915,22 +5535,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CustomerBalanceTransaction.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CustomerBalanceTransaction.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a card
 ///
 /// `<p>`When you create a new credit card, you must specify a customer or recipient on which to create it.`</p>`
@@ -6964,22 +5574,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentSource.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentSource.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// `<p>`Update a specified source for a given customer.`</p>`
 ///
@@ -7024,22 +5624,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostCustomersCustomerBankAccountsIdResponse.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostCustomersCustomerBankAccountsIdResponse.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete a customer source
 ///
 /// `<p>`Delete a specified source for a given customer.`</p>`
@@ -7059,22 +5649,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeleteCustomersCustomerBankAccountsIdResponse.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeleteCustomersCustomerBankAccountsIdResponse.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Verify a bank account
 ///
 /// `<p>`Verify a specified bank account for a given customer.`</p>`
@@ -7096,22 +5676,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BankAccount.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BankAccount.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a card
 ///
 /// `<p>`When you create a new credit card, you must specify a customer or recipient on which to create it.`</p>`
@@ -7145,22 +5715,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentSource.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentSource.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// `<p>`Update a specified source for a given customer.`</p>`
 ///
@@ -7205,22 +5765,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostCustomersCustomerCardsIdResponse.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostCustomersCustomerCardsIdResponse.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete a customer source
 ///
 /// `<p>`Delete a specified source for a given customer.`</p>`
@@ -7240,22 +5790,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeleteCustomersCustomerCardsIdResponse.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeleteCustomersCustomerCardsIdResponse.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a cash balance
 ///
 /// `<p>`Retrieves a customer’s cash balance.`</p>`
@@ -7283,22 +5823,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CashBalance.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CashBalance.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a cash balance's settings
 ///
 /// `<p>`Changes the settings on a customer’s cash balance.`</p>`
@@ -7320,22 +5850,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CashBalance.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CashBalance.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List cash balance transactions
 ///
 /// `<p>`Returns a list of transactions that modified the customer’s `<a href="/docs/payments/customer-balance">`cash balance`</a>`.`</p>`
@@ -7372,22 +5892,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetCustomersCustomerCashBalanceTransactionsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetCustomersCustomerCashBalanceTransactionsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a cash balance transaction
 ///
 /// `<p>`Retrieves a specific cash balance transaction, which updated the customer’s `<a href="/docs/payments/customer-balance">`cash balance`</a>`.`</p>`
@@ -7415,22 +5925,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CustomerCashBalanceTransaction.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CustomerCashBalanceTransaction.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// 
 ///
@@ -7457,22 +5957,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Discount.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Discount.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete a customer discount
 ///
 /// `<p>`Removes the currently applied discount on a customer.`</p>`
@@ -7490,22 +5980,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedDiscount.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedDiscount.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create or retrieve funding instructions for a customer cash balance
 ///
 /// `<p>`Retrieve funding instructions for a customer cash balance. If funding instructions do not yet exist for the customer, new
@@ -7530,22 +6010,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FundingInstructions.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FundingInstructions.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List a Customer's PaymentMethods
 ///
 /// `<p>`Returns a list of PaymentMethods for a given Customer`</p>`
@@ -7588,22 +6058,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetCustomersCustomerPaymentMethodsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetCustomersCustomerPaymentMethodsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a Customer's PaymentMethod
 ///
 /// `<p>`Retrieves a PaymentMethod object for a given Customer.`</p>`
@@ -7631,22 +6091,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentMethod.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentMethod.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// `<p>`List sources for a specified customer.`</p>`
 ///
@@ -7685,22 +6135,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetCustomersCustomerSourcesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetCustomersCustomerSourcesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a card
 ///
 /// `<p>`When you create a new credit card, you must specify a customer or recipient on which to create it.`</p>`
@@ -7734,22 +6174,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentSource.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentSource.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// `<p>`Retrieve a specified source for a given customer.`</p>`
 ///
@@ -7776,22 +6206,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentSource.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentSource.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// `<p>`Update a specified source for a given customer.`</p>`
 ///
@@ -7836,22 +6256,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostCustomersCustomerSourcesIdResponse.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostCustomersCustomerSourcesIdResponse.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete a customer source
 ///
 /// `<p>`Delete a specified source for a given customer.`</p>`
@@ -7871,22 +6281,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeleteCustomersCustomerSourcesIdResponse.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeleteCustomersCustomerSourcesIdResponse.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Verify a bank account
 ///
 /// `<p>`Verify a specified bank account for a given customer.`</p>`
@@ -7908,22 +6308,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BankAccount.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BankAccount.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List active subscriptions
 ///
 /// `<p>`You can see a list of the customer’s active subscriptions. Note that the 10 most recent active subscriptions are always available by default on the customer object. If you need more than those 10, you can use the limit and starting_after parameters to page through additional subscriptions.`</p>`
@@ -7960,22 +6350,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetCustomersCustomerSubscriptionsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetCustomersCustomerSubscriptionsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a subscription
 ///
 /// `<p>`Creates a new subscription on an existing customer.`</p>`
@@ -8051,22 +6431,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Subscription.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Subscription.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a subscription
 ///
 /// `<p>`Retrieves the subscription with the given ID.`</p>`
@@ -8094,22 +6464,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Subscription.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Subscription.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a subscription on a customer
 ///
 /// `<p>`Updates an existing subscription on a customer to match the specified parameters. When changing plans or quantities, we will optionally prorate the price we charge next month to make up for any price changes. To preview how the proration will be calculated, use the `<a href="#upcoming_invoice">`upcoming invoice`</a>` endpoint.`</p>`
@@ -8185,22 +6545,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Subscription.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Subscription.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Cancel a subscription
 ///
 /// `<p>`Cancels a customer’s subscription. If you set the `<code>`at_period_end`</code>` parameter to `<code>`true`</code>`, the subscription will remain active until the end of the period, at which point it will be canceled and not renewed. Otherwise, with the default `<code>`false`</code>` value, the subscription is terminated immediately. In either case, the customer will not be charged again for the subscription.`</p>`
@@ -8228,22 +6578,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Subscription.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Subscription.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// 
 ///
@@ -8270,22 +6610,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Discount.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Discount.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete a customer discount
 ///
 /// `<p>`Removes the currently applied discount on a customer.`</p>`
@@ -8303,22 +6633,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedDiscount.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedDiscount.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all Customer tax IDs
 ///
 /// `<p>`Returns a list of tax IDs for a customer.`</p>`
@@ -8355,22 +6675,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetCustomersCustomerTaxIdsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetCustomersCustomerTaxIdsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a Customer tax ID
 ///
 /// `<p>`Creates a new `<code>`tax_id`</code>` object for a customer.`</p>`
@@ -8392,22 +6702,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TaxId.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TaxId.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a Customer tax ID
 ///
 /// `<p>`Retrieves the `<code>`tax_id`</code>` object with the given identifier.`</p>`
@@ -8435,22 +6735,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TaxId.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TaxId.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete a Customer tax ID
 ///
 /// `<p>`Deletes an existing `<code>`tax_id`</code>` object.`</p>`
@@ -8468,22 +6758,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedTaxId.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedTaxId.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all disputes
 ///
 /// `<p>`Returns a list of your disputes.`</p>`
@@ -8529,22 +6809,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetDisputesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetDisputesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a dispute
 ///
 /// `<p>`Retrieves the dispute with the given ID.`</p>`
@@ -8572,22 +6842,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Dispute.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Dispute.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a dispute
 ///
 /// `<p>`When you get a dispute, contacting your customer is always the best first step. If that doesn’t work, you can submit evidence to help us resolve the dispute in your favor. You can do this in your `<a href="https://dashboard.stripe.com/disputes">`dashboard`</a>`, but if you prefer, you can use the API to submit evidence programmatically.`</p>`
@@ -8615,22 +6875,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Dispute.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Dispute.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Close a dispute
 ///
 /// `<p>`Closing the dispute for a charge indicates that you do not have any evidence to submit and are essentially dismissing the dispute, acknowledging it as lost.`</p>`
@@ -8652,22 +6902,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Dispute.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Dispute.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all active entitlements
 ///
 /// `<p>`Retrieve a list of active entitlements for a customer`</p>`
@@ -8705,22 +6945,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetEntitlementsActiveEntitlementsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetEntitlementsActiveEntitlementsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve an active entitlement
 ///
 /// `<p>`Retrieve an active entitlement`</p>`
@@ -8748,22 +6978,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EntitlementsActiveEntitlement.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EntitlementsActiveEntitlement.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all features
 ///
 /// `<p>`Retrieve a list of features`</p>`
@@ -8806,22 +7026,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetEntitlementsFeaturesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetEntitlementsFeaturesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a feature
 ///
 /// `<p>`Creates a feature`</p>`
@@ -8845,22 +7055,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EntitlementsFeature.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EntitlementsFeature.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a feature
 ///
 /// `<p>`Retrieves a feature`</p>`
@@ -8888,22 +7088,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EntitlementsFeature.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EntitlementsFeature.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Updates a feature
 ///
 /// `<p>`Update a feature’s metadata or permanently deactivate it.`</p>`
@@ -8929,22 +7119,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EntitlementsFeature.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EntitlementsFeature.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create an ephemeral key
 ///
 /// `<p>`Creates a short-lived API key for a given resource.`</p>`
@@ -8972,22 +7152,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EphemeralKey.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EphemeralKey.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Immediately invalidate an ephemeral key
 ///
 /// `<p>`Invalidates a short-lived API key for a given resource.`</p>`
@@ -9007,22 +7177,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EphemeralKey.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EphemeralKey.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all events
 ///
 /// `<p>`List events, going back up to 30 days. Each event data is rendered according to Stripe API version at its creation time, specified in `<a href="https://docs.stripe.com/api/events/object">`event object`</a>` `<code>`api_version`</code>` attribute (not according to your current Stripe API version or `<code>`Stripe-Version`</code>` header).`</p>`
@@ -9073,22 +7233,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetEventsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetEventsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve an event
 ///
 /// `<p>`Retrieves the details of an event if it was created in the last 30 days. Supply the unique identifier of the event, which you might have received in a webhook.`</p>`
@@ -9116,22 +7266,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Event.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Event.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all exchange rates
 ///
 /// `<p>``[Deprecated]` The `<code>`ExchangeRate`</code>` APIs are deprecated. Please use the `<a href="https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api">`FX Quotes API`</a>` instead.`</p>`
@@ -9170,22 +7310,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetExchangeRatesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetExchangeRatesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve an exchange rate
 ///
 /// `<p>``[Deprecated]` The `<code>`ExchangeRate`</code>` APIs are deprecated. Please use the `<a href="https://docs.stripe.com/payments/currencies/localize-prices/fx-quotes-api">`FX Quotes API`</a>` instead.`</p>`
@@ -9215,22 +7345,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ExchangeRate.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ExchangeRate.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// `<p>`Updates the metadata, account holder name, account holder type of a bank account belonging to
 /// a connected account and optionally sets it as the default for its currency. Other bank account
@@ -9286,22 +7406,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ExternalAccount.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ExternalAccount.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all file links
 ///
 /// `<p>`Returns a list of file links.`</p>`
@@ -9347,22 +7457,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetFileLinksResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetFileLinksResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a file link
 ///
 /// `<p>`Creates a new file link object.`</p>`
@@ -9387,22 +7487,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FileLink.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FileLink.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a file link
 ///
 /// `<p>`Retrieves the file link with the given ID.`</p>`
@@ -9430,22 +7520,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FileLink.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FileLink.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a file link
 ///
 /// `<p>`Updates an existing file link object. Expired links can no longer be updated.`</p>`
@@ -9469,22 +7549,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FileLink.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FileLink.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all files
 ///
 /// `<p>`Returns a list of the files that your account has access to. Stripe sorts and returns the files by their creation dates, placing the most recently created files at the top.`</p>`
@@ -9527,22 +7597,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetFilesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetFilesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a file
 ///
 /// `<p>`To upload a file to Stripe, you need to send a request of type `<code>`multipart/form-data`</code>`. Include the file you want to upload in the request, and the parameters for creating a file.`</p>`
@@ -9568,22 +7628,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return File.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  File.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a file
 ///
 /// `<p>`Retrieves the details of an existing file object. After you supply a unique file ID, Stripe returns the corresponding file object. Learn how to `<a href="/docs/file-upload#download-file-contents">`access file contents`</a>`.`</p>`
@@ -9611,22 +7661,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return File.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  File.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List Accounts
 ///
 /// `<p>`Returns a list of Financial Connections `<code>`Account`</code>` objects.`</p>`
@@ -9671,22 +7711,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetFinancialConnectionsAccountsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetFinancialConnectionsAccountsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve an Account
 ///
 /// `<p>`Retrieves the details of an Financial Connections `<code>`Account`</code>`.`</p>`
@@ -9714,22 +7744,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FinancialConnectionsAccount.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FinancialConnectionsAccount.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Disconnect an Account
 ///
 /// `<p>`Disables your access to a Financial Connections `<code>`Account`</code>`. You will no longer be able to access data associated with the account (e.g. balances, transactions).`</p>`
@@ -9749,22 +7769,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FinancialConnectionsAccount.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FinancialConnectionsAccount.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List Account Owners
 ///
 /// `<p>`Lists all owners for a given `<code>`Account`</code>``</p>`
@@ -9802,22 +7812,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetFinancialConnectionsAccountsAccountOwnersResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetFinancialConnectionsAccountsAccountOwnersResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Refresh Account data
 ///
 /// `<p>`Refreshes the data associated with a Financial Connections `<code>`Account`</code>`.`</p>`
@@ -9838,22 +7838,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FinancialConnectionsAccount.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FinancialConnectionsAccount.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Subscribe to data refreshes for an Account
 ///
 /// `<p>`Subscribes to periodic refreshes of data associated with a Financial Connections `<code>`Account`</code>`. When the account status is active, data is typically refreshed once a day.`</p>`
@@ -9874,22 +7864,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FinancialConnectionsAccount.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FinancialConnectionsAccount.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Unsubscribe from data refreshes for an Account
 ///
 /// `<p>`Unsubscribes from periodic refreshes of data associated with a Financial Connections `<code>`Account`</code>`.`</p>`
@@ -9910,22 +7890,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FinancialConnectionsAccount.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FinancialConnectionsAccount.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a Session
 ///
 /// `<p>`To launch the Financial Connections authorization flow, create a `<code>`Session`</code>`. The session’s `<code>`client_secret`</code>` can be used to launch the flow using Stripe.js.`</p>`
@@ -9953,22 +7923,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FinancialConnectionsSession.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FinancialConnectionsSession.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a Session
 ///
 /// `<p>`Retrieves the details of a Financial Connections `<code>`Session`</code>``</p>`
@@ -9996,22 +7956,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FinancialConnectionsSession.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FinancialConnectionsSession.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List Transactions
 ///
 /// `<p>`Returns a list of Financial Connections `<code>`Transaction`</code>` objects.`</p>`
@@ -10055,22 +8005,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetFinancialConnectionsTransactionsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetFinancialConnectionsTransactionsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a Transaction
 ///
 /// `<p>`Retrieves the details of a Financial Connections `<code>`Transaction`</code>``</p>`
@@ -10098,22 +8038,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FinancialConnectionsTransaction.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FinancialConnectionsTransaction.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all ForwardingRequests
 ///
 /// `<p>`Lists all ForwardingRequest objects.`</p>`
@@ -10156,22 +8086,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetForwardingRequestsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetForwardingRequestsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a ForwardingRequest
 ///
 /// `<p>`Creates a ForwardingRequest object.`</p>`
@@ -10198,22 +8118,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ForwardingRequest.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ForwardingRequest.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a ForwardingRequest
 ///
 /// `<p>`Retrieves a ForwardingRequest object.`</p>`
@@ -10241,22 +8151,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ForwardingRequest.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ForwardingRequest.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List VerificationReports
 ///
 /// `<p>`List all verification reports.`</p>`
@@ -10305,22 +8205,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetIdentityVerificationReportsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetIdentityVerificationReportsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a VerificationReport
 ///
 /// `<p>`Retrieves an existing VerificationReport`</p>`
@@ -10348,22 +8238,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IdentityVerificationReport.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IdentityVerificationReport.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List VerificationSessions
 ///
 /// `<p>`Returns a list of VerificationSessions`</p>`
@@ -10415,22 +8295,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetIdentityVerificationSessionsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetIdentityVerificationSessionsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a VerificationSession
 ///
 /// `<p>`Creates a VerificationSession object.`</p>`
@@ -10476,22 +8346,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IdentityVerificationSession.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IdentityVerificationSession.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a VerificationSession
 ///
 /// `<p>`Retrieves the details of a VerificationSession that was previously created.`</p>`
@@ -10522,22 +8382,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IdentityVerificationSession.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IdentityVerificationSession.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a VerificationSession
 ///
 /// `<p>`Updates a VerificationSession object.`</p>`
@@ -10568,22 +8418,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IdentityVerificationSession.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IdentityVerificationSession.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Cancel a VerificationSession
 ///
 /// `<p>`A VerificationSession object can be canceled when it is in `<code>`requires_input`</code>` `<a href="/docs/identity/how-sessions-work">`status`</a>`.`</p>`
@@ -10605,22 +8445,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IdentityVerificationSession.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IdentityVerificationSession.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Redact a VerificationSession
 ///
 /// `<p>`Redact a VerificationSession to remove all collected information from Stripe. This will redact
@@ -10658,22 +8488,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IdentityVerificationSession.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IdentityVerificationSession.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all payments for an invoice
 ///
 /// `<p>`When retrieving an invoice, there is an includable payments property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of payments.`</p>`
@@ -10724,22 +8544,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetInvoicePaymentsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetInvoicePaymentsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve an InvoicePayment
 ///
 /// `<p>`Retrieves the invoice payment with the given ID.`</p>`
@@ -10767,22 +8577,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return InvoicePayment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  InvoicePayment.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all invoice rendering templates
 ///
 /// `<p>`List all templates, ordered by creation date, with the most recently created template appearing first.`</p>`
@@ -10822,22 +8622,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetInvoiceRenderingTemplatesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetInvoiceRenderingTemplatesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve an invoice rendering template
 ///
 /// `<p>`Retrieves an invoice rendering template with the given ID. It by default returns the latest version of the template. Optionally, specify a version to see previous versions.`</p>`
@@ -10868,22 +8658,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return InvoiceRenderingTemplate.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  InvoiceRenderingTemplate.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Archive an invoice rendering template
 ///
 /// `<p>`Updates the status of an invoice rendering template to ‘archived’ so no new Stripe objects (customers, invoices, etc.) can reference it. The template can also no longer be updated. However, if the template is already set on a Stripe object, it will continue to be applied on invoices generated by it.`</p>`
@@ -10903,22 +8683,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return InvoiceRenderingTemplate.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  InvoiceRenderingTemplate.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Unarchive an invoice rendering template
 ///
 /// `<p>`Unarchive an invoice rendering template so it can be used on new Stripe objects again.`</p>`
@@ -10938,22 +8708,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return InvoiceRenderingTemplate.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  InvoiceRenderingTemplate.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all invoice items
 ///
 /// `<p>`Returns a list of your invoice items. Invoice items are returned sorted by creation date, with the most recently created invoice items appearing first.`</p>`
@@ -11005,22 +8765,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetInvoiceitemsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetInvoiceitemsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create an invoice item
 ///
 /// `<p>`Creates an item to be added to a draft invoice (up to 250 items per invoice). If no invoice is specified, the item will be on the next invoice created for the customer specified.`</p>`
@@ -11076,22 +8826,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Invoiceitem.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Invoiceitem.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve an invoice item
 ///
 /// `<p>`Retrieves the invoice item with the given ID.`</p>`
@@ -11119,22 +8859,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Invoiceitem.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Invoiceitem.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update an invoice item
 ///
 /// `<p>`Updates the amount or description of an invoice item on an upcoming invoice. Updating an invoice item is only possible before the invoice it’s attached to is closed.`</p>`
@@ -11180,22 +8910,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Invoiceitem.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Invoiceitem.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete an invoice item
 ///
 /// `<p>`Deletes an invoice item, removing it from an invoice. Deleting invoice items is only possible when they’re not attached to invoices, or if it’s attached to a draft invoice.`</p>`
@@ -11213,22 +8933,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedInvoiceitem.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedInvoiceitem.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all invoices
 ///
 /// `<p>`You can list all invoices, or list the invoices for a specific customer. The invoices are returned sorted by creation date, with the most recently created invoices appearing first.`</p>`
@@ -11286,22 +8996,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetInvoicesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetInvoicesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create an invoice
 ///
 /// `<p>`This endpoint creates a draft invoice for a given customer. The invoice remains a draft until you `<a href="#finalize_invoice">`finalize`</a>` the invoice, which allows you to `<a href="/api/invoices/pay">`pay`</a>` or `<a href="/api/invoices/send">`send`</a>` the invoice to your customers.`</p>`
@@ -11385,22 +9085,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Invoice.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Invoice.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a preview invoice
 ///
 /// `<p>`At any time, you can preview the upcoming invoice for a subscription or subscription schedule. This will show you all the charges that are pending, including subscription renewal charges, invoice item charges, etc. It will also show you any discounts that are applicable to the invoice.`</p>`
@@ -11456,22 +9146,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Invoice.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Invoice.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Search invoices
 ///
 /// `<p>`Search for invoices you’ve previously created using Stripe’s `<a href="/docs/search#search-query-language">`Search Query Language`</a>`.
@@ -11509,22 +9189,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetInvoicesSearchResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetInvoicesSearchResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve an invoice
 ///
 /// `<p>`Retrieves the invoice with the given ID.`</p>`
@@ -11552,22 +9222,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Invoice.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Invoice.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update an invoice
 ///
 /// `<p>`Draft invoices are fully editable. Once an invoice is `<a href="/docs/billing/invoices/workflow#finalized">`finalized`</a>`,
@@ -11644,22 +9304,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Invoice.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Invoice.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete a draft invoice
 ///
 /// `<p>`Permanently deletes a one-off invoice draft. This cannot be undone. Attempts to delete invoices that are no longer in a draft state will fail; once an invoice has been finalized or if an invoice is for a subscription, it must be `<a href="#void_invoice">`voided`</a>`.`</p>`
@@ -11677,22 +9327,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedInvoice.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedInvoice.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Bulk add invoice line items
 ///
 /// `<p>`Adds multiple line items to an invoice. This is only possible when an invoice is still a draft.`</p>`
@@ -11715,22 +9355,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Invoice.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Invoice.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Attach a payment to an Invoice
 ///
 /// `<p>`Attaches a PaymentIntent or an Out of Band Payment to the invoice, adding it to the list of `<code>`payments`</code>`.`</p>`
@@ -11763,22 +9393,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Invoice.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Invoice.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Finalize an invoice
 ///
 /// `<p>`Stripe automatically finalizes drafts before sending and attempting payment on invoices. However, if you’d like to finalize a draft invoice manually, you can do so using this method.`</p>`
@@ -11800,22 +9420,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Invoice.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Invoice.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve an invoice's line items
 ///
 /// `<p>`When retrieving an invoice, you’ll get a `<strong>`lines`</strong>` property containing the total count of line items and the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.`</p>`
@@ -11852,22 +9462,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetInvoicesInvoiceLinesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetInvoicesInvoiceLinesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update an invoice's line item
 ///
 /// `<p>`Updates an invoice’s line item. Some fields, such as `<code>`tax_amounts`</code>`, only live on the invoice line item,
@@ -11912,22 +9512,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return LineItem.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  LineItem.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Mark an invoice as uncollectible
 ///
 /// `<p>`Marking an invoice as uncollectible is useful for keeping track of bad debts that can be written off for accounting purposes.`</p>`
@@ -11947,22 +9537,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Invoice.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Invoice.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Pay an invoice
 ///
 /// `<p>`Stripe automatically creates and then attempts to collect payment on invoices for customers on subscriptions according to your `<a href="https://dashboard.stripe.com/account/billing/automatic">`subscriptions settings`</a>`. However, if you’d like to attempt payment on an invoice out of the normal collection schedule or for some other reason, you can do so.`</p>`
@@ -11994,22 +9574,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Invoice.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Invoice.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Bulk remove invoice line items
 ///
 /// `<p>`Removes multiple line items from an invoice. This is only possible when an invoice is still a draft.`</p>`
@@ -12032,22 +9602,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Invoice.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Invoice.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Send an invoice for manual payment
 ///
 /// `<p>`Stripe will automatically send invoices to customers according to your `<a href="https://dashboard.stripe.com/account/billing/automatic">`subscriptions settings`</a>`. However, if you’d like to manually send an invoice to your customer out of the normal schedule, you can do so. When sending invoices that have already been paid, there will be no reference to the payment in the email.`</p>`
@@ -12069,22 +9629,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Invoice.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Invoice.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Bulk update invoice line items
 ///
 /// `<p>`Updates multiple line items on an invoice. This is only possible when an invoice is still a draft.`</p>`
@@ -12107,22 +9657,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Invoice.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Invoice.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Void an invoice
 ///
 /// `<p>`Mark a finalized invoice as void. This cannot be undone. Voiding an invoice is similar to `<a href="#delete_invoice">`deletion`</a>`, however it only applies to finalized invoices and maintains a papertrail where the invoice can still be found.`</p>`
@@ -12144,22 +9684,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Invoice.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Invoice.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all authorizations
 ///
 /// `<p>`Returns a list of Issuing `<code>`Authorization`</code>` objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
@@ -12208,22 +9738,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetIssuingAuthorizationsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetIssuingAuthorizationsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve an authorization
 ///
 /// `<p>`Retrieves an Issuing `<code>`Authorization`</code>` object.`</p>`
@@ -12251,22 +9771,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingAuthorization.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingAuthorization.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update an authorization
 ///
 /// `<p>`Updates the specified Issuing `<code>`Authorization`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
@@ -12288,22 +9798,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingAuthorization.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingAuthorization.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all cardholders
 ///
 /// `<p>`Returns a list of Issuing `<code>`Cardholder`</code>` objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
@@ -12355,22 +9855,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetIssuingCardholdersResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetIssuingCardholdersResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a cardholder
 ///
 /// `<p>`Creates a new Issuing `<code>`Cardholder`</code>` object that can be issued cards.`</p>`
@@ -12410,22 +9900,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingCardholder.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingCardholder.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a cardholder
 ///
 /// `<p>`Retrieves an Issuing `<code>`Cardholder`</code>` object.`</p>`
@@ -12453,22 +9933,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingCardholder.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingCardholder.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a cardholder
 ///
 /// `<p>`Updates the specified Issuing `<code>`Cardholder`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
@@ -12506,22 +9976,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingCardholder.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingCardholder.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all cards
 ///
 /// `<p>`Returns a list of Issuing `<code>`Card`</code>` objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
@@ -12582,22 +10042,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetIssuingCardsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetIssuingCardsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a card
 ///
 /// `<p>`Creates an Issuing `<code>`Card`</code>` object.`</p>`
@@ -12645,22 +10095,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingCard.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingCard.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a card
 ///
 /// `<p>`Retrieves an Issuing `<code>`Card`</code>` object.`</p>`
@@ -12688,22 +10128,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingCard.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingCard.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a card
 ///
 /// `<p>`Updates the specified Issuing `<code>`Card`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
@@ -12737,22 +10167,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingCard.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingCard.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all disputes
 ///
 /// `<p>`Returns a list of Issuing `<code>`Dispute`</code>` objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
@@ -12798,22 +10218,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetIssuingDisputesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetIssuingDisputesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a dispute
 ///
 /// `<p>`Creates an Issuing `<code>`Dispute`</code>` object. Individual pieces of evidence within the `<code>`evidence`</code>` object are optional at this point. Stripe only validates that required evidence is present during submission. Refer to `<a href="/docs/issuing/purchases/disputes#dispute-reasons-and-evidence">`Dispute reasons and evidence`</a>` for more details about evidence requirements.`</p>`
@@ -12843,22 +10253,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingDispute.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingDispute.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a dispute
 ///
 /// `<p>`Retrieves an Issuing `<code>`Dispute`</code>` object.`</p>`
@@ -12886,22 +10286,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingDispute.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingDispute.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a dispute
 ///
 /// `<p>`Updates the specified Issuing `<code>`Dispute`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged. Properties on the `<code>`evidence`</code>` object can be unset by passing in an empty string.`</p>`
@@ -12927,22 +10317,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingDispute.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingDispute.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Submit a dispute
 ///
 /// `<p>`Submits an Issuing `<code>`Dispute`</code>` to the card network. Stripe validates that all evidence fields required for the dispute’s reason are present. For more details, see `<a href="/docs/issuing/purchases/disputes#dispute-reasons-and-evidence">`Dispute reasons and evidence`</a>`.`</p>`
@@ -12964,22 +10344,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingDispute.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingDispute.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all personalization designs
 ///
 /// `<p>`Returns a list of personalization design objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
@@ -13028,22 +10398,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetIssuingPersonalizationDesignsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetIssuingPersonalizationDesignsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a personalization design
 ///
 /// `<p>`Creates a personalization design object.`</p>`
@@ -13078,22 +10438,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingPersonalizationDesign.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingPersonalizationDesign.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a personalization design
 ///
 /// `<p>`Retrieves a personalization design object.`</p>`
@@ -13121,22 +10471,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingPersonalizationDesign.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingPersonalizationDesign.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a personalization design
 ///
 /// `<p>`Updates a card personalization object.`</p>`
@@ -13172,22 +10512,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingPersonalizationDesign.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingPersonalizationDesign.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all physical bundles
 ///
 /// `<p>`Returns a list of physical bundle objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
@@ -13230,22 +10560,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetIssuingPhysicalBundlesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetIssuingPhysicalBundlesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a physical bundle
 ///
 /// `<p>`Retrieves a physical bundle object.`</p>`
@@ -13273,22 +10593,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingPhysicalBundle.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingPhysicalBundle.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a settlement
 ///
 /// `<p>`Retrieves an Issuing `<code>`Settlement`</code>` object.`</p>`
@@ -13316,22 +10626,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingSettlement.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingSettlement.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a settlement
 ///
 /// `<p>`Updates the specified Issuing `<code>`Settlement`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
@@ -13353,22 +10653,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingSettlement.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingSettlement.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all issuing tokens for card
 ///
 /// `<p>`Lists all Issuing `<code>`Token`</code>` objects for a given card.`</p>`
@@ -13412,22 +10702,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetIssuingTokensResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetIssuingTokensResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve an issuing token
 ///
 /// `<p>`Retrieves an Issuing `<code>`Token`</code>` object.`</p>`
@@ -13455,22 +10735,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingToken.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingToken.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a token status
 ///
 /// `<p>`Attempts to update the specified Issuing `<code>`Token`</code>` object to the status specified.`</p>`
@@ -13491,22 +10761,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingToken.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingToken.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all transactions
 ///
 /// `<p>`Returns a list of Issuing `<code>`Transaction`</code>` objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
@@ -13555,22 +10815,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetIssuingTransactionsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetIssuingTransactionsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a transaction
 ///
 /// `<p>`Retrieves an Issuing `<code>`Transaction`</code>` object.`</p>`
@@ -13598,22 +10848,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingTransaction.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingTransaction.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a transaction
 ///
 /// `<p>`Updates the specified Issuing `<code>`Transaction`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
@@ -13635,22 +10875,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingTransaction.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingTransaction.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a Session
 ///
 /// `<p>`To launch the Financial Connections authorization flow, create a `<code>`Session`</code>`. The session’s `<code>`client_secret`</code>` can be used to launch the flow using Stripe.js.`</p>`
@@ -13678,22 +10908,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FinancialConnectionsSession.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FinancialConnectionsSession.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a Session
 ///
 /// `<p>`Retrieves the details of a Financial Connections `<code>`Session`</code>``</p>`
@@ -13721,22 +10941,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FinancialConnectionsSession.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FinancialConnectionsSession.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List Accounts
 ///
 /// `<p>`Returns a list of Financial Connections `<code>`Account`</code>` objects.`</p>`
@@ -13781,22 +10991,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetLinkedAccountsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetLinkedAccountsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve an Account
 ///
 /// `<p>`Retrieves the details of an Financial Connections `<code>`Account`</code>`.`</p>`
@@ -13824,22 +11024,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FinancialConnectionsAccount.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FinancialConnectionsAccount.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Disconnect an Account
 ///
 /// `<p>`Disables your access to a Financial Connections `<code>`Account`</code>`. You will no longer be able to access data associated with the account (e.g. balances, transactions).`</p>`
@@ -13859,22 +11049,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FinancialConnectionsAccount.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FinancialConnectionsAccount.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List Account Owners
 ///
 /// `<p>`Lists all owners for a given `<code>`Account`</code>``</p>`
@@ -13912,22 +11092,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetLinkedAccountsAccountOwnersResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetLinkedAccountsAccountOwnersResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Refresh Account data
 ///
 /// `<p>`Refreshes the data associated with a Financial Connections `<code>`Account`</code>`.`</p>`
@@ -13948,22 +11118,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FinancialConnectionsAccount.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FinancialConnectionsAccount.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a Mandate
 ///
 /// `<p>`Retrieves a Mandate object.`</p>`
@@ -13991,22 +11151,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Mandate.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Mandate.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List Payment Attempt Records
 ///
 /// `<p>`List all the Payment Attempt Records attached to the specified Payment Record.`</p>`
@@ -14041,22 +11191,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetPaymentAttemptRecordsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetPaymentAttemptRecordsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a Payment Attempt Record
 ///
 /// `<p>`Retrieves a Payment Attempt Record with the given ID`</p>`
@@ -14084,22 +11224,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentAttemptRecord.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentAttemptRecord.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all PaymentIntents
 ///
 /// `<p>`Returns a list of PaymentIntents.`</p>`
@@ -14145,22 +11275,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetPaymentIntentsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetPaymentIntentsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a PaymentIntent
 ///
 /// `<p>`Creates a PaymentIntent object.`</p>`
@@ -14259,22 +11379,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentIntent.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentIntent.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Search PaymentIntents
 ///
 /// `<p>`Search for PaymentIntents you’ve previously created using Stripe’s `<a href="/docs/search#search-query-language">`Search Query Language`</a>`.
@@ -14312,22 +11422,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetPaymentIntentsSearchResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetPaymentIntentsSearchResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a PaymentIntent
 ///
 /// `<p>`Retrieves the details of a PaymentIntent that has previously been created. `</p>`
@@ -14362,22 +11462,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentIntent.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentIntent.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a PaymentIntent
 ///
 /// `<p>`Updates properties on a PaymentIntent object without confirming.`</p>`
@@ -14451,22 +11541,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentIntent.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentIntent.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all PaymentIntent LineItems
 ///
 /// `<p>`Lists all LineItems of a given PaymentIntent.`</p>`
@@ -14503,22 +11583,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetPaymentIntentsIntentAmountDetailsLineItemsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetPaymentIntentsIntentAmountDetailsLineItemsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Reconcile a customer_balance PaymentIntent
 ///
 /// `<p>`Manually reconcile the remaining amount for a `<code>`customer_balance`</code>` PaymentIntent.`</p>`
@@ -14542,22 +11612,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentIntent.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentIntent.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Cancel a PaymentIntent
 ///
 /// `<p>`You can cancel a PaymentIntent object when it’s in one of these statuses: `<code>`requires_payment_method`</code>`, `<code>`requires_capture`</code>`, `<code>`requires_confirmation`</code>`, `<code>`requires_action`</code>` or, `<a href="/docs/payments/intents">`in rare cases`</a>`, `<code>`processing`</code>`. `</p>`
@@ -14583,22 +11643,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentIntent.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentIntent.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Capture a PaymentIntent
 ///
 /// `<p>`Capture the funds of an existing uncaptured PaymentIntent when its status is `<code>`requires_capture`</code>`.`</p>`
@@ -14642,22 +11692,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentIntent.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentIntent.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Confirm a PaymentIntent
 ///
 /// `<p>`Confirm that your customer intends to pay with current or provided
@@ -14748,22 +11788,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentIntent.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentIntent.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Increment an authorization
 ///
 /// `<p>`Perform an incremental authorization on an eligible
@@ -14823,22 +11853,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentIntent.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentIntent.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Verify microdeposits on a PaymentIntent
 ///
 /// `<p>`Verifies microdeposits on a PaymentIntent object.`</p>`
@@ -14864,22 +11884,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentIntent.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentIntent.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all payment links
 ///
 /// `<p>`Returns a list of your payment links.`</p>`
@@ -14919,22 +11929,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetPaymentLinksResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetPaymentLinksResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a payment link
 ///
 /// `<p>`Creates a payment link.`</p>`
@@ -15011,22 +12011,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentLink.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentLink.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve payment link
 ///
 /// `<p>`Retrieve a payment link.`</p>`
@@ -15054,22 +12044,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentLink.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentLink.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a payment link
 ///
 /// `<p>`Updates a payment link.`</p>`
@@ -15135,22 +12115,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentLink.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentLink.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a payment link's line items
 ///
 /// `<p>`When retrieving a payment link, there is an includable `<strong>`line_items`</strong>` property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.`</p>`
@@ -15187,22 +12157,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetPaymentLinksPaymentLinkLineItemsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetPaymentLinksPaymentLinkLineItemsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List payment method configurations
 ///
 /// `<p>`List payment method configurations`</p>`
@@ -15242,22 +12202,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetPaymentMethodConfigurationsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetPaymentMethodConfigurationsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a payment method configuration
 ///
 /// `<p>`Creates a payment method configuration`</p>`
@@ -15393,22 +12343,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentMethodConfiguration.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentMethodConfiguration.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve payment method configuration
 ///
 /// `<p>`Retrieve payment method configuration`</p>`
@@ -15436,22 +12376,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentMethodConfiguration.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentMethodConfiguration.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update payment method configuration
 ///
 /// `<p>`Update payment method configuration`</p>`
@@ -15587,22 +12517,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentMethodConfiguration.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentMethodConfiguration.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List payment method domains
 ///
 /// `<p>`Lists the details of existing payment method domains.`</p>`
@@ -15645,22 +12565,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetPaymentMethodDomainsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetPaymentMethodDomainsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a payment method domain
 ///
 /// `<p>`Creates a payment method domain.`</p>`
@@ -15683,22 +12593,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentMethodDomain.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentMethodDomain.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a payment method domain
 ///
 /// `<p>`Retrieves the details of an existing payment method domain.`</p>`
@@ -15726,22 +12626,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentMethodDomain.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentMethodDomain.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a payment method domain
 ///
 /// `<p>`Updates an existing payment method domain.`</p>`
@@ -15763,22 +12653,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentMethodDomain.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentMethodDomain.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Validate an existing payment method domain
 ///
 /// `<p>`Some payment methods might require additional steps to register a domain. If the requirements weren’t satisfied when the domain was created, the payment method will be inactive on the domain.
@@ -15803,22 +12683,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentMethodDomain.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentMethodDomain.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List PaymentMethods
 ///
 /// `<p>`Returns a list of all PaymentMethods.`</p>`
@@ -15867,22 +12737,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetPaymentMethodsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetPaymentMethodsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Shares a PaymentMethod
 ///
 /// `<p>`Creates a PaymentMethod object. Read the `<a href="/docs/stripe-js/reference#stripe-create-payment-method">`Stripe.js reference`</a>` to learn how to create PaymentMethods via Stripe.js.`</p>`
@@ -16022,22 +12882,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentMethod.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentMethod.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a PaymentMethod
 ///
 /// `<p>`Retrieves a PaymentMethod object attached to the StripeAccount. To retrieve a payment method attached to a Customer, you should use `<a href="/docs/api/payment_methods/customer">`Retrieve a Customer’s PaymentMethods`</a>``</p>`
@@ -16065,22 +12915,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentMethod.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentMethod.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a PaymentMethod
 ///
 /// `<p>`Updates a PaymentMethod object. A PaymentMethod must be attached to a customer to be updated.`</p>`
@@ -16112,22 +12952,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentMethod.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentMethod.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Attach a PaymentMethod to a Customer
 ///
 /// `<p>`Attaches a PaymentMethod object to a Customer.`</p>`
@@ -16163,22 +12993,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentMethod.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentMethod.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Detach a PaymentMethod from a Customer
 ///
 /// `<p>`Detaches a PaymentMethod object from a Customer. After a PaymentMethod is detached, it can no longer be used for a payment or re-attached to a Customer.`</p>`
@@ -16198,22 +13018,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentMethod.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentMethod.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Report a payment
 ///
 /// `<p>`Report a new Payment Record. You may report a Payment Record as it is
@@ -16256,22 +13066,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentRecord.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentRecord.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a Payment Record
 ///
 /// `<p>`Retrieves a Payment Record with the given ID`</p>`
@@ -16299,22 +13099,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentRecord.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentRecord.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Report a payment attempt
 ///
 /// `<p>`Report a new payment attempt on the specified Payment Record. A new payment
@@ -16350,22 +13140,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentRecord.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentRecord.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Report payment attempt canceled
 ///
 /// `<p>`Report that the most recent payment attempt on the specified Payment Record
@@ -16389,22 +13169,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentRecord.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentRecord.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Report payment attempt failed
 ///
 /// `<p>`Report that the most recent payment attempt on the specified Payment Record
@@ -16428,22 +13198,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentRecord.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentRecord.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Report payment attempt guaranteed
 ///
 /// `<p>`Report that the most recent payment attempt on the specified Payment Record
@@ -16467,22 +13227,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentRecord.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentRecord.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Report payment attempt informational
 ///
 /// `<p>`Report informational updates on the specified Payment Record.`</p>`
@@ -16510,22 +13260,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentRecord.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentRecord.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Report a refund
 ///
 /// `<p>`Report that the most recent payment attempt on the specified Payment Record
@@ -16555,22 +13295,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PaymentRecord.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PaymentRecord.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all payouts
 ///
 /// `<p>`Returns a list of existing payouts sent to third-party bank accounts or payouts that Stripe sent to you. The payouts return in sorted order, with the most recently created payouts appearing first.`</p>`
@@ -16619,22 +13349,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetPayoutsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetPayoutsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a payout
 ///
 /// `<p>`To send funds to your own bank account, create a new payout object. Your `<a href="#balance">`Stripe balance`</a>` must cover the payout amount. If it doesn’t, you receive an “Insufficient Funds” error.`</p>`
@@ -16674,22 +13394,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Payout.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Payout.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a payout
 ///
 /// `<p>`Retrieves the details of an existing payout. Supply the unique payout ID from either a payout creation request or the payout list. Stripe returns the corresponding payout information.`</p>`
@@ -16717,22 +13427,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Payout.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Payout.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a payout
 ///
 /// `<p>`Updates the specified payout by setting the values of the parameters you pass. We don’t change parameters that you don’t provide. This request only accepts the metadata as arguments.`</p>`
@@ -16754,22 +13454,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Payout.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Payout.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Cancel a payout
 ///
 /// `<p>`You can cancel a previously created payout if its status is `<code>`pending`</code>`. Stripe refunds the funds to your available balance. You can’t cancel automatic Stripe payouts.`</p>`
@@ -16789,22 +13479,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Payout.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Payout.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Reverse a payout
 ///
 /// `<p>`Reverses a payout by debiting the destination bank account. At this time, you can only reverse payouts for connected accounts to US and Canadian bank accounts. If the payout is manual and in the `<code>`pending`</code>` status, use `<code>`/v1/payouts/:id/cancel`</code>` instead.`</p>`
@@ -16828,22 +13508,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Payout.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Payout.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all plans
 ///
 /// `<p>`Returns a list of your plans.`</p>`
@@ -16889,22 +13559,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetPlansResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetPlansResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a plan
 ///
 /// `<p>`You can now model subscriptions more flexibly using the `<a href="#prices">`Prices API`</a>`. It replaces the Plans API and is backwards compatible to simplify your migration.`</p>`
@@ -16956,22 +13616,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Plan.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Plan.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a plan
 ///
 /// `<p>`Retrieves the plan with the given ID.`</p>`
@@ -16999,22 +13649,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Plan.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Plan.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a plan
 ///
 /// `<p>`Updates the specified plan by setting the values of the parameters passed. Any parameters not provided are left unchanged. By design, you cannot change a plan’s ID, amount, currency, or billing cycle.`</p>`
@@ -17044,22 +13684,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Plan.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Plan.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete a plan
 ///
 /// `<p>`Deleting plans means new subscribers can’t be added. Existing subscribers aren’t affected.`</p>`
@@ -17077,22 +13707,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedPlan.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedPlan.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all prices
 ///
 /// `<p>`Returns a list of your active prices, excluding `<a href="/docs/products-prices/pricing-models#inline-pricing">`inline prices`</a>`. For the list of inactive prices, set `<code>`active`</code>` to false.`</p>`
@@ -17154,22 +13774,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetPricesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetPricesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a price
 ///
 /// `<p>`Creates a new `<a href="https://docs.stripe.com/api/prices">`Price`</a>` for an existing `<a href="https://docs.stripe.com/api/products">`Product`</a>`. The Price can be recurring or one-time.`</p>`
@@ -17224,22 +13834,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Price.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Price.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Search prices
 ///
 /// `<p>`Search for prices you’ve previously created using Stripe’s `<a href="/docs/search#search-query-language">`Search Query Language`</a>`.
@@ -17277,22 +13877,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetPricesSearchResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetPricesSearchResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a price
 ///
 /// `<p>`Retrieves the price with the given ID.`</p>`
@@ -17320,22 +13910,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Price.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Price.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a price
 ///
 /// `<p>`Updates the specified price by setting the values of the parameters passed. Any parameters not provided are left unchanged.`</p>`
@@ -17369,22 +13949,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Price.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Price.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all products
 ///
 /// `<p>`Returns a list of your products. The products are returned sorted by creation date, with the most recently created products appearing first.`</p>`
@@ -17438,22 +14008,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetProductsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetProductsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a product
 ///
 /// `<p>`Creates a new product object.`</p>`
@@ -17500,22 +14060,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Product.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Product.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Search products
 ///
 /// `<p>`Search for products you’ve previously created using Stripe’s `<a href="/docs/search#search-query-language">`Search Query Language`</a>`.
@@ -17553,22 +14103,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetProductsSearchResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetProductsSearchResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a product
 ///
 /// `<p>`Retrieves the details of an existing product. Supply the unique product ID from either a product creation request or the product list, and Stripe will return the corresponding product information.`</p>`
@@ -17596,22 +14136,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Product.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Product.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a product
 ///
 /// `<p>`Updates the specific product by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
@@ -17657,22 +14187,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Product.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Product.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete a product
 ///
 /// `<p>`Delete a product. Deleting a product is only possible if it has no prices associated with it. Additionally, deleting a product with `<code>`type=good`</code>` is only possible if it has no SKUs associated with it.`</p>`
@@ -17690,22 +14210,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedProduct.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedProduct.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all features attached to a product
 ///
 /// `<p>`Retrieve a list of features for a product`</p>`
@@ -17742,22 +14252,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetProductsProductFeaturesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetProductsProductFeaturesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Attach a feature to a product
 ///
 /// `<p>`Creates a product_feature, which represents a feature attachment to a product`</p>`
@@ -17778,22 +14278,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ProductFeature.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ProductFeature.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a product_feature
 ///
 /// `<p>`Retrieves a product_feature, which represents a feature attachment to a product`</p>`
@@ -17821,22 +14311,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ProductFeature.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ProductFeature.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Remove a feature from a product
 ///
 /// `<p>`Deletes the feature attachment to a product`</p>`
@@ -17854,22 +14334,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedProductFeature.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedProductFeature.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all promotion codes
 ///
 /// `<p>`Returns a list of your promotion codes.`</p>`
@@ -17924,22 +14394,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetPromotionCodesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetPromotionCodesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a promotion code
 ///
 /// `<p>`A promotion code points to an underlying promotion. You can optionally restrict the code to a specific customer, redemption limit, and expiration date.`</p>`
@@ -17976,22 +14436,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PromotionCode.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PromotionCode.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a promotion code
 ///
 /// `<p>`Retrieves the promotion code with the given ID. In order to retrieve a promotion code by the customer-facing `<code>`code`</code>` use `<a href="/docs/api/promotion_codes/list">`list`</a>` with the desired `<code>`code`</code>`.`</p>`
@@ -18019,22 +14469,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PromotionCode.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PromotionCode.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a promotion code
 ///
 /// `<p>`Updates the specified promotion code by setting the values of the parameters passed. Most fields are, by design, not editable.`</p>`
@@ -18060,22 +14500,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PromotionCode.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PromotionCode.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all quotes
 ///
 /// `<p>`Returns a list of your quotes.`</p>`
@@ -18124,22 +14554,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetQuotesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetQuotesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a quote
 ///
 /// `<p>`A quote models prices and services for a customer. Default options for `<code>`header`</code>`, `<code>`description`</code>`, `<code>`footer`</code>`, and `<code>`expires_at`</code>` can be set in the dashboard via the `<a href="https://dashboard.stripe.com/settings/billing/quote">`quote template`</a>`.`</p>`
@@ -18199,22 +14619,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Quote.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Quote.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a quote
 ///
 /// `<p>`Retrieves the quote with the given ID.`</p>`
@@ -18242,22 +14652,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Quote.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Quote.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a quote
 ///
 /// `<p>`A quote models prices and services for a customer.`</p>`
@@ -18313,22 +14713,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Quote.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Quote.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Accept a quote
 ///
 /// `<p>`Accepts the specified quote.`</p>`
@@ -18348,22 +14738,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Quote.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Quote.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Cancel a quote
 ///
 /// `<p>`Cancels the quote.`</p>`
@@ -18383,22 +14763,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Quote.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Quote.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a quote's upfront line items
 ///
 /// `<p>`When retrieving a quote, there is an includable `<a href="https://stripe.com/docs/api/quotes/object#quote_object-computed-upfront-line_items">``<strong>`computed.upfront.line_items`</strong>``</a>` property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of upfront line items.`</p>`
@@ -18435,22 +14805,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetQuotesQuoteComputedUpfrontLineItemsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetQuotesQuoteComputedUpfrontLineItemsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Finalize a quote
 ///
 /// `<p>`Finalizes the quote.`</p>`
@@ -18472,22 +14832,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Quote.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Quote.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a quote's line items
 ///
 /// `<p>`When retrieving a quote, there is an includable `<strong>`line_items`</strong>` property containing the first handful of those items. There is also a URL where you can retrieve the full (paginated) list of line items.`</p>`
@@ -18524,22 +14874,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetQuotesQuoteLineItemsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetQuotesQuoteLineItemsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Download quote PDF
 ///
 /// `<p>`Download the PDF for a finalized quote. Explanation for special handling can be found `<a href="https://docs.stripe.com/quotes/overview#quote_pdf">`here`</a>``</p>`
@@ -18567,21 +14907,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-return Uint8List.fromList(response.bodyBytes);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {return  Uint8List.fromList(response.bodyBytes);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all early fraud warnings
 ///
 /// `<p>`Returns a list of early fraud warnings.`</p>`
@@ -18627,22 +14957,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetRadarEarlyFraudWarningsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetRadarEarlyFraudWarningsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve an early fraud warning
 ///
 /// `<p>`Retrieves the details of an early fraud warning that has previously been created. `</p>`
@@ -18672,22 +14992,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RadarEarlyFraudWarning.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RadarEarlyFraudWarning.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a Payment Evaluation
 ///
 /// `<p>`Request a Radar API fraud risk score from Stripe for a payment before sending it for external processor authorization.`</p>`
@@ -18713,22 +15023,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RadarPaymentEvaluation.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RadarPaymentEvaluation.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all value list items
 ///
 /// `<p>`Returns a list of `<code>`ValueListItem`</code>` objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
@@ -18772,22 +15072,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetRadarValueListItemsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetRadarValueListItemsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a value list item
 ///
 /// `<p>`Creates a new `<code>`ValueListItem`</code>` object, which is added to the specified parent value list.`</p>`
@@ -18809,22 +15099,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RadarValueListItem.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RadarValueListItem.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a value list item
 ///
 /// `<p>`Retrieves a `<code>`ValueListItem`</code>` object.`</p>`
@@ -18852,22 +15132,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RadarValueListItem.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RadarValueListItem.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete a value list item
 ///
 /// `<p>`Deletes a `<code>`ValueListItem`</code>` object, removing it from its parent value list.`</p>`
@@ -18885,22 +15155,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedRadarValueListItem.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedRadarValueListItem.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all value lists
 ///
 /// `<p>`Returns a list of `<code>`ValueList`</code>` objects. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
@@ -18946,22 +15206,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetRadarValueListsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetRadarValueListsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a value list
 ///
 /// `<p>`Creates a new `<code>`ValueList`</code>` object, which can then be referenced in rules.`</p>`
@@ -18987,22 +15237,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RadarValueList.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RadarValueList.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a value list
 ///
 /// `<p>`Retrieves a `<code>`ValueList`</code>` object.`</p>`
@@ -19030,22 +15270,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RadarValueList.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RadarValueList.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a value list
 ///
 /// `<p>`Updates a `<code>`ValueList`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged. Note that `<code>`item_type`</code>` is immutable.`</p>`
@@ -19071,22 +15301,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RadarValueList.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RadarValueList.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete a value list
 ///
 /// `<p>`Deletes a `<code>`ValueList`</code>` object, also deleting any items contained within the value list. To be deleted, a value list must not be referenced in any rules.`</p>`
@@ -19104,22 +15324,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedRadarValueList.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedRadarValueList.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all refunds
 ///
 /// `<p>`Returns a list of all refunds you created. We return the refunds in sorted order, with the most recent refunds appearing first. The 10 most recent refunds are always available by default on the Charge object.`</p>`
@@ -19165,22 +15375,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetRefundsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetRefundsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create customer balance refund
 ///
 /// `<p>`When you create a new refund, you must specify a Charge or a PaymentIntent object on which to create it.`</p>`
@@ -19232,22 +15432,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Refund.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Refund.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a refund
 ///
 /// `<p>`Retrieves the details of an existing refund.`</p>`
@@ -19275,22 +15465,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Refund.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Refund.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a refund
 ///
 /// `<p>`Updates the refund that you specify by setting the values of the passed parameters. Any parameters that you don’t provide remain unchanged.`</p>`
@@ -19314,22 +15494,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Refund.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Refund.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Cancel a refund
 ///
 /// `<p>`Cancels a refund with a status of `<code>`requires_action`</code>`.`</p>`
@@ -19351,22 +15521,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Refund.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Refund.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all Report Runs
 ///
 /// `<p>`Returns a list of Report Runs, with the most recent appearing first.`</p>`
@@ -19406,22 +15566,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetReportingReportRunsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetReportingReportRunsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a Report Run
 ///
 /// `<p>`Creates a new object and begin running the report. (Certain report types require a `<a href="https://stripe.com/docs/keys#test-live-modes">`live-mode API key`</a>`.)`</p>`
@@ -19444,22 +15594,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ReportingReportRun.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ReportingReportRun.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a Report Run
 ///
 /// `<p>`Retrieves the details of an existing Report Run.`</p>`
@@ -19487,22 +15627,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ReportingReportRun.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ReportingReportRun.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all Report Types
 ///
 /// `<p>`Returns a full list of Report Types.`</p>`
@@ -19530,22 +15660,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetReportingReportTypesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetReportingReportTypesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a Report Type
 ///
 /// `<p>`Retrieves the details of a Report Type. (Certain report types require a `<a href="https://stripe.com/docs/keys#test-live-modes">`live-mode API key`</a>`.)`</p>`
@@ -19573,22 +15693,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ReportingReportType.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ReportingReportType.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all open reviews
 ///
 /// `<p>`Returns a list of `<code>`Review`</code>` objects that have `<code>`open`</code>` set to `<code>`true`</code>`. The objects are sorted in descending order by creation date, with the most recently created object appearing first.`</p>`
@@ -19628,22 +15738,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetReviewsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetReviewsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a review
 ///
 /// `<p>`Retrieves a `<code>`Review`</code>` object.`</p>`
@@ -19671,22 +15771,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Review.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Review.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Approve a review
 ///
 /// `<p>`Approves a `<code>`Review`</code>` object, closing it and removing it from the list of reviews.`</p>`
@@ -19706,22 +15796,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Review.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Review.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all SetupAttempts
 ///
 /// `<p>`Returns a list of SetupAttempts that associate with a provided SetupIntent.`</p>`
@@ -19762,22 +15842,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetSetupAttemptsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetSetupAttemptsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all SetupIntents
 ///
 /// `<p>`Returns a list of SetupIntents.`</p>`
@@ -19829,22 +15899,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetSetupIntentsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetSetupIntentsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a SetupIntent
 ///
 /// `<p>`Creates a SetupIntent object.`</p>`
@@ -19909,22 +15969,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SetupIntent.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SetupIntent.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a SetupIntent
 ///
 /// `<p>`Retrieves the details of a SetupIntent that has previously been created. `</p>`
@@ -19959,22 +16009,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SetupIntent.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SetupIntent.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a SetupIntent
 ///
 /// `<p>`Updates a SetupIntent object.`</p>`
@@ -20018,22 +16058,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SetupIntent.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SetupIntent.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Cancel a SetupIntent
 ///
 /// `<p>`You can cancel a SetupIntent object when it’s in one of these statuses: `<code>`requires_payment_method`</code>`, `<code>`requires_confirmation`</code>`, or `<code>`requires_action`</code>`. `</p>`
@@ -20057,22 +16087,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SetupIntent.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SetupIntent.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Confirm a SetupIntent
 ///
 /// `<p>`Confirm that your customer intends to set up the current or
@@ -20121,22 +16141,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SetupIntent.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SetupIntent.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Verify microdeposits on a SetupIntent
 ///
 /// `<p>`Verifies microdeposits on a SetupIntent object.`</p>`
@@ -20162,22 +16172,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SetupIntent.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SetupIntent.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all shipping rates
 ///
 /// `<p>`Returns a list of your shipping rates.`</p>`
@@ -20223,22 +16223,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetShippingRatesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetShippingRatesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a shipping rate
 ///
 /// `<p>`Creates a new shipping rate object.`</p>`
@@ -20271,22 +16261,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ShippingRate.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ShippingRate.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a shipping rate
 ///
 /// `<p>`Returns the shipping rate object with the given ID.`</p>`
@@ -20314,22 +16294,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ShippingRate.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ShippingRate.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a shipping rate
 ///
 /// `<p>`Updates an existing shipping rate object.`</p>`
@@ -20357,22 +16327,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ShippingRate.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ShippingRate.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update an existing Sigma Query
 ///
 /// `<p>`Update an existing Sigma query that previously exists`</p>`
@@ -20396,22 +16356,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Query.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Query.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all scheduled query runs
 ///
 /// `<p>`Returns a list of scheduled query runs.`</p>`
@@ -20448,22 +16398,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetSigmaScheduledQueryRunsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetSigmaScheduledQueryRunsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a scheduled query run
 ///
 /// `<p>`Retrieves the details of an scheduled query run.`</p>`
@@ -20491,22 +16431,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ScheduledQueryRun.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ScheduledQueryRun.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Shares a source
 ///
 /// `<p>`Creates a new source object.`</p>`
@@ -20556,22 +16486,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Source.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Source.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a source
 ///
 /// `<p>`Retrieves an existing source object. Supply the unique source ID from a source creation request and Stripe will return the corresponding up-to-date source object information.`</p>`
@@ -20602,22 +16522,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Source.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Source.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a source
 ///
 /// `<p>`Updates the specified source by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
@@ -20649,22 +16559,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Source.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Source.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a Source MandateNotification
 ///
 /// `<p>`Retrieves a new Source MandateNotification.`</p>`
@@ -20692,22 +16592,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SourceMandateNotification.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SourceMandateNotification.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// `<p>`List source transactions for a given source.`</p>`
 ///
@@ -20743,22 +16633,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetSourcesSourceSourceTransactionsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetSourcesSourceSourceTransactionsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a source transaction
 ///
 /// `<p>`Retrieve an existing source transaction object. Supply the unique source ID from a source creation request and the source transaction ID and Stripe will return the corresponding up-to-date source object information.`</p>`
@@ -20786,22 +16666,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SourceTransaction.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SourceTransaction.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// `<p>`Verify a given source.`</p>`
 ///
@@ -20821,22 +16691,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Source.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Source.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all subscription items
 ///
 /// `<p>`Returns a list of your subscription items for a given subscription.`</p>`
@@ -20874,22 +16734,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetSubscriptionItemsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetSubscriptionItemsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a subscription item
 ///
 /// `<p>`Adds a new item to an existing subscription. No existing items will be changed or replaced.`</p>`
@@ -20930,22 +16780,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SubscriptionItem.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SubscriptionItem.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a subscription item
 ///
 /// `<p>`Retrieves the subscription item with the given ID.`</p>`
@@ -20973,22 +16813,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SubscriptionItem.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SubscriptionItem.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a subscription item
 ///
 /// `<p>`Updates the plan or quantity of an item on a current subscription.`</p>`
@@ -21030,22 +16860,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SubscriptionItem.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SubscriptionItem.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete a subscription item
 ///
 /// `<p>`Deletes an item from the subscription. Removing a subscription item from a subscription will not cancel the subscription.`</p>`
@@ -21071,22 +16891,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedSubscriptionItem.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedSubscriptionItem.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all schedules
 ///
 /// `<p>`Retrieves the list of your subscription schedules.`</p>`
@@ -21144,22 +16954,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetSubscriptionSchedulesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetSubscriptionSchedulesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a schedule
 ///
 /// `<p>`Creates a new subscription schedule object. Each customer can have up to 500 active or scheduled subscriptions.`</p>`
@@ -21197,22 +16997,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SubscriptionSchedule.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SubscriptionSchedule.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a schedule
 ///
 /// `<p>`Retrieves the details of an existing subscription schedule. You only need to supply the unique subscription schedule identifier that was returned upon subscription schedule creation.`</p>`
@@ -21240,22 +17030,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SubscriptionSchedule.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SubscriptionSchedule.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a schedule
 ///
 /// `<p>`Updates an existing subscription schedule.`</p>`
@@ -21285,22 +17065,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SubscriptionSchedule.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SubscriptionSchedule.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Cancel a schedule
 ///
 /// `<p>`Cancels a subscription schedule and its associated subscription immediately (if the subscription schedule has an active subscription). A subscription schedule can only be canceled if its status is `<code>`not_started`</code>` or `<code>`active`</code>`.`</p>`
@@ -21324,22 +17094,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SubscriptionSchedule.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SubscriptionSchedule.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Release a schedule
 ///
 /// `<p>`Releases the subscription schedule immediately, which will stop scheduling of its phases, but leave any existing subscription in place. A schedule can only be released if its status is `<code>`not_started`</code>` or `<code>`active`</code>`. If the subscription schedule is currently associated with a subscription, releasing it will remove its `<code>`subscription`</code>` property and set the subscription’s ID to the `<code>`released_subscription`</code>` property.`</p>`
@@ -21361,22 +17121,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SubscriptionSchedule.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SubscriptionSchedule.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List subscriptions
 ///
 /// `<p>`By default, returns a list of subscriptions that have not been canceled. In order to list canceled subscriptions, specify `<code>`status=canceled`</code>`.`</p>`
@@ -21443,22 +17193,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetSubscriptionsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetSubscriptionsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a subscription
 ///
 /// `<p>`Creates a new subscription on an existing customer. Each customer can have up to 500 active or scheduled subscriptions.`</p>`
@@ -21552,22 +17292,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Subscription.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Subscription.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Search subscriptions
 ///
 /// `<p>`Search for subscriptions you’ve previously created using Stripe’s `<a href="/docs/search#search-query-language">`Search Query Language`</a>`.
@@ -21605,22 +17335,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetSubscriptionsSearchResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetSubscriptionsSearchResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a subscription
 ///
 /// `<p>`Retrieves the subscription with the given ID.`</p>`
@@ -21648,22 +17368,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Subscription.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Subscription.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a subscription
 ///
 /// `<p>`Updates an existing subscription to match the specified parameters.
@@ -21763,22 +17473,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Subscription.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Subscription.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Cancel a subscription
 ///
 /// `<p>`Cancels a customer’s subscription immediately. The customer won’t be charged again for the subscription. After it’s canceled, you can no longer update the subscription or its `<a href="/metadata">`metadata`</a>`.`</p>`
@@ -21808,22 +17508,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Subscription.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Subscription.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete a subscription discount
 ///
 /// `<p>`Removes the currently applied discount on a subscription.`</p>`
@@ -21841,22 +17531,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedDiscount.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedDiscount.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Migrate a subscription
 ///
 /// `<p>`Upgrade the billing_mode of an existing subscription.`</p>`
@@ -21877,22 +17557,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Subscription.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Subscription.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Resume a subscription
 ///
 /// `<p>`Initiates resumption of a paused subscription, optionally resetting the billing cycle anchor and creating prorations. If no resumption invoice is generated, the subscription becomes `<code>`active`</code>` immediately. If a resumption invoice is generated, the subscription remains `<code>`paused`</code>` until the invoice is paid or marked uncollectible. If the invoice is not paid by the expiration date, it is voided and the subscription remains `<code>`paused`</code>`.`</p>`
@@ -21918,22 +17588,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Subscription.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Subscription.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Find a Tax Association
 ///
 /// `<p>`Finds a tax association object by PaymentIntent id.`</p>`
@@ -21962,22 +17622,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TaxAssociation.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TaxAssociation.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a Tax Calculation
 ///
 /// `<p>`Calculates tax based on the input and returns a Tax `<code>`Calculation`</code>` object.`</p>`
@@ -22009,22 +17659,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TaxCalculation.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TaxCalculation.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a Tax Calculation
 ///
 /// `<p>`Retrieves a Tax `<code>`Calculation`</code>` object, if the calculation hasn’t expired.`</p>`
@@ -22052,22 +17692,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TaxCalculation.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TaxCalculation.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a calculation's line items
 ///
 /// `<p>`Retrieves the line items of a tax calculation as a collection, if the calculation hasn’t expired.`</p>`
@@ -22104,22 +17734,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTaxCalculationsCalculationLineItemsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTaxCalculationsCalculationLineItemsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List registrations
 ///
 /// `<p>`Returns a list of Tax `<code>`Registration`</code>` objects.`</p>`
@@ -22159,22 +17779,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTaxRegistrationsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTaxRegistrationsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a registration
 ///
 /// `<p>`Creates a new Tax `<code>`Registration`</code>` object.`</p>`
@@ -22199,22 +17809,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TaxRegistration.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TaxRegistration.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a registration
 ///
 /// `<p>`Returns a Tax `<code>`Registration`</code>` object.`</p>`
@@ -22242,22 +17842,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TaxRegistration.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TaxRegistration.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a registration
 ///
 /// `<p>`Updates an existing Tax `<code>`Registration`</code>` object.`</p>`
@@ -22283,22 +17873,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TaxRegistration.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TaxRegistration.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve settings
 ///
 /// `<p>`Retrieves Tax `<code>`Settings`</code>` for a merchant.`</p>`
@@ -22326,22 +17906,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TaxSettings.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TaxSettings.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update settings
 ///
 /// `<p>`Updates Tax `<code>`Settings`</code>` parameters used in tax calculations. All parameters are editable but none can be removed once set.`</p>`
@@ -22365,22 +17935,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TaxSettings.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TaxSettings.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a transaction from a calculation
 ///
 /// `<p>`Creates a Tax Transaction from a calculation, if that calculation hasn’t expired. Calculations expire after 90 days.`</p>`
@@ -22406,22 +17966,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TaxTransaction.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TaxTransaction.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a reversal transaction
 ///
 /// `<p>`Partially or fully reverses a previously created `<code>`Transaction`</code>`.`</p>`
@@ -22452,22 +18002,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TaxTransaction.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TaxTransaction.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a transaction
 ///
 /// `<p>`Retrieves a Tax `<code>`Transaction`</code>` object.`</p>`
@@ -22495,22 +18035,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TaxTransaction.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TaxTransaction.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a transaction's line items
 ///
 /// `<p>`Retrieves the line items of a committed standalone transaction as a collection.`</p>`
@@ -22547,22 +18077,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTaxTransactionsTransactionLineItemsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTaxTransactionsTransactionLineItemsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all tax codes
 ///
 /// `<p>`A list of `<a href="https://stripe.com/docs/tax/tax-categories">`all tax codes available`</a>` to add to Products in order to allow specific tax calculations.`</p>`
@@ -22599,22 +18119,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTaxCodesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTaxCodesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a tax code
 ///
 /// `<p>`Retrieves the details of an existing tax code. Supply the unique tax code ID and Stripe will return the corresponding tax code information.`</p>`
@@ -22642,22 +18152,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TaxCode.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TaxCode.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all tax IDs
 ///
 /// `<p>`Returns a list of tax IDs.`</p>`
@@ -22700,22 +18200,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTaxIdsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTaxIdsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a tax ID
 ///
 /// `<p>`Creates a new account or customer `<code>`tax_id`</code>` object.`</p>`
@@ -22739,22 +18229,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TaxId.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TaxId.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a tax ID
 ///
 /// `<p>`Retrieves an account or customer `<code>`tax_id`</code>` object.`</p>`
@@ -22782,22 +18262,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TaxId.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TaxId.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete a tax ID
 ///
 /// `<p>`Deletes an existing account or customer `<code>`tax_id`</code>` object.`</p>`
@@ -22815,22 +18285,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedTaxId.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedTaxId.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all tax rates
 ///
 /// `<p>`Returns a list of your tax rates. Tax rates are returned sorted by creation date, with the most recently created tax rates appearing first.`</p>`
@@ -22876,22 +18336,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTaxRatesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTaxRatesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a tax rate
 ///
 /// `<p>`Creates a new tax rate.`</p>`
@@ -22928,22 +18378,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TaxRate.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TaxRate.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a tax rate
 ///
 /// `<p>`Retrieves a tax rate with the given ID`</p>`
@@ -22971,22 +18411,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TaxRate.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TaxRate.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a tax rate
 ///
 /// `<p>`Updates an existing tax rate.`</p>`
@@ -23022,22 +18452,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TaxRate.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TaxRate.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all Configurations
 ///
 /// `<p>`Returns a list of `<code>`Configuration`</code>` objects.`</p>`
@@ -23077,22 +18497,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTerminalConfigurationsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTerminalConfigurationsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a Configuration
 ///
 /// `<p>`Creates a new `<code>`Configuration`</code>` object.`</p>`
@@ -23134,22 +18544,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TerminalConfiguration.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TerminalConfiguration.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a Configuration
 ///
 /// `<p>`Retrieves a `<code>`Configuration`</code>` object.`</p>`
@@ -23177,22 +18577,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTerminalConfigurationsConfigurationResponse.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTerminalConfigurationsConfigurationResponse.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a Configuration
 ///
 /// `<p>`Updates a new `<code>`Configuration`</code>` object.`</p>`
@@ -23234,22 +18624,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostTerminalConfigurationsConfigurationResponse.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostTerminalConfigurationsConfigurationResponse.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete a Configuration
 ///
 /// `<p>`Deletes a `<code>`Configuration`</code>` object.`</p>`
@@ -23267,22 +18647,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedTerminalConfiguration.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedTerminalConfiguration.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a Connection Token
 ///
 /// `<p>`To connect to a reader the Stripe Terminal SDK needs to retrieve a short-lived connection token from Stripe, proxied through your server. On your backend, add an endpoint that creates and returns a connection token.`</p>`
@@ -23304,22 +18674,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TerminalConnectionToken.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TerminalConnectionToken.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all Locations
 ///
 /// `<p>`Returns a list of `<code>`Location`</code>` objects.`</p>`
@@ -23356,22 +18716,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTerminalLocationsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTerminalLocationsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a Location
 ///
 /// `<p>`Creates a new `<code>`Location`</code>` object.
@@ -23410,22 +18760,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TerminalLocation.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TerminalLocation.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a Location
 ///
 /// `<p>`Retrieves a `<code>`Location`</code>` object.`</p>`
@@ -23453,22 +18793,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTerminalLocationsLocationResponse.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTerminalLocationsLocationResponse.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a Location
 ///
 /// `<p>`Updates a `<code>`Location`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
@@ -23506,22 +18836,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostTerminalLocationsLocationResponse.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostTerminalLocationsLocationResponse.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete a Location
 ///
 /// `<p>`Deletes a `<code>`Location`</code>` object.`</p>`
@@ -23539,22 +18859,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedTerminalLocation.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedTerminalLocation.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create an Onboarding Link
 ///
 /// `<p>`Creates a new `<code>`OnboardingLink`</code>` object that contains a redirect_url used for onboarding onto Tap to Pay on iPhone.`</p>`
@@ -23578,22 +18888,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TerminalOnboardingLink.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TerminalOnboardingLink.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all Readers
 ///
 /// `<p>`Returns a list of `<code>`Reader`</code>` objects.`</p>`
@@ -23642,22 +18942,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTerminalReadersResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTerminalReadersResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a Reader
 ///
 /// `<p>`Creates a new `<code>`Reader`</code>` object.`</p>`
@@ -23684,22 +18974,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TerminalReader.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TerminalReader.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a Reader
 ///
 /// `<p>`Retrieves a `<code>`Reader`</code>` object.`</p>`
@@ -23727,22 +19007,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTerminalReadersReaderResponse.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTerminalReadersReaderResponse.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a Reader
 ///
 /// `<p>`Updates a `<code>`Reader`</code>` object by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
@@ -23766,22 +19036,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostTerminalReadersReaderResponse.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostTerminalReadersReaderResponse.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete a Reader
 ///
 /// `<p>`Deletes a `<code>`Reader`</code>` object.`</p>`
@@ -23799,22 +19059,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedTerminalReader.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedTerminalReader.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Cancel the current reader action
 ///
 /// `<p>`Cancels the current reader action. See `<a href="/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven#programmatic-cancellation">`Programmatic Cancellation`</a>` for more details.`</p>`
@@ -23834,22 +19084,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TerminalReader.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TerminalReader.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Collect inputs using a Reader
 ///
 /// `<p>`Initiates an `<a href="/docs/terminal/features/collect-inputs">`input collection flow`</a>` on a Reader to display input forms and collect information from your customers.`</p>`
@@ -23872,22 +19112,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TerminalReader.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TerminalReader.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Hand off a PaymentIntent to a Reader and collect card details
 ///
 /// `<p>`Initiates a payment flow on a Reader and updates the PaymentIntent with card details before manual confirmation. See `<a href="/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven&process=inspect#collect-a-paymentmethod">`Collecting a Payment method`</a>` for more details.`</p>`
@@ -23910,22 +19140,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TerminalReader.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TerminalReader.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Confirm a PaymentIntent on the Reader
 ///
 /// `<p>`Finalizes a payment on a Reader. See `<a href="/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven&process=inspect#confirm-the-paymentintent">`Confirming a Payment`</a>` for more details.`</p>`
@@ -23948,22 +19168,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TerminalReader.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TerminalReader.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Hand-off a PaymentIntent to a Reader
 ///
 /// `<p>`Initiates a payment flow on a Reader. See `<a href="/docs/terminal/payments/collect-card-payment?terminal-sdk-platform=server-driven&process=immediately#process-payment">`process the payment`</a>` for more details.`</p>`
@@ -23986,22 +19196,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TerminalReader.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TerminalReader.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Hand-off a SetupIntent to a Reader
 ///
 /// `<p>`Initiates a SetupIntent flow on a Reader. See `<a href="/docs/terminal/features/saving-payment-details/save-directly">`Save directly without charging`</a>` for more details.`</p>`
@@ -24025,22 +19225,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TerminalReader.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TerminalReader.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Refund a Charge or a PaymentIntent in-person
 ///
 /// `<p>`Initiates an in-person refund on a Reader. See `<a href="/docs/terminal/payments/regional?integration-country=CA#refund-an-interac-payment">`Refund an Interac Payment`</a>` for more details.`</p>`
@@ -24074,22 +19264,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TerminalReader.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TerminalReader.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Set reader display
 ///
 /// `<p>`Sets the reader display to show `<a href="/docs/terminal/features/display">`cart details`</a>`.`</p>`
@@ -24112,22 +19292,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TerminalReader.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TerminalReader.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a refund using a Terminal-supported device.
 ///
 /// `<p>`Internal endpoint for terminal use to create a refund for a card_present charge.
@@ -24164,22 +19334,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TerminalRefund.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TerminalRefund.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a test Confirmation Token
 ///
 /// `<p>`Creates a test mode Confirmation Token server side for your integration tests.`</p>`
@@ -24211,22 +19371,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ConfirmationToken.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ConfirmationToken.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Fund a test mode cash balance
 ///
 /// `<p>`Create an incoming testmode bank transfer`</p>`
@@ -24250,22 +19400,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CustomerCashBalanceTransaction.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CustomerCashBalanceTransaction.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a test-mode authorization
 ///
 /// `<p>`Create a test-mode authorization.`</p>`
@@ -24316,22 +19456,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingAuthorization.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingAuthorization.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Capture a test-mode authorization
 ///
 /// `<p>`Capture a test-mode authorization.`</p>`
@@ -24357,22 +19487,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingAuthorization.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingAuthorization.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Expire a test-mode authorization
 ///
 /// `<p>`Expire a test-mode Authorization.`</p>`
@@ -24392,22 +19512,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingAuthorization.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingAuthorization.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Finalize a test-mode authorization's amount
 ///
 /// `<p>`Finalize the amount on an Authorization prior to capture, when the initial authorization was for an estimated amount.`</p>`
@@ -24432,22 +19542,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingAuthorization.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingAuthorization.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Respond to fraud challenge
 ///
 /// `<p>`Respond to a fraud challenge on a testmode Issuing authorization, simulating either a confirmation of fraud or a correction of legitimacy.`</p>`
@@ -24468,22 +19568,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingAuthorization.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingAuthorization.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Increment a test-mode authorization
 ///
 /// `<p>`Increment a test-mode Authorization.`</p>`
@@ -24506,22 +19596,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingAuthorization.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingAuthorization.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Reverse a test-mode authorization
 ///
 /// `<p>`Reverse a test-mode Authorization.`</p>`
@@ -24543,22 +19623,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingAuthorization.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingAuthorization.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Deliver a testmode card
 ///
 /// `<p>`Updates the shipping status of the specified Issuing `<code>`Card`</code>` object to `<code>`delivered`</code>`.`</p>`
@@ -24578,22 +19648,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingCard.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingCard.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Fail a testmode card
 ///
 /// `<p>`Updates the shipping status of the specified Issuing `<code>`Card`</code>` object to `<code>`failure`</code>`.`</p>`
@@ -24613,22 +19673,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingCard.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingCard.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Return a testmode card
 ///
 /// `<p>`Updates the shipping status of the specified Issuing `<code>`Card`</code>` object to `<code>`returned`</code>`.`</p>`
@@ -24648,22 +19698,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingCard.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingCard.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Ship a testmode card
 ///
 /// `<p>`Updates the shipping status of the specified Issuing `<code>`Card`</code>` object to `<code>`shipped`</code>`.`</p>`
@@ -24683,22 +19723,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingCard.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingCard.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Submit a testmode card
 ///
 /// `<p>`Updates the shipping status of the specified Issuing `<code>`Card`</code>` object to `<code>`submitted`</code>`. This method requires Stripe Version ‘2024-09-30.acacia’ or later.`</p>`
@@ -24718,22 +19748,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingCard.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingCard.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Activate a testmode personalization design
 ///
 /// `<p>`Updates the `<code>`status`</code>` of the specified testmode personalization design object to `<code>`active`</code>`.`</p>`
@@ -24753,22 +19773,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingPersonalizationDesign.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingPersonalizationDesign.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Deactivate a testmode personalization design
 ///
 /// `<p>`Updates the `<code>`status`</code>` of the specified testmode personalization design object to `<code>`inactive`</code>`.`</p>`
@@ -24788,22 +19798,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingPersonalizationDesign.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingPersonalizationDesign.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Reject a testmode personalization design
 ///
 /// `<p>`Updates the `<code>`status`</code>` of the specified testmode personalization design object to `<code>`rejected`</code>`.`</p>`
@@ -24824,22 +19824,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingPersonalizationDesign.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingPersonalizationDesign.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a test-mode settlement
 ///
 /// `<p>`Allows the user to create an Issuing settlement.`</p>`
@@ -24873,22 +19863,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingSettlement.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingSettlement.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Complete a test-mode settlement
 ///
 /// `<p>`Allows the user to mark an Issuing settlement as complete.`</p>`
@@ -24908,22 +19888,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingSettlement.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingSettlement.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a test-mode force capture
 ///
 /// `<p>`Allows the user to capture an arbitrary amount, also known as a forced capture.`</p>`
@@ -24951,22 +19921,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingTransaction.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingTransaction.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a test-mode unlinked refund
 ///
 /// `<p>`Allows the user to refund an arbitrary amount, also known as a unlinked refund.`</p>`
@@ -24994,22 +19954,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingTransaction.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingTransaction.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Refund a test-mode transaction
 ///
 /// `<p>`Refund a test-mode Transaction.`</p>`
@@ -25031,22 +19981,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return IssuingTransaction.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  IssuingTransaction.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Expire a pending refund.
 ///
 /// `<p>`Expire a refund with a status of `<code>`requires_action`</code>`.`</p>`
@@ -25066,22 +20006,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Refund.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Refund.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Simulate presenting a payment method
 ///
 /// `<p>`Presents a payment method on a simulated reader. Can be used to simulate accepting a payment, saving a card or refunding a transaction.`</p>`
@@ -25111,22 +20041,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TerminalReader.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TerminalReader.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Simulate a successful input collection
 ///
 /// `<p>`Use this endpoint to trigger a successful input collection on a simulated reader.`</p>`
@@ -25148,22 +20068,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TerminalReader.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TerminalReader.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Simulate an input collection timeout
 ///
 /// `<p>`Use this endpoint to complete an input collection with a timeout error on a simulated reader.`</p>`
@@ -25183,22 +20093,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TerminalReader.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TerminalReader.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all test clocks
 ///
 /// `<p>`Returns a list of your test clocks.`</p>`
@@ -25235,22 +20135,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTestHelpersTestClocksResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTestHelpersTestClocksResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a test clock
 ///
 /// `<p>`Creates a new test clock that can be attached to new customers and quotes.`</p>`
@@ -25273,22 +20163,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TestHelpersTestClock.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TestHelpersTestClock.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a test clock
 ///
 /// `<p>`Retrieves a test clock.`</p>`
@@ -25316,22 +20196,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TestHelpersTestClock.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TestHelpersTestClock.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete a test clock
 ///
 /// `<p>`Deletes a test clock.`</p>`
@@ -25349,22 +20219,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedTestHelpersTestClock.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedTestHelpersTestClock.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Advance a test clock
 ///
 /// `<p>`Starts advancing a test clock to a specified time in the future. Advancement is done when status changes to `<code>`Ready`</code>`.`</p>`
@@ -25385,22 +20245,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TestHelpersTestClock.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TestHelpersTestClock.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Test mode: Fail an InboundTransfer
 ///
 /// `<p>`Transitions a test mode created InboundTransfer to the `<code>`failed`</code>` status. The InboundTransfer must already be in the `<code>`processing`</code>` state.`</p>`
@@ -25422,22 +20272,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryInboundTransfer.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryInboundTransfer.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Test mode: Return an InboundTransfer
 ///
 /// `<p>`Marks the test mode InboundTransfer object as returned and links the InboundTransfer to a ReceivedDebit. The InboundTransfer must already be in the `<code>`succeeded`</code>` state.`</p>`
@@ -25457,22 +20297,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryInboundTransfer.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryInboundTransfer.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Test mode: Succeed an InboundTransfer
 ///
 /// `<p>`Transitions a test mode created InboundTransfer to the `<code>`succeeded`</code>` status. The InboundTransfer must already be in the `<code>`processing`</code>` state.`</p>`
@@ -25492,22 +20322,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryInboundTransfer.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryInboundTransfer.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Test mode: Update an OutboundPayment
 ///
 /// `<p>`Updates a test mode created OutboundPayment with tracking details. The OutboundPayment must not be cancelable, and cannot be in the `<code>`canceled`</code>` or `<code>`failed`</code>` states.`</p>`
@@ -25528,22 +20348,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryOutboundPayment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryOutboundPayment.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Test mode: Fail an OutboundPayment
 ///
 /// `<p>`Transitions a test mode created OutboundPayment to the `<code>`failed`</code>` status. The OutboundPayment must already be in the `<code>`processing`</code>` state.`</p>`
@@ -25563,22 +20373,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryOutboundPayment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryOutboundPayment.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Test mode: Post an OutboundPayment
 ///
 /// `<p>`Transitions a test mode created OutboundPayment to the `<code>`posted`</code>` status. The OutboundPayment must already be in the `<code>`processing`</code>` state.`</p>`
@@ -25598,22 +20398,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryOutboundPayment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryOutboundPayment.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Test mode: Return an OutboundPayment
 ///
 /// `<p>`Transitions a test mode created OutboundPayment to the `<code>`returned`</code>` status. The OutboundPayment must already be in the `<code>`processing`</code>` state.`</p>`
@@ -25635,22 +20425,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryOutboundPayment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryOutboundPayment.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Test mode: Update an OutboundTransfer
 ///
 /// `<p>`Updates a test mode created OutboundTransfer with tracking details. The OutboundTransfer must not be cancelable, and cannot be in the `<code>`canceled`</code>` or `<code>`failed`</code>` states.`</p>`
@@ -25671,22 +20451,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryOutboundTransfer.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryOutboundTransfer.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Test mode: Fail an OutboundTransfer
 ///
 /// `<p>`Transitions a test mode created OutboundTransfer to the `<code>`failed`</code>` status. The OutboundTransfer must already be in the `<code>`processing`</code>` state.`</p>`
@@ -25706,22 +20476,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryOutboundTransfer.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryOutboundTransfer.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Test mode: Post an OutboundTransfer
 ///
 /// `<p>`Transitions a test mode created OutboundTransfer to the `<code>`posted`</code>` status. The OutboundTransfer must already be in the `<code>`processing`</code>` state.`</p>`
@@ -25741,22 +20501,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryOutboundTransfer.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryOutboundTransfer.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Test mode: Return an OutboundTransfer
 ///
 /// `<p>`Transitions a test mode created OutboundTransfer to the `<code>`returned`</code>` status. The OutboundTransfer must already be in the `<code>`processing`</code>` state.`</p>`
@@ -25778,22 +20528,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryOutboundTransfer.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryOutboundTransfer.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Test mode: Create a ReceivedCredit
 ///
 /// `<p>`Use this endpoint to simulate a test mode ReceivedCredit initiated by a third party. In live mode, you can’t directly create ReceivedCredits initiated by third parties.`</p>`
@@ -25821,22 +20561,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryReceivedCredit.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryReceivedCredit.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Test mode: Create a ReceivedDebit
 ///
 /// `<p>`Use this endpoint to simulate a test mode ReceivedDebit initiated by a third party. In live mode, you can’t directly create ReceivedDebits initiated by third parties.`</p>`
@@ -25864,22 +20594,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryReceivedDebit.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryReceivedDebit.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a CVC update token
 ///
 /// `<p>`Creates a single-use token that represents a bank account’s details.
@@ -25914,22 +20634,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Token.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Token.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a token
 ///
 /// `<p>`Retrieves the token with the given ID.`</p>`
@@ -25957,22 +20667,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Token.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Token.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all top-ups
 ///
 /// `<p>`Returns a list of top-ups.`</p>`
@@ -26018,22 +20718,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTopupsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTopupsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a top-up
 ///
 /// `<p>`Top up the balance of an account`</p>`
@@ -26065,22 +20755,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Topup.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Topup.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a top-up
 ///
 /// `<p>`Retrieves the details of a top-up that has previously been created. Supply the unique top-up ID that was returned from your previous request, and Stripe will return the corresponding top-up information.`</p>`
@@ -26108,22 +20788,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Topup.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Topup.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a top-up
 ///
 /// `<p>`Updates the metadata of a top-up. Other top-up details are not editable by design.`</p>`
@@ -26147,22 +20817,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Topup.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Topup.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Cancel a top-up
 ///
 /// `<p>`Cancels a top-up. Only pending top-ups can be canceled.`</p>`
@@ -26182,22 +20842,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Topup.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Topup.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all transfers
 ///
 /// `<p>`Returns a list of existing transfers sent to connected accounts. The transfers are returned in sorted order, with the most recently created transfers appearing first.`</p>`
@@ -26243,22 +20893,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTransfersResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTransfersResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a transfer
 ///
 /// `<p>`To send funds from your Stripe account to a connected account, you create a new transfer object. Your `<a href="#balance">`Stripe balance`</a>` must be able to cover the transfer amount, or you’ll receive an “Insufficient Funds” error.`</p>`
@@ -26292,22 +20932,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Transfer.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Transfer.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all reversals
 ///
 /// `<p>`You can see a list of the reversals belonging to a specific transfer. Note that the 10 most recent reversals are always available by default on the transfer object. If you need more than those 10, you can use this API method and the `<code>`limit`</code>` and `<code>`starting_after`</code>` parameters to page through additional reversals.`</p>`
@@ -26344,22 +20974,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTransfersIdReversalsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTransfersIdReversalsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a transfer reversal
 ///
 /// `<p>`When you create a new reversal, you must specify a transfer to create it on.`</p>`
@@ -26391,22 +21011,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TransferReversal.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TransferReversal.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a transfer
 ///
 /// `<p>`Retrieves the details of an existing transfer. Supply the unique transfer ID from either a transfer creation request or the transfer list, and Stripe will return the corresponding transfer information.`</p>`
@@ -26434,22 +21044,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Transfer.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Transfer.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a transfer
 ///
 /// `<p>`Updates the specified transfer by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
@@ -26475,22 +21075,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Transfer.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Transfer.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a reversal
 ///
 /// `<p>`By default, you can see the 10 most recent reversals stored directly on the transfer object, but you can also retrieve details about a specific reversal stored on the transfer.`</p>`
@@ -26518,22 +21108,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TransferReversal.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TransferReversal.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a reversal
 ///
 /// `<p>`Updates the specified reversal by setting the values of the parameters passed. Any parameters not provided will be left unchanged.`</p>`
@@ -26557,22 +21137,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TransferReversal.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TransferReversal.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all CreditReversals
 ///
 /// `<p>`Returns a list of CreditReversals.`</p>`
@@ -26616,22 +21186,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTreasuryCreditReversalsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTreasuryCreditReversalsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a CreditReversal
 ///
 /// `<p>`Reverses a ReceivedCredit and creates a CreditReversal object.`</p>`
@@ -26654,22 +21214,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryCreditReversal.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryCreditReversal.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a CreditReversal
 ///
 /// `<p>`Retrieves the details of an existing CreditReversal by passing the unique CreditReversal ID from either the CreditReversal creation request or CreditReversal list`</p>`
@@ -26697,22 +21247,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryCreditReversal.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryCreditReversal.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all DebitReversals
 ///
 /// `<p>`Returns a list of DebitReversals.`</p>`
@@ -26759,22 +21299,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTreasuryDebitReversalsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTreasuryDebitReversalsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a DebitReversal
 ///
 /// `<p>`Reverses a ReceivedDebit and creates a DebitReversal object.`</p>`
@@ -26797,22 +21327,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryDebitReversal.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryDebitReversal.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a DebitReversal
 ///
 /// `<p>`Retrieves a DebitReversal object.`</p>`
@@ -26840,22 +21360,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryDebitReversal.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryDebitReversal.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all FinancialAccounts
 ///
 /// `<p>`Returns a list of FinancialAccounts.`</p>`
@@ -26898,22 +21408,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTreasuryFinancialAccountsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTreasuryFinancialAccountsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a FinancialAccount
 ///
 /// `<p>`Creates a new FinancialAccount. Each connected account can have up to three FinancialAccounts by default.`</p>`
@@ -26942,22 +21442,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryFinancialAccount.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryFinancialAccount.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a FinancialAccount
 ///
 /// `<p>`Retrieves the details of a FinancialAccount.`</p>`
@@ -26985,22 +21475,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryFinancialAccount.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryFinancialAccount.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a FinancialAccount
 ///
 /// `<p>`Updates the details of a FinancialAccount.`</p>`
@@ -27030,22 +21510,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryFinancialAccount.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryFinancialAccount.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Close a FinancialAccount
 ///
 /// `<p>`Closes a FinancialAccount. A FinancialAccount can only be closed if it has a zero balance, has no pending InboundTransfers, and has canceled all attached Issuing cards.`</p>`
@@ -27067,22 +21537,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryFinancialAccount.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryFinancialAccount.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve FinancialAccount Features
 ///
 /// `<p>`Retrieves Features information associated with the FinancialAccount.`</p>`
@@ -27110,22 +21570,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryFinancialAccountFeatures.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryFinancialAccountFeatures.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update FinancialAccount Features
 ///
 /// `<p>`Updates the Features associated with a FinancialAccount.`</p>`
@@ -27159,22 +21609,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryFinancialAccountFeatures.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryFinancialAccountFeatures.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all InboundTransfers
 ///
 /// `<p>`Returns a list of InboundTransfers sent from the specified FinancialAccount.`</p>`
@@ -27215,22 +21655,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTreasuryInboundTransfersResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTreasuryInboundTransfersResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create an InboundTransfer
 ///
 /// `<p>`Creates an InboundTransfer.`</p>`
@@ -27260,22 +21690,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryInboundTransfer.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryInboundTransfer.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve an InboundTransfer
 ///
 /// `<p>`Retrieves the details of an existing InboundTransfer.`</p>`
@@ -27303,22 +21723,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryInboundTransfer.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryInboundTransfer.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Cancel an InboundTransfer
 ///
 /// `<p>`Cancels an InboundTransfer.`</p>`
@@ -27338,22 +21748,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryInboundTransfer.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryInboundTransfer.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all OutboundPayments
 ///
 /// `<p>`Returns a list of OutboundPayments sent from the specified FinancialAccount.`</p>`
@@ -27400,22 +21800,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTreasuryOutboundPaymentsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTreasuryOutboundPaymentsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create an OutboundPayment
 ///
 /// `<p>`Creates an OutboundPayment.`</p>`
@@ -27454,22 +21844,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryOutboundPayment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryOutboundPayment.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve an OutboundPayment
 ///
 /// `<p>`Retrieves the details of an existing OutboundPayment by passing the unique OutboundPayment ID from either the OutboundPayment creation request or OutboundPayment list.`</p>`
@@ -27497,22 +21877,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryOutboundPayment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryOutboundPayment.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Cancel an OutboundPayment
 ///
 /// `<p>`Cancel an OutboundPayment.`</p>`
@@ -27532,22 +21902,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryOutboundPayment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryOutboundPayment.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all OutboundTransfers
 ///
 /// `<p>`Returns a list of OutboundTransfers sent from the specified FinancialAccount.`</p>`
@@ -27588,22 +21948,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTreasuryOutboundTransfersResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTreasuryOutboundTransfersResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create an OutboundTransfer
 ///
 /// `<p>`Creates an OutboundTransfer.`</p>`
@@ -27638,22 +21988,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryOutboundTransfer.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryOutboundTransfer.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve an OutboundTransfer
 ///
 /// `<p>`Retrieves the details of an existing OutboundTransfer by passing the unique OutboundTransfer ID from either the OutboundTransfer creation request or OutboundTransfer list.`</p>`
@@ -27681,22 +22021,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryOutboundTransfer.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryOutboundTransfer.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Cancel an OutboundTransfer
 ///
 /// `<p>`An OutboundTransfer can be canceled if the funds have not yet been paid out.`</p>`
@@ -27716,22 +22046,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryOutboundTransfer.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryOutboundTransfer.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all ReceivedCredits
 ///
 /// `<p>`Returns a list of ReceivedCredits.`</p>`
@@ -27775,22 +22095,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTreasuryReceivedCreditsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTreasuryReceivedCreditsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a ReceivedCredit
 ///
 /// `<p>`Retrieves the details of an existing ReceivedCredit by passing the unique ReceivedCredit ID from the ReceivedCredit list.`</p>`
@@ -27818,22 +22128,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryReceivedCredit.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryReceivedCredit.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all ReceivedDebits
 ///
 /// `<p>`Returns a list of ReceivedDebits.`</p>`
@@ -27874,22 +22174,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTreasuryReceivedDebitsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTreasuryReceivedDebitsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a ReceivedDebit
 ///
 /// `<p>`Retrieves the details of an existing ReceivedDebit by passing the unique ReceivedDebit ID from the ReceivedDebit list`</p>`
@@ -27917,22 +22207,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryReceivedDebit.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryReceivedDebit.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all TransactionEntries
 ///
 /// `<p>`Retrieves a list of TransactionEntry objects.`</p>`
@@ -27982,22 +22262,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTreasuryTransactionEntriesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTreasuryTransactionEntriesResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a TransactionEntry
 ///
 /// `<p>`Retrieves a TransactionEntry object.`</p>`
@@ -28025,22 +22295,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryTransactionEntry.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryTransactionEntry.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all Transactions
 ///
 /// `<p>`Retrieves a list of Transaction objects.`</p>`
@@ -28090,22 +22350,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTreasuryTransactionsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTreasuryTransactionsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a Transaction
 ///
 /// `<p>`Retrieves the details of an existing Transaction.`</p>`
@@ -28133,22 +22383,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TreasuryTransaction.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TreasuryTransaction.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// List all webhook endpoints
 ///
 /// `<p>`Returns a list of your webhook endpoints.`</p>`
@@ -28185,22 +22425,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetWebhookEndpointsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetWebhookEndpointsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create a webhook endpoint
 ///
 /// `<p>`A webhook endpoint must have a `<code>`url`</code>` and a list of `<code>`enabled_events`</code>`. You may optionally specify the Boolean `<code>`connect`</code>` parameter. If set to true, then a Connect webhook endpoint that notifies the specified `<code>`url`</code>` about events from all connected accounts is created; otherwise an account webhook endpoint that notifies the specified `<code>`url`</code>` only about events from your account is created. You can also create webhook endpoints in the `<a href="https://dashboard.stripe.com/account/webhooks">`webhooks settings`</a>` section of the Dashboard.`</p>`
@@ -28230,22 +22460,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return WebhookEndpoint.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  WebhookEndpoint.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Retrieve a webhook endpoint
 ///
 /// `<p>`Retrieves the webhook endpoint with the given ID.`</p>`
@@ -28273,22 +22493,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return WebhookEndpoint.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  WebhookEndpoint.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update a webhook endpoint
 ///
 /// `<p>`Updates the webhook endpoint. You may edit the `<code>`url`</code>`, the list of `<code>`enabled_events`</code>`, and the status of your endpoint.`</p>`
@@ -28318,22 +22528,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return WebhookEndpoint.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  WebhookEndpoint.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete a webhook endpoint
 ///
 /// `<p>`You can also delete webhook endpoints via the `<a href="https://dashboard.stripe.com/account/webhooks">`webhook endpoint management`</a>` page of the Stripe dashboard.`</p>`
@@ -28351,20 +22551,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedWebhookEndpoint.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedWebhookEndpoint.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 }

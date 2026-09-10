@@ -7,14 +7,10 @@ sealed class MigrationsStartForOrgError {const MigrationsStartForOrgError();
 static MigrationsStartForOrgError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return MigrationsStartForOrgError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  MigrationsStartForOrgError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return MigrationsStartForOrgError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return MigrationsStartForOrgErrorUnknown(response);
-}
-}
+return  MigrationsStartForOrgError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  MigrationsStartForOrgErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class MigrationsStartForOrgError404 extends MigrationsStartForOrgError {const MigrationsStartForOrgError404(this.data);

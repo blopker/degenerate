@@ -7,14 +7,10 @@ sealed class UpdatePortalsError {const UpdatePortalsError();
 static UpdatePortalsError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return UpdatePortalsError400(UpdatePortalsResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  UpdatePortalsError400(UpdatePortalsResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return UpdatePortalsError404(UpdatePortalsResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return UpdatePortalsErrorUnknown(response);
-}
-}
+return  UpdatePortalsError404(UpdatePortalsResponse404.fromJson(json as Map<String, dynamic>));default:
+return  UpdatePortalsErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class UpdatePortalsError400 extends UpdatePortalsError {const UpdatePortalsError400(this.data);

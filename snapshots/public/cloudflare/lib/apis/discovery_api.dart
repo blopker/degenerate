@@ -22,24 +22,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return ShieldSchemaResponseDiscoveryResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  ShieldSchemaResponseDiscoveryResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapiResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  DiscoveryRetrieveDiscoveredOperationsOnAZoneAsOpenapiResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Retrieve discovered operations on a zone
 ///
 /// Retrieve the most up to date view of discovered operations
@@ -93,24 +82,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => ShieldDiscoveryOperation.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => ShieldDiscoveryOperation.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Patch discovered operations
 ///
 /// Update the `state` on one or more discovered operations
@@ -127,24 +105,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, DiscoveryPatchMultipleRequestEntry.fromJson(v as Map<String, dynamic>)));
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, DiscoveryPatchMultipleRequestEntry.fromJson(v as Map<String, dynamic>)));}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Patch discovered operation
 ///
 /// Update the `state` on a discovered operation
@@ -161,22 +128,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return ShieldPatchDiscoveryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  ShieldPatchDiscoveryResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure7.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

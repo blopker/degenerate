@@ -7,14 +7,10 @@ sealed class TelemetryKeysListError {const TelemetryKeysListError();
 static TelemetryKeysListError parse(ApiResponse response) {switch (response.statusCode) {
 case 401:
 final json = jsonDecode(response.body);
-return TelemetryKeysListError401(TelemetryKeysListResponse401.fromJson(json as Map<String, dynamic>));
-case 500:
+return  TelemetryKeysListError401(TelemetryKeysListResponse401.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return TelemetryKeysListError500(TelemetryKeysListResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return TelemetryKeysListErrorUnknown(response);
-}
-}
+return  TelemetryKeysListError500(TelemetryKeysListResponse500.fromJson(json as Map<String, dynamic>));default:
+return  TelemetryKeysListErrorUnknown(response); }}
 }
 /// Response for 401 (application/json).
 final class TelemetryKeysListError401 extends TelemetryKeysListError {const TelemetryKeysListError401(this.data);

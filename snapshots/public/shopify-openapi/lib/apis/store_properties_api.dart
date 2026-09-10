@@ -33,11 +33,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   As of version 2020-10, the tax field is deprecated.
 /// 
@@ -57,11 +54,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of countries.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#count-2020-01
@@ -76,11 +70,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific county.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#show-2020-01
@@ -103,11 +94,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   As of version 2020-10, the tax field is deprecated.
 /// 
@@ -127,11 +115,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a country.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#destroy-2020-01
@@ -146,11 +131,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of countries.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#index-2020-04
@@ -176,11 +158,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   As of version 2020-10, the tax field is deprecated.
 /// 
@@ -200,11 +179,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of countries.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#count-2020-04
@@ -219,11 +195,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific county.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#show-2020-04
@@ -246,11 +219,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   As of version 2020-10, the tax field is deprecated.
 /// 
@@ -270,11 +240,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a country.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#destroy-2020-04
@@ -289,11 +256,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of countries.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#index-2020-07
@@ -319,11 +283,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   As of version 2020-10, the tax field is deprecated.
 /// 
@@ -343,11 +304,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of countries.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#count-2020-07
@@ -362,11 +320,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific county.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#show-2020-07
@@ -389,11 +344,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   As of version 2020-10, the tax field is deprecated.
 /// 
@@ -413,11 +365,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a country.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#destroy-2020-07
@@ -432,11 +381,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of countries.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#index-2020-10
@@ -462,11 +408,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   As of version 2020-10, the tax field is deprecated.
 /// 
@@ -486,11 +429,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of countries.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#count-2020-10
@@ -505,11 +445,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific county.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#show-2020-10
@@ -532,11 +469,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   As of version 2020-10, the tax field is deprecated.
 /// 
@@ -556,11 +490,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a country.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#destroy-2020-10
@@ -575,11 +506,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of countries.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#index-2021-01
@@ -605,11 +533,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   As of version 2020-10, the tax field is deprecated.
 /// 
@@ -629,11 +554,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of countries.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#count-2021-01
@@ -648,11 +570,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific county.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#show-2021-01
@@ -675,11 +594,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   As of version 2020-10, the tax field is deprecated.
 /// 
@@ -699,11 +615,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a country.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#destroy-2021-01
@@ -718,11 +631,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of countries.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#index-unstable
@@ -748,11 +658,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   As of version 2020-10, the tax field is deprecated.
 /// 
@@ -772,11 +679,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of countries.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#count-unstable
@@ -791,11 +695,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific county.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#show-unstable
@@ -818,11 +719,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   As of version 2020-10, the tax field is deprecated.
 /// 
@@ -842,11 +740,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a country.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/country#destroy-unstable
@@ -861,11 +756,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of currencies enabled on a shop
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/currency#index-2020-01
@@ -880,11 +772,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of currencies enabled on a shop
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/currency#index-2020-04
@@ -899,11 +788,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of currencies enabled on a shop
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/currency#index-2020-07
@@ -918,11 +804,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of currencies enabled on a shop
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/currency#index-2020-10
@@ -937,11 +820,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of currencies enabled on a shop
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/currency#index-2021-01
@@ -956,11 +836,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of currencies enabled on a shop
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/currency#index-unstable
@@ -975,11 +852,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of the shop's policies
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/policy#index-2020-01
@@ -994,11 +868,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of the shop's policies
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/policy#index-2020-04
@@ -1013,11 +884,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of the shop's policies
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/policy#index-2020-07
@@ -1032,11 +900,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of the shop's policies
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/policy#index-2020-10
@@ -1051,11 +916,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of the shop's policies
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/policy#index-2021-01
@@ -1070,11 +932,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of the shop's policies
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/policy#index-unstable
@@ -1089,11 +948,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of provinces
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#index-2020-01
@@ -1119,11 +975,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of provinces for a country
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#count-2020-01
@@ -1138,11 +991,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single province for a country
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#show-2020-01
@@ -1165,11 +1015,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   As of version 2020-10, the tax field is deprecated.
 /// 
@@ -1189,11 +1036,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of provinces
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#index-2020-04
@@ -1219,11 +1063,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of provinces for a country
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#count-2020-04
@@ -1238,11 +1079,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single province for a country
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#show-2020-04
@@ -1265,11 +1103,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   As of version 2020-10, the tax field is deprecated.
 /// 
@@ -1289,11 +1124,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of provinces
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#index-2020-07
@@ -1319,11 +1151,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of provinces for a country
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#count-2020-07
@@ -1338,11 +1167,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single province for a country
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#show-2020-07
@@ -1365,11 +1191,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   As of version 2020-10, the tax field is deprecated.
 /// 
@@ -1389,11 +1212,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of provinces
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#index-2020-10
@@ -1419,11 +1239,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of provinces for a country
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#count-2020-10
@@ -1438,11 +1255,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single province for a country
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#show-2020-10
@@ -1465,11 +1279,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   As of version 2020-10, the tax field is deprecated.
 /// 
@@ -1489,11 +1300,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of provinces
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#index-2021-01
@@ -1519,11 +1327,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of provinces for a country
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#count-2021-01
@@ -1538,11 +1343,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single province for a country
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#show-2021-01
@@ -1565,11 +1367,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   As of version 2020-10, the tax field is deprecated.
 /// 
@@ -1589,11 +1388,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of provinces
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#index-unstable
@@ -1619,11 +1415,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of provinces for a country
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#count-unstable
@@ -1638,11 +1431,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single province for a country
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/province#show-unstable
@@ -1665,11 +1455,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   As of version 2020-10, the tax field is deprecated.
 /// 
@@ -1689,11 +1476,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a list of all shipping zones
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/shippingzone#index-2020-01
@@ -1716,11 +1500,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a list of all shipping zones
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/shippingzone#index-2020-04
@@ -1743,11 +1524,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a list of all shipping zones
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/shippingzone#index-2020-07
@@ -1770,11 +1548,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a list of all shipping zones
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/shippingzone#index-2020-10
@@ -1797,11 +1572,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a list of all shipping zones
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/shippingzone#index-2021-01
@@ -1824,11 +1596,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a list of all shipping zones
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/shippingzone#index-unstable
@@ -1851,11 +1620,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves the shop's configuration
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/shop#show-2020-01
@@ -1878,11 +1644,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves the shop's configuration
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/shop#show-2020-04
@@ -1905,11 +1668,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves the shop's configuration
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/shop#show-2020-07
@@ -1932,11 +1692,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves the shop's configuration
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/shop#show-2020-10
@@ -1959,11 +1716,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves the shop's configuration
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/shop#show-2021-01
@@ -1986,11 +1740,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves the shop's configuration
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/store-properties/shop#show-unstable
@@ -2013,9 +1764,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

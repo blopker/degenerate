@@ -22,24 +22,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return ZarazZarazConfigReturn.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  ZarazZarazConfigReturn.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure83.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure83.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update Zaraz configuration
 ///
 /// Updates Zaraz configuration for a zone.
@@ -56,24 +45,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return ZarazZarazConfigReturn.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  ZarazZarazConfigReturn.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure83.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure83.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get default Zaraz configuration
 ///
 /// Gets default Zaraz configuration for a zone.
@@ -88,24 +66,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return ZarazZarazConfigReturn.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  ZarazZarazConfigReturn.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure83.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure83.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Export Zaraz configuration
 ///
 /// Exports full current published Zaraz configuration for a zone, secret variables included.
@@ -120,24 +87,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ZarazZarazConfigReturn.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ZarazZarazConfigReturn.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure83.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure83.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List Zaraz historical configuration records
 ///
 /// Lists a history of published Zaraz configuration records for a zone.
@@ -169,24 +125,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => ZarazZarazHistoryResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => ZarazZarazHistoryResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure83.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure83.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Restore Zaraz historical configuration by ID
 ///
 /// Restores a historical published Zaraz configuration by ID for a zone.
@@ -203,24 +148,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return ZarazZarazConfigReturn.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  ZarazZarazConfigReturn.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure83.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure83.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get Zaraz historical configurations by ID(s)
 ///
 /// Gets a history of published Zaraz configurations by ID(s) for a zone.
@@ -241,24 +175,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v == null ? null : ZarazZarazConfigHistoryResponseResultValue.fromJson(v as Map<String, dynamic>)));
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v == null ? null : ZarazZarazConfigHistoryResponseResultValue.fromJson(v as Map<String, dynamic>)));}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure83.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure83.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Publish Zaraz preview configuration
 ///
 /// Publish current Zaraz preview configuration for a zone.
@@ -275,24 +198,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] as String;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] as String;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure83.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure83.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get Zaraz workflow
 ///
 /// Gets Zaraz workflow for a zone.
@@ -307,24 +219,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return ZarazZarazWorkflow.fromJson(json['result'] as String);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  ZarazZarazWorkflow.fromJson(json['result'] as String);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure83.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure83.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update Zaraz workflow
 ///
 /// Updates Zaraz workflow for a zone.
@@ -341,22 +242,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return ZarazZarazWorkflow.fromJson(json['result'] as String);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  ZarazZarazWorkflow.fromJson(json['result'] as String);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure83.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure83.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

@@ -47,24 +47,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? DigitalExperienceMonitoringGetCommandsResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? DigitalExperienceMonitoringGetCommandsResponse.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure24.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure24.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create account commands
 ///
 /// Initiate commands for up to 10 devices per account
@@ -81,24 +70,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? DigitalExperienceMonitoringPostCommandsResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? DigitalExperienceMonitoringPostCommandsResponse.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure24.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure24.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Download command output file
 ///
 /// Downloads artifacts for an executed command. Bulk downloads are not supported
@@ -113,23 +91,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-return Uint8List.fromList(response.bodyBytes);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {return  Uint8List.fromList(response.bodyBytes);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure24.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure24.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List devices eligible for remote captures
 ///
 /// List devices with WARP client support for remote captures which have been connected in the last 1 hour.
@@ -154,24 +121,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? DigitalExperienceMonitoringCommandsDevicesResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? DigitalExperienceMonitoringCommandsDevicesResponse.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure24.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure24.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Returns account commands usage, quota, and reset time
 ///
 /// Retrieves the current quota usage and limits for device commands within a specific account, including the time when the quota will reset
@@ -186,22 +142,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? DigitalExperienceMonitoringGetCommandsQuotaResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? DigitalExperienceMonitoringGetCommandsQuotaResponse.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure24.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure24.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

@@ -7,13 +7,9 @@ sealed class CodespacesCreateOrUpdateSecretForAuthenticatedUserSuccess {const Co
 static CodespacesCreateOrUpdateSecretForAuthenticatedUserSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 201:
 final json = jsonDecode(response.body);
-return CodespacesCreateOrUpdateSecretForAuthenticatedUserSuccess201(EmptyObject.fromJson(json as Map<String, dynamic>));
-case 204:
-return const CodespacesCreateOrUpdateSecretForAuthenticatedUserSuccess204();
-default:
-return CodespacesCreateOrUpdateSecretForAuthenticatedUserSuccessUnknown(response);
-}
-}
+return  CodespacesCreateOrUpdateSecretForAuthenticatedUserSuccess201(EmptyObject.fromJson(json as Map<String, dynamic>));case 204:
+return  const CodespacesCreateOrUpdateSecretForAuthenticatedUserSuccess204();default:
+return  CodespacesCreateOrUpdateSecretForAuthenticatedUserSuccessUnknown(response); }}
 }
 /// Response for 201 (application/json).
 final class CodespacesCreateOrUpdateSecretForAuthenticatedUserSuccess201 extends CodespacesCreateOrUpdateSecretForAuthenticatedUserSuccess {const CodespacesCreateOrUpdateSecretForAuthenticatedUserSuccess201(this.data);

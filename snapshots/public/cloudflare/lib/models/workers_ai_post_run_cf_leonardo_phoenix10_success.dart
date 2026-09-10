@@ -7,21 +7,13 @@ sealed class WorkersAiPostRunCfLeonardoPhoenix10Success {const WorkersAiPostRunC
 static WorkersAiPostRunCfLeonardoPhoenix10Success parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfLeonardoPhoenix10Success200ApplicationJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'image/jpeg')) {
-final value = (() { return Uint8List.fromList(response.bodyBytes); })();
-return WorkersAiPostRunCfLeonardoPhoenix10Success200ImageJpeg(value);
-}
+return  WorkersAiPostRunCfLeonardoPhoenix10Success200ApplicationJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'image/jpeg', )) {
+return  WorkersAiPostRunCfLeonardoPhoenix10Success200ImageJpeg(Uint8List.fromList(response.bodyBytes)); } else {
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfLeonardoPhoenix10Success200ApplicationJson(json as Map<String, dynamic>);
-
-default:
-return WorkersAiPostRunCfLeonardoPhoenix10SuccessUnknown(response);
-}
-}
+return  WorkersAiPostRunCfLeonardoPhoenix10Success200ApplicationJson(json as Map<String, dynamic>); }default:
+return  WorkersAiPostRunCfLeonardoPhoenix10SuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class WorkersAiPostRunCfLeonardoPhoenix10Success200ApplicationJson extends WorkersAiPostRunCfLeonardoPhoenix10Success {const WorkersAiPostRunCfLeonardoPhoenix10Success200ApplicationJson(this.data);

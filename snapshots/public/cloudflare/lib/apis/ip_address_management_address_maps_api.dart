@@ -22,24 +22,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>?)?.map((e) => AddressingAddressMaps.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>?)?.map((e) => AddressingAddressMaps.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return IpAddressManagementAddressMapsListAddressMapsResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  IpAddressManagementAddressMapsListAddressMapsResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create Address Map
 ///
 /// Create a new address map under the account.
@@ -56,24 +45,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? AddressingFullResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? AddressingFullResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return IpAddressManagementAddressMapsCreateAddressMapResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  IpAddressManagementAddressMapsCreateAddressMapResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Address Map Details
 ///
 /// Show a particular address map owned by the account.
@@ -88,24 +66,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? AddressingFullResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? AddressingFullResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return IpAddressManagementAddressMapsAddressMapDetailsResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  IpAddressManagementAddressMapsAddressMapDetailsResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update Address Map
 ///
 /// Modify properties of an address map owned by the account.
@@ -122,24 +89,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? AddressingAddressMaps.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? AddressingAddressMaps.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return IpAddressManagementAddressMapsUpdateAddressMapResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  IpAddressManagementAddressMapsUpdateAddressMapResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete Address Map
 ///
 /// Delete a particular address map owned by the account. An Address Map must be disabled before it can be deleted.
@@ -154,24 +110,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ResponseCollection4.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ResponseCollection4.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return IpAddressManagementAddressMapsDeleteAddressMapResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  IpAddressManagementAddressMapsDeleteAddressMapResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Add an account membership to an Address Map
 ///
 /// Add an account as a member of a particular address map.
@@ -186,24 +131,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ResponseCollection4.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ResponseCollection4.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return IpAddressManagementAddressMapsAddAnAccountMembershipToAnAddressMapResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  IpAddressManagementAddressMapsAddAnAccountMembershipToAnAddressMapResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Remove an account membership from an Address Map
 ///
 /// Remove an account as a member of a particular address map.
@@ -218,24 +152,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ResponseCollection4.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ResponseCollection4.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return IpAddressManagementAddressMapsRemoveAnAccountMembershipFromAnAddressMapResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  IpAddressManagementAddressMapsRemoveAnAccountMembershipFromAnAddressMapResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Add an IP to an Address Map
 ///
 /// Add an IP from a prefix owned by the account to a particular address map.
@@ -250,24 +173,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ResponseCollection4.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ResponseCollection4.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return IpAddressManagementAddressMapsAddAnIpToAnAddressMapResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  IpAddressManagementAddressMapsAddAnIpToAnAddressMapResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Remove an IP from an Address Map
 ///
 /// Remove an IP from a particular address map.
@@ -282,24 +194,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ResponseCollection4.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ResponseCollection4.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return IpAddressManagementAddressMapsRemoveAnIpFromAnAddressMapResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  IpAddressManagementAddressMapsRemoveAnIpFromAnAddressMapResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Add a zone membership to an Address Map
 ///
 /// Add a zone as a member of a particular address map.
@@ -314,24 +215,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ResponseCollection4.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ResponseCollection4.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return IpAddressManagementAddressMapsAddAZoneMembershipToAnAddressMapResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  IpAddressManagementAddressMapsAddAZoneMembershipToAnAddressMapResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Remove a zone membership from an Address Map
 ///
 /// Remove a zone as a member of a particular address map.
@@ -346,22 +236,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ResponseCollection4.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ResponseCollection4.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return IpAddressManagementAddressMapsRemoveAZoneMembershipFromAnAddressMapResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  IpAddressManagementAddressMapsRemoveAZoneMembershipFromAnAddressMapResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

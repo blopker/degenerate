@@ -6,20 +6,14 @@ sealed class MigrationsGetStatusForAuthenticatedUserError {const MigrationsGetSt
 /// Decodes the payload for its declared status and content type.
 static MigrationsGetStatusForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const MigrationsGetStatusForAuthenticatedUserError304();
-case 401:
+return  const MigrationsGetStatusForAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return MigrationsGetStatusForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  MigrationsGetStatusForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return MigrationsGetStatusForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  MigrationsGetStatusForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return MigrationsGetStatusForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return MigrationsGetStatusForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  MigrationsGetStatusForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  MigrationsGetStatusForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class MigrationsGetStatusForAuthenticatedUserError304 extends MigrationsGetStatusForAuthenticatedUserError {const MigrationsGetStatusForAuthenticatedUserError304();

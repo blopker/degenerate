@@ -22,24 +22,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ClassroomAssignment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ClassroomAssignment.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List accepted assignments for an assignment
 ///
 /// Lists any assignment repositories that have been created by students accepting a GitHub Classroom assignment. Accepted assignments will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
@@ -65,14 +54,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => ClassroomAcceptedAssignment.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => ClassroomAcceptedAssignment.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Get assignment grades
 ///
 /// Gets grades for a GitHub Classroom assignment. Grades will only be returned if the current user is an administrator of the GitHub Classroom for the assignment.
@@ -87,24 +71,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => ClassroomAssignmentGrade.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => ClassroomAssignmentGrade.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List classrooms
 ///
 /// Lists GitHub Classroom classrooms for the current user. Classrooms will only be returned if the current user is an administrator of one or more GitHub Classrooms.
@@ -130,14 +103,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SimpleClassroom.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SimpleClassroom.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Get a classroom
 ///
 /// Gets a GitHub Classroom classroom for the current user. Classroom will only be returned if the current user is an administrator of the GitHub Classroom.
@@ -152,24 +120,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Classroom.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Classroom.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List assignments for a classroom
 ///
 /// Lists GitHub Classroom assignments for a classroom. Assignments will only be returned if the current user is an administrator of the GitHub Classroom.
@@ -195,12 +152,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SimpleClassroomAssignment.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SimpleClassroomAssignment.fromJson(e as Map<String, dynamic>)).toList();}, );}
 }

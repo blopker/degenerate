@@ -45,14 +45,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Create an organization repository
 ///
 /// Creates a new repository in the specified organization. The authenticated user must be a member of the organization.
@@ -71,15 +66,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FullRepository.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposCreateInOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FullRepository.fromJson(json as Map<String, dynamic>);}, onError: ReposCreateInOrgError.parse, );}
 /// Get all organization repository rulesets
 ///
 /// Get all the repository rulesets for an organization.
@@ -108,24 +97,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => RepositoryRuleset.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => RepositoryRuleset.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create an organization repository ruleset
 ///
 /// Create a repository ruleset for an organization.
@@ -142,15 +120,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RepositoryRuleset.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposCreateOrgRulesetError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RepositoryRuleset.fromJson(json as Map<String, dynamic>);}, onError: ReposCreateOrgRulesetError.parse, );}
 /// List organization rule suites
 ///
 /// Lists suites of rule evaluations at the organization level.
@@ -192,24 +164,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => RuleSuites2.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => RuleSuites2.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get an organization rule suite
 ///
 /// Gets information about a suite of rule evaluations from within an organization.
@@ -225,24 +186,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RuleSuite.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RuleSuite.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get an organization repository ruleset
 ///
 /// Get a repository ruleset for an organization.
@@ -260,24 +210,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RepositoryRuleset.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RepositoryRuleset.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update an organization repository ruleset
 ///
 /// Update a ruleset for an organization.
@@ -294,15 +233,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RepositoryRuleset.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposUpdateOrgRulesetError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RepositoryRuleset.fromJson(json as Map<String, dynamic>);}, onError: ReposUpdateOrgRulesetError.parse, );}
 /// Delete an organization repository ruleset
 ///
 /// Delete a ruleset for an organization.
@@ -317,21 +250,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get a repository
 ///
 /// The `parent` and `source` objects are present when the repository is a fork. `parent` is the repository this repository was forked from, `source` is the ultimate source for the network.
@@ -350,24 +274,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FullRepository.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FullRepository.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 301 || 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update a repository
 ///
 /// **Note**: To edit a repository's topics, use the [Replace all repository topics](https://docs.github.com/rest/repos/repos#replace-all-repository-topics) endpoint.
@@ -384,15 +297,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FullRepository.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposUpdateError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FullRepository.fromJson(json as Map<String, dynamic>);}, onError: ReposUpdateError.parse, );}
 /// Delete a repository
 ///
 /// Deleting a repository requires admin access.
@@ -412,12 +319,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ReposDeleteError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ReposDeleteError.parse, );}
 /// List repository activities
 ///
 /// Lists a detailed history of changes to a repository, such as pushes, merges, force pushes, and branch changes, and associates these changes with commits and users.
@@ -464,24 +367,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Activity.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Activity.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationErrorSimple.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationErrorSimple.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create an attestation
 ///
 /// Store an artifact attestation and associate it with a repository.
@@ -502,15 +394,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ReposCreateAttestationResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposCreateAttestationError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ReposCreateAttestationResponse.fromJson(json as Map<String, dynamic>);}, onError: ReposCreateAttestationError.parse, );}
 /// List attestations
 ///
 /// List a collection of artifact attestations with a given subject digest that are associated with a repository.
@@ -546,14 +432,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ReposListAttestationsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ReposListAttestationsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get all autolinks of a repository
 ///
 /// Gets all autolinks that are configured for a repository.
@@ -570,14 +451,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Autolink.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Autolink.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Create an autolink reference for a repository
 ///
 /// Users with admin access to the repository can create an autolink.
@@ -594,24 +470,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Autolink.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Autolink.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get an autolink reference of a repository
 ///
 /// This returns a single autolink reference by ID that was configured for the given repository.
@@ -628,24 +493,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Autolink.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Autolink.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete an autolink reference from a repository
 ///
 /// This deletes a single autolink reference by ID that was configured for the given repository.
@@ -662,21 +516,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Check if Dependabot security updates are enabled for a repository
 ///
 /// Shows whether Dependabot security updates are enabled, disabled or paused for a repository. The authenticated user must have admin read access to the repository. For more information, see "[Configuring Dependabot security updates](https://docs.github.com/articles/configuring-automated-security-fixes)".
@@ -691,14 +536,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CheckAutomatedSecurityFixes.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CheckAutomatedSecurityFixes.fromJson(json as Map<String, dynamic>);}, );}
 /// Enable Dependabot security updates
 ///
 /// Enables Dependabot security updates for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring Dependabot security updates](https://docs.github.com/articles/configuring-automated-security-fixes)".
@@ -713,11 +553,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Disable Dependabot security updates
 ///
 /// Disables Dependabot security updates for a repository. The authenticated user must have admin access to the repository. For more information, see "[Configuring Dependabot security updates](https://docs.github.com/articles/configuring-automated-security-fixes)".
@@ -732,11 +569,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List branches
 ///
 /// 
@@ -765,24 +599,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => ShortBranch.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => ShortBranch.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get a branch
 ///
 /// 
@@ -797,24 +620,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BranchWithProtection.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BranchWithProtection.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 301 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get branch protection
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -829,24 +641,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BranchProtection.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BranchProtection.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update branch protection
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -871,15 +672,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ProtectedBranch.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposUpdateBranchProtectionError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ProtectedBranch.fromJson(json as Map<String, dynamic>);}, onError: ReposUpdateBranchProtectionError.parse, );}
 /// Delete branch protection
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -894,21 +689,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get admin branch protection
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -923,14 +709,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ProtectedBranchAdminEnforced.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ProtectedBranchAdminEnforced.fromJson(json as Map<String, dynamic>);}, );}
 /// Set admin branch protection
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -947,14 +728,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ProtectedBranchAdminEnforced.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ProtectedBranchAdminEnforced.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete admin branch protection
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -971,21 +747,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get pull request review protection
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1000,14 +767,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ProtectedBranchPullRequestReview.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ProtectedBranchPullRequestReview.fromJson(json as Map<String, dynamic>);}, );}
 /// Update pull request review protection
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1029,24 +791,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ProtectedBranchPullRequestReview.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ProtectedBranchPullRequestReview.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete pull request review protection
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1061,21 +812,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get commit signature protection
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1095,24 +837,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ProtectedBranchAdminEnforced.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ProtectedBranchAdminEnforced.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create commit signature protection
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1129,24 +860,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ProtectedBranchAdminEnforced.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ProtectedBranchAdminEnforced.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete commit signature protection
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1163,21 +883,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get status checks protection
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1192,24 +903,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return StatusCheckPolicy.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  StatusCheckPolicy.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update status check protection
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1228,15 +928,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return StatusCheckPolicy.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposUpdateStatusCheckProtectionError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  StatusCheckPolicy.fromJson(json as Map<String, dynamic>);}, onError: ReposUpdateStatusCheckProtectionError.parse, );}
 /// Remove status check protection
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1251,11 +945,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get all status check contexts
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1270,24 +961,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => e as String).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => e as String).toList();}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Add status check contexts
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1304,15 +984,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => e as String).toList();
-  },
-  onError: ReposAddStatusCheckContextsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => e as String).toList();}, onError: ReposAddStatusCheckContextsError.parse, );}
 /// Set status check contexts
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1329,15 +1003,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => e as String).toList();
-  },
-  onError: ReposSetStatusCheckContextsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => e as String).toList();}, onError: ReposSetStatusCheckContextsError.parse, );}
 /// Remove status check contexts
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1354,15 +1022,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => e as String).toList();
-  },
-  onError: ReposRemoveStatusCheckContextsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => e as String).toList();}, onError: ReposRemoveStatusCheckContextsError.parse, );}
 /// Get access restrictions
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1382,24 +1044,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BranchRestrictionPolicy.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BranchRestrictionPolicy.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete access restrictions
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1416,11 +1067,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get apps with access to the protected branch
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1437,24 +1085,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => e == null ? null : Integration.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => e == null ? null : Integration.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Add app access restrictions
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1473,24 +1110,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => e == null ? null : Integration.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => e == null ? null : Integration.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set app access restrictions
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1509,24 +1135,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => e == null ? null : Integration.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => e == null ? null : Integration.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Remove app access restrictions
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1545,24 +1160,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => e == null ? null : Integration.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => e == null ? null : Integration.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get teams with access to the protected branch
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1579,24 +1183,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Add team access restrictions
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1615,24 +1208,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set team access restrictions
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1651,24 +1233,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Remove team access restrictions
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1687,24 +1258,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get users with access to the protected branch
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1721,24 +1281,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Add user access restrictions
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1761,24 +1310,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set user access restrictions
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1801,24 +1339,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Remove user access restrictions
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -1841,24 +1368,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Rename a branch
 ///
 /// Renames a branch in a repository.
@@ -1882,15 +1398,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BranchWithProtection.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposRenameBranchError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BranchWithProtection.fromJson(json as Map<String, dynamic>);}, onError: ReposRenameBranchError.parse, );}
 /// List CODEOWNERS errors
 ///
 /// List any syntax errors that are detected in the CODEOWNERS
@@ -1917,14 +1427,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodeownersErrors.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodeownersErrors.fromJson(json as Map<String, dynamic>);}, );}
 /// List repository collaborators
 ///
 /// For organization-owned repositories, the list of collaborators includes outside collaborators, organization members that are direct collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners.
@@ -1963,24 +1468,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Collaborator.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Collaborator.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Check if a user is a repository collaborator
 ///
 /// For organization-owned repositories, the list of collaborators includes outside collaborators, organization members that are direct collaborators, organization members with access through team memberships, organization members with access through default organization permissions, and organization owners.
@@ -2001,11 +1495,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Add a repository collaborator
 ///
 /// Add a user to a repository with a specified level of access. If the repository is owned by an organization, this API does not add the user to the organization - a user that has repository access without being an organization member is called an "outside collaborator" (if they are not an Enterprise Managed User) or a "repository collaborator" if they are an Enterprise Managed User. These users are exempt from some organization policies - see "[Adding outside collaborators to repositories](https://docs.github.com/organizations/managing-user-access-to-your-organizations-repositories/managing-outside-collaborators/adding-outside-collaborators-to-repositories-in-your-organization)" to learn more about these collaborator types.
@@ -2046,12 +1537,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: ReposAddCollaboratorSuccess.parse,
-  onError: ReposAddCollaboratorError.parse,
-);
-}
+
+return   await execute(request, onSuccess: ReposAddCollaboratorSuccess.parse, onError: ReposAddCollaboratorError.parse, );}
 /// Remove a repository collaborator
 ///
 /// Removes a collaborator from a repository.
@@ -2087,12 +1574,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ReposRemoveCollaboratorError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ReposRemoveCollaboratorError.parse, );}
 /// Get repository permissions for a user
 ///
 /// Checks the repository permission and role of a collaborator.
@@ -2115,24 +1598,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RepositoryCollaboratorPermission.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RepositoryCollaboratorPermission.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List commit comments for a repository
 ///
 /// Lists the commit comments for a specified repository. Comments are ordered by ascending ID.
@@ -2165,14 +1637,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => CommitComment.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => CommitComment.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Get a commit comment
 ///
 /// Gets a specified commit comment.
@@ -2194,24 +1661,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CommitComment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CommitComment.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update a commit comment
 ///
 /// Updates the contents of a specified commit comment.
@@ -2235,24 +1691,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CommitComment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CommitComment.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete a commit comment
 ///
 /// 
@@ -2267,21 +1712,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List commits
 ///
 /// **Signature verification object**
@@ -2353,15 +1789,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Commit.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: ReposListCommitsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Commit.fromJson(e as Map<String, dynamic>)).toList();}, onError: ReposListCommitsError.parse, );}
 /// List branches for HEAD commit
 ///
 /// Protected branches are available in public repositories with GitHub Free and GitHub Free for organizations, and in public and private repositories with GitHub Pro, GitHub Team, GitHub Enterprise Cloud, and GitHub Enterprise Server. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -2378,15 +1808,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => BranchShort.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: ReposListBranchesForHeadCommitError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => BranchShort.fromJson(e as Map<String, dynamic>)).toList();}, onError: ReposListBranchesForHeadCommitError.parse, );}
 /// List commit comments
 ///
 /// Lists the comments for a specified commit.
@@ -2419,14 +1843,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => CommitComment.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => CommitComment.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Create a commit comment
 ///
 /// Create a comment for a commit using its `:commit_sha`.
@@ -2452,15 +1871,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CommitComment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposCreateCommitCommentError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CommitComment.fromJson(json as Map<String, dynamic>);}, onError: ReposCreateCommitCommentError.parse, );}
 /// List pull requests associated with a commit
 ///
 /// Lists the merged pull request that introduced the commit to the repository. If the commit is not present in the default branch, it will return merged and open pull requests associated with the commit.
@@ -2488,24 +1901,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => PullRequestSimple.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => PullRequestSimple.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 409:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get a commit
 ///
 /// Returns the contents of a single commit reference. You must have `read` access for the repository to use this endpoint.
@@ -2570,15 +1972,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Commit.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposGetCommitError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Commit.fromJson(json as Map<String, dynamic>);}, onError: ReposGetCommitError.parse, );}
 /// Get the combined status for a specific reference
 ///
 /// Users with pull access in a repository can access a combined view of commit statuses for a given ref. The ref can be a SHA, a branch name, or a tag name.
@@ -2611,24 +2007,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CombinedCommitStatus.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CombinedCommitStatus.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List commit statuses for a reference
 ///
 /// Users with pull access in a repository can view commit statuses for a given ref. The ref can be a SHA, a branch name, or a tag name. Statuses are returned in reverse chronological order. The first status in the list will be the latest one.
@@ -2656,24 +2041,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Status.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Status.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 301:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get community profile metrics
 ///
 /// Returns all community profile metrics for a repository. The repository cannot be a fork.
@@ -2698,14 +2072,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CommunityProfile.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CommunityProfile.fromJson(json as Map<String, dynamic>);}, );}
 /// Compare two commits
 ///
 /// Compares two commits against one another. You can compare refs (branches or tags) and commit SHAs in the same repository, or you can compare refs and commit SHAs that exist in different repositories within the same repository network, including fork branches. For more information about how to view a repository's network, see "[Understanding connections between repositories](https://docs.github.com/repositories/viewing-activity-and-data-for-your-repository/understanding-connections-between-repositories)."
@@ -2781,15 +2150,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CommitComparison.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposCompareCommitsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CommitComparison.fromJson(json as Map<String, dynamic>);}, onError: ReposCompareCommitsError.parse, );}
 /// Get repository content
 ///
 /// Gets the contents of a file or directory in a repository. Specify the file path or directory with the `path` parameter. If you omit the `path` parameter, you will receive the contents of the repository's root directory.
@@ -2836,12 +2199,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: ReposGetContentSuccess.parse,
-  onError: ReposGetContentError.parse,
-);
-}
+
+return   await execute(request, onSuccess: ReposGetContentSuccess.parse, onError: ReposGetContentError.parse, );}
 /// Create or update file contents
 ///
 /// Creates a new file or replaces an existing file in a repository.
@@ -2863,22 +2222,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final json = jsonDecode(response.body);
-return FileCommit.fromJson(json as Map<String, dynamic>);
-default:
+return  FileCommit.fromJson(json as Map<String, dynamic>);default:
 final json = jsonDecode(response.body);
-return FileCommit.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-  onError: ReposCreateOrUpdateFileContentsError.parse,
-);
-}
+return  FileCommit.fromJson(json as Map<String, dynamic>); }}, onError: ReposCreateOrUpdateFileContentsError.parse, );}
 /// Delete a file
 ///
 /// Deletes a file in a repository.
@@ -2904,15 +2254,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FileCommit.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposDeleteFileError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FileCommit.fromJson(json as Map<String, dynamic>);}, onError: ReposDeleteFileError.parse, );}
 /// List repository contributors
 ///
 /// Lists contributors to the specified repository and sorts them by the number of commits per contributor in descending order. This endpoint may return information that is a few hours old because the GitHub REST API caches contributor data to improve performance.
@@ -2943,21 +2287,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: ReposListContributorsSuccess.parse,
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: ReposListContributorsSuccess.parse, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List deployments
 ///
 /// Simple filtering of deployments is available via query parameters:
@@ -2995,14 +2330,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Deployment.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Deployment.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Create a deployment
 ///
 /// Deployments offer a few configurable parameters with certain defaults.
@@ -3066,12 +2396,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: ReposCreateDeploymentSuccess.parse,
-  onError: ReposCreateDeploymentError.parse,
-);
-}
+
+return   await execute(request, onSuccess: ReposCreateDeploymentSuccess.parse, onError: ReposCreateDeploymentError.parse, );}
 /// Get a deployment
 ///
 /// 
@@ -3086,24 +2412,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Deployment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Deployment.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete a deployment
 ///
 /// If the repository only has one deployment, you can delete the deployment regardless of its status. If the repository has more than one deployment, you can only delete inactive deployments. This ensures that repositories with multiple deployments will always have an active deployment.
@@ -3127,12 +2442,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ReposDeleteDeploymentError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ReposDeleteDeploymentError.parse, );}
 /// List deployment statuses
 ///
 /// Users with pull access can view deployment statuses for a deployment:
@@ -3158,24 +2469,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => DeploymentStatus.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => DeploymentStatus.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create a deployment status
 ///
 /// Users with `push` access can create deployment statuses for a given deployment.
@@ -3194,24 +2494,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeploymentStatus.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeploymentStatus.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get a deployment status
 ///
 /// Users with pull access can view a deployment status for a deployment:
@@ -3226,24 +2515,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeploymentStatus.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeploymentStatus.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create a repository dispatch event
 ///
 /// You can use this endpoint to trigger a webhook event called `repository_dispatch` when you want activity that happens outside of GitHub to trigger a GitHub Actions workflow or GitHub App webhook. You must configure your GitHub Actions workflow or GitHub App to run when the `repository_dispatch` event occurs. For an example `repository_dispatch` webhook payload, see "[RepositoryDispatchEvent](https://docs.github.com/webhooks/event-payloads/#repository_dispatch)."
@@ -3266,12 +2544,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ReposCreateDispatchEventError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ReposCreateDispatchEventError.parse, );}
 /// List environments
 ///
 /// Lists the environments for a repository.
@@ -3301,14 +2575,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ReposGetAllEnvironmentsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ReposGetAllEnvironmentsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get an environment
 ///
 /// > `[!NOTE]`
@@ -3328,14 +2597,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Environment.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Environment.fromJson(json as Map<String, dynamic>);}, );}
 /// Create or update an environment
 ///
 /// Create or update an environment with protection rules, such as required reviewers. For more information about environment protection rules, see "[Environments](/actions/reference/environments#environment-protection-rules)."
@@ -3360,24 +2624,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Environment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Environment.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete an environment
 ///
 /// OAuth app tokens and personal access tokens (classic) need the `repo` scope to use this endpoint.
@@ -3392,11 +2645,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List deployment branch policies
 ///
 /// Lists the deployment branch policies for an environment.
@@ -3426,14 +2676,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ReposListDeploymentBranchPoliciesResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ReposListDeploymentBranchPoliciesResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a deployment branch policy
 ///
 /// Creates a deployment branch or tag policy for an environment.
@@ -3452,14 +2697,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeploymentBranchPolicy.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeploymentBranchPolicy.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a deployment branch policy
 ///
 /// Gets a deployment branch or tag policy for an environment.
@@ -3478,14 +2718,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeploymentBranchPolicy.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeploymentBranchPolicy.fromJson(json as Map<String, dynamic>);}, );}
 /// Update a deployment branch policy
 ///
 /// Updates a deployment branch or tag policy for an environment.
@@ -3504,14 +2739,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeploymentBranchPolicy.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeploymentBranchPolicy.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a deployment branch policy
 ///
 /// Deletes a deployment branch or tag policy for an environment.
@@ -3528,11 +2758,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get all deployment protection rules for an environment
 ///
 /// Gets all custom deployment protection rules that are enabled for an environment. Anyone with read access to the repository can use this endpoint. For more information about environments, see "[Using environments for deployment](https://docs.github.com/actions/deployment/targeting-different-environments/using-environments-for-deployment)."
@@ -3551,14 +2778,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ReposGetAllDeploymentProtectionRulesResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ReposGetAllDeploymentProtectionRulesResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a custom deployment protection rule on an environment
 ///
 /// Enable a custom deployment protection rule for an environment.
@@ -3581,14 +2803,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeploymentProtectionRule.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeploymentProtectionRule.fromJson(json as Map<String, dynamic>);}, );}
 /// List custom deployment rule integrations available for an environment
 ///
 /// Gets all custom deployment protection rule integrations that are available for an environment.
@@ -3622,14 +2839,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ReposListCustomDeploymentRuleIntegrationsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ReposListCustomDeploymentRuleIntegrationsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a custom deployment protection rule
 ///
 /// Gets an enabled custom deployment protection rule for an environment. Anyone with read access to the repository can use this endpoint. For more information about environments, see "[Using environments for deployment](https://docs.github.com/actions/deployment/targeting-different-environments/using-environments-for-deployment)."
@@ -3648,14 +2860,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeploymentProtectionRule.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeploymentProtectionRule.fromJson(json as Map<String, dynamic>);}, );}
 /// Disable a custom protection rule for an environment
 ///
 /// Disables a custom deployment protection rule for an environment.
@@ -3674,11 +2881,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List forks
 ///
 /// 
@@ -3707,15 +2911,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: ReposListForksError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();}, onError: ReposListForksError.parse, );}
 /// Create a fork
 ///
 /// Create a fork for the authenticated user.
@@ -3738,15 +2936,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FullRepository.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposCreateForkError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FullRepository.fromJson(json as Map<String, dynamic>);}, onError: ReposCreateForkError.parse, );}
 /// List repository webhooks
 ///
 /// Lists webhooks for a repository. `last response` may return null if there have not been any deliveries within 30 days.
@@ -3772,24 +2964,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Hook.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Hook.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create a repository webhook
 ///
 /// Repositories can have multiple webhooks installed. Each webhook should have a unique `config`. Multiple webhooks can
@@ -3807,15 +2988,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Hook.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposCreateWebhookError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Hook.fromJson(json as Map<String, dynamic>);}, onError: ReposCreateWebhookError.parse, );}
 /// Get a repository webhook
 ///
 /// Returns a webhook configured in a repository. To get only the webhook `config` properties, see "[Get a webhook configuration for a repository](/rest/webhooks/repo-config#get-a-webhook-configuration-for-a-repository)."
@@ -3830,24 +3005,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Hook.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Hook.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update a repository webhook
 ///
 /// Updates a webhook configured in a repository. If you previously had a `secret` set, you must provide the same `secret` or set a new `secret` or the secret will be removed. If you are only updating individual webhook `config` properties, use "[Update a webhook configuration for a repository](/rest/webhooks/repo-config#update-a-webhook-configuration-for-a-repository)."
@@ -3864,15 +3028,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Hook.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposUpdateWebhookError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Hook.fromJson(json as Map<String, dynamic>);}, onError: ReposUpdateWebhookError.parse, );}
 /// Delete a repository webhook
 ///
 /// Delete a webhook for an organization.
@@ -3889,21 +3047,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get a webhook configuration for a repository
 ///
 /// Returns the webhook configuration for a repository. To get more information about the webhook, including the `active` state and `events`, use "[Get a repository webhook](/rest/webhooks/repos#get-a-repository-webhook)."
@@ -3920,14 +3069,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return WebhookConfig.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  WebhookConfig.fromJson(json as Map<String, dynamic>);}, );}
 /// Update a webhook configuration for a repository
 ///
 /// Updates the webhook configuration for a repository. To update more information about the webhook, including the `active` state and `events`, use "[Update a repository webhook](/rest/webhooks/repos#update-a-repository-webhook)."
@@ -3946,14 +3090,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return WebhookConfig.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  WebhookConfig.fromJson(json as Map<String, dynamic>);}, );}
 /// List deliveries for a repository webhook
 ///
 /// Returns a list of webhook deliveries for a webhook configured in a repository.
@@ -3979,15 +3118,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => HookDeliveryItem.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: ReposListWebhookDeliveriesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => HookDeliveryItem.fromJson(e as Map<String, dynamic>)).toList();}, onError: ReposListWebhookDeliveriesError.parse, );}
 /// Get a delivery for a repository webhook
 ///
 /// Returns a delivery for a webhook configured in a repository.
@@ -4002,15 +3135,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return HookDelivery.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposGetWebhookDeliveryError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  HookDelivery.fromJson(json as Map<String, dynamic>);}, onError: ReposGetWebhookDeliveryError.parse, );}
 /// Redeliver a delivery for a repository webhook
 ///
 /// Redeliver a webhook delivery for a webhook configured in a repository.
@@ -4025,15 +3152,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: ReposRedeliverWebhookDeliveryError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: ReposRedeliverWebhookDeliveryError.parse, );}
 /// Ping a repository webhook
 ///
 /// This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event) to be sent to the hook.
@@ -4048,21 +3169,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Test the push repository webhook
 ///
 /// This will trigger the hook with the latest push to the current repository if the hook is subscribed to `push` events. If the hook is not subscribed to `push` events, the server will respond with 204 but no test POST will be generated.
@@ -4080,21 +3192,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Check if immutable releases are enabled for a repository
 ///
 /// Shows whether immutable releases are enabled or disabled. Also identifies whether immutability is being
@@ -4110,14 +3213,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CheckImmutableReleases.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CheckImmutableReleases.fromJson(json as Map<String, dynamic>);}, );}
 /// Enable immutable releases
 ///
 /// Enables immutable releases for a repository. The authenticated user must have admin access to the repository.
@@ -4132,21 +3230,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 409:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Disable immutable releases
 ///
 /// Disables immutable releases for a repository. The authenticated user must have admin access to the repository.
@@ -4161,21 +3250,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 409:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List repository invitations
 ///
 /// When authenticating as a user with admin rights to a repository, this endpoint will list all currently open repository invitations.
@@ -4201,14 +3281,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => RepositoryInvitation.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => RepositoryInvitation.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Update a repository invitation
 ///
 /// 
@@ -4225,14 +3300,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RepositoryInvitation.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RepositoryInvitation.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a repository invitation
 ///
 /// 
@@ -4247,11 +3317,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List deploy keys
 ///
 /// 
@@ -4277,14 +3344,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => DeployKey.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => DeployKey.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Create a deploy key
 ///
 /// You can create a read-only deploy key.
@@ -4301,24 +3363,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeployKey.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeployKey.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get a deploy key
 ///
 /// 
@@ -4333,24 +3384,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeployKey.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeployKey.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete a deploy key
 ///
 /// Deploy keys are immutable. If you need to update a key, remove the key and create a new one instead.
@@ -4365,11 +3405,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List repository languages
 ///
 /// Lists languages for the specified repository. The value shown for each language is the number of bytes of code written in that language.
@@ -4384,14 +3421,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as num).toInt()));
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as num).toInt()));}, );}
 /// Sync a fork branch with the upstream repository
 ///
 /// Sync a branch of a forked repository to keep it up-to-date with the upstream repository.
@@ -4408,14 +3440,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return MergedUpstream.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  MergedUpstream.fromJson(json as Map<String, dynamic>);}, );}
 /// Merge a branch
 ///
 /// 
@@ -4432,12 +3459,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: ReposMergeSuccess.parse,
-  onError: ReposMergeError.parse,
-);
-}
+
+return   await execute(request, onSuccess: ReposMergeSuccess.parse, onError: ReposMergeError.parse, );}
 /// Get a GitHub Pages site
 ///
 /// Gets information about a GitHub Pages site.
@@ -4454,24 +3477,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Page.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Page.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create a GitHub Pages site
 ///
 /// Configures a GitHub Pages site. For more information, see "[About GitHub Pages](/github/working-with-github-pages/about-github-pages)."
@@ -4492,15 +3504,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Page.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposCreatePagesSiteError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Page.fromJson(json as Map<String, dynamic>);}, onError: ReposCreatePagesSiteError.parse, );}
 /// Update information about a GitHub Pages site
 ///
 /// Updates information for a GitHub Pages site. For more information, see "[About GitHub Pages](/github/working-with-github-pages/about-github-pages).
@@ -4521,12 +3527,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ReposUpdateInformationAboutPagesSiteError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ReposUpdateInformationAboutPagesSiteError.parse, );}
 /// Delete a GitHub Pages site
 ///
 /// Deletes a GitHub Pages site. For more information, see "[About GitHub Pages](/github/working-with-github-pages/about-github-pages).
@@ -4545,12 +3547,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ReposDeletePagesSiteError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ReposDeletePagesSiteError.parse, );}
 /// List GitHub Pages builds
 ///
 /// Lists builts of a GitHub Pages site.
@@ -4578,14 +3576,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => PageBuild.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => PageBuild.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Request a GitHub Pages build
 ///
 /// You can request that your site be built from the latest revision on the default branch. This has the same effect as pushing a commit to your default branch, but does not require an additional commit. Manually triggering page builds can be helpful when diagnosing build warnings and failures.
@@ -4602,14 +3595,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PageBuildStatus.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PageBuildStatus.fromJson(json as Map<String, dynamic>);}, );}
 /// Get latest Pages build
 ///
 /// Gets information about the single most recent build of a GitHub Pages site.
@@ -4626,14 +3614,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PageBuild.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PageBuild.fromJson(json as Map<String, dynamic>);}, );}
 /// Get GitHub Pages build
 ///
 /// Gets information about a GitHub Pages build.
@@ -4650,14 +3633,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PageBuild.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PageBuild.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a GitHub Pages deployment
 ///
 /// Create a GitHub Pages deployment for a repository.
@@ -4676,15 +3654,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PageDeployment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposCreatePagesDeploymentError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PageDeployment.fromJson(json as Map<String, dynamic>);}, onError: ReposCreatePagesDeploymentError.parse, );}
 /// Get the status of a GitHub Pages deployment
 ///
 /// Gets the current status of a GitHub Pages deployment.
@@ -4701,24 +3673,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PagesDeploymentStatus.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PagesDeploymentStatus.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Cancel a GitHub Pages deployment
 ///
 /// Cancels a GitHub Pages deployment.
@@ -4735,21 +3696,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get a DNS health check for GitHub Pages
 ///
 /// Gets a health check of the DNS settings for the `CNAME` record configured for a repository's GitHub Pages.
@@ -4770,12 +3722,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: ReposGetPagesHealthCheckSuccess.parse,
-  onError: ReposGetPagesHealthCheckError.parse,
-);
-}
+
+return   await execute(request, onSuccess: ReposGetPagesHealthCheckSuccess.parse, onError: ReposGetPagesHealthCheckError.parse, );}
 /// Check if private vulnerability reporting is enabled for a repository
 ///
 /// Returns a boolean indicating whether or not private vulnerability reporting is enabled for the repository. For more information, see "[Evaluating the security settings of a repository](https://docs.github.com/code-security/security-advisories/working-with-repository-security-advisories/evaluating-the-security-settings-of-a-repository)".
@@ -4790,15 +3738,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ReposCheckPrivateVulnerabilityReportingResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposCheckPrivateVulnerabilityReportingError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ReposCheckPrivateVulnerabilityReportingResponse.fromJson(json as Map<String, dynamic>);}, onError: ReposCheckPrivateVulnerabilityReportingError.parse, );}
 /// Enable private vulnerability reporting for a repository
 ///
 /// Enables private vulnerability reporting for a repository. The authenticated user must have admin access to the repository. For more information, see "[Privately reporting a security vulnerability](https://docs.github.com/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability)."
@@ -4813,12 +3755,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ReposEnablePrivateVulnerabilityReportingError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ReposEnablePrivateVulnerabilityReportingError.parse, );}
 /// Disable private vulnerability reporting for a repository
 ///
 /// Disables private vulnerability reporting for a repository. The authenticated user must have admin access to the repository. For more information, see "[Privately reporting a security vulnerability](https://docs.github.com/code-security/security-advisories/guidance-on-reporting-and-writing/privately-reporting-a-security-vulnerability)".
@@ -4833,12 +3771,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ReposDisablePrivateVulnerabilityReportingError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ReposDisablePrivateVulnerabilityReportingError.parse, );}
 /// Get all custom property values for a repository
 ///
 /// Gets all custom property values that are set for a repository.
@@ -4854,24 +3788,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => CustomPropertyValue.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => CustomPropertyValue.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create or update custom property values for a repository
 ///
 /// Create new or update existing custom property values for a repository.
@@ -4891,12 +3814,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ReposCustomPropertiesForReposCreateOrUpdateRepositoryValuesError.parse, );}
 /// Get a repository README
 ///
 /// Gets the preferred README for a repository.
@@ -4924,15 +3843,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ContentFile.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposGetReadmeError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ContentFile.fromJson(json as Map<String, dynamic>);}, onError: ReposGetReadmeError.parse, );}
 /// Get a repository README for a directory
 ///
 /// Gets the README from a repository directory.
@@ -4960,15 +3873,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ContentFile.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposGetReadmeInDirectoryError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ContentFile.fromJson(json as Map<String, dynamic>);}, onError: ReposGetReadmeInDirectoryError.parse, );}
 /// List releases
 ///
 /// This returns a list of releases, which does not include regular Git tags that have not been associated with a release. To get a list of Git tags, use the [Repository Tags API](https://docs.github.com/rest/repos/repos#list-repository-tags).
@@ -4996,24 +3903,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Release.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Release.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create a release
 ///
 /// Users with push access to the repository can create a release.
@@ -5032,15 +3928,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Release.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposCreateReleaseError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Release.fromJson(json as Map<String, dynamic>);}, onError: ReposCreateReleaseError.parse, );}
 /// Get a release asset
 ///
 /// To download the asset's binary content:
@@ -5061,15 +3951,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ReleaseAsset.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposGetReleaseAssetError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ReleaseAsset.fromJson(json as Map<String, dynamic>);}, onError: ReposGetReleaseAssetError.parse, );}
 /// Update a release asset
 ///
 /// Users with push access to the repository can edit a release asset.
@@ -5086,14 +3970,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ReleaseAsset.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ReleaseAsset.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a release asset
 ///
 /// 
@@ -5108,11 +3987,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Generate release notes content for a release
 ///
 /// Generate a name and body describing a [release](https://docs.github.com/rest/releases/releases#get-a-release). The body content will be markdown formatted and contain information like the changes since last release and users who contributed. The generated release notes are not saved anywhere. They are intended to be generated and used when creating a new release.
@@ -5129,24 +4005,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ReleaseNotesContent.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ReleaseNotesContent.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get the latest release
 ///
 /// View the latest published full release for the repository.
@@ -5163,14 +4028,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Release.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Release.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a release by tag name
 ///
 /// Get a published release with the specified tag.
@@ -5185,24 +4045,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Release.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Release.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get a release
 ///
 /// Gets a public release with the specified release ID.
@@ -5220,14 +4069,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Release.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Release.fromJson(json as Map<String, dynamic>);}, );}
 /// Update a release
 ///
 /// Users with push access to the repository can edit a release.
@@ -5244,24 +4088,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Release.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Release.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete a release
 ///
 /// Users with push access to the repository can delete a release.
@@ -5276,11 +4109,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List release assets
 ///
 /// 
@@ -5306,14 +4136,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => ReleaseAsset.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => ReleaseAsset.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Upload a release asset
 ///
 /// This endpoint makes use of a [Hypermedia relation](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#hypermedia) to determine which URL to access. The endpoint you call to upload release assets is specific to your release. Use the `upload_url` returned in
@@ -5357,14 +4182,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ReleaseAsset.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ReleaseAsset.fromJson(json as Map<String, dynamic>);}, );}
 /// Get rules for a branch
 ///
 /// Returns all active rules that apply to the specified branch. The branch does not need to exist; rules that would apply
@@ -5393,14 +4213,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => RepositoryRuleDetailed.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => RepositoryRuleDetailed.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Get all repository rulesets
 ///
 /// Get all the rulesets for a repository.
@@ -5432,24 +4247,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => RepositoryRuleset.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => RepositoryRuleset.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create a repository ruleset
 ///
 /// Create a ruleset for a repository.
@@ -5466,15 +4270,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RepositoryRuleset.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposCreateRepoRulesetError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RepositoryRuleset.fromJson(json as Map<String, dynamic>);}, onError: ReposCreateRepoRulesetError.parse, );}
 /// List repository rule suites
 ///
 /// Lists suites of rule evaluations at the repository level.
@@ -5513,24 +4311,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => RuleSuites2.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => RuleSuites2.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get a repository rule suite
 ///
 /// Gets information about a suite of rule evaluations from within a repository.
@@ -5546,24 +4333,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RuleSuite.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RuleSuite.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get a repository ruleset
 ///
 /// Get a ruleset for a repository.
@@ -5589,24 +4365,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RepositoryRuleset.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RepositoryRuleset.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update a repository ruleset
 ///
 /// Update a ruleset for a repository.
@@ -5623,15 +4388,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RepositoryRuleset.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposUpdateRepoRulesetError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RepositoryRuleset.fromJson(json as Map<String, dynamic>);}, onError: ReposUpdateRepoRulesetError.parse, );}
 /// Delete a repository ruleset
 ///
 /// Delete a ruleset for a repository.
@@ -5646,21 +4405,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get repository ruleset history
 ///
 /// Get the history of a repository ruleset.
@@ -5686,24 +4436,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => RulesetVersion.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => RulesetVersion.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get repository ruleset version
 ///
 /// Get a version of a repository ruleset.
@@ -5718,24 +4457,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RulesetVersionWithState.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RulesetVersionWithState.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get the weekly commit activity
 ///
 /// Returns a weekly aggregate of the number of additions and deletions pushed to a repository.
@@ -5753,11 +4481,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: ReposGetCodeFrequencyStatsSuccess.parse,
-);
-}
+
+return   await execute(request, onSuccess: ReposGetCodeFrequencyStatsSuccess.parse, );}
 /// Get the last year of commit activity
 ///
 /// Returns the last year of commit activity grouped by week. The `days` array is a group of commits per day, starting on `Sunday`.
@@ -5772,11 +4497,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: ReposGetCommitActivityStatsSuccess.parse,
-);
-}
+
+return   await execute(request, onSuccess: ReposGetCommitActivityStatsSuccess.parse, );}
 /// Get all contributor commit activity
 ///
 /// 
@@ -5800,11 +4522,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: ReposGetContributorsStatsSuccess.parse,
-);
-}
+
+return   await execute(request, onSuccess: ReposGetContributorsStatsSuccess.parse, );}
 /// Get the weekly commit count
 ///
 /// Returns the total commit counts for the `owner` and total commit counts in `all`. `all` is everyone combined, including the `owner` in the last 52 weeks. If you'd like to get the commit counts for non-owners, you can subtract `owner` from `all`.
@@ -5823,24 +4542,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ParticipationStats.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ParticipationStats.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get the hourly commit count for each day
 ///
 /// Each array contains the day number, hour number, and number of commits:
@@ -5861,11 +4569,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: ReposGetPunchCardStatsSuccess.parse,
-);
-}
+
+return   await execute(request, onSuccess: ReposGetPunchCardStatsSuccess.parse, );}
 /// Create a commit status
 ///
 /// Users with push access in a repository can create commit statuses for a given SHA.
@@ -5884,14 +4589,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>);}, );}
 /// List repository tags
 ///
 /// 
@@ -5917,14 +4617,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Tag.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Tag.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Download a repository archive (tar)
 ///
 /// Gets a redirect URL to download a tar archive for a repository. If you omit `:ref`, the repository’s default branch (usually
@@ -5944,11 +4639,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List repository teams
 ///
 /// Lists the teams that have access to the specified repository and that are also visible to the authenticated user.
@@ -5978,24 +4670,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get all repository topics
 ///
 /// 
@@ -6021,24 +4702,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Topic.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Topic.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Replace all repository topics
 ///
 /// 
@@ -6055,15 +4725,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Topic.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposReplaceAllTopicsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Topic.fromJson(json as Map<String, dynamic>);}, onError: ReposReplaceAllTopicsError.parse, );}
 /// Get repository clones
 ///
 /// Get the total number of clones and breakdown per day or week for the last 14 days. Timestamps are aligned to UTC midnight of the beginning of the day or week. Week begins on Monday.
@@ -6086,24 +4750,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CloneTraffic.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CloneTraffic.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get top referral paths
 ///
 /// Get the top 10 popular contents over the last 14 days.
@@ -6118,24 +4771,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => ContentTraffic.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => ContentTraffic.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get top referral sources
 ///
 /// Get the top 10 referrers over the last 14 days.
@@ -6150,24 +4792,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => ReferrerTraffic.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => ReferrerTraffic.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get page views
 ///
 /// Get the total number of views and breakdown per day or week for the last 14 days. Timestamps are aligned to UTC midnight of the beginning of the day or week. Week begins on Monday.
@@ -6190,24 +4821,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ViewTraffic.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ViewTraffic.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Transfer a repository
 ///
 /// A transfer request will need to be accepted by the new owner when transferring a personal repository to another user. The response will contain the original `owner`, and the transfer will continue asynchronously. For more details on the requirements to transfer personal and organization-owned repositories, see [about repository transfers](https://docs.github.com/articles/about-repository-transfers/).
@@ -6224,14 +4844,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return MinimalRepository.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  MinimalRepository.fromJson(json as Map<String, dynamic>);}, );}
 /// Check if vulnerability alerts are enabled for a repository
 ///
 /// Shows whether dependency alerts are enabled or disabled for a repository. The authenticated user must have admin read access to the repository. For more information, see "[About security alerts for vulnerable dependencies](https://docs.github.com/articles/about-security-alerts-for-vulnerable-dependencies)".
@@ -6246,11 +4861,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Enable vulnerability alerts
 ///
 /// Enables dependency alerts and the dependency graph for a repository. The authenticated user must have admin access to the repository. For more information, see "[About security alerts for vulnerable dependencies](https://docs.github.com/articles/about-security-alerts-for-vulnerable-dependencies)".
@@ -6265,11 +4877,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Disable vulnerability alerts
 ///
 /// Disables dependency alerts and the dependency graph for a repository.
@@ -6286,11 +4895,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Download a repository archive (zip)
 ///
 /// Gets a redirect URL to download a zip archive for a repository. If you omit `:ref`, the repository’s default branch (usually
@@ -6310,11 +4916,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a repository using a template
 ///
 /// Creates a new repository using a repository template. Use the `template_owner` and `template_repo` route parameters to specify the repository to use as the template. If the repository is not public, the authenticated user must own or be a member of an organization that owns the repository. To check if a repository is available to use as a template, get the repository's information using the [Get a repository](https://docs.github.com/rest/repos/repos#get-a-repository) endpoint and check that the `is_template` key is `true`.
@@ -6333,14 +4936,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FullRepository.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FullRepository.fromJson(json as Map<String, dynamic>);}, );}
 /// List public repositories
 ///
 /// Lists all public repositories in the order that they were created.
@@ -6367,15 +4965,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: ReposListPublicError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();}, onError: ReposListPublicError.parse, );}
 /// List repositories for the authenticated user
 ///
 /// Lists repositories that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access.
@@ -6424,15 +5016,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: ReposListForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList();}, onError: ReposListForAuthenticatedUserError.parse, );}
 /// Create a repository for the authenticated user
 ///
 /// Creates a new repository for the authenticated user.
@@ -6451,15 +5037,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FullRepository.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReposCreateForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FullRepository.fromJson(json as Map<String, dynamic>);}, onError: ReposCreateForAuthenticatedUserError.parse, );}
 /// List repository invitations for the authenticated user
 ///
 /// When authenticating as a user, this endpoint will list all currently open repository invitations for that user.
@@ -6485,15 +5065,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => RepositoryInvitation.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: ReposListInvitationsForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => RepositoryInvitation.fromJson(e as Map<String, dynamic>)).toList();}, onError: ReposListInvitationsForAuthenticatedUserError.parse, );}
 /// Accept a repository invitation
 ///
 /// 
@@ -6508,12 +5082,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ReposAcceptInvitationForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ReposAcceptInvitationForAuthenticatedUserError.parse, );}
 /// Decline a repository invitation
 ///
 /// 
@@ -6528,12 +5098,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ReposDeclineInvitationForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ReposDeclineInvitationForAuthenticatedUserError.parse, );}
 /// List repositories for a user
 ///
 /// Lists public repositories for the specified user.
@@ -6568,12 +5134,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();}, );}
 }

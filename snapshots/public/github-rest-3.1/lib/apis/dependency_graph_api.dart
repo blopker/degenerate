@@ -30,24 +30,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => DependencyGraphDiff2.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => DependencyGraphDiff2.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Export a software bill of materials (SBOM) for a repository.
 ///
 /// Exports the software bill of materials (SBOM) for a repository in SPDX JSON format.
@@ -62,24 +51,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DependencyGraphSpdxSbom.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DependencyGraphSpdxSbom.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create a snapshot of dependencies for a repository
 ///
 /// Create a new snapshot of a repository's dependencies.
@@ -100,12 +78,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DependencyGraphCreateRepositorySnapshotResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DependencyGraphCreateRepositorySnapshotResponse.fromJson(json as Map<String, dynamic>);}, );}
 }

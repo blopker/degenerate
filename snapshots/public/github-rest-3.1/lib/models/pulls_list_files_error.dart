@@ -7,17 +7,12 @@ sealed class PullsListFilesError {const PullsListFilesError();
 static PullsListFilesError parse(ApiResponse response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return PullsListFilesError422(ValidationError.fromJson(json as Map<String, dynamic>));
-case 500:
+return  PullsListFilesError422(ValidationError.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return PullsListFilesError500(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  PullsListFilesError500(BasicError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return PullsListFilesError503(PullsListFilesResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return PullsListFilesErrorUnknown(response);
-}
-}
+return  PullsListFilesError503(PullsListFilesResponse503.fromJson(json as Map<String, dynamic>));default:
+return  PullsListFilesErrorUnknown(response); }}
 }
 /// Response for 422 (application/json).
 final class PullsListFilesError422 extends PullsListFilesError {const PullsListFilesError422(this.data);

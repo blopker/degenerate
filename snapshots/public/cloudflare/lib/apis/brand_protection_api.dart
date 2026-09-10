@@ -22,22 +22,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update alerts on submitted domains by ID
 ///
 /// Return a success message after updating alerts on submitted domains by ID
@@ -52,22 +42,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update verification statuses of tracked URLs to awaiting by ID
 ///
 /// Return a success message after updating verification statuses of tracked URLs to awaiting by ID
@@ -82,22 +62,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update verification statuses of tracked URLs to disproven by ID
 ///
 /// Return a success message after updating verification statuses of tracked URLs to disproven by ID
@@ -112,22 +82,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update verification statuses of tracked URLs to confirmed by ID
 ///
 /// Return a success message after updating verification statuses of tracked URLs to confirmed by ID
@@ -142,22 +102,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Read all brands
 ///
 /// Return all brands
@@ -172,22 +122,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create new brands
 ///
 /// Return new brands
@@ -202,22 +142,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete brands by ID
 ///
 /// Return a success message after deleting brands by ID
@@ -232,22 +162,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Read patterns for brands by ID
 ///
 /// Return patterns for brands based on ID
@@ -262,22 +182,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create new patterns for brands by ID
 ///
 /// Return a success message after creating new patterns for brands by ID
@@ -292,22 +202,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete patterns for brands by ID
 ///
 /// Return a success message after deleting patterns for brands by ID
@@ -322,22 +222,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update verification statuses of submitted URLs to awaiting by ID
 ///
 /// Return a success message after updating verification statuses of submitted URLs to awaiting by ID
@@ -352,22 +242,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Read submitted domains by ID
 ///
 /// Return submitted domains based on ID
@@ -382,22 +262,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Read recent URL submissions
 ///
 /// Return recent URL submissions
@@ -412,22 +282,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update verification statuses of submitted URLs to disproven by ID
 ///
 /// Return a success message after updating verification statuses of submitted URLs to disproven by ID
@@ -442,22 +302,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Read URL submissions by ID
 ///
 /// Return URL submissions based on ID
@@ -472,22 +322,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create new URL submissions
 ///
 /// Return new URL submissions
@@ -502,22 +342,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UrlSubmit.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UrlSubmit.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Read submitted domains by pattern
 ///
 /// Return submitted domains based on pattern
@@ -532,22 +362,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Read submitted URLs by ID
 ///
 /// Return submitted URLs based on ID
@@ -562,22 +382,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>?)?.map((e) => e as Map<String, dynamic>).toList();}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update verification statuses of submitted URLs to confirmed by ID
 ///
 /// Return a success message after updating verification statuses of submitted URLs to confirmed by ID
@@ -592,22 +402,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Internal route for testing URL submissions
 ///
 /// `POST /internal/submit`
@@ -620,22 +420,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Run liveness checks
 ///
 /// Return a success message after running liveness checks
@@ -650,22 +440,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Run readiness checks
 ///
 /// Return a success message after running readiness checks
@@ -680,20 +460,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 }

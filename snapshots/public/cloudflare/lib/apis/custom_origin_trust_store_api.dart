@@ -39,24 +39,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesCustomTrustStore.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>?)?.map((e) => TlsCertificatesAndHostnamesCustomTrustStore.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return CustomOriginTrustStoreListDetailsResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  CustomOriginTrustStoreListDetailsResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Upload Custom Origin Trust Store
 ///
 /// Add Custom Origin Trust Store for a Zone.
@@ -73,24 +62,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? TlsCertificatesAndHostnamesCustomTrustStore.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? TlsCertificatesAndHostnamesCustomTrustStore.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return CustomOriginTrustStoreCreateResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  CustomOriginTrustStoreCreateResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Custom Origin Trust Store Details
 ///
 /// Retrieves details about a specific certificate in the custom origin trust store, including expiration and subject information.
@@ -105,24 +83,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? TlsCertificatesAndHostnamesCustomTrustStore.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? TlsCertificatesAndHostnamesCustomTrustStore.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return CustomOriginTrustStoreDetailsResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  CustomOriginTrustStoreDetailsResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete Custom Origin Trust Store
 ///
 /// Removes a CA certificate from the custom origin trust store. Origins using certificates signed by this CA will no longer be trusted.
@@ -137,22 +104,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? TlsCertificatesAndHostnamesCustomTrustStoreResponseIdOnlyResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? TlsCertificatesAndHostnamesCustomTrustStoreResponseIdOnlyResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return CustomOriginTrustStoreDeleteResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  CustomOriginTrustStoreDeleteResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

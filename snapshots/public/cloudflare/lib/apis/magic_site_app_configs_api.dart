@@ -22,24 +22,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => AccountApp.fromJson(v as Map<String, dynamic>), fromB: (v) => ManagedApp.fromJson(v as Map<String, dynamic>),)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => OneOf2.parse(e, fromA: (v) => AccountApp.fromJson(v as Map<String, dynamic>), fromB: (v) => ManagedApp.fromJson(v as Map<String, dynamic>),)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure50.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure50.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create a new App Config
 ///
 /// Creates a new App Config for a site
@@ -56,24 +45,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return OneOf2.parse(json['result'], fromA: (v) => AccountApp.fromJson(v as Map<String, dynamic>), fromB: (v) => ManagedApp.fromJson(v as Map<String, dynamic>),);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  OneOf2.parse(json['result'], fromA: (v) => AccountApp.fromJson(v as Map<String, dynamic>), fromB: (v) => ManagedApp.fromJson(v as Map<String, dynamic>),);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure50.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure50.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update an App Config
 ///
 /// Updates an App Config for a site
@@ -90,24 +68,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return OneOf2.parse(json['result'], fromA: (v) => AccountApp.fromJson(v as Map<String, dynamic>), fromB: (v) => ManagedApp.fromJson(v as Map<String, dynamic>),);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  OneOf2.parse(json['result'], fromA: (v) => AccountApp.fromJson(v as Map<String, dynamic>), fromB: (v) => ManagedApp.fromJson(v as Map<String, dynamic>),);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure50.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure50.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update an App Config
 ///
 /// Updates an App Config for a site
@@ -124,24 +91,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return OneOf2.parse(json['result'], fromA: (v) => AccountApp.fromJson(v as Map<String, dynamic>), fromB: (v) => ManagedApp.fromJson(v as Map<String, dynamic>),);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  OneOf2.parse(json['result'], fromA: (v) => AccountApp.fromJson(v as Map<String, dynamic>), fromB: (v) => ManagedApp.fromJson(v as Map<String, dynamic>),);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure50.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure50.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete App Config
 ///
 /// Deletes specific App Config associated with a site.
@@ -156,22 +112,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return OneOf2.parse(json['result'], fromA: (v) => AccountApp.fromJson(v as Map<String, dynamic>), fromB: (v) => ManagedApp.fromJson(v as Map<String, dynamic>),);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  OneOf2.parse(json['result'], fromA: (v) => AccountApp.fromJson(v as Map<String, dynamic>), fromB: (v) => ManagedApp.fromJson(v as Map<String, dynamic>),);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure50.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure50.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

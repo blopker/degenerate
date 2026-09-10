@@ -7,17 +7,12 @@ sealed class DestinationsDeleteError {const DestinationsDeleteError();
 static DestinationsDeleteError parse(ApiResponse response) {switch (response.statusCode) {
 case 401:
 final json = jsonDecode(response.body);
-return DestinationsDeleteError401(DestinationsDeleteResponse401.fromJson(json as Map<String, dynamic>));
-case 404:
+return  DestinationsDeleteError401(DestinationsDeleteResponse401.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return DestinationsDeleteError404(DestinationsDeleteResponse404.fromJson(json as Map<String, dynamic>));
-case 500:
+return  DestinationsDeleteError404(DestinationsDeleteResponse404.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return DestinationsDeleteError500(DestinationsDeleteResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return DestinationsDeleteErrorUnknown(response);
-}
-}
+return  DestinationsDeleteError500(DestinationsDeleteResponse500.fromJson(json as Map<String, dynamic>));default:
+return  DestinationsDeleteErrorUnknown(response); }}
 }
 /// Response for 401 (application/json).
 final class DestinationsDeleteError401 extends DestinationsDeleteError {const DestinationsDeleteError401(this.data);

@@ -22,24 +22,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? SecondaryDnsForceResult.fromJson(json['result'] as String) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? SecondaryDnsForceResult.fromJson(json['result'] as String) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return SecondaryDnsSecondaryZoneForceAxfrResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  SecondaryDnsSecondaryZoneForceAxfrResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Secondary Zone Configuration Details
 ///
 /// Get secondary zone configuration for incoming zone transfers.
@@ -54,24 +43,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? SecondaryDnsSingleResponseIncomingResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? SecondaryDnsSingleResponseIncomingResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return SecondaryDnsSecondaryZoneSecondaryZoneConfigurationDetailsResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  SecondaryDnsSecondaryZoneSecondaryZoneConfigurationDetailsResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create Secondary Zone Configuration
 ///
 /// Create secondary zone configuration for incoming zone transfers.
@@ -88,24 +66,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? SecondaryDnsSingleResponseIncomingResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? SecondaryDnsSingleResponseIncomingResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return SecondaryDnsSecondaryZoneCreateSecondaryZoneConfigurationResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  SecondaryDnsSecondaryZoneCreateSecondaryZoneConfigurationResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update Secondary Zone Configuration
 ///
 /// Update secondary zone configuration for incoming zone transfers.
@@ -122,24 +89,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? SecondaryDnsSingleResponseIncomingResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? SecondaryDnsSingleResponseIncomingResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return SecondaryDnsSecondaryZoneUpdateSecondaryZoneConfigurationResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  SecondaryDnsSecondaryZoneUpdateSecondaryZoneConfigurationResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete Secondary Zone Configuration
 ///
 /// Delete secondary zone configuration for incoming zone transfers.
@@ -154,22 +110,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? SecondaryDnsIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? SecondaryDnsIdResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return SecondaryDnsSecondaryZoneDeleteSecondaryZoneConfigurationResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  SecondaryDnsSecondaryZoneDeleteSecondaryZoneConfigurationResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

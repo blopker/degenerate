@@ -7,14 +7,10 @@ sealed class ReposRemoveCollaboratorError {const ReposRemoveCollaboratorError();
 static ReposRemoveCollaboratorError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return ReposRemoveCollaboratorError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposRemoveCollaboratorError403(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposRemoveCollaboratorError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposRemoveCollaboratorErrorUnknown(response);
-}
-}
+return  ReposRemoveCollaboratorError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposRemoveCollaboratorErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class ReposRemoveCollaboratorError403 extends ReposRemoveCollaboratorError {const ReposRemoveCollaboratorError403(this.data);

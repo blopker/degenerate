@@ -22,11 +22,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves the account's current balance.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/balance#show-2020-04
@@ -41,11 +38,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves the account's current balance.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/balance#show-2020-07
@@ -60,11 +54,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves the account's current balance.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/balance#show-2020-10
@@ -79,11 +70,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves the account's current balance.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/balance#show-2021-01
@@ -98,11 +86,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves the account's current balance.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/balance#show-unstable
@@ -117,11 +102,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve all disputes ordered by initiated_at date and time (ISO 8601 format), with the most recent being first.
 ///           Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
@@ -154,11 +136,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single dispute by ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/dispute#show-2020-01
@@ -173,11 +152,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve all disputes ordered by initiated_at date and time (ISO 8601 format), with the most recent being first.
 ///           Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
@@ -210,11 +186,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all payouts ordered by payout date, with the most recent being first.
 ///           Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
@@ -253,11 +226,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single payout by id.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#show-2020-01
@@ -272,11 +242,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all payouts ordered by payout date, with the most recent being first.
 ///           Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
@@ -315,11 +282,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single payout by id.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#show-2020-04
@@ -334,11 +298,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all payouts ordered by payout date, with the most recent being first.
 ///           Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
@@ -377,11 +338,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single payout by id.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#show-2020-07
@@ -396,11 +354,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all payouts ordered by payout date, with the most recent being first.
 ///           Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
@@ -439,11 +394,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single payout by id.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#show-2020-10
@@ -458,11 +410,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all payouts ordered by payout date, with the most recent being first.
 ///           Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
@@ -501,11 +450,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single payout by id.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#show-2021-01
@@ -520,11 +466,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all payouts ordered by payout date, with the most recent being first.
 ///           Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
@@ -563,11 +506,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single payout by id.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shopify_payments/payout#show-unstable
@@ -582,11 +522,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all balance transactions ordered by processing
 /// time, with the most recent being first.
 /// Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
@@ -623,9 +560,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

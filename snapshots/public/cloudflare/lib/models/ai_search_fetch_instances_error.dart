@@ -7,14 +7,10 @@ sealed class AiSearchFetchInstancesError {const AiSearchFetchInstancesError();
 static AiSearchFetchInstancesError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return AiSearchFetchInstancesError400(AiSearchFetchInstancesResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  AiSearchFetchInstancesError400(AiSearchFetchInstancesResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return AiSearchFetchInstancesError404(AiSearchFetchInstancesResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return AiSearchFetchInstancesErrorUnknown(response);
-}
-}
+return  AiSearchFetchInstancesError404(AiSearchFetchInstancesResponse404.fromJson(json as Map<String, dynamic>));default:
+return  AiSearchFetchInstancesErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class AiSearchFetchInstancesError400 extends AiSearchFetchInstancesError {const AiSearchFetchInstancesError400(this.data);

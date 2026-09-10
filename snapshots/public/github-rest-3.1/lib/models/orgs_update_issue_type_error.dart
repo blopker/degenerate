@@ -7,14 +7,10 @@ sealed class OrgsUpdateIssueTypeError {const OrgsUpdateIssueTypeError();
 static OrgsUpdateIssueTypeError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return OrgsUpdateIssueTypeError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  OrgsUpdateIssueTypeError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return OrgsUpdateIssueTypeError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return OrgsUpdateIssueTypeErrorUnknown(response);
-}
-}
+return  OrgsUpdateIssueTypeError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));default:
+return  OrgsUpdateIssueTypeErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class OrgsUpdateIssueTypeError404 extends OrgsUpdateIssueTypeError {const OrgsUpdateIssueTypeError404(this.data);

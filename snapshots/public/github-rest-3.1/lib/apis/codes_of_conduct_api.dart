@@ -22,14 +22,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => CodeOfConduct.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => CodeOfConduct.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Get a code of conduct
 ///
 /// Returns information about the specified GitHub code of conduct.
@@ -44,13 +39,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodeOfConduct.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodesOfConductGetConductCodeError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodeOfConduct.fromJson(json as Map<String, dynamic>);}, onError: CodesOfConductGetConductCodeError.parse, );}
 }

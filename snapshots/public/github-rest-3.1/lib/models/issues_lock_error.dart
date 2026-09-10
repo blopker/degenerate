@@ -7,20 +7,14 @@ sealed class IssuesLockError {const IssuesLockError();
 static IssuesLockError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return IssuesLockError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  IssuesLockError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return IssuesLockError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 410:
+return  IssuesLockError404(BasicError.fromJson(json as Map<String, dynamic>));case 410:
 final json = jsonDecode(response.body);
-return IssuesLockError410(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  IssuesLockError410(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return IssuesLockError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return IssuesLockErrorUnknown(response);
-}
-}
+return  IssuesLockError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  IssuesLockErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class IssuesLockError403 extends IssuesLockError {const IssuesLockError403(this.data);

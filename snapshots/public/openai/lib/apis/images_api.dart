@@ -30,11 +30,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: CreateImageEditSuccess.parse,
-);
-}
+
+return   await execute(request, onSuccess: CreateImageEditSuccess.parse, );}
 /// Creates an image given a prompt. [Learn more](/docs/guides/images).
 /// 
 ///
@@ -50,11 +47,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: CreateImageSuccess.parse,
-);
-}
+
+return   await execute(request, onSuccess: CreateImageSuccess.parse, );}
 /// Creates a variation of a given image. This endpoint only supports `dall-e-2`.
 ///
 /// `POST /images/variations`
@@ -81,14 +75,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ImagesResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ImagesResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Creates an edited or extended image given one or more source images and a prompt. This endpoint supports GPT Image models (`gpt-image-1.5`, `gpt-image-1`, `gpt-image-1-mini`, and `chatgpt-image-latest`) and `dall-e-2`. (streaming)
 ///
 /// `POST /images/edits`

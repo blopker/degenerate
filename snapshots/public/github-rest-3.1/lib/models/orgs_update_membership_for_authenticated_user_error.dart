@@ -7,17 +7,12 @@ sealed class OrgsUpdateMembershipForAuthenticatedUserError {const OrgsUpdateMemb
 static OrgsUpdateMembershipForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return OrgsUpdateMembershipForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  OrgsUpdateMembershipForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return OrgsUpdateMembershipForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  OrgsUpdateMembershipForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return OrgsUpdateMembershipForAuthenticatedUserError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return OrgsUpdateMembershipForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  OrgsUpdateMembershipForAuthenticatedUserError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  OrgsUpdateMembershipForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class OrgsUpdateMembershipForAuthenticatedUserError403 extends OrgsUpdateMembershipForAuthenticatedUserError {const OrgsUpdateMembershipForAuthenticatedUserError403(this.data);

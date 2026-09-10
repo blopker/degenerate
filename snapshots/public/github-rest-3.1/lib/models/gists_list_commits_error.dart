@@ -6,17 +6,12 @@ sealed class GistsListCommitsError {const GistsListCommitsError();
 /// Decodes the payload for its declared status and content type.
 static GistsListCommitsError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const GistsListCommitsError304();
-case 403:
+return  const GistsListCommitsError304();case 403:
 final json = jsonDecode(response.body);
-return GistsListCommitsError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  GistsListCommitsError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return GistsListCommitsError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return GistsListCommitsErrorUnknown(response);
-}
-}
+return  GistsListCommitsError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  GistsListCommitsErrorUnknown(response); }}
 }
 /// Response for 304.
 final class GistsListCommitsError304 extends GistsListCommitsError {const GistsListCommitsError304();

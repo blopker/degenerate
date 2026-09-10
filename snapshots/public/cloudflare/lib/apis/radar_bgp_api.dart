@@ -75,24 +75,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetBgpHijacksEventsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetBgpHijacksEventsResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetBgpHijacksEventsResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetBgpHijacksEventsResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get announced IP address space time series
 ///
 /// Retrieves time series data for the announced IP space count, represented as the number of IPv4 /24s and IPv6 /48s, for a given ASN.
@@ -153,24 +142,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetBgpIpsTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetBgpIpsTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetBgpIpsTimeseriesResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetBgpIpsTimeseriesResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get BGP route leak events
 ///
 /// Retrieves the BGP route leak events.
@@ -226,24 +204,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetBgpRouteLeakEventsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetBgpRouteLeakEventsResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetBgpRouteLeakEventsResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetBgpRouteLeakEventsResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List ASes from global routing tables
 ///
 /// Retrieves all ASes in the current global routing tables with routing statistics.
@@ -278,24 +245,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetBgpRoutesAsnsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetBgpRoutesAsnsResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetBgpRoutesAsnsResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetBgpRoutesAsnsResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get Multi-Origin AS (MOAS) prefixes
 ///
 /// Retrieves all Multi-Origin AS (MOAS) prefixes in the global routing tables.
@@ -327,24 +283,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetBgpPfx2asMoasResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetBgpPfx2asMoasResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetBgpPfx2asMoasResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetBgpPfx2asMoasResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get prefix-to-ASN mapping
 ///
 /// Retrieves the prefix-to-ASN mapping from global routing tables.
@@ -379,24 +324,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetBgpPfx2asResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetBgpPfx2asResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetBgpPfx2asResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetBgpPfx2asResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get real-time BGP routes for a prefix
 ///
 /// Retrieves real-time BGP routes for a prefix, using public real-time data collectors (RouteViews and RIPE RIS).
@@ -422,24 +356,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetBgpRoutesRealtimeResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetBgpRoutesRealtimeResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetBgpRoutesRealtimeResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetBgpRoutesRealtimeResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get BGP routing table stats
 ///
 /// Retrieves the BGP routing table stats.
@@ -468,24 +391,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetBgpRoutesStatsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetBgpRoutesStatsResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetBgpRoutesStatsResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetBgpRoutesStatsResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get ASPA changes over time
 ///
 /// Retrieves ASPA (Autonomous System Provider Authorization) changes over time. Returns daily aggregated changes including additions, removals, and modifications of ASPA objects.
@@ -520,24 +432,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetBgpRpkiAspaChangesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetBgpRpkiAspaChangesResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetBgpRpkiAspaChangesResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetBgpRpkiAspaChangesResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get ASPA objects snapshot
 ///
 /// Retrieves current or historical ASPA (Autonomous System Provider Authorization) objects. ASPA objects define which ASNs are authorized upstream providers for a customer ASN.
@@ -572,24 +473,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetBgpRpkiAspaSnapshotResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetBgpRpkiAspaSnapshotResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetBgpRpkiAspaSnapshotResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetBgpRpkiAspaSnapshotResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get ASPA count time series
 ///
 /// Retrieves ASPA (Autonomous System Provider Authorization) object count over time. Supports filtering by RIR or location (country code) to generate multiple named series. If no RIR or location filter is specified, returns total count.
@@ -633,24 +523,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetBgpRpkiAspaTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetBgpRpkiAspaTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetBgpRpkiAspaTimeseriesResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetBgpRpkiAspaTimeseriesResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get BGP time series
 ///
 /// Retrieves BGP updates over time. When requesting updates for an autonomous system, only BGP updates of type announcement are returned.
@@ -711,24 +590,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetBgpTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetBgpTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetBgpTimeseriesResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetBgpTimeseriesResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get top ASes by BGP updates
 ///
 /// Retrieves the top autonomous systems by BGP updates (announcements only).
@@ -789,24 +657,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetBgpTopAsesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetBgpTopAsesResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetBgpTopAsesResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetBgpTopAsesResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get top ASes by prefix count
 ///
 /// Retrieves the full list of autonomous systems on the global routing table ordered by announced prefixes count. The data comes from public BGP MRT data archives and updates every 2 hours.
@@ -835,24 +692,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetBgpTopAsnsByPrefixesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetBgpTopAsnsByPrefixesResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return RadarGetBgpTopAsnsByPrefixesResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetBgpTopAsnsByPrefixesResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get top prefixes by BGP updates
 ///
 /// Retrieves the top network prefixes by BGP updates.
@@ -908,22 +754,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetBgpTopPrefixesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetBgpTopPrefixesResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetBgpTopPrefixesResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetBgpTopPrefixesResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

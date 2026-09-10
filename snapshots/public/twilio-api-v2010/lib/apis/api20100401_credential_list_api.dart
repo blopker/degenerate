@@ -34,14 +34,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListSipCredentialListResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListSipCredentialListResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a Credential List
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists.json`
@@ -58,14 +53,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountSipSipCredentialList.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountSipSipCredentialList.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a Credential List
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{Sid}.json`
@@ -78,14 +68,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountSipSipCredentialList.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountSipSipCredentialList.fromJson(json as Map<String, dynamic>);}, );}
 /// Update a Credential List
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{Sid}.json`
@@ -102,14 +87,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountSipSipCredentialList.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountSipSipCredentialList.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a Credential List
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/SIP/CredentialLists/{Sid}.json`
@@ -122,9 +102,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

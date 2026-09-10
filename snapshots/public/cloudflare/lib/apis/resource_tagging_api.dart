@@ -32,24 +32,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? ResourceTaggingTaggedResourceObject.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? ResourceTaggingTaggedResourceObject.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 600:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure59.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure59.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set tags for an account-level resource
 ///
 /// Creates or updates tags for a specific account-level resource.
@@ -69,24 +58,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? ResourceTaggingTaggedResourceObject.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? ResourceTaggingTaggedResourceObject.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 600:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure59.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure59.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete tags from an account-level resource
 ///
 /// Removes all tags from a specific account-level resource.
@@ -106,21 +84,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 600:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure59.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure59.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List tag keys
 ///
 /// Lists all distinct tag keys used across resources in an account.
@@ -143,24 +112,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>?)?.map((e) => e as String).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>?)?.map((e) => e as String).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 600:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure59.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure59.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List tagged resources
 ///
 /// Lists all tagged resources for an account.
@@ -193,24 +151,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>?)?.map((e) => ResourceTaggingTaggedResourceObject.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>?)?.map((e) => ResourceTaggingTaggedResourceObject.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 600:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure59.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure59.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List tag values
 ///
 /// Lists all distinct values for a given tag key, optionally filtered by resource type.
@@ -236,24 +183,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>?)?.map((e) => e as String).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>?)?.map((e) => e as String).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 600:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure59.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure59.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get tags for a zone-level resource
 ///
 /// Retrieves tags for a specific zone-level resource.
@@ -278,24 +214,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? ResourceTaggingTaggedResourceObject.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? ResourceTaggingTaggedResourceObject.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 600:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure59.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure59.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set tags for a zone-level resource
 ///
 /// Creates or updates tags for a specific zone-level resource. Replaces all existing tags for the resource.
@@ -315,24 +240,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? ResourceTaggingTaggedResourceObject.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? ResourceTaggingTaggedResourceObject.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 600:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure59.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure59.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete tags from a zone-level resource
 ///
 /// Removes all tags from a specific zone-level resource.
@@ -352,19 +266,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 600:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure59.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure59.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

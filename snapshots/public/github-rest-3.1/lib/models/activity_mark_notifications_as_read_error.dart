@@ -6,17 +6,12 @@ sealed class ActivityMarkNotificationsAsReadError {const ActivityMarkNotificatio
 /// Decodes the payload for its declared status and content type.
 static ActivityMarkNotificationsAsReadError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ActivityMarkNotificationsAsReadError304();
-case 401:
+return  const ActivityMarkNotificationsAsReadError304();case 401:
 final json = jsonDecode(response.body);
-return ActivityMarkNotificationsAsReadError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  ActivityMarkNotificationsAsReadError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return ActivityMarkNotificationsAsReadError403(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ActivityMarkNotificationsAsReadErrorUnknown(response);
-}
-}
+return  ActivityMarkNotificationsAsReadError403(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ActivityMarkNotificationsAsReadErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ActivityMarkNotificationsAsReadError304 extends ActivityMarkNotificationsAsReadError {const ActivityMarkNotificationsAsReadError304();

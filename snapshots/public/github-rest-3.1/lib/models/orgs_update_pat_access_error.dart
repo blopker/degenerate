@@ -7,20 +7,14 @@ sealed class OrgsUpdatePatAccessError {const OrgsUpdatePatAccessError();
 static OrgsUpdatePatAccessError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return OrgsUpdatePatAccessError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  OrgsUpdatePatAccessError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return OrgsUpdatePatAccessError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  OrgsUpdatePatAccessError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return OrgsUpdatePatAccessError422(ValidationError.fromJson(json as Map<String, dynamic>));
-case 500:
+return  OrgsUpdatePatAccessError422(ValidationError.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return OrgsUpdatePatAccessError500(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return OrgsUpdatePatAccessErrorUnknown(response);
-}
-}
+return  OrgsUpdatePatAccessError500(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  OrgsUpdatePatAccessErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class OrgsUpdatePatAccessError403 extends OrgsUpdatePatAccessError {const OrgsUpdatePatAccessError403(this.data);

@@ -78,24 +78,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetNetflowsSummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetNetflowsSummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetNetflowsSummaryResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetNetflowsSummaryResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get network traffic time series
 ///
 /// Retrieves network traffic (NetFlows) over time.
@@ -169,24 +158,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetNetflowsTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetNetflowsTimeseriesResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetNetflowsTimeseriesResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetNetflowsTimeseriesResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get time series distribution of network traffic by dimension
 ///
 /// Retrieves the distribution of NetFlows traffic, grouped by the specified dimension over time.
@@ -263,24 +241,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetNetflowsTimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetNetflowsTimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetNetflowsTimeseriesGroupResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetNetflowsTimeseriesGroupResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get top ASes by network traffic
 ///
 /// Retrieves the top autonomous systems by network traffic (NetFlows).
@@ -346,24 +313,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetNetflowsTopAsesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetNetflowsTopAsesResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return RadarGetNetflowsTopAsesResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetNetflowsTopAsesResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get top locations by network traffic
 ///
 /// Retrieves the top locations by network traffic (NetFlows).
@@ -429,22 +385,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetNetflowsTopLocationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetNetflowsTopLocationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return RadarGetNetflowsTopLocationsResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetNetflowsTopLocationsResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

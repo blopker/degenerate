@@ -7,36 +7,24 @@ sealed class BillingUpdateBudgetOrgError {const BillingUpdateBudgetOrgError();
 static BillingUpdateBudgetOrgError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return BillingUpdateBudgetOrgError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  BillingUpdateBudgetOrgError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return BillingUpdateBudgetOrgError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  BillingUpdateBudgetOrgError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return BillingUpdateBudgetOrgError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 401:
+return  BillingUpdateBudgetOrgError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }case 401:
 final json = jsonDecode(response.body);
-return BillingUpdateBudgetOrgError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  BillingUpdateBudgetOrgError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return BillingUpdateBudgetOrgError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  BillingUpdateBudgetOrgError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return BillingUpdateBudgetOrgError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  BillingUpdateBudgetOrgError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return BillingUpdateBudgetOrgError422(ValidationError.fromJson(json as Map<String, dynamic>));
-case 500:
+return  BillingUpdateBudgetOrgError422(ValidationError.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return BillingUpdateBudgetOrgError500(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return BillingUpdateBudgetOrgErrorUnknown(response);
-}
-}
+return  BillingUpdateBudgetOrgError500(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  BillingUpdateBudgetOrgErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class BillingUpdateBudgetOrgError400ApplicationJson extends BillingUpdateBudgetOrgError {const BillingUpdateBudgetOrgError400ApplicationJson(this.data);

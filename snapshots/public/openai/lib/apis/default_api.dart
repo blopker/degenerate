@@ -39,14 +39,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ContainerListResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ContainerListResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Create Container
 ///
 /// Creates a container.
@@ -63,14 +58,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ContainerResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ContainerResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieve Container
 ///
 /// Retrieves a container.
@@ -85,14 +75,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ContainerResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ContainerResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete Container
 ///
 /// Delete a container.
@@ -107,11 +92,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List Container files
 ///
 /// Lists container files.
@@ -140,14 +122,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ContainerFileListResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ContainerFileListResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a Container File
 /// 
 /// You can send either a multipart/form-data request with the raw file content, or a JSON request with a file ID.
@@ -168,14 +145,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ContainerFileResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ContainerFileResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieve Container File
 ///
 /// Retrieves a container file.
@@ -190,14 +162,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ContainerFileResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ContainerFileResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete Container File
 ///
 /// Delete a container file.
@@ -212,11 +179,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve Container File Content
 ///
 /// Retrieves a container file content.
@@ -231,11 +195,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List organization API keys
 ///
 /// Retrieve a paginated list of organization admin API keys.
@@ -264,14 +225,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return KeyList.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  KeyList.fromJson(json as Map<String, dynamic>);}, );}
 /// Create an organization admin API key
 ///
 /// Create a new admin-level API key for the organization.
@@ -288,14 +244,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Key.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Key.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieve a single organization API key
 ///
 /// Get details for a specific organization API key by its ID.
@@ -310,14 +261,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Key.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Key.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete an organization admin API key
 ///
 /// Delete the specified admin API key.
@@ -332,14 +278,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return KeysDeleteResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  KeysDeleteResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Returns input token counts of the request.
 /// 
 /// Returns an object with `object` set to `response.input_tokens` and an `input_tokens` count.
@@ -356,14 +297,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return TokenCountsResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  TokenCountsResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Compact a conversation. Returns a compacted response object.
 /// 
 /// Learn when and how to compact long-running conversations in the [conversation state guide](/docs/guides/conversation-state#managing-the-context-window). For ZDR-compatible compaction details, see [Compaction (advanced)](/docs/guides/conversation-state#compaction-advanced).
@@ -380,14 +316,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CompactResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CompactResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Cancel an active ChatKit session and return its most recent metadata.
 /// 
 /// Cancelling prevents new requests from using the issued client secret.
@@ -402,14 +333,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ChatSessionResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ChatSessionResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a ChatKit session.
 ///
 /// `POST /chatkit/sessions`
@@ -424,14 +350,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ChatSessionResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ChatSessionResource.fromJson(json as Map<String, dynamic>);}, );}
 /// List items that belong to a ChatKit thread.
 ///
 /// `GET /chatkit/threads/{thread_id}/items`
@@ -461,14 +382,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ThreadItemListResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ThreadItemListResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieve a ChatKit thread by its identifier.
 ///
 /// `GET /chatkit/threads/{thread_id}`
@@ -481,14 +397,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ThreadResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ThreadResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a ChatKit thread along with its items and stored attachments.
 ///
 /// `DELETE /chatkit/threads/{thread_id}`
@@ -501,14 +412,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedThreadResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedThreadResource.fromJson(json as Map<String, dynamic>);}, );}
 /// List ChatKit threads with optional pagination and user filters.
 ///
 /// `GET /chatkit/threads`
@@ -541,12 +447,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ThreadListResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ThreadListResource.fromJson(json as Map<String, dynamic>);}, );}
 }

@@ -7,14 +7,10 @@ sealed class WorCreateNewWorkflowInstanceError {const WorCreateNewWorkflowInstan
 static WorCreateNewWorkflowInstanceError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorCreateNewWorkflowInstanceError400(WorCreateNewWorkflowInstanceResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  WorCreateNewWorkflowInstanceError400(WorCreateNewWorkflowInstanceResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return WorCreateNewWorkflowInstanceError404(WorCreateNewWorkflowInstanceResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return WorCreateNewWorkflowInstanceErrorUnknown(response);
-}
-}
+return  WorCreateNewWorkflowInstanceError404(WorCreateNewWorkflowInstanceResponse404.fromJson(json as Map<String, dynamic>));default:
+return  WorCreateNewWorkflowInstanceErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class WorCreateNewWorkflowInstanceError400 extends WorCreateNewWorkflowInstanceError {const WorCreateNewWorkflowInstanceError400(this.data);

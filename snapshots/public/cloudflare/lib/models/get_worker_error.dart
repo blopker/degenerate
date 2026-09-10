@@ -7,17 +7,12 @@ sealed class GetWorkerError {const GetWorkerError();
 static GetWorkerError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return GetWorkerError400(GetWorkerResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  GetWorkerError400(GetWorkerResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return GetWorkerError404(GetWorkerResponse404.fromJson(json as Map<String, dynamic>));
-case 500:
+return  GetWorkerError404(GetWorkerResponse404.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return GetWorkerError500(GetWorkerResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return GetWorkerErrorUnknown(response);
-}
-}
+return  GetWorkerError500(GetWorkerResponse500.fromJson(json as Map<String, dynamic>));default:
+return  GetWorkerErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class GetWorkerError400 extends GetWorkerError {const GetWorkerError400(this.data);

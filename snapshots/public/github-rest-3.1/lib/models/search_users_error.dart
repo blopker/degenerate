@@ -6,17 +6,12 @@ sealed class SearchUsersError {const SearchUsersError();
 /// Decodes the payload for its declared status and content type.
 static SearchUsersError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const SearchUsersError304();
-case 422:
+return  const SearchUsersError304();case 422:
 final json = jsonDecode(response.body);
-return SearchUsersError422(ValidationError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  SearchUsersError422(ValidationError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return SearchUsersError503(SearchUsersResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return SearchUsersErrorUnknown(response);
-}
-}
+return  SearchUsersError503(SearchUsersResponse503.fromJson(json as Map<String, dynamic>));default:
+return  SearchUsersErrorUnknown(response); }}
 }
 /// Response for 304.
 final class SearchUsersError304 extends SearchUsersError {const SearchUsersError304();

@@ -7,13 +7,9 @@ sealed class OrgsConvertMemberToOutsideCollaboratorSuccess {const OrgsConvertMem
 static OrgsConvertMemberToOutsideCollaboratorSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 202:
 final json = jsonDecode(response.body);
-return OrgsConvertMemberToOutsideCollaboratorSuccess202(OrgsConvertMemberToOutsideCollaboratorResponse.fromJson(json as Map<String, dynamic>));
-case 204:
-return const OrgsConvertMemberToOutsideCollaboratorSuccess204();
-default:
-return OrgsConvertMemberToOutsideCollaboratorSuccessUnknown(response);
-}
-}
+return  OrgsConvertMemberToOutsideCollaboratorSuccess202(OrgsConvertMemberToOutsideCollaboratorResponse.fromJson(json as Map<String, dynamic>));case 204:
+return  const OrgsConvertMemberToOutsideCollaboratorSuccess204();default:
+return  OrgsConvertMemberToOutsideCollaboratorSuccessUnknown(response); }}
 }
 /// Response for 202 (application/json).
 final class OrgsConvertMemberToOutsideCollaboratorSuccess202 extends OrgsConvertMemberToOutsideCollaboratorSuccess {const OrgsConvertMemberToOutsideCollaboratorSuccess202(this.data);

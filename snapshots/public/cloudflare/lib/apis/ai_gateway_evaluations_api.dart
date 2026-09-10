@@ -37,24 +37,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => AigConfigListEvaluatorsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => AigConfigListEvaluatorsResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return AigConfigListEvaluatorsResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AigConfigListEvaluatorsResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List Evaluations
 ///
 /// Lists all AI Gateway evaluator types configured for the account.
@@ -89,24 +78,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => AigConfigListEvaluationsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => AigConfigListEvaluationsResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return AigConfigListEvaluationsResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AigConfigListEvaluationsResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create a new Evaluation
 ///
 /// Creates a new AI Gateway.
@@ -123,24 +101,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AigConfigCreateEvaluationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AigConfigCreateEvaluationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return AigConfigCreateEvaluationsResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AigConfigCreateEvaluationsResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Fetch a Evaluation
 ///
 /// Retrieves details for a specific AI Gateway dataset.
@@ -155,24 +122,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AigConfigFetchEvaluationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AigConfigFetchEvaluationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return AigConfigFetchEvaluationsResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AigConfigFetchEvaluationsResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete a Evaluation
 ///
 /// Deletes an AI Gateway dataset.
@@ -187,22 +143,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AigConfigDeleteEvaluationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AigConfigDeleteEvaluationsResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return AigConfigDeleteEvaluationsResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AigConfigDeleteEvaluationsResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

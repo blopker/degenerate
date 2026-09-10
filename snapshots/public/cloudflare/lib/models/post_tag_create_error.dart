@@ -7,14 +7,10 @@ sealed class PostTagCreateError {const PostTagCreateError();
 static PostTagCreateError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PostTagCreateError400(PostTagCreateResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  PostTagCreateError400(PostTagCreateResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return PostTagCreateError404(PostTagCreateResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return PostTagCreateErrorUnknown(response);
-}
-}
+return  PostTagCreateError404(PostTagCreateResponse404.fromJson(json as Map<String, dynamic>));default:
+return  PostTagCreateErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class PostTagCreateError400 extends PostTagCreateError {const PostTagCreateError400(this.data);

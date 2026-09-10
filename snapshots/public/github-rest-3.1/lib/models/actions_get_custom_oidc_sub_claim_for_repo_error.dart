@@ -7,24 +7,16 @@ sealed class ActionsGetCustomOidcSubClaimForRepoError {const ActionsGetCustomOid
 static ActionsGetCustomOidcSubClaimForRepoError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ActionsGetCustomOidcSubClaimForRepoError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  ActionsGetCustomOidcSubClaimForRepoError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return ActionsGetCustomOidcSubClaimForRepoError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  ActionsGetCustomOidcSubClaimForRepoError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return ActionsGetCustomOidcSubClaimForRepoError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 404:
+return  ActionsGetCustomOidcSubClaimForRepoError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }case 404:
 final json = jsonDecode(response.body);
-return ActionsGetCustomOidcSubClaimForRepoError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ActionsGetCustomOidcSubClaimForRepoErrorUnknown(response);
-}
-}
+return  ActionsGetCustomOidcSubClaimForRepoError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ActionsGetCustomOidcSubClaimForRepoErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class ActionsGetCustomOidcSubClaimForRepoError400ApplicationJson extends ActionsGetCustomOidcSubClaimForRepoError {const ActionsGetCustomOidcSubClaimForRepoError400ApplicationJson(this.data);

@@ -7,23 +7,16 @@ sealed class PullsMergeError {const PullsMergeError();
 static PullsMergeError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return PullsMergeError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  PullsMergeError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return PullsMergeError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 405:
+return  PullsMergeError404(BasicError.fromJson(json as Map<String, dynamic>));case 405:
 final json = jsonDecode(response.body);
-return PullsMergeError405(PullsMergeResponse405.fromJson(json as Map<String, dynamic>));
-case 409:
+return  PullsMergeError405(PullsMergeResponse405.fromJson(json as Map<String, dynamic>));case 409:
 final json = jsonDecode(response.body);
-return PullsMergeError409(PullsMergeResponse409.fromJson(json as Map<String, dynamic>));
-case 422:
+return  PullsMergeError409(PullsMergeResponse409.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return PullsMergeError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return PullsMergeErrorUnknown(response);
-}
-}
+return  PullsMergeError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  PullsMergeErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class PullsMergeError403 extends PullsMergeError {const PullsMergeError403(this.data);

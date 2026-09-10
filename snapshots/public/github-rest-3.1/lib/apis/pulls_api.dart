@@ -61,15 +61,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => PullRequestSimple.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: PullsListError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => PullRequestSimple.fromJson(e as Map<String, dynamic>)).toList();}, onError: PullsListError.parse, );}
 /// Create a pull request
 ///
 /// Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -97,15 +91,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequest.fromJson(json as Map<String, dynamic>);
-  },
-  onError: PullsCreateError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequest.fromJson(json as Map<String, dynamic>);}, onError: PullsCreateError.parse, );}
 /// List review comments in a repository
 ///
 /// Lists review comments for all pull requests in a repository. By default,
@@ -148,14 +136,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => PullRequestReviewComment.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => PullRequestReviewComment.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Get a review comment for a pull request
 ///
 /// Provides details for a specified review comment.
@@ -177,24 +160,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestReviewComment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestReviewComment.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update a review comment for a pull request
 ///
 /// Edits the content of a specified review comment.
@@ -218,14 +190,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestReviewComment.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestReviewComment.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a review comment for a pull request
 ///
 /// Deletes a review comment.
@@ -240,21 +207,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get a pull request
 ///
 /// Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -291,15 +249,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequest.fromJson(json as Map<String, dynamic>);
-  },
-  onError: PullsGetError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequest.fromJson(json as Map<String, dynamic>);}, onError: PullsGetError.parse, );}
 /// Update a pull request
 ///
 /// Draft pull requests are available in public repositories with GitHub Free and GitHub Free for organizations, GitHub Pro, and legacy per-repository billing plans, and in public and private repositories with GitHub Team and GitHub Enterprise Cloud. For more information, see [GitHub's products](https://docs.github.com/github/getting-started-with-github/githubs-products) in the GitHub Help documentation.
@@ -325,15 +277,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequest.fromJson(json as Map<String, dynamic>);
-  },
-  onError: PullsUpdateError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequest.fromJson(json as Map<String, dynamic>);}, onError: PullsUpdateError.parse, );}
 /// List review comments on a pull request
 ///
 /// Lists all review comments for a specified pull request. By default, review comments
@@ -376,14 +322,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => PullRequestReviewComment.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => PullRequestReviewComment.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Create a review comment for a pull request
 ///
 /// Creates a review comment on the diff of a specified pull request. To add a regular comment to a pull request timeline, see "[Create an issue comment](https://docs.github.com/rest/issues/comments#create-an-issue-comment)."
@@ -414,15 +355,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestReviewComment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: PullsCreateReviewCommentError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestReviewComment.fromJson(json as Map<String, dynamic>);}, onError: PullsCreateReviewCommentError.parse, );}
 /// Create a reply for a review comment
 ///
 /// Creates a reply to a review comment for a pull request. For the `comment_id`, provide the ID of the review comment you are replying to. This must be the ID of a _top-level review comment_, not a reply to that comment. Replies to replies are not supported.
@@ -449,24 +384,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestReviewComment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestReviewComment.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List commits on a pull request
 ///
 /// Lists a maximum of 250 commits for a pull request. To receive a complete
@@ -501,14 +425,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Commit.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Commit.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List pull requests files
 ///
 /// Lists the files in a specified pull request.
@@ -544,15 +463,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => DiffEntry.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: PullsListFilesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => DiffEntry.fromJson(e as Map<String, dynamic>)).toList();}, onError: PullsListFilesError.parse, );}
 /// Check if a pull request has been merged
 ///
 /// Checks if a pull request has been merged into the base branch. The HTTP status of the response indicates whether or not the pull request has been merged; the response body is empty.
@@ -567,11 +480,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Merge a pull request
 ///
 /// Merges a pull request into the base branch.
@@ -589,15 +499,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestMergeResult.fromJson(json as Map<String, dynamic>);
-  },
-  onError: PullsMergeError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestMergeResult.fromJson(json as Map<String, dynamic>);}, onError: PullsMergeError.parse, );}
 /// Get all requested reviewers for a pull request
 ///
 /// Gets the users or teams whose review is requested for a pull request. Once a requested reviewer submits a review, they are no longer considered a requested reviewer. Their review will instead be returned by the [List reviews for a pull request](https://docs.github.com/rest/pulls/reviews#list-reviews-for-a-pull-request) operation.
@@ -612,14 +516,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestReviewRequest.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestReviewRequest.fromJson(json as Map<String, dynamic>);}, );}
 /// Request reviewers for a pull request
 ///
 /// Requests reviews for a pull request from a given set of users and/or teams.
@@ -637,15 +536,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestSimple.fromJson(json as Map<String, dynamic>);
-  },
-  onError: PullsRequestReviewersError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestSimple.fromJson(json as Map<String, dynamic>);}, onError: PullsRequestReviewersError.parse, );}
 /// Remove requested reviewers from a pull request
 ///
 /// Removes review requests from a pull request for a given set of users and/or teams.
@@ -662,24 +555,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestSimple.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestSimple.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List reviews for a pull request
 ///
 /// Lists all reviews for a specified pull request. The list of reviews returns in chronological order.
@@ -712,14 +594,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => PullRequestReview.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => PullRequestReview.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Create a review for a pull request
 ///
 /// Creates a review on a specified pull request.
@@ -752,15 +629,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestReview.fromJson(json as Map<String, dynamic>);
-  },
-  onError: PullsCreateReviewError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestReview.fromJson(json as Map<String, dynamic>);}, onError: PullsCreateReviewError.parse, );}
 /// Get a review for a pull request
 ///
 /// Retrieves a pull request review by its ID.
@@ -782,24 +653,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestReview.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestReview.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update a review for a pull request
 ///
 /// Updates the contents of a specified review summary comment.
@@ -823,24 +683,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestReview.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestReview.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationErrorSimple.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationErrorSimple.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete a pending review for a pull request
 ///
 /// Deletes a pull request review that has not been submitted. Submitted reviews cannot be deleted.
@@ -862,15 +711,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestReview.fromJson(json as Map<String, dynamic>);
-  },
-  onError: PullsDeletePendingReviewError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestReview.fromJson(json as Map<String, dynamic>);}, onError: PullsDeletePendingReviewError.parse, );}
 /// List comments for a pull request review
 ///
 /// Lists comments for a specific pull request review.
@@ -903,24 +746,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => ReviewComment.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => ReviewComment.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Dismiss a review for a pull request
 ///
 /// Dismisses a specified review on a pull request.
@@ -947,15 +779,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestReview.fromJson(json as Map<String, dynamic>);
-  },
-  onError: PullsDismissReviewError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestReview.fromJson(json as Map<String, dynamic>);}, onError: PullsDismissReviewError.parse, );}
 /// Submit a review for a pull request
 ///
 /// Submits a pending review for a pull request. For more information about creating a pending review for a pull request, see "[Create a review for a pull request](https://docs.github.com/rest/pulls/reviews#create-a-review-for-a-pull-request)."
@@ -979,15 +805,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullRequestReview.fromJson(json as Map<String, dynamic>);
-  },
-  onError: PullsSubmitReviewError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullRequestReview.fromJson(json as Map<String, dynamic>);}, onError: PullsSubmitReviewError.parse, );}
 /// Update a pull request branch
 ///
 /// Updates the pull request branch with the latest upstream changes by merging HEAD from the base branch into the pull request branch.
@@ -1005,13 +825,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PullsUpdateBranchResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: PullsUpdateBranchError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PullsUpdateBranchResponse.fromJson(json as Map<String, dynamic>);}, onError: PullsUpdateBranchError.parse, );}
 }

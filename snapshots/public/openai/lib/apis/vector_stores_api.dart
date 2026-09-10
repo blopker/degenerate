@@ -37,14 +37,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListVectorStoresResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListVectorStoresResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a vector store.
 ///
 /// `POST /vector_stores`
@@ -59,14 +54,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VectorStoreObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VectorStoreObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieves a vector store.
 ///
 /// `GET /vector_stores/{vector_store_id}`
@@ -79,14 +69,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VectorStoreObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VectorStoreObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Modifies a vector store.
 ///
 /// `POST /vector_stores/{vector_store_id}`
@@ -101,14 +86,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VectorStoreObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VectorStoreObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a vector store.
 ///
 /// `DELETE /vector_stores/{vector_store_id}`
@@ -121,14 +101,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeleteVectorStoreResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeleteVectorStoreResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a vector store file batch.
 ///
 /// The maximum number of files in a single batch request is 2000.
@@ -145,14 +120,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VectorStoreFileBatchObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VectorStoreFileBatchObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieves a vector store file batch.
 ///
 /// `GET /vector_stores/{vector_store_id}/file_batches/{batch_id}`
@@ -165,14 +135,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VectorStoreFileBatchObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VectorStoreFileBatchObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Cancel a vector store file batch. This attempts to cancel the processing of files in this batch as soon as possible.
 ///
 /// `POST /vector_stores/{vector_store_id}/file_batches/{batch_id}/cancel`
@@ -185,14 +150,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VectorStoreFileBatchObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VectorStoreFileBatchObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Returns a list of vector store files in a batch.
 ///
 /// `GET /vector_stores/{vector_store_id}/file_batches/{batch_id}/files`
@@ -225,14 +185,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListVectorStoreFilesResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListVectorStoreFilesResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Returns a list of vector store files.
 ///
 /// `GET /vector_stores/{vector_store_id}/files`
@@ -265,14 +220,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListVectorStoreFilesResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListVectorStoreFilesResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a vector store file by attaching a [File](/docs/api-reference/files) to a [vector store](/docs/api-reference/vector-stores/object).
 ///
 /// `POST /vector_stores/{vector_store_id}/files`
@@ -287,14 +237,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VectorStoreFileObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VectorStoreFileObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieves a vector store file.
 ///
 /// `GET /vector_stores/{vector_store_id}/files/{file_id}`
@@ -307,14 +252,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VectorStoreFileObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VectorStoreFileObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Update attributes on a vector store file.
 ///
 /// `POST /vector_stores/{vector_store_id}/files/{file_id}`
@@ -329,14 +269,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VectorStoreFileObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VectorStoreFileObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a vector store file. This will remove the file from the vector store but the file itself will not be deleted. To delete the file, use the [delete file](/docs/api-reference/files/delete) endpoint.
 ///
 /// `DELETE /vector_stores/{vector_store_id}/files/{file_id}`
@@ -349,14 +284,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeleteVectorStoreFileResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeleteVectorStoreFileResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieve the parsed contents of a vector store file.
 ///
 /// `GET /vector_stores/{vector_store_id}/files/{file_id}/content`
@@ -369,14 +299,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VectorStoreFileContentResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VectorStoreFileContentResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Search a vector store for relevant chunks based on a query and file attributes filter.
 ///
 /// `POST /vector_stores/{vector_store_id}/search`
@@ -391,12 +316,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VectorStoreSearchResultsPage.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VectorStoreSearchResultsPage.fromJson(json as Map<String, dynamic>);}, );}
 }

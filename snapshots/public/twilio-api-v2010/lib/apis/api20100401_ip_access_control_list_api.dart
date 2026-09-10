@@ -34,14 +34,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListSipIpAccessControlListResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListSipIpAccessControlListResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a new IpAccessControlList resource
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists.json`
@@ -58,14 +53,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountSipSipIpAccessControlList.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountSipSipIpAccessControlList.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch a specific instance of an IpAccessControlList
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{Sid}.json`
@@ -78,14 +68,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountSipSipIpAccessControlList.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountSipSipIpAccessControlList.fromJson(json as Map<String, dynamic>);}, );}
 /// Rename an IpAccessControlList
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{Sid}.json`
@@ -102,14 +87,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountSipSipIpAccessControlList.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountSipSipIpAccessControlList.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete an IpAccessControlList from the requested account
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/SIP/IpAccessControlLists/{Sid}.json`
@@ -122,9 +102,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

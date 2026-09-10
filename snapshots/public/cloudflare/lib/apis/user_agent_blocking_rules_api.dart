@@ -42,24 +42,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => FirewallFirewalluablock.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => FirewallFirewalluablock.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return UserAgentBlockingRulesListUserAgentBlockingRulesResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  UserAgentBlockingRulesListUserAgentBlockingRulesResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create a User Agent Blocking rule
 ///
 /// Creates a new User Agent Blocking rule in a zone.
@@ -76,24 +65,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return FirewallFirewalluablock.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  FirewallFirewalluablock.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return UserAgentBlockingRulesCreateAUserAgentBlockingRuleResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  UserAgentBlockingRulesCreateAUserAgentBlockingRuleResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get a User Agent Blocking rule
 ///
 /// Fetches the details of a User Agent Blocking rule.
@@ -108,24 +86,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return FirewallFirewalluablock.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  FirewallFirewalluablock.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return UserAgentBlockingRulesGetAUserAgentBlockingRuleResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  UserAgentBlockingRulesGetAUserAgentBlockingRuleResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update a User Agent Blocking rule
 ///
 /// Updates an existing User Agent Blocking rule.
@@ -142,24 +109,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return FirewallFirewalluablock.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  FirewallFirewalluablock.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return UserAgentBlockingRulesUpdateAUserAgentBlockingRuleResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  UserAgentBlockingRulesUpdateAUserAgentBlockingRuleResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete a User Agent Blocking rule
 ///
 /// Deletes an existing User Agent Blocking rule.
@@ -174,22 +130,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return UserAgentBlockingRulesDeleteAUserAgentBlockingRuleResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  UserAgentBlockingRulesDeleteAUserAgentBlockingRuleResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure34.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure34.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

@@ -7,14 +7,10 @@ sealed class IssuesListCommentsForRepoError {const IssuesListCommentsForRepoErro
 static IssuesListCommentsForRepoError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return IssuesListCommentsForRepoError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  IssuesListCommentsForRepoError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return IssuesListCommentsForRepoError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return IssuesListCommentsForRepoErrorUnknown(response);
-}
-}
+return  IssuesListCommentsForRepoError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  IssuesListCommentsForRepoErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class IssuesListCommentsForRepoError404 extends IssuesListCommentsForRepoError {const IssuesListCommentsForRepoError404(this.data);

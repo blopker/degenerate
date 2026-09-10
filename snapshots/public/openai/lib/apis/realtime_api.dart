@@ -27,13 +27,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-return response.body;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {return  response.body;}, );}
 /// Accept an incoming SIP call and configure the realtime session that will
 /// handle it.
 ///
@@ -49,11 +44,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// End an active Realtime API call, whether it was initiated over SIP or
 /// WebRTC.
 ///
@@ -67,11 +59,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Transfer an active SIP call to a new destination using the SIP REFER verb.
 ///
 /// `POST /realtime/calls/{call_id}/refer`
@@ -86,11 +75,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Decline an incoming SIP call by returning a SIP status code to the caller.
 ///
 /// `POST /realtime/calls/{call_id}/reject`
@@ -105,11 +91,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a Realtime client secret with an associated session configuration.
 /// 
 /// Client secrets are short-lived tokens that can be passed to a client app,
@@ -137,14 +120,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RealtimeCreateClientSecretResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RealtimeCreateClientSecretResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create an ephemeral API token for use in client-side applications with the
 /// Realtime API. Can be configured with the same session parameters as the
 /// `session.update` client event.
@@ -168,14 +146,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RealtimeSessionCreateResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RealtimeSessionCreateResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create an ephemeral API token for use in client-side applications with the
 /// Realtime API specifically for realtime transcriptions.
 /// Can be configured with the same session parameters as the `transcription_session.update` client event.
@@ -199,12 +172,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RealtimeTranscriptionSessionCreateResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RealtimeTranscriptionSessionCreateResponse.fromJson(json as Map<String, dynamic>);}, );}
 }

@@ -7,17 +7,12 @@ sealed class ReposRenameBranchError {const ReposRenameBranchError();
 static ReposRenameBranchError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return ReposRenameBranchError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  ReposRenameBranchError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return ReposRenameBranchError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposRenameBranchError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposRenameBranchError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposRenameBranchErrorUnknown(response);
-}
-}
+return  ReposRenameBranchError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposRenameBranchErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class ReposRenameBranchError403 extends ReposRenameBranchError {const ReposRenameBranchError403(this.data);

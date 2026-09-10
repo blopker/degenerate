@@ -44,14 +44,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ChatCompletionList.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ChatCompletionList.fromJson(json as Map<String, dynamic>);}, );}
 /// **Starting a new project?** We recommend trying [Responses](/docs/api-reference/responses)
 /// to take advantage of the latest OpenAI platform features. Compare
 /// [Chat Completions with Responses](/docs/guides/responses-vs-chat-completions?api-mode=responses).
@@ -84,11 +79,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: CreateChatCompletionSuccess.parse,
-);
-}
+
+return   await execute(request, onSuccess: CreateChatCompletionSuccess.parse, );}
 /// Get a stored chat completion. Only Chat Completions that have been created
 /// with the `store` parameter set to `true` will be returned.
 /// 
@@ -103,14 +95,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CreateChatCompletionResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CreateChatCompletionResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Modify a stored chat completion. Only Chat Completions that have been
 /// created with the `store` parameter set to `true` can be modified. Currently,
 /// the only supported modification is to update the `metadata` field.
@@ -128,14 +115,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CreateChatCompletionResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CreateChatCompletionResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a stored chat completion. Only Chat Completions that have been
 /// created with the `store` parameter set to `true` can be deleted.
 /// 
@@ -150,14 +132,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ChatCompletionDeleted.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ChatCompletionDeleted.fromJson(json as Map<String, dynamic>);}, );}
 /// Get the messages in a stored chat completion. Only Chat Completions that
 /// have been created with the `store` parameter set to `true` will be
 /// returned.
@@ -187,14 +164,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ChatCompletionMessageList.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ChatCompletionMessageList.fromJson(json as Map<String, dynamic>);}, );}
 /// **Starting a new project?** We recommend trying [Responses](/docs/api-reference/responses)
 /// to take advantage of the latest OpenAI platform features. Compare
 /// [Chat Completions with Responses](/docs/guides/responses-vs-chat-completions?api-mode=responses).

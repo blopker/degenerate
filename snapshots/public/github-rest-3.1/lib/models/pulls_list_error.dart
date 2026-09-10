@@ -6,14 +6,10 @@ sealed class PullsListError {const PullsListError();
 /// Decodes the payload for its declared status and content type.
 static PullsListError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const PullsListError304();
-case 422:
+return  const PullsListError304();case 422:
 final json = jsonDecode(response.body);
-return PullsListError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return PullsListErrorUnknown(response);
-}
-}
+return  PullsListError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  PullsListErrorUnknown(response); }}
 }
 /// Response for 304.
 final class PullsListError304 extends PullsListError {const PullsListError304();

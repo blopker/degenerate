@@ -7,13 +7,9 @@ sealed class PullsRequestReviewersError {const PullsRequestReviewersError();
 static PullsRequestReviewersError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return PullsRequestReviewersError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-return const PullsRequestReviewersError422();
-default:
-return PullsRequestReviewersErrorUnknown(response);
-}
-}
+return  PullsRequestReviewersError403(BasicError.fromJson(json as Map<String, dynamic>));case 422:
+return  const PullsRequestReviewersError422();default:
+return  PullsRequestReviewersErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class PullsRequestReviewersError403 extends PullsRequestReviewersError {const PullsRequestReviewersError403(this.data);

@@ -6,17 +6,12 @@ sealed class GistsDeleteError {const GistsDeleteError();
 /// Decodes the payload for its declared status and content type.
 static GistsDeleteError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const GistsDeleteError304();
-case 403:
+return  const GistsDeleteError304();case 403:
 final json = jsonDecode(response.body);
-return GistsDeleteError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  GistsDeleteError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return GistsDeleteError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return GistsDeleteErrorUnknown(response);
-}
-}
+return  GistsDeleteError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  GistsDeleteErrorUnknown(response); }}
 }
 /// Response for 304.
 final class GistsDeleteError304 extends GistsDeleteError {const GistsDeleteError304();

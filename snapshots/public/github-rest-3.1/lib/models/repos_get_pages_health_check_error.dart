@@ -6,16 +6,11 @@ sealed class ReposGetPagesHealthCheckError {const ReposGetPagesHealthCheckError(
 /// Decodes the payload for its declared status and content type.
 static ReposGetPagesHealthCheckError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
-return const ReposGetPagesHealthCheckError400();
-case 404:
+return  const ReposGetPagesHealthCheckError400();case 404:
 final json = jsonDecode(response.body);
-return ReposGetPagesHealthCheckError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-return const ReposGetPagesHealthCheckError422();
-default:
-return ReposGetPagesHealthCheckErrorUnknown(response);
-}
-}
+return  ReposGetPagesHealthCheckError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
+return  const ReposGetPagesHealthCheckError422();default:
+return  ReposGetPagesHealthCheckErrorUnknown(response); }}
 }
 /// Response for 400.
 final class ReposGetPagesHealthCheckError400 extends ReposGetPagesHealthCheckError {const ReposGetPagesHealthCheckError400();

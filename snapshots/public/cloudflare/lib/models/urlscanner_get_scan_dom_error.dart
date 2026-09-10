@@ -7,14 +7,10 @@ sealed class UrlscannerGetScanDomError {const UrlscannerGetScanDomError();
 static UrlscannerGetScanDomError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return UrlscannerGetScanDomError400(UrlscannerGetScanDomResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  UrlscannerGetScanDomError400(UrlscannerGetScanDomResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return UrlscannerGetScanDomError404(UrlscannerGetScanDomResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return UrlscannerGetScanDomErrorUnknown(response);
-}
-}
+return  UrlscannerGetScanDomError404(UrlscannerGetScanDomResponse404.fromJson(json as Map<String, dynamic>));default:
+return  UrlscannerGetScanDomErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class UrlscannerGetScanDomError400 extends UrlscannerGetScanDomError {const UrlscannerGetScanDomError400(this.data);

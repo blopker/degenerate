@@ -68,24 +68,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetAiInferenceSummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetAiInferenceSummaryResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetAiInferenceSummaryResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetAiInferenceSummaryResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get time series distribution of Workers AI inference by dimension.
 ///
 /// Retrieves the distribution of unique accounts using Workers AI inference, grouped by the specified dimension over time.
@@ -152,22 +141,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetAiInferenceTimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetAiInferenceTimeseriesGroupResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return RadarGetAiInferenceTimeseriesGroupResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetAiInferenceTimeseriesGroupResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

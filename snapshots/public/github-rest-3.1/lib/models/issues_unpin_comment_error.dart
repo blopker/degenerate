@@ -7,23 +7,16 @@ sealed class IssuesUnpinCommentError {const IssuesUnpinCommentError();
 static IssuesUnpinCommentError parse(ApiResponse response) {switch (response.statusCode) {
 case 401:
 final json = jsonDecode(response.body);
-return IssuesUnpinCommentError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  IssuesUnpinCommentError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return IssuesUnpinCommentError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  IssuesUnpinCommentError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return IssuesUnpinCommentError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 410:
+return  IssuesUnpinCommentError404(BasicError.fromJson(json as Map<String, dynamic>));case 410:
 final json = jsonDecode(response.body);
-return IssuesUnpinCommentError410(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  IssuesUnpinCommentError410(BasicError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return IssuesUnpinCommentError503(IssuesUnpinCommentResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return IssuesUnpinCommentErrorUnknown(response);
-}
-}
+return  IssuesUnpinCommentError503(IssuesUnpinCommentResponse503.fromJson(json as Map<String, dynamic>));default:
+return  IssuesUnpinCommentErrorUnknown(response); }}
 }
 /// Response for 401 (application/json).
 final class IssuesUnpinCommentError401 extends IssuesUnpinCommentError {const IssuesUnpinCommentError401(this.data);

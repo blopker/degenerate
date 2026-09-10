@@ -7,17 +7,12 @@ sealed class CampaignsGetCampaignSummaryError {const CampaignsGetCampaignSummary
 static CampaignsGetCampaignSummaryError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return CampaignsGetCampaignSummaryError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  CampaignsGetCampaignSummaryError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return CampaignsGetCampaignSummaryError422(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  CampaignsGetCampaignSummaryError422(BasicError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return CampaignsGetCampaignSummaryError503(CampaignsGetCampaignSummaryResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return CampaignsGetCampaignSummaryErrorUnknown(response);
-}
-}
+return  CampaignsGetCampaignSummaryError503(CampaignsGetCampaignSummaryResponse503.fromJson(json as Map<String, dynamic>));default:
+return  CampaignsGetCampaignSummaryErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class CampaignsGetCampaignSummaryError404 extends CampaignsGetCampaignSummaryError {const CampaignsGetCampaignSummaryError404(this.data);

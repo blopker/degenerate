@@ -7,14 +7,10 @@ sealed class ListWorkersError {const ListWorkersError();
 static ListWorkersError parse(ApiResponse response) {switch (response.statusCode) {
 case 401:
 final json = jsonDecode(response.body);
-return ListWorkersError401(ListWorkersResponse401.fromJson(json as Map<String, dynamic>));
-case 500:
+return  ListWorkersError401(ListWorkersResponse401.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return ListWorkersError500(ListWorkersResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return ListWorkersErrorUnknown(response);
-}
-}
+return  ListWorkersError500(ListWorkersResponse500.fromJson(json as Map<String, dynamic>));default:
+return  ListWorkersErrorUnknown(response); }}
 }
 /// Response for 401 (application/json).
 final class ListWorkersError401 extends ListWorkersError {const ListWorkersError401(this.data);

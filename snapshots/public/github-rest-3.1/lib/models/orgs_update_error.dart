@@ -7,14 +7,10 @@ sealed class OrgsUpdateError {const OrgsUpdateError();
 static OrgsUpdateError parse(ApiResponse response) {switch (response.statusCode) {
 case 409:
 final json = jsonDecode(response.body);
-return OrgsUpdateError409(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  OrgsUpdateError409(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return OrgsUpdateError422(OneOf2.parse(json, fromA: (v) => ValidationError.fromJson(v as Map<String, dynamic>), fromB: (v) => ValidationErrorSimple.fromJson(v as Map<String, dynamic>),));
-default:
-return OrgsUpdateErrorUnknown(response);
-}
-}
+return  OrgsUpdateError422(OneOf2.parse(json, fromA: (v) => ValidationError.fromJson(v as Map<String, dynamic>), fromB: (v) => ValidationErrorSimple.fromJson(v as Map<String, dynamic>),));default:
+return  OrgsUpdateErrorUnknown(response); }}
 }
 /// Response for 409 (application/json).
 final class OrgsUpdateError409 extends OrgsUpdateError {const OrgsUpdateError409(this.data);

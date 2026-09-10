@@ -7,14 +7,10 @@ sealed class OrgsUpdateWebhookError {const OrgsUpdateWebhookError();
 static OrgsUpdateWebhookError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return OrgsUpdateWebhookError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  OrgsUpdateWebhookError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return OrgsUpdateWebhookError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return OrgsUpdateWebhookErrorUnknown(response);
-}
-}
+return  OrgsUpdateWebhookError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  OrgsUpdateWebhookErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class OrgsUpdateWebhookError404 extends OrgsUpdateWebhookError {const OrgsUpdateWebhookError404(this.data);

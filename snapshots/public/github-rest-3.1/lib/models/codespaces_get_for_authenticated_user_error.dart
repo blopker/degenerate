@@ -6,23 +6,16 @@ sealed class CodespacesGetForAuthenticatedUserError {const CodespacesGetForAuthe
 /// Decodes the payload for its declared status and content type.
 static CodespacesGetForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const CodespacesGetForAuthenticatedUserError304();
-case 401:
+return  const CodespacesGetForAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return CodespacesGetForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  CodespacesGetForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return CodespacesGetForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CodespacesGetForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CodespacesGetForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 500:
+return  CodespacesGetForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return CodespacesGetForAuthenticatedUserError500(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return CodespacesGetForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  CodespacesGetForAuthenticatedUserError500(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  CodespacesGetForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class CodespacesGetForAuthenticatedUserError304 extends CodespacesGetForAuthenticatedUserError {const CodespacesGetForAuthenticatedUserError304();

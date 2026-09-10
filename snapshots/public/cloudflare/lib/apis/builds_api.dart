@@ -28,14 +28,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return BuildsBuildsByVersionResponse.fromJson(json['result'] as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  BuildsBuildsByVersionResponse.fromJson(json['result'] as Map<String, dynamic>);}, );}
 /// Get build by UUID
 ///
 /// Retrieve detailed information about a specific build
@@ -50,24 +45,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return BuildsBuildResponse.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  BuildsBuildResponse.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BuildsErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BuildsErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Cancel build
 ///
 /// Cancel a running or queued build
@@ -82,24 +66,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return BuildsCanceledBuildResponse.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  BuildsCanceledBuildResponse.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BuildsErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BuildsErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get build logs
 ///
 /// Retrieve logs for a specific build with cursor-based pagination
@@ -122,24 +95,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return BuildsBuildLogsResponse.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  BuildsBuildLogsResponse.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BuildsErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BuildsErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get latest builds by script IDs
 ///
 /// Retrieve the most recent builds for multiple worker scripts
@@ -160,12 +122,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return BuildsLatestBuildsResponse.fromJson(json['result'] as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  BuildsLatestBuildsResponse.fromJson(json['result'] as Map<String, dynamic>);}, );}
 }

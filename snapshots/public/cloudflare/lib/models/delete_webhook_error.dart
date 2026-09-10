@@ -7,13 +7,9 @@ sealed class DeleteWebhookError {const DeleteWebhookError();
 static DeleteWebhookError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return DeleteWebhookError400(RealtimekitErrorResponse.fromJson(json as Map<String, dynamic>));
-case 401:
-return const DeleteWebhookError401();
-default:
-return DeleteWebhookErrorUnknown(response);
-}
-}
+return  DeleteWebhookError400(RealtimekitErrorResponse.fromJson(json as Map<String, dynamic>));case 401:
+return  const DeleteWebhookError401();default:
+return  DeleteWebhookErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class DeleteWebhookError400 extends DeleteWebhookError {const DeleteWebhookError400(this.data);

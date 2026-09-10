@@ -6,20 +6,14 @@ sealed class UsersCheckPersonIsFollowedByAuthenticatedError {const UsersCheckPer
 /// Decodes the payload for its declared status and content type.
 static UsersCheckPersonIsFollowedByAuthenticatedError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const UsersCheckPersonIsFollowedByAuthenticatedError304();
-case 401:
+return  const UsersCheckPersonIsFollowedByAuthenticatedError304();case 401:
 final json = jsonDecode(response.body);
-return UsersCheckPersonIsFollowedByAuthenticatedError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  UsersCheckPersonIsFollowedByAuthenticatedError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return UsersCheckPersonIsFollowedByAuthenticatedError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  UsersCheckPersonIsFollowedByAuthenticatedError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return UsersCheckPersonIsFollowedByAuthenticatedError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return UsersCheckPersonIsFollowedByAuthenticatedErrorUnknown(response);
-}
-}
+return  UsersCheckPersonIsFollowedByAuthenticatedError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  UsersCheckPersonIsFollowedByAuthenticatedErrorUnknown(response); }}
 }
 /// Response for 304.
 final class UsersCheckPersonIsFollowedByAuthenticatedError304 extends UsersCheckPersonIsFollowedByAuthenticatedError {const UsersCheckPersonIsFollowedByAuthenticatedError304();

@@ -7,25 +7,14 @@ sealed class RetrieveVideoContentSuccess {const RetrieveVideoContentSuccess();
 static RetrieveVideoContentSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return RetrieveVideoContentSuccess200ApplicationJson(json as String);
-}
-if (responseMediaTypeMatches(contentType, 'image/webp')) {
-final value = (() { return Uint8List.fromList(response.bodyBytes); })();
-return RetrieveVideoContentSuccess200ImageWebp(value);
-}
-if (responseMediaTypeMatches(contentType, 'video/mp4')) {
-final value = (() { return Uint8List.fromList(response.bodyBytes); })();
-return RetrieveVideoContentSuccess200ImageWebp(value);
-}
+return  RetrieveVideoContentSuccess200ApplicationJson(json as String); } else if (responseMediaTypeMatches(contentType, 'image/webp', )) {
+return  RetrieveVideoContentSuccess200ImageWebp(Uint8List.fromList(response.bodyBytes)); } else if (responseMediaTypeMatches(contentType, 'video/mp4', )) {
+return  RetrieveVideoContentSuccess200ImageWebp(Uint8List.fromList(response.bodyBytes)); } else {
 final json = jsonDecode(response.body);
-return RetrieveVideoContentSuccess200ApplicationJson(json as String);
-
-default:
-return RetrieveVideoContentSuccessUnknown(response);
-}
-}
+return  RetrieveVideoContentSuccess200ApplicationJson(json as String); }default:
+return  RetrieveVideoContentSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class RetrieveVideoContentSuccess200ApplicationJson extends RetrieveVideoContentSuccess {const RetrieveVideoContentSuccess200ApplicationJson(this.data);

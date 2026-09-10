@@ -7,16 +7,11 @@ sealed class ReposGetCommitActivityStatsSuccess {const ReposGetCommitActivitySta
 static ReposGetCommitActivityStatsSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final json = jsonDecode(response.body);
-return ReposGetCommitActivityStatsSuccess200((json as List<dynamic>).map((e) => CommitActivity.fromJson(e as Map<String, dynamic>)).toList());
-case 202:
+return  ReposGetCommitActivityStatsSuccess200((json as List<dynamic>).map((e) => CommitActivity.fromJson(e as Map<String, dynamic>)).toList());case 202:
 final json = jsonDecode(response.body);
-return ReposGetCommitActivityStatsSuccess202(json as Map<String, dynamic>);
-case 204:
-return const ReposGetCommitActivityStatsSuccess204();
-default:
-return ReposGetCommitActivityStatsSuccessUnknown(response);
-}
-}
+return  ReposGetCommitActivityStatsSuccess202(json as Map<String, dynamic>);case 204:
+return  const ReposGetCommitActivityStatsSuccess204();default:
+return  ReposGetCommitActivityStatsSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class ReposGetCommitActivityStatsSuccess200 extends ReposGetCommitActivityStatsSuccess {const ReposGetCommitActivityStatsSuccess200(this.data);

@@ -42,24 +42,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => AigConfigListDatasetResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => AigConfigListDatasetResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return AigConfigListDatasetResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AigConfigListDatasetResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create a new Dataset
 ///
 /// Creates a new AI Gateway.
@@ -76,24 +65,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AigConfigCreateDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AigConfigCreateDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return AigConfigCreateDatasetResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AigConfigCreateDatasetResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Fetch a Dataset
 ///
 /// Retrieves details for a specific AI Gateway dataset.
@@ -108,24 +86,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AigConfigFetchDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AigConfigFetchDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return AigConfigFetchDatasetResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AigConfigFetchDatasetResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update a Dataset
 ///
 /// Updates an existing AI Gateway dataset.
@@ -142,15 +109,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AigConfigUpdateDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: AigConfigUpdateDatasetError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AigConfigUpdateDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: AigConfigUpdateDatasetError.parse, );}
 /// Delete a Dataset
 ///
 /// Deletes an AI Gateway dataset.
@@ -165,22 +126,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AigConfigDeleteDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AigConfigDeleteDatasetResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return AigConfigDeleteDatasetResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AigConfigDeleteDatasetResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

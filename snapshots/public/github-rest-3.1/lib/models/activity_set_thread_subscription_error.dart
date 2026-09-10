@@ -6,17 +6,12 @@ sealed class ActivitySetThreadSubscriptionError {const ActivitySetThreadSubscrip
 /// Decodes the payload for its declared status and content type.
 static ActivitySetThreadSubscriptionError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ActivitySetThreadSubscriptionError304();
-case 401:
+return  const ActivitySetThreadSubscriptionError304();case 401:
 final json = jsonDecode(response.body);
-return ActivitySetThreadSubscriptionError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  ActivitySetThreadSubscriptionError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return ActivitySetThreadSubscriptionError403(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ActivitySetThreadSubscriptionErrorUnknown(response);
-}
-}
+return  ActivitySetThreadSubscriptionError403(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ActivitySetThreadSubscriptionErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ActivitySetThreadSubscriptionError304 extends ActivitySetThreadSubscriptionError {const ActivitySetThreadSubscriptionError304();

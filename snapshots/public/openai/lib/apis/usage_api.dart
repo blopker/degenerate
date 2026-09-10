@@ -48,14 +48,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UsageResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UsageResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get audio speeches usage details for the organization.
 ///
 /// `GET /organization/usage/audio_speeches`
@@ -111,14 +106,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UsageResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UsageResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get audio transcriptions usage details for the organization.
 ///
 /// `GET /organization/usage/audio_transcriptions`
@@ -174,14 +164,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UsageResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UsageResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get code interpreter sessions usage details for the organization.
 ///
 /// `GET /organization/usage/code_interpreter_sessions`
@@ -222,14 +207,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UsageResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UsageResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get completions usage details for the organization.
 ///
 /// `GET /organization/usage/completions`
@@ -288,14 +268,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UsageResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UsageResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get embeddings usage details for the organization.
 ///
 /// `GET /organization/usage/embeddings`
@@ -351,14 +326,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UsageResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UsageResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get images usage details for the organization.
 ///
 /// `GET /organization/usage/images`
@@ -424,14 +394,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UsageResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UsageResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get moderations usage details for the organization.
 ///
 /// `GET /organization/usage/moderations`
@@ -487,14 +452,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UsageResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UsageResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get vector stores usage details for the organization.
 ///
 /// `GET /organization/usage/vector_stores`
@@ -535,12 +495,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UsageResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UsageResponse.fromJson(json as Map<String, dynamic>);}, );}
 }

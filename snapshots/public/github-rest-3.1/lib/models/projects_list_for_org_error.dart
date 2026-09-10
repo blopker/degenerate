@@ -6,17 +6,12 @@ sealed class ProjectsListForOrgError {const ProjectsListForOrgError();
 /// Decodes the payload for its declared status and content type.
 static ProjectsListForOrgError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ProjectsListForOrgError304();
-case 401:
+return  const ProjectsListForOrgError304();case 401:
 final json = jsonDecode(response.body);
-return ProjectsListForOrgError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  ProjectsListForOrgError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return ProjectsListForOrgError403(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ProjectsListForOrgErrorUnknown(response);
-}
-}
+return  ProjectsListForOrgError403(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ProjectsListForOrgErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ProjectsListForOrgError304 extends ProjectsListForOrgError {const ProjectsListForOrgError304();

@@ -7,14 +7,10 @@ sealed class CodeScanningGetVariantAnalysisRepoTaskError {const CodeScanningGetV
 static CodeScanningGetVariantAnalysisRepoTaskError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return CodeScanningGetVariantAnalysisRepoTaskError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  CodeScanningGetVariantAnalysisRepoTaskError404(BasicError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return CodeScanningGetVariantAnalysisRepoTaskError503(CodeScanningGetVariantAnalysisRepoTaskResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return CodeScanningGetVariantAnalysisRepoTaskErrorUnknown(response);
-}
-}
+return  CodeScanningGetVariantAnalysisRepoTaskError503(CodeScanningGetVariantAnalysisRepoTaskResponse503.fromJson(json as Map<String, dynamic>));default:
+return  CodeScanningGetVariantAnalysisRepoTaskErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class CodeScanningGetVariantAnalysisRepoTaskError404 extends CodeScanningGetVariantAnalysisRepoTaskError {const CodeScanningGetVariantAnalysisRepoTaskError404(this.data);

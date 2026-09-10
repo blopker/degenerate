@@ -7,13 +7,9 @@ sealed class GetAllRecordingsSuccess {const GetAllRecordingsSuccess();
 static GetAllRecordingsSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final json = jsonDecode(response.body);
-return GetAllRecordingsSuccess200(GetAllRecordingsResponse.fromJson(json as Map<String, dynamic>));
-case 201:
-return const GetAllRecordingsSuccess201();
-default:
-return GetAllRecordingsSuccessUnknown(response);
-}
-}
+return  GetAllRecordingsSuccess200(GetAllRecordingsResponse.fromJson(json as Map<String, dynamic>));case 201:
+return  const GetAllRecordingsSuccess201();default:
+return  GetAllRecordingsSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class GetAllRecordingsSuccess200 extends GetAllRecordingsSuccess {const GetAllRecordingsSuccess200(this.data);

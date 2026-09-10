@@ -20,24 +20,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => MconnCustomerConnector.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => MconnCustomerConnector.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 500:
 final json = jsonDecode(response.body);
-return MconnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  MconnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Add a connector to your account
 ///
 /// `POST /accounts/{account_id}/magic/connectors`
@@ -52,24 +41,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 409 || 500:
 final json = jsonDecode(response.body);
-return MconnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  MconnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Fetch Connector
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}`
@@ -82,24 +60,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return MconnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  MconnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Replace Connector or Re-provision License Key
 ///
 /// `PUT /accounts/{account_id}/magic/connectors/{connector_id}`
@@ -114,24 +81,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return MconnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  MconnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Edit Connector to update specific properties or Re-provision License Key
 ///
 /// `PATCH /accounts/{account_id}/magic/connectors/{connector_id}`
@@ -146,24 +102,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return MconnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  MconnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Remove a connector from your account
 ///
 /// `DELETE /accounts/{account_id}/magic/connectors/{connector_id}`
@@ -176,24 +121,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  MconnCustomerConnector.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return MconnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  MconnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List Events
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/events`
@@ -222,24 +156,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return MconnCustomerEventsGetResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  MconnCustomerEventsGetResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 429 || 500:
 final json = jsonDecode(response.body);
-return MconnEnvelope.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  MconnEnvelope.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get Event
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/events/{event_t}.{event_n}`
@@ -252,24 +175,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return MconnRecordedEvent.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  MconnRecordedEvent.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 429 || 500:
 final json = jsonDecode(response.body);
-return MconnEnvelope.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  MconnEnvelope.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get latest Events
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/events/latest`
@@ -282,24 +194,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return MconnCustomerEventsGetLatestResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  MconnCustomerEventsGetLatestResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 429 || 500:
 final json = jsonDecode(response.body);
-return MconnEnvelope.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  MconnEnvelope.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List Snapshots
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/snapshots`
@@ -325,24 +226,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return MconnCustomerSnapshotsGetResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  MconnCustomerSnapshotsGetResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 429 || 500:
 final json = jsonDecode(response.body);
-return MconnEnvelope.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  MconnEnvelope.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get Snapshot
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/snapshots/{snapshot_t}`
@@ -355,24 +245,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return MconnSnapshot.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  MconnSnapshot.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 429 || 500:
 final json = jsonDecode(response.body);
-return MconnEnvelope.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  MconnEnvelope.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get latest Snapshots
 ///
 /// `GET /accounts/{account_id}/magic/connectors/{connector_id}/telemetry/snapshots/latest`
@@ -385,22 +264,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return MconnCustomerSnapshotsGetLatestResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  MconnCustomerSnapshotsGetLatestResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 429 || 500:
 final json = jsonDecode(response.body);
-return MconnEnvelope.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  MconnEnvelope.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

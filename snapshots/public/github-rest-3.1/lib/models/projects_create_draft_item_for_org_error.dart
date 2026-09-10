@@ -6,17 +6,12 @@ sealed class ProjectsCreateDraftItemForOrgError {const ProjectsCreateDraftItemFo
 /// Decodes the payload for its declared status and content type.
 static ProjectsCreateDraftItemForOrgError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ProjectsCreateDraftItemForOrgError304();
-case 401:
+return  const ProjectsCreateDraftItemForOrgError304();case 401:
 final json = jsonDecode(response.body);
-return ProjectsCreateDraftItemForOrgError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  ProjectsCreateDraftItemForOrgError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return ProjectsCreateDraftItemForOrgError403(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ProjectsCreateDraftItemForOrgErrorUnknown(response);
-}
-}
+return  ProjectsCreateDraftItemForOrgError403(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ProjectsCreateDraftItemForOrgErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ProjectsCreateDraftItemForOrgError304 extends ProjectsCreateDraftItemForOrgError {const ProjectsCreateDraftItemForOrgError304();

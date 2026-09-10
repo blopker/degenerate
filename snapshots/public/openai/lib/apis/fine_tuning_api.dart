@@ -23,14 +23,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RunGraderResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RunGraderResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Validate a grader.
 /// 
 ///
@@ -46,14 +41,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ValidateGraderResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ValidateGraderResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// **NOTE:** This endpoint requires an [admin API key](../admin-api-keys).
 /// 
 /// Organization owners can use this endpoint to view all permissions for a fine-tuned model checkpoint.
@@ -86,14 +76,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListFineTuningCheckpointPermissionResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListFineTuningCheckpointPermissionResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// **NOTE:** Calling this endpoint requires an [admin API key](../admin-api-keys).
 /// 
 /// This enables organization owners to share fine-tuned models with other projects in their organization.
@@ -111,14 +96,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListFineTuningCheckpointPermissionResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListFineTuningCheckpointPermissionResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// **NOTE:** This endpoint requires an [admin API key](../admin-api-keys).
 /// 
 /// Organization owners can use this endpoint to delete a permission for a fine-tuned model checkpoint.
@@ -134,14 +114,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeleteFineTuningCheckpointPermissionResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeleteFineTuningCheckpointPermissionResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// List your organization's fine-tuning jobs
 /// 
 ///
@@ -171,14 +146,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListPaginatedFineTuningJobsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListPaginatedFineTuningJobsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Creates a fine-tuning job which begins the process of creating a new model from a given dataset.
 /// 
 /// Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.
@@ -198,14 +168,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FineTuningJob.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FineTuningJob.fromJson(json as Map<String, dynamic>);}, );}
 /// Get info about a fine-tuning job.
 /// 
 /// [Learn more about fine-tuning](/docs/guides/model-optimization)
@@ -221,14 +186,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FineTuningJob.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FineTuningJob.fromJson(json as Map<String, dynamic>);}, );}
 /// Immediately cancel a fine-tune job.
 /// 
 ///
@@ -242,14 +202,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FineTuningJob.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FineTuningJob.fromJson(json as Map<String, dynamic>);}, );}
 /// List checkpoints for a fine-tuning job.
 /// 
 ///
@@ -274,14 +229,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListFineTuningJobCheckpointsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListFineTuningJobCheckpointsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get status updates for a fine-tuning job.
 /// 
 ///
@@ -306,14 +256,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListFineTuningJobEventsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListFineTuningJobEventsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Pause a fine-tune job.
 /// 
 ///
@@ -327,14 +272,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FineTuningJob.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FineTuningJob.fromJson(json as Map<String, dynamic>);}, );}
 /// Resume a fine-tune job.
 /// 
 ///
@@ -348,12 +288,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FineTuningJob.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FineTuningJob.fromJson(json as Map<String, dynamic>);}, );}
 }

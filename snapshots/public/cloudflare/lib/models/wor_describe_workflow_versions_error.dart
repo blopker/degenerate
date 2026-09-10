@@ -7,14 +7,10 @@ sealed class WorDescribeWorkflowVersionsError {const WorDescribeWorkflowVersions
 static WorDescribeWorkflowVersionsError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorDescribeWorkflowVersionsError400(WorDescribeWorkflowVersionsResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  WorDescribeWorkflowVersionsError400(WorDescribeWorkflowVersionsResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return WorDescribeWorkflowVersionsError404(WorDescribeWorkflowVersionsResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return WorDescribeWorkflowVersionsErrorUnknown(response);
-}
-}
+return  WorDescribeWorkflowVersionsError404(WorDescribeWorkflowVersionsResponse404.fromJson(json as Map<String, dynamic>));default:
+return  WorDescribeWorkflowVersionsErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class WorDescribeWorkflowVersionsError400 extends WorDescribeWorkflowVersionsError {const WorDescribeWorkflowVersionsError400(this.data);

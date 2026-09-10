@@ -6,17 +6,12 @@ sealed class ReposGetReadmeError {const ReposGetReadmeError();
 /// Decodes the payload for its declared status and content type.
 static ReposGetReadmeError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ReposGetReadmeError304();
-case 404:
+return  const ReposGetReadmeError304();case 404:
 final json = jsonDecode(response.body);
-return ReposGetReadmeError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposGetReadmeError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposGetReadmeError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposGetReadmeErrorUnknown(response);
-}
-}
+return  ReposGetReadmeError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposGetReadmeErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ReposGetReadmeError304 extends ReposGetReadmeError {const ReposGetReadmeError304();

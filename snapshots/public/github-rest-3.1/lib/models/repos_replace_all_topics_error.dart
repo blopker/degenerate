@@ -7,14 +7,10 @@ sealed class ReposReplaceAllTopicsError {const ReposReplaceAllTopicsError();
 static ReposReplaceAllTopicsError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ReposReplaceAllTopicsError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposReplaceAllTopicsError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposReplaceAllTopicsError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return ReposReplaceAllTopicsErrorUnknown(response);
-}
-}
+return  ReposReplaceAllTopicsError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));default:
+return  ReposReplaceAllTopicsErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class ReposReplaceAllTopicsError404 extends ReposReplaceAllTopicsError {const ReposReplaceAllTopicsError404(this.data);

@@ -7,14 +7,10 @@ sealed class GetZoneSnippetError {const GetZoneSnippetError();
 static GetZoneSnippetError parse(ApiResponse response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return GetZoneSnippetError4xx(GetZoneSnippetResponse4xx.fromJson(json as Map<String, dynamic>));
-case >= 500 && < 600:
+return  GetZoneSnippetError4xx(GetZoneSnippetResponse4xx.fromJson(json as Map<String, dynamic>));case >= 500 && < 600:
 final json = jsonDecode(response.body);
-return GetZoneSnippetError5xx(GetZoneSnippetResponse5xx.fromJson(json as Map<String, dynamic>));
-default:
-return GetZoneSnippetErrorUnknown(response);
-}
-}
+return  GetZoneSnippetError5xx(GetZoneSnippetResponse5xx.fromJson(json as Map<String, dynamic>));default:
+return  GetZoneSnippetErrorUnknown(response); }}
 }
 /// Response for 4xx (application/json).
 final class GetZoneSnippetError4xx extends GetZoneSnippetError {const GetZoneSnippetError4xx(this.data);

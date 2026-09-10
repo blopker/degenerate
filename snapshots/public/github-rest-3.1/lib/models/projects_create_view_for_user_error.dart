@@ -6,26 +6,18 @@ sealed class ProjectsCreateViewForUserError {const ProjectsCreateViewForUserErro
 /// Decodes the payload for its declared status and content type.
 static ProjectsCreateViewForUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ProjectsCreateViewForUserError304();
-case 401:
+return  const ProjectsCreateViewForUserError304();case 401:
 final json = jsonDecode(response.body);
-return ProjectsCreateViewForUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  ProjectsCreateViewForUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return ProjectsCreateViewForUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  ProjectsCreateViewForUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return ProjectsCreateViewForUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ProjectsCreateViewForUserError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ProjectsCreateViewForUserError422(ValidationError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  ProjectsCreateViewForUserError422(ValidationError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return ProjectsCreateViewForUserError503(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ProjectsCreateViewForUserErrorUnknown(response);
-}
-}
+return  ProjectsCreateViewForUserError503(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ProjectsCreateViewForUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ProjectsCreateViewForUserError304 extends ProjectsCreateViewForUserError {const ProjectsCreateViewForUserError304();

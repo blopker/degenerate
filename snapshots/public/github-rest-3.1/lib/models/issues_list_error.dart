@@ -6,17 +6,12 @@ sealed class IssuesListError {const IssuesListError();
 /// Decodes the payload for its declared status and content type.
 static IssuesListError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const IssuesListError304();
-case 404:
+return  const IssuesListError304();case 404:
 final json = jsonDecode(response.body);
-return IssuesListError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  IssuesListError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return IssuesListError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return IssuesListErrorUnknown(response);
-}
-}
+return  IssuesListError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  IssuesListErrorUnknown(response); }}
 }
 /// Response for 304.
 final class IssuesListError304 extends IssuesListError {const IssuesListError304();

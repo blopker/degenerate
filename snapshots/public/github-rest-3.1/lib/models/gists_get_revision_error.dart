@@ -7,17 +7,12 @@ sealed class GistsGetRevisionError {const GistsGetRevisionError();
 static GistsGetRevisionError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return GistsGetRevisionError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  GistsGetRevisionError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return GistsGetRevisionError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  GistsGetRevisionError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return GistsGetRevisionError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return GistsGetRevisionErrorUnknown(response);
-}
-}
+return  GistsGetRevisionError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  GistsGetRevisionErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class GistsGetRevisionError403 extends GistsGetRevisionError {const GistsGetRevisionError403(this.data);

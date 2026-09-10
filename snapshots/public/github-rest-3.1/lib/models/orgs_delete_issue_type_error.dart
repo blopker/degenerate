@@ -7,14 +7,10 @@ sealed class OrgsDeleteIssueTypeError {const OrgsDeleteIssueTypeError();
 static OrgsDeleteIssueTypeError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return OrgsDeleteIssueTypeError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  OrgsDeleteIssueTypeError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return OrgsDeleteIssueTypeError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return OrgsDeleteIssueTypeErrorUnknown(response);
-}
-}
+return  OrgsDeleteIssueTypeError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));default:
+return  OrgsDeleteIssueTypeErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class OrgsDeleteIssueTypeError404 extends OrgsDeleteIssueTypeError {const OrgsDeleteIssueTypeError404(this.data);

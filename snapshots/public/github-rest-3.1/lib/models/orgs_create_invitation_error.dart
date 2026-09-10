@@ -7,14 +7,10 @@ sealed class OrgsCreateInvitationError {const OrgsCreateInvitationError();
 static OrgsCreateInvitationError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return OrgsCreateInvitationError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  OrgsCreateInvitationError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return OrgsCreateInvitationError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return OrgsCreateInvitationErrorUnknown(response);
-}
-}
+return  OrgsCreateInvitationError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  OrgsCreateInvitationErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class OrgsCreateInvitationError404 extends OrgsCreateInvitationError {const OrgsCreateInvitationError404(this.data);

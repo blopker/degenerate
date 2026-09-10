@@ -7,20 +7,14 @@ sealed class GitCreateBlobError {const GitCreateBlobError();
 static GitCreateBlobError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return GitCreateBlobError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  GitCreateBlobError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return GitCreateBlobError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 409:
+return  GitCreateBlobError404(BasicError.fromJson(json as Map<String, dynamic>));case 409:
 final json = jsonDecode(response.body);
-return GitCreateBlobError409(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  GitCreateBlobError409(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return GitCreateBlobError422(OneOf2.parse(json, fromA: (v) => ValidationError.fromJson(v as Map<String, dynamic>), fromB: (v) => RepositoryRuleViolationError.fromJson(v as Map<String, dynamic>),));
-default:
-return GitCreateBlobErrorUnknown(response);
-}
-}
+return  GitCreateBlobError422(OneOf2.parse(json, fromA: (v) => ValidationError.fromJson(v as Map<String, dynamic>), fromB: (v) => RepositoryRuleViolationError.fromJson(v as Map<String, dynamic>),));default:
+return  GitCreateBlobErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class GitCreateBlobError403 extends GitCreateBlobError {const GitCreateBlobError403(this.data);

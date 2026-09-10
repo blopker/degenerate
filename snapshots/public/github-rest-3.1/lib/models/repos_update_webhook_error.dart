@@ -7,14 +7,10 @@ sealed class ReposUpdateWebhookError {const ReposUpdateWebhookError();
 static ReposUpdateWebhookError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ReposUpdateWebhookError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposUpdateWebhookError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposUpdateWebhookError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposUpdateWebhookErrorUnknown(response);
-}
-}
+return  ReposUpdateWebhookError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposUpdateWebhookErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class ReposUpdateWebhookError404 extends ReposUpdateWebhookError {const ReposUpdateWebhookError404(this.data);

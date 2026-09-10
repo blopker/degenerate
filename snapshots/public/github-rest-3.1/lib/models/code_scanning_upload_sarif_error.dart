@@ -6,22 +6,15 @@ sealed class CodeScanningUploadSarifError {const CodeScanningUploadSarifError();
 /// Decodes the payload for its declared status and content type.
 static CodeScanningUploadSarifError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
-return const CodeScanningUploadSarifError400();
-case 403:
+return  const CodeScanningUploadSarifError400();case 403:
 final json = jsonDecode(response.body);
-return CodeScanningUploadSarifError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CodeScanningUploadSarifError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CodeScanningUploadSarifError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 413:
-return const CodeScanningUploadSarifError413();
-case 503:
+return  CodeScanningUploadSarifError404(BasicError.fromJson(json as Map<String, dynamic>));case 413:
+return  const CodeScanningUploadSarifError413();case 503:
 final json = jsonDecode(response.body);
-return CodeScanningUploadSarifError503(CodeScanningUploadSarifResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return CodeScanningUploadSarifErrorUnknown(response);
-}
-}
+return  CodeScanningUploadSarifError503(CodeScanningUploadSarifResponse503.fromJson(json as Map<String, dynamic>));default:
+return  CodeScanningUploadSarifErrorUnknown(response); }}
 }
 /// Response for 400.
 final class CodeScanningUploadSarifError400 extends CodeScanningUploadSarifError {const CodeScanningUploadSarifError400();

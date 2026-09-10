@@ -6,23 +6,16 @@ sealed class UsersAddSocialAccountForAuthenticatedUserError {const UsersAddSocia
 /// Decodes the payload for its declared status and content type.
 static UsersAddSocialAccountForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const UsersAddSocialAccountForAuthenticatedUserError304();
-case 401:
+return  const UsersAddSocialAccountForAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return UsersAddSocialAccountForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  UsersAddSocialAccountForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return UsersAddSocialAccountForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  UsersAddSocialAccountForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return UsersAddSocialAccountForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  UsersAddSocialAccountForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return UsersAddSocialAccountForAuthenticatedUserError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return UsersAddSocialAccountForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  UsersAddSocialAccountForAuthenticatedUserError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  UsersAddSocialAccountForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class UsersAddSocialAccountForAuthenticatedUserError304 extends UsersAddSocialAccountForAuthenticatedUserError {const UsersAddSocialAccountForAuthenticatedUserError304();

@@ -6,17 +6,12 @@ sealed class CodeSecurityGetSingleConfigurationForEnterpriseError {const CodeSec
 /// Decodes the payload for its declared status and content type.
 static CodeSecurityGetSingleConfigurationForEnterpriseError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const CodeSecurityGetSingleConfigurationForEnterpriseError304();
-case 403:
+return  const CodeSecurityGetSingleConfigurationForEnterpriseError304();case 403:
 final json = jsonDecode(response.body);
-return CodeSecurityGetSingleConfigurationForEnterpriseError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CodeSecurityGetSingleConfigurationForEnterpriseError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CodeSecurityGetSingleConfigurationForEnterpriseError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return CodeSecurityGetSingleConfigurationForEnterpriseErrorUnknown(response);
-}
-}
+return  CodeSecurityGetSingleConfigurationForEnterpriseError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  CodeSecurityGetSingleConfigurationForEnterpriseErrorUnknown(response); }}
 }
 /// Response for 304.
 final class CodeSecurityGetSingleConfigurationForEnterpriseError304 extends CodeSecurityGetSingleConfigurationForEnterpriseError {const CodeSecurityGetSingleConfigurationForEnterpriseError304();

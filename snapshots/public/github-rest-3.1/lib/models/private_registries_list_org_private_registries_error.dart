@@ -7,24 +7,16 @@ sealed class PrivateRegistriesListOrgPrivateRegistriesError {const PrivateRegist
 static PrivateRegistriesListOrgPrivateRegistriesError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return PrivateRegistriesListOrgPrivateRegistriesError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  PrivateRegistriesListOrgPrivateRegistriesError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return PrivateRegistriesListOrgPrivateRegistriesError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  PrivateRegistriesListOrgPrivateRegistriesError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return PrivateRegistriesListOrgPrivateRegistriesError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 404:
+return  PrivateRegistriesListOrgPrivateRegistriesError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }case 404:
 final json = jsonDecode(response.body);
-return PrivateRegistriesListOrgPrivateRegistriesError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return PrivateRegistriesListOrgPrivateRegistriesErrorUnknown(response);
-}
-}
+return  PrivateRegistriesListOrgPrivateRegistriesError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  PrivateRegistriesListOrgPrivateRegistriesErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class PrivateRegistriesListOrgPrivateRegistriesError400ApplicationJson extends PrivateRegistriesListOrgPrivateRegistriesError {const PrivateRegistriesListOrgPrivateRegistriesError400ApplicationJson(this.data);

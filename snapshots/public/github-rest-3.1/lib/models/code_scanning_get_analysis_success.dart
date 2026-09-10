@@ -7,21 +7,14 @@ sealed class CodeScanningGetAnalysisSuccess {const CodeScanningGetAnalysisSucces
 static CodeScanningGetAnalysisSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return CodeScanningGetAnalysisSuccess200ApplicationJson(CodeScanningAnalysis.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/sarif+json')) {
+return  CodeScanningGetAnalysisSuccess200ApplicationJson(CodeScanningAnalysis.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/sarif+json', )) {
 final json = jsonDecode(response.body);
-return CodeScanningGetAnalysisSuccess200ApplicationSarifJson(json as Map<String, dynamic>);
-}
+return  CodeScanningGetAnalysisSuccess200ApplicationSarifJson(json as Map<String, dynamic>); } else {
 final json = jsonDecode(response.body);
-return CodeScanningGetAnalysisSuccess200ApplicationJson(CodeScanningAnalysis.fromJson(json as Map<String, dynamic>));
-
-default:
-return CodeScanningGetAnalysisSuccessUnknown(response);
-}
-}
+return  CodeScanningGetAnalysisSuccess200ApplicationJson(CodeScanningAnalysis.fromJson(json as Map<String, dynamic>)); }default:
+return  CodeScanningGetAnalysisSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class CodeScanningGetAnalysisSuccess200ApplicationJson extends CodeScanningGetAnalysisSuccess {const CodeScanningGetAnalysisSuccess200ApplicationJson(this.data);

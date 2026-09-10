@@ -41,15 +41,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTagIndicatorsListResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: GetTagIndicatorsListError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTagIndicatorsListResponse.fromJson(json as Map<String, dynamic>);}, onError: GetTagIndicatorsListError.parse, );}
 /// Lists all tags (SoT)
 ///
 /// Returns all Source-of-Truth tags for an account.
@@ -81,24 +75,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTagListResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTagListResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return GetTagListResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  GetTagListResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Updates a tag (SoT)
 ///
 /// Updates a Source-of-Truth tag by UUID.
@@ -115,15 +98,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PatchTagUpdateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: PatchTagUpdateError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PatchTagUpdateResponse.fromJson(json as Map<String, dynamic>);}, onError: PatchTagUpdateError.parse, );}
 /// Deletes a tag (SoT)
 ///
 /// Deletes a Source-of-Truth tag by UUID.
@@ -138,15 +115,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeleteTagDeleteResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: DeleteTagDeleteError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeleteTagDeleteResponse.fromJson(json as Map<String, dynamic>);}, onError: DeleteTagDeleteError.parse, );}
 /// Creates a new tag
 ///
 /// Creates a new tag to be used accross threat events.
@@ -163,13 +134,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostTagCreateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: PostTagCreateError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostTagCreateResponse.fromJson(json as Map<String, dynamic>);}, onError: PostTagCreateError.parse, );}
 }

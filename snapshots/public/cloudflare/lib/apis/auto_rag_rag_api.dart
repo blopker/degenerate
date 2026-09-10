@@ -37,15 +37,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => AutoragConfigFilesResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: AutoragConfigFilesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => AutoragConfigFilesResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, onError: AutoragConfigFilesError.parse, );}
 /// Sync
 ///
 /// `PATCH /accounts/{account_id}/autorag/rags/{id}/sync`
@@ -58,13 +52,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AutoragConfigSyncResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: AutoragConfigSyncError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AutoragConfigSyncResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: AutoragConfigSyncError.parse, );}
 }

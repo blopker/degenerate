@@ -6,18 +6,12 @@ sealed class SecretScanningCreatePushProtectionBypassError {const SecretScanning
 /// Decodes the payload for its declared status and content type.
 static SecretScanningCreatePushProtectionBypassError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
-return const SecretScanningCreatePushProtectionBypassError403();
-case 404:
-return const SecretScanningCreatePushProtectionBypassError404();
-case 422:
-return const SecretScanningCreatePushProtectionBypassError422();
-case 503:
+return  const SecretScanningCreatePushProtectionBypassError403();case 404:
+return  const SecretScanningCreatePushProtectionBypassError404();case 422:
+return  const SecretScanningCreatePushProtectionBypassError422();case 503:
 final json = jsonDecode(response.body);
-return SecretScanningCreatePushProtectionBypassError503(SecretScanningCreatePushProtectionBypassResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return SecretScanningCreatePushProtectionBypassErrorUnknown(response);
-}
-}
+return  SecretScanningCreatePushProtectionBypassError503(SecretScanningCreatePushProtectionBypassResponse503.fromJson(json as Map<String, dynamic>));default:
+return  SecretScanningCreatePushProtectionBypassErrorUnknown(response); }}
 }
 /// Response for 403.
 final class SecretScanningCreatePushProtectionBypassError403 extends SecretScanningCreatePushProtectionBypassError {const SecretScanningCreatePushProtectionBypassError403();

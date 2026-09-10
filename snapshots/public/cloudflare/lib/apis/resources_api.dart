@@ -72,24 +72,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => McnResourceDetails.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => McnResourceDetails.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Read Resource
 ///
 /// Read an resource from the Resource Catalog (Closed Beta).
@@ -112,24 +101,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return McnResourceDetails.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  McnResourceDetails.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Export Resources
 ///
 /// Export resources in the Resource Catalog as a JSON file (Closed Beta).
@@ -182,23 +160,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-return Uint8List.fromList(response.bodyBytes);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {return  Uint8List.fromList(response.bodyBytes);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Preview Rego Query
 ///
 /// Preview Rego query result against the latest resource catalog (Closed Beta).
@@ -215,22 +182,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return McnResourcesCatalogPolicyPreview.fromJson(json['result'] as String);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  McnResourcesCatalogPolicyPreview.fromJson(json['result'] as String);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 422 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

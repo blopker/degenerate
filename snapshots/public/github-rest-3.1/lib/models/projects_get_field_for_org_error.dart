@@ -6,17 +6,12 @@ sealed class ProjectsGetFieldForOrgError {const ProjectsGetFieldForOrgError();
 /// Decodes the payload for its declared status and content type.
 static ProjectsGetFieldForOrgError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ProjectsGetFieldForOrgError304();
-case 401:
+return  const ProjectsGetFieldForOrgError304();case 401:
 final json = jsonDecode(response.body);
-return ProjectsGetFieldForOrgError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  ProjectsGetFieldForOrgError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return ProjectsGetFieldForOrgError403(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ProjectsGetFieldForOrgErrorUnknown(response);
-}
-}
+return  ProjectsGetFieldForOrgError403(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ProjectsGetFieldForOrgErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ProjectsGetFieldForOrgError304 extends ProjectsGetFieldForOrgError {const ProjectsGetFieldForOrgError304();

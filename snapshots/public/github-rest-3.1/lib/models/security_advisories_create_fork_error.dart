@@ -7,30 +7,20 @@ sealed class SecurityAdvisoriesCreateForkError {const SecurityAdvisoriesCreateFo
 static SecurityAdvisoriesCreateForkError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return SecurityAdvisoriesCreateForkError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  SecurityAdvisoriesCreateForkError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return SecurityAdvisoriesCreateForkError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  SecurityAdvisoriesCreateForkError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return SecurityAdvisoriesCreateForkError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 403:
+return  SecurityAdvisoriesCreateForkError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }case 403:
 final json = jsonDecode(response.body);
-return SecurityAdvisoriesCreateForkError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  SecurityAdvisoriesCreateForkError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return SecurityAdvisoriesCreateForkError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  SecurityAdvisoriesCreateForkError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return SecurityAdvisoriesCreateForkError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return SecurityAdvisoriesCreateForkErrorUnknown(response);
-}
-}
+return  SecurityAdvisoriesCreateForkError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  SecurityAdvisoriesCreateForkErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class SecurityAdvisoriesCreateForkError400ApplicationJson extends SecurityAdvisoriesCreateForkError {const SecurityAdvisoriesCreateForkError400ApplicationJson(this.data);

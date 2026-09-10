@@ -6,20 +6,14 @@ sealed class UsersListBlockedByAuthenticatedUserError {const UsersListBlockedByA
 /// Decodes the payload for its declared status and content type.
 static UsersListBlockedByAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const UsersListBlockedByAuthenticatedUserError304();
-case 401:
+return  const UsersListBlockedByAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return UsersListBlockedByAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  UsersListBlockedByAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return UsersListBlockedByAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  UsersListBlockedByAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return UsersListBlockedByAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return UsersListBlockedByAuthenticatedUserErrorUnknown(response);
-}
-}
+return  UsersListBlockedByAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  UsersListBlockedByAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class UsersListBlockedByAuthenticatedUserError304 extends UsersListBlockedByAuthenticatedUserError {const UsersListBlockedByAuthenticatedUserError304();

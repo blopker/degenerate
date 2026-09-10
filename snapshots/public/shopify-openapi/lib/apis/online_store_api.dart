@@ -66,11 +66,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an article for a blog
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#create-2020-01
@@ -87,11 +84,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of all articles from a blog
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#count-2020-01
@@ -132,11 +126,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single article
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#show-2020-01
@@ -159,11 +150,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an article
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#update-2020-01
@@ -180,11 +168,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an article
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#destroy-2020-01
@@ -199,11 +184,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list all of article authors
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#authors-2020-01
@@ -218,11 +200,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all the tags
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#tags-2020-01
@@ -248,11 +227,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all articles from a blog. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#index-2020-04
@@ -311,11 +287,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an article for a blog
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#create-2020-04
@@ -332,11 +305,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of all articles from a blog
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#count-2020-04
@@ -377,11 +347,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single article
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#show-2020-04
@@ -404,11 +371,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an article
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#update-2020-04
@@ -425,11 +389,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an article
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#destroy-2020-04
@@ -444,11 +405,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list all of article authors
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#authors-2020-04
@@ -463,11 +421,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all the tags
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#tags-2020-04
@@ -493,11 +448,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all articles from a blog. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#index-2020-07
@@ -556,11 +508,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an article for a blog
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#create-2020-07
@@ -577,11 +526,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of all articles from a blog
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#count-2020-07
@@ -622,11 +568,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single article
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#show-2020-07
@@ -649,11 +592,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an article
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#update-2020-07
@@ -670,11 +610,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an article
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#destroy-2020-07
@@ -689,11 +626,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list all of article authors
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#authors-2020-07
@@ -708,11 +642,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all the tags
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#tags-2020-07
@@ -738,11 +669,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all articles from a blog. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#index-2020-10
@@ -801,11 +729,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an article for a blog
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#create-2020-10
@@ -822,11 +747,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of all articles from a blog
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#count-2020-10
@@ -867,11 +789,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single article
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#show-2020-10
@@ -894,11 +813,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an article
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#update-2020-10
@@ -915,11 +831,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an article
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#destroy-2020-10
@@ -934,11 +847,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list all of article authors
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#authors-2020-10
@@ -953,11 +863,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all the tags
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#tags-2020-10
@@ -983,11 +890,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all articles from a blog. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#index-2021-01
@@ -1046,11 +950,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an article for a blog
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#create-2021-01
@@ -1067,11 +968,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of all articles from a blog
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#count-2021-01
@@ -1112,11 +1010,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single article
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#show-2021-01
@@ -1139,11 +1034,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an article
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#update-2021-01
@@ -1160,11 +1052,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an article
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#destroy-2021-01
@@ -1179,11 +1068,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list all of article authors
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#authors-2021-01
@@ -1198,11 +1084,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all the tags
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#tags-2021-01
@@ -1228,11 +1111,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all articles from a blog. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#index-unstable
@@ -1291,11 +1171,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an article for a blog
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#create-unstable
@@ -1312,11 +1189,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of all articles from a blog
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#count-unstable
@@ -1357,11 +1231,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single article
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#show-unstable
@@ -1384,11 +1255,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an article
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#update-unstable
@@ -1405,11 +1273,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an article
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#destroy-unstable
@@ -1424,11 +1289,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list all of article authors
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#authors-unstable
@@ -1443,11 +1305,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all the tags
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/article#tags-unstable
@@ -1473,11 +1332,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single asset for a theme by its key.
 ///           To retrieve a single asset, include asset`[key]`=#{asset_key} as a request parameter. For example, to retrieve the asset with a key of templates/index.liquid, the request might be /admin/themes/828155753/assets.json?asset`[key]`=templates/index.liquid.
 ///           For more information on the key property, see Asset properties.
@@ -1505,11 +1361,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates or updates an asset for a theme.
 ///           In the PUT request, you can include the src or source_key property to create the asset from an existing file.
 ///
@@ -1538,11 +1391,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an asset from a theme.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#destroy-2020-01
@@ -1565,11 +1415,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single asset for a theme by its key.
 ///           To retrieve a single asset, include asset`[key]`=#{asset_key} as a request parameter. For example, to retrieve the asset with a key of templates/index.liquid, the request might be /admin/themes/828155753/assets.json?asset`[key]`=templates/index.liquid.
 ///           For more information on the key property, see Asset properties.
@@ -1597,11 +1444,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates or updates an asset for a theme.
 ///           In the PUT request, you can include the src or source_key property to create the asset from an existing file.
 ///
@@ -1630,11 +1474,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an asset from a theme.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#destroy-2020-04
@@ -1657,11 +1498,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single asset for a theme by its key.
 ///           To retrieve a single asset, include asset`[key]`=#{asset_key} as a request parameter. For example, to retrieve the asset with a key of templates/index.liquid, the request might be /admin/themes/828155753/assets.json?asset`[key]`=templates/index.liquid.
 ///           For more information on the key property, see Asset properties.
@@ -1689,11 +1527,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates or updates an asset for a theme.
 ///           In the PUT request, you can include the src or source_key property to create the asset from an existing file.
 ///
@@ -1722,11 +1557,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an asset from a theme.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#destroy-2020-07
@@ -1749,11 +1581,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single asset for a theme by its key.
 ///           To retrieve a single asset, include asset`[key]`=#{asset_key} as a request parameter. For example, to retrieve the asset with a key of templates/index.liquid, the request might be /admin/themes/828155753/assets.json?asset`[key]`=templates/index.liquid.
 ///           For more information on the key property, see Asset properties.
@@ -1781,11 +1610,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates or updates an asset for a theme.
 ///           In the PUT request, you can include the src or source_key property to create the asset from an existing file.
 ///
@@ -1814,11 +1640,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an asset from a theme.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#destroy-2020-10
@@ -1841,11 +1664,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single asset for a theme by its key.
 ///           To retrieve a single asset, include asset`[key]`=#{asset_key} as a request parameter. For example, to retrieve the asset with a key of templates/index.liquid, the request might be /admin/themes/828155753/assets.json?asset`[key]`=templates/index.liquid.
 ///           For more information on the key property, see Asset properties.
@@ -1873,11 +1693,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates or updates an asset for a theme.
 ///           In the PUT request, you can include the src or source_key property to create the asset from an existing file.
 ///
@@ -1906,11 +1723,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an asset from a theme.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#destroy-2021-01
@@ -1933,11 +1747,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single asset for a theme by its key.
 ///           To retrieve a single asset, include asset`[key]`=#{asset_key} as a request parameter. For example, to retrieve the asset with a key of templates/index.liquid, the request might be /admin/themes/828155753/assets.json?asset`[key]`=templates/index.liquid.
 ///           For more information on the key property, see Asset properties.
@@ -1965,11 +1776,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates or updates an asset for a theme.
 ///           In the PUT request, you can include the src or source_key property to create the asset from an existing file.
 ///
@@ -1998,11 +1806,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an asset from a theme.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/asset#destroy-unstable
@@ -2025,11 +1830,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a list of all blogs. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/blog#index-2020-01
@@ -2061,11 +1863,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a new blog
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/blog#create-2020-01
@@ -2082,11 +1881,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a count of all blogs
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/blog#count-2020-01
@@ -2101,11 +1897,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a single blog by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/blog#show-2020-01
@@ -2128,11 +1921,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Update a blog
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/blog#update-2020-01
@@ -2149,11 +1939,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Delete a blog
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/blog#destroy-2020-01
@@ -2168,11 +1955,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of comments. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/comment#index-2020-01
@@ -2231,11 +2015,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a comment for an article
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/comment#create-2020-01
@@ -2252,11 +2033,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of comments
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/comment#count-2020-01
@@ -2306,11 +2084,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single comment by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/comment#show-2020-01
@@ -2333,11 +2108,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a comment of an article
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/comment#update-2020-01
@@ -2354,11 +2126,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Marks a comment as spam
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/comment#spam-2020-01
@@ -2375,11 +2144,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Marks a comment as not spam
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/comment#not_spam-2020-01
@@ -2396,11 +2162,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Approves a comment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/comment#approve-2020-01
@@ -2417,11 +2180,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Removes a comment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/comment#remove-2020-01
@@ -2438,11 +2198,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Restores a previously removed comment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/comment#restore-2020-01
@@ -2459,11 +2216,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of URL redirects. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#index-2020-01
@@ -2498,11 +2252,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a redirect. When you provide a full URL as the value of the path property, it will be saved as an absolute path without the domain.
 ///           For example, "path": "http://www.johns-apparel.com/springwear" will be saved as "path": "springwear".
 ///
@@ -2520,11 +2271,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of URL redirects
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#count-2020-01
@@ -2550,11 +2298,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single redirect
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#show-2020-01
@@ -2577,11 +2322,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing redirect
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#update-2020-01
@@ -2598,11 +2340,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a redirect
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#destroy-2020-01
@@ -2617,11 +2356,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of URL redirects. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#index-2020-04
@@ -2656,11 +2392,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a redirect. When you provide a full URL as the value of the path property, it will be saved as an absolute path without the domain.
 ///           For example, "path": "http://www.johns-apparel.com/springwear" will be saved as "path": "springwear".
 ///
@@ -2678,11 +2411,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of URL redirects
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#count-2020-04
@@ -2708,11 +2438,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single redirect
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#show-2020-04
@@ -2735,11 +2462,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing redirect
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#update-2020-04
@@ -2756,11 +2480,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a redirect
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#destroy-2020-04
@@ -2775,11 +2496,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of URL redirects. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#index-2020-07
@@ -2814,11 +2532,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a redirect. When you provide a full URL as the value of the path property, it will be saved as an absolute path without the domain.
 ///           For example, "path": "http://www.johns-apparel.com/springwear" will be saved as "path": "springwear".
 ///
@@ -2836,11 +2551,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of URL redirects
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#count-2020-07
@@ -2866,11 +2578,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single redirect
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#show-2020-07
@@ -2893,11 +2602,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing redirect
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#update-2020-07
@@ -2914,11 +2620,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a redirect
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#destroy-2020-07
@@ -2933,11 +2636,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of URL redirects. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#index-2020-10
@@ -2972,11 +2672,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a redirect. When you provide a full URL as the value of the path property, it will be saved as an absolute path without the domain.
 ///           For example, "path": "http://www.johns-apparel.com/springwear" will be saved as "path": "springwear".
 ///
@@ -2994,11 +2691,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of URL redirects
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#count-2020-10
@@ -3024,11 +2718,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single redirect
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#show-2020-10
@@ -3051,11 +2742,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing redirect
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#update-2020-10
@@ -3072,11 +2760,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a redirect
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#destroy-2020-10
@@ -3091,11 +2776,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of URL redirects. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#index-2021-01
@@ -3130,11 +2812,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a redirect. When you provide a full URL as the value of the path property, it will be saved as an absolute path without the domain.
 ///           For example, "path": "http://www.johns-apparel.com/springwear" will be saved as "path": "springwear".
 ///
@@ -3152,11 +2831,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of URL redirects
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#count-2021-01
@@ -3182,11 +2858,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single redirect
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#show-2021-01
@@ -3209,11 +2882,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing redirect
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#update-2021-01
@@ -3230,11 +2900,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a redirect
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#destroy-2021-01
@@ -3249,11 +2916,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of URL redirects. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#index-unstable
@@ -3288,11 +2952,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a redirect. When you provide a full URL as the value of the path property, it will be saved as an absolute path without the domain.
 ///           For example, "path": "http://www.johns-apparel.com/springwear" will be saved as "path": "springwear".
 ///
@@ -3310,11 +2971,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of URL redirects
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#count-unstable
@@ -3340,11 +2998,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single redirect
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#show-unstable
@@ -3367,11 +3022,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing redirect
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#update-unstable
@@ -3388,11 +3040,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a redirect
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/redirect#destroy-unstable
@@ -3407,11 +3056,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all script tags. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#index-2020-01
@@ -3455,11 +3101,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new script tag
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#create-2020-01
@@ -3476,11 +3119,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of all script tags
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#count-2020-01
@@ -3503,11 +3143,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single script tag
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#show-2020-01
@@ -3530,11 +3167,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a script tag
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#update-2020-01
@@ -3551,11 +3185,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a script tag
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#destroy-2020-01
@@ -3570,11 +3201,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all script tags. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#index-2020-04
@@ -3618,11 +3246,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new script tag
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#create-2020-04
@@ -3639,11 +3264,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of all script tags
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#count-2020-04
@@ -3666,11 +3288,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single script tag
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#show-2020-04
@@ -3693,11 +3312,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a script tag
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#update-2020-04
@@ -3714,11 +3330,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a script tag
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#destroy-2020-04
@@ -3733,11 +3346,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all script tags. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#index-2020-07
@@ -3781,11 +3391,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new script tag
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#create-2020-07
@@ -3802,11 +3409,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of all script tags
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#count-2020-07
@@ -3829,11 +3433,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single script tag
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#show-2020-07
@@ -3856,11 +3457,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a script tag
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#update-2020-07
@@ -3877,11 +3475,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a script tag
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#destroy-2020-07
@@ -3896,11 +3491,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all script tags. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#index-2020-10
@@ -3944,11 +3536,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new script tag
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#create-2020-10
@@ -3965,11 +3554,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of all script tags
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#count-2020-10
@@ -3992,11 +3578,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single script tag
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#show-2020-10
@@ -4019,11 +3602,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a script tag
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#update-2020-10
@@ -4040,11 +3620,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a script tag
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#destroy-2020-10
@@ -4059,11 +3636,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all script tags. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#index-2021-01
@@ -4107,11 +3681,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new script tag
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#create-2021-01
@@ -4128,11 +3699,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of all script tags
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#count-2021-01
@@ -4155,11 +3723,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single script tag
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#show-2021-01
@@ -4182,11 +3747,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a script tag
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#update-2021-01
@@ -4203,11 +3765,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a script tag
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#destroy-2021-01
@@ -4222,11 +3781,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all script tags. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#index-unstable
@@ -4270,11 +3826,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new script tag
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#create-unstable
@@ -4291,11 +3844,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of all script tags
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#count-unstable
@@ -4318,11 +3868,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single script tag
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#show-unstable
@@ -4345,11 +3892,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a script tag
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#update-unstable
@@ -4366,11 +3910,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a script tag
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/scripttag#destroy-unstable
@@ -4385,11 +3926,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of themes.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#index-2020-01
@@ -4412,11 +3950,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a theme by providing the public URL of a ZIP file that contains the theme.
 ///           A new theme is always unpublished by default. To publish a theme when you create it, include
 ///           "role": "main" in the POST request. The theme will be published only after all
@@ -4436,11 +3971,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single theme.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#show-2020-01
@@ -4463,11 +3995,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing theme.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#update-2020-01
@@ -4484,11 +4013,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a theme.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#destroy-2020-01
@@ -4503,11 +4029,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of themes.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#index-2020-04
@@ -4530,11 +4053,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a theme by providing the public URL of a ZIP file that contains the theme.
 ///           A new theme is always unpublished by default. To publish a theme when you create it, include
 ///           "role": "main" in the POST request. The theme will be published only after all
@@ -4554,11 +4074,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single theme.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#show-2020-04
@@ -4581,11 +4098,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing theme.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#update-2020-04
@@ -4602,11 +4116,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a theme.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#destroy-2020-04
@@ -4621,11 +4132,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of themes.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#index-2020-07
@@ -4648,11 +4156,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a theme by providing the public URL of a ZIP file that contains the theme.
 ///           A new theme is always unpublished by default. To publish a theme when you create it, include
 ///           "role": "main" in the POST request. The theme will be published only after all
@@ -4672,11 +4177,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single theme.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#show-2020-07
@@ -4699,11 +4201,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing theme.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#update-2020-07
@@ -4720,11 +4219,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a theme.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#destroy-2020-07
@@ -4739,11 +4235,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of themes.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#index-2020-10
@@ -4766,11 +4259,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a theme by providing the public URL of a ZIP file that contains the theme.
 ///           A new theme is always unpublished by default. To publish a theme when you create it, include
 ///           "role": "main" in the POST request. The theme will be published only after all
@@ -4790,11 +4280,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single theme.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#show-2020-10
@@ -4817,11 +4304,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing theme.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#update-2020-10
@@ -4838,11 +4322,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a theme.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#destroy-2020-10
@@ -4857,11 +4338,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of themes.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#index-2021-01
@@ -4884,11 +4362,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a theme by providing the public URL of a ZIP file that contains the theme.
 ///           A new theme is always unpublished by default. To publish a theme when you create it, include
 ///           "role": "main" in the POST request. The theme will be published only after all
@@ -4908,11 +4383,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single theme.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#show-2021-01
@@ -4935,11 +4407,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing theme.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#update-2021-01
@@ -4956,11 +4425,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a theme.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#destroy-2021-01
@@ -4975,11 +4441,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of themes.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#index-unstable
@@ -5002,11 +4465,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a theme by providing the public URL of a ZIP file that contains the theme.
 ///           A new theme is always unpublished by default. To publish a theme when you create it, include
 ///           "role": "main" in the POST request. The theme will be published only after all
@@ -5026,11 +4486,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single theme.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#show-unstable
@@ -5053,11 +4510,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing theme.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#update-unstable
@@ -5074,11 +4528,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a theme.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/online-store/theme#destroy-unstable
@@ -5093,9 +4544,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

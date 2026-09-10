@@ -6,20 +6,14 @@ sealed class SearchIssuesAndPullRequestsError {const SearchIssuesAndPullRequests
 /// Decodes the payload for its declared status and content type.
 static SearchIssuesAndPullRequestsError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const SearchIssuesAndPullRequestsError304();
-case 403:
+return  const SearchIssuesAndPullRequestsError304();case 403:
 final json = jsonDecode(response.body);
-return SearchIssuesAndPullRequestsError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  SearchIssuesAndPullRequestsError403(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return SearchIssuesAndPullRequestsError422(ValidationError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  SearchIssuesAndPullRequestsError422(ValidationError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return SearchIssuesAndPullRequestsError503(SearchIssuesAndPullRequestsResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return SearchIssuesAndPullRequestsErrorUnknown(response);
-}
-}
+return  SearchIssuesAndPullRequestsError503(SearchIssuesAndPullRequestsResponse503.fromJson(json as Map<String, dynamic>));default:
+return  SearchIssuesAndPullRequestsErrorUnknown(response); }}
 }
 /// Response for 304.
 final class SearchIssuesAndPullRequestsError304 extends SearchIssuesAndPullRequestsError {const SearchIssuesAndPullRequestsError304();

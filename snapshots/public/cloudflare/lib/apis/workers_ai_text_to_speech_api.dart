@@ -22,21 +22,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostWebsocketRunCfDeepgramAuraResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostWebsocketRunCfDeepgramAuraResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Open Websocket connection with @cf/deepgram/aura-1 model.
 ///
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/aura-1 model.
@@ -51,21 +42,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostWebsocketRunCfDeepgramAura1Response400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostWebsocketRunCfDeepgramAura1Response400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/deepgram/aura-1 model.
 ///
 /// Runs inference on the @cf/deepgram/aura-1 model.
@@ -93,21 +75,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: WorkersAiPostRunCfDeepgramAura1Success.parse,
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: WorkersAiPostRunCfDeepgramAura1Success.parse, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfDeepgramAura1Response400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfDeepgramAura1Response400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Open Websocket connection with @cf/deepgram/aura-1-internal model.
 ///
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/aura-1-internal model.
@@ -122,21 +95,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostWebsocketRunCfDeepgramAura1InternalResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostWebsocketRunCfDeepgramAura1InternalResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Open Websocket connection with @cf/deepgram/aura-2 model.
 ///
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/aura-2 model.
@@ -151,21 +115,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostWebsocketRunCfDeepgramAura2Response400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostWebsocketRunCfDeepgramAura2Response400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Open Websocket connection with @cf/deepgram/aura-2-en model.
 ///
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/aura-2-en model.
@@ -180,21 +135,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostWebsocketRunCfDeepgramAura2EnResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostWebsocketRunCfDeepgramAura2EnResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/deepgram/aura-2-en model.
 ///
 /// Runs inference on the @cf/deepgram/aura-2-en model.
@@ -222,21 +168,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: WorkersAiPostRunCfDeepgramAura2EnSuccess.parse,
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: WorkersAiPostRunCfDeepgramAura2EnSuccess.parse, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfDeepgramAura2EnResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfDeepgramAura2EnResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Open Websocket connection with @cf/deepgram/aura-2-es model.
 ///
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/aura-2-es model.
@@ -251,21 +188,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostWebsocketRunCfDeepgramAura2EsResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostWebsocketRunCfDeepgramAura2EsResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/deepgram/aura-2-es model.
 ///
 /// Runs inference on the @cf/deepgram/aura-2-es model.
@@ -293,21 +221,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: WorkersAiPostRunCfDeepgramAura2EsSuccess.parse,
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: WorkersAiPostRunCfDeepgramAura2EsSuccess.parse, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfDeepgramAura2EsResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfDeepgramAura2EsResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/myshell-ai/melotts model.
 ///
 /// Runs inference on the @cf/myshell-ai/melotts model.
@@ -335,22 +254,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfMyshellAiMelottsResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfMyshellAiMelottsResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

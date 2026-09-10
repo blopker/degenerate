@@ -7,17 +7,12 @@ sealed class CodeScanningListCodeqlDatabasesError {const CodeScanningListCodeqlD
 static CodeScanningListCodeqlDatabasesError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return CodeScanningListCodeqlDatabasesError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CodeScanningListCodeqlDatabasesError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CodeScanningListCodeqlDatabasesError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  CodeScanningListCodeqlDatabasesError404(BasicError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return CodeScanningListCodeqlDatabasesError503(CodeScanningListCodeqlDatabasesResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return CodeScanningListCodeqlDatabasesErrorUnknown(response);
-}
-}
+return  CodeScanningListCodeqlDatabasesError503(CodeScanningListCodeqlDatabasesResponse503.fromJson(json as Map<String, dynamic>));default:
+return  CodeScanningListCodeqlDatabasesErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class CodeScanningListCodeqlDatabasesError403 extends CodeScanningListCodeqlDatabasesError {const CodeScanningListCodeqlDatabasesError403(this.data);

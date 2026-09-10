@@ -24,13 +24,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostIndicatorTypeCreateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: PostIndicatorTypeCreateError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostIndicatorTypeCreateResponse.fromJson(json as Map<String, dynamic>);}, onError: PostIndicatorTypeCreateError.parse, );}
 }

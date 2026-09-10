@@ -7,14 +7,10 @@ sealed class ReposAddCollaboratorError {const ReposAddCollaboratorError();
 static ReposAddCollaboratorError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return ReposAddCollaboratorError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposAddCollaboratorError403(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposAddCollaboratorError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposAddCollaboratorErrorUnknown(response);
-}
-}
+return  ReposAddCollaboratorError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposAddCollaboratorErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class ReposAddCollaboratorError403 extends ReposAddCollaboratorError {const ReposAddCollaboratorError403(this.data);

@@ -33,11 +33,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new metafield for a resource.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#create-2020-01
@@ -54,11 +51,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of a resource's metafields.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#count-2020-01
@@ -73,11 +67,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single metafield from a resource by its ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#show-2020-01
@@ -100,11 +91,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a metafield.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#update-2020-01
@@ -121,11 +109,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a metafield by its ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#destroy-2020-01
@@ -140,11 +125,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of metafields that belong to a Product Image resource.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#index-2020-04
@@ -170,11 +152,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new metafield for a resource.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#create-2020-04
@@ -191,11 +170,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of a resource's metafields.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#count-2020-04
@@ -210,11 +186,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single metafield from a resource by its ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#show-2020-04
@@ -237,11 +210,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a metafield.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#update-2020-04
@@ -258,11 +228,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a metafield by its ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#destroy-2020-04
@@ -277,11 +244,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of metafields that belong to a Product Image resource.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#index-2020-07
@@ -307,11 +271,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new metafield for a resource.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#create-2020-07
@@ -328,11 +289,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of a resource's metafields.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#count-2020-07
@@ -347,11 +305,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single metafield from a resource by its ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#show-2020-07
@@ -374,11 +329,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a metafield.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#update-2020-07
@@ -395,11 +347,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a metafield by its ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#destroy-2020-07
@@ -414,11 +363,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of metafields that belong to a Product Image resource.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#index-2020-10
@@ -444,11 +390,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new metafield for a resource.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#create-2020-10
@@ -465,11 +408,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of a resource's metafields.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#count-2020-10
@@ -484,11 +424,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single metafield from a resource by its ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#show-2020-10
@@ -511,11 +448,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a metafield.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#update-2020-10
@@ -532,11 +466,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a metafield by its ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#destroy-2020-10
@@ -551,11 +482,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of metafields that belong to a Product Image resource.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#index-2021-01
@@ -581,11 +509,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new metafield for a resource.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#create-2021-01
@@ -602,11 +527,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of a resource's metafields.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#count-2021-01
@@ -621,11 +543,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single metafield from a resource by its ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#show-2021-01
@@ -648,11 +567,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a metafield.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#update-2021-01
@@ -669,11 +585,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a metafield by its ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#destroy-2021-01
@@ -688,11 +601,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of metafields that belong to a Product Image resource.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#index-unstable
@@ -718,11 +628,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new metafield for a resource.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#create-unstable
@@ -739,11 +646,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of a resource's metafields.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#count-unstable
@@ -758,11 +662,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single metafield from a resource by its ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#show-unstable
@@ -785,11 +686,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a metafield.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#update-unstable
@@ -806,11 +704,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a metafield by its ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/metafield#destroy-unstable
@@ -825,9 +720,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

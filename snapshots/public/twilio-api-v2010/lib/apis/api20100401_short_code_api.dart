@@ -20,14 +20,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountShortCode.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountShortCode.fromJson(json as Map<String, dynamic>);}, );}
 /// Update a short code with the following parameters
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SMS/ShortCodes/{Sid}.json`
@@ -55,14 +50,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountShortCode.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountShortCode.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieve a list of short-codes belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SMS/ShortCodes.json`
@@ -95,12 +85,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListShortCodeResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListShortCodeResponse.fromJson(json as Map<String, dynamic>);}, );}
 }

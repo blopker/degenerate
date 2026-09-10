@@ -6,17 +6,12 @@ sealed class ProjectsGetForUserError {const ProjectsGetForUserError();
 /// Decodes the payload for its declared status and content type.
 static ProjectsGetForUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ProjectsGetForUserError304();
-case 401:
+return  const ProjectsGetForUserError304();case 401:
 final json = jsonDecode(response.body);
-return ProjectsGetForUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  ProjectsGetForUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return ProjectsGetForUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ProjectsGetForUserErrorUnknown(response);
-}
-}
+return  ProjectsGetForUserError403(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ProjectsGetForUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ProjectsGetForUserError304 extends ProjectsGetForUserError {const ProjectsGetForUserError304();

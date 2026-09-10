@@ -7,14 +7,10 @@ sealed class ReposListBranchesForHeadCommitError {const ReposListBranchesForHead
 static ReposListBranchesForHeadCommitError parse(ApiResponse response) {switch (response.statusCode) {
 case 409:
 final json = jsonDecode(response.body);
-return ReposListBranchesForHeadCommitError409(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposListBranchesForHeadCommitError409(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposListBranchesForHeadCommitError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposListBranchesForHeadCommitErrorUnknown(response);
-}
-}
+return  ReposListBranchesForHeadCommitError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposListBranchesForHeadCommitErrorUnknown(response); }}
 }
 /// Response for 409 (application/json).
 final class ReposListBranchesForHeadCommitError409 extends ReposListBranchesForHeadCommitError {const ReposListBranchesForHeadCommitError409(this.data);

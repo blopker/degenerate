@@ -39,14 +39,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ConversationItemList.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ConversationItemList.fromJson(json as Map<String, dynamic>);}, );}
 /// Create items in a conversation with the given ID.
 ///
 /// `POST /conversations/{conversation_id}/items`
@@ -71,14 +66,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ConversationItemList.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ConversationItemList.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a single item from a conversation with the given IDs.
 ///
 /// `GET /conversations/{conversation_id}/items/{item_id}`
@@ -101,14 +91,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ConversationItem.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ConversationItem.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete an item from a conversation with the given IDs.
 ///
 /// `DELETE /conversations/{conversation_id}/items/{item_id}`
@@ -121,14 +106,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ConversationResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ConversationResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a conversation.
 ///
 /// `POST /conversations`
@@ -143,14 +123,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ConversationResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ConversationResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a conversation
 ///
 /// `GET /conversations/{conversation_id}`
@@ -163,14 +138,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ConversationResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ConversationResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Update a conversation
 ///
 /// `POST /conversations/{conversation_id}`
@@ -185,14 +155,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ConversationResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ConversationResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a conversation. Items in the conversation will not be deleted.
 ///
 /// `DELETE /conversations/{conversation_id}`
@@ -205,12 +170,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedConversationResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedConversationResource.fromJson(json as Map<String, dynamic>);}, );}
 }

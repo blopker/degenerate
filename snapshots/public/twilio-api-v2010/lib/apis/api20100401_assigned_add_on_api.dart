@@ -20,14 +20,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn.fromJson(json as Map<String, dynamic>);}, );}
 /// Remove the assignment of an Add-on installation from the Number specified.
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns/{Sid}.json`
@@ -40,11 +35,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a list of Add-on installations currently assigned to this Number.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns.json`
@@ -71,14 +63,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListIncomingPhoneNumberAssignedAddOnResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListIncomingPhoneNumberAssignedAddOnResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Assign an Add-on installation to the Number specified.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{ResourceSid}/AssignedAddOns.json`
@@ -95,12 +82,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountIncomingPhoneNumberIncomingPhoneNumberAssignedAddOn.fromJson(json as Map<String, dynamic>);}, );}
 }

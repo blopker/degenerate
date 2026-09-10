@@ -6,20 +6,14 @@ sealed class MigrationsDeleteArchiveForAuthenticatedUserError {const MigrationsD
 /// Decodes the payload for its declared status and content type.
 static MigrationsDeleteArchiveForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const MigrationsDeleteArchiveForAuthenticatedUserError304();
-case 401:
+return  const MigrationsDeleteArchiveForAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return MigrationsDeleteArchiveForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  MigrationsDeleteArchiveForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return MigrationsDeleteArchiveForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  MigrationsDeleteArchiveForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return MigrationsDeleteArchiveForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return MigrationsDeleteArchiveForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  MigrationsDeleteArchiveForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  MigrationsDeleteArchiveForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class MigrationsDeleteArchiveForAuthenticatedUserError304 extends MigrationsDeleteArchiveForAuthenticatedUserError {const MigrationsDeleteArchiveForAuthenticatedUserError304();

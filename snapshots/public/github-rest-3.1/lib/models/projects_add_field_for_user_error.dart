@@ -6,20 +6,14 @@ sealed class ProjectsAddFieldForUserError {const ProjectsAddFieldForUserError();
 /// Decodes the payload for its declared status and content type.
 static ProjectsAddFieldForUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ProjectsAddFieldForUserError304();
-case 401:
+return  const ProjectsAddFieldForUserError304();case 401:
 final json = jsonDecode(response.body);
-return ProjectsAddFieldForUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  ProjectsAddFieldForUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return ProjectsAddFieldForUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ProjectsAddFieldForUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ProjectsAddFieldForUserError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ProjectsAddFieldForUserErrorUnknown(response);
-}
-}
+return  ProjectsAddFieldForUserError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ProjectsAddFieldForUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ProjectsAddFieldForUserError304 extends ProjectsAddFieldForUserError {const ProjectsAddFieldForUserError304();

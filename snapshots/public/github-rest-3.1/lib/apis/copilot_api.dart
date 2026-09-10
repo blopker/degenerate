@@ -31,15 +31,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CopilotOrganizationDetails.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CopilotGetCopilotOrganizationDetailsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CopilotOrganizationDetails.fromJson(json as Map<String, dynamic>);}, onError: CopilotGetCopilotOrganizationDetailsError.parse, );}
 /// List all Copilot seat assignments for an organization
 ///
 /// > `[!NOTE]`
@@ -74,24 +68,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CopilotListCopilotSeatsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CopilotListCopilotSeatsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Add teams to the Copilot subscription for an organization
 ///
 /// > `[!NOTE]`
@@ -120,15 +103,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CopilotAddCopilotSeatsForTeamsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CopilotAddCopilotSeatsForTeamsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CopilotAddCopilotSeatsForTeamsResponse.fromJson(json as Map<String, dynamic>);}, onError: CopilotAddCopilotSeatsForTeamsError.parse, );}
 /// Remove teams from the Copilot subscription for an organization
 ///
 /// > `[!NOTE]`
@@ -156,15 +133,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CopilotCancelCopilotSeatAssignmentForTeamsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CopilotCancelCopilotSeatAssignmentForTeamsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CopilotCancelCopilotSeatAssignmentForTeamsResponse.fromJson(json as Map<String, dynamic>);}, onError: CopilotCancelCopilotSeatAssignmentForTeamsError.parse, );}
 /// Add users to the Copilot subscription for an organization
 ///
 /// > `[!NOTE]`
@@ -193,15 +164,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CopilotAddCopilotSeatsForUsersResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CopilotAddCopilotSeatsForUsersError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CopilotAddCopilotSeatsForUsersResponse.fromJson(json as Map<String, dynamic>);}, onError: CopilotAddCopilotSeatsForUsersError.parse, );}
 /// Remove users from the Copilot subscription for an organization
 ///
 /// > `[!NOTE]`
@@ -229,15 +194,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CopilotCancelCopilotSeatAssignmentForUsersResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CopilotCancelCopilotSeatAssignmentForUsersError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CopilotCancelCopilotSeatAssignmentForUsersResponse.fromJson(json as Map<String, dynamic>);}, onError: CopilotCancelCopilotSeatAssignmentForUsersError.parse, );}
 /// Get Copilot content exclusion rules for an organization
 ///
 /// > `[!NOTE]`
@@ -265,24 +224,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => e as String).toList()));
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as List<dynamic>).map((e) => e as String).toList()));}, onError: (response) {switch (response.statusCode) {
 case 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set Copilot content exclusion rules for an organization
 ///
 /// > `[!NOTE]`
@@ -312,15 +260,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CopilotSetCopilotContentExclusionForOrganizationResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CopilotSetCopilotContentExclusionForOrganizationError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CopilotSetCopilotContentExclusionForOrganizationResponse.fromJson(json as Map<String, dynamic>);}, onError: CopilotSetCopilotContentExclusionForOrganizationError.parse, );}
 /// Get Copilot metrics for an organization
 ///
 /// Use this endpoint to see a breakdown of aggregated metrics for various GitHub Copilot features. See the response schema tab for detailed metrics definitions.
@@ -364,24 +306,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => CopilotUsageMetricsDay.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => CopilotUsageMetricsDay.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 403 || 404 || 422 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get Copilot seat assignment details for a user
 ///
 /// > `[!NOTE]`
@@ -406,15 +337,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CopilotSeatDetails.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CopilotGetCopilotSeatDetailsForUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CopilotSeatDetails.fromJson(json as Map<String, dynamic>);}, onError: CopilotGetCopilotSeatDetailsForUserError.parse, );}
 /// Get Copilot metrics for a team
 ///
 /// Use this endpoint to see a breakdown of aggregated metrics for various GitHub Copilot features. See the response schema tab for detailed metrics definitions.
@@ -458,22 +383,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => CopilotUsageMetricsDay.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => CopilotUsageMetricsDay.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 403 || 404 || 422 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

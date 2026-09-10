@@ -7,21 +7,15 @@ sealed class CreateResponseSuccess {const CreateResponseSuccess();
 static CreateResponseSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return CreateResponseSuccess200ApplicationJson(Response.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
+return  CreateResponseSuccess200ApplicationJson(Response.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into ResponseStreamEvent
-throw UnsupportedError('Cannot decode text/event-stream response into ResponseStreamEvent');
-}
-final json = jsonDecode(response.body);
-return CreateResponseSuccess200ApplicationJson(Response.fromJson(json as Map<String, dynamic>));
 
-default:
-return CreateResponseSuccessUnknown(response);
-}
-}
+throw  UnsupportedError('Cannot decode text/event-stream response into ResponseStreamEvent'); } else {
+final json = jsonDecode(response.body);
+return  CreateResponseSuccess200ApplicationJson(Response.fromJson(json as Map<String, dynamic>)); }default:
+return  CreateResponseSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class CreateResponseSuccess200ApplicationJson extends CreateResponseSuccess {const CreateResponseSuccess200ApplicationJson(this.data);

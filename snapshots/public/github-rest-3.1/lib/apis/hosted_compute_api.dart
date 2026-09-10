@@ -35,14 +35,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return HostedComputeListNetworkConfigurationsForOrgResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  HostedComputeListNetworkConfigurationsForOrgResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a hosted compute network configuration for an organization
 ///
 /// Creates a hosted compute network configuration for an organization.
@@ -61,14 +56,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return NetworkConfiguration.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  NetworkConfiguration.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a hosted compute network configuration for an organization
 ///
 /// Gets a hosted compute network configuration configured in an organization.
@@ -85,14 +75,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return NetworkConfiguration.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  NetworkConfiguration.fromJson(json as Map<String, dynamic>);}, );}
 /// Update a hosted compute network configuration for an organization
 ///
 /// Updates a hosted compute network configuration for an organization.
@@ -111,14 +96,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return NetworkConfiguration.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  NetworkConfiguration.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a hosted compute network configuration from an organization
 ///
 /// Deletes a hosted compute network configuration from an organization.
@@ -135,11 +115,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a hosted compute network settings resource for an organization
 ///
 /// Gets a hosted compute network settings resource configured for an organization.
@@ -156,12 +133,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return NetworkSettings.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  NetworkSettings.fromJson(json as Map<String, dynamic>);}, );}
 }

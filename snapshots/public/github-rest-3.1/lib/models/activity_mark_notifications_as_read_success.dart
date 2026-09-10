@@ -7,13 +7,9 @@ sealed class ActivityMarkNotificationsAsReadSuccess {const ActivityMarkNotificat
 static ActivityMarkNotificationsAsReadSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 202:
 final json = jsonDecode(response.body);
-return ActivityMarkNotificationsAsReadSuccess202(ActivityMarkNotificationsAsReadResponse.fromJson(json as Map<String, dynamic>));
-case 205:
-return const ActivityMarkNotificationsAsReadSuccess205();
-default:
-return ActivityMarkNotificationsAsReadSuccessUnknown(response);
-}
-}
+return  ActivityMarkNotificationsAsReadSuccess202(ActivityMarkNotificationsAsReadResponse.fromJson(json as Map<String, dynamic>));case 205:
+return  const ActivityMarkNotificationsAsReadSuccess205();default:
+return  ActivityMarkNotificationsAsReadSuccessUnknown(response); }}
 }
 /// Response for 202 (application/json).
 final class ActivityMarkNotificationsAsReadSuccess202 extends ActivityMarkNotificationsAsReadSuccess {const ActivityMarkNotificationsAsReadSuccess202(this.data);

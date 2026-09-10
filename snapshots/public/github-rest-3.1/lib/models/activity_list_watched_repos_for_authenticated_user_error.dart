@@ -6,17 +6,12 @@ sealed class ActivityListWatchedReposForAuthenticatedUserError {const ActivityLi
 /// Decodes the payload for its declared status and content type.
 static ActivityListWatchedReposForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ActivityListWatchedReposForAuthenticatedUserError304();
-case 401:
+return  const ActivityListWatchedReposForAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return ActivityListWatchedReposForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  ActivityListWatchedReposForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return ActivityListWatchedReposForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ActivityListWatchedReposForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  ActivityListWatchedReposForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ActivityListWatchedReposForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ActivityListWatchedReposForAuthenticatedUserError304 extends ActivityListWatchedReposForAuthenticatedUserError {const ActivityListWatchedReposForAuthenticatedUserError304();

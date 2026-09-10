@@ -7,14 +7,10 @@ sealed class DeleteZoneSnippetRulesError {const DeleteZoneSnippetRulesError();
 static DeleteZoneSnippetRulesError parse(ApiResponse response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return DeleteZoneSnippetRulesError4xx(DeleteZoneSnippetRulesResponse4xx.fromJson(json as Map<String, dynamic>));
-case >= 500 && < 600:
+return  DeleteZoneSnippetRulesError4xx(DeleteZoneSnippetRulesResponse4xx.fromJson(json as Map<String, dynamic>));case >= 500 && < 600:
 final json = jsonDecode(response.body);
-return DeleteZoneSnippetRulesError5xx(DeleteZoneSnippetRulesResponse5xx.fromJson(json as Map<String, dynamic>));
-default:
-return DeleteZoneSnippetRulesErrorUnknown(response);
-}
-}
+return  DeleteZoneSnippetRulesError5xx(DeleteZoneSnippetRulesResponse5xx.fromJson(json as Map<String, dynamic>));default:
+return  DeleteZoneSnippetRulesErrorUnknown(response); }}
 }
 /// Response for 4xx (application/json).
 final class DeleteZoneSnippetRulesError4xx extends DeleteZoneSnippetRulesError {const DeleteZoneSnippetRulesError4xx(this.data);

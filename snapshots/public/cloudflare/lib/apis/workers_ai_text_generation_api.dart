@@ -35,34 +35,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return $27bItResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  $27bItResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/deepseek-ai/deepseek-math-7b-instruct model.
 ///
 /// Runs inference on the @cf/deepseek-ai/deepseek-math-7b-instruct model.
@@ -90,34 +76,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfDeepseekAiDeepseekMath7bInstructResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/deepseek-ai/deepseek-r1-distill-qwen-32b model.
 ///
 /// Runs inference on the @cf/deepseek-ai/deepseek-r1-distill-qwen-32b model.
@@ -145,34 +117,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfDeepseekAiDeepseekR1DistillQwen32bResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/defog/sqlcoder-7b-2 model.
 ///
 /// Runs inference on the @cf/defog/sqlcoder-7b-2 model.
@@ -200,34 +158,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfDefogSqlcoder7b2Response400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfDefogSqlcoder7b2Response400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/fblgit/una-cybertron-7b-v2-bf16 model.
 ///
 /// Runs inference on the @cf/fblgit/una-cybertron-7b-v2-bf16 model.
@@ -255,34 +199,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return Bf16Response400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  Bf16Response400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/google/gemma-2b-it-lora model.
 ///
 /// Runs inference on the @cf/google/gemma-2b-it-lora model.
@@ -310,34 +240,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfGoogleGemma2bItLoraResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfGoogleGemma2bItLoraResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/google/gemma-3-12b-it model.
 ///
 /// Runs inference on the @cf/google/gemma-3-12b-it model.
@@ -365,34 +281,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfGoogleGemma312bItResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfGoogleGemma312bItResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/google/gemma-7b-it-lora model.
 ///
 /// Runs inference on the @cf/google/gemma-7b-it-lora model.
@@ -420,34 +322,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfGoogleGemma7bItLoraResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfGoogleGemma7bItLoraResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/ibm-granite/granite-4.0-h-micro model.
 ///
 /// Runs inference on the @cf/ibm-granite/granite-4.0-h-micro model.
@@ -475,34 +363,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfIbmGraniteGranite40HMicroResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfIbmGraniteGranite40HMicroResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/meta-llama/llama-2-7b-chat-hf-lora model.
 ///
 /// Runs inference on the @cf/meta-llama/llama-2-7b-chat-hf-lora model.
@@ -530,34 +404,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfMetaLlamaLlama27bChatHfLoraResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfMetaLlamaLlama27bChatHfLoraResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/meta/llama-2-7b-chat-fp16 model.
 ///
 /// Runs inference on the @cf/meta/llama-2-7b-chat-fp16 model.
@@ -585,34 +445,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfMetaLlama27bChatFp16Response400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfMetaLlama27bChatFp16Response400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/meta/llama-2-7b-chat-int8 model.
 ///
 /// Runs inference on the @cf/meta/llama-2-7b-chat-int8 model.
@@ -640,34 +486,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfMetaLlama27bChatInt8Response400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfMetaLlama27bChatInt8Response400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/meta/llama-3-8b-instruct model.
 ///
 /// Runs inference on the @cf/meta/llama-3-8b-instruct model.
@@ -695,34 +527,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfMetaLlama38bInstructResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfMetaLlama38bInstructResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/meta/llama-3-8b-instruct-awq model.
 ///
 /// Runs inference on the @cf/meta/llama-3-8b-instruct-awq model.
@@ -750,34 +568,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfMetaLlama38bInstructAwqResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfMetaLlama38bInstructAwqResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/meta/llama-3.1-8b-instruct-awq model.
 ///
 /// Runs inference on the @cf/meta/llama-3.1-8b-instruct-awq model.
@@ -805,34 +609,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfMetaLlama318bInstructAwqResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfMetaLlama318bInstructAwqResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/meta/llama-3.1-8b-instruct-fp8 model.
 ///
 /// Runs inference on the @cf/meta/llama-3.1-8b-instruct-fp8 model.
@@ -860,34 +650,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfMetaLlama318bInstructFp8Response400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfMetaLlama318bInstructFp8Response400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/meta/llama-3.1-8b-instruct-fp8-fast model.
 ///
 /// Runs inference on the @cf/meta/llama-3.1-8b-instruct-fp8-fast model.
@@ -915,34 +691,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfMetaLlama318bInstructFp8FastResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfMetaLlama318bInstructFp8FastResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/meta/llama-3.1-70b-instruct-fp8-fast model.
 ///
 /// Runs inference on the @cf/meta/llama-3.1-70b-instruct-fp8-fast model.
@@ -970,34 +732,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfMetaLlama3170bInstructFp8FastResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfMetaLlama3170bInstructFp8FastResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/meta/llama-3.2-1b-instruct model.
 ///
 /// Runs inference on the @cf/meta/llama-3.2-1b-instruct model.
@@ -1025,34 +773,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfMetaLlama321bInstructResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfMetaLlama321bInstructResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/meta/llama-3.2-3b-instruct model.
 ///
 /// Runs inference on the @cf/meta/llama-3.2-3b-instruct model.
@@ -1080,34 +814,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfMetaLlama323bInstructResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfMetaLlama323bInstructResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/meta/llama-3.2-11b-vision-instruct model.
 ///
 /// Runs inference on the @cf/meta/llama-3.2-11b-vision-instruct model.
@@ -1135,34 +855,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfMetaLlama3211bVisionInstructResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfMetaLlama3211bVisionInstructResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/meta/llama-3.3-70b-instruct-fp8-fast model.
 ///
 /// Runs inference on the @cf/meta/llama-3.3-70b-instruct-fp8-fast model.
@@ -1190,34 +896,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfMetaLlama3370bInstructFp8FastResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfMetaLlama3370bInstructFp8FastResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/meta/llama-4-scout-17b-16e-instruct model.
 ///
 /// Runs inference on the @cf/meta/llama-4-scout-17b-16e-instruct model.
@@ -1245,34 +937,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfMetaLlama4Scout17b16eInstructResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfMetaLlama4Scout17b16eInstructResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/meta/llama-guard-3-8b model.
 ///
 /// Runs inference on the @cf/meta/llama-guard-3-8b model.
@@ -1300,24 +978,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfMetaLlamaGuard38bResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfMetaLlamaGuard38bResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/microsoft/phi-2 model.
 ///
 /// Runs inference on the @cf/microsoft/phi-2 model.
@@ -1345,34 +1012,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfMicrosoftPhi2Response400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfMicrosoftPhi2Response400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/mistral/mistral-7b-instruct-v0.1 model.
 ///
 /// Runs inference on the @cf/mistral/mistral-7b-instruct-v0.1 model.
@@ -1400,34 +1053,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return $1Response400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  $1Response400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/mistral/mistral-7b-instruct-v0.2-lora model.
 ///
 /// Runs inference on the @cf/mistral/mistral-7b-instruct-v0.2-lora model.
@@ -1455,34 +1094,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return $2LoraResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  $2LoraResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/mistralai/mistral-small-3.1-24b-instruct model.
 ///
 /// Runs inference on the @cf/mistralai/mistral-small-3.1-24b-instruct model.
@@ -1510,34 +1135,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfMistralaiMistralSmall3124bInstructResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfMistralaiMistralSmall3124bInstructResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/openai/gpt-oss-20b model.
 ///
 /// Runs inference on the @cf/openai/gpt-oss-20b model.
@@ -1565,24 +1176,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfOpenaiGptOss20bResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfOpenaiGptOss20bResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/openai/gpt-oss-120b model.
 ///
 /// Runs inference on the @cf/openai/gpt-oss-120b model.
@@ -1610,24 +1210,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfOpenaiGptOss120bResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfOpenaiGptOss120bResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/openchat/openchat-3.5-0106 model.
 ///
 /// Runs inference on the @cf/openchat/openchat-3.5-0106 model.
@@ -1655,34 +1244,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfOpenchatOpenchat350106Response400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfOpenchatOpenchat350106Response400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/qwen/qwen1.5-0.5b-chat model.
 ///
 /// Runs inference on the @cf/qwen/qwen1.5-0.5b-chat model.
@@ -1710,34 +1285,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfQwenQwen1505bChatResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfQwenQwen1505bChatResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/qwen/qwen1.5-1.8b-chat model.
 ///
 /// Runs inference on the @cf/qwen/qwen1.5-1.8b-chat model.
@@ -1765,34 +1326,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfQwenQwen1518bChatResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfQwenQwen1518bChatResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/qwen/qwen1.5-7b-chat-awq model.
 ///
 /// Runs inference on the @cf/qwen/qwen1.5-7b-chat-awq model.
@@ -1820,34 +1367,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfQwenQwen157bChatAwqResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfQwenQwen157bChatAwqResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/qwen/qwen1.5-14b-chat-awq model.
 ///
 /// Runs inference on the @cf/qwen/qwen1.5-14b-chat-awq model.
@@ -1875,34 +1408,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfQwenQwen1514bChatAwqResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfQwenQwen1514bChatAwqResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/qwen/qwen2.5-coder-32b-instruct model.
 ///
 /// Runs inference on the @cf/qwen/qwen2.5-coder-32b-instruct model.
@@ -1930,34 +1449,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfQwenQwen25Coder32bInstructResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfQwenQwen25Coder32bInstructResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/qwen/qwen3-30b-a3b-fp8 model.
 ///
 /// Runs inference on the @cf/qwen/qwen3-30b-a3b-fp8 model.
@@ -1985,34 +1490,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfQwenQwen330bA3bFp8Response400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfQwenQwen330bA3bFp8Response400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/qwen/qwq-32b model.
 ///
 /// Runs inference on the @cf/qwen/qwq-32b model.
@@ -2040,34 +1531,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfQwenQwq32bResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfQwenQwq32bResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/thebloke/discolm-german-7b-v1-awq model.
 ///
 /// Runs inference on the @cf/thebloke/discolm-german-7b-v1-awq model.
@@ -2095,34 +1572,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return AwqResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AwqResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/tiiuae/falcon-7b-instruct model.
 ///
 /// Runs inference on the @cf/tiiuae/falcon-7b-instruct model.
@@ -2150,34 +1613,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfTiiuaeFalcon7bInstructResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfTiiuaeFalcon7bInstructResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/tinyllama/tinyllama-1.1b-chat-v1.0 model.
 ///
 /// Runs inference on the @cf/tinyllama/tinyllama-1.1b-chat-v1.0 model.
@@ -2205,34 +1654,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return $0Response400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  $0Response400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/zai-org/glm-4.7-flash model.
 ///
 /// Runs inference on the @cf/zai-org/glm-4.7-flash model.
@@ -2260,34 +1695,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfZaiOrgGlm47FlashResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfZaiOrgGlm47FlashResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @hf/google/gemma-7b-it model.
 ///
 /// Runs inference on the @hf/google/gemma-7b-it model.
@@ -2315,34 +1736,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunHfGoogleGemma7bItResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunHfGoogleGemma7bItResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @hf/mistral/mistral-7b-instruct-v0.2 model.
 ///
 /// Runs inference on the @hf/mistral/mistral-7b-instruct-v0.2 model.
@@ -2370,34 +1777,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return $2Response400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  $2Response400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @hf/nexusflow/starling-lm-7b-beta model.
 ///
 /// Runs inference on the @hf/nexusflow/starling-lm-7b-beta model.
@@ -2425,34 +1818,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunHfNexusflowStarlingLm7bBetaResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunHfNexusflowStarlingLm7bBetaResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @hf/nousresearch/hermes-2-pro-mistral-7b model.
 ///
 /// Runs inference on the @hf/nousresearch/hermes-2-pro-mistral-7b model.
@@ -2480,34 +1859,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunHfNousresearchHermes2ProMistral7bResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunHfNousresearchHermes2ProMistral7bResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @hf/thebloke/deepseek-coder-6.7b-base-awq model.
 ///
 /// Runs inference on the @hf/thebloke/deepseek-coder-6.7b-base-awq model.
@@ -2535,34 +1900,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunHfTheblokeDeepseekCoder67bBaseAwqResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @hf/thebloke/deepseek-coder-6.7b-instruct-awq model.
 ///
 /// Runs inference on the @hf/thebloke/deepseek-coder-6.7b-instruct-awq model.
@@ -2590,34 +1941,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunHfTheblokeDeepseekCoder67bInstructAwqResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunHfTheblokeDeepseekCoder67bInstructAwqResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @hf/thebloke/llama-2-13b-chat-awq model.
 ///
 /// Runs inference on the @hf/thebloke/llama-2-13b-chat-awq model.
@@ -2645,34 +1982,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunHfTheblokeLlama213bChatAwqResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunHfTheblokeLlama213bChatAwqResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @hf/thebloke/mistral-7b-instruct-v0.1-awq model.
 ///
 /// Runs inference on the @hf/thebloke/mistral-7b-instruct-v0.1-awq model.
@@ -2700,34 +2023,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return $1AwqResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  $1AwqResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @hf/thebloke/neural-chat-7b-v3-1-awq model.
 ///
 /// Runs inference on the @hf/thebloke/neural-chat-7b-v3-1-awq model.
@@ -2755,34 +2064,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return $1AwqResponse4002.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  $1AwqResponse4002.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @hf/thebloke/openhermes-2.5-mistral-7b-awq model.
 ///
 /// Runs inference on the @hf/thebloke/openhermes-2.5-mistral-7b-awq model.
@@ -2810,34 +2105,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunHfTheblokeOpenhermes25Mistral7bAwqResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunHfTheblokeOpenhermes25Mistral7bAwqResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @hf/thebloke/zephyr-7b-beta-awq model.
 ///
 /// Runs inference on the @hf/thebloke/zephyr-7b-beta-awq model.
@@ -2865,34 +2146,20 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
-// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
-throw UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>');
-}
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
 
-  },
-  onError: (response) {
-switch (response.statusCode) {
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into Map<String, dynamic>
+
+throw  UnsupportedError('Cannot decode text/event-stream response into Map<String, dynamic>'); } else {
+final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>; }}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunHfTheblokeZephyr7bBetaAwqResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunHfTheblokeZephyr7bBetaAwqResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/aisingapore/gemma-sea-lion-v4-27b-it model. (streaming)
 ///
 /// `POST /accounts/{account_id}/ai/run/@cf/aisingapore/gemma-sea-lion-v4-27b-it`

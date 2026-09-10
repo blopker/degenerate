@@ -7,13 +7,9 @@ sealed class CodeSecurityUpdateConfigurationSuccess {const CodeSecurityUpdateCon
 static CodeSecurityUpdateConfigurationSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final json = jsonDecode(response.body);
-return CodeSecurityUpdateConfigurationSuccess200(CodeSecurityConfiguration.fromJson(json as Map<String, dynamic>));
-case 204:
-return const CodeSecurityUpdateConfigurationSuccess204();
-default:
-return CodeSecurityUpdateConfigurationSuccessUnknown(response);
-}
-}
+return  CodeSecurityUpdateConfigurationSuccess200(CodeSecurityConfiguration.fromJson(json as Map<String, dynamic>));case 204:
+return  const CodeSecurityUpdateConfigurationSuccess204();default:
+return  CodeSecurityUpdateConfigurationSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class CodeSecurityUpdateConfigurationSuccess200 extends CodeSecurityUpdateConfigurationSuccess {const CodeSecurityUpdateConfigurationSuccess200(this.data);

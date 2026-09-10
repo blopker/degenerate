@@ -22,24 +22,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return MagicNetworkMonitoringConfigurationListAccountConfigurationResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  MagicNetworkMonitoringConfigurationListAccountConfigurationResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create account configuration
 ///
 /// Create a new network monitoring configuration.
@@ -56,24 +45,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return MagicNetworkMonitoringConfigurationCreateAccountConfigurationResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  MagicNetworkMonitoringConfigurationCreateAccountConfigurationResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update an entire account configuration
 ///
 /// Update an existing network monitoring configuration, requires the entire configuration to be updated at once.
@@ -90,24 +68,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  MagicNetworkMonitoringConfigurationUpdateAnEntireAccountConfigurationResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update account configuration fields
 ///
 /// Update fields in an existing network monitoring configuration.
@@ -124,24 +91,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  MagicNetworkMonitoringConfigurationUpdateAccountConfigurationFieldsResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete account configuration
 ///
 /// Delete an existing network monitoring configuration.
@@ -156,24 +112,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return MagicNetworkMonitoringConfigurationDeleteAccountConfigurationResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  MagicNetworkMonitoringConfigurationDeleteAccountConfigurationResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List rules and account configuration
 ///
 /// Lists default sampling, router IPs, warp devices, and rules for account.
@@ -188,22 +133,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  MagicVisibilityMnmMnmConfig.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return MagicNetworkMonitoringConfigurationListRulesAndAccountConfigurationResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  MagicNetworkMonitoringConfigurationListRulesAndAccountConfigurationResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

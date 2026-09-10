@@ -59,15 +59,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SearchCodeResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: SearchCodeError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SearchCodeResponse.fromJson(json as Map<String, dynamic>);}, onError: SearchCodeError.parse, );}
 /// Search commits
 ///
 /// Find commits via various criteria on the default branch (usually `main`). This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api).
@@ -107,14 +101,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SearchCommitsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SearchCommitsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Search issues and pull requests
 ///
 /// Find issues by state and keyword. This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api).
@@ -162,15 +151,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SearchIssuesAndPullRequestsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: SearchIssuesAndPullRequestsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SearchIssuesAndPullRequestsResponse.fromJson(json as Map<String, dynamic>);}, onError: SearchIssuesAndPullRequestsError.parse, );}
 /// Search labels
 ///
 /// Find labels in a repository with names or descriptions that match search keywords. Returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api).
@@ -212,15 +195,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SearchLabelsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: SearchLabelsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SearchLabelsResponse.fromJson(json as Map<String, dynamic>);}, onError: SearchLabelsError.parse, );}
 /// Search repositories
 ///
 /// Find repositories via various criteria. This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api).
@@ -261,15 +238,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SearchReposResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: SearchReposError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SearchReposResponse.fromJson(json as Map<String, dynamic>);}, onError: SearchReposError.parse, );}
 /// Search topics
 ///
 /// Find topics via various criteria. Results are sorted by best match. This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api). See "[Searching topics](https://docs.github.com/articles/searching-topics/)" for a detailed list of qualifiers.
@@ -304,14 +275,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SearchTopicsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SearchTopicsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Search users
 ///
 /// Find users via various criteria. This method returns up to 100 results [per page](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api).
@@ -354,13 +320,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SearchUsersResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: SearchUsersError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SearchUsersResponse.fromJson(json as Map<String, dynamic>);}, onError: SearchUsersError.parse, );}
 }

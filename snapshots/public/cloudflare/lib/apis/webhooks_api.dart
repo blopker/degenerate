@@ -22,14 +22,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RealtimekitWebhooksListSuccessResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RealtimekitWebhooksListSuccessResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Add a webhook
 ///
 /// Adds a new webhook to an App.
@@ -46,15 +41,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RealtimekitWebhookSuccessResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: AddWebhookError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RealtimekitWebhookSuccessResponse.fromJson(json as Map<String, dynamic>);}, onError: AddWebhookError.parse, );}
 /// Fetch details of a webhook
 ///
 /// Returns webhook details for the given webhook ID.
@@ -69,15 +58,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RealtimekitWebhookSuccessResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: GetWebhookError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RealtimekitWebhookSuccessResponse.fromJson(json as Map<String, dynamic>);}, onError: GetWebhookError.parse, );}
 /// Replace a webhook
 ///
 /// Replace all details for the given webhook ID.
@@ -94,15 +77,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RealtimekitWebhookSuccessResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ReplaceWebhookError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RealtimekitWebhookSuccessResponse.fromJson(json as Map<String, dynamic>);}, onError: ReplaceWebhookError.parse, );}
 /// Edit a webhook
 ///
 /// Edits the webhook details for the given webhook ID.
@@ -119,15 +96,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RealtimekitWebhookSuccessResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: EditWebhookError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RealtimekitWebhookSuccessResponse.fromJson(json as Map<String, dynamic>);}, onError: EditWebhookError.parse, );}
 /// Delete a webhook
 ///
 /// Removes a webhook for the given webhook ID.
@@ -142,13 +113,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RealtimekitWebhookSuccessResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: DeleteWebhookError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RealtimekitWebhookSuccessResponse.fromJson(json as Map<String, dynamic>);}, onError: DeleteWebhookError.parse, );}
 }

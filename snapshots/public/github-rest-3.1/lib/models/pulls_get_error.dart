@@ -6,23 +6,16 @@ sealed class PullsGetError {const PullsGetError();
 /// Decodes the payload for its declared status and content type.
 static PullsGetError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const PullsGetError304();
-case 404:
+return  const PullsGetError304();case 404:
 final json = jsonDecode(response.body);
-return PullsGetError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 406:
+return  PullsGetError404(BasicError.fromJson(json as Map<String, dynamic>));case 406:
 final json = jsonDecode(response.body);
-return PullsGetError406(BasicError.fromJson(json as Map<String, dynamic>));
-case 500:
+return  PullsGetError406(BasicError.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return PullsGetError500(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  PullsGetError500(BasicError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return PullsGetError503(PullsGetResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return PullsGetErrorUnknown(response);
-}
-}
+return  PullsGetError503(PullsGetResponse503.fromJson(json as Map<String, dynamic>));default:
+return  PullsGetErrorUnknown(response); }}
 }
 /// Response for 304.
 final class PullsGetError304 extends PullsGetError {const PullsGetError304();

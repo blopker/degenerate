@@ -7,14 +7,10 @@ sealed class PrivateRegistriesCreateOrgPrivateRegistryError {const PrivateRegist
 static PrivateRegistriesCreateOrgPrivateRegistryError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return PrivateRegistriesCreateOrgPrivateRegistryError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  PrivateRegistriesCreateOrgPrivateRegistryError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return PrivateRegistriesCreateOrgPrivateRegistryError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return PrivateRegistriesCreateOrgPrivateRegistryErrorUnknown(response);
-}
-}
+return  PrivateRegistriesCreateOrgPrivateRegistryError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  PrivateRegistriesCreateOrgPrivateRegistryErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class PrivateRegistriesCreateOrgPrivateRegistryError404 extends PrivateRegistriesCreateOrgPrivateRegistryError {const PrivateRegistriesCreateOrgPrivateRegistryError404(this.data);

@@ -20,14 +20,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountQueue.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountQueue.fromJson(json as Map<String, dynamic>);}, );}
 /// Update the queue with the new parameters
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Queues/{Sid}.json`
@@ -47,14 +42,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountQueue.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountQueue.fromJson(json as Map<String, dynamic>);}, );}
 /// Remove an empty queue
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Queues/{Sid}.json`
@@ -67,11 +57,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a list of queues belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Queues.json`
@@ -98,14 +85,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListQueueResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListQueueResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a queue
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Queues.json`
@@ -124,12 +106,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountQueue.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountQueue.fromJson(json as Map<String, dynamic>);}, );}
 }

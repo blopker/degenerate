@@ -7,14 +7,10 @@ sealed class ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoError {const Act
 static ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoErrorUnknown(response);
-}
-}
+return  ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));default:
+return  ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoError404 extends ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoError {const ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoError404(this.data);

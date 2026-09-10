@@ -7,14 +7,10 @@ sealed class AccountLoadBalancerMonitorGroupsUpdateMonitorGroupError {const Acco
 static AccountLoadBalancerMonitorGroupsUpdateMonitorGroupError parse(ApiResponse response) {switch (response.statusCode) {
 case >= 400 && < 412 || >= 413 && < 500:
 final json = jsonDecode(response.body);
-return AccountLoadBalancerMonitorGroupsUpdateMonitorGroupError4xx(AccountLoadBalancerMonitorGroupsUpdateMonitorGroupResponse4xx.fromJson(json as Map<String, dynamic>));
-case 412:
+return  AccountLoadBalancerMonitorGroupsUpdateMonitorGroupError4xx(AccountLoadBalancerMonitorGroupsUpdateMonitorGroupResponse4xx.fromJson(json as Map<String, dynamic>));case 412:
 final json = jsonDecode(response.body);
-return AccountLoadBalancerMonitorGroupsUpdateMonitorGroupError412(AccountLoadBalancerMonitorGroupsUpdateMonitorGroupResponse412.fromJson(json as Map<String, dynamic>));
-default:
-return AccountLoadBalancerMonitorGroupsUpdateMonitorGroupErrorUnknown(response);
-}
-}
+return  AccountLoadBalancerMonitorGroupsUpdateMonitorGroupError412(AccountLoadBalancerMonitorGroupsUpdateMonitorGroupResponse412.fromJson(json as Map<String, dynamic>));default:
+return  AccountLoadBalancerMonitorGroupsUpdateMonitorGroupErrorUnknown(response); }}
 }
 /// Response for 4xx (application/json).
 final class AccountLoadBalancerMonitorGroupsUpdateMonitorGroupError4xx extends AccountLoadBalancerMonitorGroupsUpdateMonitorGroupError {const AccountLoadBalancerMonitorGroupsUpdateMonitorGroupError4xx(this.data);

@@ -6,17 +6,12 @@ sealed class CodeSecurityGetConfigurationError {const CodeSecurityGetConfigurati
 /// Decodes the payload for its declared status and content type.
 static CodeSecurityGetConfigurationError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const CodeSecurityGetConfigurationError304();
-case 403:
+return  const CodeSecurityGetConfigurationError304();case 403:
 final json = jsonDecode(response.body);
-return CodeSecurityGetConfigurationError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CodeSecurityGetConfigurationError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CodeSecurityGetConfigurationError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return CodeSecurityGetConfigurationErrorUnknown(response);
-}
-}
+return  CodeSecurityGetConfigurationError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  CodeSecurityGetConfigurationErrorUnknown(response); }}
 }
 /// Response for 304.
 final class CodeSecurityGetConfigurationError304 extends CodeSecurityGetConfigurationError {const CodeSecurityGetConfigurationError304();

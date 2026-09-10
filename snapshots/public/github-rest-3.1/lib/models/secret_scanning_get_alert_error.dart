@@ -6,16 +6,11 @@ sealed class SecretScanningGetAlertError {const SecretScanningGetAlertError();
 /// Decodes the payload for its declared status and content type.
 static SecretScanningGetAlertError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const SecretScanningGetAlertError304();
-case 404:
-return const SecretScanningGetAlertError404();
-case 503:
+return  const SecretScanningGetAlertError304();case 404:
+return  const SecretScanningGetAlertError404();case 503:
 final json = jsonDecode(response.body);
-return SecretScanningGetAlertError503(SecretScanningGetAlertResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return SecretScanningGetAlertErrorUnknown(response);
-}
-}
+return  SecretScanningGetAlertError503(SecretScanningGetAlertResponse503.fromJson(json as Map<String, dynamic>));default:
+return  SecretScanningGetAlertErrorUnknown(response); }}
 }
 /// Response for 304.
 final class SecretScanningGetAlertError304 extends SecretScanningGetAlertError {const SecretScanningGetAlertError304();

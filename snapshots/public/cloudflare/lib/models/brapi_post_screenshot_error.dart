@@ -7,20 +7,14 @@ sealed class BrapiPostScreenshotError {const BrapiPostScreenshotError();
 static BrapiPostScreenshotError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return BrapiPostScreenshotError400(BrapiPostScreenshotResponse400.fromJson(json as Map<String, dynamic>));
-case 422:
+return  BrapiPostScreenshotError400(BrapiPostScreenshotResponse400.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return BrapiPostScreenshotError422(BrapiPostScreenshotResponse422.fromJson(json as Map<String, dynamic>));
-case 429:
+return  BrapiPostScreenshotError422(BrapiPostScreenshotResponse422.fromJson(json as Map<String, dynamic>));case 429:
 final json = jsonDecode(response.body);
-return BrapiPostScreenshotError429(BrapiPostScreenshotResponse429.fromJson(json as Map<String, dynamic>));
-case 500:
+return  BrapiPostScreenshotError429(BrapiPostScreenshotResponse429.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return BrapiPostScreenshotError500(BrapiPostScreenshotResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return BrapiPostScreenshotErrorUnknown(response);
-}
-}
+return  BrapiPostScreenshotError500(BrapiPostScreenshotResponse500.fromJson(json as Map<String, dynamic>));default:
+return  BrapiPostScreenshotErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class BrapiPostScreenshotError400 extends BrapiPostScreenshotError {const BrapiPostScreenshotError400(this.data);

@@ -7,14 +7,10 @@ sealed class AiSearchInstanceListJobLogsError {const AiSearchInstanceListJobLogs
 static AiSearchInstanceListJobLogsError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return AiSearchInstanceListJobLogsError400(AiSearchInstanceListJobLogsResponse400.fromJson(json as Map<String, dynamic>));
-case 500:
+return  AiSearchInstanceListJobLogsError400(AiSearchInstanceListJobLogsResponse400.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return AiSearchInstanceListJobLogsError500(AiSearchInstanceListJobLogsResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return AiSearchInstanceListJobLogsErrorUnknown(response);
-}
-}
+return  AiSearchInstanceListJobLogsError500(AiSearchInstanceListJobLogsResponse500.fromJson(json as Map<String, dynamic>));default:
+return  AiSearchInstanceListJobLogsErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class AiSearchInstanceListJobLogsError400 extends AiSearchInstanceListJobLogsError {const AiSearchInstanceListJobLogsError400(this.data);

@@ -31,14 +31,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CheckRun.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CheckRun.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a check run
 ///
 /// Gets a single check run using its `id`.
@@ -58,14 +53,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CheckRun.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CheckRun.fromJson(json as Map<String, dynamic>);}, );}
 /// Update a check run
 ///
 /// Updates a check run for a specific commit in a repository.
@@ -87,14 +77,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CheckRun.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CheckRun.fromJson(json as Map<String, dynamic>);}, );}
 /// List check run annotations
 ///
 /// Lists annotations for a check run using the annotation `id`.
@@ -122,14 +107,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => CheckAnnotation.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => CheckAnnotation.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Rerequest a check run
 ///
 /// Triggers GitHub to rerequest an existing check run, without pushing new code to a repository. This endpoint will trigger the [`check_run` webhook](https://docs.github.com/webhooks/event-payloads/#check_run) event with the action `rerequested`. When a check run is `rerequested`, the `status` of the check suite it belongs to is reset to `queued` and the `conclusion` is cleared. The check run itself is not updated. GitHub apps recieving the [`check_run` webhook](https://docs.github.com/webhooks/event-payloads/#check_run) with the `rerequested` action should then decide if the check run should be reset or updated and call the [update `check_run` endpoint](https://docs.github.com/rest/checks/runs#update-a-check-run) to update the check_run if desired.
@@ -146,24 +126,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EmptyObject.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EmptyObject.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403 || 404 || 422:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create a check suite
 ///
 /// Creates a check suite manually. By default, check suites are automatically created when you create a [check run](https://docs.github.com/rest/checks/runs). You only need to use this endpoint for manually creating check suites when you've disabled automatic creation using "[Update repository preferences for check suites](https://docs.github.com/rest/checks/suites#update-repository-preferences-for-check-suites)".
@@ -185,21 +154,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final json = jsonDecode(response.body);
-return CheckSuite.fromJson(json as Map<String, dynamic>);
-default:
+return  CheckSuite.fromJson(json as Map<String, dynamic>);default:
 final json = jsonDecode(response.body);
-return CheckSuite.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  CheckSuite.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update repository preferences for check suites
 ///
 /// Changes the default automatic flow when creating check suites. By default, a check suite is automatically created each time code is pushed to a repository. When you disable the automatic creation of check suites, you can manually [Create a check suite](https://docs.github.com/rest/checks/suites#create-a-check-suite).
@@ -217,14 +178,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CheckSuitePreference.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CheckSuitePreference.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a check suite
 ///
 /// Gets a single check suite using its `id`.
@@ -244,14 +200,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CheckSuite.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CheckSuite.fromJson(json as Map<String, dynamic>);}, );}
 /// List check runs in a check suite
 ///
 /// Lists check runs for a check suite using its `id`.
@@ -291,14 +242,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ChecksListForSuiteResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ChecksListForSuiteResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Rerequest a check suite
 ///
 /// Triggers GitHub to rerequest an existing check suite, without pushing new code to a repository. This endpoint will trigger the [`check_suite` webhook](https://docs.github.com/webhooks/event-payloads/#check_suite) event with the action `rerequested`. When a check suite is `rerequested`, its `status` is reset to `queued` and the `conclusion` is cleared.
@@ -313,14 +259,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EmptyObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EmptyObject.fromJson(json as Map<String, dynamic>);}, );}
 /// List check runs for a Git reference
 ///
 /// Lists check runs for a commit ref. The `ref` can be a SHA, branch name, or a tag name.
@@ -365,14 +306,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ChecksListForRefResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ChecksListForRefResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// List check suites for a Git reference
 ///
 /// Lists check suites for a commit `ref`. The `ref` can be a SHA, branch name, or a tag name.
@@ -409,12 +345,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ChecksListSuitesForRefResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ChecksListSuitesForRefResponse.fromJson(json as Map<String, dynamic>);}, );}
 }

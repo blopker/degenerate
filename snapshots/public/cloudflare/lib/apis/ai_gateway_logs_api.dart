@@ -111,24 +111,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => AigConfigListGatewayLogsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => AigConfigListGatewayLogsResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return AigConfigListGatewayLogsResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AigConfigListGatewayLogsResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete Gateway Logs
 ///
 /// `DELETE /accounts/{account_id}/ai-gateway/gateways/{gateway_id}/logs`
@@ -160,24 +149,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AigConfigDeleteGatewayLogsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AigConfigDeleteGatewayLogsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return AigConfigDeleteGatewayLogsResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AigConfigDeleteGatewayLogsResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get Gateway Log Detail
 ///
 /// Retrieves detailed information for a specific AI Gateway log entry.
@@ -192,24 +170,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AigConfigGetGatewayLogDetailResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AigConfigGetGatewayLogDetailResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return AigConfigGetGatewayLogDetailResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AigConfigGetGatewayLogDetailResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Patch Gateway Log
 ///
 /// Updates metadata for an AI Gateway log entry.
@@ -226,24 +193,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] as Map<String, dynamic>;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] as Map<String, dynamic>;}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return AigConfigPatchGatewayLogResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AigConfigPatchGatewayLogResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get Gateway Log Request
 ///
 /// Retrieves the original request payload for an AI Gateway log entry.
@@ -258,24 +214,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return AigConfigGetGatewayLogRequestResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AigConfigGetGatewayLogRequestResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get Gateway Log Response
 ///
 /// Retrieves the response payload for an AI Gateway log entry.
@@ -290,22 +235,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return AigConfigGetGatewayLogResponseResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AigConfigGetGatewayLogResponseResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

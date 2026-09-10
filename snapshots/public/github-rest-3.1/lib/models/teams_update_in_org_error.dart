@@ -7,17 +7,12 @@ sealed class TeamsUpdateInOrgError {const TeamsUpdateInOrgError();
 static TeamsUpdateInOrgError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return TeamsUpdateInOrgError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  TeamsUpdateInOrgError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return TeamsUpdateInOrgError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  TeamsUpdateInOrgError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return TeamsUpdateInOrgError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return TeamsUpdateInOrgErrorUnknown(response);
-}
-}
+return  TeamsUpdateInOrgError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  TeamsUpdateInOrgErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class TeamsUpdateInOrgError403 extends TeamsUpdateInOrgError {const TeamsUpdateInOrgError403(this.data);

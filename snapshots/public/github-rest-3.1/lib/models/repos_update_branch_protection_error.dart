@@ -7,17 +7,12 @@ sealed class ReposUpdateBranchProtectionError {const ReposUpdateBranchProtection
 static ReposUpdateBranchProtectionError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return ReposUpdateBranchProtectionError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  ReposUpdateBranchProtectionError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return ReposUpdateBranchProtectionError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposUpdateBranchProtectionError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposUpdateBranchProtectionError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return ReposUpdateBranchProtectionErrorUnknown(response);
-}
-}
+return  ReposUpdateBranchProtectionError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));default:
+return  ReposUpdateBranchProtectionErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class ReposUpdateBranchProtectionError403 extends ReposUpdateBranchProtectionError {const ReposUpdateBranchProtectionError403(this.data);

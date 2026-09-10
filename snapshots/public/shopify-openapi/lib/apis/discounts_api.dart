@@ -22,11 +22,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a discount code
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#create-2020-01
@@ -43,11 +40,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single discount code
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#show-2020-01
@@ -62,11 +56,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing discount code
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#update-2020-01
@@ -83,11 +74,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a discount code
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#destroy-2020-01
@@ -102,11 +90,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves the location of a discount code.
 ///           The discount code's location is returned in the location header, not in the DiscountCode object itself.
 ///             Depending on your HTTP client, the location of the discount code might follow the location header automatically.
@@ -131,11 +116,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a discount code creation job.
 ///           The batch endpoint can be used to asynchronously create up to 100 discount codes in a single request. It
 ///           enqueues and returns a discount_code_creation object that can be monitored for completion.
@@ -169,11 +151,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a discount code creation job
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#batch_show-2020-01
@@ -188,11 +167,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of discount codes for a discount code creation job.
 ///           Discount codes that have been successfully created include a populated id field. Discount codes that
 ///           encountered errors during the creation process include a populated errors field.
@@ -209,11 +185,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a list of discount codes. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#index-2020-04
@@ -228,11 +201,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a discount code
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#create-2020-04
@@ -249,11 +219,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single discount code
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#show-2020-04
@@ -268,11 +235,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing discount code
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#update-2020-04
@@ -289,11 +253,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a discount code
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#destroy-2020-04
@@ -308,11 +269,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves the location of a discount code.
 ///           The discount code's location is returned in the location header, not in the DiscountCode object itself.
 ///             Depending on your HTTP client, the location of the discount code might follow the location header automatically.
@@ -337,11 +295,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a discount code creation job.
 ///           The batch endpoint can be used to asynchronously create up to 100 discount codes in a single request. It
 ///           enqueues and returns a discount_code_creation object that can be monitored for completion.
@@ -375,11 +330,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a discount code creation job
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#batch_show-2020-04
@@ -394,11 +346,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of discount codes for a discount code creation job.
 ///           Discount codes that have been successfully created include a populated id field. Discount codes that
 ///           encountered errors during the creation process include a populated errors field.
@@ -415,11 +364,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a list of discount codes. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#index-2020-07
@@ -434,11 +380,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a discount code
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#create-2020-07
@@ -455,11 +398,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single discount code
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#show-2020-07
@@ -474,11 +414,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing discount code
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#update-2020-07
@@ -495,11 +432,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a discount code
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#destroy-2020-07
@@ -514,11 +448,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves the location of a discount code.
 ///           The discount code's location is returned in the location header, not in the DiscountCode object itself.
 ///             Depending on your HTTP client, the location of the discount code might follow the location header automatically.
@@ -543,11 +474,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a discount code creation job.
 ///           The batch endpoint can be used to asynchronously create up to 100 discount codes in a single request. It
 ///           enqueues and returns a discount_code_creation object that can be monitored for completion.
@@ -581,11 +509,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a discount code creation job
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#batch_show-2020-07
@@ -600,11 +525,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of discount codes for a discount code creation job.
 ///           Discount codes that have been successfully created include a populated id field. Discount codes that
 ///           encountered errors during the creation process include a populated errors field.
@@ -621,11 +543,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a list of discount codes. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#index-2020-10
@@ -640,11 +559,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a discount code
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#create-2020-10
@@ -661,11 +577,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single discount code
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#show-2020-10
@@ -680,11 +593,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing discount code
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#update-2020-10
@@ -701,11 +611,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a discount code
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#destroy-2020-10
@@ -720,11 +627,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves the location of a discount code.
 ///           The discount code's location is returned in the location header, not in the DiscountCode object itself.
 ///             Depending on your HTTP client, the location of the discount code might follow the location header automatically.
@@ -749,11 +653,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a discount code creation job.
 ///           The batch endpoint can be used to asynchronously create up to 100 discount codes in a single request. It
 ///           enqueues and returns a discount_code_creation object that can be monitored for completion.
@@ -787,11 +688,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a discount code creation job
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#batch_show-2020-10
@@ -806,11 +704,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of discount codes for a discount code creation job.
 ///           Discount codes that have been successfully created include a populated id field. Discount codes that
 ///           encountered errors during the creation process include a populated errors field.
@@ -827,11 +722,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a list of discount codes. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#index-2021-01
@@ -846,11 +738,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a discount code
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#create-2021-01
@@ -867,11 +756,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single discount code
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#show-2021-01
@@ -886,11 +772,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing discount code
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#update-2021-01
@@ -907,11 +790,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a discount code
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#destroy-2021-01
@@ -926,11 +806,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves the location of a discount code.
 ///           The discount code's location is returned in the location header, not in the DiscountCode object itself.
 ///             Depending on your HTTP client, the location of the discount code might follow the location header automatically.
@@ -955,11 +832,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a discount code creation job.
 ///           The batch endpoint can be used to asynchronously create up to 100 discount codes in a single request. It
 ///           enqueues and returns a discount_code_creation object that can be monitored for completion.
@@ -993,11 +867,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a discount code creation job
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#batch_show-2021-01
@@ -1012,11 +883,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of discount codes for a discount code creation job.
 ///           Discount codes that have been successfully created include a populated id field. Discount codes that
 ///           encountered errors during the creation process include a populated errors field.
@@ -1033,11 +901,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a list of discount codes. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#index-unstable
@@ -1052,11 +917,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a discount code
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#create-unstable
@@ -1073,11 +935,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single discount code
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#show-unstable
@@ -1092,11 +951,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing discount code
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#update-unstable
@@ -1113,11 +969,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a discount code
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#destroy-unstable
@@ -1132,11 +985,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves the location of a discount code.
 ///           The discount code's location is returned in the location header, not in the DiscountCode object itself.
 ///             Depending on your HTTP client, the location of the discount code might follow the location header automatically.
@@ -1161,11 +1011,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a discount code creation job.
 ///           The batch endpoint can be used to asynchronously create up to 100 discount codes in a single request. It
 ///           enqueues and returns a discount_code_creation object that can be monitored for completion.
@@ -1199,11 +1046,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a discount code creation job
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/discounts/discountcode#batch_show-unstable
@@ -1218,11 +1062,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of discount codes for a discount code creation job.
 ///           Discount codes that have been successfully created include a populated id field. Discount codes that
 ///           encountered errors during the creation process include a populated errors field.
@@ -1239,9 +1080,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

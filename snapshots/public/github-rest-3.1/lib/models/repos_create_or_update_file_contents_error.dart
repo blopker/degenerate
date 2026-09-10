@@ -7,17 +7,12 @@ sealed class ReposCreateOrUpdateFileContentsError {const ReposCreateOrUpdateFile
 static ReposCreateOrUpdateFileContentsError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ReposCreateOrUpdateFileContentsError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 409:
+return  ReposCreateOrUpdateFileContentsError404(BasicError.fromJson(json as Map<String, dynamic>));case 409:
 final json = jsonDecode(response.body);
-return ReposCreateOrUpdateFileContentsError409(OneOf2.parse(json, fromA: (v) => BasicError.fromJson(v as Map<String, dynamic>), fromB: (v) => RepositoryRuleViolationError.fromJson(v as Map<String, dynamic>),));
-case 422:
+return  ReposCreateOrUpdateFileContentsError409(OneOf2.parse(json, fromA: (v) => BasicError.fromJson(v as Map<String, dynamic>), fromB: (v) => RepositoryRuleViolationError.fromJson(v as Map<String, dynamic>),));case 422:
 final json = jsonDecode(response.body);
-return ReposCreateOrUpdateFileContentsError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposCreateOrUpdateFileContentsErrorUnknown(response);
-}
-}
+return  ReposCreateOrUpdateFileContentsError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposCreateOrUpdateFileContentsErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class ReposCreateOrUpdateFileContentsError404 extends ReposCreateOrUpdateFileContentsError {const ReposCreateOrUpdateFileContentsError404(this.data);

@@ -38,25 +38,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return LogoMatch.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  LogoMatch.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-default:
+return  ErrorModel.fromJson(json as Map<String, dynamic>);default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Download matches for logo queries by ID
 ///
 /// Return matches as CSV for logo queries based on ID
@@ -87,25 +76,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return LogoMatch.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  LogoMatch.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-default:
+return  ErrorModel.fromJson(json as Map<String, dynamic>);default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Read all saved logo queries
 ///
 /// Return all saved logo queries
@@ -120,22 +98,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create new saved logo queries from image files
 ///
 /// Return new saved logo queries created from image files
@@ -169,25 +137,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Logo.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Logo.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-default:
+return  ErrorModel.fromJson(json as Map<String, dynamic>);default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Read saved logo queries by ID
 ///
 /// Return saved logo queries based on ID
@@ -202,22 +159,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete saved logo queries by ID
 ///
 /// Return a success message after deleting saved logo queries by ID
@@ -232,19 +179,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create new logo queries from image files
 ///
 /// Return new logo queries created from image files
@@ -259,22 +198,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create new logo queries from URLs
 ///
 /// Return new logo queries created from URLs
@@ -289,22 +218,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Internal route for testing signed URLs
 ///
 /// `GET /signed-url`
@@ -317,20 +236,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 }

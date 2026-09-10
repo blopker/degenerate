@@ -6,17 +6,12 @@ sealed class DependabotGetAlertError {const DependabotGetAlertError();
 /// Decodes the payload for its declared status and content type.
 static DependabotGetAlertError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const DependabotGetAlertError304();
-case 403:
+return  const DependabotGetAlertError304();case 403:
 final json = jsonDecode(response.body);
-return DependabotGetAlertError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  DependabotGetAlertError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return DependabotGetAlertError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return DependabotGetAlertErrorUnknown(response);
-}
-}
+return  DependabotGetAlertError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  DependabotGetAlertErrorUnknown(response); }}
 }
 /// Response for 304.
 final class DependabotGetAlertError304 extends DependabotGetAlertError {const DependabotGetAlertError304();

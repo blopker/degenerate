@@ -6,17 +6,12 @@ sealed class PackagesListPackagesForOrganizationError {const PackagesListPackage
 /// Decodes the payload for its declared status and content type.
 static PackagesListPackagesForOrganizationError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
-return const PackagesListPackagesForOrganizationError400();
-case 401:
+return  const PackagesListPackagesForOrganizationError400();case 401:
 final json = jsonDecode(response.body);
-return PackagesListPackagesForOrganizationError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  PackagesListPackagesForOrganizationError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return PackagesListPackagesForOrganizationError403(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return PackagesListPackagesForOrganizationErrorUnknown(response);
-}
-}
+return  PackagesListPackagesForOrganizationError403(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  PackagesListPackagesForOrganizationErrorUnknown(response); }}
 }
 /// Response for 400.
 final class PackagesListPackagesForOrganizationError400 extends PackagesListPackagesForOrganizationError {const PackagesListPackagesForOrganizationError400();

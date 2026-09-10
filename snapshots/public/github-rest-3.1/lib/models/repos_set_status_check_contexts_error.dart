@@ -7,14 +7,10 @@ sealed class ReposSetStatusCheckContextsError {const ReposSetStatusCheckContexts
 static ReposSetStatusCheckContextsError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ReposSetStatusCheckContextsError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposSetStatusCheckContextsError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposSetStatusCheckContextsError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposSetStatusCheckContextsErrorUnknown(response);
-}
-}
+return  ReposSetStatusCheckContextsError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposSetStatusCheckContextsErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class ReposSetStatusCheckContextsError404 extends ReposSetStatusCheckContextsError {const ReposSetStatusCheckContextsError404(this.data);

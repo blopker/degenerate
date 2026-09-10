@@ -33,14 +33,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetPresetsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetPresetsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a preset
 ///
 /// Creates a preset belonging to the current App
@@ -57,14 +52,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostPresetsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostPresetsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch details of a preset
 ///
 /// Fetches details of a preset using the provided preset ID
@@ -79,14 +69,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetPresetsPresetIdResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetPresetsPresetIdResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Update a preset
 ///
 /// Update a preset by the provided preset ID
@@ -103,14 +88,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PatchPresetsPresetIdResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PatchPresetsPresetIdResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a preset
 ///
 /// Deletes a preset using the provided preset ID
@@ -125,12 +105,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletePresetsPresetIdResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletePresetsPresetIdResponse.fromJson(json as Map<String, dynamic>);}, );}
 }

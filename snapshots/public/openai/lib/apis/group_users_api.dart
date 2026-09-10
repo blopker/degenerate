@@ -34,14 +34,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UserListResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UserListResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Adds a user to a group.
 ///
 /// `POST /organization/groups/{group_id}/users`
@@ -56,14 +51,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GroupUserAssignment.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GroupUserAssignment.fromJson(json as Map<String, dynamic>);}, );}
 /// Removes a user from a group.
 ///
 /// `DELETE /organization/groups/{group_id}/users/{user_id}`
@@ -76,12 +66,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GroupUserDeletedResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GroupUserDeletedResource.fromJson(json as Map<String, dynamic>);}, );}
 }

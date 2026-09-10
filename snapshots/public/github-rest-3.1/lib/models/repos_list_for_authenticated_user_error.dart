@@ -6,20 +6,14 @@ sealed class ReposListForAuthenticatedUserError {const ReposListForAuthenticated
 /// Decodes the payload for its declared status and content type.
 static ReposListForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ReposListForAuthenticatedUserError304();
-case 401:
+return  const ReposListForAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return ReposListForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  ReposListForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return ReposListForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposListForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposListForAuthenticatedUserError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposListForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  ReposListForAuthenticatedUserError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposListForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ReposListForAuthenticatedUserError304 extends ReposListForAuthenticatedUserError {const ReposListForAuthenticatedUserError304();

@@ -7,21 +7,15 @@ sealed class CreateImageSuccess {const CreateImageSuccess();
 static CreateImageSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return CreateImageSuccess200ApplicationJson(ImagesResponse.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
+return  CreateImageSuccess200ApplicationJson(ImagesResponse.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into ImageGenStreamEvent
-throw UnsupportedError('Cannot decode text/event-stream response into ImageGenStreamEvent');
-}
-final json = jsonDecode(response.body);
-return CreateImageSuccess200ApplicationJson(ImagesResponse.fromJson(json as Map<String, dynamic>));
 
-default:
-return CreateImageSuccessUnknown(response);
-}
-}
+throw  UnsupportedError('Cannot decode text/event-stream response into ImageGenStreamEvent'); } else {
+final json = jsonDecode(response.body);
+return  CreateImageSuccess200ApplicationJson(ImagesResponse.fromJson(json as Map<String, dynamic>)); }default:
+return  CreateImageSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class CreateImageSuccess200ApplicationJson extends CreateImageSuccess {const CreateImageSuccess200ApplicationJson(this.data);

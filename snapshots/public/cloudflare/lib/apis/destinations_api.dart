@@ -39,15 +39,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => DestinationListResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: DestinationListError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => DestinationListResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, onError: DestinationListError.parse, );}
 /// Create Destination
 ///
 /// Create a new Workers Observability Telemetry Destination.
@@ -64,15 +58,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return DestinationCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: DestinationCreateError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  DestinationCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: DestinationCreateError.parse, );}
 /// Update Destination
 ///
 /// Update an existing Workers Observability Telemetry Destination.
@@ -89,15 +77,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return DestinationUpdateResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: DestinationUpdateError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  DestinationUpdateResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: DestinationUpdateError.parse, );}
 /// Delete Destination
 ///
 /// Delete a Workers Observability Telemetry Destination.
@@ -112,13 +94,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? DestinationsDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: DestinationsDeleteError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? DestinationsDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: DestinationsDeleteError.parse, );}
 }

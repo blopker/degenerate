@@ -7,13 +7,9 @@ sealed class AppsGetSubscriptionPlanForAccountStubbedError {const AppsGetSubscri
 static AppsGetSubscriptionPlanForAccountStubbedError parse(ApiResponse response) {switch (response.statusCode) {
 case 401:
 final json = jsonDecode(response.body);
-return AppsGetSubscriptionPlanForAccountStubbedError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
-return const AppsGetSubscriptionPlanForAccountStubbedError404();
-default:
-return AppsGetSubscriptionPlanForAccountStubbedErrorUnknown(response);
-}
-}
+return  AppsGetSubscriptionPlanForAccountStubbedError401(BasicError.fromJson(json as Map<String, dynamic>));case 404:
+return  const AppsGetSubscriptionPlanForAccountStubbedError404();default:
+return  AppsGetSubscriptionPlanForAccountStubbedErrorUnknown(response); }}
 }
 /// Response for 401 (application/json).
 final class AppsGetSubscriptionPlanForAccountStubbedError401 extends AppsGetSubscriptionPlanForAccountStubbedError {const AppsGetSubscriptionPlanForAccountStubbedError401(this.data);

@@ -30,24 +30,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTagCategoryListResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTagCategoryListResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return GetTagCategoryListResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  GetTagCategoryListResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Updates a tag category (SoT)
 ///
 /// Updates a Source-of-Truth tag category by UUID.
@@ -64,15 +53,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PatchTagCategoryUpdateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: PatchTagCategoryUpdateError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PatchTagCategoryUpdateResponse.fromJson(json as Map<String, dynamic>);}, onError: PatchTagCategoryUpdateError.parse, );}
 /// Deletes a tag category (SoT)
 ///
 /// Deletes a Source-of-Truth tag category by UUID.
@@ -87,15 +70,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeleteTagCategoryDeleteResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: DeleteTagCategoryDeleteError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeleteTagCategoryDeleteResponse.fromJson(json as Map<String, dynamic>);}, onError: DeleteTagCategoryDeleteError.parse, );}
 /// Creates a new tag category (SoT)
 ///
 /// Creates a new Source-of-Truth tag category for an account.
@@ -112,13 +89,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostTagCategoryCreateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: PostTagCategoryCreateError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostTagCategoryCreateResponse.fromJson(json as Map<String, dynamic>);}, onError: PostTagCategoryCreateError.parse, );}
 }

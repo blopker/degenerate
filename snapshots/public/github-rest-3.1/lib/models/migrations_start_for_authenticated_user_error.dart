@@ -6,20 +6,14 @@ sealed class MigrationsStartForAuthenticatedUserError {const MigrationsStartForA
 /// Decodes the payload for its declared status and content type.
 static MigrationsStartForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const MigrationsStartForAuthenticatedUserError304();
-case 401:
+return  const MigrationsStartForAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return MigrationsStartForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  MigrationsStartForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return MigrationsStartForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  MigrationsStartForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return MigrationsStartForAuthenticatedUserError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return MigrationsStartForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  MigrationsStartForAuthenticatedUserError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  MigrationsStartForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class MigrationsStartForAuthenticatedUserError304 extends MigrationsStartForAuthenticatedUserError {const MigrationsStartForAuthenticatedUserError304();

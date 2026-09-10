@@ -7,14 +7,10 @@ sealed class AppsCheckTokenError {const AppsCheckTokenError();
 static AppsCheckTokenError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return AppsCheckTokenError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  AppsCheckTokenError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return AppsCheckTokenError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return AppsCheckTokenErrorUnknown(response);
-}
-}
+return  AppsCheckTokenError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  AppsCheckTokenErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class AppsCheckTokenError404 extends AppsCheckTokenError {const AppsCheckTokenError404(this.data);

@@ -7,14 +7,10 @@ sealed class GetPermissionListError {const GetPermissionListError();
 static GetPermissionListError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return GetPermissionListError400(GetPermissionListResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  GetPermissionListError400(GetPermissionListResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return GetPermissionListError404(GetPermissionListResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return GetPermissionListErrorUnknown(response);
-}
-}
+return  GetPermissionListError404(GetPermissionListResponse404.fromJson(json as Map<String, dynamic>));default:
+return  GetPermissionListErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class GetPermissionListError400 extends GetPermissionListError {const GetPermissionListError400(this.data);

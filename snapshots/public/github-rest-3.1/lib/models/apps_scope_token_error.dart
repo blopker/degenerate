@@ -7,20 +7,14 @@ sealed class AppsScopeTokenError {const AppsScopeTokenError();
 static AppsScopeTokenError parse(ApiResponse response) {switch (response.statusCode) {
 case 401:
 final json = jsonDecode(response.body);
-return AppsScopeTokenError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  AppsScopeTokenError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return AppsScopeTokenError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  AppsScopeTokenError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return AppsScopeTokenError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  AppsScopeTokenError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return AppsScopeTokenError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return AppsScopeTokenErrorUnknown(response);
-}
-}
+return  AppsScopeTokenError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  AppsScopeTokenErrorUnknown(response); }}
 }
 /// Response for 401 (application/json).
 final class AppsScopeTokenError401 extends AppsScopeTokenError {const AppsScopeTokenError401(this.data);

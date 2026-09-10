@@ -25,24 +25,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? R2DataCatalogCatalogList.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? R2DataCatalogCatalogList.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure55.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure55.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get R2 catalog details
 ///
 /// Retrieve detailed information about a specific R2 catalog by bucket name.
@@ -59,24 +48,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? R2DataCatalogCatalog.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? R2DataCatalogCatalog.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure55.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure55.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Disable R2 catalog
 ///
 /// Disable an R2 bucket as a catalog. This operation deactivates the catalog
@@ -94,21 +72,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure55.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure55.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Enable R2 bucket as a catalog
 ///
 /// Enable an R2 bucket as an Apache Iceberg catalog. This operation creates
@@ -126,22 +95,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? R2DataCatalogCatalogActivationResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? R2DataCatalogCatalogActivationResponse.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 409 || 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure55.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure55.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

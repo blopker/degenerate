@@ -7,26 +7,18 @@ sealed class CopilotSetCopilotContentExclusionForOrganizationError {const Copilo
 static CopilotSetCopilotContentExclusionForOrganizationError parse(ApiResponse response) {switch (response.statusCode) {
 case 401:
 final json = jsonDecode(response.body);
-return CopilotSetCopilotContentExclusionForOrganizationError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  CopilotSetCopilotContentExclusionForOrganizationError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return CopilotSetCopilotContentExclusionForOrganizationError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CopilotSetCopilotContentExclusionForOrganizationError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CopilotSetCopilotContentExclusionForOrganizationError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 413:
+return  CopilotSetCopilotContentExclusionForOrganizationError404(BasicError.fromJson(json as Map<String, dynamic>));case 413:
 final json = jsonDecode(response.body);
-return CopilotSetCopilotContentExclusionForOrganizationError413(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  CopilotSetCopilotContentExclusionForOrganizationError413(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return CopilotSetCopilotContentExclusionForOrganizationError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-case 500:
+return  CopilotSetCopilotContentExclusionForOrganizationError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return CopilotSetCopilotContentExclusionForOrganizationError500(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return CopilotSetCopilotContentExclusionForOrganizationErrorUnknown(response);
-}
-}
+return  CopilotSetCopilotContentExclusionForOrganizationError500(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  CopilotSetCopilotContentExclusionForOrganizationErrorUnknown(response); }}
 }
 /// Response for 401 (application/json).
 final class CopilotSetCopilotContentExclusionForOrganizationError401 extends CopilotSetCopilotContentExclusionForOrganizationError {const CopilotSetCopilotContentExclusionForOrganizationError401(this.data);

@@ -7,16 +7,11 @@ sealed class CodespacesAddSelectedRepoToOrgSecretError {const CodespacesAddSelec
 static CodespacesAddSelectedRepoToOrgSecretError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return CodespacesAddSelectedRepoToOrgSecretError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 409:
-return const CodespacesAddSelectedRepoToOrgSecretError409();
-case 422:
+return  CodespacesAddSelectedRepoToOrgSecretError404(BasicError.fromJson(json as Map<String, dynamic>));case 409:
+return  const CodespacesAddSelectedRepoToOrgSecretError409();case 422:
 final json = jsonDecode(response.body);
-return CodespacesAddSelectedRepoToOrgSecretError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return CodespacesAddSelectedRepoToOrgSecretErrorUnknown(response);
-}
-}
+return  CodespacesAddSelectedRepoToOrgSecretError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  CodespacesAddSelectedRepoToOrgSecretErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class CodespacesAddSelectedRepoToOrgSecretError404 extends CodespacesAddSelectedRepoToOrgSecretError {const CodespacesAddSelectedRepoToOrgSecretError404(this.data);

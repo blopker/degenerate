@@ -22,11 +22,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of deprecated API calls made by the authenticated private app in the past 30 days.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/deprecated_api_calls#index-unstable
@@ -41,9 +38,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

@@ -22,11 +22,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of storefront access tokens that have been issued
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#index-2020-01
@@ -41,11 +38,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new storefront access token
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#create-2020-01
@@ -62,11 +56,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an existing storefront access token
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#destroy-2020-01
@@ -81,11 +72,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of storefront access tokens that have been issued
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#index-2020-04
@@ -100,11 +88,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new storefront access token
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#create-2020-04
@@ -121,11 +106,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an existing storefront access token
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#destroy-2020-04
@@ -140,11 +122,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of storefront access tokens that have been issued
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#index-2020-07
@@ -159,11 +138,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new storefront access token
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#create-2020-07
@@ -180,11 +156,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an existing storefront access token
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#destroy-2020-07
@@ -199,11 +172,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of storefront access tokens that have been issued
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#index-2020-10
@@ -218,11 +188,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new storefront access token
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#create-2020-10
@@ -239,11 +206,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an existing storefront access token
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#destroy-2020-10
@@ -258,11 +222,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of storefront access tokens that have been issued
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#index-2021-01
@@ -277,11 +238,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new storefront access token
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#create-2021-01
@@ -298,11 +256,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an existing storefront access token
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#destroy-2021-01
@@ -317,11 +272,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of storefront access tokens that have been issued
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#index-unstable
@@ -336,11 +288,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new storefront access token
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#create-unstable
@@ -357,11 +306,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an existing storefront access token
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/access/storefrontaccesstoken#destroy-unstable
@@ -376,9 +322,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

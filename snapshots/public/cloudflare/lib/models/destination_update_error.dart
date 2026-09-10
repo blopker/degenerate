@@ -7,20 +7,14 @@ sealed class DestinationUpdateError {const DestinationUpdateError();
 static DestinationUpdateError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return DestinationUpdateError400(DestinationUpdateResponse400.fromJson(json as Map<String, dynamic>));
-case 401:
+return  DestinationUpdateError400(DestinationUpdateResponse400.fromJson(json as Map<String, dynamic>));case 401:
 final json = jsonDecode(response.body);
-return DestinationUpdateError401(DestinationUpdateResponse401.fromJson(json as Map<String, dynamic>));
-case 404:
+return  DestinationUpdateError401(DestinationUpdateResponse401.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return DestinationUpdateError404(DestinationUpdateResponse404.fromJson(json as Map<String, dynamic>));
-case 500:
+return  DestinationUpdateError404(DestinationUpdateResponse404.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return DestinationUpdateError500(DestinationUpdateResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return DestinationUpdateErrorUnknown(response);
-}
-}
+return  DestinationUpdateError500(DestinationUpdateResponse500.fromJson(json as Map<String, dynamic>));default:
+return  DestinationUpdateErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class DestinationUpdateError400 extends DestinationUpdateError {const DestinationUpdateError400(this.data);

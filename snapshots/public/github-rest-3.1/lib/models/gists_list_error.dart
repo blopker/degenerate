@@ -6,14 +6,10 @@ sealed class GistsListError {const GistsListError();
 /// Decodes the payload for its declared status and content type.
 static GistsListError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const GistsListError304();
-case 403:
+return  const GistsListError304();case 403:
 final json = jsonDecode(response.body);
-return GistsListError403(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return GistsListErrorUnknown(response);
-}
-}
+return  GistsListError403(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  GistsListErrorUnknown(response); }}
 }
 /// Response for 304.
 final class GistsListError304 extends GistsListError {const GistsListError304();

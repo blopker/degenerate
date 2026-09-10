@@ -7,14 +7,10 @@ sealed class PullsCreateReviewCommentError {const PullsCreateReviewCommentError(
 static PullsCreateReviewCommentError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return PullsCreateReviewCommentError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  PullsCreateReviewCommentError403(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return PullsCreateReviewCommentError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return PullsCreateReviewCommentErrorUnknown(response);
-}
-}
+return  PullsCreateReviewCommentError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  PullsCreateReviewCommentErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class PullsCreateReviewCommentError403 extends PullsCreateReviewCommentError {const PullsCreateReviewCommentError403(this.data);

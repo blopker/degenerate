@@ -7,14 +7,10 @@ sealed class PullsUpdateError {const PullsUpdateError();
 static PullsUpdateError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return PullsUpdateError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  PullsUpdateError403(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return PullsUpdateError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return PullsUpdateErrorUnknown(response);
-}
-}
+return  PullsUpdateError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  PullsUpdateErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class PullsUpdateError403 extends PullsUpdateError {const PullsUpdateError403(this.data);

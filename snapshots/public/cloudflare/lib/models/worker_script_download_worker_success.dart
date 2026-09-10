@@ -7,21 +7,15 @@ sealed class WorkerScriptDownloadWorkerSuccess {const WorkerScriptDownloadWorker
 static WorkerScriptDownloadWorkerSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'multipart/form-data')) {
+if (responseMediaTypeMatches(contentType, 'multipart/form-data', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode multipart/form-data response into Map<String, Uint8List>
-throw UnsupportedError('Cannot decode multipart/form-data response into Map<String, Uint8List>');
-}
-if (responseMediaTypeMatches(contentType, 'application/javascript')) {
-final value = (() { return response.body; })();
-return WorkerScriptDownloadWorkerSuccess200ApplicationJavascript(value);
-}
-// TODO: Unsupported non-JSON response schema Cannot decode multipart/form-data response into Map<String, Uint8List>
-throw UnsupportedError('Cannot decode multipart/form-data response into Map<String, Uint8List>');
 
-default:
-return WorkerScriptDownloadWorkerSuccessUnknown(response);
-}
-}
+throw  UnsupportedError('Cannot decode multipart/form-data response into Map<String, Uint8List>'); } else if (responseMediaTypeMatches(contentType, 'application/javascript', )) {
+return  WorkerScriptDownloadWorkerSuccess200ApplicationJavascript(response.body); } else {
+// TODO: Unsupported non-JSON response schema Cannot decode multipart/form-data response into Map<String, Uint8List>
+
+throw  UnsupportedError('Cannot decode multipart/form-data response into Map<String, Uint8List>'); }default:
+return  WorkerScriptDownloadWorkerSuccessUnknown(response); }}
 }
 /// Response for 200 (multipart/form-data).
 final class WorkerScriptDownloadWorkerSuccess200MultipartFormData extends WorkerScriptDownloadWorkerSuccess {const WorkerScriptDownloadWorkerSuccess200MultipartFormData(this.data);

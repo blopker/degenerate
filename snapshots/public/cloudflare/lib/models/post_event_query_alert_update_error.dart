@@ -7,14 +7,10 @@ sealed class PostEventQueryAlertUpdateError {const PostEventQueryAlertUpdateErro
 static PostEventQueryAlertUpdateError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PostEventQueryAlertUpdateError400(PostEventQueryAlertUpdateResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  PostEventQueryAlertUpdateError400(PostEventQueryAlertUpdateResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return PostEventQueryAlertUpdateError404(PostEventQueryAlertUpdateResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return PostEventQueryAlertUpdateErrorUnknown(response);
-}
-}
+return  PostEventQueryAlertUpdateError404(PostEventQueryAlertUpdateResponse404.fromJson(json as Map<String, dynamic>));default:
+return  PostEventQueryAlertUpdateErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class PostEventQueryAlertUpdateError400 extends PostEventQueryAlertUpdateError {const PostEventQueryAlertUpdateError400(this.data);

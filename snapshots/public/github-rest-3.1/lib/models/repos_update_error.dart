@@ -7,20 +7,14 @@ sealed class ReposUpdateError {const ReposUpdateError();
 static ReposUpdateError parse(ApiResponse response) {switch (response.statusCode) {
 case 307:
 final json = jsonDecode(response.body);
-return ReposUpdateError307(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  ReposUpdateError307(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return ReposUpdateError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  ReposUpdateError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return ReposUpdateError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposUpdateError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposUpdateError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposUpdateErrorUnknown(response);
-}
-}
+return  ReposUpdateError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposUpdateErrorUnknown(response); }}
 }
 /// Response for 307 (application/json).
 final class ReposUpdateError307 extends ReposUpdateError {const ReposUpdateError307(this.data);

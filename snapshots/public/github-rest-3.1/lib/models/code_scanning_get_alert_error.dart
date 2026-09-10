@@ -6,20 +6,14 @@ sealed class CodeScanningGetAlertError {const CodeScanningGetAlertError();
 /// Decodes the payload for its declared status and content type.
 static CodeScanningGetAlertError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const CodeScanningGetAlertError304();
-case 403:
+return  const CodeScanningGetAlertError304();case 403:
 final json = jsonDecode(response.body);
-return CodeScanningGetAlertError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CodeScanningGetAlertError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CodeScanningGetAlertError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  CodeScanningGetAlertError404(BasicError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return CodeScanningGetAlertError503(CodeScanningGetAlertResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return CodeScanningGetAlertErrorUnknown(response);
-}
-}
+return  CodeScanningGetAlertError503(CodeScanningGetAlertResponse503.fromJson(json as Map<String, dynamic>));default:
+return  CodeScanningGetAlertErrorUnknown(response); }}
 }
 /// Response for 304.
 final class CodeScanningGetAlertError304 extends CodeScanningGetAlertError {const CodeScanningGetAlertError304();

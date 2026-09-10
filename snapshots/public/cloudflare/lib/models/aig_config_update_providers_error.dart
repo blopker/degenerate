@@ -7,14 +7,10 @@ sealed class AigConfigUpdateProvidersError {const AigConfigUpdateProvidersError(
 static AigConfigUpdateProvidersError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return AigConfigUpdateProvidersError400(AigConfigUpdateProvidersResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  AigConfigUpdateProvidersError400(AigConfigUpdateProvidersResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return AigConfigUpdateProvidersError404(AigConfigUpdateProvidersResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return AigConfigUpdateProvidersErrorUnknown(response);
-}
-}
+return  AigConfigUpdateProvidersError404(AigConfigUpdateProvidersResponse404.fromJson(json as Map<String, dynamic>));default:
+return  AigConfigUpdateProvidersErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class AigConfigUpdateProvidersError400 extends AigConfigUpdateProvidersError {const AigConfigUpdateProvidersError400(this.data);

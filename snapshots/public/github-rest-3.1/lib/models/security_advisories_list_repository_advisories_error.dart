@@ -7,24 +7,16 @@ sealed class SecurityAdvisoriesListRepositoryAdvisoriesError {const SecurityAdvi
 static SecurityAdvisoriesListRepositoryAdvisoriesError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return SecurityAdvisoriesListRepositoryAdvisoriesError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  SecurityAdvisoriesListRepositoryAdvisoriesError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return SecurityAdvisoriesListRepositoryAdvisoriesError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  SecurityAdvisoriesListRepositoryAdvisoriesError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return SecurityAdvisoriesListRepositoryAdvisoriesError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 404:
+return  SecurityAdvisoriesListRepositoryAdvisoriesError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }case 404:
 final json = jsonDecode(response.body);
-return SecurityAdvisoriesListRepositoryAdvisoriesError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return SecurityAdvisoriesListRepositoryAdvisoriesErrorUnknown(response);
-}
-}
+return  SecurityAdvisoriesListRepositoryAdvisoriesError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  SecurityAdvisoriesListRepositoryAdvisoriesErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class SecurityAdvisoriesListRepositoryAdvisoriesError400ApplicationJson extends SecurityAdvisoriesListRepositoryAdvisoriesError {const SecurityAdvisoriesListRepositoryAdvisoriesError400ApplicationJson(this.data);

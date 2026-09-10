@@ -6,23 +6,16 @@ sealed class CodespacesRepoMachinesForAuthenticatedUserError {const CodespacesRe
 /// Decodes the payload for its declared status and content type.
 static CodespacesRepoMachinesForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const CodespacesRepoMachinesForAuthenticatedUserError304();
-case 401:
+return  const CodespacesRepoMachinesForAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return CodespacesRepoMachinesForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  CodespacesRepoMachinesForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return CodespacesRepoMachinesForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CodespacesRepoMachinesForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CodespacesRepoMachinesForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 500:
+return  CodespacesRepoMachinesForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return CodespacesRepoMachinesForAuthenticatedUserError500(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return CodespacesRepoMachinesForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  CodespacesRepoMachinesForAuthenticatedUserError500(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  CodespacesRepoMachinesForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class CodespacesRepoMachinesForAuthenticatedUserError304 extends CodespacesRepoMachinesForAuthenticatedUserError {const CodespacesRepoMachinesForAuthenticatedUserError304();

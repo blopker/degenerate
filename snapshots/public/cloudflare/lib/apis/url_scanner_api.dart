@@ -24,15 +24,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => UrlscannerCreateScanBulkResponse.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: UrlscannerCreateScanBulkError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => UrlscannerCreateScanBulkResponse.fromJson(e as Map<String, dynamic>)).toList();}, onError: UrlscannerCreateScanBulkError.parse, );}
 /// Get URL scan's DOM
 ///
 /// Returns a plain text response, with the scan's DOM content as rendered by Chrome.
@@ -47,14 +41,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-return response.body;
-  },
-  onError: UrlscannerGetScanDomError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {return  response.body;}, onError: UrlscannerGetScanDomError.parse, );}
 /// Get URL scan's HAR
 ///
 /// Get a URL scan's HAR file. See HAR spec at http://www.softwareishard.com/blog/har-12-spec/.
@@ -69,15 +57,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UrlscannerGetScanHarResponse2.fromJson(json as Map<String, dynamic>);
-  },
-  onError: UrlscannerGetScanHarError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UrlscannerGetScanHarResponse2.fromJson(json as Map<String, dynamic>);}, onError: UrlscannerGetScanHarError.parse, );}
 /// Get raw response
 ///
 /// Returns the raw response of the network request. Find the `response_id` in the `data.requests.response.hash`.
@@ -92,23 +74,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-return response.body;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {return  response.body;}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return UrlscannerGetResponseResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  UrlscannerGetResponseResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get URL scan
 ///
 /// Get URL scan by uuid
@@ -123,15 +94,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UrlscannerGetScanResponse2.fromJson(json as Map<String, dynamic>);
-  },
-  onError: UrlscannerGetScanError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UrlscannerGetScanResponse2.fromJson(json as Map<String, dynamic>);}, onError: UrlscannerGetScanError.parse, );}
 /// Create URL Scan
 ///
 /// Submit a URL to scan. Check limits at https://developers.cloudflare.com/security-center/investigate/scan-limits/.
@@ -148,15 +113,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] as String;
-  },
-  onError: UrlscannerCreateScanError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] as String;}, onError: UrlscannerCreateScanError.parse, );}
 /// Get screenshot
 ///
 /// Get scan's screenshot by resolution (desktop/mobile/tablet).
@@ -179,14 +138,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-return response.body;
-  },
-  onError: UrlscannerGetScanScreenshotError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {return  response.body;}, onError: UrlscannerGetScanScreenshotError.parse, );}
 /// Search URL scans
 ///
 /// Use a subset of ElasticSearch Query syntax to filter scans. Some example queries:`<br/>` `<br/>`- 'path:"/bundles/jquery.js"': Searches for scans who requested resources with the given path.`<br/>`- 'page.asn:AS24940 AND hash:xxx': Websites hosted in AS24940 where a resource with the given hash was downloaded.`<br/>`- 'page.domain:microsoft* AND verdicts.malicious:true AND NOT page.domain:microsoft.com': malicious scans whose hostname starts with "microsoft".`<br/>`- 'apikey:me AND date:`[2025-01 TO 2025-02]`': my scans from 2025 January to 2025 February.
@@ -212,22 +165,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UrlscannerSearchScansResponse2.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UrlscannerSearchScansResponse2.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return UrlscannerSearchScansResponse4002.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  UrlscannerSearchScansResponse4002.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

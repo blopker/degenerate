@@ -7,14 +7,10 @@ sealed class ReposCreateAttestationError {const ReposCreateAttestationError();
 static ReposCreateAttestationError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return ReposCreateAttestationError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposCreateAttestationError403(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposCreateAttestationError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposCreateAttestationErrorUnknown(response);
-}
-}
+return  ReposCreateAttestationError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposCreateAttestationErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class ReposCreateAttestationError403 extends ReposCreateAttestationError {const ReposCreateAttestationError403(this.data);

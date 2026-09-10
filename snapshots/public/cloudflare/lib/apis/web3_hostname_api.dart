@@ -20,15 +20,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => Web3Web3Hostname.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: Web3HostnameListWeb3HostnamesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => Web3Web3Hostname.fromJson(e as Map<String, dynamic>)).toList();}, onError: Web3HostnameListWeb3HostnamesError.parse, );}
 /// Create Web3 Hostname
 ///
 /// `POST /zones/{zone_id}/web3/hostnames`
@@ -43,15 +37,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return Web3Web3Hostname.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: Web3HostnameCreateWeb3HostnameError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  Web3Web3Hostname.fromJson(json['result'] as Map<String, dynamic>);}, onError: Web3HostnameCreateWeb3HostnameError.parse, );}
 /// Web3 Hostname Details
 ///
 /// `GET /zones/{zone_id}/web3/hostnames/{identifier}`
@@ -64,15 +52,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return Web3Web3Hostname.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: Web3HostnameDetailsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  Web3Web3Hostname.fromJson(json['result'] as Map<String, dynamic>);}, onError: Web3HostnameDetailsError.parse, );}
 /// Edit Web3 Hostname
 ///
 /// `PATCH /zones/{zone_id}/web3/hostnames/{identifier}`
@@ -87,15 +69,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return Web3Web3Hostname.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: Web3HostnameEditWeb3HostnameError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  Web3Web3Hostname.fromJson(json['result'] as Map<String, dynamic>);}, onError: Web3HostnameEditWeb3HostnameError.parse, );}
 /// Delete Web3 Hostname
 ///
 /// `DELETE /zones/{zone_id}/web3/hostnames/{identifier}`
@@ -108,15 +84,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? ResponseSingleId7Result.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: Web3HostnameDeleteWeb3HostnameError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? ResponseSingleId7Result.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: Web3HostnameDeleteWeb3HostnameError.parse, );}
 /// IPFS Universal Path Gateway Content List Details
 ///
 /// `GET /zones/{zone_id}/web3/hostnames/{identifier}/ipfs_universal_path/content_list`
@@ -129,15 +99,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return Web3ContentListDetails.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: Web3HostnameIpfsUniversalPathGatewayContentListDetailsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  Web3ContentListDetails.fromJson(json['result'] as Map<String, dynamic>);}, onError: Web3HostnameIpfsUniversalPathGatewayContentListDetailsError.parse, );}
 /// Update IPFS Universal Path Gateway Content List
 ///
 /// `PUT /zones/{zone_id}/web3/hostnames/{identifier}/ipfs_universal_path/content_list`
@@ -152,15 +116,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return Web3ContentListDetails.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: Web3HostnameUpdateIpfsUniversalPathGatewayContentListError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  Web3ContentListDetails.fromJson(json['result'] as Map<String, dynamic>);}, onError: Web3HostnameUpdateIpfsUniversalPathGatewayContentListError.parse, );}
 /// List IPFS Universal Path Gateway Content List Entries
 ///
 /// `GET /zones/{zone_id}/web3/hostnames/{identifier}/ipfs_universal_path/content_list/entries`
@@ -173,15 +131,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return Web3ContentListEntryCollectionResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: Web3HostnameListIpfsUniversalPathGatewayContentListEntriesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  Web3ContentListEntryCollectionResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: Web3HostnameListIpfsUniversalPathGatewayContentListEntriesError.parse, );}
 /// Create IPFS Universal Path Gateway Content List Entry
 ///
 /// `POST /zones/{zone_id}/web3/hostnames/{identifier}/ipfs_universal_path/content_list/entries`
@@ -196,15 +148,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return Web3ContentListEntry.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: Web3HostnameCreateIpfsUniversalPathGatewayContentListEntryError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  Web3ContentListEntry.fromJson(json['result'] as Map<String, dynamic>);}, onError: Web3HostnameCreateIpfsUniversalPathGatewayContentListEntryError.parse, );}
 /// IPFS Universal Path Gateway Content List Entry Details
 ///
 /// `GET /zones/{zone_id}/web3/hostnames/{identifier}/ipfs_universal_path/content_list/entries/{content_list_entry_identifier}`
@@ -217,15 +163,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return Web3ContentListEntry.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: Web3HostnameIpfsUniversalPathGatewayContentListEntryDetailsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  Web3ContentListEntry.fromJson(json['result'] as Map<String, dynamic>);}, onError: Web3HostnameIpfsUniversalPathGatewayContentListEntryDetailsError.parse, );}
 /// Edit IPFS Universal Path Gateway Content List Entry
 ///
 /// `PUT /zones/{zone_id}/web3/hostnames/{identifier}/ipfs_universal_path/content_list/entries/{content_list_entry_identifier}`
@@ -240,15 +180,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return Web3ContentListEntry.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: Web3HostnameEditIpfsUniversalPathGatewayContentListEntryError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  Web3ContentListEntry.fromJson(json['result'] as Map<String, dynamic>);}, onError: Web3HostnameEditIpfsUniversalPathGatewayContentListEntryError.parse, );}
 /// Delete IPFS Universal Path Gateway Content List Entry
 ///
 /// `DELETE /zones/{zone_id}/web3/hostnames/{identifier}/ipfs_universal_path/content_list/entries/{content_list_entry_identifier}`
@@ -261,13 +195,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? ResponseSingleId7Result.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: Web3HostnameDeleteIpfsUniversalPathGatewayContentListEntryError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? ResponseSingleId7Result.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: Web3HostnameDeleteIpfsUniversalPathGatewayContentListEntryError.parse, );}
 }

@@ -6,20 +6,14 @@ sealed class ActivityStarRepoForAuthenticatedUserError {const ActivityStarRepoFo
 /// Decodes the payload for its declared status and content type.
 static ActivityStarRepoForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ActivityStarRepoForAuthenticatedUserError304();
-case 401:
+return  const ActivityStarRepoForAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return ActivityStarRepoForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  ActivityStarRepoForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return ActivityStarRepoForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  ActivityStarRepoForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return ActivityStarRepoForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ActivityStarRepoForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  ActivityStarRepoForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ActivityStarRepoForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ActivityStarRepoForAuthenticatedUserError304 extends ActivityStarRepoForAuthenticatedUserError {const ActivityStarRepoForAuthenticatedUserError304();

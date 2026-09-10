@@ -6,14 +6,10 @@ sealed class RateLimitGetError {const RateLimitGetError();
 /// Decodes the payload for its declared status and content type.
 static RateLimitGetError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const RateLimitGetError304();
-case 404:
+return  const RateLimitGetError304();case 404:
 final json = jsonDecode(response.body);
-return RateLimitGetError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return RateLimitGetErrorUnknown(response);
-}
-}
+return  RateLimitGetError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  RateLimitGetErrorUnknown(response); }}
 }
 /// Response for 304.
 final class RateLimitGetError304 extends RateLimitGetError {const RateLimitGetError304();

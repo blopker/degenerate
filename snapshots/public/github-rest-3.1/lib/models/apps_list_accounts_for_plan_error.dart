@@ -7,17 +7,12 @@ sealed class AppsListAccountsForPlanError {const AppsListAccountsForPlanError();
 static AppsListAccountsForPlanError parse(ApiResponse response) {switch (response.statusCode) {
 case 401:
 final json = jsonDecode(response.body);
-return AppsListAccountsForPlanError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  AppsListAccountsForPlanError401(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return AppsListAccountsForPlanError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  AppsListAccountsForPlanError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return AppsListAccountsForPlanError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return AppsListAccountsForPlanErrorUnknown(response);
-}
-}
+return  AppsListAccountsForPlanError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  AppsListAccountsForPlanErrorUnknown(response); }}
 }
 /// Response for 401 (application/json).
 final class AppsListAccountsForPlanError401 extends AppsListAccountsForPlanError {const AppsListAccountsForPlanError401(this.data);

@@ -22,12 +22,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));}, );}
 }

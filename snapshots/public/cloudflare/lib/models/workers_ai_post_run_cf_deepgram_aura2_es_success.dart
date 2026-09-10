@@ -7,21 +7,13 @@ sealed class WorkersAiPostRunCfDeepgramAura2EsSuccess {const WorkersAiPostRunCfD
 static WorkersAiPostRunCfDeepgramAura2EsSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfDeepgramAura2EsSuccess200ApplicationJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'audio/mpeg')) {
-final value = (() { return Uint8List.fromList(response.bodyBytes); })();
-return WorkersAiPostRunCfDeepgramAura2EsSuccess200AudioMpeg(value);
-}
+return  WorkersAiPostRunCfDeepgramAura2EsSuccess200ApplicationJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'audio/mpeg', )) {
+return  WorkersAiPostRunCfDeepgramAura2EsSuccess200AudioMpeg(Uint8List.fromList(response.bodyBytes)); } else {
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfDeepgramAura2EsSuccess200ApplicationJson(json as Map<String, dynamic>);
-
-default:
-return WorkersAiPostRunCfDeepgramAura2EsSuccessUnknown(response);
-}
-}
+return  WorkersAiPostRunCfDeepgramAura2EsSuccess200ApplicationJson(json as Map<String, dynamic>); }default:
+return  WorkersAiPostRunCfDeepgramAura2EsSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class WorkersAiPostRunCfDeepgramAura2EsSuccess200ApplicationJson extends WorkersAiPostRunCfDeepgramAura2EsSuccess {const WorkersAiPostRunCfDeepgramAura2EsSuccess200ApplicationJson(this.data);

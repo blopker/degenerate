@@ -36,14 +36,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>?)?.map((e) => EmailRuleProperties.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>?)?.map((e) => EmailRuleProperties.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Create routing rule
 ///
 /// Rules consist of a set of criteria for matching emails (such as an email being sent to a specific custom email address) plus a set of actions to take on the email (like forwarding it to a specific destination address).
@@ -60,14 +55,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? EmailRuleProperties.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? EmailRuleProperties.fromJson(json['result'] as Map<String, dynamic>) : null;}, );}
 /// Get routing rule
 ///
 /// Get information for a specific routing rule already created.
@@ -82,14 +72,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? EmailRuleProperties.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? EmailRuleProperties.fromJson(json['result'] as Map<String, dynamic>) : null;}, );}
 /// Update routing rule
 ///
 /// Update actions and matches, or enable/disable specific routing rules.
@@ -106,14 +91,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? EmailRuleProperties.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? EmailRuleProperties.fromJson(json['result'] as Map<String, dynamic>) : null;}, );}
 /// Delete routing rule
 ///
 /// Delete a specific routing rule.
@@ -128,14 +108,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? EmailRuleProperties.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? EmailRuleProperties.fromJson(json['result'] as Map<String, dynamic>) : null;}, );}
 /// Get catch-all rule
 ///
 /// Get information on the default catch-all routing rule.
@@ -150,14 +125,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? EmailCatchAllRule.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? EmailCatchAllRule.fromJson(json['result'] as Map<String, dynamic>) : null;}, );}
 /// Update catch-all rule
 ///
 /// Enable or disable catch-all routing rule, or change action to forward to specific destination address.
@@ -174,12 +144,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? EmailCatchAllRule.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? EmailCatchAllRule.fromJson(json['result'] as Map<String, dynamic>) : null;}, );}
 }

@@ -7,14 +7,10 @@ sealed class UrlscannerGetScanScreenshotError {const UrlscannerGetScanScreenshot
 static UrlscannerGetScanScreenshotError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return UrlscannerGetScanScreenshotError400(UrlscannerGetScanScreenshotResponse4002.fromJson(json as Map<String, dynamic>));
-case 404:
+return  UrlscannerGetScanScreenshotError400(UrlscannerGetScanScreenshotResponse4002.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return UrlscannerGetScanScreenshotError404(UrlscannerGetScanScreenshotResponse4042.fromJson(json as Map<String, dynamic>));
-default:
-return UrlscannerGetScanScreenshotErrorUnknown(response);
-}
-}
+return  UrlscannerGetScanScreenshotError404(UrlscannerGetScanScreenshotResponse4042.fromJson(json as Map<String, dynamic>));default:
+return  UrlscannerGetScanScreenshotErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class UrlscannerGetScanScreenshotError400 extends UrlscannerGetScanScreenshotError {const UrlscannerGetScanScreenshotError400(this.data);

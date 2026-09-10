@@ -7,14 +7,10 @@ sealed class WorSendEventWorkflowInstanceError {const WorSendEventWorkflowInstan
 static WorSendEventWorkflowInstanceError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorSendEventWorkflowInstanceError400(WorSendEventWorkflowInstanceResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  WorSendEventWorkflowInstanceError400(WorSendEventWorkflowInstanceResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return WorSendEventWorkflowInstanceError404(WorSendEventWorkflowInstanceResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return WorSendEventWorkflowInstanceErrorUnknown(response);
-}
-}
+return  WorSendEventWorkflowInstanceError404(WorSendEventWorkflowInstanceResponse404.fromJson(json as Map<String, dynamic>));default:
+return  WorSendEventWorkflowInstanceErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class WorSendEventWorkflowInstanceError400 extends WorSendEventWorkflowInstanceError {const WorSendEventWorkflowInstanceError400(this.data);

@@ -7,36 +7,24 @@ sealed class IssuesCreateError {const IssuesCreateError();
 static IssuesCreateError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return IssuesCreateError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  IssuesCreateError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return IssuesCreateError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  IssuesCreateError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return IssuesCreateError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 403:
+return  IssuesCreateError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }case 403:
 final json = jsonDecode(response.body);
-return IssuesCreateError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  IssuesCreateError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return IssuesCreateError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 410:
+return  IssuesCreateError404(BasicError.fromJson(json as Map<String, dynamic>));case 410:
 final json = jsonDecode(response.body);
-return IssuesCreateError410(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  IssuesCreateError410(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return IssuesCreateError422(ValidationError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  IssuesCreateError422(ValidationError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return IssuesCreateError503(IssuesCreateResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return IssuesCreateErrorUnknown(response);
-}
-}
+return  IssuesCreateError503(IssuesCreateResponse503.fromJson(json as Map<String, dynamic>));default:
+return  IssuesCreateErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class IssuesCreateError400ApplicationJson extends IssuesCreateError {const IssuesCreateError400ApplicationJson(this.data);

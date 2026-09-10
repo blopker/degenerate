@@ -6,23 +6,16 @@ sealed class UsersDeleteGpgKeyForAuthenticatedUserError {const UsersDeleteGpgKey
 /// Decodes the payload for its declared status and content type.
 static UsersDeleteGpgKeyForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const UsersDeleteGpgKeyForAuthenticatedUserError304();
-case 401:
+return  const UsersDeleteGpgKeyForAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return UsersDeleteGpgKeyForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  UsersDeleteGpgKeyForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return UsersDeleteGpgKeyForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  UsersDeleteGpgKeyForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return UsersDeleteGpgKeyForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  UsersDeleteGpgKeyForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return UsersDeleteGpgKeyForAuthenticatedUserError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return UsersDeleteGpgKeyForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  UsersDeleteGpgKeyForAuthenticatedUserError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  UsersDeleteGpgKeyForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class UsersDeleteGpgKeyForAuthenticatedUserError304 extends UsersDeleteGpgKeyForAuthenticatedUserError {const UsersDeleteGpgKeyForAuthenticatedUserError304();

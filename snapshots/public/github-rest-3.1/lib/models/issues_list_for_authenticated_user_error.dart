@@ -6,14 +6,10 @@ sealed class IssuesListForAuthenticatedUserError {const IssuesListForAuthenticat
 /// Decodes the payload for its declared status and content type.
 static IssuesListForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const IssuesListForAuthenticatedUserError304();
-case 404:
+return  const IssuesListForAuthenticatedUserError304();case 404:
 final json = jsonDecode(response.body);
-return IssuesListForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return IssuesListForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  IssuesListForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  IssuesListForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class IssuesListForAuthenticatedUserError304 extends IssuesListForAuthenticatedUserError {const IssuesListForAuthenticatedUserError304();

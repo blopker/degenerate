@@ -7,20 +7,14 @@ sealed class GitGetBlobError {const GitGetBlobError();
 static GitGetBlobError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return GitGetBlobError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  GitGetBlobError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return GitGetBlobError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 409:
+return  GitGetBlobError404(BasicError.fromJson(json as Map<String, dynamic>));case 409:
 final json = jsonDecode(response.body);
-return GitGetBlobError409(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  GitGetBlobError409(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return GitGetBlobError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return GitGetBlobErrorUnknown(response);
-}
-}
+return  GitGetBlobError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  GitGetBlobErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class GitGetBlobError403 extends GitGetBlobError {const GitGetBlobError403(this.data);

@@ -6,17 +6,12 @@ sealed class ActivityGetThreadError {const ActivityGetThreadError();
 /// Decodes the payload for its declared status and content type.
 static ActivityGetThreadError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ActivityGetThreadError304();
-case 401:
+return  const ActivityGetThreadError304();case 401:
 final json = jsonDecode(response.body);
-return ActivityGetThreadError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  ActivityGetThreadError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return ActivityGetThreadError403(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ActivityGetThreadErrorUnknown(response);
-}
-}
+return  ActivityGetThreadError403(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ActivityGetThreadErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ActivityGetThreadError304 extends ActivityGetThreadError {const ActivityGetThreadError304();

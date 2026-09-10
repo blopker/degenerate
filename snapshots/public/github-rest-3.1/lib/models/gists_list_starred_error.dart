@@ -6,17 +6,12 @@ sealed class GistsListStarredError {const GistsListStarredError();
 /// Decodes the payload for its declared status and content type.
 static GistsListStarredError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const GistsListStarredError304();
-case 401:
+return  const GistsListStarredError304();case 401:
 final json = jsonDecode(response.body);
-return GistsListStarredError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  GistsListStarredError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return GistsListStarredError403(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return GistsListStarredErrorUnknown(response);
-}
-}
+return  GistsListStarredError403(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  GistsListStarredErrorUnknown(response); }}
 }
 /// Response for 304.
 final class GistsListStarredError304 extends GistsListStarredError {const GistsListStarredError304();

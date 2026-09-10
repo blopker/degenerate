@@ -37,14 +37,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return NscCniList.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  NscCniList.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a new CNI object
 ///
 /// `POST /accounts/{account_id}/cni/cnis`
@@ -59,14 +54,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return NscCni.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  NscCni.fromJson(json as Map<String, dynamic>);}, );}
 /// Get information about a CNI object
 ///
 /// `GET /accounts/{account_id}/cni/cnis/{cni}`
@@ -79,14 +69,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return NscCni.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  NscCni.fromJson(json as Map<String, dynamic>);}, );}
 /// Modify stored information about a CNI object
 ///
 /// `PUT /accounts/{account_id}/cni/cnis/{cni}`
@@ -101,14 +86,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return NscCni.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  NscCni.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a specified CNI object
 ///
 /// `DELETE /accounts/{account_id}/cni/cnis/{cni}`
@@ -121,9 +101,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

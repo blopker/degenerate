@@ -6,14 +6,10 @@ sealed class ActivityMarkThreadAsReadError {const ActivityMarkThreadAsReadError(
 /// Decodes the payload for its declared status and content type.
 static ActivityMarkThreadAsReadError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ActivityMarkThreadAsReadError304();
-case 403:
+return  const ActivityMarkThreadAsReadError304();case 403:
 final json = jsonDecode(response.body);
-return ActivityMarkThreadAsReadError403(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ActivityMarkThreadAsReadErrorUnknown(response);
-}
-}
+return  ActivityMarkThreadAsReadError403(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ActivityMarkThreadAsReadErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ActivityMarkThreadAsReadError304 extends ActivityMarkThreadAsReadError {const ActivityMarkThreadAsReadError304();

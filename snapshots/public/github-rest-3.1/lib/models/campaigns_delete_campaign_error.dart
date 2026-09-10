@@ -7,14 +7,10 @@ sealed class CampaignsDeleteCampaignError {const CampaignsDeleteCampaignError();
 static CampaignsDeleteCampaignError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return CampaignsDeleteCampaignError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  CampaignsDeleteCampaignError404(BasicError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return CampaignsDeleteCampaignError503(CampaignsDeleteCampaignResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return CampaignsDeleteCampaignErrorUnknown(response);
-}
-}
+return  CampaignsDeleteCampaignError503(CampaignsDeleteCampaignResponse503.fromJson(json as Map<String, dynamic>));default:
+return  CampaignsDeleteCampaignErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class CampaignsDeleteCampaignError404 extends CampaignsDeleteCampaignError {const CampaignsDeleteCampaignError404(this.data);

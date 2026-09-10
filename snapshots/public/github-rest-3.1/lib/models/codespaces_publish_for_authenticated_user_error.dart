@@ -7,20 +7,14 @@ sealed class CodespacesPublishForAuthenticatedUserError {const CodespacesPublish
 static CodespacesPublishForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 401:
 final json = jsonDecode(response.body);
-return CodespacesPublishForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  CodespacesPublishForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return CodespacesPublishForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CodespacesPublishForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CodespacesPublishForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  CodespacesPublishForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return CodespacesPublishForAuthenticatedUserError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return CodespacesPublishForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  CodespacesPublishForAuthenticatedUserError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  CodespacesPublishForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 401 (application/json).
 final class CodespacesPublishForAuthenticatedUserError401 extends CodespacesPublishForAuthenticatedUserError {const CodespacesPublishForAuthenticatedUserError401(this.data);

@@ -7,20 +7,14 @@ sealed class BrapiPostScrapeError {const BrapiPostScrapeError();
 static BrapiPostScrapeError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return BrapiPostScrapeError400(BrapiPostScrapeResponse400.fromJson(json as Map<String, dynamic>));
-case 422:
+return  BrapiPostScrapeError400(BrapiPostScrapeResponse400.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return BrapiPostScrapeError422(BrapiPostScrapeResponse422.fromJson(json as Map<String, dynamic>));
-case 429:
+return  BrapiPostScrapeError422(BrapiPostScrapeResponse422.fromJson(json as Map<String, dynamic>));case 429:
 final json = jsonDecode(response.body);
-return BrapiPostScrapeError429(BrapiPostScrapeResponse429.fromJson(json as Map<String, dynamic>));
-case 500:
+return  BrapiPostScrapeError429(BrapiPostScrapeResponse429.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return BrapiPostScrapeError500(BrapiPostScrapeResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return BrapiPostScrapeErrorUnknown(response);
-}
-}
+return  BrapiPostScrapeError500(BrapiPostScrapeResponse500.fromJson(json as Map<String, dynamic>));default:
+return  BrapiPostScrapeErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class BrapiPostScrapeError400 extends BrapiPostScrapeError {const BrapiPostScrapeError400(this.data);

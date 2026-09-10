@@ -7,14 +7,10 @@ sealed class ReposUpdateStatusCheckProtectionError {const ReposUpdateStatusCheck
 static ReposUpdateStatusCheckProtectionError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ReposUpdateStatusCheckProtectionError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposUpdateStatusCheckProtectionError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposUpdateStatusCheckProtectionError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposUpdateStatusCheckProtectionErrorUnknown(response);
-}
-}
+return  ReposUpdateStatusCheckProtectionError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposUpdateStatusCheckProtectionErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class ReposUpdateStatusCheckProtectionError404 extends ReposUpdateStatusCheckProtectionError {const ReposUpdateStatusCheckProtectionError404(this.data);

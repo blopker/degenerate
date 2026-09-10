@@ -41,14 +41,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Upload.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Upload.fromJson(json as Map<String, dynamic>);}, );}
 /// Cancels the Upload. No Parts may be added after an Upload is cancelled.
 /// 
 /// Returns the Upload object with status `cancelled`.
@@ -64,14 +59,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Upload.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Upload.fromJson(json as Map<String, dynamic>);}, );}
 /// Completes the [Upload](/docs/api-reference/uploads/object).
 /// 
 /// Within the returned Upload object, there is a nested [File](/docs/api-reference/files/object) object that is ready to use in the rest of the platform.
@@ -94,14 +84,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Upload.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Upload.fromJson(json as Map<String, dynamic>);}, );}
 /// Adds a [Part](/docs/api-reference/uploads/part-object) to an [Upload](/docs/api-reference/uploads/object) object. A Part represents a chunk of bytes from the file you are trying to upload.
 /// 
 /// Each Part can be at most 64 MB, and you can add Parts until you hit the Upload maximum of 8 GB.
@@ -123,12 +108,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UploadPart.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UploadPart.fromJson(json as Map<String, dynamic>);}, );}
 }

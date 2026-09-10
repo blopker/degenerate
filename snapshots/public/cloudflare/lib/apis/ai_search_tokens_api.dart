@@ -37,24 +37,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => AiSearchListTokensResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => AiSearchListTokensResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return AiSearchListTokensResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AiSearchListTokensResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create new tokens.
 ///
 /// Create a new tokens.
@@ -71,24 +60,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AiSearchCreateTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AiSearchCreateTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return AiSearchCreateTokensResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AiSearchCreateTokensResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Read tokens.
 ///
 /// `GET /accounts/{account_id}/ai-search/tokens/{id}`
@@ -101,15 +79,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AiSearchFetchTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: AiSearchFetchTokensError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AiSearchFetchTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: AiSearchFetchTokensError.parse, );}
 /// Update tokens.
 ///
 /// `PUT /accounts/{account_id}/ai-search/tokens/{id}`
@@ -124,15 +96,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AiSearchUpdateTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: AiSearchUpdateTokensError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AiSearchUpdateTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: AiSearchUpdateTokensError.parse, );}
 /// Delete tokens.
 ///
 /// `DELETE /accounts/{account_id}/ai-search/tokens/{id}`
@@ -145,22 +111,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AiSearchDeleteTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AiSearchDeleteTokensResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return AiSearchDeleteTokensResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AiSearchDeleteTokensResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

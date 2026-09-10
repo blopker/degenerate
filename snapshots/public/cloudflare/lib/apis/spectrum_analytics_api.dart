@@ -33,14 +33,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>?)?.map((e) => SpectrumAnalyticsQueryResponseAggregateResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>?)?.map((e) => SpectrumAnalyticsQueryResponseAggregateResult.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Get analytics by time
 ///
 /// Retrieves a list of aggregate metrics grouped by time interval.
@@ -85,14 +80,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? SpectrumAnalyticsQueryResponseSingleResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? SpectrumAnalyticsQueryResponseSingleResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, );}
 /// Get analytics summary
 ///
 /// Retrieves a list of summarised aggregate metrics over a given time period.
@@ -136,12 +126,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? SpectrumAnalyticsQueryResponseSingleResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? SpectrumAnalyticsQueryResponseSingleResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, );}
 }

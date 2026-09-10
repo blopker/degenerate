@@ -7,22 +7,15 @@ sealed class CopilotGetCopilotOrganizationDetailsError {const CopilotGetCopilotO
 static CopilotGetCopilotOrganizationDetailsError parse(ApiResponse response) {switch (response.statusCode) {
 case 401:
 final json = jsonDecode(response.body);
-return CopilotGetCopilotOrganizationDetailsError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  CopilotGetCopilotOrganizationDetailsError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return CopilotGetCopilotOrganizationDetailsError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CopilotGetCopilotOrganizationDetailsError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CopilotGetCopilotOrganizationDetailsError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-return const CopilotGetCopilotOrganizationDetailsError422();
-case 500:
+return  CopilotGetCopilotOrganizationDetailsError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
+return  const CopilotGetCopilotOrganizationDetailsError422();case 500:
 final json = jsonDecode(response.body);
-return CopilotGetCopilotOrganizationDetailsError500(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return CopilotGetCopilotOrganizationDetailsErrorUnknown(response);
-}
-}
+return  CopilotGetCopilotOrganizationDetailsError500(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  CopilotGetCopilotOrganizationDetailsErrorUnknown(response); }}
 }
 /// Response for 401 (application/json).
 final class CopilotGetCopilotOrganizationDetailsError401 extends CopilotGetCopilotOrganizationDetailsError {const CopilotGetCopilotOrganizationDetailsError401(this.data);

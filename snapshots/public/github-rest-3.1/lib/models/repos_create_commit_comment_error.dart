@@ -7,14 +7,10 @@ sealed class ReposCreateCommitCommentError {const ReposCreateCommitCommentError(
 static ReposCreateCommitCommentError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return ReposCreateCommitCommentError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposCreateCommitCommentError403(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposCreateCommitCommentError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposCreateCommitCommentErrorUnknown(response);
-}
-}
+return  ReposCreateCommitCommentError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposCreateCommitCommentErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class ReposCreateCommitCommentError403 extends ReposCreateCommitCommentError {const ReposCreateCommitCommentError403(this.data);

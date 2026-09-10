@@ -7,21 +7,15 @@ sealed class CreateTranscriptionSuccess {const CreateTranscriptionSuccess();
 static CreateTranscriptionSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return CreateTranscriptionSuccess200ApplicationJson(OneOf3.parse(json, fromA: (v) => CreateTranscriptionResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranscriptionResponseDiarizedJson.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateTranscriptionResponseVerboseJson.fromJson(v as Map<String, dynamic>),));
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
+return  CreateTranscriptionSuccess200ApplicationJson(OneOf3.parse(json, fromA: (v) => CreateTranscriptionResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranscriptionResponseDiarizedJson.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateTranscriptionResponseVerboseJson.fromJson(v as Map<String, dynamic>),)); } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into CreateTranscriptionResponseStreamEvent
-throw UnsupportedError('Cannot decode text/event-stream response into CreateTranscriptionResponseStreamEvent');
-}
-final json = jsonDecode(response.body);
-return CreateTranscriptionSuccess200ApplicationJson(OneOf3.parse(json, fromA: (v) => CreateTranscriptionResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranscriptionResponseDiarizedJson.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateTranscriptionResponseVerboseJson.fromJson(v as Map<String, dynamic>),));
 
-default:
-return CreateTranscriptionSuccessUnknown(response);
-}
-}
+throw  UnsupportedError('Cannot decode text/event-stream response into CreateTranscriptionResponseStreamEvent'); } else {
+final json = jsonDecode(response.body);
+return  CreateTranscriptionSuccess200ApplicationJson(OneOf3.parse(json, fromA: (v) => CreateTranscriptionResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranscriptionResponseDiarizedJson.fromJson(v as Map<String, dynamic>), fromC: (v) => CreateTranscriptionResponseVerboseJson.fromJson(v as Map<String, dynamic>),)); }default:
+return  CreateTranscriptionSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class CreateTranscriptionSuccess200ApplicationJson extends CreateTranscriptionSuccess {const CreateTranscriptionSuccess200ApplicationJson(this.data);

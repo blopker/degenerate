@@ -6,14 +6,10 @@ sealed class AppsListInstallationRequestsForAuthenticatedAppError {const AppsLis
 /// Decodes the payload for its declared status and content type.
 static AppsListInstallationRequestsForAuthenticatedAppError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const AppsListInstallationRequestsForAuthenticatedAppError304();
-case 401:
+return  const AppsListInstallationRequestsForAuthenticatedAppError304();case 401:
 final json = jsonDecode(response.body);
-return AppsListInstallationRequestsForAuthenticatedAppError401(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return AppsListInstallationRequestsForAuthenticatedAppErrorUnknown(response);
-}
-}
+return  AppsListInstallationRequestsForAuthenticatedAppError401(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  AppsListInstallationRequestsForAuthenticatedAppErrorUnknown(response); }}
 }
 /// Response for 304.
 final class AppsListInstallationRequestsForAuthenticatedAppError304 extends AppsListInstallationRequestsForAuthenticatedAppError {const AppsListInstallationRequestsForAuthenticatedAppError304();

@@ -34,14 +34,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListCertificatesResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListCertificatesResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Upload a certificate to the organization. This does **not** automatically activate the certificate.
 /// 
 /// Organizations can upload up to 50 certificates.
@@ -59,14 +54,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Certificate.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Certificate.fromJson(json as Map<String, dynamic>);}, );}
 /// Activate certificates at the organization level.
 /// 
 /// You can atomically and idempotently activate up to 10 certificates at a time.
@@ -84,14 +74,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListCertificatesResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListCertificatesResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Deactivate certificates at the organization level.
 /// 
 /// You can atomically and idempotently deactivate up to 10 certificates at a time.
@@ -109,14 +94,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListCertificatesResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListCertificatesResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a certificate that has been uploaded to the organization.
 /// 
 /// You can get a certificate regardless of whether it is active or not.
@@ -142,14 +122,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Certificate.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Certificate.fromJson(json as Map<String, dynamic>);}, );}
 /// Modify a certificate. Note that only the name can be modified.
 /// 
 ///
@@ -165,14 +140,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Certificate.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Certificate.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a certificate from the organization.
 /// 
 /// The certificate must be inactive for the organization and all projects.
@@ -188,14 +158,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeleteCertificateResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeleteCertificateResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// List certificates for this project.
 ///
 /// `GET /organization/projects/{project_id}/certificates`
@@ -222,14 +187,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListCertificatesResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListCertificatesResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Activate certificates at the project level.
 /// 
 /// You can atomically and idempotently activate up to 10 certificates at a time.
@@ -247,14 +207,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListCertificatesResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListCertificatesResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Deactivate certificates at the project level. You can atomically and
 /// idempotently deactivate up to 10 certificates at a time.
 /// 
@@ -271,12 +226,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListCertificatesResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListCertificatesResponse.fromJson(json as Map<String, dynamic>);}, );}
 }

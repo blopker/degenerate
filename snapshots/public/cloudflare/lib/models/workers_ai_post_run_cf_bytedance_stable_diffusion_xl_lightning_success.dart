@@ -7,21 +7,13 @@ sealed class WorkersAiPostRunCfBytedanceStableDiffusionXlLightningSuccess {const
 static WorkersAiPostRunCfBytedanceStableDiffusionXlLightningSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfBytedanceStableDiffusionXlLightningSuccess200ApplicationJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'image/png')) {
-final value = (() { return Uint8List.fromList(response.bodyBytes); })();
-return WorkersAiPostRunCfBytedanceStableDiffusionXlLightningSuccess200ImagePng(value);
-}
+return  WorkersAiPostRunCfBytedanceStableDiffusionXlLightningSuccess200ApplicationJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'image/png', )) {
+return  WorkersAiPostRunCfBytedanceStableDiffusionXlLightningSuccess200ImagePng(Uint8List.fromList(response.bodyBytes)); } else {
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfBytedanceStableDiffusionXlLightningSuccess200ApplicationJson(json as Map<String, dynamic>);
-
-default:
-return WorkersAiPostRunCfBytedanceStableDiffusionXlLightningSuccessUnknown(response);
-}
-}
+return  WorkersAiPostRunCfBytedanceStableDiffusionXlLightningSuccess200ApplicationJson(json as Map<String, dynamic>); }default:
+return  WorkersAiPostRunCfBytedanceStableDiffusionXlLightningSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class WorkersAiPostRunCfBytedanceStableDiffusionXlLightningSuccess200ApplicationJson extends WorkersAiPostRunCfBytedanceStableDiffusionXlLightningSuccess {const WorkersAiPostRunCfBytedanceStableDiffusionXlLightningSuccess200ApplicationJson(this.data);

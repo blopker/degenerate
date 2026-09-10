@@ -6,20 +6,14 @@ sealed class UsersDeleteSshSigningKeyForAuthenticatedUserError {const UsersDelet
 /// Decodes the payload for its declared status and content type.
 static UsersDeleteSshSigningKeyForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const UsersDeleteSshSigningKeyForAuthenticatedUserError304();
-case 401:
+return  const UsersDeleteSshSigningKeyForAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return UsersDeleteSshSigningKeyForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  UsersDeleteSshSigningKeyForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return UsersDeleteSshSigningKeyForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  UsersDeleteSshSigningKeyForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return UsersDeleteSshSigningKeyForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return UsersDeleteSshSigningKeyForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  UsersDeleteSshSigningKeyForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  UsersDeleteSshSigningKeyForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class UsersDeleteSshSigningKeyForAuthenticatedUserError304 extends UsersDeleteSshSigningKeyForAuthenticatedUserError {const UsersDeleteSshSigningKeyForAuthenticatedUserError304();

@@ -7,13 +7,9 @@ sealed class GetWebhookError {const GetWebhookError();
 static GetWebhookError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return GetWebhookError400(RealtimekitErrorResponse.fromJson(json as Map<String, dynamic>));
-case 401:
-return const GetWebhookError401();
-default:
-return GetWebhookErrorUnknown(response);
-}
-}
+return  GetWebhookError400(RealtimekitErrorResponse.fromJson(json as Map<String, dynamic>));case 401:
+return  const GetWebhookError401();default:
+return  GetWebhookErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class GetWebhookError400 extends GetWebhookError {const GetWebhookError400(this.data);

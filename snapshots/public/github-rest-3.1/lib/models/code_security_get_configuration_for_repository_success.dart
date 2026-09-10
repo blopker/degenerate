@@ -7,13 +7,9 @@ sealed class CodeSecurityGetConfigurationForRepositorySuccess {const CodeSecurit
 static CodeSecurityGetConfigurationForRepositorySuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final json = jsonDecode(response.body);
-return CodeSecurityGetConfigurationForRepositorySuccess200(CodeSecurityConfigurationForRepository.fromJson(json as Map<String, dynamic>));
-case 204:
-return const CodeSecurityGetConfigurationForRepositorySuccess204();
-default:
-return CodeSecurityGetConfigurationForRepositorySuccessUnknown(response);
-}
-}
+return  CodeSecurityGetConfigurationForRepositorySuccess200(CodeSecurityConfigurationForRepository.fromJson(json as Map<String, dynamic>));case 204:
+return  const CodeSecurityGetConfigurationForRepositorySuccess204();default:
+return  CodeSecurityGetConfigurationForRepositorySuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class CodeSecurityGetConfigurationForRepositorySuccess200 extends CodeSecurityGetConfigurationForRepositorySuccess {const CodeSecurityGetConfigurationForRepositorySuccess200(this.data);

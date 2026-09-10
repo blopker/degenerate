@@ -6,20 +6,14 @@ sealed class UsersListEmailsForAuthenticatedUserError {const UsersListEmailsForA
 /// Decodes the payload for its declared status and content type.
 static UsersListEmailsForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const UsersListEmailsForAuthenticatedUserError304();
-case 401:
+return  const UsersListEmailsForAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return UsersListEmailsForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  UsersListEmailsForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return UsersListEmailsForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  UsersListEmailsForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return UsersListEmailsForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return UsersListEmailsForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  UsersListEmailsForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  UsersListEmailsForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class UsersListEmailsForAuthenticatedUserError304 extends UsersListEmailsForAuthenticatedUserError {const UsersListEmailsForAuthenticatedUserError304();

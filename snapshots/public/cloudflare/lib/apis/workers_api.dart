@@ -33,14 +33,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => BuildsBuildResponse.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => BuildsBuildResponse.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List triggers by script
 ///
 /// Get all triggers for a specific worker script
@@ -55,14 +50,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => BuildsTriggerResponse.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => BuildsTriggerResponse.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List Workers
 ///
 /// List all Workers for an account.
@@ -94,15 +84,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => WorkersWorker.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: ListWorkersError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => WorkersWorker.fromJson(e as Map<String, dynamic>)).toList();}, onError: ListWorkersError.parse, );}
 /// Create Worker
 ///
 /// Create a new Worker.
@@ -119,15 +103,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return WorkersWorker.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: CreateWorkerError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  WorkersWorker.fromJson(json['result'] as Map<String, dynamic>);}, onError: CreateWorkerError.parse, );}
 /// Get Worker
 ///
 /// Get details about a specific Worker.
@@ -142,15 +120,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return WorkersWorker.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: GetWorkerError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  WorkersWorker.fromJson(json['result'] as Map<String, dynamic>);}, onError: GetWorkerError.parse, );}
 /// Update Worker
 ///
 /// Perform a complete replacement of a Worker, where omitted properties are set to their default values. This is the exact same as the Create Worker endpoint, but operates on an existing Worker. To perform a partial update instead, use the Edit Worker endpoint.
@@ -167,15 +139,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return WorkersWorker.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: UpdateWorkerError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  WorkersWorker.fromJson(json['result'] as Map<String, dynamic>);}, onError: UpdateWorkerError.parse, );}
 /// Edit Worker
 ///
 /// Perform a partial update on a Worker, where omitted properties are left unchanged from their current values.
@@ -192,15 +158,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return WorkersWorker.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: EditWorkerError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  WorkersWorker.fromJson(json['result'] as Map<String, dynamic>);}, onError: EditWorkerError.parse, );}
 /// Delete Worker
 ///
 /// Delete a Worker and all its associated resources (versions, deployments, etc.).
@@ -215,13 +175,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ResponseCommon80.fromJson(json as Map<String, dynamic>);
-  },
-  onError: DeleteWorkerError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ResponseCommon80.fromJson(json as Map<String, dynamic>);}, onError: DeleteWorkerError.parse, );}
 }

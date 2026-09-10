@@ -6,17 +6,12 @@ sealed class ActivityListPublicEventsError {const ActivityListPublicEventsError(
 /// Decodes the payload for its declared status and content type.
 static ActivityListPublicEventsError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ActivityListPublicEventsError304();
-case 403:
+return  const ActivityListPublicEventsError304();case 403:
 final json = jsonDecode(response.body);
-return ActivityListPublicEventsError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  ActivityListPublicEventsError403(BasicError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return ActivityListPublicEventsError503(ActivityListPublicEventsResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return ActivityListPublicEventsErrorUnknown(response);
-}
-}
+return  ActivityListPublicEventsError503(ActivityListPublicEventsResponse503.fromJson(json as Map<String, dynamic>));default:
+return  ActivityListPublicEventsErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ActivityListPublicEventsError304 extends ActivityListPublicEventsError {const ActivityListPublicEventsError304();

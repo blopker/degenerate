@@ -22,24 +22,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? OneOf4.parse(json['result'], fromA: (v) => BotManagementBotFightModeConfig.fromJson(v as Map<String, dynamic>), fromB: (v) => BotManagementSbfmDefinitelyConfig.fromJson(v as Map<String, dynamic>), fromC: (v) => BotManagementSbfmLikelyConfig.fromJson(v as Map<String, dynamic>), fromD: (v) => BotManagementBmSubscriptionConfig.fromJson(v as Map<String, dynamic>),) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? OneOf4.parse(json['result'], fromA: (v) => BotManagementBotFightModeConfig.fromJson(v as Map<String, dynamic>), fromB: (v) => BotManagementSbfmDefinitelyConfig.fromJson(v as Map<String, dynamic>), fromC: (v) => BotManagementSbfmLikelyConfig.fromJson(v as Map<String, dynamic>), fromD: (v) => BotManagementBmSubscriptionConfig.fromJson(v as Map<String, dynamic>),) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return BotManagementForAZoneGetConfigResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BotManagementForAZoneGetConfigResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update Zone Bot Management Config
 ///
 /// Updates the Bot Management configuration for a zone.
@@ -103,22 +92,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? OneOf4.parse(json['result'], fromA: (v) => BotManagementBotFightModeConfig.fromJson(v as Map<String, dynamic>), fromB: (v) => BotManagementSbfmDefinitelyConfig.fromJson(v as Map<String, dynamic>), fromC: (v) => BotManagementSbfmLikelyConfig.fromJson(v as Map<String, dynamic>), fromD: (v) => BotManagementBmSubscriptionConfig.fromJson(v as Map<String, dynamic>),) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? OneOf4.parse(json['result'], fromA: (v) => BotManagementBotFightModeConfig.fromJson(v as Map<String, dynamic>), fromB: (v) => BotManagementSbfmDefinitelyConfig.fromJson(v as Map<String, dynamic>), fromC: (v) => BotManagementSbfmLikelyConfig.fromJson(v as Map<String, dynamic>), fromD: (v) => BotManagementBmSubscriptionConfig.fromJson(v as Map<String, dynamic>),) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return BotManagementForAZoneUpdateConfigResponse4xx.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BotManagementForAZoneUpdateConfigResponse4xx.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

@@ -6,20 +6,14 @@ sealed class UsersUnblockError {const UsersUnblockError();
 /// Decodes the payload for its declared status and content type.
 static UsersUnblockError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const UsersUnblockError304();
-case 401:
+return  const UsersUnblockError304();case 401:
 final json = jsonDecode(response.body);
-return UsersUnblockError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  UsersUnblockError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return UsersUnblockError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  UsersUnblockError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return UsersUnblockError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return UsersUnblockErrorUnknown(response);
-}
-}
+return  UsersUnblockError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  UsersUnblockErrorUnknown(response); }}
 }
 /// Response for 304.
 final class UsersUnblockError304 extends UsersUnblockError {const UsersUnblockError304();

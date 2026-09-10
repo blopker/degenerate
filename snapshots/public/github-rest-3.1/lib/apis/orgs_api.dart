@@ -36,14 +36,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => OrganizationSimple.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => OrganizationSimple.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Get an organization
 ///
 /// Gets information about an organization.
@@ -66,24 +61,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrganizationFull.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrganizationFull.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update an organization
 ///
 /// > `[!WARNING]`
@@ -110,15 +94,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrganizationFull.fromJson(json as Map<String, dynamic>);
-  },
-  onError: OrgsUpdateError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrganizationFull.fromJson(json as Map<String, dynamic>);}, onError: OrgsUpdateError.parse, );}
 /// Delete an organization
 ///
 /// Deletes an organization and all its repositories.
@@ -139,24 +117,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create an artifact deployment record
 ///
 /// Create or update deployment records for an artifact associated
@@ -185,14 +152,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrgsCreateArtifactDeploymentRecordResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrgsCreateArtifactDeploymentRecordResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Set cluster deployment records
 ///
 /// Set deployment records for a given cluster.
@@ -212,14 +174,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrgsSetClusterDeploymentRecordsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrgsSetClusterDeploymentRecordsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create artifact metadata storage record
 ///
 /// Create metadata storage records for artifacts associated with an organization.
@@ -238,14 +195,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrgsCreateArtifactStorageRecordResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrgsCreateArtifactStorageRecordResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// List artifact deployment records
 ///
 /// List deployment records for an artifact metadata associated with an organization.
@@ -260,14 +212,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrgsListArtifactDeploymentRecordsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrgsListArtifactDeploymentRecordsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// List artifact storage records
 ///
 /// List a collection of artifact storage records with a given subject digest that are associated with repositories owned by an organization.
@@ -284,14 +231,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrgsListArtifactStorageRecordsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrgsListArtifactStorageRecordsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// List attestations by bulk subject digests
 ///
 /// List a collection of artifact attestations associated with any entry in a list of subject digests owned by an organization.
@@ -326,14 +268,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrgsListAttestationsBulkResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrgsListAttestationsBulkResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete attestations in bulk
 ///
 /// Delete artifact attestations in bulk by either subject digests or unique ID.
@@ -350,21 +287,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete attestations by subject digest
 ///
 /// Delete an artifact attestation by subject digest.
@@ -379,21 +307,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List attestation repositories
 ///
 /// List repositories owned by the provided organization that have created at least one attested artifact
@@ -426,14 +345,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => OrgsListAttestationRepositoriesResponse.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => OrgsListAttestationRepositoriesResponse.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Delete attestations by ID
 ///
 /// Delete an artifact attestation by unique ID that is associated with a repository owned by an org.
@@ -448,21 +362,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List attestations
 ///
 /// List a collection of artifact attestations with a given subject digest that are associated with repositories owned by an organization.
@@ -498,14 +403,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrgsListAttestationsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrgsListAttestationsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// List users blocked by an organization
 ///
 /// List the users blocked by an organization.
@@ -531,14 +431,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Check if a user is blocked by an organization
 ///
 /// Returns a 204 if the given user is blocked by the given organization. Returns a 404 if the organization is not blocking the user, or if the user account has been identified as spam by GitHub.
@@ -553,21 +448,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Block a user from an organization
 ///
 /// Blocks the given user on behalf of the specified organization and returns a 204. If the organization cannot block the given user a 422 is returned.
@@ -582,21 +468,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Unblock a user from an organization
 ///
 /// Unblocks the given user on behalf of the specified organization.
@@ -611,11 +488,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List failed organization invitations
 ///
 /// The return hash contains `failed_at` and `failed_reason` fields which represent the time at which the invitation failed and the reason for the failure.
@@ -641,24 +515,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => OrganizationInvitation.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => OrganizationInvitation.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List organization webhooks
 ///
 /// List webhooks for an organization.
@@ -689,24 +552,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => OrgHook.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => OrgHook.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create an organization webhook
 ///
 /// Create a hook that posts payloads in JSON format.
@@ -728,15 +580,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrgHook.fromJson(json as Map<String, dynamic>);
-  },
-  onError: OrgsCreateWebhookError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrgHook.fromJson(json as Map<String, dynamic>);}, onError: OrgsCreateWebhookError.parse, );}
 /// Get an organization webhook
 ///
 /// Returns a webhook configured in an organization. To get only the webhook
@@ -757,24 +603,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrgHook.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrgHook.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update an organization webhook
 ///
 /// Updates a webhook configured in an organization. When you update a webhook,
@@ -800,15 +635,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrgHook.fromJson(json as Map<String, dynamic>);
-  },
-  onError: OrgsUpdateWebhookError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrgHook.fromJson(json as Map<String, dynamic>);}, onError: OrgsUpdateWebhookError.parse, );}
 /// Delete an organization webhook
 ///
 /// Delete a webhook for an organization.
@@ -828,21 +657,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get a webhook configuration for an organization
 ///
 /// Returns the webhook configuration for an organization. To get more information about the webhook, including the `active` state and `events`, use "[Get an organization webhook ](/rest/orgs/webhooks#get-an-organization-webhook)."
@@ -862,14 +682,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return WebhookConfig.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  WebhookConfig.fromJson(json as Map<String, dynamic>);}, );}
 /// Update a webhook configuration for an organization
 ///
 /// Updates the webhook configuration for an organization. To update more information about the webhook, including the `active` state and `events`, use "[Update an organization webhook ](/rest/orgs/webhooks#update-an-organization-webhook)."
@@ -891,14 +706,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return WebhookConfig.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  WebhookConfig.fromJson(json as Map<String, dynamic>);}, );}
 /// List deliveries for an organization webhook
 ///
 /// Returns a list of webhook deliveries for a webhook configured in an organization.
@@ -929,15 +739,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => HookDeliveryItem.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: OrgsListWebhookDeliveriesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => HookDeliveryItem.fromJson(e as Map<String, dynamic>)).toList();}, onError: OrgsListWebhookDeliveriesError.parse, );}
 /// Get a webhook delivery for an organization webhook
 ///
 /// Returns a delivery for a webhook configured in an organization.
@@ -957,15 +761,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return HookDelivery.fromJson(json as Map<String, dynamic>);
-  },
-  onError: OrgsGetWebhookDeliveryError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  HookDelivery.fromJson(json as Map<String, dynamic>);}, onError: OrgsGetWebhookDeliveryError.parse, );}
 /// Redeliver a delivery for an organization webhook
 ///
 /// Redeliver a delivery for a webhook configured in an organization.
@@ -985,15 +783,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: OrgsRedeliverWebhookDeliveryError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: OrgsRedeliverWebhookDeliveryError.parse, );}
 /// Ping an organization webhook
 ///
 /// This will trigger a [ping event](https://docs.github.com/webhooks/#ping-event)
@@ -1014,21 +806,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get route stats by actor
 ///
 /// Get API request count statistics for an actor broken down by route within a specified time frame.
@@ -1069,14 +852,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => InsightsRouteStats2.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => InsightsRouteStats2.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Get subject stats
 ///
 /// Get API request statistics for all subjects within an organization within a specified time frame. Subjects can be users or GitHub Apps.
@@ -1117,14 +895,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => InsightsSubjectStats2.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => InsightsSubjectStats2.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Get summary stats
 ///
 /// Get overall statistics of API requests made within an organization by all users and apps within a specified time frame.
@@ -1148,14 +921,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return InsightsSummaryStats.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  InsightsSummaryStats.fromJson(json as Map<String, dynamic>);}, );}
 /// Get summary stats by user
 ///
 /// Get overall statistics of API requests within the organization for a user.
@@ -1179,14 +947,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return InsightsSummaryStats.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  InsightsSummaryStats.fromJson(json as Map<String, dynamic>);}, );}
 /// Get summary stats by actor
 ///
 /// Get overall statistics of API requests within the organization made by a specific actor. Actors can be GitHub App installations, OAuth apps or other tokens on behalf of a user.
@@ -1210,14 +973,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return InsightsSummaryStats.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  InsightsSummaryStats.fromJson(json as Map<String, dynamic>);}, );}
 /// Get time stats
 ///
 /// Get the number of API requests and rate-limited requests made within an organization over a specified time period.
@@ -1242,14 +1000,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => InsightsTimeStats2.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => InsightsTimeStats2.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Get time stats by user
 ///
 /// Get the number of API requests and rate-limited requests made within an organization by a specific user over a specified time period.
@@ -1274,14 +1027,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => InsightsTimeStats2.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => InsightsTimeStats2.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Get time stats by actor
 ///
 /// Get the number of API requests and rate-limited requests made within an organization by a specific actor within a specified time period.
@@ -1306,14 +1054,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => InsightsTimeStats2.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => InsightsTimeStats2.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Get user stats
 ///
 /// Get API usage statistics within an organization for a user broken down by the type of access.
@@ -1354,14 +1097,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => InsightsUserStats2.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => InsightsUserStats2.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List app installations for an organization
 ///
 /// Lists all GitHub Apps in an organization. The installation count includes
@@ -1392,14 +1130,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrgsListAppInstallationsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrgsListAppInstallationsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// List pending organization invitations
 ///
 /// The return hash contains a `role` field which refers to the Organization
@@ -1434,24 +1167,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => OrganizationInvitation.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => OrganizationInvitation.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create an organization invitation
 ///
 /// Invite people to an organization by using their GitHub user ID or their email address. In order to create invitations in an organization, the authenticated user must be an organization owner.
@@ -1471,15 +1193,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrganizationInvitation.fromJson(json as Map<String, dynamic>);
-  },
-  onError: OrgsCreateInvitationError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrganizationInvitation.fromJson(json as Map<String, dynamic>);}, onError: OrgsCreateInvitationError.parse, );}
 /// Cancel an organization invitation
 ///
 /// Cancel an organization invitation. In order to cancel an organization invitation, the authenticated user must be an organization owner.
@@ -1496,12 +1212,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: OrgsCancelInvitationError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: OrgsCancelInvitationError.parse, );}
 /// List organization invitation teams
 ///
 /// List all teams associated with an invitation. In order to see invitations in an organization, the authenticated user must be an organization owner.
@@ -1527,24 +1239,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Team.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List issue types for an organization
 ///
 /// Lists all issue types for an organization. OAuth app tokens and personal access tokens (classic) need the read:org scope to use this endpoint.
@@ -1559,24 +1260,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => e == null ? null : IssueType.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => e == null ? null : IssueType.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create issue type for an organization
 ///
 /// Create a new issue type for an organization.
@@ -1598,15 +1288,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json != null ? IssueType.fromJson(json as Map<String, dynamic>) : null;
-  },
-  onError: OrgsCreateIssueTypeError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json != null ? IssueType.fromJson(json as Map<String, dynamic>) : null;}, onError: OrgsCreateIssueTypeError.parse, );}
 /// Update issue type for an organization
 ///
 /// Updates an issue type for an organization.
@@ -1628,15 +1312,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json != null ? IssueType.fromJson(json as Map<String, dynamic>) : null;
-  },
-  onError: OrgsUpdateIssueTypeError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json != null ? IssueType.fromJson(json as Map<String, dynamic>) : null;}, onError: OrgsUpdateIssueTypeError.parse, );}
 /// Delete issue type for an organization
 ///
 /// Deletes an issue type for an organization.
@@ -1656,12 +1334,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: OrgsDeleteIssueTypeError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: OrgsDeleteIssueTypeError.parse, );}
 /// List organization members
 ///
 /// List all users who are members of an organization. If the authenticated user is also a member of this organization then both concealed and public members will be returned.
@@ -1693,24 +1367,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Check organization membership for a user
 ///
 /// Check if a user is, publicly or privately, a member of the organization.
@@ -1725,11 +1388,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Remove an organization member
 ///
 /// Removing a user from this list will remove them from all teams and they will no longer have any access to the organization's repositories.
@@ -1747,21 +1407,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get organization membership for a user
 ///
 /// In order to get a user's membership with an organization, the authenticated user must be an organization member. The `state` parameter in the response can be used to identify the user's membership status.
@@ -1776,24 +1427,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrgMembership.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrgMembership.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set organization membership for a user
 ///
 /// Only authenticated organization owners can add a member to the organization or update the member's role.
@@ -1818,15 +1458,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrgMembership.fromJson(json as Map<String, dynamic>);
-  },
-  onError: OrgsSetMembershipForUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrgMembership.fromJson(json as Map<String, dynamic>);}, onError: OrgsSetMembershipForUserError.parse, );}
 /// Remove organization membership for a user
 ///
 /// In order to remove a user's membership with an organization, the authenticated user must be an organization owner.
@@ -1846,21 +1480,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get all organization roles for an organization
 ///
 /// Lists the organization roles available in this organization. For more information on organization roles, see "[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles)."
@@ -1882,15 +1507,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrgsListOrgRolesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: OrgsListOrgRolesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrgsListOrgRolesResponse.fromJson(json as Map<String, dynamic>);}, onError: OrgsListOrgRolesError.parse, );}
 /// Remove all organization roles for a team
 ///
 /// Removes all assigned organization roles from a team. For more information on organization roles, see "[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles)."
@@ -1909,11 +1528,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Assign an organization role to a team
 ///
 /// Assigns an organization role to a team in an organization. For more information on organization roles, see "[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles)."
@@ -1932,11 +1548,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Remove an organization role from a team
 ///
 /// Removes an organization role from a team. For more information on organization roles, see "[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles)."
@@ -1955,11 +1568,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Remove all organization roles for a user
 ///
 /// Revokes all assigned organization roles from a user. For more information on organization roles, see "[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles)."
@@ -1978,11 +1588,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Assign an organization role to a user
 ///
 /// Assigns an organization role to a member of an organization. For more information on organization roles, see "[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles)."
@@ -2001,11 +1608,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Remove an organization role from a user
 ///
 /// Remove an organization role from a user. For more information on organization roles, see "[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles)."
@@ -2024,11 +1628,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get an organization role
 ///
 /// Gets an organization role that is available to this organization. For more information on organization roles, see "[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles)."
@@ -2050,15 +1651,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrganizationRole.fromJson(json as Map<String, dynamic>);
-  },
-  onError: OrgsGetOrgRoleError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrganizationRole.fromJson(json as Map<String, dynamic>);}, onError: OrgsGetOrgRoleError.parse, );}
 /// List teams that are assigned to an organization role
 ///
 /// Lists the teams that are assigned to an organization role. For more information on organization roles, see "[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles)."
@@ -2088,14 +1683,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => TeamRoleAssignment.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => TeamRoleAssignment.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List users that are assigned to an organization role
 ///
 /// Lists organization members that are assigned to an organization role. For more information on organization roles, see "[Using organization roles](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/using-organization-roles)."
@@ -2125,14 +1715,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => UserRoleAssignment.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => UserRoleAssignment.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List outside collaborators for an organization
 ///
 /// List all users who are outside collaborators of an organization.
@@ -2161,14 +1746,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Convert an organization member to outside collaborator
 ///
 /// When an organization member is converted to an outside collaborator, they'll only have access to the repositories that their current team membership allows. The user will no longer be a member of the organization. For more information, see "[Converting an organization member to an outside collaborator](https://docs.github.com/articles/converting-an-organization-member-to-an-outside-collaborator/)". Converting an organization member to an outside collaborator may be restricted by enterprise administrators. For more information, see "[Enforcing repository management policies in your enterprise](https://docs.github.com/admin/policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise#enforcing-a-policy-for-inviting-outside-collaborators-to-repositories)."
@@ -2185,12 +1765,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: OrgsConvertMemberToOutsideCollaboratorSuccess.parse,
-  onError: OrgsConvertMemberToOutsideCollaboratorError.parse,
-);
-}
+
+return   await execute(request, onSuccess: OrgsConvertMemberToOutsideCollaboratorSuccess.parse, onError: OrgsConvertMemberToOutsideCollaboratorError.parse, );}
 /// Remove outside collaborator from an organization
 ///
 /// Removing a user from this list will remove them from all the organization's repositories.
@@ -2205,21 +1781,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return OrgsRemoveOutsideCollaboratorResponse422.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  OrgsRemoveOutsideCollaboratorResponse422.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List requests to access organization resources with fine-grained personal access tokens
 ///
 /// Lists requests from organization members to access organization resources with a fine-grained personal access token.
@@ -2275,15 +1842,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => OrganizationProgrammaticAccessGrantRequest.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: OrgsListPatGrantRequestsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => OrganizationProgrammaticAccessGrantRequest.fromJson(e as Map<String, dynamic>)).toList();}, onError: OrgsListPatGrantRequestsError.parse, );}
 /// Review requests to access organization resources with fine-grained personal access tokens
 ///
 /// Approves or denies multiple pending requests to access organization resources via a fine-grained personal access token.
@@ -2302,15 +1863,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: OrgsReviewPatGrantRequestsInBulkError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: OrgsReviewPatGrantRequestsInBulkError.parse, );}
 /// Review a request to access organization resources with a fine-grained personal access token
 ///
 /// Approves or denies a pending request to access organization resources via a fine-grained personal access token.
@@ -2329,12 +1884,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: OrgsReviewPatGrantRequestError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: OrgsReviewPatGrantRequestError.parse, );}
 /// List repositories requested to be accessed by a fine-grained personal access token
 ///
 /// Lists the repositories a fine-grained personal access token request is requesting access to.
@@ -2362,24 +1913,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List fine-grained personal access tokens with access to organization resources
 ///
 /// Lists approved fine-grained personal access tokens owned by organization members that can access organization resources.
@@ -2435,15 +1975,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => OrganizationProgrammaticAccessGrant.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: OrgsListPatGrantsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => OrganizationProgrammaticAccessGrant.fromJson(e as Map<String, dynamic>)).toList();}, onError: OrgsListPatGrantsError.parse, );}
 /// Update the access to organization resources via fine-grained personal access tokens
 ///
 /// Updates the access organization members have to organization resources via fine-grained personal access tokens. Limited to revoking a token's existing access.
@@ -2462,15 +1996,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: OrgsUpdatePatAccessesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: OrgsUpdatePatAccessesError.parse, );}
 /// Update the access a fine-grained personal access token has to organization resources
 ///
 /// Updates the access an organization member has to organization resources via a fine-grained personal access token. Limited to revoking the token's existing access. Limited to revoking a token's existing access.
@@ -2489,12 +2017,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: OrgsUpdatePatAccessError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: OrgsUpdatePatAccessError.parse, );}
 /// List repositories a fine-grained personal access token has access to
 ///
 /// Lists the repositories a fine-grained personal access token has access to.
@@ -2522,24 +2046,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get all custom properties for an organization
 ///
 /// Gets all custom properties defined for an organization.
@@ -2555,24 +2068,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => CustomProperty.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => CustomProperty.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create or update custom properties for an organization
 ///
 /// Creates new or updates existing custom properties defined for an organization in a batch.
@@ -2597,24 +2099,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => CustomProperty.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => CustomProperty.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get a custom property for an organization
 ///
 /// Gets a custom property that is defined for an organization.
@@ -2630,24 +2121,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CustomProperty.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CustomProperty.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create or update a custom property for an organization
 ///
 /// Creates a new or updates an existing custom property that is defined for an organization.
@@ -2668,24 +2148,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CustomProperty.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CustomProperty.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Remove a custom property for an organization
 ///
 /// Removes a custom property that is defined for an organization.
@@ -2704,21 +2173,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List custom property values for organization repositories
 ///
 /// Lists organization repositories with all of their custom property values.
@@ -2748,24 +2208,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => OrgRepoCustomPropertyValues.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => OrgRepoCustomPropertyValues.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create or update custom property values for organization repositories
 ///
 /// Create new or update existing custom property values for repositories in a batch that belong to an organization.
@@ -2791,12 +2240,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesError.parse, );}
 /// List public organization members
 ///
 /// Members of an organization can choose to have their membership publicized or not.
@@ -2822,14 +2267,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Check public organization membership for a user
 ///
 /// Check if the provided user is a public member of the organization.
@@ -2844,11 +2284,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Set public organization membership for the authenticated user
 ///
 /// The user can publicize their own membership. (A user cannot publicize the membership for another user.)
@@ -2865,21 +2302,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Remove public organization membership for the authenticated user
 ///
 /// Removes the public membership for the authenticated user from the specified organization, unless public visibility is enforced by default.
@@ -2894,11 +2322,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get organization ruleset history
 ///
 /// Get the history of an organization ruleset.
@@ -2924,24 +2349,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => RulesetVersion.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => RulesetVersion.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get organization ruleset version
 ///
 /// Get a version of an organization ruleset.
@@ -2956,24 +2370,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RulesetVersionWithState.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RulesetVersionWithState.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get immutable releases settings for an organization
 ///
 /// Gets the immutable releases policy for repositories in an organization.
@@ -2990,14 +2393,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ImmutableReleasesOrganizationSettings.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ImmutableReleasesOrganizationSettings.fromJson(json as Map<String, dynamic>);}, );}
 /// Set immutable releases settings for an organization
 ///
 /// Sets the immutable releases policy for repositories in an organization.
@@ -3016,11 +2414,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List selected repositories for immutable releases enforcement
 ///
 /// List all of the repositories that have been selected for immutable releases enforcement in an organization.
@@ -3048,14 +2443,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrgsGetImmutableReleasesSettingsRepositoriesResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrgsGetImmutableReleasesSettingsRepositoriesResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Set selected repositories for immutable releases enforcement
 ///
 /// Replaces all repositories that have been selected for immutable releases enforcement in an organization. To use this endpoint, the organization immutable releases policy for `enforced_repositories` must be configured to `selected`.
@@ -3074,11 +2464,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Enable a selected repository for immutable releases in an organization
 ///
 /// Adds a repository to the list of selected repositories that are enforced for immutable releases in an organization. To use this endpoint, the organization immutable releases policy for `enforced_repositories` must be configured to `selected`.
@@ -3095,11 +2482,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Disable a selected repository for immutable releases in an organization
 ///
 /// Removes a repository from the list of selected repositories that are enforced for immutable releases in an organization. To use this endpoint, the organization immutable releases policy for `enforced_repositories` must be configured to `selected`.
@@ -3116,11 +2500,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List organization memberships for the authenticated user
 ///
 /// Lists all of the authenticated user's organization memberships.
@@ -3149,15 +2530,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => OrgMembership.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: OrgsListMembershipsForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => OrgMembership.fromJson(e as Map<String, dynamic>)).toList();}, onError: OrgsListMembershipsForAuthenticatedUserError.parse, );}
 /// Get an organization membership for the authenticated user
 ///
 /// If the authenticated user is an active or pending member of the organization, this endpoint will return the user's membership. If the authenticated user is not affiliated with the organization, a `404` is returned. This endpoint will return a `403` if the request is made by a GitHub App that is blocked by the organization.
@@ -3172,24 +2547,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrgMembership.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrgMembership.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update an organization membership for the authenticated user
 ///
 /// Converts the authenticated user to an active member of the organization, if that user has a pending invitation from the organization.
@@ -3206,15 +2570,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrgMembership.fromJson(json as Map<String, dynamic>);
-  },
-  onError: OrgsUpdateMembershipForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrgMembership.fromJson(json as Map<String, dynamic>);}, onError: OrgsUpdateMembershipForAuthenticatedUserError.parse, );}
 /// List organizations for the authenticated user
 ///
 /// List organizations for the authenticated user.
@@ -3245,15 +2603,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => OrganizationSimple.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: OrgsListForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => OrganizationSimple.fromJson(e as Map<String, dynamic>)).toList();}, onError: OrgsListForAuthenticatedUserError.parse, );}
 /// List organizations for a user
 ///
 /// List [public organization memberships](https://docs.github.com/articles/publicizing-or-concealing-organization-membership) for the specified user.
@@ -3281,12 +2633,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => OrganizationSimple.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => OrganizationSimple.fromJson(e as Map<String, dynamic>)).toList();}, );}
 }

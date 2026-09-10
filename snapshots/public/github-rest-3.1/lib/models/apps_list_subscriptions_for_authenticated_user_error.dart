@@ -6,17 +6,12 @@ sealed class AppsListSubscriptionsForAuthenticatedUserError {const AppsListSubsc
 /// Decodes the payload for its declared status and content type.
 static AppsListSubscriptionsForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const AppsListSubscriptionsForAuthenticatedUserError304();
-case 401:
+return  const AppsListSubscriptionsForAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return AppsListSubscriptionsForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  AppsListSubscriptionsForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return AppsListSubscriptionsForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return AppsListSubscriptionsForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  AppsListSubscriptionsForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  AppsListSubscriptionsForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class AppsListSubscriptionsForAuthenticatedUserError304 extends AppsListSubscriptionsForAuthenticatedUserError {const AppsListSubscriptionsForAuthenticatedUserError304();

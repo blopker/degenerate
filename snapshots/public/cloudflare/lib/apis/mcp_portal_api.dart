@@ -34,24 +34,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => ListPortalsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => ListPortalsResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return ListPortalsResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ListPortalsResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create a new MCP Portal
 ///
 /// `POST /accounts/{account_id}/access/ai-controls/mcp/portals`
@@ -66,24 +55,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return CreatePortalsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  CreatePortalsResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return CreatePortalsResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  CreatePortalsResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Read details of an MCP Portal
 ///
 /// `GET /accounts/{account_id}/access/ai-controls/mcp/portals/{id}`
@@ -96,24 +74,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return FetchGatewaysResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  FetchGatewaysResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return FetchGatewaysResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  FetchGatewaysResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update a MCP Portal
 ///
 /// `PUT /accounts/{account_id}/access/ai-controls/mcp/portals/{id}`
@@ -128,15 +95,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return UpdatePortalsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: UpdatePortalsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  UpdatePortalsResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: UpdatePortalsError.parse, );}
 /// Delete a MCP Portal
 ///
 /// `DELETE /accounts/{account_id}/access/ai-controls/mcp/portals/{id}`
@@ -149,22 +110,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return DeletePortalsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  DeletePortalsResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return DeletePortalsResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  DeletePortalsResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

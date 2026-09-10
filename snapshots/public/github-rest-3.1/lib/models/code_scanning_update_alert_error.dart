@@ -7,30 +7,20 @@ sealed class CodeScanningUpdateAlertError {const CodeScanningUpdateAlertError();
 static CodeScanningUpdateAlertError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return CodeScanningUpdateAlertError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  CodeScanningUpdateAlertError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return CodeScanningUpdateAlertError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  CodeScanningUpdateAlertError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return CodeScanningUpdateAlertError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 403:
+return  CodeScanningUpdateAlertError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }case 403:
 final json = jsonDecode(response.body);
-return CodeScanningUpdateAlertError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CodeScanningUpdateAlertError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CodeScanningUpdateAlertError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  CodeScanningUpdateAlertError404(BasicError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return CodeScanningUpdateAlertError503(CodeScanningUpdateAlertResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return CodeScanningUpdateAlertErrorUnknown(response);
-}
-}
+return  CodeScanningUpdateAlertError503(CodeScanningUpdateAlertResponse503.fromJson(json as Map<String, dynamic>));default:
+return  CodeScanningUpdateAlertErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class CodeScanningUpdateAlertError400ApplicationJson extends CodeScanningUpdateAlertError {const CodeScanningUpdateAlertError400ApplicationJson(this.data);

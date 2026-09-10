@@ -6,14 +6,10 @@ sealed class OrgsConvertMemberToOutsideCollaboratorError {const OrgsConvertMembe
 /// Decodes the payload for its declared status and content type.
 static OrgsConvertMemberToOutsideCollaboratorError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
-return const OrgsConvertMemberToOutsideCollaboratorError403();
-case 404:
+return  const OrgsConvertMemberToOutsideCollaboratorError403();case 404:
 final json = jsonDecode(response.body);
-return OrgsConvertMemberToOutsideCollaboratorError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return OrgsConvertMemberToOutsideCollaboratorErrorUnknown(response);
-}
-}
+return  OrgsConvertMemberToOutsideCollaboratorError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  OrgsConvertMemberToOutsideCollaboratorErrorUnknown(response); }}
 }
 /// Response for 403.
 final class OrgsConvertMemberToOutsideCollaboratorError403 extends OrgsConvertMemberToOutsideCollaboratorError {const OrgsConvertMemberToOutsideCollaboratorError403();

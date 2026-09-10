@@ -7,17 +7,12 @@ sealed class ReposCompareCommitsError {const ReposCompareCommitsError();
 static ReposCompareCommitsError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ReposCompareCommitsError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 500:
+return  ReposCompareCommitsError404(BasicError.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return ReposCompareCommitsError500(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  ReposCompareCommitsError500(BasicError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return ReposCompareCommitsError503(ReposCompareCommitsResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return ReposCompareCommitsErrorUnknown(response);
-}
-}
+return  ReposCompareCommitsError503(ReposCompareCommitsResponse503.fromJson(json as Map<String, dynamic>));default:
+return  ReposCompareCommitsErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class ReposCompareCommitsError404 extends ReposCompareCommitsError {const ReposCompareCommitsError404(this.data);

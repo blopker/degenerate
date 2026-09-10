@@ -7,14 +7,10 @@ sealed class PullsCreateReviewError {const PullsCreateReviewError();
 static PullsCreateReviewError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return PullsCreateReviewError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  PullsCreateReviewError403(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return PullsCreateReviewError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return PullsCreateReviewErrorUnknown(response);
-}
-}
+return  PullsCreateReviewError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));default:
+return  PullsCreateReviewErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class PullsCreateReviewError403 extends PullsCreateReviewError {const PullsCreateReviewError403(this.data);

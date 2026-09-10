@@ -7,20 +7,14 @@ sealed class AppsCreateInstallationAccessTokenError {const AppsCreateInstallatio
 static AppsCreateInstallationAccessTokenError parse(ApiResponse response) {switch (response.statusCode) {
 case 401:
 final json = jsonDecode(response.body);
-return AppsCreateInstallationAccessTokenError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  AppsCreateInstallationAccessTokenError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return AppsCreateInstallationAccessTokenError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  AppsCreateInstallationAccessTokenError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return AppsCreateInstallationAccessTokenError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  AppsCreateInstallationAccessTokenError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return AppsCreateInstallationAccessTokenError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return AppsCreateInstallationAccessTokenErrorUnknown(response);
-}
-}
+return  AppsCreateInstallationAccessTokenError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  AppsCreateInstallationAccessTokenErrorUnknown(response); }}
 }
 /// Response for 401 (application/json).
 final class AppsCreateInstallationAccessTokenError401 extends AppsCreateInstallationAccessTokenError {const AppsCreateInstallationAccessTokenError401(this.data);

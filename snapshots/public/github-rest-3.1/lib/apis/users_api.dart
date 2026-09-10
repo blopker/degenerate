@@ -22,15 +22,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UsersGetAuthenticatedResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: UsersGetAuthenticatedError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UsersGetAuthenticatedResponse.fromJson(json as Map<String, dynamic>);}, onError: UsersGetAuthenticatedError.parse, );}
 /// Update the authenticated user
 ///
 /// **Note:** If your email is set to private and you send an `email` parameter as part of this request to update your profile, your privacy settings are still enforced: the email address will not be displayed on your public profile or via the API.
@@ -47,15 +41,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PrivateUser.fromJson(json as Map<String, dynamic>);
-  },
-  onError: UsersUpdateAuthenticatedError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PrivateUser.fromJson(json as Map<String, dynamic>);}, onError: UsersUpdateAuthenticatedError.parse, );}
 /// List users blocked by the authenticated user
 ///
 /// List the users you've blocked on your personal account.
@@ -81,15 +69,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: UsersListBlockedByAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();}, onError: UsersListBlockedByAuthenticatedUserError.parse, );}
 /// Check if a user is blocked by the authenticated user
 ///
 /// Returns a 204 if the given user is blocked by the authenticated user. Returns a 404 if the given user is not blocked by the authenticated user, or if the given user account has been identified as spam by GitHub.
@@ -104,12 +86,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: UsersCheckBlockedError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: UsersCheckBlockedError.parse, );}
 /// Block a user
 ///
 /// Blocks the given user and returns a 204. If the authenticated user cannot block the given user a 422 is returned.
@@ -124,12 +102,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: UsersBlockError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: UsersBlockError.parse, );}
 /// Unblock a user
 ///
 /// Unblocks the given user and returns a 204.
@@ -144,12 +118,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: UsersUnblockError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: UsersUnblockError.parse, );}
 /// Set primary email visibility for the authenticated user
 ///
 /// Sets the visibility for your primary email addresses.
@@ -166,15 +136,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Email.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: UsersSetPrimaryEmailVisibilityForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Email.fromJson(e as Map<String, dynamic>)).toList();}, onError: UsersSetPrimaryEmailVisibilityForAuthenticatedUserError.parse, );}
 /// List email addresses for the authenticated user
 ///
 /// Lists all of your email addresses, and specifies which one is visible
@@ -203,15 +167,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Email.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: UsersListEmailsForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Email.fromJson(e as Map<String, dynamic>)).toList();}, onError: UsersListEmailsForAuthenticatedUserError.parse, );}
 /// Add an email address for the authenticated user
 ///
 /// OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
@@ -228,15 +186,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Email.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: UsersAddEmailForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Email.fromJson(e as Map<String, dynamic>)).toList();}, onError: UsersAddEmailForAuthenticatedUserError.parse, );}
 /// Delete an email address for the authenticated user
 ///
 /// OAuth app tokens and personal access tokens (classic) need the `user` scope to use this endpoint.
@@ -253,12 +205,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: UsersDeleteEmailForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: UsersDeleteEmailForAuthenticatedUserError.parse, );}
 /// List followers of the authenticated user
 ///
 /// Lists the people following the authenticated user.
@@ -284,15 +232,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: UsersListFollowersForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();}, onError: UsersListFollowersForAuthenticatedUserError.parse, );}
 /// List the people the authenticated user follows
 ///
 /// Lists the people who the authenticated user follows.
@@ -318,15 +260,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: UsersListFollowedByAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();}, onError: UsersListFollowedByAuthenticatedUserError.parse, );}
 /// Check if a person is followed by the authenticated user
 ///
 /// 
@@ -341,12 +277,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: UsersCheckPersonIsFollowedByAuthenticatedError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: UsersCheckPersonIsFollowedByAuthenticatedError.parse, );}
 /// Follow a user
 ///
 /// Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP verbs](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
@@ -363,12 +295,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: UsersFollowError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: UsersFollowError.parse, );}
 /// Unfollow a user
 ///
 /// OAuth app tokens and personal access tokens (classic) need the `user:follow` scope to use this endpoint.
@@ -383,12 +311,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: UsersUnfollowError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: UsersUnfollowError.parse, );}
 /// List GPG keys for the authenticated user
 ///
 /// Lists the current user's GPG keys.
@@ -416,15 +340,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => GpgKey.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: UsersListGpgKeysForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => GpgKey.fromJson(e as Map<String, dynamic>)).toList();}, onError: UsersListGpgKeysForAuthenticatedUserError.parse, );}
 /// Create a GPG key for the authenticated user
 ///
 /// Adds a GPG key to the authenticated user's GitHub account.
@@ -443,15 +361,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GpgKey.fromJson(json as Map<String, dynamic>);
-  },
-  onError: UsersCreateGpgKeyForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GpgKey.fromJson(json as Map<String, dynamic>);}, onError: UsersCreateGpgKeyForAuthenticatedUserError.parse, );}
 /// Get a GPG key for the authenticated user
 ///
 /// View extended details for a single GPG key.
@@ -468,15 +380,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GpgKey.fromJson(json as Map<String, dynamic>);
-  },
-  onError: UsersGetGpgKeyForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GpgKey.fromJson(json as Map<String, dynamic>);}, onError: UsersGetGpgKeyForAuthenticatedUserError.parse, );}
 /// Delete a GPG key for the authenticated user
 ///
 /// Removes a GPG key from the authenticated user's GitHub account.
@@ -493,12 +399,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: UsersDeleteGpgKeyForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: UsersDeleteGpgKeyForAuthenticatedUserError.parse, );}
 /// List public SSH keys for the authenticated user
 ///
 /// Lists the public SSH keys for the authenticated user's GitHub account.
@@ -526,15 +428,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Key.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: UsersListPublicSshKeysForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Key.fromJson(e as Map<String, dynamic>)).toList();}, onError: UsersListPublicSshKeysForAuthenticatedUserError.parse, );}
 /// Create a public SSH key for the authenticated user
 ///
 /// Adds a public SSH key to the authenticated user's GitHub account.
@@ -553,15 +449,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Key.fromJson(json as Map<String, dynamic>);
-  },
-  onError: UsersCreatePublicSshKeyForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Key.fromJson(json as Map<String, dynamic>);}, onError: UsersCreatePublicSshKeyForAuthenticatedUserError.parse, );}
 /// Get a public SSH key for the authenticated user
 ///
 /// View extended details for a single public SSH key.
@@ -578,15 +468,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Key.fromJson(json as Map<String, dynamic>);
-  },
-  onError: UsersGetPublicSshKeyForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Key.fromJson(json as Map<String, dynamic>);}, onError: UsersGetPublicSshKeyForAuthenticatedUserError.parse, );}
 /// Delete a public SSH key for the authenticated user
 ///
 /// Removes a public SSH key from the authenticated user's GitHub account.
@@ -603,12 +487,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: UsersDeletePublicSshKeyForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: UsersDeletePublicSshKeyForAuthenticatedUserError.parse, );}
 /// List public email addresses for the authenticated user
 ///
 /// Lists your publicly visible email address, which you can set with the
@@ -638,15 +518,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Email.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: UsersListPublicEmailsForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Email.fromJson(e as Map<String, dynamic>)).toList();}, onError: UsersListPublicEmailsForAuthenticatedUserError.parse, );}
 /// List social accounts for the authenticated user
 ///
 /// Lists all of your social accounts.
@@ -672,15 +546,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SocialAccount.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: UsersListSocialAccountsForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SocialAccount.fromJson(e as Map<String, dynamic>)).toList();}, onError: UsersListSocialAccountsForAuthenticatedUserError.parse, );}
 /// Add social accounts for the authenticated user
 ///
 /// Add one or more social accounts to the authenticated user's profile.
@@ -699,15 +567,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SocialAccount.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: UsersAddSocialAccountForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SocialAccount.fromJson(e as Map<String, dynamic>)).toList();}, onError: UsersAddSocialAccountForAuthenticatedUserError.parse, );}
 /// Delete social accounts for the authenticated user
 ///
 /// Deletes one or more social accounts from the authenticated user's profile.
@@ -726,12 +588,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: UsersDeleteSocialAccountForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: UsersDeleteSocialAccountForAuthenticatedUserError.parse, );}
 /// List SSH signing keys for the authenticated user
 ///
 /// Lists the SSH signing keys for the authenticated user's GitHub account.
@@ -759,15 +617,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SshSigningKey.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: UsersListSshSigningKeysForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SshSigningKey.fromJson(e as Map<String, dynamic>)).toList();}, onError: UsersListSshSigningKeysForAuthenticatedUserError.parse, );}
 /// Create a SSH signing key for the authenticated user
 ///
 /// Creates an SSH signing key for the authenticated user's GitHub account.
@@ -786,15 +638,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SshSigningKey.fromJson(json as Map<String, dynamic>);
-  },
-  onError: UsersCreateSshSigningKeyForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SshSigningKey.fromJson(json as Map<String, dynamic>);}, onError: UsersCreateSshSigningKeyForAuthenticatedUserError.parse, );}
 /// Get an SSH signing key for the authenticated user
 ///
 /// Gets extended details for an SSH signing key.
@@ -811,15 +657,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SshSigningKey.fromJson(json as Map<String, dynamic>);
-  },
-  onError: UsersGetSshSigningKeyForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SshSigningKey.fromJson(json as Map<String, dynamic>);}, onError: UsersGetSshSigningKeyForAuthenticatedUserError.parse, );}
 /// Delete an SSH signing key for the authenticated user
 ///
 /// Deletes an SSH signing key from the authenticated user's GitHub account.
@@ -836,12 +676,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: UsersDeleteSshSigningKeyForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: UsersDeleteSshSigningKeyForAuthenticatedUserError.parse, );}
 /// Get a user using their ID
 ///
 /// Provides publicly available information about someone with a GitHub account. This method takes their durable user `ID` instead of their `login`, which can change over time.
@@ -862,24 +698,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UsersGetByIdResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UsersGetByIdResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List users
 ///
 /// Lists all users, in the order that they signed up on GitHub. This list includes personal user accounts and organization accounts.
@@ -907,14 +732,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Get a user
 ///
 /// Provides publicly available information about someone with a GitHub account.
@@ -935,24 +755,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UsersGetByUsernameResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UsersGetByUsernameResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List attestations by bulk subject digests
 ///
 /// List a collection of artifact attestations associated with any entry in a list of subject digests owned by a user.
@@ -987,14 +796,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UsersListAttestationsBulkResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UsersListAttestationsBulkResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete attestations in bulk
 ///
 /// Delete artifact attestations in bulk by either subject digests or unique ID.
@@ -1011,21 +815,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete attestations by subject digest
 ///
 /// Delete an artifact attestation by subject digest.
@@ -1040,21 +835,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete attestations by ID
 ///
 /// Delete an artifact attestation by unique ID that is associated with a repository owned by a user.
@@ -1069,21 +855,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List attestations
 ///
 /// List a collection of artifact attestations with a given subject digest that are associated with repositories owned by a user.
@@ -1119,21 +896,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: UsersListAttestationsSuccess.parse,
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: UsersListAttestationsSuccess.parse, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List followers of a user
 ///
 /// Lists the people following the specified user.
@@ -1159,14 +927,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List the people a user follows
 ///
 /// Lists the people who the specified user follows.
@@ -1192,14 +955,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Check if a user follows another user
 ///
 /// 
@@ -1214,11 +972,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List GPG keys for a user
 ///
 /// Lists the GPG keys for a user. This information is accessible by anyone.
@@ -1244,14 +999,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => GpgKey.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => GpgKey.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Get contextual information for a user
 ///
 /// Provides hovercard information. You can find out more about someone in relation to their pull requests, issues, repositories, and organizations.
@@ -1281,15 +1031,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Hovercard.fromJson(json as Map<String, dynamic>);
-  },
-  onError: UsersGetContextForUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Hovercard.fromJson(json as Map<String, dynamic>);}, onError: UsersGetContextForUserError.parse, );}
 /// List public keys for a user
 ///
 /// Lists the _verified_ public SSH keys for a user. This is accessible by anyone.
@@ -1315,14 +1059,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => KeySimple.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => KeySimple.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List social accounts for a user
 ///
 /// Lists social media accounts for a user. This endpoint is accessible by anyone.
@@ -1348,14 +1087,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SocialAccount.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SocialAccount.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List SSH signing keys for a user
 ///
 /// Lists the SSH signing keys for a user. This operation is accessible by anyone.
@@ -1381,12 +1115,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SshSigningKey.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SshSigningKey.fromJson(e as Map<String, dynamic>)).toList();}, );}
 }

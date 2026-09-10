@@ -24,14 +24,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json != null ? Integration.fromJson(json as Map<String, dynamic>) : null;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json != null ? Integration.fromJson(json as Map<String, dynamic>) : null;}, );}
 /// Create a GitHub App from a manifest
 ///
 /// Use this endpoint to complete the handshake necessary when implementing the [GitHub App Manifest flow](https://docs.github.com/apps/building-github-apps/creating-github-apps-from-a-manifest/). When you create a GitHub App with the manifest flow, you receive a temporary `code` used to retrieve the GitHub App's `id`, `pem` (private key), and `webhook_secret`.
@@ -46,15 +41,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AppsCreateFromManifestResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: AppsCreateFromManifestError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AppsCreateFromManifestResponse.fromJson(json as Map<String, dynamic>);}, onError: AppsCreateFromManifestError.parse, );}
 /// Get a webhook configuration for an app
 ///
 /// Returns the webhook configuration for a GitHub App. For more information about configuring a webhook for your app, see "[Creating a GitHub App](/developers/apps/creating-a-github-app)."
@@ -71,14 +60,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return WebhookConfig.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  WebhookConfig.fromJson(json as Map<String, dynamic>);}, );}
 /// Update a webhook configuration for an app
 ///
 /// Updates the webhook configuration for a GitHub App. For more information about configuring a webhook for your app, see "[Creating a GitHub App](/developers/apps/creating-a-github-app)."
@@ -97,14 +81,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return WebhookConfig.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  WebhookConfig.fromJson(json as Map<String, dynamic>);}, );}
 /// List deliveries for an app webhook
 ///
 /// Returns a list of webhook deliveries for the webhook configured for a GitHub App.
@@ -132,15 +111,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => HookDeliveryItem.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: AppsListWebhookDeliveriesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => HookDeliveryItem.fromJson(e as Map<String, dynamic>)).toList();}, onError: AppsListWebhookDeliveriesError.parse, );}
 /// Get a delivery for an app webhook
 ///
 /// Returns a delivery for the webhook configured for a GitHub App.
@@ -157,15 +130,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return HookDelivery.fromJson(json as Map<String, dynamic>);
-  },
-  onError: AppsGetWebhookDeliveryError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  HookDelivery.fromJson(json as Map<String, dynamic>);}, onError: AppsGetWebhookDeliveryError.parse, );}
 /// Redeliver a delivery for an app webhook
 ///
 /// Redeliver a delivery for the webhook configured for a GitHub App.
@@ -182,15 +149,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: AppsRedeliverWebhookDeliveryError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: AppsRedeliverWebhookDeliveryError.parse, );}
 /// List installation requests for the authenticated app
 ///
 /// Lists all the pending installation requests for the authenticated GitHub App.
@@ -216,15 +177,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => IntegrationInstallationRequest.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: AppsListInstallationRequestsForAuthenticatedAppError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => IntegrationInstallationRequest.fromJson(e as Map<String, dynamic>)).toList();}, onError: AppsListInstallationRequestsForAuthenticatedAppError.parse, );}
 /// List installations for the authenticated app
 ///
 /// The permissions the installation has are included under the `permissions` key.
@@ -258,14 +213,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Installation.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Installation.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Get an installation for the authenticated app
 ///
 /// Enables an authenticated GitHub App to find an installation's information using the installation id.
@@ -282,24 +232,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Installation.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Installation.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete an installation for the authenticated app
 ///
 /// Uninstalls a GitHub App on a user, organization, or enterprise account. If you prefer to temporarily suspend an app's access to your account's resources, then we recommend the "[Suspend an app installation](https://docs.github.com/rest/apps/apps#suspend-an-app-installation)" endpoint.
@@ -316,21 +255,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create an installation access token for an app
 ///
 /// Creates an installation access token that enables a GitHub App to make authenticated API requests for the app's installation on an organization or individual account. Installation tokens expire one hour from the time you create them. Using an expired token produces a status code of `401 - Unauthorized`, and requires creating a new installation token. By default the installation token has access to all repositories that the installation can access.
@@ -353,15 +283,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return InstallationToken.fromJson(json as Map<String, dynamic>);
-  },
-  onError: AppsCreateInstallationAccessTokenError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  InstallationToken.fromJson(json as Map<String, dynamic>);}, onError: AppsCreateInstallationAccessTokenError.parse, );}
 /// Suspend an app installation
 ///
 /// Suspends a GitHub App on a user, organization, or enterprise account, which blocks the app from accessing the account's resources. When a GitHub App is suspended, the app's access to the GitHub API or webhook events is blocked for that account.
@@ -378,21 +302,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Unsuspend an app installation
 ///
 /// Removes a GitHub App installation suspension.
@@ -409,21 +324,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete an app authorization
 ///
 /// OAuth and GitHub application owners can revoke a grant for their application and a specific user. You must provide a valid OAuth `access_token` as an input parameter and the grant for the token's owner will be deleted.
@@ -441,21 +347,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Check a token
 ///
 /// OAuth applications and GitHub applications with OAuth authorizations can use this API method for checking OAuth token validity without exceeding the normal rate limits for failed login attempts. Authentication works differently with this particular endpoint. Invalid tokens will return `404 NOT FOUND`.
@@ -472,15 +369,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Authorization.fromJson(json as Map<String, dynamic>);
-  },
-  onError: AppsCheckTokenError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Authorization.fromJson(json as Map<String, dynamic>);}, onError: AppsCheckTokenError.parse, );}
 /// Reset a token
 ///
 /// OAuth applications and GitHub applications with OAuth authorizations can use this API method to reset a valid OAuth token without end-user involvement. Applications must save the "token" property in the response because changes take effect immediately. Invalid tokens will return `404 NOT FOUND`.
@@ -497,24 +388,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Authorization.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Authorization.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete an app token
 ///
 /// OAuth  or GitHub application owners can revoke a single token for an OAuth application or a GitHub application with an OAuth authorization.
@@ -531,21 +411,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create a scoped access token
 ///
 /// Use a non-scoped user access token to create a repository-scoped and/or permission-scoped user access token. You can specify
@@ -566,15 +437,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Authorization.fromJson(json as Map<String, dynamic>);
-  },
-  onError: AppsScopeTokenError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Authorization.fromJson(json as Map<String, dynamic>);}, onError: AppsScopeTokenError.parse, );}
 /// Get an app
 ///
 /// > `[!NOTE]`
@@ -590,24 +455,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json != null ? Integration.fromJson(json as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json != null ? Integration.fromJson(json as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List repositories accessible to the app installation
 ///
 /// List repositories that an app installation can access.
@@ -633,15 +487,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AppsListReposAccessibleToInstallationResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: AppsListReposAccessibleToInstallationError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AppsListReposAccessibleToInstallationResponse.fromJson(json as Map<String, dynamic>);}, onError: AppsListReposAccessibleToInstallationError.parse, );}
 /// Revoke an installation access token
 ///
 /// Revokes the installation token you're using to authenticate as an installation and access this endpoint.
@@ -658,11 +506,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a subscription plan for an account
 ///
 /// Shows whether the user or organization account actively subscribes to a plan listed by the authenticated GitHub App. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.
@@ -679,24 +524,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return MarketplacePurchase.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  MarketplacePurchase.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 401 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List plans
 ///
 /// Lists all plans that are part of your GitHub Marketplace listing.
@@ -724,24 +558,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => MarketplaceListingPlan.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => MarketplaceListingPlan.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 401 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List accounts for a plan
 ///
 /// Returns user and organization accounts associated with the specified plan, including free plans. For per-seat pricing, you see the list of accounts that have purchased the plan, including the number of seats purchased. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.
@@ -775,15 +598,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => MarketplacePurchase.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: AppsListAccountsForPlanError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => MarketplacePurchase.fromJson(e as Map<String, dynamic>)).toList();}, onError: AppsListAccountsForPlanError.parse, );}
 /// Get a subscription plan for an account (stubbed)
 ///
 /// Shows whether the user or organization account actively subscribes to a plan listed by the authenticated GitHub App. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.
@@ -800,15 +617,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return MarketplacePurchase.fromJson(json as Map<String, dynamic>);
-  },
-  onError: AppsGetSubscriptionPlanForAccountStubbedError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  MarketplacePurchase.fromJson(json as Map<String, dynamic>);}, onError: AppsGetSubscriptionPlanForAccountStubbedError.parse, );}
 /// List plans (stubbed)
 ///
 /// Lists all plans that are part of your GitHub Marketplace listing.
@@ -836,24 +647,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => MarketplaceListingPlan.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => MarketplaceListingPlan.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 401:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List accounts for a plan (stubbed)
 ///
 /// Returns repository and organization accounts associated with the specified plan, including free plans. For per-seat pricing, you see the list of accounts that have purchased the plan, including the number of seats purchased. When someone submits a plan change that won't be processed until the end of their billing cycle, you will also see the upcoming pending change.
@@ -887,24 +687,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => MarketplacePurchase.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => MarketplacePurchase.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 401:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get an organization installation for the authenticated app
 ///
 /// Enables an authenticated GitHub App to find the organization's installation information.
@@ -921,14 +710,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Installation.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Installation.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a repository installation for the authenticated app
 ///
 /// Enables an authenticated GitHub App to find the repository's installation information. The installation's account type will be either an organization or a user account, depending which account the repository belongs to.
@@ -945,24 +729,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Installation.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Installation.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 301 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List app installations accessible to the user access token
 ///
 /// Lists installations of your GitHub App that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access.
@@ -992,15 +765,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AppsListInstallationsForAuthenticatedUserResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: AppsListInstallationsForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AppsListInstallationsForAuthenticatedUserResponse.fromJson(json as Map<String, dynamic>);}, onError: AppsListInstallationsForAuthenticatedUserError.parse, );}
 /// List repositories accessible to the user access token
 ///
 /// List repositories that the authenticated user has explicit permission (`:read`, `:write`, or `:admin`) to access for an installation.
@@ -1030,15 +797,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AppsListInstallationReposForAuthenticatedUserResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: AppsListInstallationReposForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AppsListInstallationReposForAuthenticatedUserResponse.fromJson(json as Map<String, dynamic>);}, onError: AppsListInstallationReposForAuthenticatedUserError.parse, );}
 /// Add a repository to an app installation
 ///
 /// Add a single repository to an installation. The authenticated user must have admin access to the repository.
@@ -1055,12 +816,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: AppsAddRepoToInstallationForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: AppsAddRepoToInstallationForAuthenticatedUserError.parse, );}
 /// Remove a repository from an app installation
 ///
 /// Remove a single repository from an installation. The authenticated user must have admin access to the repository. The installation must have the `repository_selection` of `selected`.
@@ -1077,12 +834,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: AppsRemoveRepoFromInstallationForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: AppsRemoveRepoFromInstallationForAuthenticatedUserError.parse, );}
 /// List subscriptions for the authenticated user
 ///
 /// Lists the active subscriptions for the authenticated user.
@@ -1108,15 +861,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => UserMarketplacePurchase.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: AppsListSubscriptionsForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => UserMarketplacePurchase.fromJson(e as Map<String, dynamic>)).toList();}, onError: AppsListSubscriptionsForAuthenticatedUserError.parse, );}
 /// List subscriptions for the authenticated user (stubbed)
 ///
 /// Lists the active subscriptions for the authenticated user.
@@ -1142,15 +889,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => UserMarketplacePurchase.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: AppsListSubscriptionsForAuthenticatedUserStubbedError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => UserMarketplacePurchase.fromJson(e as Map<String, dynamic>)).toList();}, onError: AppsListSubscriptionsForAuthenticatedUserStubbedError.parse, );}
 /// Get a user installation for the authenticated app
 ///
 /// Enables an authenticated GitHub App to find the user’s installation information.
@@ -1167,12 +908,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Installation.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Installation.fromJson(json as Map<String, dynamic>);}, );}
 }

@@ -7,14 +7,10 @@ sealed class GitUpdateRefError {const GitUpdateRefError();
 static GitUpdateRefError parse(ApiResponse response) {switch (response.statusCode) {
 case 409:
 final json = jsonDecode(response.body);
-return GitUpdateRefError409(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  GitUpdateRefError409(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return GitUpdateRefError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return GitUpdateRefErrorUnknown(response);
-}
-}
+return  GitUpdateRefError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  GitUpdateRefErrorUnknown(response); }}
 }
 /// Response for 409 (application/json).
 final class GitUpdateRefError409 extends GitUpdateRefError {const GitUpdateRefError409(this.data);

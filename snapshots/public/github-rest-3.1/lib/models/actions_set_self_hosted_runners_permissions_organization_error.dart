@@ -7,20 +7,14 @@ sealed class ActionsSetSelfHostedRunnersPermissionsOrganizationError {const Acti
 static ActionsSetSelfHostedRunnersPermissionsOrganizationError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return ActionsSetSelfHostedRunnersPermissionsOrganizationError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  ActionsSetSelfHostedRunnersPermissionsOrganizationError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return ActionsSetSelfHostedRunnersPermissionsOrganizationError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 409:
+return  ActionsSetSelfHostedRunnersPermissionsOrganizationError404(BasicError.fromJson(json as Map<String, dynamic>));case 409:
 final json = jsonDecode(response.body);
-return ActionsSetSelfHostedRunnersPermissionsOrganizationError409(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ActionsSetSelfHostedRunnersPermissionsOrganizationError409(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ActionsSetSelfHostedRunnersPermissionsOrganizationError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ActionsSetSelfHostedRunnersPermissionsOrganizationErrorUnknown(response);
-}
-}
+return  ActionsSetSelfHostedRunnersPermissionsOrganizationError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ActionsSetSelfHostedRunnersPermissionsOrganizationErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class ActionsSetSelfHostedRunnersPermissionsOrganizationError403 extends ActionsSetSelfHostedRunnersPermissionsOrganizationError {const ActionsSetSelfHostedRunnersPermissionsOrganizationError403(this.data);

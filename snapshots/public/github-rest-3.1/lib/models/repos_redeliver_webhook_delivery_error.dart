@@ -7,24 +7,16 @@ sealed class ReposRedeliverWebhookDeliveryError {const ReposRedeliverWebhookDeli
 static ReposRedeliverWebhookDeliveryError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ReposRedeliverWebhookDeliveryError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  ReposRedeliverWebhookDeliveryError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return ReposRedeliverWebhookDeliveryError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  ReposRedeliverWebhookDeliveryError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return ReposRedeliverWebhookDeliveryError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 422:
+return  ReposRedeliverWebhookDeliveryError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }case 422:
 final json = jsonDecode(response.body);
-return ReposRedeliverWebhookDeliveryError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposRedeliverWebhookDeliveryErrorUnknown(response);
-}
-}
+return  ReposRedeliverWebhookDeliveryError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposRedeliverWebhookDeliveryErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class ReposRedeliverWebhookDeliveryError400ApplicationJson extends ReposRedeliverWebhookDeliveryError {const ReposRedeliverWebhookDeliveryError400ApplicationJson(this.data);

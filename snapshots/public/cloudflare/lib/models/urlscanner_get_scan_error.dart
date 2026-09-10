@@ -7,14 +7,10 @@ sealed class UrlscannerGetScanError {const UrlscannerGetScanError();
 static UrlscannerGetScanError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return UrlscannerGetScanError400(UrlscannerGetScanResponse4002.fromJson(json as Map<String, dynamic>));
-case 404:
+return  UrlscannerGetScanError400(UrlscannerGetScanResponse4002.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return UrlscannerGetScanError404(UrlscannerGetScanResponse4042.fromJson(json as Map<String, dynamic>));
-default:
-return UrlscannerGetScanErrorUnknown(response);
-}
-}
+return  UrlscannerGetScanError404(UrlscannerGetScanResponse4042.fromJson(json as Map<String, dynamic>));default:
+return  UrlscannerGetScanErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class UrlscannerGetScanError400 extends UrlscannerGetScanError {const UrlscannerGetScanError400(this.data);

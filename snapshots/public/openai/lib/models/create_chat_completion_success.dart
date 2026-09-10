@@ -7,21 +7,15 @@ sealed class CreateChatCompletionSuccess {const CreateChatCompletionSuccess();
 static CreateChatCompletionSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return CreateChatCompletionSuccess200ApplicationJson(CreateChatCompletionResponse.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
+return  CreateChatCompletionSuccess200ApplicationJson(CreateChatCompletionResponse.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into CreateChatCompletionStreamResponse
-throw UnsupportedError('Cannot decode text/event-stream response into CreateChatCompletionStreamResponse');
-}
-final json = jsonDecode(response.body);
-return CreateChatCompletionSuccess200ApplicationJson(CreateChatCompletionResponse.fromJson(json as Map<String, dynamic>));
 
-default:
-return CreateChatCompletionSuccessUnknown(response);
-}
-}
+throw  UnsupportedError('Cannot decode text/event-stream response into CreateChatCompletionStreamResponse'); } else {
+final json = jsonDecode(response.body);
+return  CreateChatCompletionSuccess200ApplicationJson(CreateChatCompletionResponse.fromJson(json as Map<String, dynamic>)); }default:
+return  CreateChatCompletionSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class CreateChatCompletionSuccess200ApplicationJson extends CreateChatCompletionSuccess {const CreateChatCompletionSuccess200ApplicationJson(this.data);

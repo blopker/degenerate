@@ -46,24 +46,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetRobotsTxtTopDomainCategoriesByFilesParsedResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get top user agents on robots.txt files
 ///
 /// Retrieves the top user agents on robots.txt files.
@@ -110,22 +99,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  RadarGetRobotsTxtTopUserAgentsByDirectiveResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return RadarGetRobotsTxtTopUserAgentsByDirectiveResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RadarGetRobotsTxtTopUserAgentsByDirectiveResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

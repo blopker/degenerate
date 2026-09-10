@@ -43,14 +43,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListCallRecordingResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListCallRecordingResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a recording for the call
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings.json`
@@ -78,21 +73,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final json = jsonDecode(response.body);
-return AccountCallCallRecording.fromJson(json as Map<String, dynamic>);
-default:
+return  AccountCallCallRecording.fromJson(json as Map<String, dynamic>);default:
 final json = jsonDecode(response.body);
-return AccountCallCallRecording.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  AccountCallCallRecording.fromJson(json as Map<String, dynamic>); }}, );}
 /// Fetch an instance of a recording for a call
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings/{Sid}.json`
@@ -105,14 +92,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountCallCallRecording.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountCallCallRecording.fromJson(json as Map<String, dynamic>);}, );}
 /// Changes the status of the recording to paused, stopped, or in-progress. Note: Pass `Twilio.CURRENT` instead of recording sid to reference current active recording.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings/{Sid}.json`
@@ -131,24 +113,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountCallCallRecording.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountCallCallRecording.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 408:
 final json = jsonDecode(response.body);
-return UpdateCallRecordingResponse408.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  UpdateCallRecordingResponse408.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete a recording from your account
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Recordings/{Sid}.json`
@@ -161,9 +132,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

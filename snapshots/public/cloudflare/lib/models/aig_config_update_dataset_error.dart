@@ -7,14 +7,10 @@ sealed class AigConfigUpdateDatasetError {const AigConfigUpdateDatasetError();
 static AigConfigUpdateDatasetError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return AigConfigUpdateDatasetError400(AigConfigUpdateDatasetResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  AigConfigUpdateDatasetError400(AigConfigUpdateDatasetResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return AigConfigUpdateDatasetError404(AigConfigUpdateDatasetResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return AigConfigUpdateDatasetErrorUnknown(response);
-}
-}
+return  AigConfigUpdateDatasetError404(AigConfigUpdateDatasetResponse404.fromJson(json as Map<String, dynamic>));default:
+return  AigConfigUpdateDatasetErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class AigConfigUpdateDatasetError400 extends AigConfigUpdateDatasetError {const AigConfigUpdateDatasetError400(this.data);

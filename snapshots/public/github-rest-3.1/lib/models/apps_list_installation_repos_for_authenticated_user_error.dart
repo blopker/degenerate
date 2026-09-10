@@ -6,17 +6,12 @@ sealed class AppsListInstallationReposForAuthenticatedUserError {const AppsListI
 /// Decodes the payload for its declared status and content type.
 static AppsListInstallationReposForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const AppsListInstallationReposForAuthenticatedUserError304();
-case 403:
+return  const AppsListInstallationReposForAuthenticatedUserError304();case 403:
 final json = jsonDecode(response.body);
-return AppsListInstallationReposForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  AppsListInstallationReposForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return AppsListInstallationReposForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return AppsListInstallationReposForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  AppsListInstallationReposForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  AppsListInstallationReposForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class AppsListInstallationReposForAuthenticatedUserError304 extends AppsListInstallationReposForAuthenticatedUserError {const AppsListInstallationReposForAuthenticatedUserError304();

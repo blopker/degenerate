@@ -7,17 +7,12 @@ sealed class PatchTagCategoryUpdateError {const PatchTagCategoryUpdateError();
 static PatchTagCategoryUpdateError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PatchTagCategoryUpdateError400(PatchTagCategoryUpdateResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  PatchTagCategoryUpdateError400(PatchTagCategoryUpdateResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return PatchTagCategoryUpdateError404(PatchTagCategoryUpdateResponse404.fromJson(json as Map<String, dynamic>));
-case 409:
+return  PatchTagCategoryUpdateError404(PatchTagCategoryUpdateResponse404.fromJson(json as Map<String, dynamic>));case 409:
 final json = jsonDecode(response.body);
-return PatchTagCategoryUpdateError409(PatchTagCategoryUpdateResponse409.fromJson(json as Map<String, dynamic>));
-default:
-return PatchTagCategoryUpdateErrorUnknown(response);
-}
-}
+return  PatchTagCategoryUpdateError409(PatchTagCategoryUpdateResponse409.fromJson(json as Map<String, dynamic>));default:
+return  PatchTagCategoryUpdateErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class PatchTagCategoryUpdateError400 extends PatchTagCategoryUpdateError {const PatchTagCategoryUpdateError400(this.data);

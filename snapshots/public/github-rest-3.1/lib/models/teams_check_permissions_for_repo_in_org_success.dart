@@ -7,13 +7,9 @@ sealed class TeamsCheckPermissionsForRepoInOrgSuccess {const TeamsCheckPermissio
 static TeamsCheckPermissionsForRepoInOrgSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final json = jsonDecode(response.body);
-return TeamsCheckPermissionsForRepoInOrgSuccess200(TeamRepository.fromJson(json as Map<String, dynamic>));
-case 204:
-return const TeamsCheckPermissionsForRepoInOrgSuccess204();
-default:
-return TeamsCheckPermissionsForRepoInOrgSuccessUnknown(response);
-}
-}
+return  TeamsCheckPermissionsForRepoInOrgSuccess200(TeamRepository.fromJson(json as Map<String, dynamic>));case 204:
+return  const TeamsCheckPermissionsForRepoInOrgSuccess204();default:
+return  TeamsCheckPermissionsForRepoInOrgSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class TeamsCheckPermissionsForRepoInOrgSuccess200 extends TeamsCheckPermissionsForRepoInOrgSuccess {const TeamsCheckPermissionsForRepoInOrgSuccess200(this.data);

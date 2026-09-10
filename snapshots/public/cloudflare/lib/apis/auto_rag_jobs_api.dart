@@ -31,15 +31,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => AutoragConfigListJobsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: AutoragConfigListJobsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => AutoragConfigListJobsResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, onError: AutoragConfigListJobsError.parse, );}
 /// Get a Job Details
 ///
 /// `GET /accounts/{account_id}/autorag/rags/{id}/jobs/{job_id}`
@@ -52,15 +46,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AutoragConfigGetJobResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: AutoragConfigGetJobError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AutoragConfigGetJobResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: AutoragConfigGetJobError.parse, );}
 /// List Job Logs
 ///
 /// `GET /accounts/{account_id}/autorag/rags/{id}/jobs/{job_id}/logs`
@@ -84,13 +72,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => AutoragConfigListJobLogsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: AutoragConfigListJobLogsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => AutoragConfigListJobLogsResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, onError: AutoragConfigListJobLogsError.parse, );}
 }

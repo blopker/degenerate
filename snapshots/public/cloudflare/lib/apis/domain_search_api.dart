@@ -39,25 +39,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return QueryMatch.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  QueryMatch.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-default:
+return  ErrorModel.fromJson(json as Map<String, dynamic>);default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Download matches for string queries by ID
 ///
 /// Return matches as CSV for string queries based on ID
@@ -89,25 +78,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return QueryMatch.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  QueryMatch.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-default:
+return  ErrorModel.fromJson(json as Map<String, dynamic>);default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Read string queries by ID
 ///
 /// Return string queries based on ID
@@ -122,22 +100,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create new saved string queries
 ///
 /// Return a success message after creating new saved string queries
@@ -168,22 +136,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-default:
+return  ErrorModel.fromJson(json as Map<String, dynamic>);default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update saved string queries by ID
 ///
 /// Return a success message after updating saved string queries by ID
@@ -198,22 +157,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete saved string queries by ID
 ///
 /// Return a success message after deleting saved string queries by ID
@@ -242,22 +191,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-default:
+return  ErrorModel.fromJson(json as Map<String, dynamic>);default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create new saved string queries in bulk
 ///
 /// Return a success message after creating new saved string queries in bulk
@@ -274,22 +214,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-default:
+return  ErrorModel.fromJson(json as Map<String, dynamic>);default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Create new string queries
 ///
 /// Return new string queries
@@ -304,22 +235,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 /// Read the total number of saved string queries
 ///
 /// Return the total number of saved string queries
@@ -334,20 +255,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ErrorModel.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 }

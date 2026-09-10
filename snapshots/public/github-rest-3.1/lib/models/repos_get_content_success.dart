@@ -7,21 +7,15 @@ sealed class ReposGetContentSuccess {const ReposGetContentSuccess();
 static ReposGetContentSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ReposGetContentSuccess200ApplicationJson(ReposGetContentResponse.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.github.object')) {
+return  ReposGetContentSuccess200ApplicationJson(ReposGetContentResponse.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/vnd.github.object', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.github.object response into ContentTree
-throw UnsupportedError('Cannot decode application/vnd.github.object response into ContentTree');
-}
-final json = jsonDecode(response.body);
-return ReposGetContentSuccess200ApplicationJson(ReposGetContentResponse.fromJson(json as Map<String, dynamic>));
 
-default:
-return ReposGetContentSuccessUnknown(response);
-}
-}
+throw  UnsupportedError('Cannot decode application/vnd.github.object response into ContentTree'); } else {
+final json = jsonDecode(response.body);
+return  ReposGetContentSuccess200ApplicationJson(ReposGetContentResponse.fromJson(json as Map<String, dynamic>)); }default:
+return  ReposGetContentSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class ReposGetContentSuccess200ApplicationJson extends ReposGetContentSuccess {const ReposGetContentSuccess200ApplicationJson(this.data);

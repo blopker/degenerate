@@ -7,26 +7,18 @@ sealed class EditWorkerError {const EditWorkerError();
 static EditWorkerError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return EditWorkerError400(EditWorkerResponse400.fromJson(json as Map<String, dynamic>));
-case 401:
+return  EditWorkerError400(EditWorkerResponse400.fromJson(json as Map<String, dynamic>));case 401:
 final json = jsonDecode(response.body);
-return EditWorkerError401(EditWorkerResponse401.fromJson(json as Map<String, dynamic>));
-case 403:
+return  EditWorkerError401(EditWorkerResponse401.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return EditWorkerError403(EditWorkerResponse403.fromJson(json as Map<String, dynamic>));
-case 404:
+return  EditWorkerError403(EditWorkerResponse403.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return EditWorkerError404(EditWorkerResponse404.fromJson(json as Map<String, dynamic>));
-case 409:
+return  EditWorkerError404(EditWorkerResponse404.fromJson(json as Map<String, dynamic>));case 409:
 final json = jsonDecode(response.body);
-return EditWorkerError409(EditWorkerResponse409.fromJson(json as Map<String, dynamic>));
-case 500:
+return  EditWorkerError409(EditWorkerResponse409.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return EditWorkerError500(EditWorkerResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return EditWorkerErrorUnknown(response);
-}
-}
+return  EditWorkerError500(EditWorkerResponse500.fromJson(json as Map<String, dynamic>));default:
+return  EditWorkerErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class EditWorkerError400 extends EditWorkerError {const EditWorkerError400(this.data);

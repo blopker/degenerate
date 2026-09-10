@@ -37,14 +37,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListApplicationResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListApplicationResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a new application within your account
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Applications.json`
@@ -92,14 +87,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountApplication.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountApplication.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch the application specified by the provided sid
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Applications/{Sid}.json`
@@ -112,14 +102,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountApplication.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountApplication.fromJson(json as Map<String, dynamic>);}, );}
 /// Updates the application's properties
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Applications/{Sid}.json`
@@ -167,14 +152,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountApplication.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountApplication.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete the application by the specified application sid
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Applications/{Sid}.json`
@@ -187,9 +167,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

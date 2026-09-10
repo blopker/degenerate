@@ -36,15 +36,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => BaseGist.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: GistsListError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => BaseGist.fromJson(e as Map<String, dynamic>)).toList();}, onError: GistsListError.parse, );}
 /// Create a gist
 ///
 /// Allows you to add a new gist with one or more files.
@@ -64,15 +58,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GistSimple.fromJson(json as Map<String, dynamic>);
-  },
-  onError: GistsCreateError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GistSimple.fromJson(json as Map<String, dynamic>);}, onError: GistsCreateError.parse, );}
 /// List public gists
 ///
 /// List public gists sorted by most recently updated to least recently updated.
@@ -103,15 +91,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => BaseGist.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: GistsListPublicError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => BaseGist.fromJson(e as Map<String, dynamic>)).toList();}, onError: GistsListPublicError.parse, );}
 /// List starred gists
 ///
 /// List the authenticated user's starred gists:
@@ -140,15 +122,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => BaseGist.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: GistsListStarredError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => BaseGist.fromJson(e as Map<String, dynamic>)).toList();}, onError: GistsListStarredError.parse, );}
 /// Get a gist
 ///
 /// Gets a specified gist.
@@ -168,15 +144,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GistSimple.fromJson(json as Map<String, dynamic>);
-  },
-  onError: GistsGetError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GistSimple.fromJson(json as Map<String, dynamic>);}, onError: GistsGetError.parse, );}
 /// Update a gist
 ///
 /// Allows you to update a gist's description and to update, delete, or rename gist files. Files
@@ -202,15 +172,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GistSimple.fromJson(json as Map<String, dynamic>);
-  },
-  onError: GistsUpdateError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GistSimple.fromJson(json as Map<String, dynamic>);}, onError: GistsUpdateError.parse, );}
 /// Delete a gist
 ///
 /// 
@@ -225,12 +189,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: GistsDeleteError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: GistsDeleteError.parse, );}
 /// List gist comments
 ///
 /// Lists the comments on a gist.
@@ -261,15 +221,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => GistComment.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: GistsListCommentsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => GistComment.fromJson(e as Map<String, dynamic>)).toList();}, onError: GistsListCommentsError.parse, );}
 /// Create a gist comment
 ///
 /// Creates a comment on a gist.
@@ -291,15 +245,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GistComment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: GistsCreateCommentError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GistComment.fromJson(json as Map<String, dynamic>);}, onError: GistsCreateCommentError.parse, );}
 /// Get a gist comment
 ///
 /// Gets a comment on a gist.
@@ -319,15 +267,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GistComment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: GistsGetCommentError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GistComment.fromJson(json as Map<String, dynamic>);}, onError: GistsGetCommentError.parse, );}
 /// Update a gist comment
 ///
 /// Updates a comment on a gist.
@@ -349,24 +291,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GistComment.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GistComment.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete a gist comment
 ///
 /// 
@@ -381,12 +312,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: GistsDeleteCommentError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: GistsDeleteCommentError.parse, );}
 /// List gist commits
 ///
 /// 
@@ -412,15 +339,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => GistCommit.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: GistsListCommitsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => GistCommit.fromJson(e as Map<String, dynamic>)).toList();}, onError: GistsListCommitsError.parse, );}
 /// List gist forks
 ///
 /// 
@@ -446,15 +367,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => GistSimple.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: GistsListForksError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => GistSimple.fromJson(e as Map<String, dynamic>)).toList();}, onError: GistsListForksError.parse, );}
 /// Fork a gist
 ///
 /// 
@@ -469,15 +384,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BaseGist.fromJson(json as Map<String, dynamic>);
-  },
-  onError: GistsForkError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BaseGist.fromJson(json as Map<String, dynamic>);}, onError: GistsForkError.parse, );}
 /// Check if a gist is starred
 ///
 /// 
@@ -492,12 +401,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: GistsCheckIsStarredError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: GistsCheckIsStarredError.parse, );}
 /// Star a gist
 ///
 /// Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
@@ -512,12 +417,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: GistsStarError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: GistsStarError.parse, );}
 /// Unstar a gist
 ///
 /// 
@@ -532,12 +433,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: GistsUnstarError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: GistsUnstarError.parse, );}
 /// Get a gist revision
 ///
 /// Gets a specified gist revision.
@@ -557,15 +454,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GistSimple.fromJson(json as Map<String, dynamic>);
-  },
-  onError: GistsGetRevisionError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GistSimple.fromJson(json as Map<String, dynamic>);}, onError: GistsGetRevisionError.parse, );}
 /// List gists for a user
 ///
 /// Lists public gists for the specified user:
@@ -594,22 +485,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => BaseGist.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => BaseGist.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

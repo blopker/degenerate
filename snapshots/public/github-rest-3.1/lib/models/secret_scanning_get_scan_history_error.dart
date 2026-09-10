@@ -6,14 +6,10 @@ sealed class SecretScanningGetScanHistoryError {const SecretScanningGetScanHisto
 /// Decodes the payload for its declared status and content type.
 static SecretScanningGetScanHistoryError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
-return const SecretScanningGetScanHistoryError404();
-case 503:
+return  const SecretScanningGetScanHistoryError404();case 503:
 final json = jsonDecode(response.body);
-return SecretScanningGetScanHistoryError503(SecretScanningGetScanHistoryResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return SecretScanningGetScanHistoryErrorUnknown(response);
-}
-}
+return  SecretScanningGetScanHistoryError503(SecretScanningGetScanHistoryResponse503.fromJson(json as Map<String, dynamic>));default:
+return  SecretScanningGetScanHistoryErrorUnknown(response); }}
 }
 /// Response for 404.
 final class SecretScanningGetScanHistoryError404 extends SecretScanningGetScanHistoryError {const SecretScanningGetScanHistoryError404();

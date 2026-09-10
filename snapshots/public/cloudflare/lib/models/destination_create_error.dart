@@ -7,17 +7,12 @@ sealed class DestinationCreateError {const DestinationCreateError();
 static DestinationCreateError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return DestinationCreateError400(DestinationCreateResponse400.fromJson(json as Map<String, dynamic>));
-case 401:
+return  DestinationCreateError400(DestinationCreateResponse400.fromJson(json as Map<String, dynamic>));case 401:
 final json = jsonDecode(response.body);
-return DestinationCreateError401(DestinationCreateResponse401.fromJson(json as Map<String, dynamic>));
-case 500:
+return  DestinationCreateError401(DestinationCreateResponse401.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return DestinationCreateError500(DestinationCreateResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return DestinationCreateErrorUnknown(response);
-}
-}
+return  DestinationCreateError500(DestinationCreateResponse500.fromJson(json as Map<String, dynamic>));default:
+return  DestinationCreateErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class DestinationCreateError400 extends DestinationCreateError {const DestinationCreateError400(this.data);

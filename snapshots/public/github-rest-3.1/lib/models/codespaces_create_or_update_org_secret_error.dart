@@ -7,14 +7,10 @@ sealed class CodespacesCreateOrUpdateOrgSecretError {const CodespacesCreateOrUpd
 static CodespacesCreateOrUpdateOrgSecretError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return CodespacesCreateOrUpdateOrgSecretError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  CodespacesCreateOrUpdateOrgSecretError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return CodespacesCreateOrUpdateOrgSecretError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return CodespacesCreateOrUpdateOrgSecretErrorUnknown(response);
-}
-}
+return  CodespacesCreateOrUpdateOrgSecretError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  CodespacesCreateOrUpdateOrgSecretErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class CodespacesCreateOrUpdateOrgSecretError404 extends CodespacesCreateOrUpdateOrgSecretError {const CodespacesCreateOrUpdateOrgSecretError404(this.data);

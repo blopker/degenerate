@@ -7,14 +7,10 @@ sealed class AutoragConfigListJobLogsError {const AutoragConfigListJobLogsError(
 static AutoragConfigListJobLogsError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return AutoragConfigListJobLogsError404(AutoragConfigListJobLogsResponse404.fromJson(json as Map<String, dynamic>));
-case 503:
+return  AutoragConfigListJobLogsError404(AutoragConfigListJobLogsResponse404.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return AutoragConfigListJobLogsError503(AutoragConfigListJobLogsResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return AutoragConfigListJobLogsErrorUnknown(response);
-}
-}
+return  AutoragConfigListJobLogsError503(AutoragConfigListJobLogsResponse503.fromJson(json as Map<String, dynamic>));default:
+return  AutoragConfigListJobLogsErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class AutoragConfigListJobLogsError404 extends AutoragConfigListJobLogsError {const AutoragConfigListJobLogsError404(this.data);

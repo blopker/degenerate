@@ -7,20 +7,14 @@ sealed class BrapiPostContentError {const BrapiPostContentError();
 static BrapiPostContentError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return BrapiPostContentError400(BrapiPostContentResponse400.fromJson(json as Map<String, dynamic>));
-case 422:
+return  BrapiPostContentError400(BrapiPostContentResponse400.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return BrapiPostContentError422(BrapiPostContentResponse422.fromJson(json as Map<String, dynamic>));
-case 429:
+return  BrapiPostContentError422(BrapiPostContentResponse422.fromJson(json as Map<String, dynamic>));case 429:
 final json = jsonDecode(response.body);
-return BrapiPostContentError429(BrapiPostContentResponse429.fromJson(json as Map<String, dynamic>));
-case 500:
+return  BrapiPostContentError429(BrapiPostContentResponse429.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return BrapiPostContentError500(BrapiPostContentResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return BrapiPostContentErrorUnknown(response);
-}
-}
+return  BrapiPostContentError500(BrapiPostContentResponse500.fromJson(json as Map<String, dynamic>));default:
+return  BrapiPostContentErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class BrapiPostContentError400 extends BrapiPostContentError {const BrapiPostContentError400(this.data);

@@ -6,23 +6,16 @@ sealed class UsersUpdateAuthenticatedError {const UsersUpdateAuthenticatedError(
 /// Decodes the payload for its declared status and content type.
 static UsersUpdateAuthenticatedError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const UsersUpdateAuthenticatedError304();
-case 401:
+return  const UsersUpdateAuthenticatedError304();case 401:
 final json = jsonDecode(response.body);
-return UsersUpdateAuthenticatedError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  UsersUpdateAuthenticatedError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return UsersUpdateAuthenticatedError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  UsersUpdateAuthenticatedError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return UsersUpdateAuthenticatedError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  UsersUpdateAuthenticatedError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return UsersUpdateAuthenticatedError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return UsersUpdateAuthenticatedErrorUnknown(response);
-}
-}
+return  UsersUpdateAuthenticatedError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  UsersUpdateAuthenticatedErrorUnknown(response); }}
 }
 /// Response for 304.
 final class UsersUpdateAuthenticatedError304 extends UsersUpdateAuthenticatedError {const UsersUpdateAuthenticatedError304();

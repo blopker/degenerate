@@ -7,14 +7,10 @@ sealed class AccountLoadBalancerMonitorGroupsPatchMonitorGroupError {const Accou
 static AccountLoadBalancerMonitorGroupsPatchMonitorGroupError parse(ApiResponse response) {switch (response.statusCode) {
 case >= 400 && < 412 || >= 413 && < 500:
 final json = jsonDecode(response.body);
-return AccountLoadBalancerMonitorGroupsPatchMonitorGroupError4xx(AccountLoadBalancerMonitorGroupsPatchMonitorGroupResponse4xx.fromJson(json as Map<String, dynamic>));
-case 412:
+return  AccountLoadBalancerMonitorGroupsPatchMonitorGroupError4xx(AccountLoadBalancerMonitorGroupsPatchMonitorGroupResponse4xx.fromJson(json as Map<String, dynamic>));case 412:
 final json = jsonDecode(response.body);
-return AccountLoadBalancerMonitorGroupsPatchMonitorGroupError412(AccountLoadBalancerMonitorGroupsPatchMonitorGroupResponse412.fromJson(json as Map<String, dynamic>));
-default:
-return AccountLoadBalancerMonitorGroupsPatchMonitorGroupErrorUnknown(response);
-}
-}
+return  AccountLoadBalancerMonitorGroupsPatchMonitorGroupError412(AccountLoadBalancerMonitorGroupsPatchMonitorGroupResponse412.fromJson(json as Map<String, dynamic>));default:
+return  AccountLoadBalancerMonitorGroupsPatchMonitorGroupErrorUnknown(response); }}
 }
 /// Response for 4xx (application/json).
 final class AccountLoadBalancerMonitorGroupsPatchMonitorGroupError4xx extends AccountLoadBalancerMonitorGroupsPatchMonitorGroupError {const AccountLoadBalancerMonitorGroupsPatchMonitorGroupError4xx(this.data);

@@ -7,14 +7,10 @@ sealed class PullsCreateError {const PullsCreateError();
 static PullsCreateError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return PullsCreateError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  PullsCreateError403(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return PullsCreateError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return PullsCreateErrorUnknown(response);
-}
-}
+return  PullsCreateError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  PullsCreateErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class PullsCreateError403 extends PullsCreateError {const PullsCreateError403(this.data);

@@ -7,14 +7,10 @@ sealed class WorBatchCreateWorkflowInstanceError {const WorBatchCreateWorkflowIn
 static WorBatchCreateWorkflowInstanceError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorBatchCreateWorkflowInstanceError400(WorBatchCreateWorkflowInstanceResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  WorBatchCreateWorkflowInstanceError400(WorBatchCreateWorkflowInstanceResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return WorBatchCreateWorkflowInstanceError404(WorBatchCreateWorkflowInstanceResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return WorBatchCreateWorkflowInstanceErrorUnknown(response);
-}
-}
+return  WorBatchCreateWorkflowInstanceError404(WorBatchCreateWorkflowInstanceResponse404.fromJson(json as Map<String, dynamic>));default:
+return  WorBatchCreateWorkflowInstanceErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class WorBatchCreateWorkflowInstanceError400 extends WorBatchCreateWorkflowInstanceError {const WorBatchCreateWorkflowInstanceError400(this.data);

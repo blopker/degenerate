@@ -33,15 +33,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => SnippetsSnippet.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: ListZoneSnippetsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => SnippetsSnippet.fromJson(e as Map<String, dynamic>)).toList();}, onError: ListZoneSnippetsError.parse, );}
 /// Get a zone snippet
 ///
 /// Fetches a snippet belonging to the zone.
@@ -56,15 +50,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return SnippetsSnippet.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: GetZoneSnippetError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  SnippetsSnippet.fromJson(json['result'] as Map<String, dynamic>);}, onError: GetZoneSnippetError.parse, );}
 /// Update a zone snippet
 ///
 /// Creates or updates a snippet belonging to the zone.
@@ -83,15 +71,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return SnippetsSnippet.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: UpdateZoneSnippetError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  SnippetsSnippet.fromJson(json['result'] as Map<String, dynamic>);}, onError: UpdateZoneSnippetError.parse, );}
 /// Delete a zone snippet
 ///
 /// Deletes a snippet belonging to the zone.
@@ -106,15 +88,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] as Map<String, dynamic>?;
-  },
-  onError: DeleteZoneSnippetError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] as Map<String, dynamic>?;}, onError: DeleteZoneSnippetError.parse, );}
 /// Get a zone snippet content
 ///
 /// Fetches the content of a snippet belonging to the zone.
@@ -129,15 +105,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-// TODO: Unsupported non-JSON response schema Cannot decode multipart/form-data response into Map<String, List<Uint8List>>
-throw UnsupportedError('Cannot decode multipart/form-data response into Map<String, List<Uint8List>>');
-  },
-  onError: GetZoneSnippetContentError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {// TODO: Unsupported non-JSON response schema Cannot decode multipart/form-data response into Map<String, List<Uint8List>>
+
+throw  UnsupportedError('Cannot decode multipart/form-data response into Map<String, List<Uint8List>>');}, onError: GetZoneSnippetContentError.parse, );}
 /// List zone snippet rules
 ///
 /// Fetches all snippet rules belonging to the zone.
@@ -152,15 +123,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => SnippetsSnippetRules2.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: ListZoneSnippetRulesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => SnippetsSnippetRules2.fromJson(e as Map<String, dynamic>)).toList();}, onError: ListZoneSnippetRulesError.parse, );}
 /// Update zone snippet rules
 ///
 /// Updates all snippet rules belonging to the zone.
@@ -177,15 +142,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => SnippetsSnippetRules2.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: UpdateZoneSnippetRulesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => SnippetsSnippetRules2.fromJson(e as Map<String, dynamic>)).toList();}, onError: UpdateZoneSnippetRulesError.parse, );}
 /// Delete zone snippet rules
 ///
 /// Deletes all snippet rules belonging to the zone.
@@ -200,13 +159,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => SnippetsSnippetRules2.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: DeleteZoneSnippetRulesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => SnippetsSnippetRules2.fromJson(e as Map<String, dynamic>)).toList();}, onError: DeleteZoneSnippetRulesError.parse, );}
 }

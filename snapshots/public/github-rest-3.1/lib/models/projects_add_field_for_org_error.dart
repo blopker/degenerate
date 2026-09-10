@@ -6,20 +6,14 @@ sealed class ProjectsAddFieldForOrgError {const ProjectsAddFieldForOrgError();
 /// Decodes the payload for its declared status and content type.
 static ProjectsAddFieldForOrgError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ProjectsAddFieldForOrgError304();
-case 401:
+return  const ProjectsAddFieldForOrgError304();case 401:
 final json = jsonDecode(response.body);
-return ProjectsAddFieldForOrgError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  ProjectsAddFieldForOrgError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return ProjectsAddFieldForOrgError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ProjectsAddFieldForOrgError403(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ProjectsAddFieldForOrgError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ProjectsAddFieldForOrgErrorUnknown(response);
-}
-}
+return  ProjectsAddFieldForOrgError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ProjectsAddFieldForOrgErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ProjectsAddFieldForOrgError304 extends ProjectsAddFieldForOrgError {const ProjectsAddFieldForOrgError304();

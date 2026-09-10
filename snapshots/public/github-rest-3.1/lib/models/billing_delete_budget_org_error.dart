@@ -7,33 +7,22 @@ sealed class BillingDeleteBudgetOrgError {const BillingDeleteBudgetOrgError();
 static BillingDeleteBudgetOrgError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return BillingDeleteBudgetOrgError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  BillingDeleteBudgetOrgError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return BillingDeleteBudgetOrgError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  BillingDeleteBudgetOrgError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return BillingDeleteBudgetOrgError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 403:
+return  BillingDeleteBudgetOrgError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }case 403:
 final json = jsonDecode(response.body);
-return BillingDeleteBudgetOrgError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  BillingDeleteBudgetOrgError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return BillingDeleteBudgetOrgError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 500:
+return  BillingDeleteBudgetOrgError404(BasicError.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return BillingDeleteBudgetOrgError500(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  BillingDeleteBudgetOrgError500(BasicError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return BillingDeleteBudgetOrgError503(BillingDeleteBudgetOrgResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return BillingDeleteBudgetOrgErrorUnknown(response);
-}
-}
+return  BillingDeleteBudgetOrgError503(BillingDeleteBudgetOrgResponse503.fromJson(json as Map<String, dynamic>));default:
+return  BillingDeleteBudgetOrgErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class BillingDeleteBudgetOrgError400ApplicationJson extends BillingDeleteBudgetOrgError {const BillingDeleteBudgetOrgError400ApplicationJson(this.data);

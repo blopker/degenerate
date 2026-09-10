@@ -7,23 +7,16 @@ sealed class ReposGetCommitError {const ReposGetCommitError();
 static ReposGetCommitError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ReposGetCommitError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 409:
+return  ReposGetCommitError404(BasicError.fromJson(json as Map<String, dynamic>));case 409:
 final json = jsonDecode(response.body);
-return ReposGetCommitError409(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposGetCommitError409(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposGetCommitError422(ValidationError.fromJson(json as Map<String, dynamic>));
-case 500:
+return  ReposGetCommitError422(ValidationError.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return ReposGetCommitError500(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  ReposGetCommitError500(BasicError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return ReposGetCommitError503(ReposGetCommitResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return ReposGetCommitErrorUnknown(response);
-}
-}
+return  ReposGetCommitError503(ReposGetCommitResponse503.fromJson(json as Map<String, dynamic>));default:
+return  ReposGetCommitErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class ReposGetCommitError404 extends ReposGetCommitError {const ReposGetCommitError404(this.data);

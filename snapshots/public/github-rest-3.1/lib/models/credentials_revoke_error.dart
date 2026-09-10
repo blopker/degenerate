@@ -7,14 +7,10 @@ sealed class CredentialsRevokeError {const CredentialsRevokeError();
 static CredentialsRevokeError parse(ApiResponse response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return CredentialsRevokeError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-case 500:
+return  CredentialsRevokeError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return CredentialsRevokeError500(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return CredentialsRevokeErrorUnknown(response);
-}
-}
+return  CredentialsRevokeError500(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  CredentialsRevokeErrorUnknown(response); }}
 }
 /// Response for 422 (application/json).
 final class CredentialsRevokeError422 extends CredentialsRevokeError {const CredentialsRevokeError422(this.data);

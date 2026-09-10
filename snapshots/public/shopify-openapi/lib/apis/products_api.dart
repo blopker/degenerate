@@ -36,11 +36,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Adds a product to a custom collection.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#create-2020-01
@@ -57,11 +54,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific collect by its ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#show-2020-01
@@ -84,11 +78,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Removes a product from a collection.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#destroy-2020-01
@@ -103,11 +94,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of collects.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#count-2020-01
@@ -130,11 +118,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of collects. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#index-2020-04
@@ -163,11 +148,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Adds a product to a custom collection.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#create-2020-04
@@ -184,11 +166,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific collect by its ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#show-2020-04
@@ -211,11 +190,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Removes a product from a collection.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#destroy-2020-04
@@ -230,11 +206,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of collects.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#count-2020-04
@@ -257,11 +230,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of collects. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#index-2020-07
@@ -290,11 +260,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Adds a product to a custom collection.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#create-2020-07
@@ -311,11 +278,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific collect by its ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#show-2020-07
@@ -338,11 +302,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Removes a product from a collection.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#destroy-2020-07
@@ -357,11 +318,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of collects.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#count-2020-07
@@ -384,11 +342,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of collects. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#index-2020-10
@@ -417,11 +372,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Adds a product to a custom collection.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#create-2020-10
@@ -438,11 +390,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific collect by its ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#show-2020-10
@@ -465,11 +414,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Removes a product from a collection.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#destroy-2020-10
@@ -484,11 +430,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of collects.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#count-2020-10
@@ -511,11 +454,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of collects. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#index-2021-01
@@ -544,11 +484,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Adds a product to a custom collection.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#create-2021-01
@@ -565,11 +502,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific collect by its ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#show-2021-01
@@ -592,11 +526,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Removes a product from a collection.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#destroy-2021-01
@@ -611,11 +542,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of collects.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#count-2021-01
@@ -638,11 +566,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of collects. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#index-unstable
@@ -671,11 +596,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Adds a product to a custom collection.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#create-unstable
@@ -692,11 +614,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific collect by its ID.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#show-unstable
@@ -719,11 +638,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Removes a product from a collection.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#destroy-unstable
@@ -738,11 +654,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of collects.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collect#count-unstable
@@ -765,11 +678,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#show-2020-01
@@ -792,11 +702,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a list of products belonging to a collection. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.. The products returned are sorted by the collection's sort order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#products-2020-01
@@ -819,11 +726,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#show-2020-04
@@ -846,11 +750,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a list of products belonging to a collection. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.. The products returned are sorted by the collection's sort order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#products-2020-04
@@ -873,11 +774,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#show-2020-07
@@ -900,11 +798,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a list of products belonging to a collection. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.. The products returned are sorted by the collection's sort order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#products-2020-07
@@ -927,11 +822,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#show-2020-10
@@ -954,11 +846,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a list of products belonging to a collection. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.. The products returned are sorted by the collection's sort order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#products-2020-10
@@ -981,11 +870,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#show-2021-01
@@ -1008,11 +894,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a list of products belonging to a collection. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.. The products returned are sorted by the collection's sort order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#products-2021-01
@@ -1035,11 +918,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#show-unstable
@@ -1062,11 +942,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a list of products belonging to a collection. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.. The products returned are sorted by the collection's sort order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/collection#products-unstable
@@ -1089,11 +966,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of custom collections. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#index-2020-01
@@ -1149,11 +1023,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#create-2020-01
@@ -1170,11 +1041,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of custom collections
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#count-2020-01
@@ -1215,11 +1083,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#show-2020-01
@@ -1242,11 +1107,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#update-2020-01
@@ -1263,11 +1125,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#destroy-2020-01
@@ -1282,11 +1141,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of custom collections. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#index-2020-04
@@ -1342,11 +1198,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#create-2020-04
@@ -1363,11 +1216,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of custom collections
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#count-2020-04
@@ -1408,11 +1258,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#show-2020-04
@@ -1435,11 +1282,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#update-2020-04
@@ -1456,11 +1300,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#destroy-2020-04
@@ -1475,11 +1316,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of custom collections. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#index-2020-07
@@ -1535,11 +1373,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#create-2020-07
@@ -1556,11 +1391,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of custom collections
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#count-2020-07
@@ -1601,11 +1433,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#show-2020-07
@@ -1628,11 +1457,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#update-2020-07
@@ -1649,11 +1475,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#destroy-2020-07
@@ -1668,11 +1491,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of custom collections. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#index-2020-10
@@ -1728,11 +1548,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#create-2020-10
@@ -1749,11 +1566,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of custom collections
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#count-2020-10
@@ -1794,11 +1608,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#show-2020-10
@@ -1821,11 +1632,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#update-2020-10
@@ -1842,11 +1650,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#destroy-2020-10
@@ -1861,11 +1666,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of custom collections. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#index-2021-01
@@ -1921,11 +1723,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#create-2021-01
@@ -1942,11 +1741,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of custom collections
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#count-2021-01
@@ -1987,11 +1783,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#show-2021-01
@@ -2014,11 +1807,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#update-2021-01
@@ -2035,11 +1825,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#destroy-2021-01
@@ -2054,11 +1841,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of custom collections. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#index-unstable
@@ -2114,11 +1898,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#create-unstable
@@ -2135,11 +1916,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of custom collections
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#count-unstable
@@ -2180,11 +1958,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#show-unstable
@@ -2207,11 +1982,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#update-unstable
@@ -2228,11 +2000,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a custom collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/customcollection#destroy-unstable
@@ -2247,11 +2016,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of products. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#index-2020-01
@@ -2325,11 +2091,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new product.
 ///           If you want to set the product's SEO information, then you can use the following properties:
 /// 
@@ -2350,11 +2113,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of products.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#count-2020-01
@@ -2404,11 +2164,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single product.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#show-2020-01
@@ -2431,11 +2188,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a product and its variants and images.
 ///           If you want to update the product's SEO information, then you can use the following properties:
 /// 
@@ -2456,11 +2210,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a product.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#destroy-2020-01
@@ -2475,11 +2226,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of products. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#index-2020-04
@@ -2553,11 +2301,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new product.
 ///           If you want to set the product's SEO information, then you can use the following properties:
 /// 
@@ -2578,11 +2323,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of products.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#count-2020-04
@@ -2632,11 +2374,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single product.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#show-2020-04
@@ -2659,11 +2398,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a product and its variants and images.
 ///           If you want to update the product's SEO information, then you can use the following properties:
 /// 
@@ -2684,11 +2420,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a product.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#destroy-2020-04
@@ -2703,11 +2436,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of products. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#index-2020-07
@@ -2781,11 +2511,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new product.
 ///           If you want to set the product's SEO information, then you can use the following properties:
 /// 
@@ -2806,11 +2533,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of products.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#count-2020-07
@@ -2860,11 +2584,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single product.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#show-2020-07
@@ -2887,11 +2608,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a product and its variants and images.
 ///           If you want to update the product's SEO information, then you can use the following properties:
 /// 
@@ -2912,11 +2630,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a product.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#destroy-2020-07
@@ -2931,11 +2646,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of products. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#index-2020-10
@@ -3009,11 +2721,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new product.
 ///           If you want to set the product's SEO information, then you can use the following properties:
 /// 
@@ -3034,11 +2743,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of products.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#count-2020-10
@@ -3088,11 +2794,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single product.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#show-2020-10
@@ -3115,11 +2818,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a product and its variants and images.
 ///           If you want to update the product's SEO information, then you can use the following properties:
 /// 
@@ -3140,11 +2840,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a product.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#destroy-2020-10
@@ -3159,11 +2856,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of products. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#index-2021-01
@@ -3237,11 +2931,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new product.
 ///           If you want to set the product's SEO information, then you can use the following properties:
 /// 
@@ -3262,11 +2953,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of products.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#count-2021-01
@@ -3316,11 +3004,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single product.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#show-2021-01
@@ -3343,11 +3028,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a product and its variants and images.
 ///           If you want to update the product's SEO information, then you can use the following properties:
 /// 
@@ -3368,11 +3050,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a product.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#destroy-2021-01
@@ -3387,11 +3066,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of products. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#index-unstable
@@ -3465,11 +3141,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new product.
 ///           If you want to set the product's SEO information, then you can use the following properties:
 /// 
@@ -3490,11 +3163,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of products.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#count-unstable
@@ -3544,11 +3214,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single product.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#show-unstable
@@ -3571,11 +3238,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a product and its variants and images.
 ///           If you want to update the product's SEO information, then you can use the following properties:
 /// 
@@ -3596,11 +3260,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a product.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product#destroy-unstable
@@ -3615,11 +3276,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get all product images
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#index-2020-01
@@ -3645,11 +3303,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a new product image
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#create-2020-01
@@ -3666,11 +3321,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a count of all product images
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#count-2020-01
@@ -3693,11 +3345,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a single product image by id
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#show-2020-01
@@ -3720,11 +3369,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Modify an existing product image
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#update-2020-01
@@ -3741,11 +3387,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#destroy-2020-01
@@ -3760,11 +3403,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get all product images
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#index-2020-04
@@ -3790,11 +3430,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a new product image
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#create-2020-04
@@ -3811,11 +3448,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a count of all product images
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#count-2020-04
@@ -3838,11 +3472,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a single product image by id
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#show-2020-04
@@ -3865,11 +3496,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Modify an existing product image
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#update-2020-04
@@ -3886,11 +3514,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#destroy-2020-04
@@ -3905,11 +3530,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get all product images
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#index-2020-07
@@ -3935,11 +3557,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a new product image
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#create-2020-07
@@ -3956,11 +3575,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a count of all product images
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#count-2020-07
@@ -3983,11 +3599,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a single product image by id
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#show-2020-07
@@ -4010,11 +3623,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Modify an existing product image
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#update-2020-07
@@ -4031,11 +3641,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#destroy-2020-07
@@ -4050,11 +3657,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get all product images
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#index-2020-10
@@ -4080,11 +3684,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a new product image
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#create-2020-10
@@ -4101,11 +3702,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a count of all product images
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#count-2020-10
@@ -4128,11 +3726,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a single product image by id
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#show-2020-10
@@ -4155,11 +3750,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Modify an existing product image
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#update-2020-10
@@ -4176,11 +3768,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#destroy-2020-10
@@ -4195,11 +3784,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get all product images
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#index-2021-01
@@ -4225,11 +3811,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a new product image
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#create-2021-01
@@ -4246,11 +3829,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a count of all product images
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#count-2021-01
@@ -4273,11 +3853,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a single product image by id
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#show-2021-01
@@ -4300,11 +3877,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Modify an existing product image
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#update-2021-01
@@ -4321,11 +3895,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#destroy-2021-01
@@ -4340,11 +3911,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get all product images
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#index-unstable
@@ -4370,11 +3938,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a new product image
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#create-unstable
@@ -4391,11 +3956,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a count of all product images
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#count-unstable
@@ -4418,11 +3980,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a single product image by id
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#show-unstable
@@ -4445,11 +4004,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Modify an existing product image
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#update-unstable
@@ -4466,11 +4022,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/product-image#destroy-unstable
@@ -4485,11 +4038,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of smart collections. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#index-2020-01
@@ -4545,11 +4095,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new smart collection using the specified rules.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#create-2020-01
@@ -4566,11 +4113,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of smart collections
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#count-2020-01
@@ -4611,11 +4155,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#show-2020-01
@@ -4638,11 +4179,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#update-2020-01
@@ -4659,11 +4197,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Removes a smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#destroy-2020-01
@@ -4678,11 +4213,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates the ordering type of products in a smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#order-2020-01
@@ -4713,11 +4245,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of smart collections. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#index-2020-04
@@ -4773,11 +4302,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new smart collection using the specified rules.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#create-2020-04
@@ -4794,11 +4320,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of smart collections
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#count-2020-04
@@ -4839,11 +4362,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#show-2020-04
@@ -4866,11 +4386,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#update-2020-04
@@ -4887,11 +4404,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Removes a smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#destroy-2020-04
@@ -4906,11 +4420,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates the ordering type of products in a smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#order-2020-04
@@ -4941,11 +4452,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of smart collections. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#index-2020-07
@@ -5001,11 +4509,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new smart collection using the specified rules.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#create-2020-07
@@ -5022,11 +4527,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of smart collections
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#count-2020-07
@@ -5067,11 +4569,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#show-2020-07
@@ -5094,11 +4593,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#update-2020-07
@@ -5115,11 +4611,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Removes a smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#destroy-2020-07
@@ -5134,11 +4627,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates the ordering type of products in a smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#order-2020-07
@@ -5169,11 +4659,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of smart collections. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#index-2020-10
@@ -5229,11 +4716,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new smart collection using the specified rules.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#create-2020-10
@@ -5250,11 +4734,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of smart collections
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#count-2020-10
@@ -5295,11 +4776,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#show-2020-10
@@ -5322,11 +4800,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#update-2020-10
@@ -5343,11 +4818,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Removes a smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#destroy-2020-10
@@ -5362,11 +4834,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates the ordering type of products in a smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#order-2020-10
@@ -5397,11 +4866,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of smart collections. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#index-2021-01
@@ -5457,11 +4923,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new smart collection using the specified rules.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#create-2021-01
@@ -5478,11 +4941,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of smart collections
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#count-2021-01
@@ -5523,11 +4983,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#show-2021-01
@@ -5550,11 +5007,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#update-2021-01
@@ -5571,11 +5025,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Removes a smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#destroy-2021-01
@@ -5590,11 +5041,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates the ordering type of products in a smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#order-2021-01
@@ -5625,11 +5073,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of smart collections. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#index-unstable
@@ -5685,11 +5130,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new smart collection using the specified rules.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#create-unstable
@@ -5706,11 +5148,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of smart collections
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#count-unstable
@@ -5751,11 +5190,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#show-unstable
@@ -5778,11 +5214,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#update-unstable
@@ -5799,11 +5232,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Removes a smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#destroy-unstable
@@ -5818,11 +5248,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates the ordering type of products in a smart collection
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/products/smartcollection#order-unstable
@@ -5853,9 +5280,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

@@ -7,17 +7,12 @@ sealed class DestinationListError {const DestinationListError();
 static DestinationListError parse(ApiResponse response) {switch (response.statusCode) {
 case 401:
 final json = jsonDecode(response.body);
-return DestinationListError401(DestinationListResponse401.fromJson(json as Map<String, dynamic>));
-case 404:
+return  DestinationListError401(DestinationListResponse401.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return DestinationListError404(DestinationListResponse404.fromJson(json as Map<String, dynamic>));
-case 500:
+return  DestinationListError404(DestinationListResponse404.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return DestinationListError500(DestinationListResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return DestinationListErrorUnknown(response);
-}
-}
+return  DestinationListError500(DestinationListResponse500.fromJson(json as Map<String, dynamic>));default:
+return  DestinationListErrorUnknown(response); }}
 }
 /// Response for 401 (application/json).
 final class DestinationListError401 extends DestinationListError {const DestinationListError401(this.data);

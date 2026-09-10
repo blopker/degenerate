@@ -43,14 +43,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return NscSlotList.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  NscSlotList.fromJson(json as Map<String, dynamic>);}, );}
 /// Get information about the specified slot
 ///
 /// `GET /accounts/{account_id}/cni/slots/{slot}`
@@ -63,12 +58,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return NscSlotInfo.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  NscSlotInfo.fromJson(json as Map<String, dynamic>);}, );}
 }

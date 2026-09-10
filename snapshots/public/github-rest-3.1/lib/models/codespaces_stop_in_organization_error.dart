@@ -6,23 +6,16 @@ sealed class CodespacesStopInOrganizationError {const CodespacesStopInOrganizati
 /// Decodes the payload for its declared status and content type.
 static CodespacesStopInOrganizationError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const CodespacesStopInOrganizationError304();
-case 401:
+return  const CodespacesStopInOrganizationError304();case 401:
 final json = jsonDecode(response.body);
-return CodespacesStopInOrganizationError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  CodespacesStopInOrganizationError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return CodespacesStopInOrganizationError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CodespacesStopInOrganizationError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CodespacesStopInOrganizationError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 500:
+return  CodespacesStopInOrganizationError404(BasicError.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return CodespacesStopInOrganizationError500(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return CodespacesStopInOrganizationErrorUnknown(response);
-}
-}
+return  CodespacesStopInOrganizationError500(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  CodespacesStopInOrganizationErrorUnknown(response); }}
 }
 /// Response for 304.
 final class CodespacesStopInOrganizationError304 extends CodespacesStopInOrganizationError {const CodespacesStopInOrganizationError304();

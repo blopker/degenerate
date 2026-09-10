@@ -25,24 +25,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsCacheRetentionLimitForEnterprise.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsCacheRetentionLimitForEnterprise.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set GitHub Actions cache retention limit for an enterprise
 ///
 /// Sets GitHub Actions cache retention limit for an enterprise. All organizations and repositories under this
@@ -62,12 +51,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ActionsSetActionsCacheRetentionLimitForEnterpriseError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ActionsSetActionsCacheRetentionLimitForEnterpriseError.parse, );}
 /// Get GitHub Actions cache storage limit for an enterprise
 ///
 /// Gets GitHub Actions cache storage limit for an enterprise. All organizations and repositories under this
@@ -85,24 +70,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsCacheStorageLimitForEnterprise.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsCacheStorageLimitForEnterprise.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set GitHub Actions cache storage limit for an enterprise
 ///
 /// Sets GitHub Actions cache storage limit for an enterprise. All organizations and repositories under this
@@ -122,12 +96,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ActionsSetActionsCacheStorageLimitForEnterpriseError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ActionsSetActionsCacheStorageLimitForEnterpriseError.parse, );}
 /// Get GitHub Actions cache retention limit for an organization
 ///
 /// Gets GitHub Actions cache retention limit for an organization. All repositories under this
@@ -145,24 +115,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsCacheRetentionLimitForOrganization.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsCacheRetentionLimitForOrganization.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set GitHub Actions cache retention limit for an organization
 ///
 /// Sets GitHub Actions cache retention limit for an organization. All repositories under this
@@ -182,12 +141,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ActionsSetActionsCacheRetentionLimitForOrganizationError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ActionsSetActionsCacheRetentionLimitForOrganizationError.parse, );}
 /// Get GitHub Actions cache storage limit for an organization
 ///
 /// Gets GitHub Actions cache storage limit for an organization. All repositories under this
@@ -205,24 +160,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsCacheStorageLimitForOrganization.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsCacheStorageLimitForOrganization.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set GitHub Actions cache storage limit for an organization
 ///
 /// Sets GitHub Actions cache storage limit for an organization. All organizations and repositories under this
@@ -242,12 +186,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ActionsSetActionsCacheStorageLimitForOrganizationError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ActionsSetActionsCacheStorageLimitForOrganizationError.parse, );}
 /// Get GitHub Actions cache usage for an organization
 ///
 /// Gets the total GitHub Actions cache usage for an organization.
@@ -265,14 +205,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsCacheUsageOrgEnterprise.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsCacheUsageOrgEnterprise.fromJson(json as Map<String, dynamic>);}, );}
 /// List repositories with GitHub Actions cache usage for an organization
 ///
 /// Lists repositories and their GitHub Actions cache usage for an organization.
@@ -301,14 +236,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsGetActionsCacheUsageByRepoForOrgResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsGetActionsCacheUsageByRepoForOrgResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// List GitHub-hosted runners for an organization
 ///
 /// Lists all GitHub-hosted runners configured in an organization.
@@ -336,14 +266,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListHostedRunnersForOrgResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListHostedRunnersForOrgResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a GitHub-hosted runner for an organization
 ///
 /// Creates a GitHub-hosted runner for an organization.
@@ -361,14 +286,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsHostedRunner.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsHostedRunner.fromJson(json as Map<String, dynamic>);}, );}
 /// List custom images for an organization
 ///
 /// List custom images for an organization.
@@ -385,14 +305,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListCustomImagesForOrgResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListCustomImagesForOrgResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a custom image definition for GitHub Actions Hosted Runners
 ///
 /// Get a custom image definition for GitHub Actions Hosted Runners.
@@ -409,14 +324,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsHostedRunnerCustomImage.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsHostedRunnerCustomImage.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a custom image from the organization
 ///
 /// Delete a custom image from the organization.
@@ -433,11 +343,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List image versions of a custom image for an organization
 ///
 /// List image versions of a custom image for an organization.
@@ -454,14 +361,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListCustomImageVersionsForOrgResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListCustomImageVersionsForOrgResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get an image version of a custom image for GitHub Actions Hosted Runners
 ///
 /// Get an image version of a custom image for GitHub Actions Hosted Runners.
@@ -478,14 +380,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsHostedRunnerCustomImageVersion.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsHostedRunnerCustomImageVersion.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete an image version of custom image from the organization
 ///
 /// Delete an image version of custom image from the organization.
@@ -502,11 +399,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get GitHub-owned images for GitHub-hosted runners in an organization
 ///
 /// Get the list of GitHub-owned images available for GitHub-hosted runners for an organization.
@@ -521,14 +415,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsGetHostedRunnersGithubOwnedImagesForOrgResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get partner images for GitHub-hosted runners in an organization
 ///
 /// Get the list of partner images available for GitHub-hosted runners for an organization.
@@ -543,14 +432,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsGetHostedRunnersPartnerImagesForOrgResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsGetHostedRunnersPartnerImagesForOrgResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get limits on GitHub-hosted runners for an organization
 ///
 /// Get the GitHub-hosted runners limits for an organization.
@@ -565,14 +449,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsHostedRunnerLimits.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsHostedRunnerLimits.fromJson(json as Map<String, dynamic>);}, );}
 /// Get GitHub-hosted runners machine specs for an organization
 ///
 /// Get the list of machine specs available for GitHub-hosted runners for an organization.
@@ -587,14 +466,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsGetHostedRunnersMachineSpecsForOrgResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsGetHostedRunnersMachineSpecsForOrgResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get platforms for GitHub-hosted runners in an organization
 ///
 /// Get the list of platforms available for GitHub-hosted runners for an organization.
@@ -609,14 +483,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsGetHostedRunnersPlatformsForOrgResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsGetHostedRunnersPlatformsForOrgResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a GitHub-hosted runner for an organization
 ///
 /// Gets a GitHub-hosted runner configured in an organization.
@@ -633,14 +502,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsHostedRunner.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsHostedRunner.fromJson(json as Map<String, dynamic>);}, );}
 /// Update a GitHub-hosted runner for an organization
 ///
 /// Updates a GitHub-hosted runner for an organization.
@@ -658,14 +522,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsHostedRunner.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsHostedRunner.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a GitHub-hosted runner for an organization
 ///
 /// Deletes a GitHub-hosted runner for an organization.
@@ -680,14 +539,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsHostedRunner.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsHostedRunner.fromJson(json as Map<String, dynamic>);}, );}
 /// Get GitHub Actions permissions for an organization
 ///
 /// Gets the GitHub Actions permissions policy for repositories and allowed actions and reusable workflows in an organization.
@@ -704,14 +558,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsOrganizationPermissions.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsOrganizationPermissions.fromJson(json as Map<String, dynamic>);}, );}
 /// Set GitHub Actions permissions for an organization
 ///
 /// Sets the GitHub Actions permissions policy for repositories and allowed actions and reusable workflows in an organization.
@@ -730,11 +579,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get artifact and log retention settings for an organization
 ///
 /// Gets artifact and log retention settings for an organization.
@@ -751,24 +597,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsArtifactAndLogRetentionResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsArtifactAndLogRetentionResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set artifact and log retention settings for an organization
 ///
 /// Sets artifact and log retention settings for an organization.
@@ -787,12 +622,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ActionsSetArtifactAndLogRetentionSettingsOrganizationError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ActionsSetArtifactAndLogRetentionSettingsOrganizationError.parse, );}
 /// Get fork PR contributor approval permissions for an organization
 ///
 /// Gets the fork PR contributor approval policy for an organization.
@@ -809,24 +640,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsForkPrContributorApproval.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsForkPrContributorApproval.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set fork PR contributor approval permissions for an organization
 ///
 /// Sets the fork PR contributor approval policy for an organization.
@@ -845,12 +665,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ActionsSetForkPrContributorApprovalPermissionsOrganizationError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ActionsSetForkPrContributorApprovalPermissionsOrganizationError.parse, );}
 /// Get private repo fork PR workflow settings for an organization
 ///
 /// Gets the settings for whether workflows from fork pull requests can run on private repositories in an organization.
@@ -865,24 +681,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsForkPrWorkflowsPrivateRepos.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsForkPrWorkflowsPrivateRepos.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set private repo fork PR workflow settings for an organization
 ///
 /// Sets the settings for whether workflows from fork pull requests can run on private repositories in an organization.
@@ -899,12 +704,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError.parse, );}
 /// List selected repositories enabled for GitHub Actions in an organization
 ///
 /// Lists the selected repositories that are enabled for GitHub Actions in an organization. To use this endpoint, the organization permission policy for `enabled_repositories` must be configured to `selected`. For more information, see "[Set GitHub Actions permissions for an organization](#set-github-actions-permissions-for-an-organization)."
@@ -932,14 +733,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListSelectedRepositoriesEnabledGithubActionsOrganizationResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Set selected repositories enabled for GitHub Actions in an organization
 ///
 /// Replaces the list of selected repositories that are enabled for GitHub Actions in an organization. To use this endpoint, the organization permission policy for `enabled_repositories` must be configured to `selected`. For more information, see "[Set GitHub Actions permissions for an organization](#set-github-actions-permissions-for-an-organization)."
@@ -959,11 +755,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Enable a selected repository for GitHub Actions in an organization
 ///
 /// Adds a repository to the list of selected repositories that are enabled for GitHub Actions in an organization. To use this endpoint, the organization permission policy for `enabled_repositories` must be must be configured to `selected`. For more information, see "[Set GitHub Actions permissions for an organization](#set-github-actions-permissions-for-an-organization)."
@@ -980,11 +773,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Disable a selected repository for GitHub Actions in an organization
 ///
 /// Removes a repository from the list of selected repositories that are enabled for GitHub Actions in an organization. To use this endpoint, the organization permission policy for `enabled_repositories` must be configured to `selected`. For more information, see "[Set GitHub Actions permissions for an organization](#set-github-actions-permissions-for-an-organization)."
@@ -1001,11 +791,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get allowed actions and reusable workflows for an organization
 ///
 /// Gets the selected actions and reusable workflows that are allowed in an organization. To use this endpoint, the organization permission policy for `allowed_actions` must be configured to `selected`. For more information, see "[Set GitHub Actions permissions for an organization](#set-github-actions-permissions-for-an-organization)."
@@ -1022,14 +809,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SelectedActions.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SelectedActions.fromJson(json as Map<String, dynamic>);}, );}
 /// Set allowed actions and reusable workflows for an organization
 ///
 /// Sets the actions and reusable workflows that are allowed in an organization. To use this endpoint, the organization permission policy for `allowed_actions` must be configured to `selected`. For more information, see "[Set GitHub Actions permissions for an organization](#set-github-actions-permissions-for-an-organization)."
@@ -1048,11 +830,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get self-hosted runners settings for an organization
 ///
 /// Gets the settings for self-hosted runners for an organization.
@@ -1069,24 +848,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SelfHostedRunnersSettings.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SelfHostedRunnersSettings.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set self-hosted runners settings for an organization
 ///
 /// Sets the settings for self-hosted runners for an organization.
@@ -1105,12 +873,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ActionsSetSelfHostedRunnersPermissionsOrganizationError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ActionsSetSelfHostedRunnersPermissionsOrganizationError.parse, );}
 /// List repositories allowed to use self-hosted runners in an organization
 ///
 /// Lists repositories that are allowed to use self-hosted runners in an organization.
@@ -1138,24 +902,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListSelectedRepositoriesSelfHostedRunnersOrganizationResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set repositories allowed to use self-hosted runners in an organization
 ///
 /// Sets repositories that are allowed to use self-hosted runners in an organization.
@@ -1174,12 +927,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationError.parse, );}
 /// Add a repository to the list of repositories allowed to use self-hosted runners in an organization
 ///
 /// Adds a repository to the list of repositories that are allowed to use self-hosted runners in an organization.
@@ -1196,12 +945,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ActionsEnableSelectedRepositorySelfHostedRunnersOrganizationError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ActionsEnableSelectedRepositorySelfHostedRunnersOrganizationError.parse, );}
 /// Remove a repository from the list of repositories allowed to use self-hosted runners in an organization
 ///
 /// Removes a repository from the list of repositories that are allowed to use self-hosted runners in an organization.
@@ -1218,12 +963,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ActionsDisableSelectedRepositorySelfHostedRunnersOrganizationError.parse, );}
 /// Get default workflow permissions for an organization
 ///
 /// Gets the default workflow permissions granted to the `GITHUB_TOKEN` when running workflows in an organization,
@@ -1242,14 +983,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsGetDefaultWorkflowPermissions.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsGetDefaultWorkflowPermissions.fromJson(json as Map<String, dynamic>);}, );}
 /// Set default workflow permissions for an organization
 ///
 /// Sets the default workflow permissions granted to the `GITHUB_TOKEN` when running workflows in an organization, and sets if GitHub Actions
@@ -1270,11 +1006,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List self-hosted runner groups for an organization
 ///
 /// Lists all self-hosted runner groups configured in an organization and inherited from an enterprise.
@@ -1305,14 +1038,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListSelfHostedRunnerGroupsForOrgResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListSelfHostedRunnerGroupsForOrgResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a self-hosted runner group for an organization
 ///
 /// Creates a new self-hosted runner group for an organization.
@@ -1331,14 +1059,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RunnerGroupsOrg.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RunnerGroupsOrg.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a self-hosted runner group for an organization
 ///
 /// Gets a specific self-hosted runner group for an organization.
@@ -1355,14 +1078,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RunnerGroupsOrg.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RunnerGroupsOrg.fromJson(json as Map<String, dynamic>);}, );}
 /// Update a self-hosted runner group for an organization
 ///
 /// Updates the `name` and `visibility` of a self-hosted runner group in an organization.
@@ -1381,14 +1099,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RunnerGroupsOrg.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RunnerGroupsOrg.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a self-hosted runner group from an organization
 ///
 /// Deletes a self-hosted runner group for an organization.
@@ -1405,11 +1118,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List GitHub-hosted runners in a group for an organization
 ///
 /// Lists the GitHub-hosted runners in an organization group.
@@ -1437,14 +1147,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListGithubHostedRunnersInGroupForOrgResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListGithubHostedRunnersInGroupForOrgResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// List repository access to a self-hosted runner group in an organization
 ///
 /// Lists the repositories with access to a self-hosted runner group configured in an organization.
@@ -1472,14 +1177,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListRepoAccessToSelfHostedRunnerGroupInOrgResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Set repository access for a self-hosted runner group in an organization
 ///
 /// Replaces the list of repositories that have access to a self-hosted runner group configured in an organization.
@@ -1498,11 +1198,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Add repository access to a self-hosted runner group in an organization
 ///
 /// Adds a repository to the list of repositories that can access a self-hosted runner group. The runner group must have `visibility` set to `selected`. For more information, see "[Create a self-hosted runner group for an organization](#create-a-self-hosted-runner-group-for-an-organization)."
@@ -1519,11 +1216,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Remove repository access to a self-hosted runner group in an organization
 ///
 /// Removes a repository from the list of selected repositories that can access a self-hosted runner group. The runner group must have `visibility` set to `selected`. For more information, see "[Create a self-hosted runner group for an organization](#create-a-self-hosted-runner-group-for-an-organization)."
@@ -1540,11 +1234,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List self-hosted runners in a group for an organization
 ///
 /// Lists self-hosted runners that are in a specific organization group.
@@ -1572,14 +1263,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListSelfHostedRunnersInGroupForOrgResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListSelfHostedRunnersInGroupForOrgResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Set self-hosted runners in a group for an organization
 ///
 /// Replaces the list of self-hosted runners that are part of an organization runner group.
@@ -1598,11 +1284,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Add a self-hosted runner to a group for an organization
 ///
 /// Adds a self-hosted runner to a runner group configured in an organization.
@@ -1619,11 +1302,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Remove a self-hosted runner from a group for an organization
 ///
 /// Removes a self-hosted runner from a group configured in an organization. The runner is then returned to the default group.
@@ -1640,11 +1320,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List self-hosted runners for an organization
 ///
 /// Lists all self-hosted runners configured in an organization.
@@ -1677,14 +1354,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListSelfHostedRunnersForOrgResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListSelfHostedRunnersForOrgResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// List runner applications for an organization
 ///
 /// Lists binaries for the runner application that you can download and run.
@@ -1703,14 +1375,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => RunnerApplication.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => RunnerApplication.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Create configuration for a just-in-time runner for an organization
 ///
 /// Generates a configuration that can be passed to the runner application at startup.
@@ -1731,15 +1398,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsGenerateRunnerJitconfigForOrgResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ActionsGenerateRunnerJitconfigForOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsGenerateRunnerJitconfigForOrgResponse.fromJson(json as Map<String, dynamic>);}, onError: ActionsGenerateRunnerJitconfigForOrgError.parse, );}
 /// Create a registration token for an organization
 ///
 /// Returns a token that you can pass to the `config` script. The token expires after one hour.
@@ -1764,14 +1425,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AuthenticationToken.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AuthenticationToken.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a remove token for an organization
 ///
 /// Returns a token that you can pass to the `config` script to remove a self-hosted runner from an organization. The token expires after one hour.
@@ -1796,14 +1452,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AuthenticationToken.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AuthenticationToken.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a self-hosted runner for an organization
 ///
 /// Gets a specific self-hosted runner configured in an organization.
@@ -1822,14 +1473,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Runner.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Runner.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a self-hosted runner from an organization
 ///
 /// Forces the removal of a self-hosted runner from an organization. You can use this endpoint to completely remove the runner when the machine you were using no longer exists.
@@ -1848,21 +1494,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationErrorSimple.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationErrorSimple.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List labels for a self-hosted runner for an organization
 ///
 /// Lists all labels for a self-hosted runner configured in an organization.
@@ -1881,24 +1518,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListLabelsForSelfHostedRunnerForOrgResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListLabelsForSelfHostedRunnerForOrgResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Add custom labels to a self-hosted runner for an organization
 ///
 /// Adds custom labels to a self-hosted runner configured in an organization.
@@ -1919,15 +1545,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsAddCustomLabelsToSelfHostedRunnerForOrgResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsAddCustomLabelsToSelfHostedRunnerForOrgResponse.fromJson(json as Map<String, dynamic>);}, onError: ActionsAddCustomLabelsToSelfHostedRunnerForOrgError.parse, );}
 /// Set custom labels for a self-hosted runner for an organization
 ///
 /// Remove all previous custom labels and set the new custom labels for a specific
@@ -1949,15 +1569,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ActionsSetCustomLabelsForSelfHostedRunnerForOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsSetCustomLabelsForSelfHostedRunnerForOrgResponse.fromJson(json as Map<String, dynamic>);}, onError: ActionsSetCustomLabelsForSelfHostedRunnerForOrgError.parse, );}
 /// Remove all custom labels from a self-hosted runner for an organization
 ///
 /// Remove all custom labels from a self-hosted runner configured in an
@@ -1977,24 +1591,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForOrgResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForOrgResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Remove a custom label from a self-hosted runner for an organization
 ///
 /// Remove a custom label from a self-hosted runner configured
@@ -2017,15 +1620,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsRemoveCustomLabelFromSelfHostedRunnerForOrgResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ActionsRemoveCustomLabelFromSelfHostedRunnerForOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsRemoveCustomLabelFromSelfHostedRunnerForOrgResponse.fromJson(json as Map<String, dynamic>);}, onError: ActionsRemoveCustomLabelFromSelfHostedRunnerForOrgError.parse, );}
 /// List organization secrets
 ///
 /// Lists all secrets available in an organization without revealing their
@@ -2056,14 +1653,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListOrgSecretsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListOrgSecretsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get an organization public key
 ///
 /// Gets your public key, which you need to encrypt secrets. You need to
@@ -2083,14 +1675,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsPublicKey.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsPublicKey.fromJson(json as Map<String, dynamic>);}, );}
 /// Get an organization secret
 ///
 /// Gets a single organization secret without revealing its encrypted value.
@@ -2109,14 +1696,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrganizationActionsSecret.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrganizationActionsSecret.fromJson(json as Map<String, dynamic>);}, );}
 /// Create or update an organization secret
 ///
 /// Creates or updates an organization secret with an encrypted value. Encrypt your secret using
@@ -2138,11 +1720,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: ActionsCreateOrUpdateOrgSecretSuccess.parse,
-);
-}
+
+return   await execute(request, onSuccess: ActionsCreateOrUpdateOrgSecretSuccess.parse, );}
 /// Delete an organization secret
 ///
 /// Deletes a secret in an organization using the secret name.
@@ -2161,11 +1740,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List selected repositories for an organization secret
 ///
 /// Lists all repositories that have been selected when the `visibility`
@@ -2196,14 +1772,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListSelectedReposForOrgSecretResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListSelectedReposForOrgSecretResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Set selected repositories for an organization secret
 ///
 /// Replaces all repositories for an organization secret when the `visibility`
@@ -2226,11 +1797,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Add selected repository to an organization secret
 ///
 /// Adds a repository to an organization secret when the `visibility` for
@@ -2251,11 +1819,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Remove selected repository from an organization secret
 ///
 /// Removes a repository from an organization secret when the `visibility`
@@ -2276,11 +1841,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List organization variables
 ///
 /// Lists all organization variables.
@@ -2310,14 +1872,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListOrgVariablesResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListOrgVariablesResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create an organization variable
 ///
 /// Creates an organization variable that you can reference in a GitHub Actions workflow.
@@ -2338,14 +1895,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EmptyObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EmptyObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Get an organization variable
 ///
 /// Gets a specific variable in an organization.
@@ -2364,14 +1916,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrganizationActionsVariable.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrganizationActionsVariable.fromJson(json as Map<String, dynamic>);}, );}
 /// Update an organization variable
 ///
 /// Updates an organization variable that you can reference in a GitHub Actions workflow.
@@ -2392,11 +1939,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Delete an organization variable
 ///
 /// Deletes an organization variable using the variable name.
@@ -2415,11 +1959,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List selected repositories for an organization variable
 ///
 /// Lists all repositories that can access an organization variable
@@ -2450,14 +1991,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListSelectedReposForOrgVariableResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListSelectedReposForOrgVariableResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Set selected repositories for an organization variable
 ///
 /// Replaces all repositories for an organization variable that is available
@@ -2480,11 +2016,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Add selected repository to an organization variable
 ///
 /// Adds a repository to an organization variable that is available to selected repositories.
@@ -2504,11 +2037,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Remove selected repository from an organization variable
 ///
 /// Removes a repository from an organization variable that is
@@ -2529,11 +2059,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List artifacts for a repository
 ///
 /// Lists all artifacts for a repository.
@@ -2566,14 +2093,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListArtifactsForRepoResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListArtifactsForRepoResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get an artifact
 ///
 /// Gets a specific artifact for a workflow run.
@@ -2592,14 +2114,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Artifact.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Artifact.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete an artifact
 ///
 /// Deletes an artifact for a workflow run.
@@ -2615,11 +2132,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Download an artifact
 ///
 /// Gets a redirect URL to download an archive for a repository. This URL expires after 1 minute. Look for `Location:` in
@@ -2637,12 +2151,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ActionsDownloadArtifactError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ActionsDownloadArtifactError.parse, );}
 /// Get GitHub Actions cache retention limit for a repository
 ///
 /// Gets GitHub Actions cache retention limit for a repository. This determines how long caches will be retained for, if
@@ -2660,24 +2170,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsCacheRetentionLimitForRepository.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsCacheRetentionLimitForRepository.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set GitHub Actions cache retention limit for a repository
 ///
 /// Sets GitHub Actions cache retention limit for a repository. This determines how long caches will be retained for, if
@@ -2697,12 +2196,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ActionsSetActionsCacheRetentionLimitForRepositoryError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ActionsSetActionsCacheRetentionLimitForRepositoryError.parse, );}
 /// Get GitHub Actions cache storage limit for a repository
 ///
 /// Gets GitHub Actions cache storage limit for a repository. This determines the maximum size of caches that can be
@@ -2720,24 +2215,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsCacheStorageLimitForRepository.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsCacheStorageLimitForRepository.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set GitHub Actions cache storage limit for a repository
 ///
 /// Sets GitHub Actions cache storage limit for a repository. This determines the maximum size of caches that can be
@@ -2757,12 +2241,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ActionsSetActionsCacheStorageLimitForRepositoryError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ActionsSetActionsCacheStorageLimitForRepositoryError.parse, );}
 /// Get GitHub Actions cache usage for a repository
 ///
 /// Gets GitHub Actions cache usage for a repository.
@@ -2782,14 +2262,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsCacheUsageByRepository.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsCacheUsageByRepository.fromJson(json as Map<String, dynamic>);}, );}
 /// List GitHub Actions caches for a repository
 ///
 /// Lists the GitHub Actions caches for a repository.
@@ -2829,14 +2304,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsCacheList.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsCacheList.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete GitHub Actions caches for a repository (using a cache key)
 ///
 /// Deletes one or more GitHub Actions caches for a repository, using a complete cache key. By default, all caches that match the provided key are deleted, but you can optionally provide a Git ref to restrict deletions to caches that match both the provided key and the Git ref.
@@ -2862,14 +2332,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsCacheList.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsCacheList.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a GitHub Actions cache for a repository (using a cache ID)
 ///
 /// Deletes a GitHub Actions cache for a repository, using a cache ID.
@@ -2886,11 +2351,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a job for a workflow run
 ///
 /// Gets a specific job in a workflow run.
@@ -2909,14 +2371,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Job.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Job.fromJson(json as Map<String, dynamic>);}, );}
 /// Download job logs for a workflow run
 ///
 /// Gets a redirect URL to download a plain text file of logs for a workflow job. This link expires after 1 minute. Look
@@ -2936,11 +2393,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Re-run a job from a workflow run
 ///
 /// Re-run a job and its dependent jobs in a workflow run.
@@ -2959,24 +2413,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EmptyObject.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EmptyObject.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get the customization template for an OIDC subject claim for a repository
 ///
 /// Gets the customization template for an OpenID Connect (OIDC) subject claim.
@@ -2993,15 +2436,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OidcCustomSubRepo.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ActionsGetCustomOidcSubClaimForRepoError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OidcCustomSubRepo.fromJson(json as Map<String, dynamic>);}, onError: ActionsGetCustomOidcSubClaimForRepoError.parse, );}
 /// Set the customization template for an OIDC subject claim for a repository
 ///
 /// Sets the customization template and `opt-in` or `opt-out` flag for an OpenID Connect (OIDC) subject claim for a repository.
@@ -3020,15 +2457,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EmptyObject.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ActionsSetCustomOidcSubClaimForRepoError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EmptyObject.fromJson(json as Map<String, dynamic>);}, onError: ActionsSetCustomOidcSubClaimForRepoError.parse, );}
 /// List repository organization secrets
 ///
 /// Lists all organization secrets shared with a repository without revealing their encrypted
@@ -3059,14 +2490,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListRepoOrganizationSecretsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListRepoOrganizationSecretsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// List repository organization variables
 ///
 /// Lists all organization variables shared with a repository.
@@ -3096,14 +2522,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListRepoOrganizationVariablesResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListRepoOrganizationVariablesResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get GitHub Actions permissions for a repository
 ///
 /// Gets the GitHub Actions permissions policy for a repository, including whether GitHub Actions is enabled and the actions and reusable workflows allowed to run in the repository.
@@ -3120,14 +2541,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsRepositoryPermissions.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsRepositoryPermissions.fromJson(json as Map<String, dynamic>);}, );}
 /// Set GitHub Actions permissions for a repository
 ///
 /// Sets the GitHub Actions permissions policy for enabling GitHub Actions and allowed actions and reusable workflows in the repository.
@@ -3146,11 +2562,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get the level of access for workflows outside of the repository
 ///
 /// Gets the level of access that workflows outside of the repository have to actions and reusable workflows in the repository.
@@ -3169,14 +2582,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsWorkflowAccessToRepository.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsWorkflowAccessToRepository.fromJson(json as Map<String, dynamic>);}, );}
 /// Set the level of access for workflows outside of the repository
 ///
 /// Sets the level of access that workflows outside of the repository have to actions and reusable workflows in the repository.
@@ -3197,11 +2605,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get artifact and log retention settings for a repository
 ///
 /// Gets artifact and log retention settings for a repository.
@@ -3218,24 +2623,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsArtifactAndLogRetentionResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsArtifactAndLogRetentionResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set artifact and log retention settings for a repository
 ///
 /// Sets artifact and log retention settings for a repository.
@@ -3254,12 +2648,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ActionsSetArtifactAndLogRetentionSettingsRepositoryError.parse, );}
 /// Get fork PR contributor approval permissions for a repository
 ///
 /// Gets the fork PR contributor approval policy for a repository.
@@ -3276,24 +2666,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsForkPrContributorApproval.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsForkPrContributorApproval.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set fork PR contributor approval permissions for a repository
 ///
 /// Sets the fork PR contributor approval policy for a repository.
@@ -3312,12 +2691,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ActionsSetForkPrContributorApprovalPermissionsRepositoryError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ActionsSetForkPrContributorApprovalPermissionsRepositoryError.parse, );}
 /// Get private repo fork PR workflow settings for a repository
 ///
 /// Gets the settings for whether workflows from fork pull requests can run on a private repository.
@@ -3334,24 +2709,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsForkPrWorkflowsPrivateRepos.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsForkPrWorkflowsPrivateRepos.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set private repo fork PR workflow settings for a repository
 ///
 /// Sets the settings for whether workflows from fork pull requests can run on a private repository.
@@ -3370,12 +2734,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ActionsSetPrivateRepoForkPrWorkflowsSettingsRepositoryError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ActionsSetPrivateRepoForkPrWorkflowsSettingsRepositoryError.parse, );}
 /// Get allowed actions and reusable workflows for a repository
 ///
 /// Gets the settings for selected actions and reusable workflows that are allowed in a repository. To use this endpoint, the repository policy for `allowed_actions` must be configured to `selected`. For more information, see "[Set GitHub Actions permissions for a repository](#set-github-actions-permissions-for-a-repository)."
@@ -3392,14 +2752,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SelectedActions.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SelectedActions.fromJson(json as Map<String, dynamic>);}, );}
 /// Set allowed actions and reusable workflows for a repository
 ///
 /// Sets the actions and reusable workflows that are allowed in a repository. To use this endpoint, the repository permission policy for `allowed_actions` must be configured to `selected`. For more information, see "[Set GitHub Actions permissions for a repository](#set-github-actions-permissions-for-a-repository)."
@@ -3418,11 +2773,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get default workflow permissions for a repository
 ///
 /// Gets the default workflow permissions granted to the `GITHUB_TOKEN` when running workflows in a repository,
@@ -3441,14 +2793,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsGetDefaultWorkflowPermissions.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsGetDefaultWorkflowPermissions.fromJson(json as Map<String, dynamic>);}, );}
 /// Set default workflow permissions for a repository
 ///
 /// Sets the default workflow permissions granted to the `GITHUB_TOKEN` when running workflows in a repository, and sets if GitHub Actions
@@ -3469,11 +2816,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List self-hosted runners for a repository
 ///
 /// Lists all self-hosted runners configured in a repository.
@@ -3506,14 +2850,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListSelfHostedRunnersForRepoResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListSelfHostedRunnersForRepoResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// List runner applications for a repository
 ///
 /// Lists binaries for the runner application that you can download and run.
@@ -3532,14 +2871,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => RunnerApplication.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => RunnerApplication.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Create configuration for a just-in-time runner for a repository
 ///
 /// Generates a configuration that can be passed to the runner application at startup.
@@ -3560,15 +2894,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsGenerateRunnerJitconfigForRepoResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ActionsGenerateRunnerJitconfigForRepoError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsGenerateRunnerJitconfigForRepoResponse.fromJson(json as Map<String, dynamic>);}, onError: ActionsGenerateRunnerJitconfigForRepoError.parse, );}
 /// Create a registration token for a repository
 ///
 /// Returns a token that you can pass to the `config` script. The token expires after one hour.
@@ -3593,14 +2921,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AuthenticationToken.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AuthenticationToken.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a remove token for a repository
 ///
 /// Returns a token that you can pass to the `config` script to remove a self-hosted runner from an repository. The token expires after one hour.
@@ -3625,14 +2948,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AuthenticationToken.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AuthenticationToken.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a self-hosted runner for a repository
 ///
 /// Gets a specific self-hosted runner configured in a repository.
@@ -3651,14 +2969,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Runner.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Runner.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a self-hosted runner from a repository
 ///
 /// Forces the removal of a self-hosted runner from a repository. You can use this endpoint to completely remove the runner when the machine you were using no longer exists.
@@ -3677,21 +2990,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationErrorSimple.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationErrorSimple.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List labels for a self-hosted runner for a repository
 ///
 /// Lists all labels for a self-hosted runner configured in a repository.
@@ -3710,24 +3014,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListLabelsForSelfHostedRunnerForRepoResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListLabelsForSelfHostedRunnerForRepoResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Add custom labels to a self-hosted runner for a repository
 ///
 /// Adds custom labels to a self-hosted runner configured in a repository.
@@ -3748,15 +3041,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsAddCustomLabelsToSelfHostedRunnerForRepoResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ActionsAddCustomLabelsToSelfHostedRunnerForRepoError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsAddCustomLabelsToSelfHostedRunnerForRepoResponse.fromJson(json as Map<String, dynamic>);}, onError: ActionsAddCustomLabelsToSelfHostedRunnerForRepoError.parse, );}
 /// Set custom labels for a self-hosted runner for a repository
 ///
 /// Remove all previous custom labels and set the new custom labels for a specific
@@ -3778,15 +3065,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsSetCustomLabelsForSelfHostedRunnerForRepoResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ActionsSetCustomLabelsForSelfHostedRunnerForRepoError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsSetCustomLabelsForSelfHostedRunnerForRepoResponse.fromJson(json as Map<String, dynamic>);}, onError: ActionsSetCustomLabelsForSelfHostedRunnerForRepoError.parse, );}
 /// Remove all custom labels from a self-hosted runner for a repository
 ///
 /// Remove all custom labels from a self-hosted runner configured in a
@@ -3806,24 +3087,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForRepoResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsRemoveAllCustomLabelsFromSelfHostedRunnerForRepoResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Remove a custom label from a self-hosted runner for a repository
 ///
 /// Remove a custom label from a self-hosted runner configured
@@ -3846,15 +3116,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoResponse.fromJson(json as Map<String, dynamic>);}, onError: ActionsRemoveCustomLabelFromSelfHostedRunnerForRepoError.parse, );}
 /// List workflow runs for a repository
 ///
 /// Lists all workflow runs for a repository. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).
@@ -3910,14 +3174,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListWorkflowRunsForRepoResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListWorkflowRunsForRepoResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a workflow run
 ///
 /// Gets a specific workflow run.
@@ -3944,14 +3203,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return WorkflowRun.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  WorkflowRun.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a workflow run
 ///
 /// Deletes a specific workflow run.
@@ -3970,11 +3224,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get the review history for a workflow run
 ///
 /// Anyone with read access to the repository can use this endpoint.
@@ -3991,14 +3242,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => EnvironmentApprovals.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => EnvironmentApprovals.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Approve a workflow run for a fork pull request
 ///
 /// Approves a workflow run for a pull request from a public fork of a first time contributor. For more information, see ["Approving workflow runs from public forks](https://docs.github.com/actions/managing-workflow-runs/approving-workflow-runs-from-public-forks)."
@@ -4015,24 +3261,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EmptyObject.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EmptyObject.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List workflow run artifacts
 ///
 /// Lists artifacts for a workflow run.
@@ -4068,14 +3303,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListWorkflowRunArtifactsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListWorkflowRunArtifactsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a workflow run attempt
 ///
 /// Gets a specific workflow run attempt.
@@ -4102,14 +3332,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return WorkflowRun.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  WorkflowRun.fromJson(json as Map<String, dynamic>);}, );}
 /// List jobs for a workflow run attempt
 ///
 /// Lists jobs for a specific workflow run attempt. You can use parameters to narrow the list of results. For more information
@@ -4140,24 +3365,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListJobsForWorkflowRunAttemptResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListJobsForWorkflowRunAttemptResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Download workflow run attempt logs
 ///
 /// Gets a redirect URL to download an archive of log files for a specific workflow run attempt. This link expires after
@@ -4177,11 +3391,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Cancel a workflow run
 ///
 /// Cancels a workflow run using its `id`.
@@ -4198,24 +3409,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EmptyObject.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EmptyObject.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 409:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Review custom deployment protection rules for a workflow run
 ///
 /// Approve or reject custom deployment protection rules provided by a GitHub App for a workflow run. For more information, see "[Using environments for deployment](https://docs.github.com/actions/deployment/targeting-different-environments/using-environments-for-deployment)."
@@ -4237,11 +3437,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Force cancel a workflow run
 ///
 /// Cancels a workflow run and bypasses conditions that would otherwise cause a workflow execution to continue, such as an `always()` condition on a job.
@@ -4259,24 +3456,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EmptyObject.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EmptyObject.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 409:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List jobs for a workflow run
 ///
 /// Lists jobs for a workflow run. You can use parameters to narrow the list of results. For more information
@@ -4310,14 +3496,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListJobsForWorkflowRunResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListJobsForWorkflowRunResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Download workflow run logs
 ///
 /// Gets a redirect URL to download an archive of log files for a workflow run. This link expires after 1 minute. Look for
@@ -4337,11 +3518,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Delete workflow run logs
 ///
 /// Deletes all logs for a workflow run.
@@ -4358,21 +3536,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 403 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get pending deployments for a workflow run
 ///
 /// Get all deployment environments for a workflow run that are waiting for protection rules to pass.
@@ -4391,14 +3560,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => PendingDeployment.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => PendingDeployment.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Review pending deployments for a workflow run
 ///
 /// Approve or reject pending deployments that are waiting on approval by a required reviewer.
@@ -4419,14 +3583,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Deployment.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Deployment.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Re-run a workflow
 ///
 /// Re-runs your workflow run using its `id`.
@@ -4445,14 +3604,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EmptyObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EmptyObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Re-run failed jobs from a workflow run
 ///
 /// Re-run all of the failed jobs and their dependent jobs in a workflow run using the `id` of the workflow run.
@@ -4471,14 +3625,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EmptyObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EmptyObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Get workflow run usage
 ///
 /// > `[!WARNING]`
@@ -4500,14 +3649,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return WorkflowRunUsage.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  WorkflowRunUsage.fromJson(json as Map<String, dynamic>);}, );}
 /// List repository secrets
 ///
 /// Lists all secrets available in a repository without revealing their encrypted
@@ -4538,14 +3682,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListRepoSecretsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListRepoSecretsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a repository public key
 ///
 /// Gets your public key, which you need to encrypt secrets. You need to
@@ -4565,14 +3704,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsPublicKey.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsPublicKey.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a repository secret
 ///
 /// Gets a single repository secret without revealing its encrypted value.
@@ -4591,14 +3725,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsSecret.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsSecret.fromJson(json as Map<String, dynamic>);}, );}
 /// Create or update a repository secret
 ///
 /// Creates or updates a repository secret with an encrypted value. Encrypt your secret using
@@ -4620,11 +3749,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: ActionsCreateOrUpdateRepoSecretSuccess.parse,
-);
-}
+
+return   await execute(request, onSuccess: ActionsCreateOrUpdateRepoSecretSuccess.parse, );}
 /// Delete a repository secret
 ///
 /// Deletes a secret in a repository using the secret name.
@@ -4643,11 +3769,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List repository variables
 ///
 /// Lists all repository variables.
@@ -4677,14 +3800,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListRepoVariablesResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListRepoVariablesResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a repository variable
 ///
 /// Creates a repository variable that you can reference in a GitHub Actions workflow.
@@ -4705,14 +3823,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EmptyObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EmptyObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a repository variable
 ///
 /// Gets a specific variable in a repository.
@@ -4731,14 +3844,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsVariable.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsVariable.fromJson(json as Map<String, dynamic>);}, );}
 /// Update a repository variable
 ///
 /// Updates a repository variable that you can reference in a GitHub Actions workflow.
@@ -4759,11 +3867,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Delete a repository variable
 ///
 /// Deletes a repository variable using the variable name.
@@ -4782,11 +3887,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List repository workflows
 ///
 /// Lists the workflows in a repository.
@@ -4816,14 +3918,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListRepoWorkflowsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListRepoWorkflowsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a workflow
 ///
 /// Gets a specific workflow. You can replace `workflow_id` with the workflow
@@ -4843,14 +3940,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Workflow.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Workflow.fromJson(json as Map<String, dynamic>);}, );}
 /// Disable a workflow
 ///
 /// Disables a workflow and sets the `state` of the workflow to `disabled_manually`. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`.
@@ -4867,11 +3959,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a workflow dispatch event
 ///
 /// You can use this endpoint to manually trigger a GitHub Actions workflow run. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`.
@@ -4892,11 +3981,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: ActionsCreateWorkflowDispatchSuccess.parse,
-);
-}
+
+return   await execute(request, onSuccess: ActionsCreateWorkflowDispatchSuccess.parse, );}
 /// Enable a workflow
 ///
 /// Enables a workflow and sets the `state` of the workflow to `active`. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`.
@@ -4913,11 +3999,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List workflow runs for a workflow
 ///
 /// List all workflow runs for a workflow. You can replace `workflow_id` with the workflow file name. For example, you could use `main.yaml`. You can use parameters to narrow the list of results. For more information about using parameters, see [Parameters](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#parameters).
@@ -4973,14 +4056,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListWorkflowRunsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListWorkflowRunsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get workflow usage
 ///
 /// > `[!WARNING]`
@@ -5004,14 +4082,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return WorkflowUsage.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  WorkflowUsage.fromJson(json as Map<String, dynamic>);}, );}
 /// List environment secrets
 ///
 /// Lists all secrets available in an environment without revealing their
@@ -5042,14 +4115,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListEnvironmentSecretsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListEnvironmentSecretsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get an environment public key
 ///
 /// Get the public key for an environment, which you need to encrypt environment
@@ -5069,14 +4137,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsPublicKey.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsPublicKey.fromJson(json as Map<String, dynamic>);}, );}
 /// Get an environment secret
 ///
 /// Gets a single environment secret without revealing its encrypted value.
@@ -5095,14 +4158,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsSecret.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsSecret.fromJson(json as Map<String, dynamic>);}, );}
 /// Create or update an environment secret
 ///
 /// Creates or updates an environment secret with an encrypted value. Encrypt your secret using
@@ -5124,11 +4182,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: ActionsCreateOrUpdateEnvironmentSecretSuccess.parse,
-);
-}
+
+return   await execute(request, onSuccess: ActionsCreateOrUpdateEnvironmentSecretSuccess.parse, );}
 /// Delete an environment secret
 ///
 /// Deletes a secret in an environment using the secret name.
@@ -5147,11 +4202,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List environment variables
 ///
 /// Lists all environment variables.
@@ -5181,14 +4233,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsListEnvironmentVariablesResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsListEnvironmentVariablesResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create an environment variable
 ///
 /// Create an environment variable that you can reference in a GitHub Actions workflow.
@@ -5209,14 +4256,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EmptyObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EmptyObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Get an environment variable
 ///
 /// Gets a specific variable in an environment.
@@ -5235,14 +4277,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActionsVariable.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActionsVariable.fromJson(json as Map<String, dynamic>);}, );}
 /// Update an environment variable
 ///
 /// Updates an environment variable that you can reference in a GitHub Actions workflow.
@@ -5263,11 +4300,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Delete an environment variable
 ///
 /// Deletes an environment variable using the variable name.
@@ -5286,9 +4320,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

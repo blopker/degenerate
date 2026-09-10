@@ -7,13 +7,9 @@ sealed class ReposMergeSuccess {const ReposMergeSuccess();
 static ReposMergeSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 201:
 final json = jsonDecode(response.body);
-return ReposMergeSuccess201(Commit.fromJson(json as Map<String, dynamic>));
-case 204:
-return const ReposMergeSuccess204();
-default:
-return ReposMergeSuccessUnknown(response);
-}
-}
+return  ReposMergeSuccess201(Commit.fromJson(json as Map<String, dynamic>));case 204:
+return  const ReposMergeSuccess204();default:
+return  ReposMergeSuccessUnknown(response); }}
 }
 /// Response for 201 (application/json).
 final class ReposMergeSuccess201 extends ReposMergeSuccess {const ReposMergeSuccess201(this.data);

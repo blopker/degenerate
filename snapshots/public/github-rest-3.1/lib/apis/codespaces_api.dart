@@ -35,15 +35,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodespacesListInOrganizationResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodespacesListInOrganizationError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodespacesListInOrganizationResponse.fromJson(json as Map<String, dynamic>);}, onError: CodespacesListInOrganizationError.parse, );}
 /// List organization secrets
 ///
 /// Lists all Codespaces development environment secrets available at the organization-level without revealing their encrypted
@@ -72,14 +66,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodespacesListOrgSecretsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodespacesListOrgSecretsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get an organization public key
 ///
 /// Gets a public key for an organization, which is required in order to encrypt secrets. You need to encrypt the value of a secret before you can create or update secrets.
@@ -95,14 +84,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodespacesPublicKey.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodespacesPublicKey.fromJson(json as Map<String, dynamic>);}, );}
 /// Get an organization secret
 ///
 /// Gets an organization development environment secret without revealing its encrypted value.
@@ -119,14 +103,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodespacesOrgSecret.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodespacesOrgSecret.fromJson(json as Map<String, dynamic>);}, );}
 /// Create or update an organization secret
 ///
 /// Creates or updates an organization development environment secret with an encrypted value. Encrypt your secret using
@@ -146,12 +125,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: CodespacesCreateOrUpdateOrgSecretSuccess.parse,
-  onError: CodespacesCreateOrUpdateOrgSecretError.parse,
-);
-}
+
+return   await execute(request, onSuccess: CodespacesCreateOrUpdateOrgSecretSuccess.parse, onError: CodespacesCreateOrUpdateOrgSecretError.parse, );}
 /// Delete an organization secret
 ///
 /// Deletes an organization development environment secret using the secret name.
@@ -168,21 +143,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List selected repositories for an organization secret
 ///
 /// Lists all repositories that have been selected when the `visibility`
@@ -211,24 +177,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodespacesListSelectedReposForOrgSecretResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodespacesListSelectedReposForOrgSecretResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set selected repositories for an organization secret
 ///
 /// Replaces all repositories for an organization development environment secret when the `visibility`
@@ -249,12 +204,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: CodespacesSetSelectedReposForOrgSecretError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: CodespacesSetSelectedReposForOrgSecretError.parse, );}
 /// Add selected repository to an organization secret
 ///
 /// Adds a repository to an organization development environment secret when the `visibility` for repository access is set to `selected`. The visibility is set when you [Create or update an organization secret](https://docs.github.com/rest/codespaces/organization-secrets#create-or-update-an-organization-secret).
@@ -270,12 +221,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: CodespacesAddSelectedRepoToOrgSecretError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: CodespacesAddSelectedRepoToOrgSecretError.parse, );}
 /// Remove selected repository from an organization secret
 ///
 /// Removes a repository from an organization development environment secret when the `visibility`
@@ -294,12 +241,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: CodespacesRemoveSelectedRepoFromOrgSecretError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: CodespacesRemoveSelectedRepoFromOrgSecretError.parse, );}
 /// List codespaces for a user in organization
 ///
 /// Lists the codespaces that a member of an organization has for repositories in that organization.
@@ -327,15 +270,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodespacesGetCodespacesForUserInOrgResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodespacesGetCodespacesForUserInOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodespacesGetCodespacesForUserInOrgResponse.fromJson(json as Map<String, dynamic>);}, onError: CodespacesGetCodespacesForUserInOrgError.parse, );}
 /// Delete a codespace from the organization
 ///
 /// Deletes a user's codespace.
@@ -352,15 +289,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: CodespacesDeleteFromOrganizationError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: CodespacesDeleteFromOrganizationError.parse, );}
 /// Stop a codespace for an organization user
 ///
 /// Stops a user's codespace.
@@ -377,15 +308,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Codespace.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodespacesStopInOrganizationError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Codespace.fromJson(json as Map<String, dynamic>);}, onError: CodespacesStopInOrganizationError.parse, );}
 /// List codespaces in a repository for the authenticated user
 ///
 /// Lists the codespaces associated to a specified repository and the authenticated user.
@@ -413,24 +338,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodespacesListInRepositoryForAuthenticatedUserResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodespacesListInRepositoryForAuthenticatedUserResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create a codespace in a repository
 ///
 /// Creates a codespace owned by the authenticated user in the specified repository.
@@ -449,22 +363,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 201 || 202:
 final json = jsonDecode(response.body);
-return Codespace.fromJson(json as Map<String, dynamic>);
-default:
+return  Codespace.fromJson(json as Map<String, dynamic>);default:
 final json = jsonDecode(response.body);
-return Codespace.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-  onError: CodespacesCreateWithRepoForAuthenticatedUserError.parse,
-);
-}
+return  Codespace.fromJson(json as Map<String, dynamic>); }}, onError: CodespacesCreateWithRepoForAuthenticatedUserError.parse, );}
 /// List devcontainer configurations in a repository for the authenticated user
 ///
 /// Lists the devcontainer.json files associated with a specified repository and the authenticated user. These files
@@ -493,15 +398,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodespacesListDevcontainersInRepositoryForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodespacesListDevcontainersInRepositoryForAuthenticatedUserResponse.fromJson(json as Map<String, dynamic>);}, onError: CodespacesListDevcontainersInRepositoryForAuthenticatedUserError.parse, );}
 /// List available machine types for a repository
 ///
 /// List the machine types available for a given repository based on its configuration.
@@ -532,15 +431,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodespacesRepoMachinesForAuthenticatedUserResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodespacesRepoMachinesForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodespacesRepoMachinesForAuthenticatedUserResponse.fromJson(json as Map<String, dynamic>);}, onError: CodespacesRepoMachinesForAuthenticatedUserError.parse, );}
 /// Get default attributes for a codespace
 ///
 /// Gets the default attributes for codespaces created by the user with the repository.
@@ -568,24 +461,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodespacesPreFlightWithRepoForAuthenticatedUserResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodespacesPreFlightWithRepoForAuthenticatedUserResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 401 || 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Check if permissions defined by a devcontainer have been accepted by the authenticated user
 ///
 /// Checks whether the permissions defined by a given devcontainer configuration have been accepted by the authenticated user.
@@ -609,15 +491,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodespacesPermissionsCheckForDevcontainer.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodespacesCheckPermissionsForDevcontainerError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodespacesPermissionsCheckForDevcontainer.fromJson(json as Map<String, dynamic>);}, onError: CodespacesCheckPermissionsForDevcontainerError.parse, );}
 /// List repository secrets
 ///
 /// Lists all development environment secrets available in a repository without revealing their encrypted
@@ -646,14 +522,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodespacesListRepoSecretsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodespacesListRepoSecretsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a repository public key
 ///
 /// Gets your public key, which you need to encrypt secrets. You need to
@@ -671,14 +542,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodespacesPublicKey.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodespacesPublicKey.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a repository secret
 ///
 /// Gets a single repository development environment secret without revealing its encrypted value.
@@ -695,14 +561,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RepoCodespacesSecret.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RepoCodespacesSecret.fromJson(json as Map<String, dynamic>);}, );}
 /// Create or update a repository secret
 ///
 /// Creates or updates a repository development environment secret with an encrypted value. Encrypt your secret using
@@ -722,11 +583,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: CodespacesCreateOrUpdateRepoSecretSuccess.parse,
-);
-}
+
+return   await execute(request, onSuccess: CodespacesCreateOrUpdateRepoSecretSuccess.parse, );}
 /// Delete a repository secret
 ///
 /// Deletes a development environment secret in a repository using the secret name.
@@ -743,11 +601,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a codespace from a pull request
 ///
 /// Creates a codespace owned by the authenticated user for the specified pull request.
@@ -766,22 +621,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 201 || 202:
 final json = jsonDecode(response.body);
-return Codespace.fromJson(json as Map<String, dynamic>);
-default:
+return  Codespace.fromJson(json as Map<String, dynamic>);default:
 final json = jsonDecode(response.body);
-return Codespace.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-  onError: CodespacesCreateWithPrForAuthenticatedUserError.parse,
-);
-}
+return  Codespace.fromJson(json as Map<String, dynamic>); }}, onError: CodespacesCreateWithPrForAuthenticatedUserError.parse, );}
 /// List codespaces for the authenticated user
 ///
 /// Lists the authenticated user's codespaces.
@@ -812,15 +658,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodespacesListForAuthenticatedUserResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodespacesListForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodespacesListForAuthenticatedUserResponse.fromJson(json as Map<String, dynamic>);}, onError: CodespacesListForAuthenticatedUserError.parse, );}
 /// Create a codespace for the authenticated user
 ///
 /// Creates a new codespace, owned by the authenticated user.
@@ -841,22 +681,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 201 || 202:
 final json = jsonDecode(response.body);
-return Codespace.fromJson(json as Map<String, dynamic>);
-default:
+return  Codespace.fromJson(json as Map<String, dynamic>);default:
 final json = jsonDecode(response.body);
-return Codespace.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-  onError: CodespacesCreateForAuthenticatedUserError.parse,
-);
-}
+return  Codespace.fromJson(json as Map<String, dynamic>); }}, onError: CodespacesCreateForAuthenticatedUserError.parse, );}
 /// List secrets for the authenticated user
 ///
 /// Lists all development environment secrets available for a user's codespaces without revealing their
@@ -887,14 +718,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodespacesListSecretsForAuthenticatedUserResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodespacesListSecretsForAuthenticatedUserResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get public key for the authenticated user
 ///
 /// Gets your public key, which you need to encrypt secrets. You need to encrypt a secret before you can create or update secrets.
@@ -913,14 +739,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodespacesUserPublicKey.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodespacesUserPublicKey.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a secret for the authenticated user
 ///
 /// Gets a development environment secret available to a user's codespaces without revealing its encrypted value.
@@ -939,14 +760,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodespacesSecret.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodespacesSecret.fromJson(json as Map<String, dynamic>);}, );}
 /// Create or update a secret for the authenticated user
 ///
 /// Creates or updates a development environment secret for a user's codespace with an encrypted value. Encrypt your secret using
@@ -968,12 +784,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: CodespacesCreateOrUpdateSecretForAuthenticatedUserSuccess.parse,
-  onError: CodespacesCreateOrUpdateSecretForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: CodespacesCreateOrUpdateSecretForAuthenticatedUserSuccess.parse, onError: CodespacesCreateOrUpdateSecretForAuthenticatedUserError.parse, );}
 /// Delete a secret for the authenticated user
 ///
 /// Deletes a development environment secret from a user's codespaces using the secret name. Deleting the secret will remove access from all codespaces that were allowed to access the secret.
@@ -992,11 +804,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List selected repositories for a user secret
 ///
 /// List the repositories that have been granted the ability to use a user's development environment secret.
@@ -1015,24 +824,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodespacesListRepositoriesForSecretForAuthenticatedUserResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodespacesListRepositoriesForSecretForAuthenticatedUserResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set selected repositories for a user secret
 ///
 /// Select the repositories that will use a user's development environment secret.
@@ -1053,21 +851,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Add a selected repository to a user secret
 ///
 /// Adds a repository to the selected repositories for a user's development environment secret.
@@ -1086,21 +875,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Remove a selected repository from a user secret
 ///
 /// Removes a repository from the selected repositories for a user's development environment secret.
@@ -1119,21 +899,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get a codespace for the authenticated user
 ///
 /// Gets information about a user's codespace.
@@ -1150,15 +921,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Codespace.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodespacesGetForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Codespace.fromJson(json as Map<String, dynamic>);}, onError: CodespacesGetForAuthenticatedUserError.parse, );}
 /// Update a codespace for the authenticated user
 ///
 /// Updates a codespace owned by the authenticated user. Currently only the codespace's machine type and recent folders can be modified using this endpoint.
@@ -1179,24 +944,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Codespace.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Codespace.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 401 || 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete a codespace for the authenticated user
 ///
 /// Deletes a user's codespace.
@@ -1213,15 +967,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: CodespacesDeleteForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: CodespacesDeleteForAuthenticatedUserError.parse, );}
 /// Export a codespace for the authenticated user
 ///
 /// Triggers an export of the specified codespace and returns a URL and ID where the status of the export can be monitored.
@@ -1240,15 +988,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodespaceExportDetails.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodespacesExportForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodespaceExportDetails.fromJson(json as Map<String, dynamic>);}, onError: CodespacesExportForAuthenticatedUserError.parse, );}
 /// Get details about a codespace export
 ///
 /// Gets information about an export of a codespace.
@@ -1265,24 +1007,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodespaceExportDetails.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodespaceExportDetails.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List machine types for a codespace
 ///
 /// List the machine types a codespace can transition to use.
@@ -1299,15 +1030,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodespacesCodespaceMachinesForAuthenticatedUserResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodespacesCodespaceMachinesForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodespacesCodespaceMachinesForAuthenticatedUserResponse.fromJson(json as Map<String, dynamic>);}, onError: CodespacesCodespaceMachinesForAuthenticatedUserError.parse, );}
 /// Create a repository from an unpublished codespace
 ///
 /// Publishes an unpublished codespace, creating a new repository and assigning it to the codespace.
@@ -1330,15 +1055,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodespaceWithFullRepository.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodespacesPublishForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodespaceWithFullRepository.fromJson(json as Map<String, dynamic>);}, onError: CodespacesPublishForAuthenticatedUserError.parse, );}
 /// Start a codespace for the authenticated user
 ///
 /// Starts a user's codespace.
@@ -1355,15 +1074,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Codespace.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodespacesStartForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Codespace.fromJson(json as Map<String, dynamic>);}, onError: CodespacesStartForAuthenticatedUserError.parse, );}
 /// Stop a codespace for the authenticated user
 ///
 /// Stops a user's codespace.
@@ -1380,22 +1093,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Codespace.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Codespace.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

@@ -35,24 +35,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfBlackForestLabsFlux1SchnellResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfBlackForestLabsFlux1SchnellResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/black-forest-labs/flux-2-dev model.
 ///
 /// Runs inference on the @cf/black-forest-labs/flux-2-dev model.
@@ -80,24 +69,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfBlackForestLabsFlux2DevResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfBlackForestLabsFlux2DevResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/black-forest-labs/flux-2-klein-4b model.
 ///
 /// Runs inference on the @cf/black-forest-labs/flux-2-klein-4b model.
@@ -125,24 +103,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfBlackForestLabsFlux2Klein4bResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfBlackForestLabsFlux2Klein4bResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/black-forest-labs/flux-2-klein-9b model.
 ///
 /// Runs inference on the @cf/black-forest-labs/flux-2-klein-9b model.
@@ -170,24 +137,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfBlackForestLabsFlux2Klein9bResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfBlackForestLabsFlux2Klein9bResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/bytedance/stable-diffusion-xl-lightning model.
 ///
 /// Runs inference on the @cf/bytedance/stable-diffusion-xl-lightning model.
@@ -215,21 +171,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: WorkersAiPostRunCfBytedanceStableDiffusionXlLightningSuccess.parse,
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: WorkersAiPostRunCfBytedanceStableDiffusionXlLightningSuccess.parse, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfBytedanceStableDiffusionXlLightningResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfBytedanceStableDiffusionXlLightningResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/leonardo/lucid-origin model.
 ///
 /// Runs inference on the @cf/leonardo/lucid-origin model.
@@ -257,24 +204,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfLeonardoLucidOriginResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfLeonardoLucidOriginResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/leonardo/phoenix-1.0 model.
 ///
 /// Runs inference on the @cf/leonardo/phoenix-1.0 model.
@@ -302,21 +238,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: WorkersAiPostRunCfLeonardoPhoenix10Success.parse,
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: WorkersAiPostRunCfLeonardoPhoenix10Success.parse, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfLeonardoPhoenix10Response400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfLeonardoPhoenix10Response400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/lykon/dreamshaper-8-lcm model.
 ///
 /// Runs inference on the @cf/lykon/dreamshaper-8-lcm model.
@@ -344,21 +271,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: WorkersAiPostRunCfLykonDreamshaper8LcmSuccess.parse,
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: WorkersAiPostRunCfLykonDreamshaper8LcmSuccess.parse, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfLykonDreamshaper8LcmResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfLykonDreamshaper8LcmResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/runwayml/stable-diffusion-v1-5-img2img model.
 ///
 /// Runs inference on the @cf/runwayml/stable-diffusion-v1-5-img2img model.
@@ -386,21 +304,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: Img2imgSuccess.parse,
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: Img2imgSuccess.parse, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return $5Img2imgResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  $5Img2imgResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/runwayml/stable-diffusion-v1-5-inpainting model.
 ///
 /// Runs inference on the @cf/runwayml/stable-diffusion-v1-5-inpainting model.
@@ -428,21 +337,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: InpaintingSuccess.parse,
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: InpaintingSuccess.parse, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return $5InpaintingResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  $5InpaintingResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/stabilityai/stable-diffusion-xl-base-1.0 model.
 ///
 /// Runs inference on the @cf/stabilityai/stable-diffusion-xl-base-1.0 model.
@@ -470,21 +370,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Success.parse,
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Success.parse, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Response400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Response400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Open Websocket connection with @cf/sven/test-pipe-http model.
 ///
 /// Opens a WebSocket connection to stream inference results from the @cf/sven/test-pipe-http model.
@@ -499,19 +390,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostWebsocketRunCfSvenTestPipeHttpResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostWebsocketRunCfSvenTestPipeHttpResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

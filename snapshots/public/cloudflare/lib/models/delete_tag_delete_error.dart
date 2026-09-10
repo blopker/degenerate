@@ -7,14 +7,10 @@ sealed class DeleteTagDeleteError {const DeleteTagDeleteError();
 static DeleteTagDeleteError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return DeleteTagDeleteError400(DeleteTagDeleteResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  DeleteTagDeleteError400(DeleteTagDeleteResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return DeleteTagDeleteError404(DeleteTagDeleteResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return DeleteTagDeleteErrorUnknown(response);
-}
-}
+return  DeleteTagDeleteError404(DeleteTagDeleteResponse404.fromJson(json as Map<String, dynamic>));default:
+return  DeleteTagDeleteErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class DeleteTagDeleteError400 extends DeleteTagDeleteError {const DeleteTagDeleteError400(this.data);

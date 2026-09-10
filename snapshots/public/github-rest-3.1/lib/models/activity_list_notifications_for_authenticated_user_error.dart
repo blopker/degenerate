@@ -6,20 +6,14 @@ sealed class ActivityListNotificationsForAuthenticatedUserError {const ActivityL
 /// Decodes the payload for its declared status and content type.
 static ActivityListNotificationsForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ActivityListNotificationsForAuthenticatedUserError304();
-case 401:
+return  const ActivityListNotificationsForAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return ActivityListNotificationsForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  ActivityListNotificationsForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return ActivityListNotificationsForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ActivityListNotificationsForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ActivityListNotificationsForAuthenticatedUserError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ActivityListNotificationsForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  ActivityListNotificationsForAuthenticatedUserError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ActivityListNotificationsForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ActivityListNotificationsForAuthenticatedUserError304 extends ActivityListNotificationsForAuthenticatedUserError {const ActivityListNotificationsForAuthenticatedUserError304();

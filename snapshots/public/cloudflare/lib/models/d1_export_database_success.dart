@@ -7,14 +7,10 @@ sealed class D1ExportDatabaseSuccess {const D1ExportDatabaseSuccess();
 static D1ExportDatabaseSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final json = jsonDecode(response.body) as Map<String, dynamic>;
-return D1ExportDatabaseSuccess200(D1ExportDatabaseResponseResult.fromJson(json['result'] as Map<String, dynamic>));
-case 202:
+return  D1ExportDatabaseSuccess200(D1ExportDatabaseResponseResult.fromJson(json['result'] as Map<String, dynamic>));case 202:
 final json = jsonDecode(response.body) as Map<String, dynamic>;
-return D1ExportDatabaseSuccess202(D1ExportDatabaseResponse202Result.fromJson(json['result'] as Map<String, dynamic>));
-default:
-return D1ExportDatabaseSuccessUnknown(response);
-}
-}
+return  D1ExportDatabaseSuccess202(D1ExportDatabaseResponse202Result.fromJson(json['result'] as Map<String, dynamic>));default:
+return  D1ExportDatabaseSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class D1ExportDatabaseSuccess200 extends D1ExportDatabaseSuccess {const D1ExportDatabaseSuccess200(this.data);

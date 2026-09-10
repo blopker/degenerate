@@ -58,24 +58,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => GetEventListGetResponse.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => GetEventListGetResponse.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return GetEventListGetResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  GetEventListGetResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Deletes one or more events
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/{dataset_id}/delete`
@@ -96,24 +85,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as num).toDouble();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as num).toDouble();}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return DeleteEventDeleteResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  DeleteEventDeleteResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Revert an Events Durable Object to a point in time
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/{dataset_id}/revert-do`
@@ -128,24 +106,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostEventDoRevertResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostEventDoRevertResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PostEventDoRevertResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  PostEventDoRevertResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Updates an event
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/{event_id}`
@@ -160,24 +127,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostEventUpdateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostEventUpdateResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PostEventUpdateResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  PostEventUpdateResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Updates an event
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/{event_id}`
@@ -192,24 +148,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PatchEventUpdateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PatchEventUpdateResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PatchEventUpdateResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  PatchEventUpdateResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Reads data for a raw event
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}`
@@ -222,24 +167,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetEventRawReadResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetEventRawReadResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return GetEventRawReadResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  GetEventRawReadResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Updates a raw event
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}`
@@ -254,24 +188,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostEventRawUpdateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostEventRawUpdateResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PostEventRawUpdateResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  PostEventRawUpdateResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Updates a raw event
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}`
@@ -286,24 +209,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PatchEventRawUpdateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PatchEventRawUpdateResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PatchEventRawUpdateResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  PatchEventRawUpdateResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Filter and list events related to specific event
 ///
 /// The `event_id` must be defined (to list existing events (and their IDs), use the [`Filter and List Events`](https://developers.cloudflare.com/api/resources/cloudforce_one/subresources/threat_events/methods/list/) endpoint). Also, must provide query parameters.
@@ -347,24 +259,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => GetEventRelationshipsResponse.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => GetEventRelationshipsResponse.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return GetEventRelationshipsResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  GetEventRelationshipsResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Aggregate events by single or multiple columns with optional date filtering
 ///
 /// Aggregate threat events by one or more columns (e.g., attacker, targetIndustry) with optional date filtering and daily grouping. Supports multi-dimensional aggregation for cross-analysis.
@@ -400,24 +301,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetEventAggregateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetEventAggregateResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return GetEventAggregateResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  GetEventAggregateResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Creates a new event
 ///
 /// To create a dataset, see the [`Create Dataset`](https://developers.cloudflare.com/api/resources/cloudforce_one/subresources/threat_events/subresources/datasets/methods/create/) endpoint. When `datasetId` parameter is unspecified, it will be created in a default dataset named `Cloudforce One Threat Events`.
@@ -434,24 +324,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostEventCreateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostEventCreateResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PostEventCreateResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  PostEventCreateResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Creates bulk events
 ///
 /// The `datasetId` parameter must be defined. To list existing datasets (and their IDs) in your account, use the [`List Datasets`](https://developers.cloudflare.com/api/resources/cloudforce_one/subresources/threat_events/subresources/datasets/methods/list/) endpoint.
@@ -468,24 +347,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostEventCreateBulkResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostEventCreateBulkResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PostEventCreateBulkResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  PostEventCreateBulkResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Reads an event
 ///
 /// Retrieves a specific event by its UUID.
@@ -500,24 +368,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetEventReadResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetEventReadResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return GetEventReadResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  GetEventReadResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Moves specified events from one dataset to another dataset
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/move`
@@ -540,24 +397,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as num).toDouble();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as num).toDouble();}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PostEventMoveToNewDsResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  PostEventMoveToNewDsResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Removes a tag from an event
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/event_tag/{event_id}`
@@ -572,24 +418,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return DeleteEventTagDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  DeleteEventTagDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return DeleteEventTagDeleteResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  DeleteEventTagDeleteResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Adds a tag to an event
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/event_tag/{event_id}/create`
@@ -604,24 +439,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return PostEventTagCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  PostEventTagCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PostEventTagCreateResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  PostEventTagCreateResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List all saved event queries
 ///
 /// Retrieve all saved event queries for the account
@@ -636,24 +460,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => GetEventQueryListResponse.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => GetEventQueryListResponse.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 500:
 final json = jsonDecode(response.body);
-return GetEventQueryListResponse500.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  GetEventQueryListResponse500.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Read a saved event query
 ///
 /// Retrieve a saved event query by its ID
@@ -668,24 +481,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetEventQueryReadResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetEventQueryReadResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return GetEventQueryReadResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  GetEventQueryReadResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update a saved event query
 ///
 /// Update an existing saved event query by its ID
@@ -702,15 +504,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostEventQueryUpdateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: PostEventQueryUpdateError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostEventQueryUpdateResponse.fromJson(json as Map<String, dynamic>);}, onError: PostEventQueryUpdateError.parse, );}
 /// Update a saved event query
 ///
 /// Update an existing saved event query by its ID
@@ -727,15 +523,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PatchEventQueryUpdateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: PatchEventQueryUpdateError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PatchEventQueryUpdateResponse.fromJson(json as Map<String, dynamic>);}, onError: PatchEventQueryUpdateError.parse, );}
 /// Delete a saved event query
 ///
 /// Delete a saved event query by its ID
@@ -750,21 +540,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return DeleteEventQueryDeleteResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  DeleteEventQueryDeleteResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List all event query alerts
 ///
 /// Retrieve all event query alerts for the account
@@ -779,24 +560,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => GetEventQueryAlertListResponse.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => GetEventQueryAlertListResponse.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 500:
 final json = jsonDecode(response.body);
-return GetEventQueryAlertListResponse500.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  GetEventQueryAlertListResponse500.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Read an event query alert
 ///
 /// Retrieve an event query alert by its ID
@@ -811,24 +581,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetEventQueryAlertReadResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetEventQueryAlertReadResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return GetEventQueryAlertReadResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  GetEventQueryAlertReadResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update an event query alert
 ///
 /// Update an existing event query alert by its ID
@@ -845,15 +604,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostEventQueryAlertUpdateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: PostEventQueryAlertUpdateError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostEventQueryAlertUpdateResponse.fromJson(json as Map<String, dynamic>);}, onError: PostEventQueryAlertUpdateError.parse, );}
 /// Update an event query alert
 ///
 /// Update an existing event query alert by its ID
@@ -870,15 +623,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PatchEventQueryAlertUpdateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: PatchEventQueryAlertUpdateError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PatchEventQueryAlertUpdateResponse.fromJson(json as Map<String, dynamic>);}, onError: PatchEventQueryAlertUpdateError.parse, );}
 /// Delete an event query alert
 ///
 /// Delete an event query alert subscription by its ID
@@ -893,21 +640,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return DeleteEventQueryAlertDeleteResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  DeleteEventQueryAlertDeleteResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create an event query alert
 ///
 /// Create a new alert subscription for an event query
@@ -924,24 +662,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostEventQueryAlertCreateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostEventQueryAlertCreateResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PostEventQueryAlertCreateResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  PostEventQueryAlertCreateResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create a saved event query
 ///
 /// Create a new saved event query for the account
@@ -958,24 +685,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostEventQueryCreateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostEventQueryCreateResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PostEventQueryCreateResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  PostEventQueryCreateResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Reads raw data for an event by UUID
 ///
 /// Retrieves the raw data associated with an event. Searches across all shards in the dataset.
@@ -990,15 +706,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetEventRawReadDsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: GetEventRawReadDsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetEventRawReadDsResponse.fromJson(json as Map<String, dynamic>);}, onError: GetEventRawReadDsError.parse, );}
 /// Removes an event reference
 ///
 /// `DELETE /accounts/{account_id}/cloudforce-one/events/relate/{event_id}`
@@ -1013,24 +723,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return DeleteEventReferenceDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  DeleteEventReferenceDeleteResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return DeleteEventReferenceDeleteResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  DeleteEventReferenceDeleteResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Creates event references for a event
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/relate/{event_id}/create`
@@ -1045,24 +744,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return PostEventReferenceCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  PostEventReferenceCreateResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PostEventReferenceCreateResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  PostEventReferenceCreateResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create a relationship between two events
 ///
 /// Creates a directed relationship between two events. The relationship is from parent to child with a specified type.
@@ -1079,24 +767,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostCreateEventRelationshipResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostCreateEventRelationshipResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PostCreateEventRelationshipResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  PostCreateEventRelationshipResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// GraphQL endpoint for event aggregation
 ///
 /// Execute GraphQL aggregations over threat events. Supports multi-dimensional group-bys, optional date range filtering, and multi-dataset aggregation.
@@ -1111,22 +788,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostEventGraphQlResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostEventGraphQlResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PostEventGraphQlResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  PostEventGraphQlResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

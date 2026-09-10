@@ -36,11 +36,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of fulfillment orders on a shop for a specific app.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/assignedfulfillmentorder#index-2020-04
@@ -69,11 +66,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of fulfillment orders on a shop for a specific app.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/assignedfulfillmentorder#index-2020-07
@@ -102,11 +96,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of fulfillment orders on a shop for a specific app.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/assignedfulfillmentorder#index-2020-10
@@ -135,11 +126,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of fulfillment orders on a shop for a specific app.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/assignedfulfillmentorder#index-2021-01
@@ -168,11 +156,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of fulfillment orders on a shop for a specific app.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/assignedfulfillmentorder#index-unstable
@@ -201,11 +186,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Sends a cancellation request to the fulfillment service of a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#create-2020-01
@@ -230,11 +212,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Accepts a cancellation request sent to a fulfillment service for a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#accept-2020-01
@@ -259,11 +238,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Rejects a cancellation request sent to a fulfillment service for a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#reject-2020-01
@@ -288,11 +264,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Sends a cancellation request to the fulfillment service of a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#create-2020-04
@@ -317,11 +290,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Accepts a cancellation request sent to a fulfillment service for a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#accept-2020-04
@@ -346,11 +316,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Rejects a cancellation request sent to a fulfillment service for a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#reject-2020-04
@@ -375,11 +342,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Sends a cancellation request to the fulfillment service of a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#create-2020-07
@@ -404,11 +368,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Accepts a cancellation request sent to a fulfillment service for a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#accept-2020-07
@@ -433,11 +394,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Rejects a cancellation request sent to a fulfillment service for a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#reject-2020-07
@@ -462,11 +420,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Sends a cancellation request to the fulfillment service of a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#create-2020-10
@@ -491,11 +446,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Accepts a cancellation request sent to a fulfillment service for a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#accept-2020-10
@@ -520,11 +472,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Rejects a cancellation request sent to a fulfillment service for a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#reject-2020-10
@@ -549,11 +498,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Sends a cancellation request to the fulfillment service of a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#create-2021-01
@@ -578,11 +524,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Accepts a cancellation request sent to a fulfillment service for a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#accept-2021-01
@@ -607,11 +550,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Rejects a cancellation request sent to a fulfillment service for a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#reject-2021-01
@@ -636,11 +576,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Sends a cancellation request to the fulfillment service of a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#create-unstable
@@ -665,11 +602,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Accepts a cancellation request sent to a fulfillment service for a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#accept-unstable
@@ -694,11 +628,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Rejects a cancellation request sent to a fulfillment service for a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/cancellationrequest#reject-unstable
@@ -723,11 +654,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of carrier services
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#index-2020-01
@@ -742,11 +670,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a carrier service
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#create-2020-01
@@ -763,11 +688,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single carrier service by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#show-2020-01
@@ -782,11 +704,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a carrier service. Only the app that creates a carrier service can update it.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#update-2020-01
@@ -803,11 +722,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a carrier service
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#destroy-2020-01
@@ -822,11 +738,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of carrier services
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#index-2020-04
@@ -841,11 +754,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a carrier service
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#create-2020-04
@@ -862,11 +772,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single carrier service by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#show-2020-04
@@ -881,11 +788,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a carrier service. Only the app that creates a carrier service can update it.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#update-2020-04
@@ -902,11 +806,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a carrier service
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#destroy-2020-04
@@ -921,11 +822,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of carrier services
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#index-2020-07
@@ -940,11 +838,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a carrier service
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#create-2020-07
@@ -961,11 +856,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single carrier service by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#show-2020-07
@@ -980,11 +872,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a carrier service. Only the app that creates a carrier service can update it.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#update-2020-07
@@ -1001,11 +890,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a carrier service
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#destroy-2020-07
@@ -1020,11 +906,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of carrier services
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#index-2020-10
@@ -1039,11 +922,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a carrier service
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#create-2020-10
@@ -1060,11 +940,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single carrier service by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#show-2020-10
@@ -1079,11 +956,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a carrier service. Only the app that creates a carrier service can update it.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#update-2020-10
@@ -1100,11 +974,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a carrier service
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#destroy-2020-10
@@ -1119,11 +990,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of carrier services
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#index-2021-01
@@ -1138,11 +1006,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a carrier service
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#create-2021-01
@@ -1159,11 +1024,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single carrier service by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#show-2021-01
@@ -1178,11 +1040,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a carrier service. Only the app that creates a carrier service can update it.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#update-2021-01
@@ -1199,11 +1058,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a carrier service
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#destroy-2021-01
@@ -1218,11 +1074,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of carrier services
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#index-unstable
@@ -1237,11 +1090,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a carrier service
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#create-unstable
@@ -1258,11 +1108,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single carrier service by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#show-unstable
@@ -1277,11 +1124,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a carrier service. Only the app that creates a carrier service can update it.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#update-unstable
@@ -1298,11 +1142,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a carrier service
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/carrierservice#destroy-unstable
@@ -1317,11 +1158,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves fulfillments associated with an order. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#index-2020-01
@@ -1362,11 +1200,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a fulfillment for the specified order and line items.
 ///           The fulfillment's status depends on the line items in the order:
 /// 
@@ -1405,11 +1240,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves fulfillments associated with a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#indexV2-2020-01
@@ -1432,11 +1264,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of fulfillments associated with a specific order
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#count-2020-01
@@ -1468,11 +1297,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a specific fulfillment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#show-2020-01
@@ -1495,11 +1321,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Update information associated with a fulfillment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#update-2020-01
@@ -1516,11 +1339,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a fulfillment for one or many fulfillment orders. The fulfillment orders are associated with the same order and are assigned to the same location.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#createV2-2020-01
@@ -1537,11 +1357,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates the tracking information for a fulfillment.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#update_tracking-2020-01
@@ -1558,11 +1375,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Mark a fulfillment as complete
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#complete-2020-01
@@ -1579,11 +1393,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Mark a fulfillment as open
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#open-2020-01
@@ -1600,11 +1411,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Cancel a fulfillment for a specific order ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#cancel-2020-01
@@ -1621,11 +1429,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Cancels a fulfillment.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#cancelV2-2020-01
@@ -1642,11 +1447,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves fulfillments associated with an order. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#index-2020-04
@@ -1687,11 +1489,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a fulfillment for the specified order and line items.
 ///           The fulfillment's status depends on the line items in the order:
 /// 
@@ -1730,11 +1529,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves fulfillments associated with a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#indexV2-2020-04
@@ -1757,11 +1553,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of fulfillments associated with a specific order
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#count-2020-04
@@ -1793,11 +1586,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a specific fulfillment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#show-2020-04
@@ -1820,11 +1610,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Update information associated with a fulfillment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#update-2020-04
@@ -1841,11 +1628,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a fulfillment for one or many fulfillment orders. The fulfillment orders are associated with the same order and are assigned to the same location.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#createV2-2020-04
@@ -1862,11 +1646,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates the tracking information for a fulfillment.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#update_tracking-2020-04
@@ -1883,11 +1664,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Mark a fulfillment as complete
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#complete-2020-04
@@ -1904,11 +1682,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Mark a fulfillment as open
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#open-2020-04
@@ -1925,11 +1700,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Cancel a fulfillment for a specific order ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#cancel-2020-04
@@ -1946,11 +1718,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Cancels a fulfillment.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#cancelV2-2020-04
@@ -1967,11 +1736,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves fulfillments associated with an order. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#index-2020-07
@@ -2012,11 +1778,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a fulfillment for the specified order and line items.
 ///           The fulfillment's status depends on the line items in the order:
 /// 
@@ -2055,11 +1818,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves fulfillments associated with a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#indexV2-2020-07
@@ -2082,11 +1842,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of fulfillments associated with a specific order
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#count-2020-07
@@ -2118,11 +1875,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a specific fulfillment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#show-2020-07
@@ -2145,11 +1899,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Update information associated with a fulfillment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#update-2020-07
@@ -2166,11 +1917,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a fulfillment for one or many fulfillment orders. The fulfillment orders are associated with the same order and are assigned to the same location.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#createV2-2020-07
@@ -2187,11 +1935,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates the tracking information for a fulfillment.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#update_tracking-2020-07
@@ -2208,11 +1953,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Mark a fulfillment as complete
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#complete-2020-07
@@ -2229,11 +1971,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Mark a fulfillment as open
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#open-2020-07
@@ -2250,11 +1989,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Cancel a fulfillment for a specific order ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#cancel-2020-07
@@ -2271,11 +2007,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Cancels a fulfillment.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#cancelV2-2020-07
@@ -2292,11 +2025,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves fulfillments associated with an order. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#index-2020-10
@@ -2337,11 +2067,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a fulfillment for the specified order and line items.
 ///           The fulfillment's status depends on the line items in the order:
 /// 
@@ -2380,11 +2107,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves fulfillments associated with a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#indexV2-2020-10
@@ -2407,11 +2131,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of fulfillments associated with a specific order
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#count-2020-10
@@ -2443,11 +2164,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a specific fulfillment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#show-2020-10
@@ -2470,11 +2188,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Update information associated with a fulfillment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#update-2020-10
@@ -2491,11 +2206,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a fulfillment for one or many fulfillment orders. The fulfillment orders are associated with the same order and are assigned to the same location.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#createV2-2020-10
@@ -2512,11 +2224,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates the tracking information for a fulfillment.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#update_tracking-2020-10
@@ -2533,11 +2242,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Mark a fulfillment as complete
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#complete-2020-10
@@ -2554,11 +2260,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Mark a fulfillment as open
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#open-2020-10
@@ -2575,11 +2278,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Cancel a fulfillment for a specific order ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#cancel-2020-10
@@ -2596,11 +2296,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Cancels a fulfillment.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#cancelV2-2020-10
@@ -2617,11 +2314,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves fulfillments associated with an order. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#index-2021-01
@@ -2662,11 +2356,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a fulfillment for the specified order and line items.
 ///           The fulfillment's status depends on the line items in the order:
 /// 
@@ -2705,11 +2396,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves fulfillments associated with a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#indexV2-2021-01
@@ -2732,11 +2420,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of fulfillments associated with a specific order
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#count-2021-01
@@ -2768,11 +2453,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a specific fulfillment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#show-2021-01
@@ -2795,11 +2477,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Update information associated with a fulfillment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#update-2021-01
@@ -2816,11 +2495,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a fulfillment for one or many fulfillment orders. The fulfillment orders are associated with the same order and are assigned to the same location.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#createV2-2021-01
@@ -2837,11 +2513,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates the tracking information for a fulfillment.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#update_tracking-2021-01
@@ -2858,11 +2531,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Mark a fulfillment as complete
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#complete-2021-01
@@ -2879,11 +2549,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Mark a fulfillment as open
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#open-2021-01
@@ -2900,11 +2567,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Cancel a fulfillment for a specific order ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#cancel-2021-01
@@ -2921,11 +2585,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Cancels a fulfillment.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#cancelV2-2021-01
@@ -2942,11 +2603,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves fulfillments associated with an order. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#index-unstable
@@ -2987,11 +2645,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a fulfillment for the specified order and line items.
 ///           The fulfillment's status depends on the line items in the order:
 /// 
@@ -3030,11 +2685,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves fulfillments associated with a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#indexV2-unstable
@@ -3057,11 +2709,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of fulfillments associated with a specific order
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#count-unstable
@@ -3093,11 +2742,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a specific fulfillment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#show-unstable
@@ -3120,11 +2766,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Update information associated with a fulfillment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#update-unstable
@@ -3141,11 +2784,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a fulfillment for one or many fulfillment orders. The fulfillment orders are associated with the same order and are assigned to the same location.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#createV2-unstable
@@ -3162,11 +2802,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates the tracking information for a fulfillment.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#update_tracking-unstable
@@ -3183,11 +2820,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Mark a fulfillment as complete
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#complete-unstable
@@ -3204,11 +2838,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Mark a fulfillment as open
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#open-unstable
@@ -3225,11 +2856,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Cancel a fulfillment for a specific order ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#cancel-unstable
@@ -3246,11 +2874,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Cancels a fulfillment.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillment#cancelV2-unstable
@@ -3267,11 +2892,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of fulfillment events for a specific fulfillment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#index-2020-01
@@ -3297,11 +2919,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a fulfillment event
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#create-2020-01
@@ -3318,11 +2937,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific fulfillment event
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#show-2020-01
@@ -3345,11 +2961,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a fulfillment event
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#destroy-2020-01
@@ -3364,11 +2977,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of fulfillment events for a specific fulfillment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#index-2020-04
@@ -3394,11 +3004,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a fulfillment event
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#create-2020-04
@@ -3415,11 +3022,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific fulfillment event
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#show-2020-04
@@ -3442,11 +3046,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a fulfillment event
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#destroy-2020-04
@@ -3461,11 +3062,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of fulfillment events for a specific fulfillment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#index-2020-07
@@ -3491,11 +3089,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a fulfillment event
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#create-2020-07
@@ -3512,11 +3107,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific fulfillment event
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#show-2020-07
@@ -3539,11 +3131,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a fulfillment event
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#destroy-2020-07
@@ -3558,11 +3147,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of fulfillment events for a specific fulfillment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#index-2020-10
@@ -3588,11 +3174,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a fulfillment event
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#create-2020-10
@@ -3609,11 +3192,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific fulfillment event
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#show-2020-10
@@ -3636,11 +3216,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a fulfillment event
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#destroy-2020-10
@@ -3655,11 +3232,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of fulfillment events for a specific fulfillment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#index-2021-01
@@ -3685,11 +3259,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a fulfillment event
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#create-2021-01
@@ -3706,11 +3277,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific fulfillment event
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#show-2021-01
@@ -3733,11 +3301,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a fulfillment event
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#destroy-2021-01
@@ -3752,11 +3317,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of fulfillment events for a specific fulfillment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#index-unstable
@@ -3782,11 +3344,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a fulfillment event
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#create-unstable
@@ -3803,11 +3362,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific fulfillment event
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#show-unstable
@@ -3830,11 +3386,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a fulfillment event
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentevent#destroy-unstable
@@ -3849,11 +3402,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of fulfillment orders for a specific order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#index-2020-01
@@ -3876,11 +3426,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#show-2020-01
@@ -3895,11 +3442,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Marks a fulfillment order as cancelled.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#cancel-2020-01
@@ -3916,11 +3460,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Marks an in progress fulfillment order as incomplete, indicating the fulfillment service
 ///         is unable to ship any remaining items and intends to close the fulfillment order.
 ///
@@ -3946,11 +3487,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Moves a fulfillment order from one merchant managed location to another merchant managed location.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#move-2020-01
@@ -3975,11 +3513,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of fulfillment orders for a specific order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#index-2020-04
@@ -4002,11 +3537,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#show-2020-04
@@ -4021,11 +3553,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Marks a fulfillment order as cancelled.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#cancel-2020-04
@@ -4042,11 +3571,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Marks an in progress fulfillment order as incomplete, indicating the fulfillment service
 ///         is unable to ship any remaining items and intends to close the fulfillment order.
 ///
@@ -4072,11 +3598,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Moves a fulfillment order from one merchant managed location to another merchant managed location.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#move-2020-04
@@ -4101,11 +3624,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of fulfillment orders for a specific order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#index-2020-07
@@ -4128,11 +3648,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#show-2020-07
@@ -4147,11 +3664,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Marks a fulfillment order as cancelled.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#cancel-2020-07
@@ -4168,11 +3682,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Marks an in progress fulfillment order as incomplete, indicating the fulfillment service
 ///         is unable to ship any remaining items and intends to close the fulfillment order.
 ///
@@ -4198,11 +3709,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Moves a fulfillment order from one merchant managed location to another merchant managed location.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#move-2020-07
@@ -4227,11 +3735,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of fulfillment orders for a specific order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#index-2020-10
@@ -4254,11 +3759,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#show-2020-10
@@ -4273,11 +3775,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Marks a fulfillment order as cancelled.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#cancel-2020-10
@@ -4294,11 +3793,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Marks an in progress fulfillment order as incomplete, indicating the fulfillment service
 ///         is unable to ship any remaining items and intends to close the fulfillment order.
 ///
@@ -4324,11 +3820,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Moves a fulfillment order from one merchant managed location to another merchant managed location.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#move-2020-10
@@ -4353,11 +3846,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of fulfillment orders for a specific order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#index-2021-01
@@ -4380,11 +3870,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#show-2021-01
@@ -4399,11 +3886,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Marks a fulfillment order as cancelled.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#cancel-2021-01
@@ -4420,11 +3904,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Marks an in progress fulfillment order as incomplete, indicating the fulfillment service
 ///         is unable to ship any remaining items and intends to close the fulfillment order.
 ///
@@ -4450,11 +3931,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Moves a fulfillment order from one merchant managed location to another merchant managed location.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#move-2021-01
@@ -4479,11 +3957,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Marks a scheduled fulfillment order as ready for fulfillment.
 ///           This endpoint allows merchants to work on a scheduled fulfillment order before its expected fulfill_at datetime.
 ///
@@ -4501,11 +3976,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates the fulfill_at time of a scheduled fulfillment order.
 ///           This endpoint is used to manage the time a scheduled fulfillment order will be marked as ready for fulfillment.
 ///
@@ -4523,11 +3995,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of fulfillment orders for a specific order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#index-unstable
@@ -4550,11 +4019,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a specific fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#show-unstable
@@ -4569,11 +4035,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Marks a fulfillment order as cancelled.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#cancel-unstable
@@ -4590,11 +4053,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Releases the fulfillment order holds for a specific order. Fulfillment orders are created
 ///           with an ON_HOLD status if the channel that created the order has a fulfillment hold policy.
 ///
@@ -4620,11 +4080,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Marks an in progress fulfillment order as incomplete, indicating the fulfillment service
 ///         is unable to ship any remaining items and intends to close the fulfillment order.
 ///
@@ -4650,11 +4107,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Moves a fulfillment order from one merchant managed location to another merchant managed location.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentorder#move-unstable
@@ -4679,11 +4133,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Marks a scheduled fulfillment order as ready for fulfillment.
 ///           This endpoint allows merchants to work on a scheduled fulfillment order before its expected fulfill_at datetime.
 ///
@@ -4701,11 +4152,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates the fulfill_at time of a scheduled fulfillment order.
 ///           This endpoint is used to manage the time a scheduled fulfillment order will be marked as ready for fulfillment.
 ///
@@ -4723,11 +4171,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Sends a fulfillment request to the fulfillment service of a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#create-2020-01
@@ -4755,11 +4200,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Accepts a fulfillment request sent to a fulfillment service for a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#accept-2020-01
@@ -4784,11 +4226,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Rejects a fulfillment request sent to a fulfillment service for a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#reject-2020-01
@@ -4813,11 +4252,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Sends a fulfillment request to the fulfillment service of a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#create-2020-04
@@ -4845,11 +4281,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Accepts a fulfillment request sent to a fulfillment service for a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#accept-2020-04
@@ -4874,11 +4307,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Rejects a fulfillment request sent to a fulfillment service for a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#reject-2020-04
@@ -4903,11 +4333,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Sends a fulfillment request to the fulfillment service of a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#create-2020-07
@@ -4935,11 +4362,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Accepts a fulfillment request sent to a fulfillment service for a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#accept-2020-07
@@ -4964,11 +4388,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Rejects a fulfillment request sent to a fulfillment service for a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#reject-2020-07
@@ -4993,11 +4414,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Sends a fulfillment request to the fulfillment service of a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#create-2020-10
@@ -5025,11 +4443,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Accepts a fulfillment request sent to a fulfillment service for a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#accept-2020-10
@@ -5054,11 +4469,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Rejects a fulfillment request sent to a fulfillment service for a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#reject-2020-10
@@ -5083,11 +4495,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Sends a fulfillment request to the fulfillment service of a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#create-2021-01
@@ -5115,11 +4524,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Accepts a fulfillment request sent to a fulfillment service for a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#accept-2021-01
@@ -5144,11 +4550,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Rejects a fulfillment request sent to a fulfillment service for a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#reject-2021-01
@@ -5173,11 +4576,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Sends a fulfillment request to the fulfillment service of a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#create-unstable
@@ -5205,11 +4605,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Accepts a fulfillment request sent to a fulfillment service for a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#accept-unstable
@@ -5234,11 +4631,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Rejects a fulfillment request sent to a fulfillment service for a fulfillment order.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentrequest#reject-unstable
@@ -5263,11 +4657,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get tracking numbers for orders
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#fetch-tracking-numbers
@@ -5293,11 +4684,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get inventory levels
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#fetch-stock
@@ -5329,11 +4717,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#index-2020-01
@@ -5356,11 +4741,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// To create a fulfillment service, you can also use a cURL request that uses that fulfillment_service.json payload:
 ///           Copy  curl -X POST -d @fulfillment_service.json -H"Accept:application/json" -H"Content-Type:application/json" -H"X-Shopify-Access-Token:THE_TOKEN_GOES_HERE" https://AUTHORIZED_SHOP.myshopify.com/admin/fulfillment_services
 /// 
@@ -5380,11 +4762,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#show-2020-01
@@ -5399,11 +4778,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#update-2020-01
@@ -5420,11 +4796,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#destroy-2020-01
@@ -5439,11 +4812,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#index-2020-04
@@ -5466,11 +4836,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// To create a fulfillment service, you can also use a cURL request that uses that fulfillment_service.json payload:
 ///           Copy  curl -X POST -d @fulfillment_service.json -H"Accept:application/json" -H"Content-Type:application/json" -H"X-Shopify-Access-Token:THE_TOKEN_GOES_HERE" https://AUTHORIZED_SHOP.myshopify.com/admin/fulfillment_services
 /// 
@@ -5490,11 +4857,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#show-2020-04
@@ -5509,11 +4873,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#update-2020-04
@@ -5530,11 +4891,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#destroy-2020-04
@@ -5549,11 +4907,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#index-2020-07
@@ -5576,11 +4931,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// To create a fulfillment service, you can also use a cURL request that uses that fulfillment_service.json payload:
 ///           Copy  curl -X POST -d @fulfillment_service.json -H"Accept:application/json" -H"Content-Type:application/json" -H"X-Shopify-Access-Token:THE_TOKEN_GOES_HERE" https://AUTHORIZED_SHOP.myshopify.com/admin/fulfillment_services
 /// 
@@ -5600,11 +4952,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#show-2020-07
@@ -5619,11 +4968,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#update-2020-07
@@ -5640,11 +4986,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#destroy-2020-07
@@ -5659,11 +5002,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#index-2020-10
@@ -5686,11 +5026,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// To create a fulfillment service, you can also use a cURL request that uses that fulfillment_service.json payload:
 ///           Copy  curl -X POST -d @fulfillment_service.json -H"Accept:application/json" -H"Content-Type:application/json" -H"X-Shopify-Access-Token:THE_TOKEN_GOES_HERE" https://AUTHORIZED_SHOP.myshopify.com/admin/fulfillment_services
 /// 
@@ -5710,11 +5047,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#show-2020-10
@@ -5729,11 +5063,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#update-2020-10
@@ -5750,11 +5081,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#destroy-2020-10
@@ -5769,11 +5097,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#index-2021-01
@@ -5796,11 +5121,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// To create a fulfillment service, you can also use a cURL request that uses that fulfillment_service.json payload:
 ///           Copy  curl -X POST -d @fulfillment_service.json -H"Accept:application/json" -H"Content-Type:application/json" -H"X-Shopify-Access-Token:THE_TOKEN_GOES_HERE" https://AUTHORIZED_SHOP.myshopify.com/admin/fulfillment_services
 /// 
@@ -5820,11 +5142,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#show-2021-01
@@ -5839,11 +5158,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#update-2021-01
@@ -5860,11 +5176,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#destroy-2021-01
@@ -5879,11 +5192,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#index-unstable
@@ -5906,11 +5216,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// To create a fulfillment service, you can also use a cURL request that uses that fulfillment_service.json payload:
 ///           Copy  curl -X POST -d @fulfillment_service.json -H"Accept:application/json" -H"Content-Type:application/json" -H"X-Shopify-Access-Token:THE_TOKEN_GOES_HERE" https://AUTHORIZED_SHOP.myshopify.com/admin/fulfillment_services
 /// 
@@ -5930,11 +5237,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#show-unstable
@@ -5949,11 +5253,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#update-unstable
@@ -5970,11 +5271,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// 
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/shipping-and-fulfillment/fulfillmentservice#destroy-unstable
@@ -5989,11 +5287,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of locations that a fulfillment order can potentially move to.
 ///           The resulting list is sorted alphabetically in ascending order by location name.
 ///
@@ -6017,11 +5312,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of locations that a fulfillment order can potentially move to.
 ///           The resulting list is sorted alphabetically in ascending order by location name.
 ///
@@ -6045,11 +5337,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of locations that a fulfillment order can potentially move to.
 ///           The resulting list is sorted alphabetically in ascending order by location name.
 ///
@@ -6073,11 +5362,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of locations that a fulfillment order can potentially move to.
 ///           The resulting list is sorted alphabetically in ascending order by location name.
 ///
@@ -6101,11 +5387,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of locations that a fulfillment order can potentially move to.
 ///           The resulting list is sorted alphabetically in ascending order by location name.
 ///
@@ -6129,11 +5412,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of locations that a fulfillment order can potentially move to.
 ///           The resulting list is sorted alphabetically in ascending order by location name.
 ///
@@ -6157,9 +5437,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

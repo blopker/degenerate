@@ -7,23 +7,16 @@ sealed class CodespacesCheckPermissionsForDevcontainerError {const CodespacesChe
 static CodespacesCheckPermissionsForDevcontainerError parse(ApiResponse response) {switch (response.statusCode) {
 case 401:
 final json = jsonDecode(response.body);
-return CodespacesCheckPermissionsForDevcontainerError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  CodespacesCheckPermissionsForDevcontainerError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return CodespacesCheckPermissionsForDevcontainerError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CodespacesCheckPermissionsForDevcontainerError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CodespacesCheckPermissionsForDevcontainerError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  CodespacesCheckPermissionsForDevcontainerError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return CodespacesCheckPermissionsForDevcontainerError422(ValidationError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  CodespacesCheckPermissionsForDevcontainerError422(ValidationError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return CodespacesCheckPermissionsForDevcontainerError503(CodespacesCheckPermissionsForDevcontainerResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return CodespacesCheckPermissionsForDevcontainerErrorUnknown(response);
-}
-}
+return  CodespacesCheckPermissionsForDevcontainerError503(CodespacesCheckPermissionsForDevcontainerResponse503.fromJson(json as Map<String, dynamic>));default:
+return  CodespacesCheckPermissionsForDevcontainerErrorUnknown(response); }}
 }
 /// Response for 401 (application/json).
 final class CodespacesCheckPermissionsForDevcontainerError401 extends CodespacesCheckPermissionsForDevcontainerError {const CodespacesCheckPermissionsForDevcontainerError401(this.data);

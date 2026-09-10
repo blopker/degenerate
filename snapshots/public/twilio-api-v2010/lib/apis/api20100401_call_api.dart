@@ -64,14 +64,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListCallResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListCallResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a new outgoing call to phones, SIP-enabled endpoints or Twilio Client connections
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls.json`
@@ -157,14 +152,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountCall.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountCall.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch the call specified by the provided Call SID
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Calls/{Sid}.json`
@@ -177,14 +167,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountCall.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountCall.fromJson(json as Map<String, dynamic>);}, );}
 /// Initiates a call redirect or terminates a call
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Calls/{Sid}.json`
@@ -218,14 +203,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountCall.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountCall.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a Call record from your account. Once the record is deleted, it will no longer appear in the API and Account Portal logs.
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Calls/{Sid}.json`
@@ -238,9 +218,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

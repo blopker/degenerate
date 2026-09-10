@@ -7,14 +7,10 @@ sealed class GetEventRawReadDsError {const GetEventRawReadDsError();
 static GetEventRawReadDsError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return GetEventRawReadDsError404(GetEventRawReadDsResponse404.fromJson(json as Map<String, dynamic>));
-case 500:
+return  GetEventRawReadDsError404(GetEventRawReadDsResponse404.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return GetEventRawReadDsError500(GetEventRawReadDsResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return GetEventRawReadDsErrorUnknown(response);
-}
-}
+return  GetEventRawReadDsError500(GetEventRawReadDsResponse500.fromJson(json as Map<String, dynamic>));default:
+return  GetEventRawReadDsErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class GetEventRawReadDsError404 extends GetEventRawReadDsError {const GetEventRawReadDsError404(this.data);

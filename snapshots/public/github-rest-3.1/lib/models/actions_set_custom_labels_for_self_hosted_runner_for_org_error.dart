@@ -7,14 +7,10 @@ sealed class ActionsSetCustomLabelsForSelfHostedRunnerForOrgError {const Actions
 static ActionsSetCustomLabelsForSelfHostedRunnerForOrgError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ActionsSetCustomLabelsForSelfHostedRunnerForOrgError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ActionsSetCustomLabelsForSelfHostedRunnerForOrgError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ActionsSetCustomLabelsForSelfHostedRunnerForOrgError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return ActionsSetCustomLabelsForSelfHostedRunnerForOrgErrorUnknown(response);
-}
-}
+return  ActionsSetCustomLabelsForSelfHostedRunnerForOrgError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));default:
+return  ActionsSetCustomLabelsForSelfHostedRunnerForOrgErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class ActionsSetCustomLabelsForSelfHostedRunnerForOrgError404 extends ActionsSetCustomLabelsForSelfHostedRunnerForOrgError {const ActionsSetCustomLabelsForSelfHostedRunnerForOrgError404(this.data);

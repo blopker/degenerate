@@ -22,21 +22,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostWebsocketRunCfDeepgramFluxResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostWebsocketRunCfDeepgramFluxResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/deepgram/flux model.
 ///
 /// Runs inference on the @cf/deepgram/flux model.
@@ -64,24 +55,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfDeepgramFluxResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfDeepgramFluxResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Open Websocket connection with @cf/deepgram/nova-3 model.
 ///
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/nova-3 model.
@@ -96,21 +76,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostWebsocketRunCfDeepgramNova3Response400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostWebsocketRunCfDeepgramNova3Response400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/deepgram/nova-3 model.
 ///
 /// Runs inference on the @cf/deepgram/nova-3 model.
@@ -138,24 +109,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfDeepgramNova3Response400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfDeepgramNova3Response400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Open Websocket connection with @cf/deepgram/nova-3-internal model.
 ///
 /// Opens a WebSocket connection to stream inference results from the @cf/deepgram/nova-3-internal model.
@@ -170,21 +130,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostWebsocketRunCfDeepgramNova3InternalResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostWebsocketRunCfDeepgramNova3InternalResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/openai/whisper model.
 ///
 /// Runs inference on the @cf/openai/whisper model.
@@ -212,24 +163,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfOpenaiWhisperResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfOpenaiWhisperResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/openai/whisper-large-v3-turbo model.
 ///
 /// Runs inference on the @cf/openai/whisper-large-v3-turbo model.
@@ -257,24 +197,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return TurboResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  TurboResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/openai/whisper-tiny-en model.
 ///
 /// Runs inference on the @cf/openai/whisper-tiny-en model.
@@ -302,22 +231,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfOpenaiWhisperTinyEnResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfOpenaiWhisperTinyEnResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

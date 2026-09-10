@@ -6,33 +6,22 @@ sealed class DependabotListAlertsForRepoError {const DependabotListAlertsForRepo
 /// Decodes the payload for its declared status and content type.
 static DependabotListAlertsForRepoError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const DependabotListAlertsForRepoError304();
-case 400:
+return  const DependabotListAlertsForRepoError304();case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return DependabotListAlertsForRepoError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  DependabotListAlertsForRepoError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return DependabotListAlertsForRepoError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  DependabotListAlertsForRepoError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return DependabotListAlertsForRepoError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 403:
+return  DependabotListAlertsForRepoError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }case 403:
 final json = jsonDecode(response.body);
-return DependabotListAlertsForRepoError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  DependabotListAlertsForRepoError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return DependabotListAlertsForRepoError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  DependabotListAlertsForRepoError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return DependabotListAlertsForRepoError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return DependabotListAlertsForRepoErrorUnknown(response);
-}
-}
+return  DependabotListAlertsForRepoError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));default:
+return  DependabotListAlertsForRepoErrorUnknown(response); }}
 }
 /// Response for 304.
 final class DependabotListAlertsForRepoError304 extends DependabotListAlertsForRepoError {const DependabotListAlertsForRepoError304();

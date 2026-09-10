@@ -35,24 +35,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfAi4bharatIndictrans2EnIndic1BResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/ai4bharat/omni-indictrans2-en-indic-1b model.
 ///
 /// Runs inference on the @cf/ai4bharat/omni-indictrans2-en-indic-1b model.
@@ -80,24 +69,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfAi4bharatOmniIndictrans2EnIndic1bResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Execute @cf/meta/m2m100-1.2b model.
 ///
 /// Runs inference on the @cf/meta/m2m100-1.2b model.
@@ -125,22 +103,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfMetaM2m10012bResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostRunCfMetaM2m10012bResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

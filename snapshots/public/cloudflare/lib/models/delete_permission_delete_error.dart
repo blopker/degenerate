@@ -7,14 +7,10 @@ sealed class DeletePermissionDeleteError {const DeletePermissionDeleteError();
 static DeletePermissionDeleteError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return DeletePermissionDeleteError400(DeletePermissionDeleteResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  DeletePermissionDeleteError400(DeletePermissionDeleteResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return DeletePermissionDeleteError404(DeletePermissionDeleteResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return DeletePermissionDeleteErrorUnknown(response);
-}
-}
+return  DeletePermissionDeleteError404(DeletePermissionDeleteResponse404.fromJson(json as Map<String, dynamic>));default:
+return  DeletePermissionDeleteErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class DeletePermissionDeleteError400 extends DeletePermissionDeleteError {const DeletePermissionDeleteError400(this.data);

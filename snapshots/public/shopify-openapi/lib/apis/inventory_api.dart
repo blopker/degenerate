@@ -36,11 +36,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single inventory item by ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#show-2020-01
@@ -55,11 +52,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing inventory item
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#update-2020-01
@@ -76,11 +70,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of inventory items. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#index-2020-04
@@ -109,11 +100,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single inventory item by ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#show-2020-04
@@ -128,11 +116,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing inventory item
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#update-2020-04
@@ -149,11 +134,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of inventory items. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#index-2020-07
@@ -182,11 +164,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single inventory item by ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#show-2020-07
@@ -201,11 +180,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing inventory item
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#update-2020-07
@@ -222,11 +198,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of inventory items. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#index-2020-10
@@ -255,11 +228,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single inventory item by ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#show-2020-10
@@ -274,11 +244,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing inventory item
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#update-2020-10
@@ -295,11 +262,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of inventory items. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#index-2021-01
@@ -328,11 +292,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single inventory item by ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#show-2021-01
@@ -347,11 +308,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing inventory item
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#update-2021-01
@@ -368,11 +326,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of inventory items. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#index-unstable
@@ -401,11 +356,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single inventory item by ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#show-unstable
@@ -420,11 +372,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing inventory item
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventoryitem#update-unstable
@@ -441,11 +390,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of inventory levels.
 ///           You must include inventory_item_ids, location_ids, or both as filter parameters.
 ///           Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
@@ -479,11 +425,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an inventory level of an inventory item at a location.
 ///           Deleting an inventory level for an inventory item removes that item from the specified location.
 ///           Every inventory item must have at least one inventory level. To move inventory to another location,
@@ -518,11 +461,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Adjusts the inventory level of an inventory item at a single location
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#adjust-2020-01
@@ -553,11 +493,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Connects an inventory item to a location by creating an inventory level at that location.
 ///         When connecting inventory items to locations, it's important to understand the rules around
 ///         fulfillment service locations.
@@ -590,11 +527,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Sets the inventory level for an inventory item at a location.
 ///           If the specified location is not connected, it will be automatically connected first.
 ///           When connecting inventory items to locations, it's important to understand the rules around
@@ -631,11 +565,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of inventory levels.
 ///           You must include inventory_item_ids, location_ids, or both as filter parameters.
 ///           Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
@@ -669,11 +600,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an inventory level of an inventory item at a location.
 ///           Deleting an inventory level for an inventory item removes that item from the specified location.
 ///           Every inventory item must have at least one inventory level. To move inventory to another location,
@@ -708,11 +636,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Adjusts the inventory level of an inventory item at a single location
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#adjust-2020-04
@@ -743,11 +668,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Connects an inventory item to a location by creating an inventory level at that location.
 ///         When connecting inventory items to locations, it's important to understand the rules around
 ///         fulfillment service locations.
@@ -780,11 +702,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Sets the inventory level for an inventory item at a location.
 ///           If the specified location is not connected, it will be automatically connected first.
 ///           When connecting inventory items to locations, it's important to understand the rules around
@@ -821,11 +740,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of inventory levels.
 ///           You must include inventory_item_ids, location_ids, or both as filter parameters.
 ///           Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
@@ -859,11 +775,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an inventory level of an inventory item at a location.
 ///           Deleting an inventory level for an inventory item removes that item from the specified location.
 ///           Every inventory item must have at least one inventory level. To move inventory to another location,
@@ -898,11 +811,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Adjusts the inventory level of an inventory item at a single location
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#adjust-2020-07
@@ -933,11 +843,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Connects an inventory item to a location by creating an inventory level at that location.
 ///         When connecting inventory items to locations, it's important to understand the rules around
 ///         fulfillment service locations.
@@ -970,11 +877,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Sets the inventory level for an inventory item at a location.
 ///           If the specified location is not connected, it will be automatically connected first.
 ///           When connecting inventory items to locations, it's important to understand the rules around
@@ -1011,11 +915,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of inventory levels.
 ///           You must include inventory_item_ids, location_ids, or both as filter parameters.
 ///           Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
@@ -1049,11 +950,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an inventory level of an inventory item at a location.
 ///           Deleting an inventory level for an inventory item removes that item from the specified location.
 ///           Every inventory item must have at least one inventory level. To move inventory to another location,
@@ -1088,11 +986,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Adjusts the inventory level of an inventory item at a single location
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#adjust-2020-10
@@ -1123,11 +1018,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Connects an inventory item to a location by creating an inventory level at that location.
 ///         When connecting inventory items to locations, it's important to understand the rules around
 ///         fulfillment service locations.
@@ -1160,11 +1052,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Sets the inventory level for an inventory item at a location.
 ///           If the specified location is not connected, it will be automatically connected first.
 ///           When connecting inventory items to locations, it's important to understand the rules around
@@ -1201,11 +1090,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of inventory levels.
 ///           You must include inventory_item_ids, location_ids, or both as filter parameters.
 ///           Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
@@ -1239,11 +1125,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an inventory level of an inventory item at a location.
 ///           Deleting an inventory level for an inventory item removes that item from the specified location.
 ///           Every inventory item must have at least one inventory level. To move inventory to another location,
@@ -1278,11 +1161,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Adjusts the inventory level of an inventory item at a single location
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#adjust-2021-01
@@ -1313,11 +1193,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Connects an inventory item to a location by creating an inventory level at that location.
 ///         When connecting inventory items to locations, it's important to understand the rules around
 ///         fulfillment service locations.
@@ -1350,11 +1227,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Sets the inventory level for an inventory item at a location.
 ///           If the specified location is not connected, it will be automatically connected first.
 ///           When connecting inventory items to locations, it's important to understand the rules around
@@ -1391,11 +1265,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of inventory levels.
 ///           You must include inventory_item_ids, location_ids, or both as filter parameters.
 ///           Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
@@ -1429,11 +1300,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes an inventory level of an inventory item at a location.
 ///           Deleting an inventory level for an inventory item removes that item from the specified location.
 ///           Every inventory item must have at least one inventory level. To move inventory to another location,
@@ -1468,11 +1336,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Adjusts the inventory level of an inventory item at a single location
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/inventorylevel#adjust-unstable
@@ -1503,11 +1368,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Connects an inventory item to a location by creating an inventory level at that location.
 ///         When connecting inventory items to locations, it's important to understand the rules around
 ///         fulfillment service locations.
@@ -1540,11 +1402,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Sets the inventory level for an inventory item at a location.
 ///           If the specified location is not connected, it will be automatically connected first.
 ///           When connecting inventory items to locations, it's important to understand the rules around
@@ -1581,11 +1440,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of locations
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#index-2020-01
@@ -1600,11 +1456,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single location by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#show-2020-01
@@ -1619,11 +1472,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of locations
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#count-2020-01
@@ -1638,11 +1488,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of inventory levels for a location. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#inventory_levels-2020-01
@@ -1657,11 +1504,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of locations
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#index-2020-04
@@ -1676,11 +1520,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single location by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#show-2020-04
@@ -1695,11 +1536,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of locations
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#count-2020-04
@@ -1714,11 +1552,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of inventory levels for a location. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#inventory_levels-2020-04
@@ -1733,11 +1568,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of locations
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#index-2020-07
@@ -1752,11 +1584,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single location by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#show-2020-07
@@ -1771,11 +1600,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of locations
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#count-2020-07
@@ -1790,11 +1616,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of inventory levels for a location. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#inventory_levels-2020-07
@@ -1809,11 +1632,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of locations
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#index-2020-10
@@ -1828,11 +1648,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single location by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#show-2020-10
@@ -1847,11 +1664,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of locations
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#count-2020-10
@@ -1866,11 +1680,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of inventory levels for a location. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#inventory_levels-2020-10
@@ -1885,11 +1696,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of locations
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#index-2021-01
@@ -1904,11 +1712,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single location by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#show-2021-01
@@ -1923,11 +1728,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of locations
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#count-2021-01
@@ -1942,11 +1744,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of inventory levels for a location. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#inventory_levels-2021-01
@@ -1961,11 +1760,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of locations
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#index-unstable
@@ -1980,11 +1776,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single location by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#show-unstable
@@ -1999,11 +1792,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of locations
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#count-unstable
@@ -2018,11 +1808,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of inventory levels for a location. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/inventory/location#inventory_levels-unstable
@@ -2037,9 +1824,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

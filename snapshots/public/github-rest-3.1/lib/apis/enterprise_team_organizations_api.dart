@@ -33,14 +33,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => OrganizationSimple.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => OrganizationSimple.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Add organization assignments
 ///
 /// Assign an enterprise team to multiple organizations.
@@ -57,14 +52,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => OrganizationSimple.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => OrganizationSimple.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Remove organization assignments
 ///
 /// Unassign an enterprise team from multiple organizations.
@@ -81,11 +71,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get organization assignment
 ///
 /// Check if an enterprise team is assigned to an organization
@@ -100,14 +87,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrganizationSimple.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrganizationSimple.fromJson(json as Map<String, dynamic>);}, );}
 /// Add an organization assignment
 ///
 /// Assign an enterprise team to an organization.
@@ -122,14 +104,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrganizationSimple.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrganizationSimple.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete an organization assignment
 ///
 /// Unassign an enterprise team from an organization.
@@ -144,9 +121,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

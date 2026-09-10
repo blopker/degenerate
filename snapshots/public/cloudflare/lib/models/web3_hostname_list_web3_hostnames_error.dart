@@ -7,14 +7,10 @@ sealed class Web3HostnameListWeb3HostnamesError {const Web3HostnameListWeb3Hostn
 static Web3HostnameListWeb3HostnamesError parse(ApiResponse response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return Web3HostnameListWeb3HostnamesError4xx(Web3HostnameListWeb3HostnamesResponse4xx.fromJson(json as Map<String, dynamic>));
-case >= 500 && < 600:
+return  Web3HostnameListWeb3HostnamesError4xx(Web3HostnameListWeb3HostnamesResponse4xx.fromJson(json as Map<String, dynamic>));case >= 500 && < 600:
 final json = jsonDecode(response.body);
-return Web3HostnameListWeb3HostnamesError5xx(Web3HostnameListWeb3HostnamesResponse5xx.fromJson(json as Map<String, dynamic>));
-default:
-return Web3HostnameListWeb3HostnamesErrorUnknown(response);
-}
-}
+return  Web3HostnameListWeb3HostnamesError5xx(Web3HostnameListWeb3HostnamesResponse5xx.fromJson(json as Map<String, dynamic>));default:
+return  Web3HostnameListWeb3HostnamesErrorUnknown(response); }}
 }
 /// Response for 4xx (application/json).
 final class Web3HostnameListWeb3HostnamesError4xx extends Web3HostnameListWeb3HostnamesError {const Web3HostnameListWeb3HostnamesError4xx(this.data);

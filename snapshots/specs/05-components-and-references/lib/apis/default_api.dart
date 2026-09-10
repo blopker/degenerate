@@ -27,14 +27,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => User.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => User.fromJson(e as Map<String, dynamic>)).toList();}, );}
 ///
 /// `POST /users`
 Future<ApiResult<void, Never>> createUser({required User body, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -48,11 +43,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 ///
 /// `GET /users/{userId}`
 Future<ApiResult<User, Never>> getUserById({required String userId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -64,12 +56,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return User.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  User.fromJson(json as Map<String, dynamic>);}, );}
 }

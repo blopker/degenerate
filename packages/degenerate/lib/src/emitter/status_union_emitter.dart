@@ -35,9 +35,7 @@ class StatusUnionEmitter {
                     ..type = refer('ApiResponse'),
                 ),
               )
-              ..body = Code(
-                ResponseDecoder(plan, typeRegistry: typeRegistry).emit(),
-              ),
+              ..body = ResponseDecoder(plan, typeRegistry: typeRegistry).emit(),
           ),
         ),
     ),

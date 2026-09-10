@@ -7,33 +7,22 @@ sealed class CodespacesListDevcontainersInRepositoryForAuthenticatedUserError {c
 static CodespacesListDevcontainersInRepositoryForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return CodespacesListDevcontainersInRepositoryForAuthenticatedUserError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  CodespacesListDevcontainersInRepositoryForAuthenticatedUserError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return CodespacesListDevcontainersInRepositoryForAuthenticatedUserError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  CodespacesListDevcontainersInRepositoryForAuthenticatedUserError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return CodespacesListDevcontainersInRepositoryForAuthenticatedUserError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 401:
+return  CodespacesListDevcontainersInRepositoryForAuthenticatedUserError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }case 401:
 final json = jsonDecode(response.body);
-return CodespacesListDevcontainersInRepositoryForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  CodespacesListDevcontainersInRepositoryForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return CodespacesListDevcontainersInRepositoryForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CodespacesListDevcontainersInRepositoryForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CodespacesListDevcontainersInRepositoryForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 500:
+return  CodespacesListDevcontainersInRepositoryForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return CodespacesListDevcontainersInRepositoryForAuthenticatedUserError500(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return CodespacesListDevcontainersInRepositoryForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  CodespacesListDevcontainersInRepositoryForAuthenticatedUserError500(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  CodespacesListDevcontainersInRepositoryForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class CodespacesListDevcontainersInRepositoryForAuthenticatedUserError400ApplicationJson extends CodespacesListDevcontainersInRepositoryForAuthenticatedUserError {const CodespacesListDevcontainersInRepositoryForAuthenticatedUserError400ApplicationJson(this.data);

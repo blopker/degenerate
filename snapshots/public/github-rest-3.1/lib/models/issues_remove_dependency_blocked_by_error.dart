@@ -7,36 +7,24 @@ sealed class IssuesRemoveDependencyBlockedByError {const IssuesRemoveDependencyB
 static IssuesRemoveDependencyBlockedByError parse(ApiResponse response) {switch (response.statusCode) {
 case 301:
 final json = jsonDecode(response.body);
-return IssuesRemoveDependencyBlockedByError301(BasicError.fromJson(json as Map<String, dynamic>));
-case 400:
+return  IssuesRemoveDependencyBlockedByError301(BasicError.fromJson(json as Map<String, dynamic>));case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return IssuesRemoveDependencyBlockedByError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  IssuesRemoveDependencyBlockedByError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return IssuesRemoveDependencyBlockedByError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  IssuesRemoveDependencyBlockedByError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return IssuesRemoveDependencyBlockedByError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 401:
+return  IssuesRemoveDependencyBlockedByError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }case 401:
 final json = jsonDecode(response.body);
-return IssuesRemoveDependencyBlockedByError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  IssuesRemoveDependencyBlockedByError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return IssuesRemoveDependencyBlockedByError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  IssuesRemoveDependencyBlockedByError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return IssuesRemoveDependencyBlockedByError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 410:
+return  IssuesRemoveDependencyBlockedByError404(BasicError.fromJson(json as Map<String, dynamic>));case 410:
 final json = jsonDecode(response.body);
-return IssuesRemoveDependencyBlockedByError410(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return IssuesRemoveDependencyBlockedByErrorUnknown(response);
-}
-}
+return  IssuesRemoveDependencyBlockedByError410(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  IssuesRemoveDependencyBlockedByErrorUnknown(response); }}
 }
 /// Response for 301 (application/json).
 final class IssuesRemoveDependencyBlockedByError301 extends IssuesRemoveDependencyBlockedByError {const IssuesRemoveDependencyBlockedByError301(this.data);

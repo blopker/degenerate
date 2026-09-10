@@ -7,17 +7,12 @@ sealed class CodeScanningDeleteCodeqlDatabaseError {const CodeScanningDeleteCode
 static CodeScanningDeleteCodeqlDatabaseError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return CodeScanningDeleteCodeqlDatabaseError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CodeScanningDeleteCodeqlDatabaseError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CodeScanningDeleteCodeqlDatabaseError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  CodeScanningDeleteCodeqlDatabaseError404(BasicError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return CodeScanningDeleteCodeqlDatabaseError503(CodeScanningDeleteCodeqlDatabaseResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return CodeScanningDeleteCodeqlDatabaseErrorUnknown(response);
-}
-}
+return  CodeScanningDeleteCodeqlDatabaseError503(CodeScanningDeleteCodeqlDatabaseResponse503.fromJson(json as Map<String, dynamic>));default:
+return  CodeScanningDeleteCodeqlDatabaseErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class CodeScanningDeleteCodeqlDatabaseError403 extends CodeScanningDeleteCodeqlDatabaseError {const CodeScanningDeleteCodeqlDatabaseError403(this.data);

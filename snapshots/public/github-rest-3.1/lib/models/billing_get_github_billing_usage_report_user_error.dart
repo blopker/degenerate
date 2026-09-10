@@ -7,30 +7,20 @@ sealed class BillingGetGithubBillingUsageReportUserError {const BillingGetGithub
 static BillingGetGithubBillingUsageReportUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return BillingGetGithubBillingUsageReportUserError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  BillingGetGithubBillingUsageReportUserError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return BillingGetGithubBillingUsageReportUserError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  BillingGetGithubBillingUsageReportUserError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return BillingGetGithubBillingUsageReportUserError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 403:
+return  BillingGetGithubBillingUsageReportUserError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }case 403:
 final json = jsonDecode(response.body);
-return BillingGetGithubBillingUsageReportUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 500:
+return  BillingGetGithubBillingUsageReportUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return BillingGetGithubBillingUsageReportUserError500(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  BillingGetGithubBillingUsageReportUserError500(BasicError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return BillingGetGithubBillingUsageReportUserError503(BillingGetGithubBillingUsageReportUserResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return BillingGetGithubBillingUsageReportUserErrorUnknown(response);
-}
-}
+return  BillingGetGithubBillingUsageReportUserError503(BillingGetGithubBillingUsageReportUserResponse503.fromJson(json as Map<String, dynamic>));default:
+return  BillingGetGithubBillingUsageReportUserErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class BillingGetGithubBillingUsageReportUserError400ApplicationJson extends BillingGetGithubBillingUsageReportUserError {const BillingGetGithubBillingUsageReportUserError400ApplicationJson(this.data);

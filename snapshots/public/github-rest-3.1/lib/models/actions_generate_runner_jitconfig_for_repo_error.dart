@@ -7,17 +7,12 @@ sealed class ActionsGenerateRunnerJitconfigForRepoError {const ActionsGenerateRu
 static ActionsGenerateRunnerJitconfigForRepoError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ActionsGenerateRunnerJitconfigForRepoError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 409:
+return  ActionsGenerateRunnerJitconfigForRepoError404(BasicError.fromJson(json as Map<String, dynamic>));case 409:
 final json = jsonDecode(response.body);
-return ActionsGenerateRunnerJitconfigForRepoError409(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ActionsGenerateRunnerJitconfigForRepoError409(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ActionsGenerateRunnerJitconfigForRepoError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return ActionsGenerateRunnerJitconfigForRepoErrorUnknown(response);
-}
-}
+return  ActionsGenerateRunnerJitconfigForRepoError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));default:
+return  ActionsGenerateRunnerJitconfigForRepoErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class ActionsGenerateRunnerJitconfigForRepoError404 extends ActionsGenerateRunnerJitconfigForRepoError {const ActionsGenerateRunnerJitconfigForRepoError404(this.data);

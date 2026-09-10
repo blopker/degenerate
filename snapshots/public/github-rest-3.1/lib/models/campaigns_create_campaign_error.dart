@@ -7,22 +7,15 @@ sealed class CampaignsCreateCampaignError {const CampaignsCreateCampaignError();
 static CampaignsCreateCampaignError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return CampaignsCreateCampaignError400(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CampaignsCreateCampaignError400(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CampaignsCreateCampaignError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  CampaignsCreateCampaignError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return CampaignsCreateCampaignError422(BasicError.fromJson(json as Map<String, dynamic>));
-case 429:
-return const CampaignsCreateCampaignError429();
-case 503:
+return  CampaignsCreateCampaignError422(BasicError.fromJson(json as Map<String, dynamic>));case 429:
+return  const CampaignsCreateCampaignError429();case 503:
 final json = jsonDecode(response.body);
-return CampaignsCreateCampaignError503(CampaignsCreateCampaignResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return CampaignsCreateCampaignErrorUnknown(response);
-}
-}
+return  CampaignsCreateCampaignError503(CampaignsCreateCampaignResponse503.fromJson(json as Map<String, dynamic>));default:
+return  CampaignsCreateCampaignErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class CampaignsCreateCampaignError400 extends CampaignsCreateCampaignError {const CampaignsCreateCampaignError400(this.data);

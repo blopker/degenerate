@@ -6,20 +6,14 @@ sealed class GistsCreateError {const GistsCreateError();
 /// Decodes the payload for its declared status and content type.
 static GistsCreateError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const GistsCreateError304();
-case 403:
+return  const GistsCreateError304();case 403:
 final json = jsonDecode(response.body);
-return GistsCreateError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  GistsCreateError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return GistsCreateError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  GistsCreateError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return GistsCreateError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return GistsCreateErrorUnknown(response);
-}
-}
+return  GistsCreateError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  GistsCreateErrorUnknown(response); }}
 }
 /// Response for 304.
 final class GistsCreateError304 extends GistsCreateError {const GistsCreateError304();

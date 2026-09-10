@@ -34,14 +34,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SkillListResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SkillListResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a new skill.
 ///
 /// `POST /skills`
@@ -56,14 +51,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SkillResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SkillResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a skill by its ID.
 ///
 /// `GET /skills/{skill_id}`
@@ -76,14 +66,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SkillResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SkillResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Update the default version pointer for a skill.
 ///
 /// `POST /skills/{skill_id}`
@@ -98,14 +83,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SkillResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SkillResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a skill by its ID.
 ///
 /// `DELETE /skills/{skill_id}`
@@ -118,14 +98,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedSkillResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedSkillResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Download a skill zip bundle by its ID.
 ///
 /// `GET /skills/{skill_id}/content`
@@ -138,11 +113,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: GetSkillContentSuccess.parse,
-);
-}
+
+return   await execute(request, onSuccess: GetSkillContentSuccess.parse, );}
 /// List skill versions for a skill.
 ///
 /// `GET /skills/{skill_id}/versions`
@@ -169,14 +141,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SkillVersionListResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SkillVersionListResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a new immutable skill version.
 ///
 /// `POST /skills/{skill_id}/versions`
@@ -191,14 +158,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SkillVersionResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SkillVersionResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a specific skill version.
 ///
 /// `GET /skills/{skill_id}/versions/{version}`
@@ -211,14 +173,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SkillVersionResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SkillVersionResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a skill version.
 ///
 /// `DELETE /skills/{skill_id}/versions/{version}`
@@ -231,14 +188,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedSkillVersionResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedSkillVersionResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Download a skill version zip bundle.
 ///
 /// `GET /skills/{skill_id}/versions/{version}/content`
@@ -251,9 +203,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: GetSkillVersionContentSuccess.parse,
-);
-}
+
+return   await execute(request, onSuccess: GetSkillVersionContentSuccess.parse, );}
 }

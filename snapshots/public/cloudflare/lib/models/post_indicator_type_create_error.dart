@@ -7,14 +7,10 @@ sealed class PostIndicatorTypeCreateError {const PostIndicatorTypeCreateError();
 static PostIndicatorTypeCreateError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PostIndicatorTypeCreateError400(PostIndicatorTypeCreateResponse400.fromJson(json as Map<String, dynamic>));
-case 500:
+return  PostIndicatorTypeCreateError400(PostIndicatorTypeCreateResponse400.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return PostIndicatorTypeCreateError500(PostIndicatorTypeCreateResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return PostIndicatorTypeCreateErrorUnknown(response);
-}
-}
+return  PostIndicatorTypeCreateError500(PostIndicatorTypeCreateResponse500.fromJson(json as Map<String, dynamic>));default:
+return  PostIndicatorTypeCreateErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class PostIndicatorTypeCreateError400 extends PostIndicatorTypeCreateError {const PostIndicatorTypeCreateError400(this.data);

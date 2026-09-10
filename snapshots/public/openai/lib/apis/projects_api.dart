@@ -34,14 +34,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ProjectListResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ProjectListResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a new project in the organization. Projects can be created and archived, but cannot be deleted.
 ///
 /// `POST /organization/projects`
@@ -56,14 +51,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Project.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Project.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieves a project.
 ///
 /// `GET /organization/projects/{project_id}`
@@ -76,14 +66,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Project.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Project.fromJson(json as Map<String, dynamic>);}, );}
 /// Modifies a project in the organization.
 ///
 /// `POST /organization/projects/{project_id}`
@@ -98,24 +83,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Project.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Project.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return ErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Returns a list of API keys in the project.
 ///
 /// `GET /organization/projects/{project_id}/api_keys`
@@ -139,14 +113,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return KeyListResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  KeyListResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieves an API key in the project.
 ///
 /// `GET /organization/projects/{project_id}/api_keys/{key_id}`
@@ -159,14 +128,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Key3.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Key3.fromJson(json as Map<String, dynamic>);}, );}
 /// Deletes an API key from the project.
 /// 
 /// Returns confirmation of the key deletion, or an error if the key belonged to
@@ -183,24 +147,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return KeyDeleteResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  KeyDeleteResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return ErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Archives a project in the organization. Archived projects cannot be used or updated.
 ///
 /// `POST /organization/projects/{project_id}/archive`
@@ -213,14 +166,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Project.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Project.fromJson(json as Map<String, dynamic>);}, );}
 /// Returns the rate limits per model for a project.
 ///
 /// `GET /organization/projects/{project_id}/rate_limits`
@@ -247,14 +195,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ProjectRateLimitListResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ProjectRateLimitListResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Updates a project rate limit.
 ///
 /// `POST /organization/projects/{project_id}/rate_limits/{rate_limit_id}`
@@ -269,24 +212,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ProjectRateLimit.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ProjectRateLimit.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return ErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Returns a list of service accounts in the project.
 ///
 /// `GET /organization/projects/{project_id}/service_accounts`
@@ -310,24 +242,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ProjectServiceAccountListResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ProjectServiceAccountListResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return ErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Creates a new service account in the project. This also returns an unredacted API key for the service account.
 ///
 /// `POST /organization/projects/{project_id}/service_accounts`
@@ -342,24 +263,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ProjectServiceAccountCreateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ProjectServiceAccountCreateResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return ErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Retrieves a service account in the project.
 ///
 /// `GET /organization/projects/{project_id}/service_accounts/{service_account_id}`
@@ -372,14 +282,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ProjectServiceAccount.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ProjectServiceAccount.fromJson(json as Map<String, dynamic>);}, );}
 /// Deletes a service account from the project.
 /// 
 /// Returns confirmation of service account deletion, or an error if the project
@@ -396,14 +301,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ProjectServiceAccountDeleteResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ProjectServiceAccountDeleteResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Returns a list of users in the project.
 ///
 /// `GET /organization/projects/{project_id}/users`
@@ -427,24 +327,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ProjectUserListResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ProjectUserListResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return ErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Adds a user to the project. Users must already be members of the organization to be added to a project.
 ///
 /// `POST /organization/projects/{project_id}/users`
@@ -459,24 +348,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ProjectUser.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ProjectUser.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return ErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Retrieves a user in the project.
 ///
 /// `GET /organization/projects/{project_id}/users/{user_id}`
@@ -489,14 +367,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ProjectUser.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ProjectUser.fromJson(json as Map<String, dynamic>);}, );}
 /// Modifies a user's role in the project.
 ///
 /// `POST /organization/projects/{project_id}/users/{user_id}`
@@ -511,24 +384,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ProjectUser.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ProjectUser.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return ErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Deletes a user from the project.
 /// 
 /// Returns confirmation of project user deletion, or an error if the project is
@@ -545,22 +407,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ProjectUserDeleteResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ProjectUserDeleteResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return ErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

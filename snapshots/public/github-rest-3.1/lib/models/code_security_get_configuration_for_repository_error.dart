@@ -6,17 +6,12 @@ sealed class CodeSecurityGetConfigurationForRepositoryError {const CodeSecurityG
 /// Decodes the payload for its declared status and content type.
 static CodeSecurityGetConfigurationForRepositoryError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const CodeSecurityGetConfigurationForRepositoryError304();
-case 403:
+return  const CodeSecurityGetConfigurationForRepositoryError304();case 403:
 final json = jsonDecode(response.body);
-return CodeSecurityGetConfigurationForRepositoryError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CodeSecurityGetConfigurationForRepositoryError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CodeSecurityGetConfigurationForRepositoryError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return CodeSecurityGetConfigurationForRepositoryErrorUnknown(response);
-}
-}
+return  CodeSecurityGetConfigurationForRepositoryError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  CodeSecurityGetConfigurationForRepositoryErrorUnknown(response); }}
 }
 /// Response for 304.
 final class CodeSecurityGetConfigurationForRepositoryError304 extends CodeSecurityGetConfigurationForRepositoryError {const CodeSecurityGetConfigurationForRepositoryError304();

@@ -140,9 +140,7 @@ class ResponsePlan {
     return nullable && base != 'dynamic' ? '$base?' : base;
   }
 
-  String wrap(ResponseBranch branch, String value) => isUnion
-      ? '${branch.type == null ? 'const ' : ''}${_variantNames[branch]}(${branch.type == null ? '' : value})'
-      : value;
+  String? variantName(ResponseBranch branch) => _variantNames[branch];
 }
 
 ResponsePlan planResponses(

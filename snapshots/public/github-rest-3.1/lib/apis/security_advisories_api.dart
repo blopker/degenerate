@@ -83,15 +83,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => GlobalAdvisory.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: SecurityAdvisoriesListGlobalAdvisoriesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => GlobalAdvisory.fromJson(e as Map<String, dynamic>)).toList();}, onError: SecurityAdvisoriesListGlobalAdvisoriesError.parse, );}
 /// Get a global security advisory
 ///
 /// Gets a global security advisory using its GitHub Security Advisory (GHSA) identifier.
@@ -106,24 +100,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GlobalAdvisory.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GlobalAdvisory.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List repository security advisories for an organization
 ///
 /// Lists repository security advisories for an organization.
@@ -165,15 +148,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => RepositoryAdvisory.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: SecurityAdvisoriesListOrgRepositoryAdvisoriesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => RepositoryAdvisory.fromJson(e as Map<String, dynamic>)).toList();}, onError: SecurityAdvisoriesListOrgRepositoryAdvisoriesError.parse, );}
 /// List repository security advisories
 ///
 /// Lists security advisories in a repository.
@@ -215,15 +192,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => RepositoryAdvisory.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: SecurityAdvisoriesListRepositoryAdvisoriesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => RepositoryAdvisory.fromJson(e as Map<String, dynamic>)).toList();}, onError: SecurityAdvisoriesListRepositoryAdvisoriesError.parse, );}
 /// Create a repository security advisory
 ///
 /// Creates a new repository security advisory.
@@ -244,15 +215,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RepositoryAdvisory.fromJson(json as Map<String, dynamic>);
-  },
-  onError: SecurityAdvisoriesCreateRepositoryAdvisoryError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RepositoryAdvisory.fromJson(json as Map<String, dynamic>);}, onError: SecurityAdvisoriesCreateRepositoryAdvisoryError.parse, );}
 /// Privately report a security vulnerability
 ///
 /// Report a security vulnerability to the maintainers of the repository.
@@ -270,15 +235,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RepositoryAdvisory.fromJson(json as Map<String, dynamic>);
-  },
-  onError: SecurityAdvisoriesCreatePrivateVulnerabilityReportError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RepositoryAdvisory.fromJson(json as Map<String, dynamic>);}, onError: SecurityAdvisoriesCreatePrivateVulnerabilityReportError.parse, );}
 /// Get a repository security advisory
 ///
 /// Get a repository security advisory using its GitHub Security Advisory (GHSA) identifier.
@@ -300,24 +259,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RepositoryAdvisory.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RepositoryAdvisory.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update a repository security advisory
 ///
 /// Update a repository security advisory using its GitHub Security Advisory (GHSA) identifier.
@@ -339,15 +287,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RepositoryAdvisory.fromJson(json as Map<String, dynamic>);
-  },
-  onError: SecurityAdvisoriesUpdateRepositoryAdvisoryError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RepositoryAdvisory.fromJson(json as Map<String, dynamic>);}, onError: SecurityAdvisoriesUpdateRepositoryAdvisoryError.parse, );}
 /// Request a CVE for a repository security advisory
 ///
 /// If you want a CVE identification number for the security vulnerability in your project, and don't already have one, you can request a CVE identification number from GitHub. For more information see "[Requesting a CVE identification number](https://docs.github.com/code-security/security-advisories/repository-security-advisories/publishing-a-repository-security-advisory#requesting-a-cve-identification-number-optional)."
@@ -368,15 +310,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as Map<String, dynamic>;
-  },
-  onError: SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as Map<String, dynamic>;}, onError: SecurityAdvisoriesCreateRepositoryAdvisoryCveRequestError.parse, );}
 /// Create a temporary private fork
 ///
 /// Create a temporary private fork to collaborate on fixing a security vulnerability in your repository.
@@ -394,13 +330,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FullRepository.fromJson(json as Map<String, dynamic>);
-  },
-  onError: SecurityAdvisoriesCreateForkError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FullRepository.fromJson(json as Map<String, dynamic>);}, onError: SecurityAdvisoriesCreateForkError.parse, );}
 }

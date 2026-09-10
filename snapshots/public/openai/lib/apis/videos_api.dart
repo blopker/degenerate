@@ -34,14 +34,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VideoListResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VideoListResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a new video generation job from a prompt and optional reference assets.
 ///
 /// `POST /videos`
@@ -56,14 +51,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VideoResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VideoResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch the latest metadata for a generated video.
 ///
 /// `GET /videos/{video_id}`
@@ -76,14 +66,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VideoResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VideoResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Permanently delete a completed or failed video and its stored assets.
 ///
 /// `DELETE /videos/{video_id}`
@@ -96,14 +81,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedVideoResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedVideoResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Download the generated video bytes or a derived preview asset.
 /// 
 /// Streams the rendered video content for the specified video job.
@@ -126,11 +106,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: RetrieveVideoContentSuccess.parse,
-);
-}
+
+return   await execute(request, onSuccess: RetrieveVideoContentSuccess.parse, );}
 /// Create a remix of a completed video using a refreshed prompt.
 ///
 /// `POST /videos/{video_id}/remix`
@@ -145,12 +122,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VideoResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VideoResource.fromJson(json as Map<String, dynamic>);}, );}
 }

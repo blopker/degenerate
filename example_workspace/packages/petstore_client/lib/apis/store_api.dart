@@ -22,14 +22,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as num).toInt()));
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as Map<String, dynamic>).map((k, v) => MapEntry(k, (v as num).toInt()));}, );}
 /// Place an order for a pet.
 ///
 /// Place a new order in the store.
@@ -46,14 +41,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Order.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Order.fromJson(json as Map<String, dynamic>);}, );}
 /// Find purchase order by ID.
 ///
 /// For valid response try integer IDs with value `<= 5 or >` 10. Other values will generate exceptions.
@@ -68,24 +58,16 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Order.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/xml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/xml response into Order
-throw UnsupportedError('Cannot decode application/xml response into Order');
-}
-final json = jsonDecode(response.body);
-return Order.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Order.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/xml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/xml response into Order
+
+throw  UnsupportedError('Cannot decode application/xml response into Order'); } else {
+final json = jsonDecode(response.body);
+return  Order.fromJson(json as Map<String, dynamic>); }}, );}
 /// Delete purchase order by identifier.
 ///
 /// For valid response try integer IDs with value < 1000. Anything above 1000 or non-integers will generate API errors.
@@ -100,9 +82,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

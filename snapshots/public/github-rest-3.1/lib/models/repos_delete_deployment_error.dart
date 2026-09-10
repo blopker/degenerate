@@ -7,14 +7,10 @@ sealed class ReposDeleteDeploymentError {const ReposDeleteDeploymentError();
 static ReposDeleteDeploymentError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ReposDeleteDeploymentError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposDeleteDeploymentError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposDeleteDeploymentError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return ReposDeleteDeploymentErrorUnknown(response);
-}
-}
+return  ReposDeleteDeploymentError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));default:
+return  ReposDeleteDeploymentErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class ReposDeleteDeploymentError404 extends ReposDeleteDeploymentError {const ReposDeleteDeploymentError404(this.data);

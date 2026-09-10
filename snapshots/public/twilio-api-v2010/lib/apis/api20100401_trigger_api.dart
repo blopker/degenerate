@@ -20,14 +20,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountUsageUsageTrigger.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountUsageUsageTrigger.fromJson(json as Map<String, dynamic>);}, );}
 /// Update an instance of a usage trigger
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Usage/Triggers/{Sid}.json`
@@ -49,14 +44,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountUsageUsageTrigger.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountUsageUsageTrigger.fromJson(json as Map<String, dynamic>);}, );}
 /// 
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/Usage/Triggers/{Sid}.json`
@@ -69,11 +59,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a list of usage-triggers belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Usage/Triggers.json`
@@ -109,14 +96,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListUsageTriggerResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListUsageTriggerResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a new UsageTrigger
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Usage/Triggers.json`
@@ -143,12 +125,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountUsageUsageTrigger.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountUsageUsageTrigger.fromJson(json as Map<String, dynamic>);}, );}
 }

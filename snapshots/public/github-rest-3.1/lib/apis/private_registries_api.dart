@@ -37,15 +37,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PrivateRegistriesListOrgPrivateRegistriesResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: PrivateRegistriesListOrgPrivateRegistriesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PrivateRegistriesListOrgPrivateRegistriesResponse.fromJson(json as Map<String, dynamic>);}, onError: PrivateRegistriesListOrgPrivateRegistriesError.parse, );}
 /// Create a private registry for an organization
 ///
 /// 
@@ -65,15 +59,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrgPrivateRegistryConfigurationWithSelectedRepositories.fromJson(json as Map<String, dynamic>);
-  },
-  onError: PrivateRegistriesCreateOrgPrivateRegistryError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrgPrivateRegistryConfigurationWithSelectedRepositories.fromJson(json as Map<String, dynamic>);}, onError: PrivateRegistriesCreateOrgPrivateRegistryError.parse, );}
 /// Get private registries public key for an organization
 ///
 /// 
@@ -91,24 +79,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PrivateRegistriesGetOrgPublicKeyResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PrivateRegistriesGetOrgPublicKeyResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get a private registry for an organization
 ///
 /// 
@@ -126,24 +103,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrgPrivateRegistryConfiguration.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrgPrivateRegistryConfiguration.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update a private registry for an organization
 ///
 /// 
@@ -163,12 +129,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: PrivateRegistriesUpdateOrgPrivateRegistryError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: PrivateRegistriesUpdateOrgPrivateRegistryError.parse, );}
 /// Delete a private registry for an organization
 ///
 /// 
@@ -186,10 +148,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: PrivateRegistriesDeleteOrgPrivateRegistryError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: PrivateRegistriesDeleteOrgPrivateRegistryError.parse, );}
 }

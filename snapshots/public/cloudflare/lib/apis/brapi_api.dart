@@ -32,15 +32,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] as String?;
-  },
-  onError: BrapiPostContentError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] as String?;}, onError: BrapiPostContentError.parse, );}
 /// Get json.
 ///
 /// Gets json from a webpage from a provided URL or HTML. Pass `prompt` or `schema` in the body. Control page loading with `gotoOptions` and `waitFor*` options.
@@ -65,15 +59,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Map<String, dynamic>?));
-  },
-  onError: BrapiPostJsonError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, v as Map<String, dynamic>?));}, onError: BrapiPostJsonError.parse, );}
 /// Get Links.
 ///
 /// Get links from a web page.
@@ -98,15 +86,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => e as String).toList();
-  },
-  onError: BrapiPostLinksError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => e as String).toList();}, onError: BrapiPostLinksError.parse, );}
 /// Get markdown.
 ///
 /// Gets markdown of a webpage from provided URL or HTML. Control page loading with `gotoOptions` and `waitFor*` options.
@@ -131,15 +113,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] as String?;
-  },
-  onError: BrapiPostMarkdownError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] as String?;}, onError: BrapiPostMarkdownError.parse, );}
 /// Get PDF.
 ///
 /// Fetches rendered PDF from provided URL or HTML. Check available options like `gotoOptions` and `waitFor*` to control page load behaviour.
@@ -164,14 +140,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-return response.body;
-  },
-  onError: BrapiPostPdfError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {return  response.body;}, onError: BrapiPostPdfError.parse, );}
 /// Scrape elements.
 ///
 /// Get meta attributes like height, width, text and others of selected elements.
@@ -196,15 +166,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => BrapiPostScrapeResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: BrapiPostScrapeError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => BrapiPostScrapeResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, onError: BrapiPostScrapeError.parse, );}
 /// Get screenshot.
 ///
 /// Takes a screenshot of a webpage from provided URL or HTML. Control page loading with `gotoOptions` and `waitFor*` options. Customize screenshots with `viewport`, `fullPage`, `clip` and others.
@@ -229,12 +193,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: BrapiPostScreenshotSuccess.parse,
-  onError: BrapiPostScreenshotError.parse,
-);
-}
+
+return   await execute(request, onSuccess: BrapiPostScreenshotSuccess.parse, onError: BrapiPostScreenshotError.parse, );}
 /// Get HTML content and screenshot.
 ///
 /// Returns the page's HTML content and screenshot. Control page loading with `gotoOptions` and `waitFor*` options. Customize screenshots with `viewport`, `fullPage`, `clip` and others.
@@ -259,13 +219,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? BrapiPostSnapshotResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: BrapiPostSnapshotError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? BrapiPostSnapshotResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: BrapiPostSnapshotError.parse, );}
 }

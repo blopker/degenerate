@@ -20,14 +20,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountAuthorizedConnectApp.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountAuthorizedConnectApp.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieve a list of authorized-connect-apps belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/AuthorizedConnectApps.json`
@@ -54,12 +49,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListAuthorizedConnectAppResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListAuthorizedConnectAppResponse.fromJson(json as Map<String, dynamic>);}, );}
 }

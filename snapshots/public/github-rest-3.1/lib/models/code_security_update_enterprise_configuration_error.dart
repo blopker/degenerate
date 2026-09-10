@@ -6,20 +6,14 @@ sealed class CodeSecurityUpdateEnterpriseConfigurationError {const CodeSecurityU
 /// Decodes the payload for its declared status and content type.
 static CodeSecurityUpdateEnterpriseConfigurationError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const CodeSecurityUpdateEnterpriseConfigurationError304();
-case 403:
+return  const CodeSecurityUpdateEnterpriseConfigurationError304();case 403:
 final json = jsonDecode(response.body);
-return CodeSecurityUpdateEnterpriseConfigurationError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CodeSecurityUpdateEnterpriseConfigurationError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CodeSecurityUpdateEnterpriseConfigurationError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 409:
+return  CodeSecurityUpdateEnterpriseConfigurationError404(BasicError.fromJson(json as Map<String, dynamic>));case 409:
 final json = jsonDecode(response.body);
-return CodeSecurityUpdateEnterpriseConfigurationError409(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return CodeSecurityUpdateEnterpriseConfigurationErrorUnknown(response);
-}
-}
+return  CodeSecurityUpdateEnterpriseConfigurationError409(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  CodeSecurityUpdateEnterpriseConfigurationErrorUnknown(response); }}
 }
 /// Response for 304.
 final class CodeSecurityUpdateEnterpriseConfigurationError304 extends CodeSecurityUpdateEnterpriseConfigurationError {const CodeSecurityUpdateEnterpriseConfigurationError304();

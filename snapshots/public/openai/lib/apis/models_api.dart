@@ -20,14 +20,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListModelsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListModelsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieves a model instance, providing basic information about the model such as the owner and permissioning.
 ///
 /// `GET /models/{model}`
@@ -40,14 +35,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Model.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Model.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a fine-tuned model. You must have the Owner role in your organization to delete a model.
 ///
 /// `DELETE /models/{model}`
@@ -60,12 +50,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeleteModelResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeleteModelResponse.fromJson(json as Map<String, dynamic>);}, );}
 }

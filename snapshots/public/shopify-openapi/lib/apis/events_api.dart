@@ -48,11 +48,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single event by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#show-2020-01
@@ -75,11 +72,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of events
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#count-2020-01
@@ -105,11 +99,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of events. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#index-2020-04
@@ -150,11 +141,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single event by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#show-2020-04
@@ -177,11 +165,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of events
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#count-2020-04
@@ -207,11 +192,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of events. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#index-2020-07
@@ -252,11 +234,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single event by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#show-2020-07
@@ -279,11 +258,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of events
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#count-2020-07
@@ -309,11 +285,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of events. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#index-2020-10
@@ -354,11 +327,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single event by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#show-2020-10
@@ -381,11 +351,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of events
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#count-2020-10
@@ -411,11 +378,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of events. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#index-2021-01
@@ -456,11 +420,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single event by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#show-2021-01
@@ -483,11 +444,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of events
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#count-2021-01
@@ -513,11 +471,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of events. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#index-unstable
@@ -558,11 +513,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single event by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#show-unstable
@@ -585,11 +537,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of events
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/event#count-unstable
@@ -615,11 +564,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of webhooks. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#index-2020-01
@@ -666,11 +612,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a new webhook subscription by specifying both an address and a topic
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#create-2020-01
@@ -695,11 +638,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of existing webhook subscriptions
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#count-2020-01
@@ -725,11 +665,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single webhook subscription
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#show-2020-01
@@ -752,11 +689,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Update a webhook subscription's topic or address URIs
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#update-2020-01
@@ -773,11 +707,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Delete a webhook subscription
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#destroy-2020-01
@@ -792,11 +723,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of webhooks. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#index-2020-04
@@ -843,11 +771,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a new webhook subscription by specifying both an address and a topic
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#create-2020-04
@@ -872,11 +797,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of existing webhook subscriptions
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#count-2020-04
@@ -902,11 +824,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single webhook subscription
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#show-2020-04
@@ -929,11 +848,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Update a webhook subscription's topic or address URIs
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#update-2020-04
@@ -950,11 +866,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Delete a webhook subscription
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#destroy-2020-04
@@ -969,11 +882,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of webhooks. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#index-2020-07
@@ -1020,11 +930,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a new webhook subscription by specifying both an address and a topic
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#create-2020-07
@@ -1049,11 +956,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of existing webhook subscriptions
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#count-2020-07
@@ -1079,11 +983,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single webhook subscription
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#show-2020-07
@@ -1106,11 +1007,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Update a webhook subscription's topic or address URIs
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#update-2020-07
@@ -1127,11 +1025,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Delete a webhook subscription
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#destroy-2020-07
@@ -1146,11 +1041,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of webhooks. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#index-2020-10
@@ -1197,11 +1089,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a new webhook subscription by specifying both an address and a topic
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#create-2020-10
@@ -1226,11 +1115,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of existing webhook subscriptions
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#count-2020-10
@@ -1256,11 +1142,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single webhook subscription
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#show-2020-10
@@ -1283,11 +1166,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Update a webhook subscription's topic or address URIs
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#update-2020-10
@@ -1304,11 +1184,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Delete a webhook subscription
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#destroy-2020-10
@@ -1323,11 +1200,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of webhooks. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#index-2021-01
@@ -1374,11 +1248,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a new webhook subscription by specifying both an address and a topic
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#create-2021-01
@@ -1403,11 +1274,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of existing webhook subscriptions
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#count-2021-01
@@ -1433,11 +1301,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single webhook subscription
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#show-2021-01
@@ -1460,11 +1325,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Update a webhook subscription's topic or address URIs
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#update-2021-01
@@ -1481,11 +1343,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Delete a webhook subscription
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#destroy-2021-01
@@ -1500,11 +1359,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of webhooks. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#index-unstable
@@ -1551,11 +1407,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a new webhook subscription by specifying both an address and a topic
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#create-unstable
@@ -1580,11 +1433,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of existing webhook subscriptions
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#count-unstable
@@ -1610,11 +1460,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single webhook subscription
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#show-unstable
@@ -1637,11 +1484,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Update a webhook subscription's topic or address URIs
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#update-unstable
@@ -1658,11 +1502,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Delete a webhook subscription
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/events/webhook#destroy-unstable
@@ -1677,9 +1518,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

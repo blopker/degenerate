@@ -7,24 +7,16 @@ sealed class IssuesRemoveSubIssueError {const IssuesRemoveSubIssueError();
 static IssuesRemoveSubIssueError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return IssuesRemoveSubIssueError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  IssuesRemoveSubIssueError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return IssuesRemoveSubIssueError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  IssuesRemoveSubIssueError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return IssuesRemoveSubIssueError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 404:
+return  IssuesRemoveSubIssueError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }case 404:
 final json = jsonDecode(response.body);
-return IssuesRemoveSubIssueError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return IssuesRemoveSubIssueErrorUnknown(response);
-}
-}
+return  IssuesRemoveSubIssueError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  IssuesRemoveSubIssueErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class IssuesRemoveSubIssueError400ApplicationJson extends IssuesRemoveSubIssueError {const IssuesRemoveSubIssueError400ApplicationJson(this.data);

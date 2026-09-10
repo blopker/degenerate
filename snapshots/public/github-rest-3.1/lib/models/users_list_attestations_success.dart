@@ -7,16 +7,11 @@ sealed class UsersListAttestationsSuccess {const UsersListAttestationsSuccess();
 static UsersListAttestationsSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final json = jsonDecode(response.body);
-return UsersListAttestationsSuccess200(UsersListAttestationsResponse.fromJson(json as Map<String, dynamic>));
-case 201:
+return  UsersListAttestationsSuccess200(UsersListAttestationsResponse.fromJson(json as Map<String, dynamic>));case 201:
 final json = jsonDecode(response.body);
-return UsersListAttestationsSuccess201(EmptyObject.fromJson(json as Map<String, dynamic>));
-case 204:
-return const UsersListAttestationsSuccess204();
-default:
-return UsersListAttestationsSuccessUnknown(response);
-}
-}
+return  UsersListAttestationsSuccess201(EmptyObject.fromJson(json as Map<String, dynamic>));case 204:
+return  const UsersListAttestationsSuccess204();default:
+return  UsersListAttestationsSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class UsersListAttestationsSuccess200 extends UsersListAttestationsSuccess {const UsersListAttestationsSuccess200(this.data);

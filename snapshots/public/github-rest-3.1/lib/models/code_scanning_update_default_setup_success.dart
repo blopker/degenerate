@@ -7,14 +7,10 @@ sealed class CodeScanningUpdateDefaultSetupSuccess {const CodeScanningUpdateDefa
 static CodeScanningUpdateDefaultSetupSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final json = jsonDecode(response.body);
-return CodeScanningUpdateDefaultSetupSuccess200(EmptyObject.fromJson(json as Map<String, dynamic>));
-case 202:
+return  CodeScanningUpdateDefaultSetupSuccess200(EmptyObject.fromJson(json as Map<String, dynamic>));case 202:
 final json = jsonDecode(response.body);
-return CodeScanningUpdateDefaultSetupSuccess202(CodeScanningDefaultSetupUpdateResponse.fromJson(json as Map<String, dynamic>));
-default:
-return CodeScanningUpdateDefaultSetupSuccessUnknown(response);
-}
-}
+return  CodeScanningUpdateDefaultSetupSuccess202(CodeScanningDefaultSetupUpdateResponse.fromJson(json as Map<String, dynamic>));default:
+return  CodeScanningUpdateDefaultSetupSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class CodeScanningUpdateDefaultSetupSuccess200 extends CodeScanningUpdateDefaultSetupSuccess {const CodeScanningUpdateDefaultSetupSuccess200(this.data);

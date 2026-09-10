@@ -7,14 +7,10 @@ sealed class OrgsSetMembershipForUserError {const OrgsSetMembershipForUserError(
 static OrgsSetMembershipForUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return OrgsSetMembershipForUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  OrgsSetMembershipForUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return OrgsSetMembershipForUserError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return OrgsSetMembershipForUserErrorUnknown(response);
-}
-}
+return  OrgsSetMembershipForUserError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  OrgsSetMembershipForUserErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class OrgsSetMembershipForUserError403 extends OrgsSetMembershipForUserError {const OrgsSetMembershipForUserError403(this.data);

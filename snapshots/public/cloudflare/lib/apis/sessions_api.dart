@@ -57,14 +57,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetSessionsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetSessionsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch details of a session
 ///
 /// Returns data of the given session ID including recording details.
@@ -87,14 +82,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetSessionDetailsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetSessionDetailsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch all chat messages of a session
 ///
 /// Returns a URL to download all chat messages of the session ID in CSV format.
@@ -110,14 +100,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetSessionChatResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetSessionChatResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch participants list of a session
 ///
 /// Returns a list of participants for the given session ID.
@@ -158,14 +143,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetSessionParticipantsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetSessionParticipantsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch details of a participant
 ///
 /// Returns details of the given participant ID along with call statistics for the given session ID.
@@ -191,14 +171,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetParticipantDetailsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetParticipantDetailsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch summary of transcripts for a session
 ///
 /// Returns a Summary URL to download the Summary of Transcripts for the session ID as plain text.
@@ -213,14 +188,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetSessionSummaryResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetSessionSummaryResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Generate summary of Transcripts for the session
 ///
 /// Trigger Summary generation of Transcripts for the session ID.
@@ -235,21 +205,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case >= 200 && < 300:
 final json = jsonDecode(response.body);
-return PostSessionsSessionIdSummaryResponse.fromJson(json as Map<String, dynamic>);
-default:
+return  PostSessionsSessionIdSummaryResponse.fromJson(json as Map<String, dynamic>);default:
 final json = jsonDecode(response.body);
-return PostSessionsSessionIdSummaryResponse.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  PostSessionsSessionIdSummaryResponse.fromJson(json as Map<String, dynamic>); }}, );}
 /// Fetch the complete transcript for a session
 ///
 /// Returns a URL to download the transcript for the session ID in CSV format.
@@ -264,14 +226,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetSessionTranscriptResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetSessionTranscriptResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch details of peer
 ///
 /// Returns details of the given peer ID along with call statistics for the given session ID.
@@ -294,12 +251,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetParticipantDataFromPeerIdResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetParticipantDataFromPeerIdResponse.fromJson(json as Map<String, dynamic>);}, );}
 }

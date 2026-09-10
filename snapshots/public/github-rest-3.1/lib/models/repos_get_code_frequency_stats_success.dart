@@ -7,16 +7,11 @@ sealed class ReposGetCodeFrequencyStatsSuccess {const ReposGetCodeFrequencyStats
 static ReposGetCodeFrequencyStatsSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final json = jsonDecode(response.body);
-return ReposGetCodeFrequencyStatsSuccess200((json as List<dynamic>).map((e) => (e as List<dynamic>).map((e) => (e as num).toInt()).toList()).toList());
-case 202:
+return  ReposGetCodeFrequencyStatsSuccess200((json as List<dynamic>).map((e) => (e as List<dynamic>).map((e) => (e as num).toInt()).toList()).toList());case 202:
 final json = jsonDecode(response.body);
-return ReposGetCodeFrequencyStatsSuccess202(json as Map<String, dynamic>);
-case 204:
-return const ReposGetCodeFrequencyStatsSuccess204();
-default:
-return ReposGetCodeFrequencyStatsSuccessUnknown(response);
-}
-}
+return  ReposGetCodeFrequencyStatsSuccess202(json as Map<String, dynamic>);case 204:
+return  const ReposGetCodeFrequencyStatsSuccess204();default:
+return  ReposGetCodeFrequencyStatsSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class ReposGetCodeFrequencyStatsSuccess200 extends ReposGetCodeFrequencyStatsSuccess {const ReposGetCodeFrequencyStatsSuccess200(this.data);

@@ -72,15 +72,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => DependabotAlertWithRepository.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: DependabotListAlertsForEnterpriseError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => DependabotAlertWithRepository.fromJson(e as Map<String, dynamic>)).toList();}, onError: DependabotListAlertsForEnterpriseError.parse, );}
 /// Lists the repositories Dependabot can access in an organization
 ///
 /// Lists repositories that organization admins have allowed Dependabot to access when updating dependencies.
@@ -109,24 +103,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DependabotRepositoryAccessDetails.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DependabotRepositoryAccessDetails.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Updates Dependabot's repository access list for an organization
 ///
 /// Updates repositories according to the list of repositories that organization admins have given Dependabot access to when they've updated dependencies.
@@ -155,21 +138,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set the default repository access level for Dependabot
 ///
 /// Sets the default level of repository access Dependabot will have while performing an update.  Available values are:
@@ -192,21 +166,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List Dependabot alerts for an organization
 ///
 /// Lists Dependabot alerts for an organization.
@@ -278,15 +243,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => DependabotAlertWithRepository.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: DependabotListAlertsForOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => DependabotAlertWithRepository.fromJson(e as Map<String, dynamic>)).toList();}, onError: DependabotListAlertsForOrgError.parse, );}
 /// List organization secrets
 ///
 /// Lists all secrets available in an organization without revealing their
@@ -315,14 +274,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DependabotListOrgSecretsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DependabotListOrgSecretsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get an organization public key
 ///
 /// Gets your public key, which you need to encrypt secrets. You need to
@@ -340,14 +294,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DependabotPublicKey.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DependabotPublicKey.fromJson(json as Map<String, dynamic>);}, );}
 /// Get an organization secret
 ///
 /// Gets a single organization secret without revealing its encrypted value.
@@ -364,14 +313,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OrganizationDependabotSecret.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OrganizationDependabotSecret.fromJson(json as Map<String, dynamic>);}, );}
 /// Create or update an organization secret
 ///
 /// Creates or updates an organization secret with an encrypted value. Encrypt your secret using
@@ -391,11 +335,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: DependabotCreateOrUpdateOrgSecretSuccess.parse,
-);
-}
+
+return   await execute(request, onSuccess: DependabotCreateOrUpdateOrgSecretSuccess.parse, );}
 /// Delete an organization secret
 ///
 /// Deletes a secret in an organization using the secret name.
@@ -412,11 +353,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List selected repositories for an organization secret
 ///
 /// Lists all repositories that have been selected when the `visibility`
@@ -445,14 +383,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DependabotListSelectedReposForOrgSecretResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DependabotListSelectedReposForOrgSecretResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Set selected repositories for an organization secret
 ///
 /// Replaces all repositories for an organization secret when the `visibility`
@@ -473,11 +406,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Add selected repository to an organization secret
 ///
 /// Adds a repository to an organization secret when the `visibility` for
@@ -496,11 +426,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Remove selected repository from an organization secret
 ///
 /// Removes a repository from an organization secret when the `visibility`
@@ -519,11 +446,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List Dependabot alerts for a repository
 ///
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
@@ -585,15 +509,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => DependabotAlert.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: DependabotListAlertsForRepoError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => DependabotAlert.fromJson(e as Map<String, dynamic>)).toList();}, onError: DependabotListAlertsForRepoError.parse, );}
 /// Get a Dependabot alert
 ///
 /// OAuth app tokens and personal access tokens (classic) need the `security_events` scope to use this endpoint. If this endpoint is only used with public repositories, the token can use the `public_repo` scope instead.
@@ -608,15 +526,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DependabotAlert.fromJson(json as Map<String, dynamic>);
-  },
-  onError: DependabotGetAlertError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DependabotAlert.fromJson(json as Map<String, dynamic>);}, onError: DependabotGetAlertError.parse, );}
 /// Update a Dependabot alert
 ///
 /// The authenticated user must have access to security alerts for the repository to use this endpoint. For more information, see "[Granting access to security alerts](https://docs.github.com/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/managing-security-and-analysis-settings-for-your-repository#granting-access-to-security-alerts)."
@@ -635,15 +547,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DependabotAlert.fromJson(json as Map<String, dynamic>);
-  },
-  onError: DependabotUpdateAlertError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DependabotAlert.fromJson(json as Map<String, dynamic>);}, onError: DependabotUpdateAlertError.parse, );}
 /// List repository secrets
 ///
 /// Lists all secrets available in a repository without revealing their encrypted
@@ -672,14 +578,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DependabotListRepoSecretsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DependabotListRepoSecretsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a repository public key
 ///
 /// Gets your public key, which you need to encrypt secrets. You need to
@@ -698,14 +599,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DependabotPublicKey.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DependabotPublicKey.fromJson(json as Map<String, dynamic>);}, );}
 /// Get a repository secret
 ///
 /// Gets a single repository secret without revealing its encrypted value.
@@ -722,14 +618,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DependabotSecret.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DependabotSecret.fromJson(json as Map<String, dynamic>);}, );}
 /// Create or update a repository secret
 ///
 /// Creates or updates a repository secret with an encrypted value. Encrypt your secret using
@@ -749,11 +640,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: DependabotCreateOrUpdateRepoSecretSuccess.parse,
-);
-}
+
+return   await execute(request, onSuccess: DependabotCreateOrUpdateRepoSecretSuccess.parse, );}
 /// Delete a repository secret
 ///
 /// Deletes a secret in a repository using the secret name.
@@ -770,9 +658,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

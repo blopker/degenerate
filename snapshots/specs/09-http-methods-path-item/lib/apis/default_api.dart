@@ -19,11 +19,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 ///
 /// `POST /verbs`
 Future<ApiResult<void, Never>> verbsPost({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -35,11 +32,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 ///
 /// `PUT /verbs`
 Future<ApiResult<void, Never>> verbsPut({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -51,11 +45,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 ///
 /// `PATCH /verbs`
 Future<ApiResult<void, Never>> verbsPatch({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -67,11 +58,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 ///
 /// `DELETE /verbs`
 Future<ApiResult<void, Never>> verbsDelete({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -83,11 +71,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 ///
 /// `HEAD /verbs`
 Future<ApiResult<void, Never>> verbsHead({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -99,11 +84,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 ///
 /// `OPTIONS /verbs`
 Future<ApiResult<void, Never>> verbsOptions({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -115,11 +97,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 ///
 /// `TRACE /verbs`
 Future<ApiResult<void, Never>> verbsTrace({RequestOptions? options}) async {final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -131,9 +110,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

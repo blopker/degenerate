@@ -40,14 +40,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListAccountResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListAccountResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a new Twilio Subaccount from the account making the request
 ///
 /// `POST /2010-04-01/Accounts.json`
@@ -65,14 +60,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Account.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Account.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch the account specified by the provided Account Sid
 ///
 /// `GET /2010-04-01/Accounts/{Sid}.json`
@@ -85,14 +75,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Account.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Account.fromJson(json as Map<String, dynamic>);}, );}
 /// Modify the properties of a given Account
 ///
 /// `POST /2010-04-01/Accounts/{Sid}.json`
@@ -112,12 +97,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Account.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Account.fromJson(json as Map<String, dynamic>);}, );}
 }

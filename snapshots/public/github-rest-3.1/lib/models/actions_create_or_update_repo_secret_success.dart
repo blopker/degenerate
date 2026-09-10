@@ -7,13 +7,9 @@ sealed class ActionsCreateOrUpdateRepoSecretSuccess {const ActionsCreateOrUpdate
 static ActionsCreateOrUpdateRepoSecretSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 201:
 final json = jsonDecode(response.body);
-return ActionsCreateOrUpdateRepoSecretSuccess201(EmptyObject.fromJson(json as Map<String, dynamic>));
-case 204:
-return const ActionsCreateOrUpdateRepoSecretSuccess204();
-default:
-return ActionsCreateOrUpdateRepoSecretSuccessUnknown(response);
-}
-}
+return  ActionsCreateOrUpdateRepoSecretSuccess201(EmptyObject.fromJson(json as Map<String, dynamic>));case 204:
+return  const ActionsCreateOrUpdateRepoSecretSuccess204();default:
+return  ActionsCreateOrUpdateRepoSecretSuccessUnknown(response); }}
 }
 /// Response for 201 (application/json).
 final class ActionsCreateOrUpdateRepoSecretSuccess201 extends ActionsCreateOrUpdateRepoSecretSuccess {const ActionsCreateOrUpdateRepoSecretSuccess201(this.data);

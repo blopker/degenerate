@@ -40,24 +40,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetAllBudgets.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetAllBudgets.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get a budget by ID for an organization
 ///
 /// > `[!NOTE]`
@@ -75,15 +64,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetBudget.fromJson(json as Map<String, dynamic>);
-  },
-  onError: BillingGetBudgetOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetBudget.fromJson(json as Map<String, dynamic>);}, onError: BillingGetBudgetOrgError.parse, );}
 /// Update a budget for an organization
 ///
 /// > `[!NOTE]`
@@ -103,15 +86,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingUpdateBudgetOrgResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: BillingUpdateBudgetOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingUpdateBudgetOrgResponse.fromJson(json as Map<String, dynamic>);}, onError: BillingUpdateBudgetOrgError.parse, );}
 /// Delete a budget for an organization
 ///
 /// > `[!NOTE]`
@@ -129,15 +106,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeleteBudget.fromJson(json as Map<String, dynamic>);
-  },
-  onError: BillingDeleteBudgetOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeleteBudget.fromJson(json as Map<String, dynamic>);}, onError: BillingDeleteBudgetOrgError.parse, );}
 /// Get billing premium request usage report for an organization
 ///
 /// Gets a report of premium request usage for an organization. To use this endpoint, you must be an administrator of an organization within an enterprise or an organization account.
@@ -177,15 +148,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingPremiumRequestUsageReportOrg.fromJson(json as Map<String, dynamic>);
-  },
-  onError: BillingGetGithubBillingPremiumRequestUsageReportOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingPremiumRequestUsageReportOrg.fromJson(json as Map<String, dynamic>);}, onError: BillingGetGithubBillingPremiumRequestUsageReportOrgError.parse, );}
 /// Get billing usage report for an organization
 ///
 /// Gets a report of the total usage for an organization. To use this endpoint, you must be an administrator of an organization within an enterprise or an organization account.
@@ -216,15 +181,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingUsageReport.fromJson(json as Map<String, dynamic>);
-  },
-  onError: BillingGetGithubBillingUsageReportOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingUsageReport.fromJson(json as Map<String, dynamic>);}, onError: BillingGetGithubBillingUsageReportOrgError.parse, );}
 /// Get billing usage summary for an organization
 ///
 /// > `[!NOTE]`
@@ -267,15 +226,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingUsageSummaryReportOrg.fromJson(json as Map<String, dynamic>);
-  },
-  onError: BillingGetGithubBillingUsageSummaryReportOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingUsageSummaryReportOrg.fromJson(json as Map<String, dynamic>);}, onError: BillingGetGithubBillingUsageSummaryReportOrgError.parse, );}
 /// Get billing premium request usage report for a user
 ///
 /// Gets a report of premium request usage for a user.
@@ -312,15 +265,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingPremiumRequestUsageReportUser.fromJson(json as Map<String, dynamic>);
-  },
-  onError: BillingGetGithubBillingPremiumRequestUsageReportUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingPremiumRequestUsageReportUser.fromJson(json as Map<String, dynamic>);}, onError: BillingGetGithubBillingPremiumRequestUsageReportUserError.parse, );}
 /// Get billing usage report for a user
 ///
 /// Gets a report of the total usage for a user.
@@ -351,15 +298,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingUsageReportUser.fromJson(json as Map<String, dynamic>);
-  },
-  onError: BillingGetGithubBillingUsageReportUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingUsageReportUser.fromJson(json as Map<String, dynamic>);}, onError: BillingGetGithubBillingUsageReportUserError.parse, );}
 /// Get billing usage summary for a user
 ///
 /// > `[!NOTE]`
@@ -402,13 +343,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return BillingUsageSummaryReportUser.fromJson(json as Map<String, dynamic>);
-  },
-  onError: BillingGetGithubBillingUsageSummaryReportUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  BillingUsageSummaryReportUser.fromJson(json as Map<String, dynamic>);}, onError: BillingGetGithubBillingUsageSummaryReportUserError.parse, );}
 }

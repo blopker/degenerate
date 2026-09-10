@@ -7,13 +7,9 @@ sealed class GitDeleteRefError {const GitDeleteRefError();
 static GitDeleteRefError parse(ApiResponse response) {switch (response.statusCode) {
 case 409:
 final json = jsonDecode(response.body);
-return GitDeleteRefError409(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-return const GitDeleteRefError422();
-default:
-return GitDeleteRefErrorUnknown(response);
-}
-}
+return  GitDeleteRefError409(BasicError.fromJson(json as Map<String, dynamic>));case 422:
+return  const GitDeleteRefError422();default:
+return  GitDeleteRefErrorUnknown(response); }}
 }
 /// Response for 409 (application/json).
 final class GitDeleteRefError409 extends GitDeleteRefError {const GitDeleteRefError409(this.data);

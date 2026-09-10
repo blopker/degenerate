@@ -308,7 +308,7 @@ class ApiEmitter {
                 ]
               : [],
         )
-        ..body = Code(bodyCode),
+        ..body = bodyCode,
     );
   }
 
@@ -424,7 +424,7 @@ class ApiEmitter {
     _ => ',',
   };
 
-  String _buildOperationBody(
+  Code _buildOperationBody(
     IrOperation op, {
     required ResponsePlan successPlan,
     required ResponsePlan errorPlan,
@@ -466,7 +466,7 @@ class ApiEmitter {
       );
       if (bodyExpr.startsWith('throw ')) {
         buf.writeln('$bodyExpr;');
-        return buf.toString();
+        return Code(buf.toString());
       }
     }
 
@@ -562,31 +562,34 @@ class ApiEmitter {
     buf.writeln(');');
     buf.writeln();
 
-    buf.writeln('return await execute(');
-    buf.writeln('  request,');
-    if (successPlan.isUnion) {
-      buf.writeln('  onSuccess: ${successPlan.unionName}.parse,');
-    } else if (successPlan.types.isNotEmpty) {
-      buf.writeln('  onSuccess: (response) {');
-      buf.writeln(
-        ResponseDecoder(successPlan, typeRegistry: typeRegistry).emit(),
-      );
-      buf.writeln('  },');
-    } else {
-      buf.writeln('  onSuccess: (_) {},');
-    }
-    if (errorPlan.isUnion) {
-      buf.writeln('  onError: ${errorPlan.unionName}.parse,');
-    } else if (errorPlan.types.isNotEmpty) {
-      buf.writeln('  onError: (response) {');
-      buf.writeln(
-        ResponseDecoder(errorPlan, typeRegistry: typeRegistry).emit(),
-      );
-      buf.writeln('  },');
-    }
-    buf.writeln(');');
+    return Block.of([
+      Code(buf.toString()),
+      refer('execute')
+          .call(
+            [refer('request')],
+            {
+              'onSuccess': _responseCallback(successPlan),
+              if (errorPlan.types.isNotEmpty)
+                'onError': _responseCallback(errorPlan),
+            },
+          )
+          .awaited
+          .returned
+          .statement,
+    ]);
+  }
 
-    return buf.toString();
+  Expression _responseCallback(ResponsePlan plan) {
+    if (plan.isUnion) return refer(plan.unionName!).property('parse');
+    return Method(
+      (m) => m
+        ..requiredParameters.add(
+          Parameter((p) => p..name = plan.types.isEmpty ? '_' : 'response'),
+        )
+        ..body = plan.types.isEmpty
+            ? Block.of([])
+            : ResponseDecoder(plan, typeRegistry: typeRegistry).emit(),
+    ).closure;
   }
 
   /// Convert a parameter to its string representation for headers/query values.

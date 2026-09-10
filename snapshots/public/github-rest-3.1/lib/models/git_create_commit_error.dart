@@ -7,17 +7,12 @@ sealed class GitCreateCommitError {const GitCreateCommitError();
 static GitCreateCommitError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return GitCreateCommitError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 409:
+return  GitCreateCommitError404(BasicError.fromJson(json as Map<String, dynamic>));case 409:
 final json = jsonDecode(response.body);
-return GitCreateCommitError409(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  GitCreateCommitError409(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return GitCreateCommitError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return GitCreateCommitErrorUnknown(response);
-}
-}
+return  GitCreateCommitError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  GitCreateCommitErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class GitCreateCommitError404 extends GitCreateCommitError {const GitCreateCommitError404(this.data);

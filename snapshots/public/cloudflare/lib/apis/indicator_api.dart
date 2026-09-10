@@ -44,14 +44,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetIndicatorListLegacyResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetIndicatorListLegacyResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Reads an indicator
 ///
 /// Retrieves a specific indicator by its UUID.
@@ -66,24 +61,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetIndicatorReadResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetIndicatorReadResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return GetIndicatorReadResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  GetIndicatorReadResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Updates an indicator
 ///
 /// Updates an existing indicator's properties.
@@ -100,15 +84,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PatchIndicatorUpdateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: PatchIndicatorUpdateError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PatchIndicatorUpdateResponse.fromJson(json as Map<String, dynamic>);}, onError: PatchIndicatorUpdateError.parse, );}
 /// Deletes an indicator
 ///
 /// Deletes a specific indicator by its UUID.
@@ -123,24 +101,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeleteIndicatorDeleteResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeleteIndicatorDeleteResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return DeleteIndicatorDeleteResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  DeleteIndicatorDeleteResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Creates multiple indicators in bulk
 ///
 /// Creates multiple indicators at once with their respective types and related datasets.
@@ -157,24 +124,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as num).toDouble();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as num).toDouble();}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PostIndicatorCreateBulkResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  PostIndicatorCreateBulkResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Creates a new indicator
 ///
 /// Creates a new indicator with the specified type and related datasets.
@@ -191,24 +147,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostIndicatorCreateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostIndicatorCreateResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PostIndicatorCreateResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  PostIndicatorCreateResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List mirrored tags for an indicator dataset
 ///
 /// Returns all mirrored tags from the indicator dataset (DO mirror table). No pagination.
@@ -223,15 +168,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => e as Map<String, dynamic>).toList();
-  },
-  onError: GetIndicatorTagsListError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => e as Map<String, dynamic>).toList();}, onError: GetIndicatorTagsListError.parse, );}
 /// Lists indicators across multiple datasets
 ///
 /// Retrieves a paginated list of indicators across specified datasets. Use datasetIds=all or datasetIds=* to query all datasets for the account. If no datasetIds provided, uses the default dataset.
@@ -296,22 +235,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetIndicatorListResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetIndicatorListResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return GetIndicatorListResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  GetIndicatorListResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

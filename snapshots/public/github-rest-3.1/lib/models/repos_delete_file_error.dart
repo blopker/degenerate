@@ -7,20 +7,14 @@ sealed class ReposDeleteFileError {const ReposDeleteFileError();
 static ReposDeleteFileError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ReposDeleteFileError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 409:
+return  ReposDeleteFileError404(BasicError.fromJson(json as Map<String, dynamic>));case 409:
 final json = jsonDecode(response.body);
-return ReposDeleteFileError409(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposDeleteFileError409(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposDeleteFileError422(ValidationError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  ReposDeleteFileError422(ValidationError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return ReposDeleteFileError503(ReposDeleteFileResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return ReposDeleteFileErrorUnknown(response);
-}
-}
+return  ReposDeleteFileError503(ReposDeleteFileResponse503.fromJson(json as Map<String, dynamic>));default:
+return  ReposDeleteFileErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class ReposDeleteFileError404 extends ReposDeleteFileError {const ReposDeleteFileError404(this.data);

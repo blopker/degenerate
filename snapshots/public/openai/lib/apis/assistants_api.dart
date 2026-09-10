@@ -22,14 +22,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ThreadObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ThreadObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a thread and run it in one request.
 ///
 /// `POST /threads/runs`
@@ -44,14 +39,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RunObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RunObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieves a thread.
 ///
 /// `GET /threads/{thread_id}`
@@ -64,14 +54,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ThreadObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ThreadObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Modifies a thread.
 ///
 /// `POST /threads/{thread_id}`
@@ -86,14 +71,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ThreadObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ThreadObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a thread.
 ///
 /// `DELETE /threads/{thread_id}`
@@ -106,14 +86,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeleteThreadResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeleteThreadResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Returns a list of messages for a given thread.
 ///
 /// `GET /threads/{thread_id}/messages`
@@ -146,14 +121,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListMessagesResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListMessagesResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a message.
 ///
 /// `POST /threads/{thread_id}/messages`
@@ -168,14 +138,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return MessageObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  MessageObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieve a message.
 ///
 /// `GET /threads/{thread_id}/messages/{message_id}`
@@ -188,14 +153,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return MessageObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  MessageObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Modifies a message.
 ///
 /// `POST /threads/{thread_id}/messages/{message_id}`
@@ -210,14 +170,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return MessageObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  MessageObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Deletes a message.
 ///
 /// `DELETE /threads/{thread_id}/messages/{message_id}`
@@ -230,14 +185,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeleteMessageResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeleteMessageResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Returns a list of runs belonging to a thread.
 ///
 /// `GET /threads/{thread_id}/runs`
@@ -267,14 +217,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListRunsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListRunsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a run.
 ///
 /// `POST /threads/{thread_id}/runs`
@@ -299,14 +244,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RunObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RunObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieves a run.
 ///
 /// `GET /threads/{thread_id}/runs/{run_id}`
@@ -319,14 +259,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RunObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RunObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Modifies a run.
 ///
 /// `POST /threads/{thread_id}/runs/{run_id}`
@@ -341,14 +276,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RunObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RunObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Cancels a run that is `in_progress`.
 ///
 /// `POST /threads/{thread_id}/runs/{run_id}/cancel`
@@ -361,14 +291,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RunObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RunObject.fromJson(json as Map<String, dynamic>);}, );}
 /// Returns a list of run steps belonging to a run.
 ///
 /// `GET /threads/{thread_id}/runs/{run_id}/steps`
@@ -403,14 +328,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListRunStepsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListRunStepsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieves a run step.
 ///
 /// `GET /threads/{thread_id}/runs/{run_id}/steps/{step_id}`
@@ -433,14 +353,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RunStepObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RunStepObject.fromJson(json as Map<String, dynamic>);}, );}
 /// When a run has the `status: "requires_action"` and `required_action.type` is `submit_tool_outputs`, this endpoint can be used to submit the outputs from the tool calls once they're all completed. All outputs must be submitted in a single request.
 /// 
 ///
@@ -456,12 +371,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RunObject.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RunObject.fromJson(json as Map<String, dynamic>);}, );}
 }

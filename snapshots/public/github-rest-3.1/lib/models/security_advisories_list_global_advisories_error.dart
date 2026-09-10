@@ -7,14 +7,10 @@ sealed class SecurityAdvisoriesListGlobalAdvisoriesError {const SecurityAdvisori
 static SecurityAdvisoriesListGlobalAdvisoriesError parse(ApiResponse response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return SecurityAdvisoriesListGlobalAdvisoriesError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-case 429:
+return  SecurityAdvisoriesListGlobalAdvisoriesError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));case 429:
 final json = jsonDecode(response.body);
-return SecurityAdvisoriesListGlobalAdvisoriesError429(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return SecurityAdvisoriesListGlobalAdvisoriesErrorUnknown(response);
-}
-}
+return  SecurityAdvisoriesListGlobalAdvisoriesError429(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  SecurityAdvisoriesListGlobalAdvisoriesErrorUnknown(response); }}
 }
 /// Response for 422 (application/json).
 final class SecurityAdvisoriesListGlobalAdvisoriesError422 extends SecurityAdvisoriesListGlobalAdvisoriesError {const SecurityAdvisoriesListGlobalAdvisoriesError422(this.data);

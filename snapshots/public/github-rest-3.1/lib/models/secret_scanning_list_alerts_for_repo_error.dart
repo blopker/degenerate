@@ -6,14 +6,10 @@ sealed class SecretScanningListAlertsForRepoError {const SecretScanningListAlert
 /// Decodes the payload for its declared status and content type.
 static SecretScanningListAlertsForRepoError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
-return const SecretScanningListAlertsForRepoError404();
-case 503:
+return  const SecretScanningListAlertsForRepoError404();case 503:
 final json = jsonDecode(response.body);
-return SecretScanningListAlertsForRepoError503(SecretScanningListAlertsForRepoResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return SecretScanningListAlertsForRepoErrorUnknown(response);
-}
-}
+return  SecretScanningListAlertsForRepoError503(SecretScanningListAlertsForRepoResponse503.fromJson(json as Map<String, dynamic>));default:
+return  SecretScanningListAlertsForRepoErrorUnknown(response); }}
 }
 /// Response for 404.
 final class SecretScanningListAlertsForRepoError404 extends SecretScanningListAlertsForRepoError {const SecretScanningListAlertsForRepoError404();

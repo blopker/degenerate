@@ -7,14 +7,10 @@ sealed class GetAbuseReportError {const GetAbuseReportError();
 static GetAbuseReportError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return GetAbuseReportError400(GetAbuseReportResponse400.fromJson(json as Map<String, dynamic>));
-case 500:
+return  GetAbuseReportError400(GetAbuseReportResponse400.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return GetAbuseReportError500(GetAbuseReportResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return GetAbuseReportErrorUnknown(response);
-}
-}
+return  GetAbuseReportError500(GetAbuseReportResponse500.fromJson(json as Map<String, dynamic>));default:
+return  GetAbuseReportErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class GetAbuseReportError400 extends GetAbuseReportError {const GetAbuseReportError400(this.data);

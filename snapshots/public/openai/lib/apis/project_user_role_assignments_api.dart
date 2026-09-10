@@ -34,14 +34,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RoleListResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RoleListResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Assigns a project role to a user within a project.
 ///
 /// `POST /projects/{project_id}/users/{user_id}/roles`
@@ -56,14 +51,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UserRoleAssignment.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UserRoleAssignment.fromJson(json as Map<String, dynamic>);}, );}
 /// Unassigns a project role from a user within a project.
 ///
 /// `DELETE /projects/{project_id}/users/{user_id}/roles/{role_id}`
@@ -76,12 +66,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedRoleAssignmentResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedRoleAssignmentResource.fromJson(json as Map<String, dynamic>);}, );}
 }

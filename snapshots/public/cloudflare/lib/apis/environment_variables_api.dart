@@ -22,14 +22,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, BuildsEnvironmentVariablesResponseValue.fromJson(v as Map<String, dynamic>)));
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, BuildsEnvironmentVariablesResponseValue.fromJson(v as Map<String, dynamic>)));}, );}
 /// Upsert environment variables
 ///
 /// Create or update environment variables for a trigger
@@ -46,24 +41,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, BuildsEnvironmentVariablesResponseValue.fromJson(v as Map<String, dynamic>)));
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as Map<String, dynamic>).map((k, v) => MapEntry(k, BuildsEnvironmentVariablesResponseValue.fromJson(v as Map<String, dynamic>)));}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BuildsErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BuildsErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete environment variable
 ///
 /// Remove a specific environment variable from a trigger
@@ -78,22 +62,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] as Map<String, dynamic>?;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] as Map<String, dynamic>?;}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BuildsErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BuildsErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

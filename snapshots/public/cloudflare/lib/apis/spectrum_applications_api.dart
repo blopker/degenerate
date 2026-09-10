@@ -39,24 +39,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? OneOf2.parse(json['result'], fromA: (v) => (v as List<dynamic>).map((e) => SpectrumConfigAppConfig.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => (v as List<dynamic>).map((e) => SpectrumConfigPaygoAppConfig.fromJson(e as Map<String, dynamic>)).toList(),) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? OneOf2.parse(json['result'], fromA: (v) => (v as List<dynamic>).map((e) => SpectrumConfigAppConfig.fromJson(e as Map<String, dynamic>)).toList(), fromB: (v) => (v as List<dynamic>).map((e) => SpectrumConfigPaygoAppConfig.fromJson(e as Map<String, dynamic>)).toList(),) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure67.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure67.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create Spectrum application using a name for the origin
 ///
 /// Creates a new Spectrum application from a configuration using a name for the origin.
@@ -73,24 +62,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? OneOf2.parse(json['result'], fromA: (v) => SpectrumConfigAppConfig.fromJson(v as Map<String, dynamic>), fromB: (v) => SpectrumConfigPaygoAppConfig.fromJson(v as Map<String, dynamic>),) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? OneOf2.parse(json['result'], fromA: (v) => SpectrumConfigAppConfig.fromJson(v as Map<String, dynamic>), fromB: (v) => SpectrumConfigPaygoAppConfig.fromJson(v as Map<String, dynamic>),) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure67.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure67.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get Spectrum application configuration
 ///
 /// Gets the application configuration of a specific application inside a zone.
@@ -105,24 +83,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? OneOf2.parse(json['result'], fromA: (v) => SpectrumConfigAppConfig.fromJson(v as Map<String, dynamic>), fromB: (v) => SpectrumConfigPaygoAppConfig.fromJson(v as Map<String, dynamic>),) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? OneOf2.parse(json['result'], fromA: (v) => SpectrumConfigAppConfig.fromJson(v as Map<String, dynamic>), fromB: (v) => SpectrumConfigPaygoAppConfig.fromJson(v as Map<String, dynamic>),) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure67.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure67.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update Spectrum application configuration using a name for the origin
 ///
 /// Updates a previously existing application's configuration that uses a name for the origin.
@@ -139,24 +106,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? OneOf2.parse(json['result'], fromA: (v) => SpectrumConfigAppConfig.fromJson(v as Map<String, dynamic>), fromB: (v) => SpectrumConfigPaygoAppConfig.fromJson(v as Map<String, dynamic>),) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? OneOf2.parse(json['result'], fromA: (v) => SpectrumConfigAppConfig.fromJson(v as Map<String, dynamic>), fromB: (v) => SpectrumConfigPaygoAppConfig.fromJson(v as Map<String, dynamic>),) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure67.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure67.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete Spectrum application
 ///
 /// Deletes a previously existing application.
@@ -171,22 +127,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? ResponseSingleId5Result.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? ResponseSingleId5Result.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure67.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure67.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

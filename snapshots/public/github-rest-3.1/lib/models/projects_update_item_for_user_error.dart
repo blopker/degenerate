@@ -7,20 +7,14 @@ sealed class ProjectsUpdateItemForUserError {const ProjectsUpdateItemForUserErro
 static ProjectsUpdateItemForUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 401:
 final json = jsonDecode(response.body);
-return ProjectsUpdateItemForUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  ProjectsUpdateItemForUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return ProjectsUpdateItemForUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  ProjectsUpdateItemForUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return ProjectsUpdateItemForUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ProjectsUpdateItemForUserError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ProjectsUpdateItemForUserError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ProjectsUpdateItemForUserErrorUnknown(response);
-}
-}
+return  ProjectsUpdateItemForUserError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ProjectsUpdateItemForUserErrorUnknown(response); }}
 }
 /// Response for 401 (application/json).
 final class ProjectsUpdateItemForUserError401 extends ProjectsUpdateItemForUserError {const ProjectsUpdateItemForUserError401(this.data);

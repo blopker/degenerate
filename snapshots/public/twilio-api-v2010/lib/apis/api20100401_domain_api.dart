@@ -34,14 +34,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListSipDomainResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListSipDomainResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a new Domain
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/Domains.json`
@@ -82,14 +77,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountSipSipDomain.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountSipSipDomain.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch an instance of a Domain
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{Sid}.json`
@@ -102,14 +92,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountSipSipDomain.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountSipSipDomain.fromJson(json as Map<String, dynamic>);}, );}
 /// Update the attributes of a domain
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{Sid}.json`
@@ -151,14 +136,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountSipSipDomain.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountSipSipDomain.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete an instance of a Domain
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/SIP/Domains/{Sid}.json`
@@ -171,9 +151,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

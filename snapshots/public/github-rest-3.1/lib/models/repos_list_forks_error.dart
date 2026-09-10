@@ -7,21 +7,14 @@ sealed class ReposListForksError {const ReposListForksError();
 static ReposListForksError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ReposListForksError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  ReposListForksError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return ReposListForksError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  ReposListForksError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return ReposListForksError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-default:
-return ReposListForksErrorUnknown(response);
-}
-}
+return  ReposListForksError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }default:
+return  ReposListForksErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class ReposListForksError400ApplicationJson extends ReposListForksError {const ReposListForksError400ApplicationJson(this.data);

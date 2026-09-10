@@ -20,14 +20,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountIncomingPhoneNumber.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountIncomingPhoneNumber.fromJson(json as Map<String, dynamic>);}, );}
 /// Update an incoming-phone-number instance.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{Sid}.json`
@@ -89,14 +84,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountIncomingPhoneNumber.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountIncomingPhoneNumber.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a phone-numbers belonging to the account used to make the request.
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers/{Sid}.json`
@@ -109,11 +99,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a list of incoming-phone-numbers belonging to the account used to make the request.
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers.json`
@@ -152,14 +139,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListIncomingPhoneNumberResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListIncomingPhoneNumberResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Purchase a phone-number for the account.
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/IncomingPhoneNumbers.json`
@@ -223,12 +205,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountIncomingPhoneNumber.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountIncomingPhoneNumber.fromJson(json as Map<String, dynamic>);}, );}
 }

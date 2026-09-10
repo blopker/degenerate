@@ -7,20 +7,14 @@ sealed class ReposDeleteError {const ReposDeleteError();
 static ReposDeleteError parse(ApiResponse response) {switch (response.statusCode) {
 case 307:
 final json = jsonDecode(response.body);
-return ReposDeleteError307(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  ReposDeleteError307(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return ReposDeleteError403(ReposDeleteResponse403.fromJson(json as Map<String, dynamic>));
-case 404:
+return  ReposDeleteError403(ReposDeleteResponse403.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return ReposDeleteError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 409:
+return  ReposDeleteError404(BasicError.fromJson(json as Map<String, dynamic>));case 409:
 final json = jsonDecode(response.body);
-return ReposDeleteError409(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposDeleteErrorUnknown(response);
-}
-}
+return  ReposDeleteError409(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ReposDeleteErrorUnknown(response); }}
 }
 /// Response for 307 (application/json).
 final class ReposDeleteError307 extends ReposDeleteError {const ReposDeleteError307(this.data);

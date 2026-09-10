@@ -7,14 +7,10 @@ sealed class PutPermissionUpdateError {const PutPermissionUpdateError();
 static PutPermissionUpdateError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PutPermissionUpdateError400(PutPermissionUpdateResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  PutPermissionUpdateError400(PutPermissionUpdateResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return PutPermissionUpdateError404(PutPermissionUpdateResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return PutPermissionUpdateErrorUnknown(response);
-}
-}
+return  PutPermissionUpdateError404(PutPermissionUpdateResponse404.fromJson(json as Map<String, dynamic>));default:
+return  PutPermissionUpdateErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class PutPermissionUpdateError400 extends PutPermissionUpdateError {const PutPermissionUpdateError400(this.data);

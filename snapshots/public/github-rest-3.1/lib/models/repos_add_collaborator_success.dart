@@ -7,13 +7,9 @@ sealed class ReposAddCollaboratorSuccess {const ReposAddCollaboratorSuccess();
 static ReposAddCollaboratorSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 201:
 final json = jsonDecode(response.body);
-return ReposAddCollaboratorSuccess201(RepositoryInvitation.fromJson(json as Map<String, dynamic>));
-case 204:
-return const ReposAddCollaboratorSuccess204();
-default:
-return ReposAddCollaboratorSuccessUnknown(response);
-}
-}
+return  ReposAddCollaboratorSuccess201(RepositoryInvitation.fromJson(json as Map<String, dynamic>));case 204:
+return  const ReposAddCollaboratorSuccess204();default:
+return  ReposAddCollaboratorSuccessUnknown(response); }}
 }
 /// Response for 201 (application/json).
 final class ReposAddCollaboratorSuccess201 extends ReposAddCollaboratorSuccess {const ReposAddCollaboratorSuccess201(this.data);

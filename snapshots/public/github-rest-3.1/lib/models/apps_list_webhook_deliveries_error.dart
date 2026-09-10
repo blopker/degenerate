@@ -7,24 +7,16 @@ sealed class AppsListWebhookDeliveriesError {const AppsListWebhookDeliveriesErro
 static AppsListWebhookDeliveriesError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return AppsListWebhookDeliveriesError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  AppsListWebhookDeliveriesError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return AppsListWebhookDeliveriesError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  AppsListWebhookDeliveriesError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return AppsListWebhookDeliveriesError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 422:
+return  AppsListWebhookDeliveriesError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }case 422:
 final json = jsonDecode(response.body);
-return AppsListWebhookDeliveriesError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return AppsListWebhookDeliveriesErrorUnknown(response);
-}
-}
+return  AppsListWebhookDeliveriesError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  AppsListWebhookDeliveriesErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class AppsListWebhookDeliveriesError400ApplicationJson extends AppsListWebhookDeliveriesError {const AppsListWebhookDeliveriesError400ApplicationJson(this.data);

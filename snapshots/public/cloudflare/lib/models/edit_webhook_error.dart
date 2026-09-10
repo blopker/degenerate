@@ -7,13 +7,9 @@ sealed class EditWebhookError {const EditWebhookError();
 static EditWebhookError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return EditWebhookError400(RealtimekitErrorResponse.fromJson(json as Map<String, dynamic>));
-case 401:
-return const EditWebhookError401();
-default:
-return EditWebhookErrorUnknown(response);
-}
-}
+return  EditWebhookError400(RealtimekitErrorResponse.fromJson(json as Map<String, dynamic>));case 401:
+return  const EditWebhookError401();default:
+return  EditWebhookErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class EditWebhookError400 extends EditWebhookError {const EditWebhookError400(this.data);

@@ -7,14 +7,10 @@ sealed class WorkerAssetsUploadSuccess {const WorkerAssetsUploadSuccess();
 static WorkerAssetsUploadSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 201:
 final json = jsonDecode(response.body) as Map<String, dynamic>;
-return WorkerAssetsUploadSuccess201(json['result'] != null ? WorkersCompletedUploadAssetsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null);
-case 202:
+return  WorkerAssetsUploadSuccess201(json['result'] != null ? WorkersCompletedUploadAssetsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null);case 202:
 final json = jsonDecode(response.body) as Map<String, dynamic>;
-return WorkerAssetsUploadSuccess202(json['result'] as Map<String, dynamic>?);
-default:
-return WorkerAssetsUploadSuccessUnknown(response);
-}
-}
+return  WorkerAssetsUploadSuccess202(json['result'] as Map<String, dynamic>?);default:
+return  WorkerAssetsUploadSuccessUnknown(response); }}
 }
 /// Response for 201 (application/json).
 final class WorkerAssetsUploadSuccess201 extends WorkerAssetsUploadSuccess {const WorkerAssetsUploadSuccess201(this.data);

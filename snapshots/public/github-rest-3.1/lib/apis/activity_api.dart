@@ -34,15 +34,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: ActivityListPublicEventsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();}, onError: ActivityListPublicEventsError.parse, );}
 /// Get feeds
 ///
 /// Lists the feeds available to the authenticated user. The response provides a URL for each feed. You can then get a specific feed by sending a request to one of the feed URLs.
@@ -70,14 +64,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Feed.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Feed.fromJson(json as Map<String, dynamic>);}, );}
 /// List public events for a network of repositories
 ///
 /// > `[!NOTE]`
@@ -104,15 +93,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: ActivityListPublicEventsForRepoNetworkError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();}, onError: ActivityListPublicEventsForRepoNetworkError.parse, );}
 /// List notifications for the authenticated user
 ///
 /// List all notifications for the current user, sorted by most recently updated.
@@ -150,15 +133,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Thread.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: ActivityListNotificationsForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Thread.fromJson(e as Map<String, dynamic>)).toList();}, onError: ActivityListNotificationsForAuthenticatedUserError.parse, );}
 /// Mark notifications as read
 ///
 /// Marks all notifications as "read" for the current user. If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as "read." To check whether any "unread" notifications remain, you can use the [List notifications for the authenticated user](https://docs.github.com/rest/activity/notifications#list-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.
@@ -175,12 +152,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: ActivityMarkNotificationsAsReadSuccess.parse,
-  onError: ActivityMarkNotificationsAsReadError.parse,
-);
-}
+
+return   await execute(request, onSuccess: ActivityMarkNotificationsAsReadSuccess.parse, onError: ActivityMarkNotificationsAsReadError.parse, );}
 /// Get a thread
 ///
 /// Gets information about a notification thread.
@@ -195,15 +168,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Thread.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ActivityGetThreadError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Thread.fromJson(json as Map<String, dynamic>);}, onError: ActivityGetThreadError.parse, );}
 /// Mark a thread as read
 ///
 /// Marks a thread as "read." Marking a thread as "read" is equivalent to clicking a notification in your notification inbox on GitHub: https://github.com/notifications.
@@ -218,12 +185,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ActivityMarkThreadAsReadError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ActivityMarkThreadAsReadError.parse, );}
 /// Mark a thread as done
 ///
 /// Marks a thread as "done." Marking a thread as "done" is equivalent to marking a notification in your notification inbox on GitHub as done: https://github.com/notifications.
@@ -238,11 +201,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get a thread subscription for the authenticated user
 ///
 /// This checks to see if the current user is subscribed to a thread. You can also [get a repository subscription](https://docs.github.com/rest/activity/watching#get-a-repository-subscription).
@@ -259,15 +219,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ThreadSubscription.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ActivityGetThreadSubscriptionForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ThreadSubscription.fromJson(json as Map<String, dynamic>);}, onError: ActivityGetThreadSubscriptionForAuthenticatedUserError.parse, );}
 /// Set a thread subscription
 ///
 /// If you are watching a repository, you receive notifications for all threads by default. Use this endpoint to ignore future notifications for threads until you comment on the thread or get an **@mention**.
@@ -288,15 +242,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ThreadSubscription.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ActivitySetThreadSubscriptionError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ThreadSubscription.fromJson(json as Map<String, dynamic>);}, onError: ActivitySetThreadSubscriptionError.parse, );}
 /// Delete a thread subscription
 ///
 /// Mutes all future notifications for a conversation until you comment on the thread or get an **@mention**. If you are watching the repository of the thread, you will still receive notifications. To ignore future notifications for a repository you are watching, use the [Set a thread subscription](https://docs.github.com/rest/activity/notifications#set-a-thread-subscription) endpoint and set `ignore` to `true`.
@@ -311,12 +259,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ActivityDeleteThreadSubscriptionError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ActivityDeleteThreadSubscriptionError.parse, );}
 /// List public organization events
 ///
 /// > `[!NOTE]`
@@ -343,14 +287,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List repository events
 ///
 /// > `[!NOTE]`
@@ -377,14 +316,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List repository notifications for the authenticated user
 ///
 /// Lists all notifications for the current user in the specified repository.
@@ -422,14 +356,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Thread.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Thread.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Mark repository notifications as read
 ///
 /// Marks all notifications in a repository as "read" for the current user. If the number of notifications is too large to complete in one request, you will receive a `202 Accepted` status and GitHub will run an asynchronous process to mark notifications as "read." To check whether any "unread" notifications remain, you can use the [List repository notifications for the authenticated user](https://docs.github.com/rest/activity/notifications#list-repository-notifications-for-the-authenticated-user) endpoint and pass the query parameter `all=false`.
@@ -446,11 +375,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: ActivityMarkRepoNotificationsAsReadSuccess.parse,
-);
-}
+
+return   await execute(request, onSuccess: ActivityMarkRepoNotificationsAsReadSuccess.parse, );}
 /// List stargazers
 ///
 /// Lists the people that have starred the repository.
@@ -480,24 +406,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActivityListStargazersForRepoResponse.fromJson(json);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActivityListStargazersForRepoResponse.fromJson(json);}, onError: (response) {switch (response.statusCode) {
 case 422:
 final json = jsonDecode(response.body);
-return ValidationError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ValidationError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List watchers
 ///
 /// Lists the people watching the specified repository.
@@ -523,14 +438,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SimpleUser.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Get a repository subscription
 ///
 /// Gets information about whether the authenticated user is subscribed to the repository.
@@ -545,15 +455,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RepositorySubscription.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ActivityGetRepoSubscriptionError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RepositorySubscription.fromJson(json as Map<String, dynamic>);}, onError: ActivityGetRepoSubscriptionError.parse, );}
 /// Set a repository subscription
 ///
 /// If you would like to watch a repository, set `subscribed` to `true`. If you would like to ignore notifications made within a repository, set `ignored` to `true`. If you would like to stop watching a repository, [delete the repository's subscription](https://docs.github.com/rest/activity/watching#delete-a-repository-subscription) completely.
@@ -570,14 +474,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RepositorySubscription.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RepositorySubscription.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a repository subscription
 ///
 /// This endpoint should only be used to stop watching a repository. To control whether or not you wish to receive notifications from a repository, [set the repository's subscription manually](https://docs.github.com/rest/activity/watching#set-a-repository-subscription).
@@ -592,11 +491,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List repositories starred by the authenticated user
 ///
 /// Lists repositories the authenticated user has starred.
@@ -632,12 +528,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: ActivityListReposStarredByAuthenticatedUserSuccess.parse,
-  onError: ActivityListReposStarredByAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: ActivityListReposStarredByAuthenticatedUserSuccess.parse, onError: ActivityListReposStarredByAuthenticatedUserError.parse, );}
 /// Check if a repository is starred by the authenticated user
 ///
 /// Whether the authenticated user has starred the repository.
@@ -652,12 +544,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ActivityCheckRepoIsStarredByAuthenticatedUserError.parse, );}
 /// Star a repository for the authenticated user
 ///
 /// Note that you'll need to set `Content-Length` to zero when calling out to this endpoint. For more information, see "[HTTP method](https://docs.github.com/rest/guides/getting-started-with-the-rest-api#http-method)."
@@ -672,12 +560,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ActivityStarRepoForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ActivityStarRepoForAuthenticatedUserError.parse, );}
 /// Unstar a repository for the authenticated user
 ///
 /// Unstar a repository that the authenticated user has previously starred.
@@ -692,12 +576,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: ActivityUnstarRepoForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: ActivityUnstarRepoForAuthenticatedUserError.parse, );}
 /// List repositories watched by the authenticated user
 ///
 /// Lists repositories the authenticated user is watching.
@@ -723,15 +603,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: ActivityListWatchedReposForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();}, onError: ActivityListWatchedReposForAuthenticatedUserError.parse, );}
 /// List events for the authenticated user
 ///
 /// If you are authenticated as the given user, you will see your private events. Otherwise, you'll only see public events. _Optional_: use the fine-grained token with following permission set to view private events: "Events" user permissions (read).
@@ -760,14 +634,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List organization events for the authenticated user
 ///
 /// This is the user's organization dashboard. You must be authenticated as the user to view this.
@@ -796,14 +665,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List public events for a user
 ///
 /// > `[!NOTE]`
@@ -830,14 +694,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List events received by the authenticated user
 ///
 /// These are events that you've received by watching repositories and following users. If you are authenticated as the
@@ -867,14 +726,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List public events received by a user
 ///
 /// > `[!NOTE]`
@@ -901,14 +755,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Event.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// List repositories starred by a user
 ///
 /// Lists repositories a user has starred.
@@ -944,14 +793,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActivityListReposStarredByUserResponse.fromJson(json);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActivityListReposStarredByUserResponse.fromJson(json);}, );}
 /// List repositories watched by a user
 ///
 /// Lists repositories a user is watching.
@@ -977,12 +821,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();}, );}
 }

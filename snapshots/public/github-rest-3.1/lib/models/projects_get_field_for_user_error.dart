@@ -6,17 +6,12 @@ sealed class ProjectsGetFieldForUserError {const ProjectsGetFieldForUserError();
 /// Decodes the payload for its declared status and content type.
 static ProjectsGetFieldForUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ProjectsGetFieldForUserError304();
-case 401:
+return  const ProjectsGetFieldForUserError304();case 401:
 final json = jsonDecode(response.body);
-return ProjectsGetFieldForUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  ProjectsGetFieldForUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return ProjectsGetFieldForUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ProjectsGetFieldForUserErrorUnknown(response);
-}
-}
+return  ProjectsGetFieldForUserError403(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ProjectsGetFieldForUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ProjectsGetFieldForUserError304 extends ProjectsGetFieldForUserError {const ProjectsGetFieldForUserError304();

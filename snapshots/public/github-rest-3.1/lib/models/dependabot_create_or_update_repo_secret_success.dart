@@ -7,13 +7,9 @@ sealed class DependabotCreateOrUpdateRepoSecretSuccess {const DependabotCreateOr
 static DependabotCreateOrUpdateRepoSecretSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 201:
 final json = jsonDecode(response.body);
-return DependabotCreateOrUpdateRepoSecretSuccess201(EmptyObject.fromJson(json as Map<String, dynamic>));
-case 204:
-return const DependabotCreateOrUpdateRepoSecretSuccess204();
-default:
-return DependabotCreateOrUpdateRepoSecretSuccessUnknown(response);
-}
-}
+return  DependabotCreateOrUpdateRepoSecretSuccess201(EmptyObject.fromJson(json as Map<String, dynamic>));case 204:
+return  const DependabotCreateOrUpdateRepoSecretSuccess204();default:
+return  DependabotCreateOrUpdateRepoSecretSuccessUnknown(response); }}
 }
 /// Response for 201 (application/json).
 final class DependabotCreateOrUpdateRepoSecretSuccess201 extends DependabotCreateOrUpdateRepoSecretSuccess {const DependabotCreateOrUpdateRepoSecretSuccess201(this.data);

@@ -20,24 +20,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => GetDatasetListResponse.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => GetDatasetListResponse.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return GetDatasetListResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  GetDatasetListResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Reads a dataset
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}`
@@ -50,24 +39,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetDatasetReadResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetDatasetReadResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return GetDatasetReadResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  GetDatasetReadResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Updates an existing dataset
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}`
@@ -82,24 +60,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostDatasetUpdateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostDatasetUpdateResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PostDatasetUpdateResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  PostDatasetUpdateResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Updates an existing dataset
 ///
 /// `PATCH /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}`
@@ -114,24 +81,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PatchDatasetUpdateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PatchDatasetUpdateResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PatchDatasetUpdateResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  PatchDatasetUpdateResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete a dataset
 ///
 /// Deletes a dataset given a datasetId.
@@ -146,15 +102,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeleteDatasetDeleteResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: DeleteDatasetDeleteError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeleteDatasetDeleteResponse.fromJson(json as Map<String, dynamic>);}, onError: DeleteDatasetDeleteError.parse, );}
 /// Creates a dataset
 ///
 /// `POST /accounts/{account_id}/cloudforce-one/events/dataset/create`
@@ -169,22 +119,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostDatasetCreateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostDatasetCreateResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PostDatasetCreateResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  PostDatasetCreateResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

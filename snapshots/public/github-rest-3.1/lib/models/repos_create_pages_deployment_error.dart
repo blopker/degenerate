@@ -7,27 +7,18 @@ sealed class ReposCreatePagesDeploymentError {const ReposCreatePagesDeploymentEr
 static ReposCreatePagesDeploymentError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ReposCreatePagesDeploymentError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  ReposCreatePagesDeploymentError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return ReposCreatePagesDeploymentError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  ReposCreatePagesDeploymentError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return ReposCreatePagesDeploymentError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 404:
+return  ReposCreatePagesDeploymentError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }case 404:
 final json = jsonDecode(response.body);
-return ReposCreatePagesDeploymentError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposCreatePagesDeploymentError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposCreatePagesDeploymentError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposCreatePagesDeploymentErrorUnknown(response);
-}
-}
+return  ReposCreatePagesDeploymentError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposCreatePagesDeploymentErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class ReposCreatePagesDeploymentError400ApplicationJson extends ReposCreatePagesDeploymentError {const ReposCreatePagesDeploymentError400ApplicationJson(this.data);

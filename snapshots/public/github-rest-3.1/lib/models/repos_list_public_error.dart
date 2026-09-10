@@ -6,14 +6,10 @@ sealed class ReposListPublicError {const ReposListPublicError();
 /// Decodes the payload for its declared status and content type.
 static ReposListPublicError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ReposListPublicError304();
-case 422:
+return  const ReposListPublicError304();case 422:
 final json = jsonDecode(response.body);
-return ReposListPublicError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposListPublicErrorUnknown(response);
-}
-}
+return  ReposListPublicError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposListPublicErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ReposListPublicError304 extends ReposListPublicError {const ReposListPublicError304();

@@ -7,14 +7,10 @@ sealed class CodespacesCreateOrUpdateSecretForAuthenticatedUserError {const Code
 static CodespacesCreateOrUpdateSecretForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return CodespacesCreateOrUpdateSecretForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  CodespacesCreateOrUpdateSecretForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return CodespacesCreateOrUpdateSecretForAuthenticatedUserError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return CodespacesCreateOrUpdateSecretForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  CodespacesCreateOrUpdateSecretForAuthenticatedUserError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  CodespacesCreateOrUpdateSecretForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class CodespacesCreateOrUpdateSecretForAuthenticatedUserError404 extends CodespacesCreateOrUpdateSecretForAuthenticatedUserError {const CodespacesCreateOrUpdateSecretForAuthenticatedUserError404(this.data);

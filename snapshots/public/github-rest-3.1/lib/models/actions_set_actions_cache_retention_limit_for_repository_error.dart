@@ -7,27 +7,18 @@ sealed class ActionsSetActionsCacheRetentionLimitForRepositoryError {const Actio
 static ActionsSetActionsCacheRetentionLimitForRepositoryError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ActionsSetActionsCacheRetentionLimitForRepositoryError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  ActionsSetActionsCacheRetentionLimitForRepositoryError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return ActionsSetActionsCacheRetentionLimitForRepositoryError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  ActionsSetActionsCacheRetentionLimitForRepositoryError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return ActionsSetActionsCacheRetentionLimitForRepositoryError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 403:
+return  ActionsSetActionsCacheRetentionLimitForRepositoryError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }case 403:
 final json = jsonDecode(response.body);
-return ActionsSetActionsCacheRetentionLimitForRepositoryError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  ActionsSetActionsCacheRetentionLimitForRepositoryError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return ActionsSetActionsCacheRetentionLimitForRepositoryError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ActionsSetActionsCacheRetentionLimitForRepositoryErrorUnknown(response);
-}
-}
+return  ActionsSetActionsCacheRetentionLimitForRepositoryError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ActionsSetActionsCacheRetentionLimitForRepositoryErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class ActionsSetActionsCacheRetentionLimitForRepositoryError400ApplicationJson extends ActionsSetActionsCacheRetentionLimitForRepositoryError {const ActionsSetActionsCacheRetentionLimitForRepositoryError400ApplicationJson(this.data);

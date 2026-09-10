@@ -7,14 +7,10 @@ sealed class CampaignsListOrgCampaignsError {const CampaignsListOrgCampaignsErro
 static CampaignsListOrgCampaignsError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return CampaignsListOrgCampaignsError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  CampaignsListOrgCampaignsError404(BasicError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return CampaignsListOrgCampaignsError503(CampaignsListOrgCampaignsResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return CampaignsListOrgCampaignsErrorUnknown(response);
-}
-}
+return  CampaignsListOrgCampaignsError503(CampaignsListOrgCampaignsResponse503.fromJson(json as Map<String, dynamic>));default:
+return  CampaignsListOrgCampaignsErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class CampaignsListOrgCampaignsError404 extends CampaignsListOrgCampaignsError {const CampaignsListOrgCampaignsError404(this.data);

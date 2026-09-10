@@ -22,24 +22,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetActiveSessionResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetActiveSessionResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Kick participants from an active session
 ///
 /// Kicks one or more participants from an active session using user ID or custom participant ID.
@@ -56,24 +45,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return KickPartcipantsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  KickPartcipantsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Kick all participants
 ///
 /// Kicks all participants from an active session for the given meeting ID.
@@ -88,14 +66,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return KickAllParticipantsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  KickAllParticipantsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Mute participants of an active session
 ///
 /// Mutes one or more participants from an active session using user ID or custom participant ID.
@@ -112,14 +85,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return MuteParticipantsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  MuteParticipantsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Mute all participants
 ///
 /// Mutes all participants of an active session for the given meeting ID.
@@ -136,14 +104,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return MuteAllParticipantsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  MuteAllParticipantsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a poll
 ///
 /// Creates a new poll in an active session for the given meeting ID.
@@ -160,12 +123,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CreatePollResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CreatePollResponse.fromJson(json as Map<String, dynamic>);}, );}
 }

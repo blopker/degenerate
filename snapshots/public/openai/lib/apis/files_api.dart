@@ -37,14 +37,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListFilesResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListFilesResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Upload a file that can be used across various endpoints. Individual files
 /// can be up to 512 MB, and each project can store up to 2.5 TB of files in
 /// total. There is no organization-wide storage limit.
@@ -81,14 +76,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OpenAiFile.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OpenAiFile.fromJson(json as Map<String, dynamic>);}, );}
 /// Returns information about a specific file.
 ///
 /// `GET /files/{file_id}`
@@ -101,14 +91,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OpenAiFile.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OpenAiFile.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete a file and remove it from all vector stores.
 ///
 /// `DELETE /files/{file_id}`
@@ -121,14 +106,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeleteFileResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeleteFileResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Returns the contents of the specified file.
 ///
 /// `GET /files/{file_id}/content`
@@ -141,12 +121,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 }

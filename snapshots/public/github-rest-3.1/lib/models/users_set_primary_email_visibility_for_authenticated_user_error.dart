@@ -6,23 +6,16 @@ sealed class UsersSetPrimaryEmailVisibilityForAuthenticatedUserError {const User
 /// Decodes the payload for its declared status and content type.
 static UsersSetPrimaryEmailVisibilityForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const UsersSetPrimaryEmailVisibilityForAuthenticatedUserError304();
-case 401:
+return  const UsersSetPrimaryEmailVisibilityForAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return UsersSetPrimaryEmailVisibilityForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  UsersSetPrimaryEmailVisibilityForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return UsersSetPrimaryEmailVisibilityForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  UsersSetPrimaryEmailVisibilityForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return UsersSetPrimaryEmailVisibilityForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  UsersSetPrimaryEmailVisibilityForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return UsersSetPrimaryEmailVisibilityForAuthenticatedUserError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return UsersSetPrimaryEmailVisibilityForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  UsersSetPrimaryEmailVisibilityForAuthenticatedUserError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  UsersSetPrimaryEmailVisibilityForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class UsersSetPrimaryEmailVisibilityForAuthenticatedUserError304 extends UsersSetPrimaryEmailVisibilityForAuthenticatedUserError {const UsersSetPrimaryEmailVisibilityForAuthenticatedUserError304();

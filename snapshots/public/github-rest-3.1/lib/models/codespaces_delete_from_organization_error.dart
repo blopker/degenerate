@@ -6,23 +6,16 @@ sealed class CodespacesDeleteFromOrganizationError {const CodespacesDeleteFromOr
 /// Decodes the payload for its declared status and content type.
 static CodespacesDeleteFromOrganizationError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const CodespacesDeleteFromOrganizationError304();
-case 401:
+return  const CodespacesDeleteFromOrganizationError304();case 401:
 final json = jsonDecode(response.body);
-return CodespacesDeleteFromOrganizationError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  CodespacesDeleteFromOrganizationError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return CodespacesDeleteFromOrganizationError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CodespacesDeleteFromOrganizationError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CodespacesDeleteFromOrganizationError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 500:
+return  CodespacesDeleteFromOrganizationError404(BasicError.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return CodespacesDeleteFromOrganizationError500(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return CodespacesDeleteFromOrganizationErrorUnknown(response);
-}
-}
+return  CodespacesDeleteFromOrganizationError500(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  CodespacesDeleteFromOrganizationErrorUnknown(response); }}
 }
 /// Response for 304.
 final class CodespacesDeleteFromOrganizationError304 extends CodespacesDeleteFromOrganizationError {const CodespacesDeleteFromOrganizationError304();

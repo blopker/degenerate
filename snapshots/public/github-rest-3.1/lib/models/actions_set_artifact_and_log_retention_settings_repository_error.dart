@@ -7,14 +7,10 @@ sealed class ActionsSetArtifactAndLogRetentionSettingsRepositoryError {const Act
 static ActionsSetArtifactAndLogRetentionSettingsRepositoryError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ActionsSetArtifactAndLogRetentionSettingsRepositoryError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ActionsSetArtifactAndLogRetentionSettingsRepositoryError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ActionsSetArtifactAndLogRetentionSettingsRepositoryError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ActionsSetArtifactAndLogRetentionSettingsRepositoryErrorUnknown(response);
-}
-}
+return  ActionsSetArtifactAndLogRetentionSettingsRepositoryError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ActionsSetArtifactAndLogRetentionSettingsRepositoryErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class ActionsSetArtifactAndLogRetentionSettingsRepositoryError404 extends ActionsSetArtifactAndLogRetentionSettingsRepositoryError {const ActionsSetArtifactAndLogRetentionSettingsRepositoryError404(this.data);

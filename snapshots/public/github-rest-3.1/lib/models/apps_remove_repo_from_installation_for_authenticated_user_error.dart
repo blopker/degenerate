@@ -6,19 +6,13 @@ sealed class AppsRemoveRepoFromInstallationForAuthenticatedUserError {const Apps
 /// Decodes the payload for its declared status and content type.
 static AppsRemoveRepoFromInstallationForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const AppsRemoveRepoFromInstallationForAuthenticatedUserError304();
-case 403:
+return  const AppsRemoveRepoFromInstallationForAuthenticatedUserError304();case 403:
 final json = jsonDecode(response.body);
-return AppsRemoveRepoFromInstallationForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  AppsRemoveRepoFromInstallationForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return AppsRemoveRepoFromInstallationForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-return const AppsRemoveRepoFromInstallationForAuthenticatedUserError422();
-default:
-return AppsRemoveRepoFromInstallationForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  AppsRemoveRepoFromInstallationForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
+return  const AppsRemoveRepoFromInstallationForAuthenticatedUserError422();default:
+return  AppsRemoveRepoFromInstallationForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class AppsRemoveRepoFromInstallationForAuthenticatedUserError304 extends AppsRemoveRepoFromInstallationForAuthenticatedUserError {const AppsRemoveRepoFromInstallationForAuthenticatedUserError304();

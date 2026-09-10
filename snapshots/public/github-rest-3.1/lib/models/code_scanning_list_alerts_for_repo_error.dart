@@ -6,20 +6,14 @@ sealed class CodeScanningListAlertsForRepoError {const CodeScanningListAlertsFor
 /// Decodes the payload for its declared status and content type.
 static CodeScanningListAlertsForRepoError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const CodeScanningListAlertsForRepoError304();
-case 403:
+return  const CodeScanningListAlertsForRepoError304();case 403:
 final json = jsonDecode(response.body);
-return CodeScanningListAlertsForRepoError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CodeScanningListAlertsForRepoError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CodeScanningListAlertsForRepoError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  CodeScanningListAlertsForRepoError404(BasicError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return CodeScanningListAlertsForRepoError503(CodeScanningListAlertsForRepoResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return CodeScanningListAlertsForRepoErrorUnknown(response);
-}
-}
+return  CodeScanningListAlertsForRepoError503(CodeScanningListAlertsForRepoResponse503.fromJson(json as Map<String, dynamic>));default:
+return  CodeScanningListAlertsForRepoErrorUnknown(response); }}
 }
 /// Response for 304.
 final class CodeScanningListAlertsForRepoError304 extends CodeScanningListAlertsForRepoError {const CodeScanningListAlertsForRepoError304();

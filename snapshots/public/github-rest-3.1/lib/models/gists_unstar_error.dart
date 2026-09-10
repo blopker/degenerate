@@ -6,17 +6,12 @@ sealed class GistsUnstarError {const GistsUnstarError();
 /// Decodes the payload for its declared status and content type.
 static GistsUnstarError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const GistsUnstarError304();
-case 403:
+return  const GistsUnstarError304();case 403:
 final json = jsonDecode(response.body);
-return GistsUnstarError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  GistsUnstarError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return GistsUnstarError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return GistsUnstarErrorUnknown(response);
-}
-}
+return  GistsUnstarError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  GistsUnstarErrorUnknown(response); }}
 }
 /// Response for 304.
 final class GistsUnstarError304 extends GistsUnstarError {const GistsUnstarError304();

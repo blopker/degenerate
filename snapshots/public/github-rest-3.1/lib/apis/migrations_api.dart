@@ -40,14 +40,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Migration.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Migration.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Start an organization migration
 ///
 /// Initiates the generation of a migration archive.
@@ -64,15 +59,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Migration.fromJson(json as Map<String, dynamic>);
-  },
-  onError: MigrationsStartForOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Migration.fromJson(json as Map<String, dynamic>);}, onError: MigrationsStartForOrgError.parse, );}
 /// Get an organization migration status
 ///
 /// Fetches the status of a migration.
@@ -104,24 +93,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Migration.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Migration.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Download an organization migration archive
 ///
 /// Fetches the URL to a migration archive.
@@ -136,12 +114,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: MigrationsDownloadArchiveForOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: MigrationsDownloadArchiveForOrgError.parse, );}
 /// Delete an organization migration archive
 ///
 /// Deletes a previous migration archive. Migration archives are automatically deleted after seven days.
@@ -156,21 +130,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Unlock an organization repository
 ///
 /// Unlocks a repository that was locked for migration. You should unlock each migrated repository and [delete them](https://docs.github.com/rest/repos/repos#delete-a-repository) when the migration is complete and you no longer need the source data.
@@ -185,21 +150,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List repositories in an organization migration
 ///
 /// List all the repositories for this organization migration.
@@ -225,24 +181,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List user migrations
 ///
 /// Lists all migrations a user has started.
@@ -268,15 +213,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Migration.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: MigrationsListForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Migration.fromJson(e as Map<String, dynamic>)).toList();}, onError: MigrationsListForAuthenticatedUserError.parse, );}
 /// Start a user migration
 ///
 /// Initiates the generation of a user migration archive.
@@ -293,15 +232,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Migration.fromJson(json as Map<String, dynamic>);
-  },
-  onError: MigrationsStartForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Migration.fromJson(json as Map<String, dynamic>);}, onError: MigrationsStartForAuthenticatedUserError.parse, );}
 /// Get a user migration status
 ///
 /// Fetches a single user migration. The response includes the `state` of the migration, which can be one of the following values:
@@ -333,15 +266,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Migration.fromJson(json as Map<String, dynamic>);
-  },
-  onError: MigrationsGetStatusForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Migration.fromJson(json as Map<String, dynamic>);}, onError: MigrationsGetStatusForAuthenticatedUserError.parse, );}
 /// Download a user migration archive
 ///
 /// Fetches the URL to download the migration archive as a `tar.gz` file. Depending on the resources your repository uses, the migration archive can contain JSON files with data for these objects:
@@ -376,12 +303,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: MigrationsGetArchiveForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: MigrationsGetArchiveForAuthenticatedUserError.parse, );}
 /// Delete a user migration archive
 ///
 /// Deletes a previous migration archive. Downloadable migration archives are automatically deleted after seven days. Migration metadata, which is returned in the [List user migrations](https://docs.github.com/rest/migrations/users#list-user-migrations) and [Get a user migration status](https://docs.github.com/rest/migrations/users#get-a-user-migration-status) endpoints, will continue to be available even after an archive is deleted.
@@ -396,12 +319,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: MigrationsDeleteArchiveForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: MigrationsDeleteArchiveForAuthenticatedUserError.parse, );}
 /// Unlock a user repository
 ///
 /// Unlocks a repository. You can lock repositories when you [start a user migration](https://docs.github.com/rest/migrations/users#start-a-user-migration). Once the migration is complete you can unlock each repository to begin using it again or [delete the repository](https://docs.github.com/rest/repos/repos#delete-a-repository) if you no longer need the source data. Returns a status of `404 Not Found` if the repository is not locked.
@@ -416,12 +335,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: MigrationsUnlockRepoForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: MigrationsUnlockRepoForAuthenticatedUserError.parse, );}
 /// List repositories for a user migration
 ///
 /// Lists all the repositories for this user migration.
@@ -447,22 +362,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => MinimalRepository.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

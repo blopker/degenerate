@@ -21,32 +21,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return ResourceList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ResourceList
-throw UnsupportedError('Cannot decode application/cbor response into ResourceList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ResourceList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ResourceList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ResourceList
-throw UnsupportedError('Cannot decode application/yaml response into ResourceList');
-}
-final json = jsonDecode(response.body);
-return ResourceList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  ResourceList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ResourceList
+
+throw  UnsupportedError('Cannot decode application/cbor response into ResourceList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ResourceList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ResourceList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ResourceList
+
+throw  UnsupportedError('Cannot decode application/yaml response into ResourceList'); } else {
+final json = jsonDecode(response.body);
+return  ResourceList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list objects of kind ComponentStatus
 ///
@@ -98,44 +88,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return ComponentStatusList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ComponentStatusList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ComponentStatusList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return ComponentStatusList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ComponentStatusList
-throw UnsupportedError('Cannot decode application/cbor response into ComponentStatusList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into ComponentStatusList
-throw UnsupportedError('Cannot decode application/cbor-seq response into ComponentStatusList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ComponentStatusList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ComponentStatusList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ComponentStatusList
-throw UnsupportedError('Cannot decode application/yaml response into ComponentStatusList');
-}
-final json = jsonDecode(response.body);
-return ComponentStatusList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  ComponentStatusList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ComponentStatusList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ComponentStatusList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  ComponentStatusList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ComponentStatusList
+
+throw  UnsupportedError('Cannot decode application/cbor response into ComponentStatusList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into ComponentStatusList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into ComponentStatusList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ComponentStatusList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ComponentStatusList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ComponentStatusList
+
+throw  UnsupportedError('Cannot decode application/yaml response into ComponentStatusList'); } else {
+final json = jsonDecode(response.body);
+return  ComponentStatusList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// read the specified ComponentStatus
 ///
@@ -157,32 +133,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return ComponentStatus.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ComponentStatus
-throw UnsupportedError('Cannot decode application/cbor response into ComponentStatus');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ComponentStatus
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ComponentStatus');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ComponentStatus
-throw UnsupportedError('Cannot decode application/yaml response into ComponentStatus');
-}
-final json = jsonDecode(response.body);
-return ComponentStatus.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  ComponentStatus.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ComponentStatus
+
+throw  UnsupportedError('Cannot decode application/cbor response into ComponentStatus'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ComponentStatus
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ComponentStatus'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ComponentStatus
+
+throw  UnsupportedError('Cannot decode application/yaml response into ComponentStatus'); } else {
+final json = jsonDecode(response.body);
+return  ComponentStatus.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind ConfigMap
 ///
@@ -234,44 +200,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return ConfigMapList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ConfigMapList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ConfigMapList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return ConfigMapList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ConfigMapList
-throw UnsupportedError('Cannot decode application/cbor response into ConfigMapList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into ConfigMapList
-throw UnsupportedError('Cannot decode application/cbor-seq response into ConfigMapList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ConfigMapList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ConfigMapList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ConfigMapList
-throw UnsupportedError('Cannot decode application/yaml response into ConfigMapList');
-}
-final json = jsonDecode(response.body);
-return ConfigMapList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  ConfigMapList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ConfigMapList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ConfigMapList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  ConfigMapList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ConfigMapList
+
+throw  UnsupportedError('Cannot decode application/cbor response into ConfigMapList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into ConfigMapList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into ConfigMapList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ConfigMapList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ConfigMapList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ConfigMapList
+
+throw  UnsupportedError('Cannot decode application/yaml response into ConfigMapList'); } else {
+final json = jsonDecode(response.body);
+return  ConfigMapList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind Endpoints
 ///
@@ -323,44 +275,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return EndpointsList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into EndpointsList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into EndpointsList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return EndpointsList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into EndpointsList
-throw UnsupportedError('Cannot decode application/cbor response into EndpointsList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into EndpointsList
-throw UnsupportedError('Cannot decode application/cbor-seq response into EndpointsList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into EndpointsList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into EndpointsList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into EndpointsList
-throw UnsupportedError('Cannot decode application/yaml response into EndpointsList');
-}
-final json = jsonDecode(response.body);
-return EndpointsList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  EndpointsList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into EndpointsList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into EndpointsList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  EndpointsList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into EndpointsList
+
+throw  UnsupportedError('Cannot decode application/cbor response into EndpointsList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into EndpointsList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into EndpointsList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into EndpointsList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into EndpointsList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into EndpointsList
+
+throw  UnsupportedError('Cannot decode application/yaml response into EndpointsList'); } else {
+final json = jsonDecode(response.body);
+return  EndpointsList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind Event
 ///
@@ -412,44 +350,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return EventList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into EventList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into EventList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return EventList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into EventList
-throw UnsupportedError('Cannot decode application/cbor response into EventList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into EventList
-throw UnsupportedError('Cannot decode application/cbor-seq response into EventList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into EventList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into EventList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into EventList
-throw UnsupportedError('Cannot decode application/yaml response into EventList');
-}
-final json = jsonDecode(response.body);
-return EventList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  EventList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into EventList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into EventList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  EventList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into EventList
+
+throw  UnsupportedError('Cannot decode application/cbor response into EventList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into EventList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into EventList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into EventList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into EventList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into EventList
+
+throw  UnsupportedError('Cannot decode application/yaml response into EventList'); } else {
+final json = jsonDecode(response.body);
+return  EventList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind LimitRange
 ///
@@ -501,44 +425,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return LimitRangeList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into LimitRangeList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into LimitRangeList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return LimitRangeList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into LimitRangeList
-throw UnsupportedError('Cannot decode application/cbor response into LimitRangeList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into LimitRangeList
-throw UnsupportedError('Cannot decode application/cbor-seq response into LimitRangeList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into LimitRangeList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into LimitRangeList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into LimitRangeList
-throw UnsupportedError('Cannot decode application/yaml response into LimitRangeList');
-}
-final json = jsonDecode(response.body);
-return LimitRangeList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  LimitRangeList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into LimitRangeList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into LimitRangeList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  LimitRangeList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into LimitRangeList
+
+throw  UnsupportedError('Cannot decode application/cbor response into LimitRangeList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into LimitRangeList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into LimitRangeList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into LimitRangeList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into LimitRangeList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into LimitRangeList
+
+throw  UnsupportedError('Cannot decode application/yaml response into LimitRangeList'); } else {
+final json = jsonDecode(response.body);
+return  LimitRangeList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind Namespace
 ///
@@ -590,44 +500,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return NamespaceList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into NamespaceList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into NamespaceList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return NamespaceList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into NamespaceList
-throw UnsupportedError('Cannot decode application/cbor response into NamespaceList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into NamespaceList
-throw UnsupportedError('Cannot decode application/cbor-seq response into NamespaceList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into NamespaceList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into NamespaceList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into NamespaceList
-throw UnsupportedError('Cannot decode application/yaml response into NamespaceList');
-}
-final json = jsonDecode(response.body);
-return NamespaceList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  NamespaceList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into NamespaceList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into NamespaceList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  NamespaceList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into NamespaceList
+
+throw  UnsupportedError('Cannot decode application/cbor response into NamespaceList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into NamespaceList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into NamespaceList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into NamespaceList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into NamespaceList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into NamespaceList
+
+throw  UnsupportedError('Cannot decode application/yaml response into NamespaceList'); } else {
+final json = jsonDecode(response.body);
+return  NamespaceList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// create a Namespace
 ///
@@ -660,39 +556,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case >= 200 && < 203:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Namespace.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Namespace.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Namespace
-throw UnsupportedError('Cannot decode application/cbor response into Namespace');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Namespace'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Namespace
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Namespace');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Namespace'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Namespace
-throw UnsupportedError('Cannot decode application/yaml response into Namespace');
-}
-final json = jsonDecode(response.body);
-return Namespace.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Namespace'); } else {
 final json = jsonDecode(response.body);
-return Namespace.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Namespace.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Namespace.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// create a Binding
 ///
@@ -725,39 +608,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case >= 200 && < 203:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Binding.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Binding.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Binding
-throw UnsupportedError('Cannot decode application/cbor response into Binding');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Binding'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Binding
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Binding');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Binding'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Binding
-throw UnsupportedError('Cannot decode application/yaml response into Binding');
-}
-final json = jsonDecode(response.body);
-return Binding.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Binding'); } else {
 final json = jsonDecode(response.body);
-return Binding.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Binding.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Binding.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind ConfigMap
 ///
@@ -809,44 +679,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return ConfigMapList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ConfigMapList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ConfigMapList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return ConfigMapList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ConfigMapList
-throw UnsupportedError('Cannot decode application/cbor response into ConfigMapList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into ConfigMapList
-throw UnsupportedError('Cannot decode application/cbor-seq response into ConfigMapList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ConfigMapList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ConfigMapList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ConfigMapList
-throw UnsupportedError('Cannot decode application/yaml response into ConfigMapList');
-}
-final json = jsonDecode(response.body);
-return ConfigMapList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  ConfigMapList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ConfigMapList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ConfigMapList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  ConfigMapList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ConfigMapList
+
+throw  UnsupportedError('Cannot decode application/cbor response into ConfigMapList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into ConfigMapList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into ConfigMapList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ConfigMapList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ConfigMapList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ConfigMapList
+
+throw  UnsupportedError('Cannot decode application/yaml response into ConfigMapList'); } else {
+final json = jsonDecode(response.body);
+return  ConfigMapList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// create a ConfigMap
 ///
@@ -879,39 +735,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case >= 200 && < 203:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ConfigMap.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  ConfigMap.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ConfigMap
-throw UnsupportedError('Cannot decode application/cbor response into ConfigMap');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into ConfigMap'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ConfigMap
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ConfigMap');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ConfigMap'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ConfigMap
-throw UnsupportedError('Cannot decode application/yaml response into ConfigMap');
-}
-final json = jsonDecode(response.body);
-return ConfigMap.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into ConfigMap'); } else {
 final json = jsonDecode(response.body);
-return ConfigMap.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ConfigMap.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  ConfigMap.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete collection of ConfigMap
 ///
@@ -974,32 +817,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
-throw UnsupportedError('Cannot decode application/cbor response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
-throw UnsupportedError('Cannot decode application/yaml response into Status');
-}
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
+
+throw  UnsupportedError('Cannot decode application/cbor response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
+
+throw  UnsupportedError('Cannot decode application/yaml response into Status'); } else {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// read the specified ConfigMap
 ///
@@ -1021,32 +854,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return ConfigMap.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ConfigMap
-throw UnsupportedError('Cannot decode application/cbor response into ConfigMap');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ConfigMap
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ConfigMap');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ConfigMap
-throw UnsupportedError('Cannot decode application/yaml response into ConfigMap');
-}
-final json = jsonDecode(response.body);
-return ConfigMap.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  ConfigMap.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ConfigMap
+
+throw  UnsupportedError('Cannot decode application/cbor response into ConfigMap'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ConfigMap
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ConfigMap'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ConfigMap
+
+throw  UnsupportedError('Cannot decode application/yaml response into ConfigMap'); } else {
+final json = jsonDecode(response.body);
+return  ConfigMap.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace the specified ConfigMap
 ///
@@ -1079,39 +902,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ConfigMap.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  ConfigMap.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ConfigMap
-throw UnsupportedError('Cannot decode application/cbor response into ConfigMap');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into ConfigMap'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ConfigMap
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ConfigMap');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ConfigMap'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ConfigMap
-throw UnsupportedError('Cannot decode application/yaml response into ConfigMap');
-}
-final json = jsonDecode(response.body);
-return ConfigMap.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into ConfigMap'); } else {
 final json = jsonDecode(response.body);
-return ConfigMap.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ConfigMap.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  ConfigMap.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update the specified ConfigMap
 ///
@@ -1147,39 +957,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ConfigMap.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  ConfigMap.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ConfigMap
-throw UnsupportedError('Cannot decode application/cbor response into ConfigMap');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into ConfigMap'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ConfigMap
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ConfigMap');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ConfigMap'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ConfigMap
-throw UnsupportedError('Cannot decode application/yaml response into ConfigMap');
-}
-final json = jsonDecode(response.body);
-return ConfigMap.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into ConfigMap'); } else {
 final json = jsonDecode(response.body);
-return ConfigMap.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ConfigMap.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  ConfigMap.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete a ConfigMap
 ///
@@ -1218,39 +1015,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 202:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Status.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
-throw UnsupportedError('Cannot decode application/cbor response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
-throw UnsupportedError('Cannot decode application/yaml response into Status');
-}
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Status'); } else {
 final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Status.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind Endpoints
 ///
@@ -1302,44 +1086,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return EndpointsList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into EndpointsList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into EndpointsList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return EndpointsList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into EndpointsList
-throw UnsupportedError('Cannot decode application/cbor response into EndpointsList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into EndpointsList
-throw UnsupportedError('Cannot decode application/cbor-seq response into EndpointsList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into EndpointsList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into EndpointsList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into EndpointsList
-throw UnsupportedError('Cannot decode application/yaml response into EndpointsList');
-}
-final json = jsonDecode(response.body);
-return EndpointsList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  EndpointsList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into EndpointsList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into EndpointsList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  EndpointsList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into EndpointsList
+
+throw  UnsupportedError('Cannot decode application/cbor response into EndpointsList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into EndpointsList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into EndpointsList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into EndpointsList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into EndpointsList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into EndpointsList
+
+throw  UnsupportedError('Cannot decode application/yaml response into EndpointsList'); } else {
+final json = jsonDecode(response.body);
+return  EndpointsList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// create Endpoints
 ///
@@ -1372,39 +1142,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case >= 200 && < 203:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Endpoints.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Endpoints.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Endpoints
-throw UnsupportedError('Cannot decode application/cbor response into Endpoints');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Endpoints'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Endpoints
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Endpoints');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Endpoints'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Endpoints
-throw UnsupportedError('Cannot decode application/yaml response into Endpoints');
-}
-final json = jsonDecode(response.body);
-return Endpoints.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Endpoints'); } else {
 final json = jsonDecode(response.body);
-return Endpoints.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Endpoints.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Endpoints.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete collection of Endpoints
 ///
@@ -1467,32 +1224,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
-throw UnsupportedError('Cannot decode application/cbor response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
-throw UnsupportedError('Cannot decode application/yaml response into Status');
-}
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
+
+throw  UnsupportedError('Cannot decode application/cbor response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
+
+throw  UnsupportedError('Cannot decode application/yaml response into Status'); } else {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// read the specified Endpoints
 ///
@@ -1514,32 +1261,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Endpoints.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Endpoints
-throw UnsupportedError('Cannot decode application/cbor response into Endpoints');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Endpoints
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Endpoints');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Endpoints
-throw UnsupportedError('Cannot decode application/yaml response into Endpoints');
-}
-final json = jsonDecode(response.body);
-return Endpoints.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Endpoints.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Endpoints
+
+throw  UnsupportedError('Cannot decode application/cbor response into Endpoints'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Endpoints
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Endpoints'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Endpoints
+
+throw  UnsupportedError('Cannot decode application/yaml response into Endpoints'); } else {
+final json = jsonDecode(response.body);
+return  Endpoints.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace the specified Endpoints
 ///
@@ -1572,39 +1309,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Endpoints.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Endpoints.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Endpoints
-throw UnsupportedError('Cannot decode application/cbor response into Endpoints');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Endpoints'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Endpoints
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Endpoints');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Endpoints'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Endpoints
-throw UnsupportedError('Cannot decode application/yaml response into Endpoints');
-}
-final json = jsonDecode(response.body);
-return Endpoints.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Endpoints'); } else {
 final json = jsonDecode(response.body);
-return Endpoints.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Endpoints.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Endpoints.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update the specified Endpoints
 ///
@@ -1640,39 +1364,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Endpoints.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Endpoints.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Endpoints
-throw UnsupportedError('Cannot decode application/cbor response into Endpoints');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Endpoints'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Endpoints
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Endpoints');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Endpoints'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Endpoints
-throw UnsupportedError('Cannot decode application/yaml response into Endpoints');
-}
-final json = jsonDecode(response.body);
-return Endpoints.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Endpoints'); } else {
 final json = jsonDecode(response.body);
-return Endpoints.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Endpoints.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Endpoints.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete Endpoints
 ///
@@ -1711,39 +1422,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 202:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Status.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
-throw UnsupportedError('Cannot decode application/cbor response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
-throw UnsupportedError('Cannot decode application/yaml response into Status');
-}
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Status'); } else {
 final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Status.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind Event
 ///
@@ -1795,44 +1493,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return EventList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into EventList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into EventList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return EventList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into EventList
-throw UnsupportedError('Cannot decode application/cbor response into EventList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into EventList
-throw UnsupportedError('Cannot decode application/cbor-seq response into EventList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into EventList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into EventList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into EventList
-throw UnsupportedError('Cannot decode application/yaml response into EventList');
-}
-final json = jsonDecode(response.body);
-return EventList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  EventList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into EventList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into EventList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  EventList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into EventList
+
+throw  UnsupportedError('Cannot decode application/cbor response into EventList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into EventList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into EventList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into EventList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into EventList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into EventList
+
+throw  UnsupportedError('Cannot decode application/yaml response into EventList'); } else {
+final json = jsonDecode(response.body);
+return  EventList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// create an Event
 ///
@@ -1865,39 +1549,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case >= 200 && < 203:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Event.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Event.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Event
-throw UnsupportedError('Cannot decode application/cbor response into Event');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Event'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Event
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Event');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Event'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Event
-throw UnsupportedError('Cannot decode application/yaml response into Event');
-}
-final json = jsonDecode(response.body);
-return Event.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Event'); } else {
 final json = jsonDecode(response.body);
-return Event.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Event.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Event.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete collection of Event
 ///
@@ -1960,32 +1631,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
-throw UnsupportedError('Cannot decode application/cbor response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
-throw UnsupportedError('Cannot decode application/yaml response into Status');
-}
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
+
+throw  UnsupportedError('Cannot decode application/cbor response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
+
+throw  UnsupportedError('Cannot decode application/yaml response into Status'); } else {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// read the specified Event
 ///
@@ -2007,32 +1668,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Event.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Event
-throw UnsupportedError('Cannot decode application/cbor response into Event');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Event
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Event');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Event
-throw UnsupportedError('Cannot decode application/yaml response into Event');
-}
-final json = jsonDecode(response.body);
-return Event.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Event.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Event
+
+throw  UnsupportedError('Cannot decode application/cbor response into Event'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Event
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Event'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Event
+
+throw  UnsupportedError('Cannot decode application/yaml response into Event'); } else {
+final json = jsonDecode(response.body);
+return  Event.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace the specified Event
 ///
@@ -2065,39 +1716,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Event.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Event.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Event
-throw UnsupportedError('Cannot decode application/cbor response into Event');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Event'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Event
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Event');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Event'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Event
-throw UnsupportedError('Cannot decode application/yaml response into Event');
-}
-final json = jsonDecode(response.body);
-return Event.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Event'); } else {
 final json = jsonDecode(response.body);
-return Event.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Event.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Event.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update the specified Event
 ///
@@ -2133,39 +1771,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Event.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Event.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Event
-throw UnsupportedError('Cannot decode application/cbor response into Event');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Event'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Event
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Event');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Event'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Event
-throw UnsupportedError('Cannot decode application/yaml response into Event');
-}
-final json = jsonDecode(response.body);
-return Event.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Event'); } else {
 final json = jsonDecode(response.body);
-return Event.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Event.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Event.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete an Event
 ///
@@ -2204,39 +1829,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 202:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Status.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
-throw UnsupportedError('Cannot decode application/cbor response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
-throw UnsupportedError('Cannot decode application/yaml response into Status');
-}
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Status'); } else {
 final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Status.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind LimitRange
 ///
@@ -2288,44 +1900,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return LimitRangeList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into LimitRangeList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into LimitRangeList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return LimitRangeList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into LimitRangeList
-throw UnsupportedError('Cannot decode application/cbor response into LimitRangeList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into LimitRangeList
-throw UnsupportedError('Cannot decode application/cbor-seq response into LimitRangeList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into LimitRangeList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into LimitRangeList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into LimitRangeList
-throw UnsupportedError('Cannot decode application/yaml response into LimitRangeList');
-}
-final json = jsonDecode(response.body);
-return LimitRangeList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  LimitRangeList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into LimitRangeList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into LimitRangeList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  LimitRangeList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into LimitRangeList
+
+throw  UnsupportedError('Cannot decode application/cbor response into LimitRangeList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into LimitRangeList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into LimitRangeList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into LimitRangeList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into LimitRangeList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into LimitRangeList
+
+throw  UnsupportedError('Cannot decode application/yaml response into LimitRangeList'); } else {
+final json = jsonDecode(response.body);
+return  LimitRangeList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// create a LimitRange
 ///
@@ -2358,39 +1956,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case >= 200 && < 203:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return LimitRange.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  LimitRange.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into LimitRange
-throw UnsupportedError('Cannot decode application/cbor response into LimitRange');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into LimitRange'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into LimitRange
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into LimitRange');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into LimitRange'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into LimitRange
-throw UnsupportedError('Cannot decode application/yaml response into LimitRange');
-}
-final json = jsonDecode(response.body);
-return LimitRange.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into LimitRange'); } else {
 final json = jsonDecode(response.body);
-return LimitRange.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  LimitRange.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  LimitRange.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete collection of LimitRange
 ///
@@ -2453,32 +2038,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
-throw UnsupportedError('Cannot decode application/cbor response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
-throw UnsupportedError('Cannot decode application/yaml response into Status');
-}
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
+
+throw  UnsupportedError('Cannot decode application/cbor response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
+
+throw  UnsupportedError('Cannot decode application/yaml response into Status'); } else {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// read the specified LimitRange
 ///
@@ -2500,32 +2075,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return LimitRange.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into LimitRange
-throw UnsupportedError('Cannot decode application/cbor response into LimitRange');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into LimitRange
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into LimitRange');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into LimitRange
-throw UnsupportedError('Cannot decode application/yaml response into LimitRange');
-}
-final json = jsonDecode(response.body);
-return LimitRange.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  LimitRange.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into LimitRange
+
+throw  UnsupportedError('Cannot decode application/cbor response into LimitRange'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into LimitRange
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into LimitRange'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into LimitRange
+
+throw  UnsupportedError('Cannot decode application/yaml response into LimitRange'); } else {
+final json = jsonDecode(response.body);
+return  LimitRange.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace the specified LimitRange
 ///
@@ -2558,39 +2123,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return LimitRange.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  LimitRange.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into LimitRange
-throw UnsupportedError('Cannot decode application/cbor response into LimitRange');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into LimitRange'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into LimitRange
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into LimitRange');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into LimitRange'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into LimitRange
-throw UnsupportedError('Cannot decode application/yaml response into LimitRange');
-}
-final json = jsonDecode(response.body);
-return LimitRange.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into LimitRange'); } else {
 final json = jsonDecode(response.body);
-return LimitRange.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  LimitRange.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  LimitRange.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update the specified LimitRange
 ///
@@ -2626,39 +2178,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return LimitRange.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  LimitRange.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into LimitRange
-throw UnsupportedError('Cannot decode application/cbor response into LimitRange');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into LimitRange'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into LimitRange
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into LimitRange');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into LimitRange'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into LimitRange
-throw UnsupportedError('Cannot decode application/yaml response into LimitRange');
-}
-final json = jsonDecode(response.body);
-return LimitRange.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into LimitRange'); } else {
 final json = jsonDecode(response.body);
-return LimitRange.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  LimitRange.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  LimitRange.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete a LimitRange
 ///
@@ -2697,39 +2236,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 202:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Status.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
-throw UnsupportedError('Cannot decode application/cbor response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
-throw UnsupportedError('Cannot decode application/yaml response into Status');
-}
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Status'); } else {
 final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Status.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind PersistentVolumeClaim
 ///
@@ -2781,44 +2307,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return PersistentVolumeClaimList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PersistentVolumeClaimList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PersistentVolumeClaimList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return PersistentVolumeClaimList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolumeClaimList
-throw UnsupportedError('Cannot decode application/cbor response into PersistentVolumeClaimList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into PersistentVolumeClaimList
-throw UnsupportedError('Cannot decode application/cbor-seq response into PersistentVolumeClaimList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaimList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaimList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolumeClaimList
-throw UnsupportedError('Cannot decode application/yaml response into PersistentVolumeClaimList');
-}
-final json = jsonDecode(response.body);
-return PersistentVolumeClaimList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  PersistentVolumeClaimList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PersistentVolumeClaimList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PersistentVolumeClaimList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  PersistentVolumeClaimList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolumeClaimList
+
+throw  UnsupportedError('Cannot decode application/cbor response into PersistentVolumeClaimList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into PersistentVolumeClaimList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into PersistentVolumeClaimList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaimList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaimList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolumeClaimList
+
+throw  UnsupportedError('Cannot decode application/yaml response into PersistentVolumeClaimList'); } else {
+final json = jsonDecode(response.body);
+return  PersistentVolumeClaimList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// create a PersistentVolumeClaim
 ///
@@ -2851,39 +2363,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case >= 200 && < 203:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return PersistentVolumeClaim.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  PersistentVolumeClaim.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolumeClaim
-throw UnsupportedError('Cannot decode application/cbor response into PersistentVolumeClaim');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into PersistentVolumeClaim'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolumeClaim
-throw UnsupportedError('Cannot decode application/yaml response into PersistentVolumeClaim');
-}
-final json = jsonDecode(response.body);
-return PersistentVolumeClaim.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into PersistentVolumeClaim'); } else {
 final json = jsonDecode(response.body);
-return PersistentVolumeClaim.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  PersistentVolumeClaim.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  PersistentVolumeClaim.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete collection of PersistentVolumeClaim
 ///
@@ -2946,32 +2445,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
-throw UnsupportedError('Cannot decode application/cbor response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
-throw UnsupportedError('Cannot decode application/yaml response into Status');
-}
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
+
+throw  UnsupportedError('Cannot decode application/cbor response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
+
+throw  UnsupportedError('Cannot decode application/yaml response into Status'); } else {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// read the specified PersistentVolumeClaim
 ///
@@ -2993,32 +2482,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return PersistentVolumeClaim.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolumeClaim
-throw UnsupportedError('Cannot decode application/cbor response into PersistentVolumeClaim');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolumeClaim
-throw UnsupportedError('Cannot decode application/yaml response into PersistentVolumeClaim');
-}
-final json = jsonDecode(response.body);
-return PersistentVolumeClaim.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  PersistentVolumeClaim.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolumeClaim
+
+throw  UnsupportedError('Cannot decode application/cbor response into PersistentVolumeClaim'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolumeClaim
+
+throw  UnsupportedError('Cannot decode application/yaml response into PersistentVolumeClaim'); } else {
+final json = jsonDecode(response.body);
+return  PersistentVolumeClaim.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace the specified PersistentVolumeClaim
 ///
@@ -3051,39 +2530,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return PersistentVolumeClaim.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  PersistentVolumeClaim.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolumeClaim
-throw UnsupportedError('Cannot decode application/cbor response into PersistentVolumeClaim');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into PersistentVolumeClaim'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolumeClaim
-throw UnsupportedError('Cannot decode application/yaml response into PersistentVolumeClaim');
-}
-final json = jsonDecode(response.body);
-return PersistentVolumeClaim.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into PersistentVolumeClaim'); } else {
 final json = jsonDecode(response.body);
-return PersistentVolumeClaim.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  PersistentVolumeClaim.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  PersistentVolumeClaim.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update the specified PersistentVolumeClaim
 ///
@@ -3119,39 +2585,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return PersistentVolumeClaim.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  PersistentVolumeClaim.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolumeClaim
-throw UnsupportedError('Cannot decode application/cbor response into PersistentVolumeClaim');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into PersistentVolumeClaim'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolumeClaim
-throw UnsupportedError('Cannot decode application/yaml response into PersistentVolumeClaim');
-}
-final json = jsonDecode(response.body);
-return PersistentVolumeClaim.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into PersistentVolumeClaim'); } else {
 final json = jsonDecode(response.body);
-return PersistentVolumeClaim.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  PersistentVolumeClaim.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  PersistentVolumeClaim.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete a PersistentVolumeClaim
 ///
@@ -3190,39 +2643,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 202:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return PersistentVolumeClaim.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  PersistentVolumeClaim.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolumeClaim
-throw UnsupportedError('Cannot decode application/cbor response into PersistentVolumeClaim');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into PersistentVolumeClaim'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolumeClaim
-throw UnsupportedError('Cannot decode application/yaml response into PersistentVolumeClaim');
-}
-final json = jsonDecode(response.body);
-return PersistentVolumeClaim.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into PersistentVolumeClaim'); } else {
 final json = jsonDecode(response.body);
-return PersistentVolumeClaim.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  PersistentVolumeClaim.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  PersistentVolumeClaim.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// read status of the specified PersistentVolumeClaim
 ///
@@ -3244,32 +2684,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return PersistentVolumeClaim.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolumeClaim
-throw UnsupportedError('Cannot decode application/cbor response into PersistentVolumeClaim');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolumeClaim
-throw UnsupportedError('Cannot decode application/yaml response into PersistentVolumeClaim');
-}
-final json = jsonDecode(response.body);
-return PersistentVolumeClaim.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  PersistentVolumeClaim.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolumeClaim
+
+throw  UnsupportedError('Cannot decode application/cbor response into PersistentVolumeClaim'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolumeClaim
+
+throw  UnsupportedError('Cannot decode application/yaml response into PersistentVolumeClaim'); } else {
+final json = jsonDecode(response.body);
+return  PersistentVolumeClaim.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace status of the specified PersistentVolumeClaim
 ///
@@ -3302,39 +2732,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return PersistentVolumeClaim.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  PersistentVolumeClaim.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolumeClaim
-throw UnsupportedError('Cannot decode application/cbor response into PersistentVolumeClaim');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into PersistentVolumeClaim'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolumeClaim
-throw UnsupportedError('Cannot decode application/yaml response into PersistentVolumeClaim');
-}
-final json = jsonDecode(response.body);
-return PersistentVolumeClaim.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into PersistentVolumeClaim'); } else {
 final json = jsonDecode(response.body);
-return PersistentVolumeClaim.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  PersistentVolumeClaim.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  PersistentVolumeClaim.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update status of the specified PersistentVolumeClaim
 ///
@@ -3370,39 +2787,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return PersistentVolumeClaim.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  PersistentVolumeClaim.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolumeClaim
-throw UnsupportedError('Cannot decode application/cbor response into PersistentVolumeClaim');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into PersistentVolumeClaim'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaim'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolumeClaim
-throw UnsupportedError('Cannot decode application/yaml response into PersistentVolumeClaim');
-}
-final json = jsonDecode(response.body);
-return PersistentVolumeClaim.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into PersistentVolumeClaim'); } else {
 final json = jsonDecode(response.body);
-return PersistentVolumeClaim.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  PersistentVolumeClaim.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  PersistentVolumeClaim.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind Pod
 ///
@@ -3454,44 +2858,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return PodList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PodList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PodList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return PodList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PodList
-throw UnsupportedError('Cannot decode application/cbor response into PodList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into PodList
-throw UnsupportedError('Cannot decode application/cbor-seq response into PodList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PodList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PodList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PodList
-throw UnsupportedError('Cannot decode application/yaml response into PodList');
-}
-final json = jsonDecode(response.body);
-return PodList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  PodList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PodList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PodList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  PodList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PodList
+
+throw  UnsupportedError('Cannot decode application/cbor response into PodList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into PodList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into PodList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PodList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PodList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PodList
+
+throw  UnsupportedError('Cannot decode application/yaml response into PodList'); } else {
+final json = jsonDecode(response.body);
+return  PodList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// create a Pod
 ///
@@ -3524,39 +2914,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case >= 200 && < 203:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Pod.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Pod
-throw UnsupportedError('Cannot decode application/cbor response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Pod
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Pod
-throw UnsupportedError('Cannot decode application/yaml response into Pod');
-}
-final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Pod'); } else {
 final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Pod.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Pod.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete collection of Pod
 ///
@@ -3619,32 +2996,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
-throw UnsupportedError('Cannot decode application/cbor response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
-throw UnsupportedError('Cannot decode application/yaml response into Status');
-}
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
+
+throw  UnsupportedError('Cannot decode application/cbor response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
+
+throw  UnsupportedError('Cannot decode application/yaml response into Status'); } else {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// read the specified Pod
 ///
@@ -3666,32 +3033,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Pod
-throw UnsupportedError('Cannot decode application/cbor response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Pod
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Pod
-throw UnsupportedError('Cannot decode application/yaml response into Pod');
-}
-final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Pod.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Pod
+
+throw  UnsupportedError('Cannot decode application/cbor response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Pod
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Pod
+
+throw  UnsupportedError('Cannot decode application/yaml response into Pod'); } else {
+final json = jsonDecode(response.body);
+return  Pod.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace the specified Pod
 ///
@@ -3724,39 +3081,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Pod.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Pod
-throw UnsupportedError('Cannot decode application/cbor response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Pod
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Pod
-throw UnsupportedError('Cannot decode application/yaml response into Pod');
-}
-final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Pod'); } else {
 final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Pod.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Pod.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update the specified Pod
 ///
@@ -3792,39 +3136,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Pod.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Pod
-throw UnsupportedError('Cannot decode application/cbor response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Pod
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Pod
-throw UnsupportedError('Cannot decode application/yaml response into Pod');
-}
-final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Pod'); } else {
 final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Pod.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Pod.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete a Pod
 ///
@@ -3863,39 +3194,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 202:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Pod.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Pod
-throw UnsupportedError('Cannot decode application/cbor response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Pod
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Pod
-throw UnsupportedError('Cannot decode application/yaml response into Pod');
-}
-final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Pod'); } else {
 final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Pod.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Pod.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// connect GET requests to attach of Pod
 ///
@@ -3929,14 +3247,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect POST requests to attach of Pod
 ///
@@ -3970,14 +3283,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// create binding of a Pod
 ///
@@ -4010,39 +3318,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case >= 200 && < 203:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Binding.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Binding.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Binding
-throw UnsupportedError('Cannot decode application/cbor response into Binding');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Binding'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Binding
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Binding');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Binding'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Binding
-throw UnsupportedError('Cannot decode application/yaml response into Binding');
-}
-final json = jsonDecode(response.body);
-return Binding.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Binding'); } else {
 final json = jsonDecode(response.body);
-return Binding.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Binding.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Binding.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// read ephemeralcontainers of the specified Pod
 ///
@@ -4064,32 +3359,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Pod
-throw UnsupportedError('Cannot decode application/cbor response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Pod
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Pod
-throw UnsupportedError('Cannot decode application/yaml response into Pod');
-}
-final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Pod.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Pod
+
+throw  UnsupportedError('Cannot decode application/cbor response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Pod
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Pod
+
+throw  UnsupportedError('Cannot decode application/yaml response into Pod'); } else {
+final json = jsonDecode(response.body);
+return  Pod.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace ephemeralcontainers of the specified Pod
 ///
@@ -4122,39 +3407,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Pod.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Pod
-throw UnsupportedError('Cannot decode application/cbor response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Pod
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Pod
-throw UnsupportedError('Cannot decode application/yaml response into Pod');
-}
-final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Pod'); } else {
 final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Pod.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Pod.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update ephemeralcontainers of the specified Pod
 ///
@@ -4190,39 +3462,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Pod.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Pod
-throw UnsupportedError('Cannot decode application/cbor response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Pod
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Pod
-throw UnsupportedError('Cannot decode application/yaml response into Pod');
-}
-final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Pod'); } else {
 final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Pod.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Pod.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// create eviction of a Pod
 ///
@@ -4255,39 +3514,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case >= 200 && < 203:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Eviction.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Eviction.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Eviction
-throw UnsupportedError('Cannot decode application/cbor response into Eviction');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Eviction'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Eviction
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Eviction');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Eviction'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Eviction
-throw UnsupportedError('Cannot decode application/yaml response into Eviction');
-}
-final json = jsonDecode(response.body);
-return Eviction.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Eviction'); } else {
 final json = jsonDecode(response.body);
-return Eviction.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Eviction.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Eviction.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// connect GET requests to exec of Pod
 ///
@@ -4324,14 +3570,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect POST requests to exec of Pod
 ///
@@ -4368,14 +3609,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// read log of the specified Pod
 ///
@@ -4424,32 +3660,17 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as String;
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-return response.body;
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-return response.body;
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-return response.body;
-}
-if (responseMediaTypeMatches(contentType, 'text/plain')) {
-return response.body;
-}
-final json = jsonDecode(response.body);
-return json as String;
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as String; } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+return  response.body; } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+return  response.body; } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+return  response.body; } else if (responseMediaTypeMatches(contentType, 'text/plain', )) {
+return  response.body; } else {
+final json = jsonDecode(response.body);
+return  json as String; }}, );}
 ///
 /// connect GET requests to portforward of Pod
 ///
@@ -4471,14 +3692,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect POST requests to portforward of Pod
 ///
@@ -4500,14 +3716,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect GET requests to proxy of Pod
 ///
@@ -4529,14 +3740,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect POST requests to proxy of Pod
 ///
@@ -4558,14 +3764,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect PUT requests to proxy of Pod
 ///
@@ -4587,14 +3788,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect PATCH requests to proxy of Pod
 ///
@@ -4616,14 +3812,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect DELETE requests to proxy of Pod
 ///
@@ -4645,14 +3836,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect HEAD requests to proxy of Pod
 ///
@@ -4674,14 +3860,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect OPTIONS requests to proxy of Pod
 ///
@@ -4703,14 +3884,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect GET requests to proxy of Pod
 ///
@@ -4732,14 +3908,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect POST requests to proxy of Pod
 ///
@@ -4761,14 +3932,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect PUT requests to proxy of Pod
 ///
@@ -4790,14 +3956,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect PATCH requests to proxy of Pod
 ///
@@ -4819,14 +3980,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect DELETE requests to proxy of Pod
 ///
@@ -4848,14 +4004,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect HEAD requests to proxy of Pod
 ///
@@ -4877,14 +4028,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect OPTIONS requests to proxy of Pod
 ///
@@ -4906,14 +4052,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// read resize of the specified Pod
 ///
@@ -4935,32 +4076,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Pod
-throw UnsupportedError('Cannot decode application/cbor response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Pod
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Pod
-throw UnsupportedError('Cannot decode application/yaml response into Pod');
-}
-final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Pod.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Pod
+
+throw  UnsupportedError('Cannot decode application/cbor response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Pod
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Pod
+
+throw  UnsupportedError('Cannot decode application/yaml response into Pod'); } else {
+final json = jsonDecode(response.body);
+return  Pod.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace resize of the specified Pod
 ///
@@ -4993,39 +4124,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Pod.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Pod
-throw UnsupportedError('Cannot decode application/cbor response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Pod
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Pod
-throw UnsupportedError('Cannot decode application/yaml response into Pod');
-}
-final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Pod'); } else {
 final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Pod.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Pod.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update resize of the specified Pod
 ///
@@ -5061,39 +4179,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Pod.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Pod
-throw UnsupportedError('Cannot decode application/cbor response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Pod
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Pod
-throw UnsupportedError('Cannot decode application/yaml response into Pod');
-}
-final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Pod'); } else {
 final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Pod.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Pod.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// read status of the specified Pod
 ///
@@ -5115,32 +4220,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Pod
-throw UnsupportedError('Cannot decode application/cbor response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Pod
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Pod
-throw UnsupportedError('Cannot decode application/yaml response into Pod');
-}
-final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Pod.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Pod
+
+throw  UnsupportedError('Cannot decode application/cbor response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Pod
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Pod
+
+throw  UnsupportedError('Cannot decode application/yaml response into Pod'); } else {
+final json = jsonDecode(response.body);
+return  Pod.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace status of the specified Pod
 ///
@@ -5173,39 +4268,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Pod.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Pod
-throw UnsupportedError('Cannot decode application/cbor response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Pod
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Pod
-throw UnsupportedError('Cannot decode application/yaml response into Pod');
-}
-final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Pod'); } else {
 final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Pod.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Pod.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update status of the specified Pod
 ///
@@ -5241,39 +4323,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Pod.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Pod
-throw UnsupportedError('Cannot decode application/cbor response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Pod
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Pod'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Pod
-throw UnsupportedError('Cannot decode application/yaml response into Pod');
-}
-final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Pod'); } else {
 final json = jsonDecode(response.body);
-return Pod.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Pod.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Pod.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind PodTemplate
 ///
@@ -5325,44 +4394,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return PodTemplateList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PodTemplateList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PodTemplateList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return PodTemplateList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PodTemplateList
-throw UnsupportedError('Cannot decode application/cbor response into PodTemplateList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into PodTemplateList
-throw UnsupportedError('Cannot decode application/cbor-seq response into PodTemplateList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PodTemplateList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PodTemplateList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PodTemplateList
-throw UnsupportedError('Cannot decode application/yaml response into PodTemplateList');
-}
-final json = jsonDecode(response.body);
-return PodTemplateList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  PodTemplateList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PodTemplateList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PodTemplateList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  PodTemplateList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PodTemplateList
+
+throw  UnsupportedError('Cannot decode application/cbor response into PodTemplateList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into PodTemplateList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into PodTemplateList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PodTemplateList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PodTemplateList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PodTemplateList
+
+throw  UnsupportedError('Cannot decode application/yaml response into PodTemplateList'); } else {
+final json = jsonDecode(response.body);
+return  PodTemplateList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// create a PodTemplate
 ///
@@ -5395,39 +4450,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case >= 200 && < 203:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return PodTemplate.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  PodTemplate.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PodTemplate
-throw UnsupportedError('Cannot decode application/cbor response into PodTemplate');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into PodTemplate'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PodTemplate
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PodTemplate');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PodTemplate'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PodTemplate
-throw UnsupportedError('Cannot decode application/yaml response into PodTemplate');
-}
-final json = jsonDecode(response.body);
-return PodTemplate.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into PodTemplate'); } else {
 final json = jsonDecode(response.body);
-return PodTemplate.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  PodTemplate.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  PodTemplate.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete collection of PodTemplate
 ///
@@ -5490,32 +4532,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
-throw UnsupportedError('Cannot decode application/cbor response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
-throw UnsupportedError('Cannot decode application/yaml response into Status');
-}
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
+
+throw  UnsupportedError('Cannot decode application/cbor response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
+
+throw  UnsupportedError('Cannot decode application/yaml response into Status'); } else {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// read the specified PodTemplate
 ///
@@ -5537,32 +4569,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return PodTemplate.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PodTemplate
-throw UnsupportedError('Cannot decode application/cbor response into PodTemplate');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PodTemplate
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PodTemplate');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PodTemplate
-throw UnsupportedError('Cannot decode application/yaml response into PodTemplate');
-}
-final json = jsonDecode(response.body);
-return PodTemplate.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  PodTemplate.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PodTemplate
+
+throw  UnsupportedError('Cannot decode application/cbor response into PodTemplate'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PodTemplate
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PodTemplate'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PodTemplate
+
+throw  UnsupportedError('Cannot decode application/yaml response into PodTemplate'); } else {
+final json = jsonDecode(response.body);
+return  PodTemplate.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace the specified PodTemplate
 ///
@@ -5595,39 +4617,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return PodTemplate.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  PodTemplate.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PodTemplate
-throw UnsupportedError('Cannot decode application/cbor response into PodTemplate');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into PodTemplate'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PodTemplate
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PodTemplate');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PodTemplate'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PodTemplate
-throw UnsupportedError('Cannot decode application/yaml response into PodTemplate');
-}
-final json = jsonDecode(response.body);
-return PodTemplate.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into PodTemplate'); } else {
 final json = jsonDecode(response.body);
-return PodTemplate.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  PodTemplate.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  PodTemplate.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update the specified PodTemplate
 ///
@@ -5663,39 +4672,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return PodTemplate.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  PodTemplate.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PodTemplate
-throw UnsupportedError('Cannot decode application/cbor response into PodTemplate');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into PodTemplate'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PodTemplate
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PodTemplate');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PodTemplate'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PodTemplate
-throw UnsupportedError('Cannot decode application/yaml response into PodTemplate');
-}
-final json = jsonDecode(response.body);
-return PodTemplate.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into PodTemplate'); } else {
 final json = jsonDecode(response.body);
-return PodTemplate.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  PodTemplate.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  PodTemplate.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete a PodTemplate
 ///
@@ -5734,39 +4730,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 202:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return PodTemplate.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  PodTemplate.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PodTemplate
-throw UnsupportedError('Cannot decode application/cbor response into PodTemplate');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into PodTemplate'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PodTemplate
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PodTemplate');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PodTemplate'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PodTemplate
-throw UnsupportedError('Cannot decode application/yaml response into PodTemplate');
-}
-final json = jsonDecode(response.body);
-return PodTemplate.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into PodTemplate'); } else {
 final json = jsonDecode(response.body);
-return PodTemplate.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  PodTemplate.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  PodTemplate.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind ReplicationController
 ///
@@ -5818,44 +4801,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return ReplicationControllerList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ReplicationControllerList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ReplicationControllerList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return ReplicationControllerList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ReplicationControllerList
-throw UnsupportedError('Cannot decode application/cbor response into ReplicationControllerList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into ReplicationControllerList
-throw UnsupportedError('Cannot decode application/cbor-seq response into ReplicationControllerList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ReplicationControllerList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ReplicationControllerList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ReplicationControllerList
-throw UnsupportedError('Cannot decode application/yaml response into ReplicationControllerList');
-}
-final json = jsonDecode(response.body);
-return ReplicationControllerList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  ReplicationControllerList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ReplicationControllerList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ReplicationControllerList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  ReplicationControllerList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ReplicationControllerList
+
+throw  UnsupportedError('Cannot decode application/cbor response into ReplicationControllerList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into ReplicationControllerList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into ReplicationControllerList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ReplicationControllerList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ReplicationControllerList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ReplicationControllerList
+
+throw  UnsupportedError('Cannot decode application/yaml response into ReplicationControllerList'); } else {
+final json = jsonDecode(response.body);
+return  ReplicationControllerList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// create a ReplicationController
 ///
@@ -5888,39 +4857,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case >= 200 && < 203:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ReplicationController.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  ReplicationController.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ReplicationController
-throw UnsupportedError('Cannot decode application/cbor response into ReplicationController');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into ReplicationController'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ReplicationController
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ReplicationController');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ReplicationController'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ReplicationController
-throw UnsupportedError('Cannot decode application/yaml response into ReplicationController');
-}
-final json = jsonDecode(response.body);
-return ReplicationController.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into ReplicationController'); } else {
 final json = jsonDecode(response.body);
-return ReplicationController.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ReplicationController.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  ReplicationController.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete collection of ReplicationController
 ///
@@ -5983,32 +4939,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
-throw UnsupportedError('Cannot decode application/cbor response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
-throw UnsupportedError('Cannot decode application/yaml response into Status');
-}
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
+
+throw  UnsupportedError('Cannot decode application/cbor response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
+
+throw  UnsupportedError('Cannot decode application/yaml response into Status'); } else {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// read the specified ReplicationController
 ///
@@ -6030,32 +4976,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return ReplicationController.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ReplicationController
-throw UnsupportedError('Cannot decode application/cbor response into ReplicationController');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ReplicationController
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ReplicationController');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ReplicationController
-throw UnsupportedError('Cannot decode application/yaml response into ReplicationController');
-}
-final json = jsonDecode(response.body);
-return ReplicationController.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  ReplicationController.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ReplicationController
+
+throw  UnsupportedError('Cannot decode application/cbor response into ReplicationController'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ReplicationController
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ReplicationController'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ReplicationController
+
+throw  UnsupportedError('Cannot decode application/yaml response into ReplicationController'); } else {
+final json = jsonDecode(response.body);
+return  ReplicationController.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace the specified ReplicationController
 ///
@@ -6088,39 +5024,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ReplicationController.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  ReplicationController.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ReplicationController
-throw UnsupportedError('Cannot decode application/cbor response into ReplicationController');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into ReplicationController'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ReplicationController
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ReplicationController');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ReplicationController'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ReplicationController
-throw UnsupportedError('Cannot decode application/yaml response into ReplicationController');
-}
-final json = jsonDecode(response.body);
-return ReplicationController.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into ReplicationController'); } else {
 final json = jsonDecode(response.body);
-return ReplicationController.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ReplicationController.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  ReplicationController.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update the specified ReplicationController
 ///
@@ -6156,39 +5079,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ReplicationController.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  ReplicationController.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ReplicationController
-throw UnsupportedError('Cannot decode application/cbor response into ReplicationController');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into ReplicationController'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ReplicationController
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ReplicationController');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ReplicationController'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ReplicationController
-throw UnsupportedError('Cannot decode application/yaml response into ReplicationController');
-}
-final json = jsonDecode(response.body);
-return ReplicationController.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into ReplicationController'); } else {
 final json = jsonDecode(response.body);
-return ReplicationController.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ReplicationController.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  ReplicationController.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete a ReplicationController
 ///
@@ -6227,39 +5137,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 202:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Status.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
-throw UnsupportedError('Cannot decode application/cbor response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
-throw UnsupportedError('Cannot decode application/yaml response into Status');
-}
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Status'); } else {
 final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Status.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// read scale of the specified ReplicationController
 ///
@@ -6281,32 +5178,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Scale.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Scale
-throw UnsupportedError('Cannot decode application/cbor response into Scale');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Scale
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Scale');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Scale
-throw UnsupportedError('Cannot decode application/yaml response into Scale');
-}
-final json = jsonDecode(response.body);
-return Scale.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Scale.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Scale
+
+throw  UnsupportedError('Cannot decode application/cbor response into Scale'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Scale
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Scale'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Scale
+
+throw  UnsupportedError('Cannot decode application/yaml response into Scale'); } else {
+final json = jsonDecode(response.body);
+return  Scale.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace scale of the specified ReplicationController
 ///
@@ -6339,39 +5226,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Scale.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Scale.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Scale
-throw UnsupportedError('Cannot decode application/cbor response into Scale');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Scale'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Scale
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Scale');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Scale'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Scale
-throw UnsupportedError('Cannot decode application/yaml response into Scale');
-}
-final json = jsonDecode(response.body);
-return Scale.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Scale'); } else {
 final json = jsonDecode(response.body);
-return Scale.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Scale.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Scale.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update scale of the specified ReplicationController
 ///
@@ -6407,39 +5281,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Scale.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Scale.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Scale
-throw UnsupportedError('Cannot decode application/cbor response into Scale');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Scale'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Scale
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Scale');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Scale'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Scale
-throw UnsupportedError('Cannot decode application/yaml response into Scale');
-}
-final json = jsonDecode(response.body);
-return Scale.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Scale'); } else {
 final json = jsonDecode(response.body);
-return Scale.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Scale.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Scale.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// read status of the specified ReplicationController
 ///
@@ -6461,32 +5322,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return ReplicationController.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ReplicationController
-throw UnsupportedError('Cannot decode application/cbor response into ReplicationController');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ReplicationController
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ReplicationController');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ReplicationController
-throw UnsupportedError('Cannot decode application/yaml response into ReplicationController');
-}
-final json = jsonDecode(response.body);
-return ReplicationController.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  ReplicationController.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ReplicationController
+
+throw  UnsupportedError('Cannot decode application/cbor response into ReplicationController'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ReplicationController
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ReplicationController'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ReplicationController
+
+throw  UnsupportedError('Cannot decode application/yaml response into ReplicationController'); } else {
+final json = jsonDecode(response.body);
+return  ReplicationController.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace status of the specified ReplicationController
 ///
@@ -6519,39 +5370,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ReplicationController.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  ReplicationController.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ReplicationController
-throw UnsupportedError('Cannot decode application/cbor response into ReplicationController');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into ReplicationController'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ReplicationController
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ReplicationController');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ReplicationController'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ReplicationController
-throw UnsupportedError('Cannot decode application/yaml response into ReplicationController');
-}
-final json = jsonDecode(response.body);
-return ReplicationController.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into ReplicationController'); } else {
 final json = jsonDecode(response.body);
-return ReplicationController.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ReplicationController.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  ReplicationController.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update status of the specified ReplicationController
 ///
@@ -6587,39 +5425,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ReplicationController.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  ReplicationController.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ReplicationController
-throw UnsupportedError('Cannot decode application/cbor response into ReplicationController');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into ReplicationController'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ReplicationController
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ReplicationController');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ReplicationController'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ReplicationController
-throw UnsupportedError('Cannot decode application/yaml response into ReplicationController');
-}
-final json = jsonDecode(response.body);
-return ReplicationController.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into ReplicationController'); } else {
 final json = jsonDecode(response.body);
-return ReplicationController.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ReplicationController.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  ReplicationController.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind ResourceQuota
 ///
@@ -6671,44 +5496,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return ResourceQuotaList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ResourceQuotaList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ResourceQuotaList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return ResourceQuotaList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ResourceQuotaList
-throw UnsupportedError('Cannot decode application/cbor response into ResourceQuotaList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into ResourceQuotaList
-throw UnsupportedError('Cannot decode application/cbor-seq response into ResourceQuotaList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuotaList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuotaList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ResourceQuotaList
-throw UnsupportedError('Cannot decode application/yaml response into ResourceQuotaList');
-}
-final json = jsonDecode(response.body);
-return ResourceQuotaList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  ResourceQuotaList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ResourceQuotaList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ResourceQuotaList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  ResourceQuotaList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ResourceQuotaList
+
+throw  UnsupportedError('Cannot decode application/cbor response into ResourceQuotaList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into ResourceQuotaList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into ResourceQuotaList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuotaList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuotaList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ResourceQuotaList
+
+throw  UnsupportedError('Cannot decode application/yaml response into ResourceQuotaList'); } else {
+final json = jsonDecode(response.body);
+return  ResourceQuotaList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// create a ResourceQuota
 ///
@@ -6741,39 +5552,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case >= 200 && < 203:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ResourceQuota.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  ResourceQuota.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ResourceQuota
-throw UnsupportedError('Cannot decode application/cbor response into ResourceQuota');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into ResourceQuota'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ResourceQuota
-throw UnsupportedError('Cannot decode application/yaml response into ResourceQuota');
-}
-final json = jsonDecode(response.body);
-return ResourceQuota.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into ResourceQuota'); } else {
 final json = jsonDecode(response.body);
-return ResourceQuota.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ResourceQuota.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  ResourceQuota.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete collection of ResourceQuota
 ///
@@ -6836,32 +5634,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
-throw UnsupportedError('Cannot decode application/cbor response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
-throw UnsupportedError('Cannot decode application/yaml response into Status');
-}
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
+
+throw  UnsupportedError('Cannot decode application/cbor response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
+
+throw  UnsupportedError('Cannot decode application/yaml response into Status'); } else {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// read the specified ResourceQuota
 ///
@@ -6883,32 +5671,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return ResourceQuota.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ResourceQuota
-throw UnsupportedError('Cannot decode application/cbor response into ResourceQuota');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ResourceQuota
-throw UnsupportedError('Cannot decode application/yaml response into ResourceQuota');
-}
-final json = jsonDecode(response.body);
-return ResourceQuota.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  ResourceQuota.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ResourceQuota
+
+throw  UnsupportedError('Cannot decode application/cbor response into ResourceQuota'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ResourceQuota
+
+throw  UnsupportedError('Cannot decode application/yaml response into ResourceQuota'); } else {
+final json = jsonDecode(response.body);
+return  ResourceQuota.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace the specified ResourceQuota
 ///
@@ -6941,39 +5719,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ResourceQuota.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  ResourceQuota.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ResourceQuota
-throw UnsupportedError('Cannot decode application/cbor response into ResourceQuota');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into ResourceQuota'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ResourceQuota
-throw UnsupportedError('Cannot decode application/yaml response into ResourceQuota');
-}
-final json = jsonDecode(response.body);
-return ResourceQuota.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into ResourceQuota'); } else {
 final json = jsonDecode(response.body);
-return ResourceQuota.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ResourceQuota.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  ResourceQuota.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update the specified ResourceQuota
 ///
@@ -7009,39 +5774,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ResourceQuota.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  ResourceQuota.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ResourceQuota
-throw UnsupportedError('Cannot decode application/cbor response into ResourceQuota');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into ResourceQuota'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ResourceQuota
-throw UnsupportedError('Cannot decode application/yaml response into ResourceQuota');
-}
-final json = jsonDecode(response.body);
-return ResourceQuota.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into ResourceQuota'); } else {
 final json = jsonDecode(response.body);
-return ResourceQuota.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ResourceQuota.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  ResourceQuota.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete a ResourceQuota
 ///
@@ -7080,39 +5832,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 202:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ResourceQuota.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  ResourceQuota.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ResourceQuota
-throw UnsupportedError('Cannot decode application/cbor response into ResourceQuota');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into ResourceQuota'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ResourceQuota
-throw UnsupportedError('Cannot decode application/yaml response into ResourceQuota');
-}
-final json = jsonDecode(response.body);
-return ResourceQuota.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into ResourceQuota'); } else {
 final json = jsonDecode(response.body);
-return ResourceQuota.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ResourceQuota.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  ResourceQuota.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// read status of the specified ResourceQuota
 ///
@@ -7134,32 +5873,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return ResourceQuota.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ResourceQuota
-throw UnsupportedError('Cannot decode application/cbor response into ResourceQuota');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ResourceQuota
-throw UnsupportedError('Cannot decode application/yaml response into ResourceQuota');
-}
-final json = jsonDecode(response.body);
-return ResourceQuota.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  ResourceQuota.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ResourceQuota
+
+throw  UnsupportedError('Cannot decode application/cbor response into ResourceQuota'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ResourceQuota
+
+throw  UnsupportedError('Cannot decode application/yaml response into ResourceQuota'); } else {
+final json = jsonDecode(response.body);
+return  ResourceQuota.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace status of the specified ResourceQuota
 ///
@@ -7192,39 +5921,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ResourceQuota.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  ResourceQuota.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ResourceQuota
-throw UnsupportedError('Cannot decode application/cbor response into ResourceQuota');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into ResourceQuota'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ResourceQuota
-throw UnsupportedError('Cannot decode application/yaml response into ResourceQuota');
-}
-final json = jsonDecode(response.body);
-return ResourceQuota.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into ResourceQuota'); } else {
 final json = jsonDecode(response.body);
-return ResourceQuota.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ResourceQuota.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  ResourceQuota.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update status of the specified ResourceQuota
 ///
@@ -7260,39 +5976,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ResourceQuota.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  ResourceQuota.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ResourceQuota
-throw UnsupportedError('Cannot decode application/cbor response into ResourceQuota');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into ResourceQuota'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuota'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ResourceQuota
-throw UnsupportedError('Cannot decode application/yaml response into ResourceQuota');
-}
-final json = jsonDecode(response.body);
-return ResourceQuota.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into ResourceQuota'); } else {
 final json = jsonDecode(response.body);
-return ResourceQuota.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ResourceQuota.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  ResourceQuota.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind Secret
 ///
@@ -7344,44 +6047,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return SecretList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into SecretList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into SecretList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return SecretList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into SecretList
-throw UnsupportedError('Cannot decode application/cbor response into SecretList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into SecretList
-throw UnsupportedError('Cannot decode application/cbor-seq response into SecretList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into SecretList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into SecretList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into SecretList
-throw UnsupportedError('Cannot decode application/yaml response into SecretList');
-}
-final json = jsonDecode(response.body);
-return SecretList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  SecretList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into SecretList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into SecretList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  SecretList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into SecretList
+
+throw  UnsupportedError('Cannot decode application/cbor response into SecretList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into SecretList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into SecretList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into SecretList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into SecretList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into SecretList
+
+throw  UnsupportedError('Cannot decode application/yaml response into SecretList'); } else {
+final json = jsonDecode(response.body);
+return  SecretList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// create a Secret
 ///
@@ -7414,39 +6103,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case >= 200 && < 203:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Secret.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Secret.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Secret
-throw UnsupportedError('Cannot decode application/cbor response into Secret');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Secret'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Secret
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Secret');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Secret'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Secret
-throw UnsupportedError('Cannot decode application/yaml response into Secret');
-}
-final json = jsonDecode(response.body);
-return Secret.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Secret'); } else {
 final json = jsonDecode(response.body);
-return Secret.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Secret.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Secret.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete collection of Secret
 ///
@@ -7509,32 +6185,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
-throw UnsupportedError('Cannot decode application/cbor response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
-throw UnsupportedError('Cannot decode application/yaml response into Status');
-}
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
+
+throw  UnsupportedError('Cannot decode application/cbor response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
+
+throw  UnsupportedError('Cannot decode application/yaml response into Status'); } else {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// read the specified Secret
 ///
@@ -7556,32 +6222,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Secret.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Secret
-throw UnsupportedError('Cannot decode application/cbor response into Secret');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Secret
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Secret');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Secret
-throw UnsupportedError('Cannot decode application/yaml response into Secret');
-}
-final json = jsonDecode(response.body);
-return Secret.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Secret.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Secret
+
+throw  UnsupportedError('Cannot decode application/cbor response into Secret'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Secret
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Secret'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Secret
+
+throw  UnsupportedError('Cannot decode application/yaml response into Secret'); } else {
+final json = jsonDecode(response.body);
+return  Secret.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace the specified Secret
 ///
@@ -7614,39 +6270,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Secret.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Secret.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Secret
-throw UnsupportedError('Cannot decode application/cbor response into Secret');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Secret'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Secret
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Secret');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Secret'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Secret
-throw UnsupportedError('Cannot decode application/yaml response into Secret');
-}
-final json = jsonDecode(response.body);
-return Secret.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Secret'); } else {
 final json = jsonDecode(response.body);
-return Secret.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Secret.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Secret.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update the specified Secret
 ///
@@ -7682,39 +6325,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Secret.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Secret.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Secret
-throw UnsupportedError('Cannot decode application/cbor response into Secret');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Secret'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Secret
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Secret');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Secret'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Secret
-throw UnsupportedError('Cannot decode application/yaml response into Secret');
-}
-final json = jsonDecode(response.body);
-return Secret.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Secret'); } else {
 final json = jsonDecode(response.body);
-return Secret.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Secret.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Secret.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete a Secret
 ///
@@ -7753,39 +6383,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 202:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Status.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
-throw UnsupportedError('Cannot decode application/cbor response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
-throw UnsupportedError('Cannot decode application/yaml response into Status');
-}
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Status'); } else {
 final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Status.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind ServiceAccount
 ///
@@ -7837,44 +6454,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return ServiceAccountList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ServiceAccountList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ServiceAccountList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return ServiceAccountList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ServiceAccountList
-throw UnsupportedError('Cannot decode application/cbor response into ServiceAccountList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into ServiceAccountList
-throw UnsupportedError('Cannot decode application/cbor-seq response into ServiceAccountList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ServiceAccountList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ServiceAccountList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ServiceAccountList
-throw UnsupportedError('Cannot decode application/yaml response into ServiceAccountList');
-}
-final json = jsonDecode(response.body);
-return ServiceAccountList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  ServiceAccountList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ServiceAccountList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ServiceAccountList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  ServiceAccountList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ServiceAccountList
+
+throw  UnsupportedError('Cannot decode application/cbor response into ServiceAccountList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into ServiceAccountList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into ServiceAccountList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ServiceAccountList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ServiceAccountList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ServiceAccountList
+
+throw  UnsupportedError('Cannot decode application/yaml response into ServiceAccountList'); } else {
+final json = jsonDecode(response.body);
+return  ServiceAccountList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// create a ServiceAccount
 ///
@@ -7907,39 +6510,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case >= 200 && < 203:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ServiceAccount.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  ServiceAccount.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ServiceAccount
-throw UnsupportedError('Cannot decode application/cbor response into ServiceAccount');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into ServiceAccount'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ServiceAccount
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ServiceAccount');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ServiceAccount'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ServiceAccount
-throw UnsupportedError('Cannot decode application/yaml response into ServiceAccount');
-}
-final json = jsonDecode(response.body);
-return ServiceAccount.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into ServiceAccount'); } else {
 final json = jsonDecode(response.body);
-return ServiceAccount.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ServiceAccount.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  ServiceAccount.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete collection of ServiceAccount
 ///
@@ -8002,32 +6592,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
-throw UnsupportedError('Cannot decode application/cbor response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
-throw UnsupportedError('Cannot decode application/yaml response into Status');
-}
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
+
+throw  UnsupportedError('Cannot decode application/cbor response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
+
+throw  UnsupportedError('Cannot decode application/yaml response into Status'); } else {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// read the specified ServiceAccount
 ///
@@ -8049,32 +6629,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return ServiceAccount.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ServiceAccount
-throw UnsupportedError('Cannot decode application/cbor response into ServiceAccount');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ServiceAccount
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ServiceAccount');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ServiceAccount
-throw UnsupportedError('Cannot decode application/yaml response into ServiceAccount');
-}
-final json = jsonDecode(response.body);
-return ServiceAccount.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  ServiceAccount.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ServiceAccount
+
+throw  UnsupportedError('Cannot decode application/cbor response into ServiceAccount'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ServiceAccount
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ServiceAccount'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ServiceAccount
+
+throw  UnsupportedError('Cannot decode application/yaml response into ServiceAccount'); } else {
+final json = jsonDecode(response.body);
+return  ServiceAccount.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace the specified ServiceAccount
 ///
@@ -8107,39 +6677,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ServiceAccount.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  ServiceAccount.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ServiceAccount
-throw UnsupportedError('Cannot decode application/cbor response into ServiceAccount');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into ServiceAccount'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ServiceAccount
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ServiceAccount');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ServiceAccount'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ServiceAccount
-throw UnsupportedError('Cannot decode application/yaml response into ServiceAccount');
-}
-final json = jsonDecode(response.body);
-return ServiceAccount.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into ServiceAccount'); } else {
 final json = jsonDecode(response.body);
-return ServiceAccount.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ServiceAccount.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  ServiceAccount.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update the specified ServiceAccount
 ///
@@ -8175,39 +6732,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ServiceAccount.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  ServiceAccount.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ServiceAccount
-throw UnsupportedError('Cannot decode application/cbor response into ServiceAccount');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into ServiceAccount'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ServiceAccount
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ServiceAccount');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ServiceAccount'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ServiceAccount
-throw UnsupportedError('Cannot decode application/yaml response into ServiceAccount');
-}
-final json = jsonDecode(response.body);
-return ServiceAccount.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into ServiceAccount'); } else {
 final json = jsonDecode(response.body);
-return ServiceAccount.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ServiceAccount.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  ServiceAccount.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete a ServiceAccount
 ///
@@ -8246,39 +6790,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 202:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ServiceAccount.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  ServiceAccount.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ServiceAccount
-throw UnsupportedError('Cannot decode application/cbor response into ServiceAccount');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into ServiceAccount'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ServiceAccount
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ServiceAccount');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ServiceAccount'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ServiceAccount
-throw UnsupportedError('Cannot decode application/yaml response into ServiceAccount');
-}
-final json = jsonDecode(response.body);
-return ServiceAccount.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into ServiceAccount'); } else {
 final json = jsonDecode(response.body);
-return ServiceAccount.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ServiceAccount.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  ServiceAccount.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// create token of a ServiceAccount
 ///
@@ -8311,39 +6842,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case >= 200 && < 203:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return TokenRequest.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  TokenRequest.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into TokenRequest
-throw UnsupportedError('Cannot decode application/cbor response into TokenRequest');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into TokenRequest'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into TokenRequest
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into TokenRequest');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into TokenRequest'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into TokenRequest
-throw UnsupportedError('Cannot decode application/yaml response into TokenRequest');
-}
-final json = jsonDecode(response.body);
-return TokenRequest.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into TokenRequest'); } else {
 final json = jsonDecode(response.body);
-return TokenRequest.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  TokenRequest.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  TokenRequest.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind Service
 ///
@@ -8395,44 +6913,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return ServiceList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ServiceList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ServiceList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return ServiceList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ServiceList
-throw UnsupportedError('Cannot decode application/cbor response into ServiceList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into ServiceList
-throw UnsupportedError('Cannot decode application/cbor-seq response into ServiceList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ServiceList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ServiceList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ServiceList
-throw UnsupportedError('Cannot decode application/yaml response into ServiceList');
-}
-final json = jsonDecode(response.body);
-return ServiceList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  ServiceList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ServiceList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ServiceList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  ServiceList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ServiceList
+
+throw  UnsupportedError('Cannot decode application/cbor response into ServiceList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into ServiceList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into ServiceList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ServiceList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ServiceList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ServiceList
+
+throw  UnsupportedError('Cannot decode application/yaml response into ServiceList'); } else {
+final json = jsonDecode(response.body);
+return  ServiceList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// create a Service
 ///
@@ -8465,39 +6969,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case >= 200 && < 203:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Service.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Service.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Service
-throw UnsupportedError('Cannot decode application/cbor response into Service');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Service'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Service
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Service');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Service'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Service
-throw UnsupportedError('Cannot decode application/yaml response into Service');
-}
-final json = jsonDecode(response.body);
-return Service.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Service'); } else {
 final json = jsonDecode(response.body);
-return Service.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Service.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Service.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete collection of Service
 ///
@@ -8560,32 +7051,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
-throw UnsupportedError('Cannot decode application/cbor response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
-throw UnsupportedError('Cannot decode application/yaml response into Status');
-}
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
+
+throw  UnsupportedError('Cannot decode application/cbor response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
+
+throw  UnsupportedError('Cannot decode application/yaml response into Status'); } else {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// read the specified Service
 ///
@@ -8607,32 +7088,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Service.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Service
-throw UnsupportedError('Cannot decode application/cbor response into Service');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Service
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Service');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Service
-throw UnsupportedError('Cannot decode application/yaml response into Service');
-}
-final json = jsonDecode(response.body);
-return Service.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Service.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Service
+
+throw  UnsupportedError('Cannot decode application/cbor response into Service'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Service
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Service'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Service
+
+throw  UnsupportedError('Cannot decode application/yaml response into Service'); } else {
+final json = jsonDecode(response.body);
+return  Service.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace the specified Service
 ///
@@ -8665,39 +7136,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Service.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Service.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Service
-throw UnsupportedError('Cannot decode application/cbor response into Service');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Service'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Service
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Service');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Service'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Service
-throw UnsupportedError('Cannot decode application/yaml response into Service');
-}
-final json = jsonDecode(response.body);
-return Service.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Service'); } else {
 final json = jsonDecode(response.body);
-return Service.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Service.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Service.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update the specified Service
 ///
@@ -8733,39 +7191,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Service.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Service.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Service
-throw UnsupportedError('Cannot decode application/cbor response into Service');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Service'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Service
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Service');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Service'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Service
-throw UnsupportedError('Cannot decode application/yaml response into Service');
-}
-final json = jsonDecode(response.body);
-return Service.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Service'); } else {
 final json = jsonDecode(response.body);
-return Service.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Service.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Service.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete a Service
 ///
@@ -8804,39 +7249,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 202:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Service.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Service.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Service
-throw UnsupportedError('Cannot decode application/cbor response into Service');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Service'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Service
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Service');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Service'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Service
-throw UnsupportedError('Cannot decode application/yaml response into Service');
-}
-final json = jsonDecode(response.body);
-return Service.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Service'); } else {
 final json = jsonDecode(response.body);
-return Service.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Service.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Service.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// connect GET requests to proxy of Service
 ///
@@ -8858,14 +7290,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect POST requests to proxy of Service
 ///
@@ -8887,14 +7314,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect PUT requests to proxy of Service
 ///
@@ -8916,14 +7338,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect PATCH requests to proxy of Service
 ///
@@ -8945,14 +7362,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect DELETE requests to proxy of Service
 ///
@@ -8974,14 +7386,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect HEAD requests to proxy of Service
 ///
@@ -9003,14 +7410,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect OPTIONS requests to proxy of Service
 ///
@@ -9032,14 +7434,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect GET requests to proxy of Service
 ///
@@ -9061,14 +7458,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect POST requests to proxy of Service
 ///
@@ -9090,14 +7482,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect PUT requests to proxy of Service
 ///
@@ -9119,14 +7506,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect PATCH requests to proxy of Service
 ///
@@ -9148,14 +7530,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect DELETE requests to proxy of Service
 ///
@@ -9177,14 +7554,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect HEAD requests to proxy of Service
 ///
@@ -9206,14 +7578,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect OPTIONS requests to proxy of Service
 ///
@@ -9235,14 +7602,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// read status of the specified Service
 ///
@@ -9264,32 +7626,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Service.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Service
-throw UnsupportedError('Cannot decode application/cbor response into Service');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Service
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Service');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Service
-throw UnsupportedError('Cannot decode application/yaml response into Service');
-}
-final json = jsonDecode(response.body);
-return Service.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Service.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Service
+
+throw  UnsupportedError('Cannot decode application/cbor response into Service'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Service
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Service'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Service
+
+throw  UnsupportedError('Cannot decode application/yaml response into Service'); } else {
+final json = jsonDecode(response.body);
+return  Service.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace status of the specified Service
 ///
@@ -9322,39 +7674,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Service.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Service.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Service
-throw UnsupportedError('Cannot decode application/cbor response into Service');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Service'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Service
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Service');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Service'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Service
-throw UnsupportedError('Cannot decode application/yaml response into Service');
-}
-final json = jsonDecode(response.body);
-return Service.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Service'); } else {
 final json = jsonDecode(response.body);
-return Service.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Service.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Service.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update status of the specified Service
 ///
@@ -9390,39 +7729,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Service.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Service.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Service
-throw UnsupportedError('Cannot decode application/cbor response into Service');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Service'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Service
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Service');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Service'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Service
-throw UnsupportedError('Cannot decode application/yaml response into Service');
-}
-final json = jsonDecode(response.body);
-return Service.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Service'); } else {
 final json = jsonDecode(response.body);
-return Service.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Service.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Service.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// read the specified Namespace
 ///
@@ -9444,32 +7770,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Namespace.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Namespace
-throw UnsupportedError('Cannot decode application/cbor response into Namespace');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Namespace
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Namespace');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Namespace
-throw UnsupportedError('Cannot decode application/yaml response into Namespace');
-}
-final json = jsonDecode(response.body);
-return Namespace.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Namespace.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Namespace
+
+throw  UnsupportedError('Cannot decode application/cbor response into Namespace'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Namespace
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Namespace'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Namespace
+
+throw  UnsupportedError('Cannot decode application/yaml response into Namespace'); } else {
+final json = jsonDecode(response.body);
+return  Namespace.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace the specified Namespace
 ///
@@ -9502,39 +7818,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Namespace.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Namespace.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Namespace
-throw UnsupportedError('Cannot decode application/cbor response into Namespace');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Namespace'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Namespace
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Namespace');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Namespace'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Namespace
-throw UnsupportedError('Cannot decode application/yaml response into Namespace');
-}
-final json = jsonDecode(response.body);
-return Namespace.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Namespace'); } else {
 final json = jsonDecode(response.body);
-return Namespace.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Namespace.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Namespace.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update the specified Namespace
 ///
@@ -9570,39 +7873,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Namespace.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Namespace.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Namespace
-throw UnsupportedError('Cannot decode application/cbor response into Namespace');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Namespace'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Namespace
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Namespace');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Namespace'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Namespace
-throw UnsupportedError('Cannot decode application/yaml response into Namespace');
-}
-final json = jsonDecode(response.body);
-return Namespace.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Namespace'); } else {
 final json = jsonDecode(response.body);
-return Namespace.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Namespace.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Namespace.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete a Namespace
 ///
@@ -9641,39 +7931,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 202:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Status.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
-throw UnsupportedError('Cannot decode application/cbor response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
-throw UnsupportedError('Cannot decode application/yaml response into Status');
-}
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Status'); } else {
 final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Status.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace finalize of the specified Namespace
 ///
@@ -9706,39 +7983,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Namespace.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Namespace.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Namespace
-throw UnsupportedError('Cannot decode application/cbor response into Namespace');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Namespace'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Namespace
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Namespace');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Namespace'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Namespace
-throw UnsupportedError('Cannot decode application/yaml response into Namespace');
-}
-final json = jsonDecode(response.body);
-return Namespace.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Namespace'); } else {
 final json = jsonDecode(response.body);
-return Namespace.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Namespace.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Namespace.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// read status of the specified Namespace
 ///
@@ -9760,32 +8024,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Namespace.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Namespace
-throw UnsupportedError('Cannot decode application/cbor response into Namespace');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Namespace
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Namespace');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Namespace
-throw UnsupportedError('Cannot decode application/yaml response into Namespace');
-}
-final json = jsonDecode(response.body);
-return Namespace.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Namespace.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Namespace
+
+throw  UnsupportedError('Cannot decode application/cbor response into Namespace'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Namespace
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Namespace'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Namespace
+
+throw  UnsupportedError('Cannot decode application/yaml response into Namespace'); } else {
+final json = jsonDecode(response.body);
+return  Namespace.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace status of the specified Namespace
 ///
@@ -9818,39 +8072,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Namespace.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Namespace.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Namespace
-throw UnsupportedError('Cannot decode application/cbor response into Namespace');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Namespace'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Namespace
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Namespace');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Namespace'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Namespace
-throw UnsupportedError('Cannot decode application/yaml response into Namespace');
-}
-final json = jsonDecode(response.body);
-return Namespace.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Namespace'); } else {
 final json = jsonDecode(response.body);
-return Namespace.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Namespace.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Namespace.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update status of the specified Namespace
 ///
@@ -9886,39 +8127,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Namespace.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Namespace.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Namespace
-throw UnsupportedError('Cannot decode application/cbor response into Namespace');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Namespace'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Namespace
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Namespace');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Namespace'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Namespace
-throw UnsupportedError('Cannot decode application/yaml response into Namespace');
-}
-final json = jsonDecode(response.body);
-return Namespace.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Namespace'); } else {
 final json = jsonDecode(response.body);
-return Namespace.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Namespace.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Namespace.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind Node
 ///
@@ -9970,44 +8198,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return NodeList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into NodeList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into NodeList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return NodeList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into NodeList
-throw UnsupportedError('Cannot decode application/cbor response into NodeList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into NodeList
-throw UnsupportedError('Cannot decode application/cbor-seq response into NodeList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into NodeList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into NodeList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into NodeList
-throw UnsupportedError('Cannot decode application/yaml response into NodeList');
-}
-final json = jsonDecode(response.body);
-return NodeList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  NodeList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into NodeList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into NodeList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  NodeList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into NodeList
+
+throw  UnsupportedError('Cannot decode application/cbor response into NodeList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into NodeList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into NodeList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into NodeList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into NodeList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into NodeList
+
+throw  UnsupportedError('Cannot decode application/yaml response into NodeList'); } else {
+final json = jsonDecode(response.body);
+return  NodeList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// create a Node
 ///
@@ -10040,39 +8254,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case >= 200 && < 203:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Node.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Node.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Node
-throw UnsupportedError('Cannot decode application/cbor response into Node');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Node'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Node
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Node');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Node'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Node
-throw UnsupportedError('Cannot decode application/yaml response into Node');
-}
-final json = jsonDecode(response.body);
-return Node.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Node'); } else {
 final json = jsonDecode(response.body);
-return Node.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Node.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Node.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete collection of Node
 ///
@@ -10135,32 +8336,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
-throw UnsupportedError('Cannot decode application/cbor response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
-throw UnsupportedError('Cannot decode application/yaml response into Status');
-}
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
+
+throw  UnsupportedError('Cannot decode application/cbor response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
+
+throw  UnsupportedError('Cannot decode application/yaml response into Status'); } else {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// read the specified Node
 ///
@@ -10182,32 +8373,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Node.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Node
-throw UnsupportedError('Cannot decode application/cbor response into Node');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Node
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Node');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Node
-throw UnsupportedError('Cannot decode application/yaml response into Node');
-}
-final json = jsonDecode(response.body);
-return Node.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Node.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Node
+
+throw  UnsupportedError('Cannot decode application/cbor response into Node'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Node
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Node'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Node
+
+throw  UnsupportedError('Cannot decode application/yaml response into Node'); } else {
+final json = jsonDecode(response.body);
+return  Node.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace the specified Node
 ///
@@ -10240,39 +8421,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Node.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Node.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Node
-throw UnsupportedError('Cannot decode application/cbor response into Node');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Node'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Node
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Node');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Node'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Node
-throw UnsupportedError('Cannot decode application/yaml response into Node');
-}
-final json = jsonDecode(response.body);
-return Node.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Node'); } else {
 final json = jsonDecode(response.body);
-return Node.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Node.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Node.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update the specified Node
 ///
@@ -10308,39 +8476,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Node.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Node.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Node
-throw UnsupportedError('Cannot decode application/cbor response into Node');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Node'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Node
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Node');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Node'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Node
-throw UnsupportedError('Cannot decode application/yaml response into Node');
-}
-final json = jsonDecode(response.body);
-return Node.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Node'); } else {
 final json = jsonDecode(response.body);
-return Node.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Node.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Node.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete a Node
 ///
@@ -10379,39 +8534,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 202:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Status.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
-throw UnsupportedError('Cannot decode application/cbor response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
-throw UnsupportedError('Cannot decode application/yaml response into Status');
-}
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Status'); } else {
 final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Status.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// connect GET requests to proxy of Node
 ///
@@ -10433,14 +8575,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect POST requests to proxy of Node
 ///
@@ -10462,14 +8599,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect PUT requests to proxy of Node
 ///
@@ -10491,14 +8623,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect PATCH requests to proxy of Node
 ///
@@ -10520,14 +8647,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect DELETE requests to proxy of Node
 ///
@@ -10549,14 +8671,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect HEAD requests to proxy of Node
 ///
@@ -10578,14 +8695,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect OPTIONS requests to proxy of Node
 ///
@@ -10607,14 +8719,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect GET requests to proxy of Node
 ///
@@ -10636,14 +8743,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect POST requests to proxy of Node
 ///
@@ -10665,14 +8767,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect PUT requests to proxy of Node
 ///
@@ -10694,14 +8791,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect PATCH requests to proxy of Node
 ///
@@ -10723,14 +8815,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect DELETE requests to proxy of Node
 ///
@@ -10752,14 +8839,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect HEAD requests to proxy of Node
 ///
@@ -10781,14 +8863,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// connect OPTIONS requests to proxy of Node
 ///
@@ -10810,14 +8887,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json as String;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json as String;}, );}
 ///
 /// read status of the specified Node
 ///
@@ -10839,32 +8911,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Node.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Node
-throw UnsupportedError('Cannot decode application/cbor response into Node');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Node
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Node');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Node
-throw UnsupportedError('Cannot decode application/yaml response into Node');
-}
-final json = jsonDecode(response.body);
-return Node.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Node.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Node
+
+throw  UnsupportedError('Cannot decode application/cbor response into Node'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Node
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Node'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Node
+
+throw  UnsupportedError('Cannot decode application/yaml response into Node'); } else {
+final json = jsonDecode(response.body);
+return  Node.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace status of the specified Node
 ///
@@ -10897,39 +8959,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Node.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Node.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Node
-throw UnsupportedError('Cannot decode application/cbor response into Node');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Node'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Node
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Node');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Node'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Node
-throw UnsupportedError('Cannot decode application/yaml response into Node');
-}
-final json = jsonDecode(response.body);
-return Node.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Node'); } else {
 final json = jsonDecode(response.body);
-return Node.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Node.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Node.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update status of the specified Node
 ///
@@ -10965,39 +9014,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Node.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  Node.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Node
-throw UnsupportedError('Cannot decode application/cbor response into Node');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into Node'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Node
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Node');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Node'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Node
-throw UnsupportedError('Cannot decode application/yaml response into Node');
-}
-final json = jsonDecode(response.body);
-return Node.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into Node'); } else {
 final json = jsonDecode(response.body);
-return Node.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  Node.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  Node.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind PersistentVolumeClaim
 ///
@@ -11049,44 +9085,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return PersistentVolumeClaimList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PersistentVolumeClaimList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PersistentVolumeClaimList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return PersistentVolumeClaimList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolumeClaimList
-throw UnsupportedError('Cannot decode application/cbor response into PersistentVolumeClaimList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into PersistentVolumeClaimList
-throw UnsupportedError('Cannot decode application/cbor-seq response into PersistentVolumeClaimList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaimList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaimList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolumeClaimList
-throw UnsupportedError('Cannot decode application/yaml response into PersistentVolumeClaimList');
-}
-final json = jsonDecode(response.body);
-return PersistentVolumeClaimList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  PersistentVolumeClaimList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PersistentVolumeClaimList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PersistentVolumeClaimList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  PersistentVolumeClaimList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolumeClaimList
+
+throw  UnsupportedError('Cannot decode application/cbor response into PersistentVolumeClaimList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into PersistentVolumeClaimList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into PersistentVolumeClaimList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaimList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeClaimList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolumeClaimList
+
+throw  UnsupportedError('Cannot decode application/yaml response into PersistentVolumeClaimList'); } else {
+final json = jsonDecode(response.body);
+return  PersistentVolumeClaimList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind PersistentVolume
 ///
@@ -11138,44 +9160,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return PersistentVolumeList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PersistentVolumeList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PersistentVolumeList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return PersistentVolumeList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolumeList
-throw UnsupportedError('Cannot decode application/cbor response into PersistentVolumeList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into PersistentVolumeList
-throw UnsupportedError('Cannot decode application/cbor-seq response into PersistentVolumeList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolumeList
-throw UnsupportedError('Cannot decode application/yaml response into PersistentVolumeList');
-}
-final json = jsonDecode(response.body);
-return PersistentVolumeList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  PersistentVolumeList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PersistentVolumeList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PersistentVolumeList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  PersistentVolumeList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolumeList
+
+throw  UnsupportedError('Cannot decode application/cbor response into PersistentVolumeList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into PersistentVolumeList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into PersistentVolumeList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolumeList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolumeList
+
+throw  UnsupportedError('Cannot decode application/yaml response into PersistentVolumeList'); } else {
+final json = jsonDecode(response.body);
+return  PersistentVolumeList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// create a PersistentVolume
 ///
@@ -11208,39 +9216,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case >= 200 && < 203:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return PersistentVolume.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  PersistentVolume.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolume
-throw UnsupportedError('Cannot decode application/cbor response into PersistentVolume');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into PersistentVolume'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolume
-throw UnsupportedError('Cannot decode application/yaml response into PersistentVolume');
-}
-final json = jsonDecode(response.body);
-return PersistentVolume.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into PersistentVolume'); } else {
 final json = jsonDecode(response.body);
-return PersistentVolume.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  PersistentVolume.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  PersistentVolume.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete collection of PersistentVolume
 ///
@@ -11303,32 +9298,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
-throw UnsupportedError('Cannot decode application/cbor response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
-throw UnsupportedError('Cannot decode application/yaml response into Status');
-}
-final json = jsonDecode(response.body);
-return Status.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into Status
+
+throw  UnsupportedError('Cannot decode application/cbor response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into Status
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into Status'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into Status
+
+throw  UnsupportedError('Cannot decode application/yaml response into Status'); } else {
+final json = jsonDecode(response.body);
+return  Status.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// read the specified PersistentVolume
 ///
@@ -11350,32 +9335,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return PersistentVolume.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolume
-throw UnsupportedError('Cannot decode application/cbor response into PersistentVolume');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolume
-throw UnsupportedError('Cannot decode application/yaml response into PersistentVolume');
-}
-final json = jsonDecode(response.body);
-return PersistentVolume.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  PersistentVolume.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolume
+
+throw  UnsupportedError('Cannot decode application/cbor response into PersistentVolume'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolume
+
+throw  UnsupportedError('Cannot decode application/yaml response into PersistentVolume'); } else {
+final json = jsonDecode(response.body);
+return  PersistentVolume.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace the specified PersistentVolume
 ///
@@ -11408,39 +9383,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return PersistentVolume.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  PersistentVolume.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolume
-throw UnsupportedError('Cannot decode application/cbor response into PersistentVolume');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into PersistentVolume'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolume
-throw UnsupportedError('Cannot decode application/yaml response into PersistentVolume');
-}
-final json = jsonDecode(response.body);
-return PersistentVolume.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into PersistentVolume'); } else {
 final json = jsonDecode(response.body);
-return PersistentVolume.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  PersistentVolume.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  PersistentVolume.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update the specified PersistentVolume
 ///
@@ -11476,39 +9438,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return PersistentVolume.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  PersistentVolume.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolume
-throw UnsupportedError('Cannot decode application/cbor response into PersistentVolume');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into PersistentVolume'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolume
-throw UnsupportedError('Cannot decode application/yaml response into PersistentVolume');
-}
-final json = jsonDecode(response.body);
-return PersistentVolume.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into PersistentVolume'); } else {
 final json = jsonDecode(response.body);
-return PersistentVolume.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  PersistentVolume.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  PersistentVolume.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// delete a PersistentVolume
 ///
@@ -11547,39 +9496,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 202:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return PersistentVolume.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  PersistentVolume.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolume
-throw UnsupportedError('Cannot decode application/cbor response into PersistentVolume');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into PersistentVolume'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolume
-throw UnsupportedError('Cannot decode application/yaml response into PersistentVolume');
-}
-final json = jsonDecode(response.body);
-return PersistentVolume.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into PersistentVolume'); } else {
 final json = jsonDecode(response.body);
-return PersistentVolume.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  PersistentVolume.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  PersistentVolume.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// read status of the specified PersistentVolume
 ///
@@ -11601,32 +9537,22 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return PersistentVolume.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolume
-throw UnsupportedError('Cannot decode application/cbor response into PersistentVolume');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolume
-throw UnsupportedError('Cannot decode application/yaml response into PersistentVolume');
-}
-final json = jsonDecode(response.body);
-return PersistentVolume.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  PersistentVolume.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolume
+
+throw  UnsupportedError('Cannot decode application/cbor response into PersistentVolume'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolume
+
+throw  UnsupportedError('Cannot decode application/yaml response into PersistentVolume'); } else {
+final json = jsonDecode(response.body);
+return  PersistentVolume.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// replace status of the specified PersistentVolume
 ///
@@ -11659,39 +9585,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return PersistentVolume.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  PersistentVolume.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolume
-throw UnsupportedError('Cannot decode application/cbor response into PersistentVolume');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into PersistentVolume'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolume
-throw UnsupportedError('Cannot decode application/yaml response into PersistentVolume');
-}
-final json = jsonDecode(response.body);
-return PersistentVolume.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into PersistentVolume'); } else {
 final json = jsonDecode(response.body);
-return PersistentVolume.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  PersistentVolume.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  PersistentVolume.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// partially update status of the specified PersistentVolume
 ///
@@ -11727,39 +9640,26 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 201:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return PersistentVolume.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
+return  PersistentVolume.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PersistentVolume
-throw UnsupportedError('Cannot decode application/cbor response into PersistentVolume');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
+
+throw  UnsupportedError('Cannot decode application/cbor response into PersistentVolume'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PersistentVolume'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PersistentVolume
-throw UnsupportedError('Cannot decode application/yaml response into PersistentVolume');
-}
-final json = jsonDecode(response.body);
-return PersistentVolume.fromJson(json as Map<String, dynamic>);
 
-default:
+throw  UnsupportedError('Cannot decode application/yaml response into PersistentVolume'); } else {
 final json = jsonDecode(response.body);
-return PersistentVolume.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  PersistentVolume.fromJson(json as Map<String, dynamic>); }default:
+final json = jsonDecode(response.body);
+return  PersistentVolume.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind Pod
 ///
@@ -11811,44 +9711,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return PodList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PodList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PodList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return PodList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PodList
-throw UnsupportedError('Cannot decode application/cbor response into PodList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into PodList
-throw UnsupportedError('Cannot decode application/cbor-seq response into PodList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PodList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PodList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PodList
-throw UnsupportedError('Cannot decode application/yaml response into PodList');
-}
-final json = jsonDecode(response.body);
-return PodList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  PodList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PodList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PodList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  PodList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PodList
+
+throw  UnsupportedError('Cannot decode application/cbor response into PodList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into PodList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into PodList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PodList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PodList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PodList
+
+throw  UnsupportedError('Cannot decode application/yaml response into PodList'); } else {
+final json = jsonDecode(response.body);
+return  PodList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind PodTemplate
 ///
@@ -11900,44 +9786,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return PodTemplateList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PodTemplateList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PodTemplateList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return PodTemplateList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PodTemplateList
-throw UnsupportedError('Cannot decode application/cbor response into PodTemplateList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into PodTemplateList
-throw UnsupportedError('Cannot decode application/cbor-seq response into PodTemplateList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PodTemplateList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PodTemplateList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PodTemplateList
-throw UnsupportedError('Cannot decode application/yaml response into PodTemplateList');
-}
-final json = jsonDecode(response.body);
-return PodTemplateList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  PodTemplateList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PodTemplateList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into PodTemplateList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  PodTemplateList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into PodTemplateList
+
+throw  UnsupportedError('Cannot decode application/cbor response into PodTemplateList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into PodTemplateList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into PodTemplateList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into PodTemplateList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into PodTemplateList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into PodTemplateList
+
+throw  UnsupportedError('Cannot decode application/yaml response into PodTemplateList'); } else {
+final json = jsonDecode(response.body);
+return  PodTemplateList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind ReplicationController
 ///
@@ -11989,44 +9861,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return ReplicationControllerList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ReplicationControllerList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ReplicationControllerList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return ReplicationControllerList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ReplicationControllerList
-throw UnsupportedError('Cannot decode application/cbor response into ReplicationControllerList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into ReplicationControllerList
-throw UnsupportedError('Cannot decode application/cbor-seq response into ReplicationControllerList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ReplicationControllerList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ReplicationControllerList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ReplicationControllerList
-throw UnsupportedError('Cannot decode application/yaml response into ReplicationControllerList');
-}
-final json = jsonDecode(response.body);
-return ReplicationControllerList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  ReplicationControllerList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ReplicationControllerList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ReplicationControllerList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  ReplicationControllerList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ReplicationControllerList
+
+throw  UnsupportedError('Cannot decode application/cbor response into ReplicationControllerList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into ReplicationControllerList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into ReplicationControllerList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ReplicationControllerList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ReplicationControllerList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ReplicationControllerList
+
+throw  UnsupportedError('Cannot decode application/yaml response into ReplicationControllerList'); } else {
+final json = jsonDecode(response.body);
+return  ReplicationControllerList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind ResourceQuota
 ///
@@ -12078,44 +9936,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return ResourceQuotaList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ResourceQuotaList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ResourceQuotaList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return ResourceQuotaList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ResourceQuotaList
-throw UnsupportedError('Cannot decode application/cbor response into ResourceQuotaList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into ResourceQuotaList
-throw UnsupportedError('Cannot decode application/cbor-seq response into ResourceQuotaList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuotaList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuotaList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ResourceQuotaList
-throw UnsupportedError('Cannot decode application/yaml response into ResourceQuotaList');
-}
-final json = jsonDecode(response.body);
-return ResourceQuotaList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  ResourceQuotaList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ResourceQuotaList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ResourceQuotaList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  ResourceQuotaList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ResourceQuotaList
+
+throw  UnsupportedError('Cannot decode application/cbor response into ResourceQuotaList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into ResourceQuotaList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into ResourceQuotaList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuotaList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ResourceQuotaList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ResourceQuotaList
+
+throw  UnsupportedError('Cannot decode application/yaml response into ResourceQuotaList'); } else {
+final json = jsonDecode(response.body);
+return  ResourceQuotaList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind Secret
 ///
@@ -12167,44 +10011,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return SecretList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into SecretList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into SecretList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return SecretList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into SecretList
-throw UnsupportedError('Cannot decode application/cbor response into SecretList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into SecretList
-throw UnsupportedError('Cannot decode application/cbor-seq response into SecretList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into SecretList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into SecretList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into SecretList
-throw UnsupportedError('Cannot decode application/yaml response into SecretList');
-}
-final json = jsonDecode(response.body);
-return SecretList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  SecretList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into SecretList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into SecretList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  SecretList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into SecretList
+
+throw  UnsupportedError('Cannot decode application/cbor response into SecretList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into SecretList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into SecretList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into SecretList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into SecretList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into SecretList
+
+throw  UnsupportedError('Cannot decode application/yaml response into SecretList'); } else {
+final json = jsonDecode(response.body);
+return  SecretList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind ServiceAccount
 ///
@@ -12256,44 +10086,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return ServiceAccountList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ServiceAccountList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ServiceAccountList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return ServiceAccountList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ServiceAccountList
-throw UnsupportedError('Cannot decode application/cbor response into ServiceAccountList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into ServiceAccountList
-throw UnsupportedError('Cannot decode application/cbor-seq response into ServiceAccountList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ServiceAccountList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ServiceAccountList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ServiceAccountList
-throw UnsupportedError('Cannot decode application/yaml response into ServiceAccountList');
-}
-final json = jsonDecode(response.body);
-return ServiceAccountList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  ServiceAccountList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ServiceAccountList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ServiceAccountList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  ServiceAccountList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ServiceAccountList
+
+throw  UnsupportedError('Cannot decode application/cbor response into ServiceAccountList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into ServiceAccountList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into ServiceAccountList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ServiceAccountList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ServiceAccountList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ServiceAccountList
+
+throw  UnsupportedError('Cannot decode application/yaml response into ServiceAccountList'); } else {
+final json = jsonDecode(response.body);
+return  ServiceAccountList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// list or watch objects of kind Service
 ///
@@ -12345,44 +10161,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return ServiceList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ServiceList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ServiceList');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return ServiceList.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ServiceList
-throw UnsupportedError('Cannot decode application/cbor response into ServiceList');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into ServiceList
-throw UnsupportedError('Cannot decode application/cbor-seq response into ServiceList');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ServiceList
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ServiceList');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ServiceList
-throw UnsupportedError('Cannot decode application/yaml response into ServiceList');
-}
-final json = jsonDecode(response.body);
-return ServiceList.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  ServiceList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ServiceList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into ServiceList'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  ServiceList.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into ServiceList
+
+throw  UnsupportedError('Cannot decode application/cbor response into ServiceList'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into ServiceList
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into ServiceList'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into ServiceList
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into ServiceList'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into ServiceList
+
+throw  UnsupportedError('Cannot decode application/yaml response into ServiceList'); } else {
+final json = jsonDecode(response.body);
+return  ServiceList.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of ConfigMap. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -12434,44 +10236,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of Endpoints. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -12523,44 +10311,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of Event. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -12612,44 +10386,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of LimitRange. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -12701,44 +10461,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of Namespace. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -12790,44 +10536,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of ConfigMap. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -12879,44 +10611,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch changes to an object of kind ConfigMap. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
@@ -12968,44 +10686,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of Endpoints. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -13057,44 +10761,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch changes to an object of kind Endpoints. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
@@ -13146,44 +10836,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of Event. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -13235,44 +10911,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch changes to an object of kind Event. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
@@ -13324,44 +10986,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of LimitRange. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -13413,44 +11061,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch changes to an object of kind LimitRange. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
@@ -13502,44 +11136,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of PersistentVolumeClaim. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -13591,44 +11211,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch changes to an object of kind PersistentVolumeClaim. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
@@ -13680,44 +11286,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of Pod. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -13769,44 +11361,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch changes to an object of kind Pod. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
@@ -13858,44 +11436,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of PodTemplate. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -13947,44 +11511,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch changes to an object of kind PodTemplate. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
@@ -14036,44 +11586,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of ReplicationController. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -14125,44 +11661,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch changes to an object of kind ReplicationController. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
@@ -14214,44 +11736,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of ResourceQuota. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -14303,44 +11811,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch changes to an object of kind ResourceQuota. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
@@ -14392,44 +11886,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of Secret. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -14481,44 +11961,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch changes to an object of kind Secret. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
@@ -14570,44 +12036,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of ServiceAccount. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -14659,44 +12111,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch changes to an object of kind ServiceAccount. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
@@ -14748,44 +12186,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of Service. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -14837,44 +12261,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch changes to an object of kind Service. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
@@ -14926,44 +12336,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch changes to an object of kind Namespace. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
@@ -15015,44 +12411,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of Node. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -15104,44 +12486,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch changes to an object of kind Node. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
@@ -15193,44 +12561,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of PersistentVolumeClaim. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -15282,44 +12636,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of PersistentVolume. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -15371,44 +12711,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch changes to an object of kind PersistentVolume. deprecated: use the 'watch' parameter with a list operation instead, filtered to a single item with the 'fieldSelector' parameter.
 ///
@@ -15460,44 +12786,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of Pod. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -15549,44 +12861,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of PodTemplate. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -15638,44 +12936,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of ReplicationController. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -15727,44 +13011,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of ResourceQuota. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -15816,44 +13086,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of Secret. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -15905,44 +13161,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of ServiceAccount. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -15994,44 +13236,30 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// watch individual changes to a list of Service. deprecated: use the 'watch' parameter with a list operation instead.
 ///
@@ -16083,42 +13311,28 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json;stream=watch')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/cbor-seq')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
-throw UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
-throw UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent');
-}
-if (responseMediaTypeMatches(contentType, 'application/yaml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
-throw UnsupportedError('Cannot decode application/yaml response into WatchEvent');
-}
-final json = jsonDecode(response.body);
-return WatchEvent.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json;stream=watch', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf;stream=watch', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf;stream=watch response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/cbor', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/cbor-seq', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/cbor-seq response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/cbor-seq response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/vnd.kubernetes.protobuf', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/vnd.kubernetes.protobuf response into WatchEvent'); } else if (responseMediaTypeMatches(contentType, 'application/yaml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/yaml response into WatchEvent
+
+throw  UnsupportedError('Cannot decode application/yaml response into WatchEvent'); } else {
+final json = jsonDecode(response.body);
+return  WatchEvent.fromJson(json as Map<String, dynamic>); }}, );}
 }

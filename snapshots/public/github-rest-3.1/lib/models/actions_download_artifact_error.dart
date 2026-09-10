@@ -6,14 +6,10 @@ sealed class ActionsDownloadArtifactError {const ActionsDownloadArtifactError();
 /// Decodes the payload for its declared status and content type.
 static ActionsDownloadArtifactError parse(ApiResponse response) {switch (response.statusCode) {
 case 302:
-return const ActionsDownloadArtifactError302();
-case 410:
+return  const ActionsDownloadArtifactError302();case 410:
 final json = jsonDecode(response.body);
-return ActionsDownloadArtifactError410(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ActionsDownloadArtifactErrorUnknown(response);
-}
-}
+return  ActionsDownloadArtifactError410(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ActionsDownloadArtifactErrorUnknown(response); }}
 }
 /// Response for 302.
 final class ActionsDownloadArtifactError302 extends ActionsDownloadArtifactError {const ActionsDownloadArtifactError302();

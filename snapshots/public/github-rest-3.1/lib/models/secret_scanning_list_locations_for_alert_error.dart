@@ -6,14 +6,10 @@ sealed class SecretScanningListLocationsForAlertError {const SecretScanningListL
 /// Decodes the payload for its declared status and content type.
 static SecretScanningListLocationsForAlertError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
-return const SecretScanningListLocationsForAlertError404();
-case 503:
+return  const SecretScanningListLocationsForAlertError404();case 503:
 final json = jsonDecode(response.body);
-return SecretScanningListLocationsForAlertError503(SecretScanningListLocationsForAlertResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return SecretScanningListLocationsForAlertErrorUnknown(response);
-}
-}
+return  SecretScanningListLocationsForAlertError503(SecretScanningListLocationsForAlertResponse503.fromJson(json as Map<String, dynamic>));default:
+return  SecretScanningListLocationsForAlertErrorUnknown(response); }}
 }
 /// Response for 404.
 final class SecretScanningListLocationsForAlertError404 extends SecretScanningListLocationsForAlertError {const SecretScanningListLocationsForAlertError404();

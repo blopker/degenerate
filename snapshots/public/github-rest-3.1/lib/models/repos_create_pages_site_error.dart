@@ -7,14 +7,10 @@ sealed class ReposCreatePagesSiteError {const ReposCreatePagesSiteError();
 static ReposCreatePagesSiteError parse(ApiResponse response) {switch (response.statusCode) {
 case 409:
 final json = jsonDecode(response.body);
-return ReposCreatePagesSiteError409(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposCreatePagesSiteError409(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposCreatePagesSiteError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposCreatePagesSiteErrorUnknown(response);
-}
-}
+return  ReposCreatePagesSiteError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposCreatePagesSiteErrorUnknown(response); }}
 }
 /// Response for 409 (application/json).
 final class ReposCreatePagesSiteError409 extends ReposCreatePagesSiteError {const ReposCreatePagesSiteError409(this.data);

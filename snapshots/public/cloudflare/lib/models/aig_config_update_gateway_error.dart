@@ -7,14 +7,10 @@ sealed class AigConfigUpdateGatewayError {const AigConfigUpdateGatewayError();
 static AigConfigUpdateGatewayError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return AigConfigUpdateGatewayError400(AigConfigUpdateGatewayResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  AigConfigUpdateGatewayError400(AigConfigUpdateGatewayResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return AigConfigUpdateGatewayError404(AigConfigUpdateGatewayResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return AigConfigUpdateGatewayErrorUnknown(response);
-}
-}
+return  AigConfigUpdateGatewayError404(AigConfigUpdateGatewayResponse404.fromJson(json as Map<String, dynamic>));default:
+return  AigConfigUpdateGatewayErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class AigConfigUpdateGatewayError400 extends AigConfigUpdateGatewayError {const AigConfigUpdateGatewayError400(this.data);

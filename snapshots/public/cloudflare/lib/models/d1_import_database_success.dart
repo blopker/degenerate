@@ -7,14 +7,10 @@ sealed class D1ImportDatabaseSuccess {const D1ImportDatabaseSuccess();
 static D1ImportDatabaseSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final json = jsonDecode(response.body) as Map<String, dynamic>;
-return D1ImportDatabaseSuccess200(D1ImportDatabaseResponseResult.fromJson(json['result'] as Map<String, dynamic>));
-case 202:
+return  D1ImportDatabaseSuccess200(D1ImportDatabaseResponseResult.fromJson(json['result'] as Map<String, dynamic>));case 202:
 final json = jsonDecode(response.body) as Map<String, dynamic>;
-return D1ImportDatabaseSuccess202(D1ImportDatabaseResponse202Result.fromJson(json['result'] as Map<String, dynamic>));
-default:
-return D1ImportDatabaseSuccessUnknown(response);
-}
-}
+return  D1ImportDatabaseSuccess202(D1ImportDatabaseResponse202Result.fromJson(json['result'] as Map<String, dynamic>));default:
+return  D1ImportDatabaseSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class D1ImportDatabaseSuccess200 extends D1ImportDatabaseSuccess {const D1ImportDatabaseSuccess200(this.data);

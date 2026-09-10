@@ -7,14 +7,10 @@ sealed class WorStatusTerminateWorkflowInstancesError {const WorStatusTerminateW
 static WorStatusTerminateWorkflowInstancesError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorStatusTerminateWorkflowInstancesError400(WorStatusTerminateWorkflowInstancesResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  WorStatusTerminateWorkflowInstancesError400(WorStatusTerminateWorkflowInstancesResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return WorStatusTerminateWorkflowInstancesError404(WorStatusTerminateWorkflowInstancesResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return WorStatusTerminateWorkflowInstancesErrorUnknown(response);
-}
-}
+return  WorStatusTerminateWorkflowInstancesError404(WorStatusTerminateWorkflowInstancesResponse404.fromJson(json as Map<String, dynamic>));default:
+return  WorStatusTerminateWorkflowInstancesErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class WorStatusTerminateWorkflowInstancesError400 extends WorStatusTerminateWorkflowInstancesError {const WorStatusTerminateWorkflowInstancesError400(this.data);

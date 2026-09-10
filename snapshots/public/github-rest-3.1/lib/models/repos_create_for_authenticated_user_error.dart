@@ -6,36 +6,24 @@ sealed class ReposCreateForAuthenticatedUserError {const ReposCreateForAuthentic
 /// Decodes the payload for its declared status and content type.
 static ReposCreateForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ReposCreateForAuthenticatedUserError304();
-case 400:
+return  const ReposCreateForAuthenticatedUserError304();case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ReposCreateForAuthenticatedUserError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  ReposCreateForAuthenticatedUserError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return ReposCreateForAuthenticatedUserError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  ReposCreateForAuthenticatedUserError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return ReposCreateForAuthenticatedUserError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 401:
+return  ReposCreateForAuthenticatedUserError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }case 401:
 final json = jsonDecode(response.body);
-return ReposCreateForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  ReposCreateForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return ReposCreateForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  ReposCreateForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return ReposCreateForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposCreateForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposCreateForAuthenticatedUserError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposCreateForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  ReposCreateForAuthenticatedUserError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposCreateForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ReposCreateForAuthenticatedUserError304 extends ReposCreateForAuthenticatedUserError {const ReposCreateForAuthenticatedUserError304();

@@ -20,14 +20,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountQueueMember.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountQueueMember.fromJson(json as Map<String, dynamic>);}, );}
 /// Dequeue a member from a queue and have the member's call begin executing the TwiML document at that URL
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/Queues/{QueueSid}/Members/{CallSid}.json`
@@ -46,14 +41,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountQueueMember.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountQueueMember.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieve the members of the queue
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Queues/{QueueSid}/Members.json`
@@ -80,12 +70,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListMemberResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListMemberResponse.fromJson(json as Map<String, dynamic>);}, );}
 }

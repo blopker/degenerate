@@ -7,14 +7,10 @@ sealed class AppsCreateFromManifestError {const AppsCreateFromManifestError();
 static AppsCreateFromManifestError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return AppsCreateFromManifestError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  AppsCreateFromManifestError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return AppsCreateFromManifestError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return AppsCreateFromManifestErrorUnknown(response);
-}
-}
+return  AppsCreateFromManifestError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));default:
+return  AppsCreateFromManifestErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class AppsCreateFromManifestError404 extends AppsCreateFromManifestError {const AppsCreateFromManifestError404(this.data);

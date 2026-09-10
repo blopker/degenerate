@@ -34,14 +34,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RoleListResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RoleListResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Assigns an organization role to a group within the organization.
 ///
 /// `POST /organization/groups/{group_id}/roles`
@@ -56,14 +51,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GroupRoleAssignment.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GroupRoleAssignment.fromJson(json as Map<String, dynamic>);}, );}
 /// Unassigns an organization role from a group within the organization.
 ///
 /// `DELETE /organization/groups/{group_id}/roles/{role_id}`
@@ -76,12 +66,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletedRoleAssignmentResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletedRoleAssignmentResource.fromJson(json as Map<String, dynamic>);}, );}
 }

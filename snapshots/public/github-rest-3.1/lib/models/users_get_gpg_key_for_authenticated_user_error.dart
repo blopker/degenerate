@@ -6,20 +6,14 @@ sealed class UsersGetGpgKeyForAuthenticatedUserError {const UsersGetGpgKeyForAut
 /// Decodes the payload for its declared status and content type.
 static UsersGetGpgKeyForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const UsersGetGpgKeyForAuthenticatedUserError304();
-case 401:
+return  const UsersGetGpgKeyForAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return UsersGetGpgKeyForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  UsersGetGpgKeyForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return UsersGetGpgKeyForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  UsersGetGpgKeyForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return UsersGetGpgKeyForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return UsersGetGpgKeyForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  UsersGetGpgKeyForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  UsersGetGpgKeyForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class UsersGetGpgKeyForAuthenticatedUserError304 extends UsersGetGpgKeyForAuthenticatedUserError {const UsersGetGpgKeyForAuthenticatedUserError304();

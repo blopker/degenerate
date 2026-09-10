@@ -6,14 +6,10 @@ sealed class MigrationsDownloadArchiveForOrgError {const MigrationsDownloadArchi
 /// Decodes the payload for its declared status and content type.
 static MigrationsDownloadArchiveForOrgError parse(ApiResponse response) {switch (response.statusCode) {
 case 302:
-return const MigrationsDownloadArchiveForOrgError302();
-case 404:
+return  const MigrationsDownloadArchiveForOrgError302();case 404:
 final json = jsonDecode(response.body);
-return MigrationsDownloadArchiveForOrgError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return MigrationsDownloadArchiveForOrgErrorUnknown(response);
-}
-}
+return  MigrationsDownloadArchiveForOrgError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  MigrationsDownloadArchiveForOrgErrorUnknown(response); }}
 }
 /// Response for 302.
 final class MigrationsDownloadArchiveForOrgError302 extends MigrationsDownloadArchiveForOrgError {const MigrationsDownloadArchiveForOrgError302();

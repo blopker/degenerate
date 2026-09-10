@@ -7,20 +7,14 @@ sealed class OrgsReviewPatGrantRequestsInBulkError {const OrgsReviewPatGrantRequ
 static OrgsReviewPatGrantRequestsInBulkError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return OrgsReviewPatGrantRequestsInBulkError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  OrgsReviewPatGrantRequestsInBulkError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return OrgsReviewPatGrantRequestsInBulkError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  OrgsReviewPatGrantRequestsInBulkError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return OrgsReviewPatGrantRequestsInBulkError422(ValidationError.fromJson(json as Map<String, dynamic>));
-case 500:
+return  OrgsReviewPatGrantRequestsInBulkError422(ValidationError.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return OrgsReviewPatGrantRequestsInBulkError500(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return OrgsReviewPatGrantRequestsInBulkErrorUnknown(response);
-}
-}
+return  OrgsReviewPatGrantRequestsInBulkError500(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  OrgsReviewPatGrantRequestsInBulkErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class OrgsReviewPatGrantRequestsInBulkError403 extends OrgsReviewPatGrantRequestsInBulkError {const OrgsReviewPatGrantRequestsInBulkError403(this.data);

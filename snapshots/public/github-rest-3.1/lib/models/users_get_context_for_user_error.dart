@@ -7,14 +7,10 @@ sealed class UsersGetContextForUserError {const UsersGetContextForUserError();
 static UsersGetContextForUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return UsersGetContextForUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  UsersGetContextForUserError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return UsersGetContextForUserError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return UsersGetContextForUserErrorUnknown(response);
-}
-}
+return  UsersGetContextForUserError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  UsersGetContextForUserErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class UsersGetContextForUserError404 extends UsersGetContextForUserError {const UsersGetContextForUserError404(this.data);

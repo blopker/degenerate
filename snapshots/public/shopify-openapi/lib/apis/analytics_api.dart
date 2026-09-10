@@ -45,11 +45,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new report
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#create-2020-01
@@ -77,11 +74,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single report created by your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#show-2020-01
@@ -104,11 +98,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a report
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#update-2020-01
@@ -125,11 +116,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a report
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#destroy-2020-01
@@ -144,11 +132,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of reports. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#index-2020-04
@@ -186,11 +171,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new report
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#create-2020-04
@@ -218,11 +200,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single report created by your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#show-2020-04
@@ -245,11 +224,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a report
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#update-2020-04
@@ -266,11 +242,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a report
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#destroy-2020-04
@@ -285,11 +258,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of reports. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#index-2020-07
@@ -327,11 +297,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new report
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#create-2020-07
@@ -359,11 +326,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single report created by your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#show-2020-07
@@ -386,11 +350,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a report
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#update-2020-07
@@ -407,11 +368,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a report
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#destroy-2020-07
@@ -426,11 +384,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of reports. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#index-2020-10
@@ -468,11 +423,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new report
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#create-2020-10
@@ -500,11 +452,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single report created by your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#show-2020-10
@@ -527,11 +476,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a report
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#update-2020-10
@@ -548,11 +494,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a report
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#destroy-2020-10
@@ -567,11 +510,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of reports. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#index-2021-01
@@ -609,11 +549,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new report
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#create-2021-01
@@ -641,11 +578,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single report created by your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#show-2021-01
@@ -668,11 +602,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a report
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#update-2021-01
@@ -689,11 +620,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a report
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#destroy-2021-01
@@ -708,11 +636,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of reports. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#index-unstable
@@ -750,11 +675,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a new report
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#create-unstable
@@ -782,11 +704,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single report created by your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#show-unstable
@@ -809,11 +728,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates a report
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#update-unstable
@@ -830,11 +746,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Deletes a report
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/analytics/report#destroy-unstable
@@ -849,9 +762,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

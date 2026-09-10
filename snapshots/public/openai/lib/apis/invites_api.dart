@@ -31,14 +31,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return InviteListResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  InviteListResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create an invite for a user to the organization. The invite must be accepted by the user before they have access to the organization.
 ///
 /// `POST /organization/invites`
@@ -53,14 +48,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Invite.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Invite.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieves an invite.
 ///
 /// `GET /organization/invites/{invite_id}`
@@ -73,14 +63,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Invite.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Invite.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete an invite. If the invite has already been accepted, it cannot be deleted.
 ///
 /// `DELETE /organization/invites/{invite_id}`
@@ -93,12 +78,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return InviteDeleteResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  InviteDeleteResponse.fromJson(json as Map<String, dynamic>);}, );}
 }

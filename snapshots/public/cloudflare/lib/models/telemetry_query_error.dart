@@ -7,17 +7,12 @@ sealed class TelemetryQueryError {const TelemetryQueryError();
 static TelemetryQueryError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return TelemetryQueryError400(TelemetryQueryResponse400.fromJson(json as Map<String, dynamic>));
-case 401:
+return  TelemetryQueryError400(TelemetryQueryResponse400.fromJson(json as Map<String, dynamic>));case 401:
 final json = jsonDecode(response.body);
-return TelemetryQueryError401(TelemetryQueryResponse401.fromJson(json as Map<String, dynamic>));
-case 500:
+return  TelemetryQueryError401(TelemetryQueryResponse401.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return TelemetryQueryError500(TelemetryQueryResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return TelemetryQueryErrorUnknown(response);
-}
-}
+return  TelemetryQueryError500(TelemetryQueryResponse500.fromJson(json as Map<String, dynamic>));default:
+return  TelemetryQueryErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class TelemetryQueryError400 extends TelemetryQueryError {const TelemetryQueryError400(this.data);

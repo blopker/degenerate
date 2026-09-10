@@ -42,14 +42,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetAllMeetingsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetAllMeetingsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create a meeting
 ///
 /// Create a meeting for the given App ID.
@@ -66,14 +61,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RealtimekitGenericSuccessResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RealtimekitGenericSuccessResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch a meeting for an App
 ///
 /// Returns a meeting details in an App for the given meeting ID.
@@ -96,24 +86,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RealtimekitGenericSuccessResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RealtimekitGenericSuccessResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 500:
 final json = jsonDecode(response.body);
-return RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Replace a meeting
 ///
 /// Replaces all the details for the given meeting ID.
@@ -130,14 +109,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RealtimekitGenericSuccessResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RealtimekitGenericSuccessResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Update a meeting
 ///
 /// Updates a meeting in an App for the given meeting ID.
@@ -154,24 +128,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RealtimekitGenericSuccessResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RealtimekitGenericSuccessResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 500:
 final json = jsonDecode(response.body);
-return RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Fetch all participants of a meeting
 ///
 /// Returns all participants detail for the given meeting ID.
@@ -197,24 +160,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetMeetingParticipantsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetMeetingParticipantsResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 500:
 final json = jsonDecode(response.body);
-return RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Add a participant
 ///
 /// Adds a participant to the given meeting ID.
@@ -231,24 +183,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AddParticipantResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AddParticipantResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 500:
 final json = jsonDecode(response.body);
-return RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Fetch a participant's detail
 ///
 /// Returns a participant details for the given meeting and participant ID.
@@ -263,24 +204,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetMeetingParticipantResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetMeetingParticipantResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 500:
 final json = jsonDecode(response.body);
-return RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Edit a participant's detail
 ///
 /// Updates a participant's details for the given meeting and participant ID.
@@ -297,24 +227,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return EditParticipantResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  EditParticipantResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 500:
 final json = jsonDecode(response.body);
-return RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete a participant
 ///
 /// Deletes a participant for the given meeting and participant ID.
@@ -329,24 +248,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeleteMeetingParticipantResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeleteMeetingParticipantResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 500:
 final json = jsonDecode(response.body);
-return RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Refresh participant's authentication token
 ///
 /// Regenerates participant's authentication token for the given meeting and participant ID.
@@ -361,22 +269,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return RegenerateTokenResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  RegenerateTokenResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 500:
 final json = jsonDecode(response.body);
-return RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

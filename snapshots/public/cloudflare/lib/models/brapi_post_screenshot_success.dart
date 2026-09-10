@@ -7,33 +7,16 @@ sealed class BrapiPostScreenshotSuccess {const BrapiPostScreenshotSuccess();
 static BrapiPostScreenshotSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return BrapiPostScreenshotSuccess200ApplicationJson(BrapiPostScreenshotResponse.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'image/jpg')) {
-final value = (() { return response.body; })();
-return BrapiPostScreenshotSuccess200ImageJpg(value);
-}
-if (responseMediaTypeMatches(contentType, 'image/png')) {
-final value = (() { return response.body; })();
-return BrapiPostScreenshotSuccess200ImageJpg(value);
-}
-if (responseMediaTypeMatches(contentType, 'image/webp')) {
-final value = (() { return response.body; })();
-return BrapiPostScreenshotSuccess200ImageJpg(value);
-}
-if (responseMediaTypeMatches(contentType, 'text/plain')) {
-final value = (() { return response.body; })();
-return BrapiPostScreenshotSuccess200ImageJpg(value);
-}
+return  BrapiPostScreenshotSuccess200ApplicationJson(BrapiPostScreenshotResponse.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'image/jpg', )) {
+return  BrapiPostScreenshotSuccess200ImageJpg(response.body); } else if (responseMediaTypeMatches(contentType, 'image/png', )) {
+return  BrapiPostScreenshotSuccess200ImageJpg(response.body); } else if (responseMediaTypeMatches(contentType, 'image/webp', )) {
+return  BrapiPostScreenshotSuccess200ImageJpg(response.body); } else if (responseMediaTypeMatches(contentType, 'text/plain', )) {
+return  BrapiPostScreenshotSuccess200ImageJpg(response.body); } else {
 final json = jsonDecode(response.body);
-return BrapiPostScreenshotSuccess200ApplicationJson(BrapiPostScreenshotResponse.fromJson(json as Map<String, dynamic>));
-
-default:
-return BrapiPostScreenshotSuccessUnknown(response);
-}
-}
+return  BrapiPostScreenshotSuccess200ApplicationJson(BrapiPostScreenshotResponse.fromJson(json as Map<String, dynamic>)); }default:
+return  BrapiPostScreenshotSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class BrapiPostScreenshotSuccess200ApplicationJson extends BrapiPostScreenshotSuccess {const BrapiPostScreenshotSuccess200ApplicationJson(this.data);

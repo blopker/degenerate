@@ -6,20 +6,14 @@ sealed class SearchCodeError {const SearchCodeError();
 /// Decodes the payload for its declared status and content type.
 static SearchCodeError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const SearchCodeError304();
-case 403:
+return  const SearchCodeError304();case 403:
 final json = jsonDecode(response.body);
-return SearchCodeError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  SearchCodeError403(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return SearchCodeError422(ValidationError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  SearchCodeError422(ValidationError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return SearchCodeError503(SearchCodeResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return SearchCodeErrorUnknown(response);
-}
-}
+return  SearchCodeError503(SearchCodeResponse503.fromJson(json as Map<String, dynamic>));default:
+return  SearchCodeErrorUnknown(response); }}
 }
 /// Response for 304.
 final class SearchCodeError304 extends SearchCodeError {const SearchCodeError304();

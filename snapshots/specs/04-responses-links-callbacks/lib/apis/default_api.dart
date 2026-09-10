@@ -21,19 +21,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: CreateJobSuccess.parse,
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: CreateJobSuccess.parse, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>); }}, );}
 ///
 /// `GET /jobs/{jobId}`
 Future<ApiResult<Job, Never>> getJob({required String jobId, RequestOptions? options, }) async {final headers = <String, String>{...apiConfig.defaultHeaders};
@@ -45,12 +37,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Job.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Job.fromJson(json as Map<String, dynamic>);}, );}
 }

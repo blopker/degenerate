@@ -6,17 +6,12 @@ sealed class SearchReposError {const SearchReposError();
 /// Decodes the payload for its declared status and content type.
 static SearchReposError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const SearchReposError304();
-case 422:
+return  const SearchReposError304();case 422:
 final json = jsonDecode(response.body);
-return SearchReposError422(ValidationError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  SearchReposError422(ValidationError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return SearchReposError503(SearchReposResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return SearchReposErrorUnknown(response);
-}
-}
+return  SearchReposError503(SearchReposResponse503.fromJson(json as Map<String, dynamic>));default:
+return  SearchReposErrorUnknown(response); }}
 }
 /// Response for 304.
 final class SearchReposError304 extends SearchReposError {const SearchReposError304();

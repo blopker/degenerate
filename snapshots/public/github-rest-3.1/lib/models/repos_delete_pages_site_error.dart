@@ -7,17 +7,12 @@ sealed class ReposDeletePagesSiteError {const ReposDeletePagesSiteError();
 static ReposDeletePagesSiteError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ReposDeletePagesSiteError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 409:
+return  ReposDeletePagesSiteError404(BasicError.fromJson(json as Map<String, dynamic>));case 409:
 final json = jsonDecode(response.body);
-return ReposDeletePagesSiteError409(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposDeletePagesSiteError409(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposDeletePagesSiteError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposDeletePagesSiteErrorUnknown(response);
-}
-}
+return  ReposDeletePagesSiteError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposDeletePagesSiteErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class ReposDeletePagesSiteError404 extends ReposDeletePagesSiteError {const ReposDeletePagesSiteError404(this.data);

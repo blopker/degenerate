@@ -7,13 +7,9 @@ sealed class ReplaceWebhookError {const ReplaceWebhookError();
 static ReplaceWebhookError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return ReplaceWebhookError400(RealtimekitErrorResponse.fromJson(json as Map<String, dynamic>));
-case 401:
-return const ReplaceWebhookError401();
-default:
-return ReplaceWebhookErrorUnknown(response);
-}
-}
+return  ReplaceWebhookError400(RealtimekitErrorResponse.fromJson(json as Map<String, dynamic>));case 401:
+return  const ReplaceWebhookError401();default:
+return  ReplaceWebhookErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class ReplaceWebhookError400 extends ReplaceWebhookError {const ReplaceWebhookError400(this.data);

@@ -7,13 +7,9 @@ sealed class ActionsCreateWorkflowDispatchSuccess {const ActionsCreateWorkflowDi
 static ActionsCreateWorkflowDispatchSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final json = jsonDecode(response.body);
-return ActionsCreateWorkflowDispatchSuccess200(WorkflowDispatchResponse.fromJson(json as Map<String, dynamic>));
-case 204:
-return const ActionsCreateWorkflowDispatchSuccess204();
-default:
-return ActionsCreateWorkflowDispatchSuccessUnknown(response);
-}
-}
+return  ActionsCreateWorkflowDispatchSuccess200(WorkflowDispatchResponse.fromJson(json as Map<String, dynamic>));case 204:
+return  const ActionsCreateWorkflowDispatchSuccess204();default:
+return  ActionsCreateWorkflowDispatchSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class ActionsCreateWorkflowDispatchSuccess200 extends ActionsCreateWorkflowDispatchSuccess {const ActionsCreateWorkflowDispatchSuccess200(this.data);

@@ -7,21 +7,13 @@ sealed class WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Success {const 
 static WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Success parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Success200ApplicationJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'image/png')) {
-final value = (() { return Uint8List.fromList(response.bodyBytes); })();
-return WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Success200ImagePng(value);
-}
+return  WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Success200ApplicationJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'image/png', )) {
+return  WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Success200ImagePng(Uint8List.fromList(response.bodyBytes)); } else {
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Success200ApplicationJson(json as Map<String, dynamic>);
-
-default:
-return WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10SuccessUnknown(response);
-}
-}
+return  WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Success200ApplicationJson(json as Map<String, dynamic>); }default:
+return  WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10SuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Success200ApplicationJson extends WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Success {const WorkersAiPostRunCfStabilityaiStableDiffusionXlBase10Success200ApplicationJson(this.data);

@@ -7,21 +7,13 @@ sealed class CreateSpeechSuccess {const CreateSpeechSuccess();
 static CreateSpeechSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/octet-stream')) {
-final value = (() { return Uint8List.fromList(response.bodyBytes); })();
-return CreateSpeechSuccess200ApplicationOctetStream(value);
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
+if (responseMediaTypeMatches(contentType, 'application/octet-stream', )) {
+return  CreateSpeechSuccess200ApplicationOctetStream(Uint8List.fromList(response.bodyBytes)); } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into CreateSpeechResponseStreamEvent
-throw UnsupportedError('Cannot decode text/event-stream response into CreateSpeechResponseStreamEvent');
-}
-final value = (() { return Uint8List.fromList(response.bodyBytes); })();
-return CreateSpeechSuccess200ApplicationOctetStream(value);
 
-default:
-return CreateSpeechSuccessUnknown(response);
-}
-}
+throw  UnsupportedError('Cannot decode text/event-stream response into CreateSpeechResponseStreamEvent'); } else {
+return  CreateSpeechSuccess200ApplicationOctetStream(Uint8List.fromList(response.bodyBytes)); }default:
+return  CreateSpeechSuccessUnknown(response); }}
 }
 /// Response for 200 (application/octet-stream).
 final class CreateSpeechSuccess200ApplicationOctetStream extends CreateSpeechSuccess {const CreateSpeechSuccess200ApplicationOctetStream(this.data);

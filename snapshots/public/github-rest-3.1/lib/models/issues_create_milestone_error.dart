@@ -7,14 +7,10 @@ sealed class IssuesCreateMilestoneError {const IssuesCreateMilestoneError();
 static IssuesCreateMilestoneError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return IssuesCreateMilestoneError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  IssuesCreateMilestoneError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return IssuesCreateMilestoneError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return IssuesCreateMilestoneErrorUnknown(response);
-}
-}
+return  IssuesCreateMilestoneError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  IssuesCreateMilestoneErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class IssuesCreateMilestoneError404 extends IssuesCreateMilestoneError {const IssuesCreateMilestoneError404(this.data);

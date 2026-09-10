@@ -57,11 +57,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: GetAllRecordingsSuccess.parse,
-);
-}
+
+return   await execute(request, onSuccess: GetAllRecordingsSuccess.parse, );}
 /// Start recording a meeting
 ///
 /// Starts recording a meeting. The meeting can be started by an App admin directly, or a participant with permissions to start a recording, based on the type of authorization used.
@@ -78,14 +75,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return StartRecordingResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  StartRecordingResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch details of a recording
 ///
 /// Returns details of a recording for the given recording ID.
@@ -100,14 +92,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetOneRecordingResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetOneRecordingResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Pause/Resume/Stop recording
 ///
 /// Pause/Resume/Stop a given recording ID.
@@ -124,14 +111,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PauseResumeStopRecordingResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PauseResumeStopRecordingResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch active recording
 ///
 /// Returns the active recording details for the given meeting ID.
@@ -146,24 +128,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetActiveRecordingResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetActiveRecordingResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RealtimekitGenericErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Start recording audio and video tracks
 ///
 /// Starts a track recording in a meeting. Track recordings consist of "layers". Layers are used to map audio/video tracks in a meeting to output destinations. More information about track recordings is available in the [Track Recordings Guide Page](https://docs.realtime.cloudflare.com/guides/capabilities/recording/recording-overview).
@@ -180,9 +151,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

@@ -7,33 +7,22 @@ sealed class DependabotUpdateAlertError {const DependabotUpdateAlertError();
 static DependabotUpdateAlertError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return DependabotUpdateAlertError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  DependabotUpdateAlertError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return DependabotUpdateAlertError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  DependabotUpdateAlertError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return DependabotUpdateAlertError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 403:
+return  DependabotUpdateAlertError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }case 403:
 final json = jsonDecode(response.body);
-return DependabotUpdateAlertError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  DependabotUpdateAlertError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return DependabotUpdateAlertError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 409:
+return  DependabotUpdateAlertError404(BasicError.fromJson(json as Map<String, dynamic>));case 409:
 final json = jsonDecode(response.body);
-return DependabotUpdateAlertError409(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  DependabotUpdateAlertError409(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return DependabotUpdateAlertError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return DependabotUpdateAlertErrorUnknown(response);
-}
-}
+return  DependabotUpdateAlertError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));default:
+return  DependabotUpdateAlertErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class DependabotUpdateAlertError400ApplicationJson extends DependabotUpdateAlertError {const DependabotUpdateAlertError400ApplicationJson(this.data);

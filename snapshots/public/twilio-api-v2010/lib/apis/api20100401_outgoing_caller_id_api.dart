@@ -20,14 +20,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountOutgoingCallerId.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountOutgoingCallerId.fromJson(json as Map<String, dynamic>);}, );}
 /// Updates the caller-id
 ///
 /// `POST /2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds/{Sid}.json`
@@ -45,14 +40,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountOutgoingCallerId.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountOutgoingCallerId.fromJson(json as Map<String, dynamic>);}, );}
 /// Delete the caller-id specified from the account
 ///
 /// `DELETE /2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds/{Sid}.json`
@@ -65,11 +55,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a list of outgoing-caller-ids belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/OutgoingCallerIds.json`
@@ -102,12 +89,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListOutgoingCallerIdResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListOutgoingCallerIdResponse.fromJson(json as Map<String, dynamic>);}, );}
 }

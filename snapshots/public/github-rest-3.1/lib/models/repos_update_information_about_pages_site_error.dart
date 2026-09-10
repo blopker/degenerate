@@ -7,27 +7,18 @@ sealed class ReposUpdateInformationAboutPagesSiteError {const ReposUpdateInforma
 static ReposUpdateInformationAboutPagesSiteError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ReposUpdateInformationAboutPagesSiteError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  ReposUpdateInformationAboutPagesSiteError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return ReposUpdateInformationAboutPagesSiteError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  ReposUpdateInformationAboutPagesSiteError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return ReposUpdateInformationAboutPagesSiteError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 409:
+return  ReposUpdateInformationAboutPagesSiteError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }case 409:
 final json = jsonDecode(response.body);
-return ReposUpdateInformationAboutPagesSiteError409(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposUpdateInformationAboutPagesSiteError409(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposUpdateInformationAboutPagesSiteError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposUpdateInformationAboutPagesSiteErrorUnknown(response);
-}
-}
+return  ReposUpdateInformationAboutPagesSiteError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposUpdateInformationAboutPagesSiteErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class ReposUpdateInformationAboutPagesSiteError400ApplicationJson extends ReposUpdateInformationAboutPagesSiteError {const ReposUpdateInformationAboutPagesSiteError400ApplicationJson(this.data);

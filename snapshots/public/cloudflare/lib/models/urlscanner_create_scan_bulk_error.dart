@@ -7,14 +7,10 @@ sealed class UrlscannerCreateScanBulkError {const UrlscannerCreateScanBulkError(
 static UrlscannerCreateScanBulkError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return UrlscannerCreateScanBulkError400(UrlscannerCreateScanBulkResponse400.fromJson(json as Map<String, dynamic>));
-case 429:
+return  UrlscannerCreateScanBulkError400(UrlscannerCreateScanBulkResponse400.fromJson(json as Map<String, dynamic>));case 429:
 final json = jsonDecode(response.body);
-return UrlscannerCreateScanBulkError429(UrlscannerCreateScanBulkResponse429.fromJson(json as Map<String, dynamic>));
-default:
-return UrlscannerCreateScanBulkErrorUnknown(response);
-}
-}
+return  UrlscannerCreateScanBulkError429(UrlscannerCreateScanBulkResponse429.fromJson(json as Map<String, dynamic>));default:
+return  UrlscannerCreateScanBulkErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class UrlscannerCreateScanBulkError400 extends UrlscannerCreateScanBulkError {const UrlscannerCreateScanBulkError400(this.data);

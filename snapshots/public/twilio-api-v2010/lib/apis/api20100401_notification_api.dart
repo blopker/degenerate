@@ -20,14 +20,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountNotificationInstance.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountNotificationInstance.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieve a list of notifications belonging to the account used to make the request
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Notifications.json`
@@ -66,12 +61,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListNotificationResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListNotificationResponse.fromJson(json as Map<String, dynamic>);}, );}
 }

@@ -7,14 +7,10 @@ sealed class Web3HostnameCreateIpfsUniversalPathGatewayContentListEntryError {co
 static Web3HostnameCreateIpfsUniversalPathGatewayContentListEntryError parse(ApiResponse response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return Web3HostnameCreateIpfsUniversalPathGatewayContentListEntryError4xx(Web3HostnameCreateIpfsUniversalPathGatewayContentListEntryResponse4xx.fromJson(json as Map<String, dynamic>));
-case >= 500 && < 600:
+return  Web3HostnameCreateIpfsUniversalPathGatewayContentListEntryError4xx(Web3HostnameCreateIpfsUniversalPathGatewayContentListEntryResponse4xx.fromJson(json as Map<String, dynamic>));case >= 500 && < 600:
 final json = jsonDecode(response.body);
-return Web3HostnameCreateIpfsUniversalPathGatewayContentListEntryError5xx(Web3HostnameCreateIpfsUniversalPathGatewayContentListEntryResponse5xx.fromJson(json as Map<String, dynamic>));
-default:
-return Web3HostnameCreateIpfsUniversalPathGatewayContentListEntryErrorUnknown(response);
-}
-}
+return  Web3HostnameCreateIpfsUniversalPathGatewayContentListEntryError5xx(Web3HostnameCreateIpfsUniversalPathGatewayContentListEntryResponse5xx.fromJson(json as Map<String, dynamic>));default:
+return  Web3HostnameCreateIpfsUniversalPathGatewayContentListEntryErrorUnknown(response); }}
 }
 /// Response for 4xx (application/json).
 final class Web3HostnameCreateIpfsUniversalPathGatewayContentListEntryError4xx extends Web3HostnameCreateIpfsUniversalPathGatewayContentListEntryError {const Web3HostnameCreateIpfsUniversalPathGatewayContentListEntryError4xx(this.data);

@@ -7,17 +7,12 @@ sealed class ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationError {c
 static ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationErrorUnknown(response);
-}
-}
+return  ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationError403 extends ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationError {const ActionsSetSelectedRepositoriesSelfHostedRunnersOrganizationError403(this.data);

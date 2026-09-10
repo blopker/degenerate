@@ -6,20 +6,14 @@ sealed class UsersUnfollowError {const UsersUnfollowError();
 /// Decodes the payload for its declared status and content type.
 static UsersUnfollowError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const UsersUnfollowError304();
-case 401:
+return  const UsersUnfollowError304();case 401:
 final json = jsonDecode(response.body);
-return UsersUnfollowError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  UsersUnfollowError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return UsersUnfollowError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  UsersUnfollowError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return UsersUnfollowError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return UsersUnfollowErrorUnknown(response);
-}
-}
+return  UsersUnfollowError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  UsersUnfollowErrorUnknown(response); }}
 }
 /// Response for 304.
 final class UsersUnfollowError304 extends UsersUnfollowError {const UsersUnfollowError304();

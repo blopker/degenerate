@@ -22,15 +22,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => GetPermissionListResponse.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: GetPermissionListError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => GetPermissionListResponse.fromJson(e as Map<String, dynamic>)).toList();}, onError: GetPermissionListError.parse, );}
 /// Create a permission for dataset
 ///
 /// Create a permission
@@ -47,24 +41,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostPermissionCreateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostPermissionCreateResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PostPermissionCreateResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  PostPermissionCreateResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update a permission for dataset
 ///
 /// Update a permission
@@ -81,15 +64,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PutPermissionUpdateResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: PutPermissionUpdateError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PutPermissionUpdateResponse.fromJson(json as Map<String, dynamic>);}, onError: PutPermissionUpdateError.parse, );}
 /// Delete a permission for dataset
 ///
 /// Delete a permission
@@ -104,13 +81,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return DeletePermissionDeleteResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: DeletePermissionDeleteError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  DeletePermissionDeleteResponse.fromJson(json as Map<String, dynamic>);}, onError: DeletePermissionDeleteError.parse, );}
 }

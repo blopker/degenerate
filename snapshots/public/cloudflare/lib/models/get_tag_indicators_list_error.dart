@@ -7,17 +7,12 @@ sealed class GetTagIndicatorsListError {const GetTagIndicatorsListError();
 static GetTagIndicatorsListError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return GetTagIndicatorsListError400(GetTagIndicatorsListResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  GetTagIndicatorsListError400(GetTagIndicatorsListResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return GetTagIndicatorsListError404(GetTagIndicatorsListResponse404.fromJson(json as Map<String, dynamic>));
-case 500:
+return  GetTagIndicatorsListError404(GetTagIndicatorsListResponse404.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return GetTagIndicatorsListError500(GetTagIndicatorsListResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return GetTagIndicatorsListErrorUnknown(response);
-}
-}
+return  GetTagIndicatorsListError500(GetTagIndicatorsListResponse500.fromJson(json as Map<String, dynamic>));default:
+return  GetTagIndicatorsListErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class GetTagIndicatorsListError400 extends GetTagIndicatorsListError {const GetTagIndicatorsListError400(this.data);

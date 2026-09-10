@@ -6,20 +6,14 @@ sealed class UsersListSocialAccountsForAuthenticatedUserError {const UsersListSo
 /// Decodes the payload for its declared status and content type.
 static UsersListSocialAccountsForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const UsersListSocialAccountsForAuthenticatedUserError304();
-case 401:
+return  const UsersListSocialAccountsForAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return UsersListSocialAccountsForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  UsersListSocialAccountsForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return UsersListSocialAccountsForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  UsersListSocialAccountsForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return UsersListSocialAccountsForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return UsersListSocialAccountsForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  UsersListSocialAccountsForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  UsersListSocialAccountsForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class UsersListSocialAccountsForAuthenticatedUserError304 extends UsersListSocialAccountsForAuthenticatedUserError {const UsersListSocialAccountsForAuthenticatedUserError304();

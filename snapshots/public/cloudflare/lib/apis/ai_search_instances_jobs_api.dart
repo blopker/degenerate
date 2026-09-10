@@ -33,15 +33,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => AiSearchInstanceListJobsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: AiSearchInstanceListJobsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => AiSearchInstanceListJobsResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, onError: AiSearchInstanceListJobsError.parse, );}
 /// Create new job
 ///
 /// Creates a new indexing job for an AI Search instance.
@@ -58,15 +52,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AiSearchInstanceCreateJobResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: AiSearchInstanceCreateJobError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AiSearchInstanceCreateJobResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: AiSearchInstanceCreateJobError.parse, );}
 /// Get a Job Details
 ///
 /// Retrieves details for a specific AI Search indexing job.
@@ -81,15 +69,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AiSearchInstanceGetJobResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: AiSearchInstanceGetJobError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AiSearchInstanceGetJobResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: AiSearchInstanceGetJobError.parse, );}
 /// Change Job Status
 ///
 /// Updates the status of an AI Search indexing job.
@@ -106,15 +88,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AiSearchInstanceChangeJobStatusResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: AiSearchInstanceChangeJobStatusError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AiSearchInstanceChangeJobStatusResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: AiSearchInstanceChangeJobStatusError.parse, );}
 /// List Job Logs
 ///
 /// Lists log entries for an AI Search indexing job.
@@ -140,13 +116,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => AiSearchInstanceListJobLogsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: AiSearchInstanceListJobLogsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => AiSearchInstanceListJobLogsResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, onError: AiSearchInstanceListJobLogsError.parse, );}
 }

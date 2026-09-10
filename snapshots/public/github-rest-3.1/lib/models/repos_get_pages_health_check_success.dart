@@ -7,14 +7,10 @@ sealed class ReposGetPagesHealthCheckSuccess {const ReposGetPagesHealthCheckSucc
 static ReposGetPagesHealthCheckSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final json = jsonDecode(response.body);
-return ReposGetPagesHealthCheckSuccess200(PagesHealthCheck.fromJson(json as Map<String, dynamic>));
-case 202:
+return  ReposGetPagesHealthCheckSuccess200(PagesHealthCheck.fromJson(json as Map<String, dynamic>));case 202:
 final json = jsonDecode(response.body);
-return ReposGetPagesHealthCheckSuccess202(EmptyObject.fromJson(json as Map<String, dynamic>));
-default:
-return ReposGetPagesHealthCheckSuccessUnknown(response);
-}
-}
+return  ReposGetPagesHealthCheckSuccess202(EmptyObject.fromJson(json as Map<String, dynamic>));default:
+return  ReposGetPagesHealthCheckSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class ReposGetPagesHealthCheckSuccess200 extends ReposGetPagesHealthCheckSuccess {const ReposGetPagesHealthCheckSuccess200(this.data);

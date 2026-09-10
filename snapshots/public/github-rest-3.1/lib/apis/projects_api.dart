@@ -39,15 +39,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Projects.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: ProjectsListForOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Projects.fromJson(e as Map<String, dynamic>)).toList();}, onError: ProjectsListForOrgError.parse, );}
 /// Get project for organization
 ///
 /// Get a specific organization-owned project.
@@ -62,15 +56,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Projects.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ProjectsGetForOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Projects.fromJson(json as Map<String, dynamic>);}, onError: ProjectsGetForOrgError.parse, );}
 /// Create draft item for organization owned project
 ///
 /// Create draft issue item for the specified organization owned project.
@@ -87,15 +75,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ItemSimple.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ProjectsCreateDraftItemForOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ItemSimple.fromJson(json as Map<String, dynamic>);}, onError: ProjectsCreateDraftItemForOrgError.parse, );}
 /// List project fields for organization
 ///
 /// List all fields for a specific organization-owned project.
@@ -124,15 +106,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Field.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: ProjectsListFieldsForOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Field.fromJson(e as Map<String, dynamic>)).toList();}, onError: ProjectsListFieldsForOrgError.parse, );}
 /// Add a field to an organization-owned project.
 ///
 /// `POST /orgs/{org}/projectsV2/{project_number}/fields`
@@ -147,15 +123,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Field.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ProjectsAddFieldForOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Field.fromJson(json as Map<String, dynamic>);}, onError: ProjectsAddFieldForOrgError.parse, );}
 /// Get project field for organization
 ///
 /// Get a specific field for an organization-owned project.
@@ -170,15 +140,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Field.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ProjectsGetFieldForOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Field.fromJson(json as Map<String, dynamic>);}, onError: ProjectsGetFieldForOrgError.parse, );}
 /// List items for an organization owned project
 ///
 /// List all items for a specific organization-owned project accessible by the authenticated user.
@@ -213,15 +177,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => ItemWithContent.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: ProjectsListItemsForOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => ItemWithContent.fromJson(e as Map<String, dynamic>)).toList();}, onError: ProjectsListItemsForOrgError.parse, );}
 /// Add item to organization owned project
 ///
 /// Add an issue or pull request item to the specified organization owned project.
@@ -238,15 +196,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ItemSimple.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ProjectsAddItemForOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ItemSimple.fromJson(json as Map<String, dynamic>);}, onError: ProjectsAddItemForOrgError.parse, );}
 /// Get an item for an organization owned project
 ///
 /// Get a specific item from an organization-owned project.
@@ -269,15 +221,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ItemWithContent.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ProjectsGetOrgItemError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ItemWithContent.fromJson(json as Map<String, dynamic>);}, onError: ProjectsGetOrgItemError.parse, );}
 /// Update project item for organization
 ///
 /// Update a specific item in an organization-owned project.
@@ -294,15 +240,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ItemWithContent.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ProjectsUpdateItemForOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ItemWithContent.fromJson(json as Map<String, dynamic>);}, onError: ProjectsUpdateItemForOrgError.parse, );}
 /// Delete project item for organization
 ///
 /// Delete a specific item from an organization-owned project.
@@ -317,21 +257,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 401 || 403:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create a view for an organization-owned project
 ///
 /// Create a new view in an organization-owned project. Views allow you to customize how items in a project are displayed and filtered.
@@ -348,15 +279,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return View.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ProjectsCreateViewForOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  View.fromJson(json as Map<String, dynamic>);}, onError: ProjectsCreateViewForOrgError.parse, );}
 /// List items for an organization project view
 ///
 /// List items in an organization project with the saved view's filter applied.
@@ -388,15 +313,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => ItemWithContent.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: ProjectsListViewItemsForOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => ItemWithContent.fromJson(e as Map<String, dynamic>)).toList();}, onError: ProjectsListViewItemsForOrgError.parse, );}
 /// Create draft item for user owned project
 ///
 /// Create draft issue item for the specified user owned project.
@@ -413,15 +332,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ItemSimple.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ProjectsCreateDraftItemForAuthenticatedUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ItemSimple.fromJson(json as Map<String, dynamic>);}, onError: ProjectsCreateDraftItemForAuthenticatedUserError.parse, );}
 /// Create a view for a user-owned project
 ///
 /// Create a new view in a user-owned project. Views allow you to customize how items in a project are displayed and filtered.
@@ -438,15 +351,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return View.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ProjectsCreateViewForUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  View.fromJson(json as Map<String, dynamic>);}, onError: ProjectsCreateViewForUserError.parse, );}
 /// List projects for user
 ///
 /// List all projects owned by a specific user accessible by the authenticated user.
@@ -478,15 +385,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Projects.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: ProjectsListForUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Projects.fromJson(e as Map<String, dynamic>)).toList();}, onError: ProjectsListForUserError.parse, );}
 /// Get project for user
 ///
 /// Get a specific user-owned project.
@@ -501,15 +402,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Projects.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ProjectsGetForUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Projects.fromJson(json as Map<String, dynamic>);}, onError: ProjectsGetForUserError.parse, );}
 /// List project fields for user
 ///
 /// List all fields for a specific user-owned project.
@@ -538,15 +433,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Field.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: ProjectsListFieldsForUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Field.fromJson(e as Map<String, dynamic>)).toList();}, onError: ProjectsListFieldsForUserError.parse, );}
 /// Add field to user owned project
 ///
 /// Add a field to a specified user owned project.
@@ -563,15 +452,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Field.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ProjectsAddFieldForUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Field.fromJson(json as Map<String, dynamic>);}, onError: ProjectsAddFieldForUserError.parse, );}
 /// Get project field for user
 ///
 /// Get a specific field for a user-owned project.
@@ -586,15 +469,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Field.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ProjectsGetFieldForUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Field.fromJson(json as Map<String, dynamic>);}, onError: ProjectsGetFieldForUserError.parse, );}
 /// List items for a user owned project
 ///
 /// List all items for a specific user-owned project accessible by the authenticated user.
@@ -629,15 +506,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => ItemWithContent.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: ProjectsListItemsForUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => ItemWithContent.fromJson(e as Map<String, dynamic>)).toList();}, onError: ProjectsListItemsForUserError.parse, );}
 /// Add item to user owned project
 ///
 /// Add an issue or pull request item to the specified user owned project.
@@ -654,15 +525,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ItemSimple.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ProjectsAddItemForUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ItemSimple.fromJson(json as Map<String, dynamic>);}, onError: ProjectsAddItemForUserError.parse, );}
 /// Get an item for a user owned project
 ///
 /// Get a specific item from a user-owned project.
@@ -685,15 +550,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ItemWithContent.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ProjectsGetUserItemError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ItemWithContent.fromJson(json as Map<String, dynamic>);}, onError: ProjectsGetUserItemError.parse, );}
 /// Update project item for user
 ///
 /// Update a specific item in a user-owned project.
@@ -710,15 +569,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ItemWithContent.fromJson(json as Map<String, dynamic>);
-  },
-  onError: ProjectsUpdateItemForUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ItemWithContent.fromJson(json as Map<String, dynamic>);}, onError: ProjectsUpdateItemForUserError.parse, );}
 /// Delete project item for user
 ///
 /// Delete a specific item from a user-owned project.
@@ -733,21 +586,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 401 || 403:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List items for a user project view
 ///
 /// List items in a user project with the saved view's filter applied.
@@ -779,13 +623,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => ItemWithContent.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: ProjectsListViewItemsForUserError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => ItemWithContent.fromJson(e as Map<String, dynamic>)).toList();}, onError: ProjectsListViewItemsForUserError.parse, );}
 }

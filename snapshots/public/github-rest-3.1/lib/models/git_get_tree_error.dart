@@ -7,17 +7,12 @@ sealed class GitGetTreeError {const GitGetTreeError();
 static GitGetTreeError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return GitGetTreeError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 409:
+return  GitGetTreeError404(BasicError.fromJson(json as Map<String, dynamic>));case 409:
 final json = jsonDecode(response.body);
-return GitGetTreeError409(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  GitGetTreeError409(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return GitGetTreeError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return GitGetTreeErrorUnknown(response);
-}
-}
+return  GitGetTreeError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  GitGetTreeErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class GitGetTreeError404 extends GitGetTreeError {const GitGetTreeError404(this.data);

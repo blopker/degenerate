@@ -7,20 +7,14 @@ sealed class ProjectsUpdateItemForOrgError {const ProjectsUpdateItemForOrgError(
 static ProjectsUpdateItemForOrgError parse(ApiResponse response) {switch (response.statusCode) {
 case 401:
 final json = jsonDecode(response.body);
-return ProjectsUpdateItemForOrgError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  ProjectsUpdateItemForOrgError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return ProjectsUpdateItemForOrgError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  ProjectsUpdateItemForOrgError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return ProjectsUpdateItemForOrgError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ProjectsUpdateItemForOrgError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ProjectsUpdateItemForOrgError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ProjectsUpdateItemForOrgErrorUnknown(response);
-}
-}
+return  ProjectsUpdateItemForOrgError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ProjectsUpdateItemForOrgErrorUnknown(response); }}
 }
 /// Response for 401 (application/json).
 final class ProjectsUpdateItemForOrgError401 extends ProjectsUpdateItemForOrgError {const ProjectsUpdateItemForOrgError401(this.data);

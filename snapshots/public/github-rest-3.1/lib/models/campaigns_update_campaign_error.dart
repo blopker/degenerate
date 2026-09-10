@@ -7,20 +7,14 @@ sealed class CampaignsUpdateCampaignError {const CampaignsUpdateCampaignError();
 static CampaignsUpdateCampaignError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return CampaignsUpdateCampaignError400(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CampaignsUpdateCampaignError400(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CampaignsUpdateCampaignError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  CampaignsUpdateCampaignError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return CampaignsUpdateCampaignError422(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  CampaignsUpdateCampaignError422(BasicError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return CampaignsUpdateCampaignError503(CampaignsUpdateCampaignResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return CampaignsUpdateCampaignErrorUnknown(response);
-}
-}
+return  CampaignsUpdateCampaignError503(CampaignsUpdateCampaignResponse503.fromJson(json as Map<String, dynamic>));default:
+return  CampaignsUpdateCampaignErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class CampaignsUpdateCampaignError400 extends CampaignsUpdateCampaignError {const CampaignsUpdateCampaignError400(this.data);

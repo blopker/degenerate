@@ -7,14 +7,10 @@ sealed class AutoragConfigFilesError {const AutoragConfigFilesError();
 static AutoragConfigFilesError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return AutoragConfigFilesError404(AutoragConfigFilesResponse404.fromJson(json as Map<String, dynamic>));
-case 503:
+return  AutoragConfigFilesError404(AutoragConfigFilesResponse404.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return AutoragConfigFilesError503(AutoragConfigFilesResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return AutoragConfigFilesErrorUnknown(response);
-}
-}
+return  AutoragConfigFilesError503(AutoragConfigFilesResponse503.fromJson(json as Map<String, dynamic>));default:
+return  AutoragConfigFilesErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class AutoragConfigFilesError404 extends AutoragConfigFilesError {const AutoragConfigFilesError404(this.data);

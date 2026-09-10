@@ -7,23 +7,16 @@ sealed class IssuesAddBlockedByDependencyError {const IssuesAddBlockedByDependen
 static IssuesAddBlockedByDependencyError parse(ApiResponse response) {switch (response.statusCode) {
 case 301:
 final json = jsonDecode(response.body);
-return IssuesAddBlockedByDependencyError301(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  IssuesAddBlockedByDependencyError301(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return IssuesAddBlockedByDependencyError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  IssuesAddBlockedByDependencyError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return IssuesAddBlockedByDependencyError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 410:
+return  IssuesAddBlockedByDependencyError404(BasicError.fromJson(json as Map<String, dynamic>));case 410:
 final json = jsonDecode(response.body);
-return IssuesAddBlockedByDependencyError410(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  IssuesAddBlockedByDependencyError410(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return IssuesAddBlockedByDependencyError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return IssuesAddBlockedByDependencyErrorUnknown(response);
-}
-}
+return  IssuesAddBlockedByDependencyError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  IssuesAddBlockedByDependencyErrorUnknown(response); }}
 }
 /// Response for 301 (application/json).
 final class IssuesAddBlockedByDependencyError301 extends IssuesAddBlockedByDependencyError {const IssuesAddBlockedByDependencyError301(this.data);

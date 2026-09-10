@@ -7,21 +7,15 @@ sealed class CreateImageEditSuccess {const CreateImageEditSuccess();
 static CreateImageEditSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return CreateImageEditSuccess200ApplicationJson(ImagesResponse.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'text/event-stream')) {
+return  CreateImageEditSuccess200ApplicationJson(ImagesResponse.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'text/event-stream', )) {
 // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into ImageEditStreamEvent
-throw UnsupportedError('Cannot decode text/event-stream response into ImageEditStreamEvent');
-}
-final json = jsonDecode(response.body);
-return CreateImageEditSuccess200ApplicationJson(ImagesResponse.fromJson(json as Map<String, dynamic>));
 
-default:
-return CreateImageEditSuccessUnknown(response);
-}
-}
+throw  UnsupportedError('Cannot decode text/event-stream response into ImageEditStreamEvent'); } else {
+final json = jsonDecode(response.body);
+return  CreateImageEditSuccess200ApplicationJson(ImagesResponse.fromJson(json as Map<String, dynamic>)); }default:
+return  CreateImageEditSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class CreateImageEditSuccess200ApplicationJson extends CreateImageEditSuccess {const CreateImageEditSuccess200ApplicationJson(this.data);

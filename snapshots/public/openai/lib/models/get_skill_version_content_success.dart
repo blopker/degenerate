@@ -7,21 +7,13 @@ sealed class GetSkillVersionContentSuccess {const GetSkillVersionContentSuccess(
 static GetSkillVersionContentSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return GetSkillVersionContentSuccess200ApplicationJson(json as String);
-}
-if (responseMediaTypeMatches(contentType, 'application/zip')) {
-final value = (() { return Uint8List.fromList(response.bodyBytes); })();
-return GetSkillVersionContentSuccess200ApplicationZip(value);
-}
+return  GetSkillVersionContentSuccess200ApplicationJson(json as String); } else if (responseMediaTypeMatches(contentType, 'application/zip', )) {
+return  GetSkillVersionContentSuccess200ApplicationZip(Uint8List.fromList(response.bodyBytes)); } else {
 final json = jsonDecode(response.body);
-return GetSkillVersionContentSuccess200ApplicationJson(json as String);
-
-default:
-return GetSkillVersionContentSuccessUnknown(response);
-}
-}
+return  GetSkillVersionContentSuccess200ApplicationJson(json as String); }default:
+return  GetSkillVersionContentSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class GetSkillVersionContentSuccess200ApplicationJson extends GetSkillVersionContentSuccess {const GetSkillVersionContentSuccess200ApplicationJson(this.data);

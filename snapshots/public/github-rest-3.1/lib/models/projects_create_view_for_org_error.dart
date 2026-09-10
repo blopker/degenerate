@@ -6,26 +6,18 @@ sealed class ProjectsCreateViewForOrgError {const ProjectsCreateViewForOrgError(
 /// Decodes the payload for its declared status and content type.
 static ProjectsCreateViewForOrgError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ProjectsCreateViewForOrgError304();
-case 401:
+return  const ProjectsCreateViewForOrgError304();case 401:
 final json = jsonDecode(response.body);
-return ProjectsCreateViewForOrgError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  ProjectsCreateViewForOrgError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return ProjectsCreateViewForOrgError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  ProjectsCreateViewForOrgError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return ProjectsCreateViewForOrgError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ProjectsCreateViewForOrgError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ProjectsCreateViewForOrgError422(ValidationError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  ProjectsCreateViewForOrgError422(ValidationError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return ProjectsCreateViewForOrgError503(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ProjectsCreateViewForOrgErrorUnknown(response);
-}
-}
+return  ProjectsCreateViewForOrgError503(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ProjectsCreateViewForOrgErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ProjectsCreateViewForOrgError304 extends ProjectsCreateViewForOrgError {const ProjectsCreateViewForOrgError304();

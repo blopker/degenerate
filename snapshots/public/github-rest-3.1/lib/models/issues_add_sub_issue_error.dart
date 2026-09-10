@@ -7,20 +7,14 @@ sealed class IssuesAddSubIssueError {const IssuesAddSubIssueError();
 static IssuesAddSubIssueError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return IssuesAddSubIssueError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  IssuesAddSubIssueError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return IssuesAddSubIssueError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 410:
+return  IssuesAddSubIssueError404(BasicError.fromJson(json as Map<String, dynamic>));case 410:
 final json = jsonDecode(response.body);
-return IssuesAddSubIssueError410(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  IssuesAddSubIssueError410(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return IssuesAddSubIssueError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return IssuesAddSubIssueErrorUnknown(response);
-}
-}
+return  IssuesAddSubIssueError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  IssuesAddSubIssueErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class IssuesAddSubIssueError403 extends IssuesAddSubIssueError {const IssuesAddSubIssueError403(this.data);

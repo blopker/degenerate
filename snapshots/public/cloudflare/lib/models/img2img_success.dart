@@ -7,21 +7,13 @@ sealed class Img2imgSuccess {const Img2imgSuccess();
 static Img2imgSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return Img2imgSuccess200ApplicationJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'image/png')) {
-final value = (() { return Uint8List.fromList(response.bodyBytes); })();
-return Img2imgSuccess200ImagePng(value);
-}
+return  Img2imgSuccess200ApplicationJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'image/png', )) {
+return  Img2imgSuccess200ImagePng(Uint8List.fromList(response.bodyBytes)); } else {
 final json = jsonDecode(response.body);
-return Img2imgSuccess200ApplicationJson(json as Map<String, dynamic>);
-
-default:
-return Img2imgSuccessUnknown(response);
-}
-}
+return  Img2imgSuccess200ApplicationJson(json as Map<String, dynamic>); }default:
+return  Img2imgSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class Img2imgSuccess200ApplicationJson extends Img2imgSuccess {const Img2imgSuccess200ApplicationJson(this.data);

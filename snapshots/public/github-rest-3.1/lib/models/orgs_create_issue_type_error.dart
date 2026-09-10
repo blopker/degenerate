@@ -7,14 +7,10 @@ sealed class OrgsCreateIssueTypeError {const OrgsCreateIssueTypeError();
 static OrgsCreateIssueTypeError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return OrgsCreateIssueTypeError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  OrgsCreateIssueTypeError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return OrgsCreateIssueTypeError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return OrgsCreateIssueTypeErrorUnknown(response);
-}
-}
+return  OrgsCreateIssueTypeError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));default:
+return  OrgsCreateIssueTypeErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class OrgsCreateIssueTypeError404 extends OrgsCreateIssueTypeError {const OrgsCreateIssueTypeError404(this.data);

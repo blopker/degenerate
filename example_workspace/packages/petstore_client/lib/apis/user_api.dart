@@ -24,24 +24,16 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return User.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/xml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/xml response into User
-throw UnsupportedError('Cannot decode application/xml response into User');
-}
-final json = jsonDecode(response.body);
-return User.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  User.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/xml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/xml response into User
+
+throw  UnsupportedError('Cannot decode application/xml response into User'); } else {
+final json = jsonDecode(response.body);
+return  User.fromJson(json as Map<String, dynamic>); }}, );}
 /// Creates list of users with given input array.
 ///
 /// `POST /user/createWithList`
@@ -56,24 +48,16 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return User.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/xml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/xml response into User
-throw UnsupportedError('Cannot decode application/xml response into User');
-}
-final json = jsonDecode(response.body);
-return User.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  User.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/xml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/xml response into User
+
+throw  UnsupportedError('Cannot decode application/xml response into User'); } else {
+final json = jsonDecode(response.body);
+return  User.fromJson(json as Map<String, dynamic>); }}, );}
 /// Logs user into the system.
 ///
 /// Log into the system.
@@ -99,23 +83,14 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return json as String;
-}
-if (responseMediaTypeMatches(contentType, 'application/xml')) {
-return response.body;
-}
-final json = jsonDecode(response.body);
-return json as String;
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  json as String; } else if (responseMediaTypeMatches(contentType, 'application/xml', )) {
+return  response.body; } else {
+final json = jsonDecode(response.body);
+return  json as String; }}, );}
 /// Logs out current logged in user session.
 ///
 /// Log user out of the system.
@@ -130,11 +105,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Get user by user name.
 ///
 /// Get user detail based on username.
@@ -149,24 +121,16 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
-final json = jsonDecode(response.body);
-return User.fromJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'application/xml')) {
-// TODO: Unsupported non-JSON response schema Cannot decode application/xml response into User
-throw UnsupportedError('Cannot decode application/xml response into User');
-}
-final json = jsonDecode(response.body);
-return User.fromJson(json as Map<String, dynamic>);
 
-  },
-);
-}
+return   await execute(request, onSuccess: (response) {final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
+final json = jsonDecode(response.body);
+return  User.fromJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'application/xml', )) {
+// TODO: Unsupported non-JSON response schema Cannot decode application/xml response into User
+
+throw  UnsupportedError('Cannot decode application/xml response into User'); } else {
+final json = jsonDecode(response.body);
+return  User.fromJson(json as Map<String, dynamic>); }}, );}
 /// Update user resource.
 ///
 /// This can only be done by the logged in user.
@@ -183,11 +147,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Delete user resource.
 ///
 /// This can only be done by the logged in user.
@@ -202,9 +163,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

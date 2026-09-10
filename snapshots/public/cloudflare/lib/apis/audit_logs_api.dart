@@ -63,24 +63,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OneOf2.parse(json, fromA: (v) => AaaAuditLogsResponseCollectionVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommon.fromJson(v as Map<String, dynamic>),);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OneOf2.parse(json, fromA: (v) => AaaAuditLogsResponseCollectionVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommon.fromJson(v as Map<String, dynamic>),);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return OneOf2.parse(json, fromA: (v) => AuditLogsGetAccountAuditLogsResponse4xxVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommon.fromJson(v as Map<String, dynamic>),);
-default:
-return null;
-}
-
-  },
-);
-}
+return  OneOf2.parse(json, fromA: (v) => AuditLogsGetAccountAuditLogsResponse4xxVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommon.fromJson(v as Map<String, dynamic>),);default:
+return  null; }}, );}
 /// Get account audit logs (Version 2, Beta release)
 ///
 /// Gets a list of audit logs for an account. `<br />`  `<br />` This is the beta release of Audit Logs Version 2. Since this is a beta version, there may be gaps or missing entries in the available audit logs. Be aware of the following limitations.  `<br />` `<ul>` `<li>`Audit logs are available only for the past 30 days. `<br />``</li>` `<li>`Error handling is not yet implemented.  `<br />` `</li>` `</ul>`
@@ -331,24 +320,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>?)?.map((e) => AaaAuditLogs2.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>?)?.map((e) => AaaAuditLogs2.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure3.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure3.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get user audit logs
 ///
 /// Gets a list of audit logs for a user account. Can be filtered by who made the change, on which zone, and the timeframe of the change.
@@ -404,22 +382,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OneOf2.parse(json, fromA: (v) => AaaAuditLogsResponseCollectionVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommon.fromJson(v as Map<String, dynamic>),);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OneOf2.parse(json, fromA: (v) => AaaAuditLogsResponseCollectionVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommon.fromJson(v as Map<String, dynamic>),);}, onError: (response) {switch (response.statusCode) {
 case >= 400 && < 500:
 final json = jsonDecode(response.body);
-return OneOf2.parse(json, fromA: (v) => AuditLogsGetUserAuditLogsResponse4xxVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommon.fromJson(v as Map<String, dynamic>),);
-default:
-return null;
-}
-
-  },
-);
-}
+return  OneOf2.parse(json, fromA: (v) => AuditLogsGetUserAuditLogsResponse4xxVariant1.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommon.fromJson(v as Map<String, dynamic>),);default:
+return  null; }}, );}
 }

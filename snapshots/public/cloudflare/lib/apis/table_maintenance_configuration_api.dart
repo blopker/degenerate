@@ -24,24 +24,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? R2DataCatalogTableMaintenanceConfigResponse.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? R2DataCatalogTableMaintenanceConfigResponse.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure55.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure55.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update table maintenance configuration
 ///
 /// Update the maintenance configuration for a specific table. This allows you to
@@ -60,22 +49,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? R2DataCatalogTableMaintenanceConfig.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? R2DataCatalogTableMaintenanceConfig.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure55.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ResponseCommonFailure55.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

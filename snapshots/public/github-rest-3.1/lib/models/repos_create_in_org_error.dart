@@ -7,14 +7,10 @@ sealed class ReposCreateInOrgError {const ReposCreateInOrgError();
 static ReposCreateInOrgError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return ReposCreateInOrgError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposCreateInOrgError403(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposCreateInOrgError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposCreateInOrgErrorUnknown(response);
-}
-}
+return  ReposCreateInOrgError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposCreateInOrgErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class ReposCreateInOrgError403 extends ReposCreateInOrgError {const ReposCreateInOrgError403(this.data);

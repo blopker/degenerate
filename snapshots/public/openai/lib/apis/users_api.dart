@@ -36,14 +36,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UserListResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UserListResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieves a user by their identifier.
 ///
 /// `GET /organization/users/{user_id}`
@@ -56,14 +51,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return User.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  User.fromJson(json as Map<String, dynamic>);}, );}
 /// Modifies a user's role in the organization.
 ///
 /// `POST /organization/users/{user_id}`
@@ -78,14 +68,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return User.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  User.fromJson(json as Map<String, dynamic>);}, );}
 /// Deletes a user from the organization.
 ///
 /// `DELETE /organization/users/{user_id}`
@@ -98,12 +83,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return UserDeleteResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  UserDeleteResponse.fromJson(json as Map<String, dynamic>);}, );}
 }

@@ -7,23 +7,16 @@ sealed class IssuesPinCommentError {const IssuesPinCommentError();
 static IssuesPinCommentError parse(ApiResponse response) {switch (response.statusCode) {
 case 401:
 final json = jsonDecode(response.body);
-return IssuesPinCommentError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  IssuesPinCommentError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return IssuesPinCommentError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  IssuesPinCommentError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return IssuesPinCommentError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 410:
+return  IssuesPinCommentError404(BasicError.fromJson(json as Map<String, dynamic>));case 410:
 final json = jsonDecode(response.body);
-return IssuesPinCommentError410(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  IssuesPinCommentError410(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return IssuesPinCommentError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return IssuesPinCommentErrorUnknown(response);
-}
-}
+return  IssuesPinCommentError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  IssuesPinCommentErrorUnknown(response); }}
 }
 /// Response for 401 (application/json).
 final class IssuesPinCommentError401 extends IssuesPinCommentError {const IssuesPinCommentError401(this.data);

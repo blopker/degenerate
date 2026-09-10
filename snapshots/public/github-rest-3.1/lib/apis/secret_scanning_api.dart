@@ -73,15 +73,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => OrganizationSecretScanningAlert.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: SecretScanningListAlertsForOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => OrganizationSecretScanningAlert.fromJson(e as Map<String, dynamic>)).toList();}, onError: SecretScanningListAlertsForOrgError.parse, );}
 /// List organization pattern configurations
 ///
 /// Lists the secret scanning pattern configurations for an organization.
@@ -98,24 +92,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SecretScanningPatternConfiguration.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SecretScanningPatternConfiguration.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 403 || 404:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update organization pattern configurations
 ///
 /// Updates the secret scanning pattern configurations for an organization.
@@ -134,15 +117,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SecretScanningUpdateOrgPatternConfigsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: SecretScanningUpdateOrgPatternConfigsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SecretScanningUpdateOrgPatternConfigsResponse.fromJson(json as Map<String, dynamic>);}, onError: SecretScanningUpdateOrgPatternConfigsError.parse, );}
 /// List secret scanning alerts for a repository
 ///
 /// Lists secret scanning alerts for an eligible repository, from newest to oldest.
@@ -208,15 +185,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SecretScanningAlert.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: SecretScanningListAlertsForRepoError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SecretScanningAlert.fromJson(e as Map<String, dynamic>)).toList();}, onError: SecretScanningListAlertsForRepoError.parse, );}
 /// Get a secret scanning alert
 ///
 /// Gets a single secret scanning alert detected in an eligible repository.
@@ -243,15 +214,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SecretScanningAlert.fromJson(json as Map<String, dynamic>);
-  },
-  onError: SecretScanningGetAlertError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SecretScanningAlert.fromJson(json as Map<String, dynamic>);}, onError: SecretScanningGetAlertError.parse, );}
 /// Update a secret scanning alert
 ///
 /// Updates the status of a secret scanning alert in an eligible repository.
@@ -274,15 +239,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SecretScanningAlert.fromJson(json as Map<String, dynamic>);
-  },
-  onError: SecretScanningUpdateAlertError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SecretScanningAlert.fromJson(json as Map<String, dynamic>);}, onError: SecretScanningUpdateAlertError.parse, );}
 /// List locations for a secret scanning alert
 ///
 /// Lists all locations for a given secret scanning alert for an eligible repository.
@@ -312,15 +271,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => SecretScanningLocation.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: SecretScanningListLocationsForAlertError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => SecretScanningLocation.fromJson(e as Map<String, dynamic>)).toList();}, onError: SecretScanningListLocationsForAlertError.parse, );}
 /// Create a push protection bypass
 ///
 /// Creates a bypass for a previously push protected secret.
@@ -341,15 +294,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SecretScanningPushProtectionBypass.fromJson(json as Map<String, dynamic>);
-  },
-  onError: SecretScanningCreatePushProtectionBypassError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SecretScanningPushProtectionBypass.fromJson(json as Map<String, dynamic>);}, onError: SecretScanningCreatePushProtectionBypassError.parse, );}
 /// Get secret scanning scan history for a repository
 ///
 /// Lists the latest default incremental and backfill scans by type for a repository. Scans from Copilot Secret Scanning are not included.
@@ -369,13 +316,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SecretScanningScanHistory.fromJson(json as Map<String, dynamic>);
-  },
-  onError: SecretScanningGetScanHistoryError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SecretScanningScanHistory.fromJson(json as Map<String, dynamic>);}, onError: SecretScanningGetScanHistoryError.parse, );}
 }

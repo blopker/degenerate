@@ -7,14 +7,10 @@ sealed class ActionsSetCustomLabelsForSelfHostedRunnerForRepoError {const Action
 static ActionsSetCustomLabelsForSelfHostedRunnerForRepoError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ActionsSetCustomLabelsForSelfHostedRunnerForRepoError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ActionsSetCustomLabelsForSelfHostedRunnerForRepoError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ActionsSetCustomLabelsForSelfHostedRunnerForRepoError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return ActionsSetCustomLabelsForSelfHostedRunnerForRepoErrorUnknown(response);
-}
-}
+return  ActionsSetCustomLabelsForSelfHostedRunnerForRepoError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));default:
+return  ActionsSetCustomLabelsForSelfHostedRunnerForRepoErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class ActionsSetCustomLabelsForSelfHostedRunnerForRepoError404 extends ActionsSetCustomLabelsForSelfHostedRunnerForRepoError {const ActionsSetCustomLabelsForSelfHostedRunnerForRepoError404(this.data);

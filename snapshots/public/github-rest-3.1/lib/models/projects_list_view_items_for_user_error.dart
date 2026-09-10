@@ -6,20 +6,14 @@ sealed class ProjectsListViewItemsForUserError {const ProjectsListViewItemsForUs
 /// Decodes the payload for its declared status and content type.
 static ProjectsListViewItemsForUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ProjectsListViewItemsForUserError304();
-case 401:
+return  const ProjectsListViewItemsForUserError304();case 401:
 final json = jsonDecode(response.body);
-return ProjectsListViewItemsForUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  ProjectsListViewItemsForUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return ProjectsListViewItemsForUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  ProjectsListViewItemsForUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return ProjectsListViewItemsForUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ProjectsListViewItemsForUserErrorUnknown(response);
-}
-}
+return  ProjectsListViewItemsForUserError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ProjectsListViewItemsForUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ProjectsListViewItemsForUserError304 extends ProjectsListViewItemsForUserError {const ProjectsListViewItemsForUserError304();

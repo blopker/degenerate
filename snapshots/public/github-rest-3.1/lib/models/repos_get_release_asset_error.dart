@@ -6,14 +6,10 @@ sealed class ReposGetReleaseAssetError {const ReposGetReleaseAssetError();
 /// Decodes the payload for its declared status and content type.
 static ReposGetReleaseAssetError parse(ApiResponse response) {switch (response.statusCode) {
 case 302:
-return const ReposGetReleaseAssetError302();
-case 404:
+return  const ReposGetReleaseAssetError302();case 404:
 final json = jsonDecode(response.body);
-return ReposGetReleaseAssetError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposGetReleaseAssetErrorUnknown(response);
-}
-}
+return  ReposGetReleaseAssetError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ReposGetReleaseAssetErrorUnknown(response); }}
 }
 /// Response for 302.
 final class ReposGetReleaseAssetError302 extends ReposGetReleaseAssetError {const ReposGetReleaseAssetError302();

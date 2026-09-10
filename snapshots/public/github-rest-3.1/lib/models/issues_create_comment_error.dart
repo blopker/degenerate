@@ -7,20 +7,14 @@ sealed class IssuesCreateCommentError {const IssuesCreateCommentError();
 static IssuesCreateCommentError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return IssuesCreateCommentError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  IssuesCreateCommentError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return IssuesCreateCommentError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 410:
+return  IssuesCreateCommentError404(BasicError.fromJson(json as Map<String, dynamic>));case 410:
 final json = jsonDecode(response.body);
-return IssuesCreateCommentError410(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  IssuesCreateCommentError410(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return IssuesCreateCommentError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return IssuesCreateCommentErrorUnknown(response);
-}
-}
+return  IssuesCreateCommentError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  IssuesCreateCommentErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class IssuesCreateCommentError403 extends IssuesCreateCommentError {const IssuesCreateCommentError403(this.data);

@@ -7,14 +7,10 @@ sealed class DeleteDatasetDeleteError {const DeleteDatasetDeleteError();
 static DeleteDatasetDeleteError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return DeleteDatasetDeleteError400(DeleteDatasetDeleteResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  DeleteDatasetDeleteError400(DeleteDatasetDeleteResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return DeleteDatasetDeleteError404(DeleteDatasetDeleteResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return DeleteDatasetDeleteErrorUnknown(response);
-}
-}
+return  DeleteDatasetDeleteError404(DeleteDatasetDeleteResponse404.fromJson(json as Map<String, dynamic>));default:
+return  DeleteDatasetDeleteErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class DeleteDatasetDeleteError400 extends DeleteDatasetDeleteError {const DeleteDatasetDeleteError400(this.data);

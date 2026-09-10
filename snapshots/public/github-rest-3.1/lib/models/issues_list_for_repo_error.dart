@@ -7,17 +7,12 @@ sealed class IssuesListForRepoError {const IssuesListForRepoError();
 static IssuesListForRepoError parse(ApiResponse response) {switch (response.statusCode) {
 case 301:
 final json = jsonDecode(response.body);
-return IssuesListForRepoError301(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  IssuesListForRepoError301(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return IssuesListForRepoError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  IssuesListForRepoError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return IssuesListForRepoError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return IssuesListForRepoErrorUnknown(response);
-}
-}
+return  IssuesListForRepoError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  IssuesListForRepoErrorUnknown(response); }}
 }
 /// Response for 301 (application/json).
 final class IssuesListForRepoError301 extends IssuesListForRepoError {const IssuesListForRepoError301(this.data);

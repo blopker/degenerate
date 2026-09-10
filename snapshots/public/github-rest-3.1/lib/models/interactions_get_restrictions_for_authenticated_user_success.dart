@@ -7,13 +7,9 @@ sealed class InteractionsGetRestrictionsForAuthenticatedUserSuccess {const Inter
 static InteractionsGetRestrictionsForAuthenticatedUserSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final json = jsonDecode(response.body);
-return InteractionsGetRestrictionsForAuthenticatedUserSuccess200(InteractionsGetRestrictionsForAuthenticatedUserResponse.fromJson(json));
-case 204:
-return const InteractionsGetRestrictionsForAuthenticatedUserSuccess204();
-default:
-return InteractionsGetRestrictionsForAuthenticatedUserSuccessUnknown(response);
-}
-}
+return  InteractionsGetRestrictionsForAuthenticatedUserSuccess200(InteractionsGetRestrictionsForAuthenticatedUserResponse.fromJson(json));case 204:
+return  const InteractionsGetRestrictionsForAuthenticatedUserSuccess204();default:
+return  InteractionsGetRestrictionsForAuthenticatedUserSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class InteractionsGetRestrictionsForAuthenticatedUserSuccess200 extends InteractionsGetRestrictionsForAuthenticatedUserSuccess {const InteractionsGetRestrictionsForAuthenticatedUserSuccess200(this.data);

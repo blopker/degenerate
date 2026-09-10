@@ -7,14 +7,10 @@ sealed class PullsDismissReviewError {const PullsDismissReviewError();
 static PullsDismissReviewError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return PullsDismissReviewError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  PullsDismissReviewError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return PullsDismissReviewError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return PullsDismissReviewErrorUnknown(response);
-}
-}
+return  PullsDismissReviewError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));default:
+return  PullsDismissReviewErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class PullsDismissReviewError404 extends PullsDismissReviewError {const PullsDismissReviewError404(this.data);

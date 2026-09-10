@@ -22,21 +22,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Open Websocket connection with @cf/pipecat-ai/smart-turn-v3 model.
 ///
 /// Opens a WebSocket connection to stream inference results from the @cf/pipecat-ai/smart-turn-v3 model.
@@ -51,21 +42,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse4002.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostWebsocketRunCfPipecatAiSmartTurnResponse4002.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Open Websocket connection with @cf/test/hello-world-cog model.
 ///
 /// Opens a WebSocket connection to stream inference results from the @cf/test/hello-world-cog model.
@@ -80,19 +62,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorkersAiPostWebsocketRunCfTestHelloWorldCogResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorkersAiPostWebsocketRunCfTestHelloWorldCogResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

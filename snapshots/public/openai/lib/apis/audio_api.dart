@@ -25,11 +25,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: CreateSpeechSuccess.parse,
-);
-}
+
+return   await execute(request, onSuccess: CreateSpeechSuccess.parse, );}
 /// Transcribes audio into the input language.
 /// 
 /// Returns a transcription object in `json`, `diarized_json`, or `verbose_json`
@@ -71,11 +68,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: CreateTranscriptionSuccess.parse,
-);
-}
+
+return   await execute(request, onSuccess: CreateTranscriptionSuccess.parse, );}
 /// Translates audio into English.
 ///
 /// `POST /audio/translations`
@@ -99,14 +93,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OneOf2.parse(json, fromA: (v) => CreateTranslationResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranslationResponseVerboseJson.fromJson(v as Map<String, dynamic>),);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OneOf2.parse(json, fromA: (v) => CreateTranslationResponseJson.fromJson(v as Map<String, dynamic>), fromB: (v) => CreateTranslationResponseVerboseJson.fromJson(v as Map<String, dynamic>),);}, );}
 /// Returns a list of voice consent recordings.
 ///
 /// List consent recordings available to your organization for creating custom voices.
@@ -135,14 +124,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VoiceConsentListResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VoiceConsentListResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Upload a voice consent recording.
 ///
 /// Upload a consent recording that authorizes creation of a custom voice.
@@ -166,14 +150,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VoiceConsentResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VoiceConsentResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Retrieves a voice consent recording.
 ///
 /// Retrieve consent recording metadata used for creating custom voices.
@@ -191,14 +170,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VoiceConsentResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VoiceConsentResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Updates a voice consent recording (metadata only).
 ///
 /// Update consent recording metadata used for creating custom voices. This endpoint updates metadata only and does not replace the underlying audio.
@@ -218,14 +192,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VoiceConsentResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VoiceConsentResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Deletes a voice consent recording.
 ///
 /// Delete a consent recording that was uploaded for creating custom voices.
@@ -243,14 +212,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VoiceConsentDeletedResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VoiceConsentDeletedResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Creates a custom voice.
 ///
 /// Create a custom voice you can use for audio output (for example, in Text-to-Speech and the Realtime API). This requires an audio sample and a previously uploaded consent recording.
@@ -274,14 +238,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return VoiceResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  VoiceResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Generates audio from the input text.
 /// 
 /// Returns the audio file content, or a stream of audio events.

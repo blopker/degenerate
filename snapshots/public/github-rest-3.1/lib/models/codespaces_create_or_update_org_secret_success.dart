@@ -7,13 +7,9 @@ sealed class CodespacesCreateOrUpdateOrgSecretSuccess {const CodespacesCreateOrU
 static CodespacesCreateOrUpdateOrgSecretSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 201:
 final json = jsonDecode(response.body);
-return CodespacesCreateOrUpdateOrgSecretSuccess201(EmptyObject.fromJson(json as Map<String, dynamic>));
-case 204:
-return const CodespacesCreateOrUpdateOrgSecretSuccess204();
-default:
-return CodespacesCreateOrUpdateOrgSecretSuccessUnknown(response);
-}
-}
+return  CodespacesCreateOrUpdateOrgSecretSuccess201(EmptyObject.fromJson(json as Map<String, dynamic>));case 204:
+return  const CodespacesCreateOrUpdateOrgSecretSuccess204();default:
+return  CodespacesCreateOrUpdateOrgSecretSuccessUnknown(response); }}
 }
 /// Response for 201 (application/json).
 final class CodespacesCreateOrUpdateOrgSecretSuccess201 extends CodespacesCreateOrUpdateOrgSecretSuccess {const CodespacesCreateOrUpdateOrgSecretSuccess201(this.data);

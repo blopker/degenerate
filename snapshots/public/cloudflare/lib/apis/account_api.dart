@@ -22,12 +22,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return BuildsGetAccountLimitResponse.fromJson(json['result'] as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  BuildsGetAccountLimitResponse.fromJson(json['result'] as Map<String, dynamic>);}, );}
 }

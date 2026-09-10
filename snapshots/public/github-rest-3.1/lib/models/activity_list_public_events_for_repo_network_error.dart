@@ -7,19 +7,13 @@ sealed class ActivityListPublicEventsForRepoNetworkError {const ActivityListPubl
 static ActivityListPublicEventsForRepoNetworkError parse(ApiResponse response) {switch (response.statusCode) {
 case 301:
 final json = jsonDecode(response.body);
-return ActivityListPublicEventsForRepoNetworkError301(BasicError.fromJson(json as Map<String, dynamic>));
-case 304:
-return const ActivityListPublicEventsForRepoNetworkError304();
-case 403:
+return  ActivityListPublicEventsForRepoNetworkError301(BasicError.fromJson(json as Map<String, dynamic>));case 304:
+return  const ActivityListPublicEventsForRepoNetworkError304();case 403:
 final json = jsonDecode(response.body);
-return ActivityListPublicEventsForRepoNetworkError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  ActivityListPublicEventsForRepoNetworkError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return ActivityListPublicEventsForRepoNetworkError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ActivityListPublicEventsForRepoNetworkErrorUnknown(response);
-}
-}
+return  ActivityListPublicEventsForRepoNetworkError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ActivityListPublicEventsForRepoNetworkErrorUnknown(response); }}
 }
 /// Response for 301 (application/json).
 final class ActivityListPublicEventsForRepoNetworkError301 extends ActivityListPublicEventsForRepoNetworkError {const ActivityListPublicEventsForRepoNetworkError301(this.data);

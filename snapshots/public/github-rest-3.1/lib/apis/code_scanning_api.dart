@@ -64,15 +64,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => CodeScanningOrganizationAlertItems.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: CodeScanningListAlertsForOrgError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => CodeScanningOrganizationAlertItems.fromJson(e as Map<String, dynamic>)).toList();}, onError: CodeScanningListAlertsForOrgError.parse, );}
 /// List code scanning alerts for a repository
 ///
 /// Lists code scanning alerts.
@@ -137,15 +131,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => CodeScanningAlertItems.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: CodeScanningListAlertsForRepoError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => CodeScanningAlertItems.fromJson(e as Map<String, dynamic>)).toList();}, onError: CodeScanningListAlertsForRepoError.parse, );}
 /// Get a code scanning alert
 ///
 /// Gets a single code scanning alert.
@@ -162,15 +150,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodeScanningAlert.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodeScanningGetAlertError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodeScanningAlert.fromJson(json as Map<String, dynamic>);}, onError: CodeScanningGetAlertError.parse, );}
 /// Update a code scanning alert
 ///
 /// Updates the status of a single code scanning alert.
@@ -188,15 +170,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodeScanningAlert.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodeScanningUpdateAlertError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodeScanningAlert.fromJson(json as Map<String, dynamic>);}, onError: CodeScanningUpdateAlertError.parse, );}
 /// Get the status of an autofix for a code scanning alert
 ///
 /// Gets the status and description of an autofix for a code scanning alert.
@@ -213,15 +189,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodeScanningAutofix.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodeScanningGetAutofixError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodeScanningAutofix.fromJson(json as Map<String, dynamic>);}, onError: CodeScanningGetAutofixError.parse, );}
 /// Create an autofix for a code scanning alert
 ///
 /// Creates an autofix for a code scanning alert.
@@ -242,22 +212,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {switch (response.statusCode) {
 case 200 || 202:
 final json = jsonDecode(response.body);
-return CodeScanningAutofix.fromJson(json as Map<String, dynamic>);
-default:
+return  CodeScanningAutofix.fromJson(json as Map<String, dynamic>);default:
 final json = jsonDecode(response.body);
-return CodeScanningAutofix.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-  onError: CodeScanningCreateAutofixError.parse,
-);
-}
+return  CodeScanningAutofix.fromJson(json as Map<String, dynamic>); }}, onError: CodeScanningCreateAutofixError.parse, );}
 /// Commit an autofix for a code scanning alert
 ///
 /// Commits an autofix for a code scanning alert.
@@ -278,15 +239,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodeScanningAutofixCommitsResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodeScanningCommitAutofixError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodeScanningAutofixCommitsResponse.fromJson(json as Map<String, dynamic>);}, onError: CodeScanningCommitAutofixError.parse, );}
 /// List instances of a code scanning alert
 ///
 /// Lists all instances of the specified code scanning alert.
@@ -320,15 +275,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => CodeScanningAlertInstanceList.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: CodeScanningListAlertInstancesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => CodeScanningAlertInstanceList.fromJson(e as Map<String, dynamic>)).toList();}, onError: CodeScanningListAlertInstancesError.parse, );}
 /// List code scanning analyses for a repository
 ///
 /// Lists the details of all code scanning analyses for a repository,
@@ -389,15 +338,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => CodeScanningAnalysis.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: CodeScanningListRecentAnalysesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => CodeScanningAnalysis.fromJson(e as Map<String, dynamic>)).toList();}, onError: CodeScanningListRecentAnalysesError.parse, );}
 /// Get a code scanning analysis for a repository
 ///
 /// Gets a specified code scanning analysis for a repository.
@@ -428,12 +371,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: CodeScanningGetAnalysisSuccess.parse,
-  onError: CodeScanningGetAnalysisError.parse,
-);
-}
+
+return   await execute(request, onSuccess: CodeScanningGetAnalysisSuccess.parse, onError: CodeScanningGetAnalysisError.parse, );}
 /// Delete a code scanning analysis from a repository
 ///
 /// Deletes a specified code scanning analysis from a repository.
@@ -519,15 +458,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodeScanningAnalysisDeletion.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodeScanningDeleteAnalysisError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodeScanningAnalysisDeletion.fromJson(json as Map<String, dynamic>);}, onError: CodeScanningDeleteAnalysisError.parse, );}
 /// List CodeQL databases for a repository
 ///
 /// Lists the CodeQL databases that are available in a repository.
@@ -544,15 +477,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => CodeScanningCodeqlDatabase.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: CodeScanningListCodeqlDatabasesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => CodeScanningCodeqlDatabase.fromJson(e as Map<String, dynamic>)).toList();}, onError: CodeScanningListCodeqlDatabasesError.parse, );}
 /// Get a CodeQL database for a repository
 ///
 /// Gets a CodeQL database for a language in a repository.
@@ -575,15 +502,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodeScanningCodeqlDatabase.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodeScanningGetCodeqlDatabaseError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodeScanningCodeqlDatabase.fromJson(json as Map<String, dynamic>);}, onError: CodeScanningGetCodeqlDatabaseError.parse, );}
 /// Delete a CodeQL database
 ///
 /// Deletes a CodeQL database for a language in a repository.
@@ -600,12 +521,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: CodeScanningDeleteCodeqlDatabaseError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: CodeScanningDeleteCodeqlDatabaseError.parse, );}
 /// Create a CodeQL variant analysis
 ///
 /// Creates a new CodeQL variant analysis, which will run a CodeQL query against one or more repositories.
@@ -629,15 +546,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodeScanningVariantAnalysis.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodeScanningCreateVariantAnalysisError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodeScanningVariantAnalysis.fromJson(json as Map<String, dynamic>);}, onError: CodeScanningCreateVariantAnalysisError.parse, );}
 /// Get the summary of a CodeQL variant analysis
 ///
 /// Gets the summary of a CodeQL variant analysis.
@@ -654,15 +565,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodeScanningVariantAnalysis.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodeScanningGetVariantAnalysisError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodeScanningVariantAnalysis.fromJson(json as Map<String, dynamic>);}, onError: CodeScanningGetVariantAnalysisError.parse, );}
 /// Get the analysis status of a repository in a CodeQL variant analysis
 ///
 /// Gets the analysis status of a repository in a CodeQL variant analysis.
@@ -679,15 +584,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodeScanningVariantAnalysisRepoTask.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodeScanningGetVariantAnalysisRepoTaskError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodeScanningVariantAnalysisRepoTask.fromJson(json as Map<String, dynamic>);}, onError: CodeScanningGetVariantAnalysisRepoTaskError.parse, );}
 /// Get a code scanning default setup configuration
 ///
 /// Gets a code scanning default setup configuration.
@@ -704,15 +603,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodeScanningDefaultSetup.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodeScanningGetDefaultSetupError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodeScanningDefaultSetup.fromJson(json as Map<String, dynamic>);}, onError: CodeScanningGetDefaultSetupError.parse, );}
 /// Update a code scanning default setup configuration
 ///
 /// Updates a code scanning default setup configuration.
@@ -731,12 +624,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: CodeScanningUpdateDefaultSetupSuccess.parse,
-  onError: CodeScanningUpdateDefaultSetupError.parse,
-);
-}
+
+return   await execute(request, onSuccess: CodeScanningUpdateDefaultSetupSuccess.parse, onError: CodeScanningUpdateDefaultSetupError.parse, );}
 /// Upload an analysis as SARIF data
 ///
 /// Uploads SARIF data containing the results of a code scanning analysis to make the results available in a repository. For troubleshooting information, see "[Troubleshooting SARIF uploads](https://docs.github.com/code-security/code-scanning/troubleshooting-sarif)."
@@ -786,15 +675,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodeScanningSarifsReceipt.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodeScanningUploadSarifError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodeScanningSarifsReceipt.fromJson(json as Map<String, dynamic>);}, onError: CodeScanningUploadSarifError.parse, );}
 /// Get information about a SARIF upload
 ///
 /// Gets information about a SARIF upload, including the status and the URL of the analysis that was uploaded so that you can retrieve details of the analysis. For more information, see "[Get a code scanning analysis for a repository](/rest/code-scanning/code-scanning#get-a-code-scanning-analysis-for-a-repository)."
@@ -810,13 +693,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CodeScanningSarifsStatus.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CodeScanningGetSarifError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CodeScanningSarifsStatus.fromJson(json as Map<String, dynamic>);}, onError: CodeScanningGetSarifError.parse, );}
 }

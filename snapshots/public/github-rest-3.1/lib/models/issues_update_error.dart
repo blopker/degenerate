@@ -7,26 +7,18 @@ sealed class IssuesUpdateError {const IssuesUpdateError();
 static IssuesUpdateError parse(ApiResponse response) {switch (response.statusCode) {
 case 301:
 final json = jsonDecode(response.body);
-return IssuesUpdateError301(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  IssuesUpdateError301(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return IssuesUpdateError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  IssuesUpdateError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return IssuesUpdateError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 410:
+return  IssuesUpdateError404(BasicError.fromJson(json as Map<String, dynamic>));case 410:
 final json = jsonDecode(response.body);
-return IssuesUpdateError410(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  IssuesUpdateError410(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return IssuesUpdateError422(ValidationError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  IssuesUpdateError422(ValidationError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return IssuesUpdateError503(IssuesUpdateResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return IssuesUpdateErrorUnknown(response);
-}
-}
+return  IssuesUpdateError503(IssuesUpdateResponse503.fromJson(json as Map<String, dynamic>));default:
+return  IssuesUpdateErrorUnknown(response); }}
 }
 /// Response for 301 (application/json).
 final class IssuesUpdateError301 extends IssuesUpdateError {const IssuesUpdateError301(this.data);

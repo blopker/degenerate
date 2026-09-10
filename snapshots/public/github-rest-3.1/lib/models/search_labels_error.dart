@@ -6,20 +6,14 @@ sealed class SearchLabelsError {const SearchLabelsError();
 /// Decodes the payload for its declared status and content type.
 static SearchLabelsError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const SearchLabelsError304();
-case 403:
+return  const SearchLabelsError304();case 403:
 final json = jsonDecode(response.body);
-return SearchLabelsError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  SearchLabelsError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return SearchLabelsError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  SearchLabelsError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return SearchLabelsError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return SearchLabelsErrorUnknown(response);
-}
-}
+return  SearchLabelsError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  SearchLabelsErrorUnknown(response); }}
 }
 /// Response for 304.
 final class SearchLabelsError304 extends SearchLabelsError {const SearchLabelsError304();

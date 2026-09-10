@@ -7,20 +7,14 @@ sealed class CodespacesCreateWithPrForAuthenticatedUserError {const CodespacesCr
 static CodespacesCreateWithPrForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 401:
 final json = jsonDecode(response.body);
-return CodespacesCreateWithPrForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  CodespacesCreateWithPrForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return CodespacesCreateWithPrForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CodespacesCreateWithPrForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CodespacesCreateWithPrForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  CodespacesCreateWithPrForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return CodespacesCreateWithPrForAuthenticatedUserError503(CodespacesCreateWithPrForAuthenticatedUserResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return CodespacesCreateWithPrForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  CodespacesCreateWithPrForAuthenticatedUserError503(CodespacesCreateWithPrForAuthenticatedUserResponse503.fromJson(json as Map<String, dynamic>));default:
+return  CodespacesCreateWithPrForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 401 (application/json).
 final class CodespacesCreateWithPrForAuthenticatedUserError401 extends CodespacesCreateWithPrForAuthenticatedUserError {const CodespacesCreateWithPrForAuthenticatedUserError401(this.data);

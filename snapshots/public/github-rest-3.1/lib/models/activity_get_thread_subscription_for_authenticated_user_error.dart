@@ -6,17 +6,12 @@ sealed class ActivityGetThreadSubscriptionForAuthenticatedUserError {const Activ
 /// Decodes the payload for its declared status and content type.
 static ActivityGetThreadSubscriptionForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ActivityGetThreadSubscriptionForAuthenticatedUserError304();
-case 401:
+return  const ActivityGetThreadSubscriptionForAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return ActivityGetThreadSubscriptionForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  ActivityGetThreadSubscriptionForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return ActivityGetThreadSubscriptionForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ActivityGetThreadSubscriptionForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  ActivityGetThreadSubscriptionForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ActivityGetThreadSubscriptionForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ActivityGetThreadSubscriptionForAuthenticatedUserError304 extends ActivityGetThreadSubscriptionForAuthenticatedUserError {const ActivityGetThreadSubscriptionForAuthenticatedUserError304();

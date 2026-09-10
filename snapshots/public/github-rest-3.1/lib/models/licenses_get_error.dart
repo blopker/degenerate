@@ -6,17 +6,12 @@ sealed class LicensesGetError {const LicensesGetError();
 /// Decodes the payload for its declared status and content type.
 static LicensesGetError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const LicensesGetError304();
-case 403:
+return  const LicensesGetError304();case 403:
 final json = jsonDecode(response.body);
-return LicensesGetError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  LicensesGetError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return LicensesGetError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return LicensesGetErrorUnknown(response);
-}
-}
+return  LicensesGetError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  LicensesGetErrorUnknown(response); }}
 }
 /// Response for 304.
 final class LicensesGetError304 extends LicensesGetError {const LicensesGetError304();

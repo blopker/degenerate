@@ -7,14 +7,10 @@ sealed class GistsUpdateError {const GistsUpdateError();
 static GistsUpdateError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return GistsUpdateError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  GistsUpdateError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return GistsUpdateError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return GistsUpdateErrorUnknown(response);
-}
-}
+return  GistsUpdateError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  GistsUpdateErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class GistsUpdateError404 extends GistsUpdateError {const GistsUpdateError404(this.data);

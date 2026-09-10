@@ -7,17 +7,12 @@ sealed class OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesError {
 static OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesErrorUnknown(response);
-}
-}
+return  OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesError403 extends OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesError {const OrgsCustomPropertiesForReposCreateOrUpdateOrganizationValuesError403(this.data);

@@ -7,20 +7,14 @@ sealed class IssuesReprioritizeSubIssueError {const IssuesReprioritizeSubIssueEr
 static IssuesReprioritizeSubIssueError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return IssuesReprioritizeSubIssueError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  IssuesReprioritizeSubIssueError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return IssuesReprioritizeSubIssueError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  IssuesReprioritizeSubIssueError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return IssuesReprioritizeSubIssueError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-case 503:
+return  IssuesReprioritizeSubIssueError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return IssuesReprioritizeSubIssueError503(IssuesReprioritizeSubIssueResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return IssuesReprioritizeSubIssueErrorUnknown(response);
-}
-}
+return  IssuesReprioritizeSubIssueError503(IssuesReprioritizeSubIssueResponse503.fromJson(json as Map<String, dynamic>));default:
+return  IssuesReprioritizeSubIssueErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class IssuesReprioritizeSubIssueError403 extends IssuesReprioritizeSubIssueError {const IssuesReprioritizeSubIssueError403(this.data);

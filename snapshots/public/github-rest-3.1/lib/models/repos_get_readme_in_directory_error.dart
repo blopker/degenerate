@@ -7,14 +7,10 @@ sealed class ReposGetReadmeInDirectoryError {const ReposGetReadmeInDirectoryErro
 static ReposGetReadmeInDirectoryError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ReposGetReadmeInDirectoryError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposGetReadmeInDirectoryError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposGetReadmeInDirectoryError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposGetReadmeInDirectoryErrorUnknown(response);
-}
-}
+return  ReposGetReadmeInDirectoryError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposGetReadmeInDirectoryErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class ReposGetReadmeInDirectoryError404 extends ReposGetReadmeInDirectoryError {const ReposGetReadmeInDirectoryError404(this.data);

@@ -7,30 +7,20 @@ sealed class ReposCreateForkError {const ReposCreateForkError();
 static ReposCreateForkError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ReposCreateForkError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  ReposCreateForkError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return ReposCreateForkError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  ReposCreateForkError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return ReposCreateForkError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 403:
+return  ReposCreateForkError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }case 403:
 final json = jsonDecode(response.body);
-return ReposCreateForkError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  ReposCreateForkError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return ReposCreateForkError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposCreateForkError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposCreateForkError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposCreateForkErrorUnknown(response);
-}
-}
+return  ReposCreateForkError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposCreateForkErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class ReposCreateForkError400ApplicationJson extends ReposCreateForkError {const ReposCreateForkError400ApplicationJson(this.data);

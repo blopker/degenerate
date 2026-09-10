@@ -7,14 +7,10 @@ sealed class PullsUpdateBranchError {const PullsUpdateBranchError();
 static PullsUpdateBranchError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return PullsUpdateBranchError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  PullsUpdateBranchError403(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return PullsUpdateBranchError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return PullsUpdateBranchErrorUnknown(response);
-}
-}
+return  PullsUpdateBranchError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  PullsUpdateBranchErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class PullsUpdateBranchError403 extends PullsUpdateBranchError {const PullsUpdateBranchError403(this.data);

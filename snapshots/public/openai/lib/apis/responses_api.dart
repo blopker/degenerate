@@ -29,11 +29,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: CreateResponseSuccess.parse,
-);
-}
+
+return   await execute(request, onSuccess: CreateResponseSuccess.parse, );}
 /// Retrieves a model response with the given ID.
 /// 
 ///
@@ -66,14 +63,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Response.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Response.fromJson(json as Map<String, dynamic>);}, );}
 /// Deletes a model response with the given ID.
 /// 
 ///
@@ -87,21 +79,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Cancels a model response with the given ID. Only responses created with
 /// the `background` parameter set to `true` can be cancelled.
 /// [Learn more](/docs/guides/background).
@@ -117,24 +100,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Response.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Response.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Returns a list of input items for a given response.
 ///
 /// `GET /responses/{response_id}/input_items`
@@ -166,14 +138,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ResponseItemList.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ResponseItemList.fromJson(json as Map<String, dynamic>);}, );}
 /// Creates a model response. Provide [text](/docs/guides/text) or
 /// [image](/docs/guides/images) inputs to generate [text](/docs/guides/text)
 /// or [JSON](/docs/guides/structured-outputs) outputs. Have the model call

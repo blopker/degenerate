@@ -6,18 +6,12 @@ sealed class SecretScanningUpdateAlertError {const SecretScanningUpdateAlertErro
 /// Decodes the payload for its declared status and content type.
 static SecretScanningUpdateAlertError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
-return const SecretScanningUpdateAlertError400();
-case 404:
-return const SecretScanningUpdateAlertError404();
-case 422:
-return const SecretScanningUpdateAlertError422();
-case 503:
+return  const SecretScanningUpdateAlertError400();case 404:
+return  const SecretScanningUpdateAlertError404();case 422:
+return  const SecretScanningUpdateAlertError422();case 503:
 final json = jsonDecode(response.body);
-return SecretScanningUpdateAlertError503(SecretScanningUpdateAlertResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return SecretScanningUpdateAlertErrorUnknown(response);
-}
-}
+return  SecretScanningUpdateAlertError503(SecretScanningUpdateAlertResponse503.fromJson(json as Map<String, dynamic>));default:
+return  SecretScanningUpdateAlertErrorUnknown(response); }}
 }
 /// Response for 400.
 final class SecretScanningUpdateAlertError400 extends SecretScanningUpdateAlertError {const SecretScanningUpdateAlertError400();

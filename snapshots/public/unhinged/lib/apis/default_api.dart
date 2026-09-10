@@ -141,6 +141,7 @@ final class DefaultApi with ApiExecutor {
       request,
       onSuccess: (response) {
         // TODO: Unsupported non-JSON response schema Cannot decode text/event-stream response into TypeModel
+
         throw UnsupportedError(
           'Cannot decode text/event-stream response into TypeModel',
         );
@@ -182,6 +183,7 @@ final class DefaultApi with ApiExecutor {
       request,
       onSuccess: (response) {
         // TODO: Unsupported non-JSON response schema Cannot decode application/jsonl response into StringModel
+
         throw UnsupportedError(
           'Cannot decode application/jsonl response into StringModel',
         );

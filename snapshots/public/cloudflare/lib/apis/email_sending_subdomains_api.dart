@@ -22,14 +22,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>?)?.map((e) => EmailSendingSubdomainProperties.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>?)?.map((e) => EmailSendingSubdomainProperties.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Create a sending subdomain
 ///
 /// Creates a new sending subdomain or re-enables sending on an existing subdomain that had it disabled.
@@ -46,14 +41,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? EmailSendingSubdomainProperties.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? EmailSendingSubdomainProperties.fromJson(json['result'] as Map<String, dynamic>) : null;}, );}
 /// Get a sending subdomain
 ///
 /// Gets information for a specific sending subdomain.
@@ -68,14 +58,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? EmailSendingSubdomainProperties.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? EmailSendingSubdomainProperties.fromJson(json['result'] as Map<String, dynamic>) : null;}, );}
 /// Delete a sending subdomain
 ///
 /// Disables sending on a subdomain and removes its DNS records. If routing is still active on the subdomain, only sending is disabled.
@@ -90,14 +75,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ResponseCommon30.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ResponseCommon30.fromJson(json as Map<String, dynamic>);}, );}
 /// Get sending subdomain DNS records
 ///
 /// Returns the expected DNS records for a sending subdomain.
@@ -112,12 +92,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>?)?.map((e) => EmailDnsRecord.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>?)?.map((e) => EmailDnsRecord.fromJson(e as Map<String, dynamic>)).toList();}, );}
 }

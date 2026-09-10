@@ -7,20 +7,14 @@ sealed class IssuesSetLabelsError {const IssuesSetLabelsError();
 static IssuesSetLabelsError parse(ApiResponse response) {switch (response.statusCode) {
 case 301:
 final json = jsonDecode(response.body);
-return IssuesSetLabelsError301(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  IssuesSetLabelsError301(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return IssuesSetLabelsError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 410:
+return  IssuesSetLabelsError404(BasicError.fromJson(json as Map<String, dynamic>));case 410:
 final json = jsonDecode(response.body);
-return IssuesSetLabelsError410(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  IssuesSetLabelsError410(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return IssuesSetLabelsError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return IssuesSetLabelsErrorUnknown(response);
-}
-}
+return  IssuesSetLabelsError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  IssuesSetLabelsErrorUnknown(response); }}
 }
 /// Response for 301 (application/json).
 final class IssuesSetLabelsError301 extends IssuesSetLabelsError {const IssuesSetLabelsError301(this.data);

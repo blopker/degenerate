@@ -20,14 +20,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => Shape.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => Shape.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Create a shape
 ///
 /// `POST /shapes`
@@ -42,24 +37,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Shape.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Shape.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create an order with nested items
 ///
 /// `POST /orders`
@@ -74,24 +58,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Order.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Order.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return ErrorModel.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ErrorModel.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Set payment method for an order (untagged oneOf)
 ///
 /// `PUT /orders/{orderId}/payment`
@@ -106,14 +79,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OneOf2.parse(json, fromA: (v) => CreditCard.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>),);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OneOf2.parse(json, fromA: (v) => CreditCard.fromJson(v as Map<String, dynamic>), fromB: (v) => BankAccount.fromJson(v as Map<String, dynamic>),);}, );}
 /// Send a notification via email and/or SMS (anyOf)
 ///
 /// `POST /notifications`
@@ -128,14 +96,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SendNotificationResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SendNotificationResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// List pets with extended info
 ///
 /// `GET /pets`
@@ -159,14 +122,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => ExtendedPet.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => ExtendedPet.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Get key-value metadata for a pet
 ///
 /// `GET /pets/{petId}/metadata`
@@ -179,12 +137,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as Map<String, dynamic>).map((k, v) => MapEntry(k, v as String));}, );}
 }

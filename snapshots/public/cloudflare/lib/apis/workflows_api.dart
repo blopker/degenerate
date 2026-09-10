@@ -36,24 +36,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => WorListWorkflowsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => WorListWorkflowsResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorListWorkflowsResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorListWorkflowsResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get Workflow details
 ///
 /// Retrieves configuration and metadata for a specific workflow.
@@ -68,15 +57,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return WorGetWorkflowDetailsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: WorGetWorkflowDetailsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  WorGetWorkflowDetailsResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: WorGetWorkflowDetailsError.parse, );}
 /// Create/modify Workflow
 ///
 /// Creates a new workflow or updates an existing workflow definition.
@@ -93,24 +76,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return WorCreateOrModifyWorkflowResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  WorCreateOrModifyWorkflowResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorCreateOrModifyWorkflowResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorCreateOrModifyWorkflowResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Deletes a Workflow
 ///
 /// Deletes a Workflow. This only deletes the Workflow and does not delete or modify any Worker associated to this Workflow or bounded to it.
@@ -125,15 +97,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return WorDeleteWorkflowResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: WorDeleteWorkflowError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  WorDeleteWorkflowResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: WorDeleteWorkflowError.parse, );}
 /// List of workflow instances
 ///
 /// Lists all instances of a workflow with their execution status.
@@ -174,15 +140,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => WorListWorkflowInstancesResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: WorListWorkflowInstancesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => WorListWorkflowInstancesResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, onError: WorListWorkflowInstancesError.parse, );}
 /// Create a new workflow instance
 ///
 /// Creates a new instance of a workflow, starting its execution.
@@ -199,15 +159,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return WorCreateNewWorkflowInstanceResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: WorCreateNewWorkflowInstanceError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  WorCreateNewWorkflowInstanceResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: WorCreateNewWorkflowInstanceError.parse, );}
 /// Get logs and status from instance
 ///
 /// Retrieves logs and execution status for a specific workflow instance.
@@ -233,15 +187,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return WorDescribeWorkflowInstanceResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: WorDescribeWorkflowInstanceError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  WorDescribeWorkflowInstanceResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: WorDescribeWorkflowInstanceError.parse, );}
 /// Send event to instance
 ///
 /// Sends an event to a running workflow instance to trigger state transitions.
@@ -258,15 +206,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] as Map<String, dynamic>?;
-  },
-  onError: WorSendEventWorkflowInstanceError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] as Map<String, dynamic>?;}, onError: WorSendEventWorkflowInstanceError.parse, );}
 /// Change status of instance
 ///
 /// Changes the execution status of a workflow instance (e.g., pause, resume, terminate).
@@ -283,15 +225,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return WorChangeStatusWorkflowInstanceResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: WorChangeStatusWorkflowInstanceError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  WorChangeStatusWorkflowInstanceResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: WorChangeStatusWorkflowInstanceError.parse, );}
 /// Batch create new Workflow instances
 ///
 /// Creates multiple workflow instances in a single batch operation.
@@ -308,15 +244,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => WorBatchCreateWorkflowInstanceResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: WorBatchCreateWorkflowInstanceError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => WorBatchCreateWorkflowInstanceResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, onError: WorBatchCreateWorkflowInstanceError.parse, );}
 /// Batch terminate instances of a workflow
 ///
 /// Terminates multiple workflow instances in a single batch operation.
@@ -333,15 +263,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return WorBatchTerminateWorkflowInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: WorBatchTerminateWorkflowInstancesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  WorBatchTerminateWorkflowInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: WorBatchTerminateWorkflowInstancesError.parse, );}
 /// Get status of the job responsible for terminate all instances of a workflow
 ///
 /// Gets the status of a bulk workflow instance termination job.
@@ -356,15 +280,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return WorStatusTerminateWorkflowInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: WorStatusTerminateWorkflowInstancesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  WorStatusTerminateWorkflowInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: WorStatusTerminateWorkflowInstancesError.parse, );}
 /// List deployed Workflow versions
 ///
 /// Lists all deployed versions of a workflow.
@@ -390,24 +308,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => WorListWorkflowVersionsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => WorListWorkflowVersionsResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorListWorkflowVersionsResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorListWorkflowVersionsResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get Workflow version details
 ///
 /// Retrieves details for a specific deployed workflow version.
@@ -422,15 +329,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return WorDescribeWorkflowVersionsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: WorDescribeWorkflowVersionsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  WorDescribeWorkflowVersionsResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: WorDescribeWorkflowVersionsError.parse, );}
 /// Get Workflow version dag
 ///
 /// Retrieves the directed acyclic graph (DAG) representation of a workflow version.
@@ -445,24 +346,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return WorDescribeWorkflowVersionsDagResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  WorDescribeWorkflowVersionsDagResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return WorDescribeWorkflowVersionsDagResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorDescribeWorkflowVersionsDagResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get Workflow version graph
 ///
 /// Retrieves the graph visualization of a workflow version.
@@ -477,22 +367,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return WorDescribeWorkflowVersionsGraphResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  WorDescribeWorkflowVersionsGraphResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return WorDescribeWorkflowVersionsGraphResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  WorDescribeWorkflowVersionsGraphResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

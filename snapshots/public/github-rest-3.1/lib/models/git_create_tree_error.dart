@@ -7,20 +7,14 @@ sealed class GitCreateTreeError {const GitCreateTreeError();
 static GitCreateTreeError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return GitCreateTreeError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  GitCreateTreeError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return GitCreateTreeError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 409:
+return  GitCreateTreeError404(BasicError.fromJson(json as Map<String, dynamic>));case 409:
 final json = jsonDecode(response.body);
-return GitCreateTreeError409(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  GitCreateTreeError409(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return GitCreateTreeError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return GitCreateTreeErrorUnknown(response);
-}
-}
+return  GitCreateTreeError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  GitCreateTreeErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class GitCreateTreeError403 extends GitCreateTreeError {const GitCreateTreeError403(this.data);

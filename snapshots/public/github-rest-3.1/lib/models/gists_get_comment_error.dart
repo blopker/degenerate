@@ -6,17 +6,12 @@ sealed class GistsGetCommentError {const GistsGetCommentError();
 /// Decodes the payload for its declared status and content type.
 static GistsGetCommentError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const GistsGetCommentError304();
-case 403:
+return  const GistsGetCommentError304();case 403:
 final json = jsonDecode(response.body);
-return GistsGetCommentError403(GistsGetCommentResponse403.fromJson(json as Map<String, dynamic>));
-case 404:
+return  GistsGetCommentError403(GistsGetCommentResponse403.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return GistsGetCommentError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return GistsGetCommentErrorUnknown(response);
-}
-}
+return  GistsGetCommentError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  GistsGetCommentErrorUnknown(response); }}
 }
 /// Response for 304.
 final class GistsGetCommentError304 extends GistsGetCommentError {const GistsGetCommentError304();

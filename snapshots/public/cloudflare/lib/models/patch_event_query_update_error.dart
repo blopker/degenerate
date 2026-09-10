@@ -7,14 +7,10 @@ sealed class PatchEventQueryUpdateError {const PatchEventQueryUpdateError();
 static PatchEventQueryUpdateError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PatchEventQueryUpdateError400(PatchEventQueryUpdateResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  PatchEventQueryUpdateError400(PatchEventQueryUpdateResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return PatchEventQueryUpdateError404(PatchEventQueryUpdateResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return PatchEventQueryUpdateErrorUnknown(response);
-}
-}
+return  PatchEventQueryUpdateError404(PatchEventQueryUpdateResponse404.fromJson(json as Map<String, dynamic>));default:
+return  PatchEventQueryUpdateErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class PatchEventQueryUpdateError400 extends PatchEventQueryUpdateError {const PatchEventQueryUpdateError400(this.data);

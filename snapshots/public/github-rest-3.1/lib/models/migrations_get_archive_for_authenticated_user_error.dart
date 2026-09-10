@@ -6,19 +6,13 @@ sealed class MigrationsGetArchiveForAuthenticatedUserError {const MigrationsGetA
 /// Decodes the payload for its declared status and content type.
 static MigrationsGetArchiveForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 302:
-return const MigrationsGetArchiveForAuthenticatedUserError302();
-case 304:
-return const MigrationsGetArchiveForAuthenticatedUserError304();
-case 401:
+return  const MigrationsGetArchiveForAuthenticatedUserError302();case 304:
+return  const MigrationsGetArchiveForAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return MigrationsGetArchiveForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  MigrationsGetArchiveForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return MigrationsGetArchiveForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return MigrationsGetArchiveForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  MigrationsGetArchiveForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  MigrationsGetArchiveForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 302.
 final class MigrationsGetArchiveForAuthenticatedUserError302 extends MigrationsGetArchiveForAuthenticatedUserError {const MigrationsGetArchiveForAuthenticatedUserError302();

@@ -7,21 +7,13 @@ sealed class WorkersAiPostRunCfLykonDreamshaper8LcmSuccess {const WorkersAiPostR
 static WorkersAiPostRunCfLykonDreamshaper8LcmSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfLykonDreamshaper8LcmSuccess200ApplicationJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'image/png')) {
-final value = (() { return Uint8List.fromList(response.bodyBytes); })();
-return WorkersAiPostRunCfLykonDreamshaper8LcmSuccess200ImagePng(value);
-}
+return  WorkersAiPostRunCfLykonDreamshaper8LcmSuccess200ApplicationJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'image/png', )) {
+return  WorkersAiPostRunCfLykonDreamshaper8LcmSuccess200ImagePng(Uint8List.fromList(response.bodyBytes)); } else {
 final json = jsonDecode(response.body);
-return WorkersAiPostRunCfLykonDreamshaper8LcmSuccess200ApplicationJson(json as Map<String, dynamic>);
-
-default:
-return WorkersAiPostRunCfLykonDreamshaper8LcmSuccessUnknown(response);
-}
-}
+return  WorkersAiPostRunCfLykonDreamshaper8LcmSuccess200ApplicationJson(json as Map<String, dynamic>); }default:
+return  WorkersAiPostRunCfLykonDreamshaper8LcmSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class WorkersAiPostRunCfLykonDreamshaper8LcmSuccess200ApplicationJson extends WorkersAiPostRunCfLykonDreamshaper8LcmSuccess {const WorkersAiPostRunCfLykonDreamshaper8LcmSuccess200ApplicationJson(this.data);

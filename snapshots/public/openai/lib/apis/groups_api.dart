@@ -34,14 +34,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GroupListResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GroupListResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Creates a new group in the organization.
 ///
 /// `POST /organization/groups`
@@ -56,14 +51,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GroupResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GroupResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Updates a group's information.
 ///
 /// `POST /organization/groups/{group_id}`
@@ -78,14 +68,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GroupResourceWithSuccess.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GroupResourceWithSuccess.fromJson(json as Map<String, dynamic>);}, );}
 /// Deletes a group from the organization.
 ///
 /// `DELETE /organization/groups/{group_id}`
@@ -98,12 +83,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GroupDeletedResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GroupDeletedResource.fromJson(json as Map<String, dynamic>);}, );}
 }

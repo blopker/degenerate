@@ -24,11 +24,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#create-2020-04
@@ -45,11 +42,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#create-2020-07
@@ -66,11 +60,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#create-2020-10
@@ -87,11 +78,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#create-2021-01
@@ -108,11 +96,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#create-unstable
@@ -129,11 +114,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Completes a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#complete-2020-01
@@ -150,11 +132,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#show-2020-01
@@ -169,11 +148,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Modifies an existing checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#update-2020-01
@@ -190,11 +166,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of available shipping rates for the specified checkout. Implementers need to poll this endpoint until rates become available.
 ///     Each shipping rate contains the checkout's new subtotal price, total tax, and total price in the event that this shipping rate is selected. This can be used to update the UI without performing further API requests.
 ///     To apply a shipping rate, update the checkout's shipping line with the handle of the selected rate.
@@ -211,11 +184,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Completes a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#complete-2020-04
@@ -232,11 +202,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#show-2020-04
@@ -251,11 +218,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Modifies an existing checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#update-2020-04
@@ -272,11 +236,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of available shipping rates for the specified checkout. Implementers need to poll this endpoint until rates become available.
 ///     Each shipping rate contains the checkout's new subtotal price, total tax, and total price in the event that this shipping rate is selected. This can be used to update the UI without performing further API requests.
 ///     To apply a shipping rate, update the checkout's shipping line with the handle of the selected rate.
@@ -293,11 +254,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Completes a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#complete-2020-07
@@ -314,11 +272,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#show-2020-07
@@ -333,11 +288,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Modifies an existing checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#update-2020-07
@@ -354,11 +306,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of available shipping rates for the specified checkout. Implementers need to poll this endpoint until rates become available.
 ///     Each shipping rate contains the checkout's new subtotal price, total tax, and total price in the event that this shipping rate is selected. This can be used to update the UI without performing further API requests.
 ///     To apply a shipping rate, update the checkout's shipping line with the handle of the selected rate.
@@ -375,11 +324,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Completes a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#complete-2020-10
@@ -396,11 +342,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#show-2020-10
@@ -415,11 +358,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Modifies an existing checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#update-2020-10
@@ -436,11 +376,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of available shipping rates for the specified checkout. Implementers need to poll this endpoint until rates become available.
 ///     Each shipping rate contains the checkout's new subtotal price, total tax, and total price in the event that this shipping rate is selected. This can be used to update the UI without performing further API requests.
 ///     To apply a shipping rate, update the checkout's shipping line with the handle of the selected rate.
@@ -457,11 +394,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Completes a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#complete-2021-01
@@ -478,11 +412,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#show-2021-01
@@ -497,11 +428,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Modifies an existing checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#update-2021-01
@@ -518,11 +446,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of available shipping rates for the specified checkout. Implementers need to poll this endpoint until rates become available.
 ///     Each shipping rate contains the checkout's new subtotal price, total tax, and total price in the event that this shipping rate is selected. This can be used to update the UI without performing further API requests.
 ///     To apply a shipping rate, update the checkout's shipping line with the handle of the selected rate.
@@ -539,11 +464,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Completes a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#complete-unstable
@@ -560,11 +482,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#show-unstable
@@ -579,11 +498,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Modifies an existing checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/checkout#update-unstable
@@ -600,11 +516,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of available shipping rates for the specified checkout. Implementers need to poll this endpoint until rates become available.
 ///     Each shipping rate contains the checkout's new subtotal price, total tax, and total price in the event that this shipping rate is selected. This can be used to update the UI without performing further API requests.
 ///     To apply a shipping rate, update the checkout's shipping line with the handle of the selected rate.
@@ -621,11 +534,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve collection listings that are published to your app. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#index-2020-01
@@ -648,11 +558,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve product_ids that are published to a collection_id.       Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#product_ids-2020-01
@@ -675,11 +582,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a specific collection listing that is published to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#show-2020-01
@@ -694,11 +598,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a collection listing to publish a collection to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#create-2020-01
@@ -715,11 +616,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Delete a collection listing to unpublish a collection from your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#destroy-2020-01
@@ -734,11 +632,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve collection listings that are published to your app. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#index-2020-04
@@ -761,11 +656,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve product_ids that are published to a collection_id.       Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#product_ids-2020-04
@@ -788,11 +680,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a specific collection listing that is published to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#show-2020-04
@@ -807,11 +696,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a collection listing to publish a collection to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#create-2020-04
@@ -828,11 +714,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Delete a collection listing to unpublish a collection from your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#destroy-2020-04
@@ -847,11 +730,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve collection listings that are published to your app. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#index-2020-07
@@ -874,11 +754,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve product_ids that are published to a collection_id.       Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#product_ids-2020-07
@@ -901,11 +778,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a specific collection listing that is published to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#show-2020-07
@@ -920,11 +794,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a collection listing to publish a collection to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#create-2020-07
@@ -941,11 +812,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Delete a collection listing to unpublish a collection from your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#destroy-2020-07
@@ -960,11 +828,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve collection listings that are published to your app. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#index-2020-10
@@ -987,11 +852,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve product_ids that are published to a collection_id.       Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#product_ids-2020-10
@@ -1014,11 +876,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a specific collection listing that is published to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#show-2020-10
@@ -1033,11 +892,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a collection listing to publish a collection to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#create-2020-10
@@ -1054,11 +910,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Delete a collection listing to unpublish a collection from your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#destroy-2020-10
@@ -1073,11 +926,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve collection listings that are published to your app. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#index-2021-01
@@ -1100,11 +950,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve product_ids that are published to a collection_id.       Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#product_ids-2021-01
@@ -1127,11 +974,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a specific collection listing that is published to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#show-2021-01
@@ -1146,11 +990,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a collection listing to publish a collection to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#create-2021-01
@@ -1167,11 +1008,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Delete a collection listing to unpublish a collection from your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#destroy-2021-01
@@ -1186,11 +1024,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve collection listings that are published to your app. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#index-unstable
@@ -1213,11 +1048,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve product_ids that are published to a collection_id.       Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#product_ids-unstable
@@ -1240,11 +1072,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a specific collection listing that is published to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#show-unstable
@@ -1259,11 +1088,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a collection listing to publish a collection to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#create-unstable
@@ -1280,11 +1106,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Delete a collection listing to unpublish a collection from your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/collectionlisting#destroy-unstable
@@ -1299,11 +1122,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of payments on a particular checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#index-2020-01
@@ -1318,11 +1138,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a payment on a checkout using the session ID returned by the card vault
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#create_payment-2020-01
@@ -1356,11 +1173,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves the payment information for an existing payment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#show-2020-01
@@ -1375,11 +1189,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Counts the number of payments attempted on a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#count-2020-01
@@ -1394,11 +1205,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of payments on a particular checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#index-2020-04
@@ -1413,11 +1221,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a payment on a checkout using the session ID returned by the card vault
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#create_payment-2020-04
@@ -1451,11 +1256,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves the payment information for an existing payment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#show-2020-04
@@ -1470,11 +1272,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Counts the number of payments attempted on a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#count-2020-04
@@ -1489,11 +1288,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of payments on a particular checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#index-2020-07
@@ -1508,11 +1304,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a payment on a checkout using the session ID returned by the card vault
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#create_payment-2020-07
@@ -1546,11 +1339,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves the payment information for an existing payment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#show-2020-07
@@ -1565,11 +1355,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Counts the number of payments attempted on a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#count-2020-07
@@ -1584,11 +1371,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of payments on a particular checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#index-2020-10
@@ -1603,11 +1387,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a payment on a checkout using the session ID returned by the card vault
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#create_payment-2020-10
@@ -1641,11 +1422,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves the payment information for an existing payment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#show-2020-10
@@ -1660,11 +1438,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Counts the number of payments attempted on a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#count-2020-10
@@ -1679,11 +1454,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of payments on a particular checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#index-2021-01
@@ -1698,11 +1470,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a payment on a checkout using the session ID returned by the card vault
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#create_payment-2021-01
@@ -1736,11 +1505,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves the payment information for an existing payment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#show-2021-01
@@ -1755,11 +1521,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Counts the number of payments attempted on a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#count-2021-01
@@ -1774,11 +1537,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of payments on a particular checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#index-unstable
@@ -1793,11 +1553,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a payment on a checkout using the session ID returned by the card vault
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#create_payment-unstable
@@ -1831,11 +1588,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves the payment information for an existing payment
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#show-unstable
@@ -1850,11 +1604,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Counts the number of payments attempted on a checkout
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/payment#count-unstable
@@ -1869,11 +1620,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve product listings that are published to your app. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#index-2020-01
@@ -1908,11 +1656,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve product_ids that are published to your app. Maximum 1,000 results per page.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#product_ids-2020-01
@@ -1935,11 +1680,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a count of products that are published to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#count-2020-01
@@ -1954,11 +1696,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a specific product listing that is published to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#show-2020-01
@@ -1973,11 +1712,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a product listing to publish a product to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#create-2020-01
@@ -1994,11 +1730,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Delete a product listing to unpublish a product from your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#destroy-2020-01
@@ -2013,11 +1746,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve product listings that are published to your app. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#index-2020-04
@@ -2052,11 +1782,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve product_ids that are published to your app. Maximum 1,000 results per page.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#product_ids-2020-04
@@ -2079,11 +1806,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a count of products that are published to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#count-2020-04
@@ -2098,11 +1822,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a specific product listing that is published to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#show-2020-04
@@ -2117,11 +1838,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a product listing to publish a product to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#create-2020-04
@@ -2138,11 +1856,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Delete a product listing to unpublish a product from your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#destroy-2020-04
@@ -2157,11 +1872,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve product listings that are published to your app. Note: As of version 2019-07, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#index-2020-07
@@ -2196,11 +1908,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve product_ids that are published to your app. Maximum 1,000 results per page.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#product_ids-2020-07
@@ -2223,11 +1932,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a count of products that are published to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#count-2020-07
@@ -2242,11 +1948,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieve a specific product listing that is published to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#show-2020-07
@@ -2261,11 +1964,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Create a product listing to publish a product to your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#create-2020-07
@@ -2282,11 +1982,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Delete a product listing to unpublish a product from your app
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/sales-channels/productlisting#destroy-2020-07
@@ -2301,9 +1998,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

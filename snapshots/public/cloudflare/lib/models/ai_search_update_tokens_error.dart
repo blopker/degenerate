@@ -7,14 +7,10 @@ sealed class AiSearchUpdateTokensError {const AiSearchUpdateTokensError();
 static AiSearchUpdateTokensError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return AiSearchUpdateTokensError400(AiSearchUpdateTokensResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  AiSearchUpdateTokensError400(AiSearchUpdateTokensResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return AiSearchUpdateTokensError404(AiSearchUpdateTokensResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return AiSearchUpdateTokensErrorUnknown(response);
-}
-}
+return  AiSearchUpdateTokensError404(AiSearchUpdateTokensResponse404.fromJson(json as Map<String, dynamic>));default:
+return  AiSearchUpdateTokensErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class AiSearchUpdateTokensError400 extends AiSearchUpdateTokensError {const AiSearchUpdateTokensError400(this.data);

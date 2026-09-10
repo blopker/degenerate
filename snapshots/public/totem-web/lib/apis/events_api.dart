@@ -37,14 +37,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PagedSessionListSchema.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PagedSessionListSchema.fromJson(json as Map<String, dynamic>);}, );}
 /// Filter Options
 ///
 /// `GET /api/v1/spaces/filter-options`
@@ -57,14 +52,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FilterOptionsSchema.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FilterOptionsSchema.fromJson(json as Map<String, dynamic>);}, );}
 /// Event Detail
 ///
 /// `GET /api/v1/spaces/event/{event_slug}`
@@ -77,14 +67,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return SessionDetailSchema.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  SessionDetailSchema.fromJson(json as Map<String, dynamic>);}, );}
 /// Upcoming Events
 ///
 /// `GET /api/v1/spaces/calendar`
@@ -111,12 +96,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => EventCalendarSchema.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => EventCalendarSchema.fromJson(e as Map<String, dynamic>)).toList();}, );}
 }

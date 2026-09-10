@@ -21,12 +21,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return json != null ? ShapeResponse.fromJson(json as dynamic) : null;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  json != null ? ShapeResponse.fromJson(json as dynamic) : null;}, );}
 }

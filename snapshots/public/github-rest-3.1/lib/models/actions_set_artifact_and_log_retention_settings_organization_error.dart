@@ -7,20 +7,14 @@ sealed class ActionsSetArtifactAndLogRetentionSettingsOrganizationError {const A
 static ActionsSetArtifactAndLogRetentionSettingsOrganizationError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return ActionsSetArtifactAndLogRetentionSettingsOrganizationError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  ActionsSetArtifactAndLogRetentionSettingsOrganizationError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return ActionsSetArtifactAndLogRetentionSettingsOrganizationError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 409:
+return  ActionsSetArtifactAndLogRetentionSettingsOrganizationError404(BasicError.fromJson(json as Map<String, dynamic>));case 409:
 final json = jsonDecode(response.body);
-return ActionsSetArtifactAndLogRetentionSettingsOrganizationError409(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ActionsSetArtifactAndLogRetentionSettingsOrganizationError409(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ActionsSetArtifactAndLogRetentionSettingsOrganizationError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ActionsSetArtifactAndLogRetentionSettingsOrganizationErrorUnknown(response);
-}
-}
+return  ActionsSetArtifactAndLogRetentionSettingsOrganizationError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ActionsSetArtifactAndLogRetentionSettingsOrganizationErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class ActionsSetArtifactAndLogRetentionSettingsOrganizationError403 extends ActionsSetArtifactAndLogRetentionSettingsOrganizationError {const ActionsSetArtifactAndLogRetentionSettingsOrganizationError403(this.data);

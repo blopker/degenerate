@@ -7,22 +7,15 @@ sealed class CodeScanningCommitAutofixError {const CodeScanningCommitAutofixErro
 static CodeScanningCommitAutofixError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return CodeScanningCommitAutofixError400(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  CodeScanningCommitAutofixError400(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return CodeScanningCommitAutofixError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CodeScanningCommitAutofixError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CodeScanningCommitAutofixError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-return const CodeScanningCommitAutofixError422();
-case 503:
+return  CodeScanningCommitAutofixError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
+return  const CodeScanningCommitAutofixError422();case 503:
 final json = jsonDecode(response.body);
-return CodeScanningCommitAutofixError503(CodeScanningCommitAutofixResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return CodeScanningCommitAutofixErrorUnknown(response);
-}
-}
+return  CodeScanningCommitAutofixError503(CodeScanningCommitAutofixResponse503.fromJson(json as Map<String, dynamic>));default:
+return  CodeScanningCommitAutofixErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class CodeScanningCommitAutofixError400 extends CodeScanningCommitAutofixError {const CodeScanningCommitAutofixError400(this.data);

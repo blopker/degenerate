@@ -7,17 +7,12 @@ sealed class PullsSubmitReviewError {const PullsSubmitReviewError();
 static PullsSubmitReviewError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return PullsSubmitReviewError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  PullsSubmitReviewError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return PullsSubmitReviewError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  PullsSubmitReviewError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return PullsSubmitReviewError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return PullsSubmitReviewErrorUnknown(response);
-}
-}
+return  PullsSubmitReviewError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));default:
+return  PullsSubmitReviewErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class PullsSubmitReviewError403 extends PullsSubmitReviewError {const PullsSubmitReviewError403(this.data);

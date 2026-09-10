@@ -7,16 +7,11 @@ sealed class ReposGetContributorsStatsSuccess {const ReposGetContributorsStatsSu
 static ReposGetContributorsStatsSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final json = jsonDecode(response.body);
-return ReposGetContributorsStatsSuccess200((json as List<dynamic>).map((e) => ContributorActivity.fromJson(e as Map<String, dynamic>)).toList());
-case 202:
+return  ReposGetContributorsStatsSuccess200((json as List<dynamic>).map((e) => ContributorActivity.fromJson(e as Map<String, dynamic>)).toList());case 202:
 final json = jsonDecode(response.body);
-return ReposGetContributorsStatsSuccess202(json as Map<String, dynamic>);
-case 204:
-return const ReposGetContributorsStatsSuccess204();
-default:
-return ReposGetContributorsStatsSuccessUnknown(response);
-}
-}
+return  ReposGetContributorsStatsSuccess202(json as Map<String, dynamic>);case 204:
+return  const ReposGetContributorsStatsSuccess204();default:
+return  ReposGetContributorsStatsSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class ReposGetContributorsStatsSuccess200 extends ReposGetContributorsStatsSuccess {const ReposGetContributorsStatsSuccess200(this.data);

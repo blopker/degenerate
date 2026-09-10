@@ -54,24 +54,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? ListAbuseReportsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? ListAbuseReportsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case 500:
 final json = jsonDecode(response.body);
-return ListAbuseReportsResponse500.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ListAbuseReportsResponse500.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List abuse report emails
 ///
 /// List emails sent to the customer for an abuse report. Returns all successful customer emails sent for the specified abuse report. Does not include emails sent to hosts or submitters.
@@ -97,15 +86,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? ListEmailsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: ListEmailsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? ListEmailsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: ListEmailsError.parse, );}
 /// List abuse report mitigations
 ///
 /// List mitigations done to remediate the abuse report.
@@ -149,24 +132,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? ListMitigationsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? ListMitigationsResponseResult.fromJson(json['result'] as Map<String, dynamic>) : null;}, onError: (response) {switch (response.statusCode) {
 case 500:
 final json = jsonDecode(response.body);
-return ListMitigationsResponse500.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  ListMitigationsResponse500.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Request review on mitigations
 ///
 /// Request a review for mitigations on an account.
@@ -183,24 +155,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>?)?.map((e) => AbuseReportsMitigationListItem.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>?)?.map((e) => AbuseReportsMitigationListItem.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 500:
 final json = jsonDecode(response.body);
-return RequestReviewResponse500.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  RequestReviewResponse500.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Abuse Report Details
 ///
 /// Retrieve the details of an abuse report.
@@ -215,15 +176,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AbuseReportsAbuseReport.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: GetAbuseReportError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AbuseReportsAbuseReport.fromJson(json['result'] as Map<String, dynamic>);}, onError: GetAbuseReportError.parse, );}
 /// Submit an abuse report
 ///
 /// Submit the Abuse Report of a particular type
@@ -240,22 +195,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] as String;
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] as String;}, onError: (response) {switch (response.statusCode) {
 case 400 || 500:
 final json = jsonDecode(response.body);
-return AbuseReportsSubmitErrorResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AbuseReportsSubmitErrorResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

@@ -7,20 +7,14 @@ sealed class AutoragConfigSyncError {const AutoragConfigSyncError();
 static AutoragConfigSyncError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return AutoragConfigSyncError400(AutoragConfigSyncResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  AutoragConfigSyncError400(AutoragConfigSyncResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return AutoragConfigSyncError404(AutoragConfigSyncResponse404.fromJson(json as Map<String, dynamic>));
-case 429:
+return  AutoragConfigSyncError404(AutoragConfigSyncResponse404.fromJson(json as Map<String, dynamic>));case 429:
 final json = jsonDecode(response.body);
-return AutoragConfigSyncError429(AutoragConfigSyncResponse429.fromJson(json as Map<String, dynamic>));
-case 503:
+return  AutoragConfigSyncError429(AutoragConfigSyncResponse429.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return AutoragConfigSyncError503(AutoragConfigSyncResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return AutoragConfigSyncErrorUnknown(response);
-}
-}
+return  AutoragConfigSyncError503(AutoragConfigSyncResponse503.fromJson(json as Map<String, dynamic>));default:
+return  AutoragConfigSyncErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class AutoragConfigSyncError400 extends AutoragConfigSyncError {const AutoragConfigSyncError400(this.data);

@@ -7,13 +7,9 @@ sealed class CodespacesSetSelectedReposForOrgSecretError {const CodespacesSetSel
 static CodespacesSetSelectedReposForOrgSecretError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return CodespacesSetSelectedReposForOrgSecretError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 409:
-return const CodespacesSetSelectedReposForOrgSecretError409();
-default:
-return CodespacesSetSelectedReposForOrgSecretErrorUnknown(response);
-}
-}
+return  CodespacesSetSelectedReposForOrgSecretError404(BasicError.fromJson(json as Map<String, dynamic>));case 409:
+return  const CodespacesSetSelectedReposForOrgSecretError409();default:
+return  CodespacesSetSelectedReposForOrgSecretErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class CodespacesSetSelectedReposForOrgSecretError404 extends CodespacesSetSelectedReposForOrgSecretError {const CodespacesSetSelectedReposForOrgSecretError404(this.data);

@@ -7,20 +7,14 @@ sealed class DeleteWorkerError {const DeleteWorkerError();
 static DeleteWorkerError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return DeleteWorkerError400(DeleteWorkerResponse400.fromJson(json as Map<String, dynamic>));
-case 401:
+return  DeleteWorkerError400(DeleteWorkerResponse400.fromJson(json as Map<String, dynamic>));case 401:
 final json = jsonDecode(response.body);
-return DeleteWorkerError401(DeleteWorkerResponse401.fromJson(json as Map<String, dynamic>));
-case 404:
+return  DeleteWorkerError401(DeleteWorkerResponse401.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return DeleteWorkerError404(DeleteWorkerResponse404.fromJson(json as Map<String, dynamic>));
-case 500:
+return  DeleteWorkerError404(DeleteWorkerResponse404.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return DeleteWorkerError500(DeleteWorkerResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return DeleteWorkerErrorUnknown(response);
-}
-}
+return  DeleteWorkerError500(DeleteWorkerResponse500.fromJson(json as Map<String, dynamic>));default:
+return  DeleteWorkerErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class DeleteWorkerError400 extends DeleteWorkerError {const DeleteWorkerError400(this.data);

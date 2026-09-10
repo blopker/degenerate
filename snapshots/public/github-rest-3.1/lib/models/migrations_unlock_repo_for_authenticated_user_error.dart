@@ -6,20 +6,14 @@ sealed class MigrationsUnlockRepoForAuthenticatedUserError {const MigrationsUnlo
 /// Decodes the payload for its declared status and content type.
 static MigrationsUnlockRepoForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const MigrationsUnlockRepoForAuthenticatedUserError304();
-case 401:
+return  const MigrationsUnlockRepoForAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return MigrationsUnlockRepoForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  MigrationsUnlockRepoForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return MigrationsUnlockRepoForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  MigrationsUnlockRepoForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return MigrationsUnlockRepoForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return MigrationsUnlockRepoForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  MigrationsUnlockRepoForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  MigrationsUnlockRepoForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class MigrationsUnlockRepoForAuthenticatedUserError304 extends MigrationsUnlockRepoForAuthenticatedUserError {const MigrationsUnlockRepoForAuthenticatedUserError304();

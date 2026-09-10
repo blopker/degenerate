@@ -6,23 +6,16 @@ sealed class UsersDeleteEmailForAuthenticatedUserError {const UsersDeleteEmailFo
 /// Decodes the payload for its declared status and content type.
 static UsersDeleteEmailForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const UsersDeleteEmailForAuthenticatedUserError304();
-case 401:
+return  const UsersDeleteEmailForAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return UsersDeleteEmailForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  UsersDeleteEmailForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return UsersDeleteEmailForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  UsersDeleteEmailForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return UsersDeleteEmailForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  UsersDeleteEmailForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return UsersDeleteEmailForAuthenticatedUserError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return UsersDeleteEmailForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  UsersDeleteEmailForAuthenticatedUserError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  UsersDeleteEmailForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class UsersDeleteEmailForAuthenticatedUserError304 extends UsersDeleteEmailForAuthenticatedUserError {const UsersDeleteEmailForAuthenticatedUserError304();

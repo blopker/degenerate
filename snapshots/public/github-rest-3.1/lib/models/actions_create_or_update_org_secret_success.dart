@@ -7,13 +7,9 @@ sealed class ActionsCreateOrUpdateOrgSecretSuccess {const ActionsCreateOrUpdateO
 static ActionsCreateOrUpdateOrgSecretSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 201:
 final json = jsonDecode(response.body);
-return ActionsCreateOrUpdateOrgSecretSuccess201(EmptyObject.fromJson(json as Map<String, dynamic>));
-case 204:
-return const ActionsCreateOrUpdateOrgSecretSuccess204();
-default:
-return ActionsCreateOrUpdateOrgSecretSuccessUnknown(response);
-}
-}
+return  ActionsCreateOrUpdateOrgSecretSuccess201(EmptyObject.fromJson(json as Map<String, dynamic>));case 204:
+return  const ActionsCreateOrUpdateOrgSecretSuccess204();default:
+return  ActionsCreateOrUpdateOrgSecretSuccessUnknown(response); }}
 }
 /// Response for 201 (application/json).
 final class ActionsCreateOrUpdateOrgSecretSuccess201 extends ActionsCreateOrUpdateOrgSecretSuccess {const ActionsCreateOrUpdateOrgSecretSuccess201(this.data);

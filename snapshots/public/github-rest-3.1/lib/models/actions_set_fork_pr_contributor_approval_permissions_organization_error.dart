@@ -7,14 +7,10 @@ sealed class ActionsSetForkPrContributorApprovalPermissionsOrganizationError {co
 static ActionsSetForkPrContributorApprovalPermissionsOrganizationError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ActionsSetForkPrContributorApprovalPermissionsOrganizationError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ActionsSetForkPrContributorApprovalPermissionsOrganizationError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ActionsSetForkPrContributorApprovalPermissionsOrganizationError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ActionsSetForkPrContributorApprovalPermissionsOrganizationErrorUnknown(response);
-}
-}
+return  ActionsSetForkPrContributorApprovalPermissionsOrganizationError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ActionsSetForkPrContributorApprovalPermissionsOrganizationErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class ActionsSetForkPrContributorApprovalPermissionsOrganizationError404 extends ActionsSetForkPrContributorApprovalPermissionsOrganizationError {const ActionsSetForkPrContributorApprovalPermissionsOrganizationError404(this.data);

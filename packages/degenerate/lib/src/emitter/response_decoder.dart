@@ -1,7 +1,14 @@
+import 'dart:collection';
+
+import 'package:code_builder/code_builder.dart' as cb;
+import 'package:collection/collection.dart';
 import 'package:degenerate/src/emitter/emit_utils.dart';
 import 'package:degenerate/src/emitter/media_type_utils.dart';
 import 'package:degenerate/src/emitter/response_plan.dart';
 import 'package:degenerate/src/ir/ir_types.dart';
+
+/// Branch properties that affect decoding, excluding the matched status.
+typedef _BranchKey = (String?, bool, SpecString?, SpecString?, String?);
 
 /// Emits status and media dispatch for a response contract.
 class ResponseDecoder {
@@ -10,15 +17,22 @@ class ResponseDecoder {
   final ResponsePlan plan;
   final Map<String, IrType> typeRegistry;
 
-  String _fromJson(IrType type, String accessor, {bool isOptional = false}) =>
+  cb.Expression _fromJson(
+    IrType type,
+    String accessor, {
+    bool isOptional = false,
+  }) => cb.CodeExpression(
+    cb.Code(
       buildFromJsonCode(
         type,
         accessor,
         isOptional: isOptional,
         typeRegistry: typeRegistry,
-      );
+      ),
+    ),
+  );
 
-  String emit() {
+  cb.Code emit() {
     final groups = <int?, List<ResponseBranch>>{};
     for (final branch in plan.branches) {
       groups.putIfAbsent(branch.status, () => []).add(branch);
@@ -26,45 +40,78 @@ class ResponseDecoder {
     // A single successful shape can also decode compatible, newly added 2xx
     // statuses. Multiple shapes require a declared status to disambiguate.
     if (!plan.isUnion && !plan.isError && groups.length == 1) {
-      return _responseMediaDecoder(plan, groups.values.single);
+      return _responseMediaDecoder(groups.values.single);
     }
-    final buf = StringBuffer('switch (response.statusCode) {\n');
-    final decoders = <String, List<int>>{};
+    // Equivalent branches share a case body without rendering their code.
+    const equality = ListEquality<_BranchKey>();
+    final decoders =
+        LinkedHashMap<List<_BranchKey>, ({cb.Code body, List<int> statuses})>(
+          equals: equality.equals,
+          hashCode: equality.hash,
+        );
     for (final entry in groups.entries.where((e) => e.key != null)) {
+      final key = entry.value
+          .map(
+            (branch) => (
+              branch.type == null ? null : irTypeName(branch.type!),
+              branch.type?.isNullable ?? false,
+              branch.content?.$1,
+              branch.field,
+              plan.variantName(branch),
+            ),
+          )
+          .toList();
       decoders
-          .putIfAbsent(_responseMediaDecoder(plan, entry.value), () => [])
+          .putIfAbsent(
+            key,
+            () => (body: _responseMediaDecoder(entry.value), statuses: []),
+          )
+          .statuses
           .add(entry.key!);
     }
-    for (final entry in decoders.entries) {
-      buf.writeln('case ${_statusPattern(entry.value)}:');
-      buf.writeln(entry.key);
-    }
-    buf.writeln('default:');
-    if (groups[null] case final branches?) {
-      buf.writeln(_responseMediaDecoder(plan, branches));
+    return cb.SwitchStatement(
+      (b) => b
+        ..value = cb.refer('response').property('statusCode')
+        ..cases.addAll(
+          decoders.values.map(
+            (decoder) => cb.CaseStatement(
+              (c) => c
+                ..pattern = _statusPattern(decoder.statuses)
+                ..body = decoder.body,
+            ),
+          ),
+        )
+        ..defaultCase = _defaultDecoder(groups[null]),
+    );
+  }
+
+  cb.Code _defaultDecoder(List<ResponseBranch>? branches) {
+    if (branches != null) {
+      return _responseMediaDecoder(branches);
     } else if (plan.isUnion) {
-      buf.writeln('return ${plan.unknownName}(response);');
+      return cb
+          .refer(plan.unknownName)
+          .newInstance([cb.refer('response')])
+          .returned
+          .statement;
     } else if (plan.isError) {
-      buf.writeln('return null;');
+      return cb.literalNull.returned.statement;
     } else if (plan.types.length == 1) {
-      buf.writeln(
-        _responseMediaDecoder(plan, [
-          plan.branches.firstWhere((b) => b.type != null),
-        ]),
-      );
-    } else {
-      buf.writeln(
-        "throw const FormatException('Undeclared success response status');",
-      );
+      return _responseMediaDecoder([
+        plan.branches.firstWhere((b) => b.type != null),
+      ]);
     }
-    buf.writeln('}');
-    return buf.toString();
+    return cb
+        .refer('FormatException')
+        .constInstance([cb.literalString('Undeclared success response status')])
+        .thrown
+        .statement;
   }
 
   /// Groups consecutive statuses without including gaps owned by other decoders.
-  String _statusPattern(List<int> statuses) {
+  cb.Pattern _statusPattern(List<int> statuses) {
     final sorted = [...statuses]..sort();
-    final patterns = <String>[];
+    final patterns = <cb.Pattern>[];
     for (var i = 0; i < sorted.length; i++) {
       final first = sorted[i];
       var last = first;
@@ -72,26 +119,24 @@ class ResponseDecoder {
         last = sorted[++i];
       }
       if (last - first >= 2) {
-        patterns.add('>= $first && < ${last + 1}');
+        patterns.add(
+          cb.Pattern.greaterOrEqualTo(
+            cb.literalNum(first),
+          ).and(cb.Pattern.lessThan(cb.literalNum(last + 1))),
+        );
       } else {
         for (var status = first; status <= last; status++) {
-          patterns.add('$status');
+          patterns.add(cb.Pattern.literal(status));
         }
       }
     }
-    return patterns.join(' || ');
+    return patterns.reduce((left, right) => left.or(right));
   }
 
-  String _responseMediaDecoder(
-    ResponsePlan plan,
-    List<ResponseBranch> branches,
-  ) {
+  cb.Code _responseMediaDecoder(List<ResponseBranch> branches) {
     if (branches.length == 1) {
-      return _responseBranchDecoder(plan, branches.single);
+      return _responseBranchDecoder(branches.single);
     }
-    final buf = StringBuffer(
-      "final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;\n",
-    );
     int specificity(ResponseBranch branch) {
       final mediaType = branch.content!.$1.rebuild(normalizeMediaType);
       if (mediaType.test((s) => s == '*/*')) return 0;
@@ -108,54 +153,99 @@ class ResponseDecoder {
             .length
             .compareTo(a.content!.$1.literal.split(';').length);
       });
-    for (final branch in ordered) {
-      buf.writeln(
-        'if (responseMediaTypeMatches(contentType, ${branch.content!.$1.literal})) {',
-      );
-      buf.writeln(_responseBranchDecoder(plan, branch));
-      buf.writeln('}');
-    }
-    buf.writeln(_responseBranchDecoder(plan, branches.first));
-    return buf.toString();
+    return cb.Block.of([
+      const cb.Code(
+        "final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;",
+      ),
+      cb.Conditional(
+        (b) => b
+          ..branches.addAll(
+            ordered.map(
+              (branch) => cb.Branch(
+                (b) => b
+                  ..condition = cb.Condition.expression(
+                    cb.refer('responseMediaTypeMatches').call([
+                      cb.refer('contentType'),
+                      cb.CodeExpression(cb.Code(branch.content!.$1.literal)),
+                    ]),
+                  )
+                  ..body = _responseBranchDecoder(branch),
+              ),
+            ),
+          )
+          ..orElse = _responseBranchDecoder(branches.first),
+      ),
+    ]);
   }
 
-  String _responseBranchDecoder(ResponsePlan plan, ResponseBranch branch) {
+  cb.Code _returnValue(ResponseBranch branch, cb.Expression value) {
+    if (!plan.isUnion) return value.returned.statement;
+    final variant = cb.refer(plan.variantName(branch)!);
+    return (branch.type == null
+            ? variant.constInstance([])
+            : variant.newInstance([value]))
+        .returned
+        .statement;
+  }
+
+  cb.Code _responseBranchDecoder(ResponseBranch branch) {
     final type = branch.type;
-    if (type == null) return 'return ${plan.wrap(branch, 'null')};';
+    if (type == null) return _returnValue(branch, cb.literalNull);
     final mediaType = branch.content!.$1;
     if (mediaType.test(isJsonLikeMediaType)) {
       final field = branch.field;
       final accessor = field == null ? 'json' : 'json[${field.literal}]';
       final parsed = _fromJson(type, accessor, isOptional: type.isNullable);
-      return 'final json = jsonDecode(response.body)${field == null ? '' : ' as Map<String, dynamic>'};\n'
-          'return ${plan.wrap(branch, parsed)};';
+      final decoded = field == null
+          ? cb.refer('jsonDecode').call([cb.refer('response').property('body')])
+          : const cb.CodeExpression(
+              cb.Code('jsonDecode(response.body) as Map<String, dynamic>'),
+            );
+      return cb.Block.of([
+        cb.declareFinal('json').assign(decoded).statement,
+        _returnValue(branch, parsed),
+      ]);
     }
-    final decoded = _buildDeserializeExpr(mediaType, type);
-    if (!plan.isUnion || decoded.contains('throw UnsupportedError(')) {
-      return decoded;
-    }
-    return 'final value = (() { $decoded })();\nreturn ${plan.wrap(branch, 'value')};';
+    final decoded = _deserializeNonJson(type);
+    if (decoded != null) return _returnValue(branch, decoded);
+    final message = mediaType.rebuild(
+      (m) => 'Cannot decode $m response into ${irTypeName(type)}',
+    );
+    return cb.Block.of([
+      if (type is! IrPrimitive && type is! IrEnum && type is! IrExtensionType)
+        cb.Code(
+          '// TODO: Unsupported non-JSON response schema ${message.commentText}\n',
+        ),
+      cb
+          .refer('UnsupportedError')
+          .newInstance([cb.CodeExpression(cb.Code(message.literal))])
+          .thrown
+          .statement,
+    ]);
   }
 
-  String _buildDeserializeExpr(SpecString mediaType, IrType returnType) {
-    final unsupportedMessage = mediaType.rebuild(
-      (m) => 'Cannot decode $m response into ${irTypeName(returnType)}',
-    );
-    return switch (returnType) {
+  cb.Expression? _deserializeNonJson(IrType type) {
+    final body = cb.refer('response').property('body');
+    return switch (type) {
       IrPrimitive(:final kind) => switch (kind) {
-        PrimitiveKind.dynamic_ ||
-        PrimitiveKind.string => 'return response.body;',
-        PrimitiveKind.int => 'return int.parse(response.body);',
-        PrimitiveKind.double => 'return double.parse(response.body);',
-        PrimitiveKind.bool => "return response.body.toLowerCase() == 'true';",
-        PrimitiveKind.bytes => 'return Uint8List.fromList(response.bodyBytes);',
-        _ => 'throw UnsupportedError(${unsupportedMessage.literal});',
+        PrimitiveKind.dynamic_ || PrimitiveKind.string => body,
+        PrimitiveKind.int => cb.refer('int').property('parse').call([body]),
+        PrimitiveKind.double => cb.refer('double').property('parse').call([
+          body,
+        ]),
+        PrimitiveKind.bool =>
+          body
+              .property('toLowerCase')
+              .call([])
+              .equalTo(cb.literalString('true')),
+        PrimitiveKind.bytes => cb.refer('Uint8List').property('fromList').call([
+          cb.refer('response').property('bodyBytes'),
+        ]),
+        _ => null,
       },
-      IrEnum(:final name) => 'return $name.fromJson(response.body);',
-      IrExtensionType() => 'return ${_fromJson(returnType, 'response.body')};',
-      _ =>
-        '// TODO: Unsupported non-JSON response schema ${unsupportedMessage.commentText}\n'
-            'throw UnsupportedError(${unsupportedMessage.literal});',
+      IrEnum(:final name) => cb.refer(name).property('fromJson').call([body]),
+      IrExtensionType() => _fromJson(type, 'response.body'),
+      _ => null,
     };
   }
 }

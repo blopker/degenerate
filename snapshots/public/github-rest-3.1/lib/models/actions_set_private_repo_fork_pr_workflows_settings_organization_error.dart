@@ -7,17 +7,12 @@ sealed class ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError {cons
 static ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationErrorUnknown(response);
-}
-}
+return  ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError403 extends ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError {const ActionsSetPrivateRepoForkPrWorkflowsSettingsOrganizationError403(this.data);

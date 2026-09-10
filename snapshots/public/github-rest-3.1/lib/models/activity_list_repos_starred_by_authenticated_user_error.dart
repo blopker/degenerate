@@ -6,17 +6,12 @@ sealed class ActivityListReposStarredByAuthenticatedUserError {const ActivityLis
 /// Decodes the payload for its declared status and content type.
 static ActivityListReposStarredByAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ActivityListReposStarredByAuthenticatedUserError304();
-case 401:
+return  const ActivityListReposStarredByAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return ActivityListReposStarredByAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  ActivityListReposStarredByAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return ActivityListReposStarredByAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ActivityListReposStarredByAuthenticatedUserErrorUnknown(response);
-}
-}
+return  ActivityListReposStarredByAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ActivityListReposStarredByAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ActivityListReposStarredByAuthenticatedUserError304 extends ActivityListReposStarredByAuthenticatedUserError {const ActivityListReposStarredByAuthenticatedUserError304();

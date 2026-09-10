@@ -6,14 +6,10 @@ sealed class ReposCreateDeploymentError {const ReposCreateDeploymentError();
 /// Decodes the payload for its declared status and content type.
 static ReposCreateDeploymentError parse(ApiResponse response) {switch (response.statusCode) {
 case 409:
-return const ReposCreateDeploymentError409();
-case 422:
+return  const ReposCreateDeploymentError409();case 422:
 final json = jsonDecode(response.body);
-return ReposCreateDeploymentError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposCreateDeploymentErrorUnknown(response);
-}
-}
+return  ReposCreateDeploymentError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposCreateDeploymentErrorUnknown(response); }}
 }
 /// Response for 409.
 final class ReposCreateDeploymentError409 extends ReposCreateDeploymentError {const ReposCreateDeploymentError409();

@@ -7,14 +7,10 @@ sealed class ReposCreateReleaseError {const ReposCreateReleaseError();
 static ReposCreateReleaseError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ReposCreateReleaseError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposCreateReleaseError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposCreateReleaseError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposCreateReleaseErrorUnknown(response);
-}
-}
+return  ReposCreateReleaseError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposCreateReleaseErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class ReposCreateReleaseError404 extends ReposCreateReleaseError {const ReposCreateReleaseError404(this.data);

@@ -24,15 +24,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ShortBlob.fromJson(json as Map<String, dynamic>);
-  },
-  onError: GitCreateBlobError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ShortBlob.fromJson(json as Map<String, dynamic>);}, onError: GitCreateBlobError.parse, );}
 /// Get a blob
 ///
 /// The `content` in the response will always be Base64 encoded.
@@ -54,15 +48,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return Blob.fromJson(json as Map<String, dynamic>);
-  },
-  onError: GitGetBlobError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  Blob.fromJson(json as Map<String, dynamic>);}, onError: GitGetBlobError.parse, );}
 /// Create a commit
 ///
 /// Creates a new Git [commit object](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects).
@@ -109,15 +97,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GitCommit.fromJson(json as Map<String, dynamic>);
-  },
-  onError: GitCreateCommitError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GitCommit.fromJson(json as Map<String, dynamic>);}, onError: GitCreateCommitError.parse, );}
 /// Get a commit object
 ///
 /// Gets a Git [commit object](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects).
@@ -164,24 +146,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GitCommit.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GitCommit.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404 || 409:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// List matching references
 ///
 /// Returns an array of references from your Git database that match the supplied name. The `:ref` in the URL must be formatted as `heads/<branch name>` for branches and `tags/<tag name>` for tags. If the `:ref` doesn't exist in the repository, but existing refs start with `:ref`, they will be returned as an array.
@@ -203,24 +174,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => GitRef.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => GitRef.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 409:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get a reference
 ///
 /// Returns a single reference from your Git database. The `:ref` in the URL must be formatted as `heads/<branch name>` for branches and `tags/<tag name>` for tags. If the `:ref` doesn't match an existing ref, a `404` is returned.
@@ -238,24 +198,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GitRef.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GitRef.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404 || 409:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create a reference
 ///
 /// Creates a reference for your repository. You are unable to create new references for empty repositories, even if the commit SHA-1 hash used exists. Empty repositories are repositories without branches.
@@ -272,15 +221,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GitRef.fromJson(json as Map<String, dynamic>);
-  },
-  onError: GitCreateRefError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GitRef.fromJson(json as Map<String, dynamic>);}, onError: GitCreateRefError.parse, );}
 /// Update a reference
 ///
 /// Updates the provided reference to point to a new SHA. For more information, see "[Git References](https://git-scm.com/book/en/v2/Git-Internals-Git-References)" in the Git documentation.
@@ -297,15 +240,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GitRef.fromJson(json as Map<String, dynamic>);
-  },
-  onError: GitUpdateRefError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GitRef.fromJson(json as Map<String, dynamic>);}, onError: GitUpdateRefError.parse, );}
 /// Delete a reference
 ///
 /// Deletes the provided reference.
@@ -320,12 +257,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: GitDeleteRefError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: GitDeleteRefError.parse, );}
 /// Create a tag object
 ///
 /// Note that creating a tag object does not create the reference that makes a tag in Git. If you want to create an annotated tag in Git, you have to do this call to create the tag object, and then [create](https://docs.github.com/rest/git/refs#create-a-reference) the `refs/tags/[tag]` reference. If you want to create a lightweight tag, you only have to [create](https://docs.github.com/rest/git/refs#create-a-reference) the tag reference - this call would be unnecessary.
@@ -372,15 +305,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GitTag.fromJson(json as Map<String, dynamic>);
-  },
-  onError: GitCreateTagError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GitTag.fromJson(json as Map<String, dynamic>);}, onError: GitCreateTagError.parse, );}
 /// Get a tag
 ///
 /// **Signature verification object**
@@ -423,24 +350,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GitTag.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GitTag.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404 || 409:
 final json = jsonDecode(response.body);
-return BasicError.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  BasicError.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create a tree
 ///
 /// The tree creation API accepts nested entries. If you specify both a tree and a nested path modifying that tree, this endpoint will overwrite the contents of the tree with the new path contents, and create a new tree structure.
@@ -461,15 +377,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GitTree.fromJson(json as Map<String, dynamic>);
-  },
-  onError: GitCreateTreeError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GitTree.fromJson(json as Map<String, dynamic>);}, onError: GitCreateTreeError.parse, );}
 /// Get a tree
 ///
 /// Returns a single tree using the SHA1 value or ref name for that tree.
@@ -497,13 +407,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GitTree.fromJson(json as Map<String, dynamic>);
-  },
-  onError: GitGetTreeError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GitTree.fromJson(json as Map<String, dynamic>);}, onError: GitGetTreeError.parse, );}
 }

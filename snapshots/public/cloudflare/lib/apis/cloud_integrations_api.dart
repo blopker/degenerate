@@ -39,24 +39,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => McnProvider.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => McnProvider.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create Cloud Integration
 ///
 /// Create a new Cloud Integration (Closed Beta).
@@ -76,24 +65,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return McnProvider.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  McnProvider.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 409 || 422 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Read Cloud Integration
 ///
 /// Read a Cloud Integration (Closed Beta).
@@ -116,24 +94,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return McnProvider.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  McnProvider.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update Cloud Integration
 ///
 /// Update a Cloud Integration (Closed Beta).
@@ -150,24 +117,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return McnProvider.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  McnProvider.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 409 || 422 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Patch Cloud Integration
 ///
 /// Update a Cloud Integration (Closed Beta).
@@ -184,24 +140,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return McnProvider.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  McnProvider.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 409 || 422 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete Cloud Integration
 ///
 /// Delete a Cloud Integration (Closed Beta).
@@ -216,24 +161,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return McnDeletedProvider.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  McnDeletedProvider.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Run Discovery
 ///
 /// Run discovery for a Cloud Integration (Closed Beta).
@@ -256,24 +190,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return McnGoodResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  McnGoodResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 409 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Get Cloud Integration Setup Config
 ///
 /// Get initial configuration to complete Cloud Integration setup (Closed Beta).
@@ -288,24 +211,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return McnProviderInitialSetupResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  McnProviderInitialSetupResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Run Discovery for All Integrations
 ///
 /// Run discovery for all Cloud Integrations in an account (Closed Beta).
@@ -320,22 +232,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return McnGoodResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  McnGoodResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 409 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

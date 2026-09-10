@@ -6,20 +6,14 @@ sealed class DependabotListAlertsForEnterpriseError {const DependabotListAlertsF
 /// Decodes the payload for its declared status and content type.
 static DependabotListAlertsForEnterpriseError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const DependabotListAlertsForEnterpriseError304();
-case 403:
+return  const DependabotListAlertsForEnterpriseError304();case 403:
 final json = jsonDecode(response.body);
-return DependabotListAlertsForEnterpriseError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  DependabotListAlertsForEnterpriseError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return DependabotListAlertsForEnterpriseError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  DependabotListAlertsForEnterpriseError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return DependabotListAlertsForEnterpriseError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));
-default:
-return DependabotListAlertsForEnterpriseErrorUnknown(response);
-}
-}
+return  DependabotListAlertsForEnterpriseError422(ValidationErrorSimple.fromJson(json as Map<String, dynamic>));default:
+return  DependabotListAlertsForEnterpriseErrorUnknown(response); }}
 }
 /// Response for 304.
 final class DependabotListAlertsForEnterpriseError304 extends DependabotListAlertsForEnterpriseError {const DependabotListAlertsForEnterpriseError304();

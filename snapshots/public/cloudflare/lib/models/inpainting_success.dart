@@ -7,21 +7,13 @@ sealed class InpaintingSuccess {const InpaintingSuccess();
 static InpaintingSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return InpaintingSuccess200ApplicationJson(json as Map<String, dynamic>);
-}
-if (responseMediaTypeMatches(contentType, 'image/png')) {
-final value = (() { return Uint8List.fromList(response.bodyBytes); })();
-return InpaintingSuccess200ImagePng(value);
-}
+return  InpaintingSuccess200ApplicationJson(json as Map<String, dynamic>); } else if (responseMediaTypeMatches(contentType, 'image/png', )) {
+return  InpaintingSuccess200ImagePng(Uint8List.fromList(response.bodyBytes)); } else {
 final json = jsonDecode(response.body);
-return InpaintingSuccess200ApplicationJson(json as Map<String, dynamic>);
-
-default:
-return InpaintingSuccessUnknown(response);
-}
-}
+return  InpaintingSuccess200ApplicationJson(json as Map<String, dynamic>); }default:
+return  InpaintingSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class InpaintingSuccess200ApplicationJson extends InpaintingSuccess {const InpaintingSuccess200ApplicationJson(this.data);

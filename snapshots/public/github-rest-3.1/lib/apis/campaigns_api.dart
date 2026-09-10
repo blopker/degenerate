@@ -46,15 +46,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return (json as List<dynamic>).map((e) => CampaignSummary.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: CampaignsListOrgCampaignsError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  (json as List<dynamic>).map((e) => CampaignSummary.fromJson(e as Map<String, dynamic>)).toList();}, onError: CampaignsListOrgCampaignsError.parse, );}
 /// Create a campaign for an organization
 ///
 /// Create a campaign for an organization.
@@ -78,15 +72,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CampaignSummary.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CampaignsCreateCampaignError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CampaignSummary.fromJson(json as Map<String, dynamic>);}, onError: CampaignsCreateCampaignError.parse, );}
 /// Get a campaign for an organization
 ///
 /// Gets a campaign for an organization.
@@ -105,15 +93,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CampaignSummary.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CampaignsGetCampaignSummaryError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CampaignSummary.fromJson(json as Map<String, dynamic>);}, onError: CampaignsGetCampaignSummaryError.parse, );}
 /// Update a campaign
 ///
 /// Updates a campaign in an organization.
@@ -134,15 +116,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return CampaignSummary.fromJson(json as Map<String, dynamic>);
-  },
-  onError: CampaignsUpdateCampaignError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  CampaignSummary.fromJson(json as Map<String, dynamic>);}, onError: CampaignsUpdateCampaignError.parse, );}
 /// Delete a campaign for an organization
 ///
 /// Deletes a campaign in an organization.
@@ -161,10 +137,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: CampaignsDeleteCampaignError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, onError: CampaignsDeleteCampaignError.parse, );}
 }

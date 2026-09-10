@@ -7,21 +7,14 @@ sealed class ActivityListReposStarredByAuthenticatedUserSuccess {const ActivityL
 static ActivityListReposStarredByAuthenticatedUserSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 200:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ActivityListReposStarredByAuthenticatedUserSuccess200ApplicationJson((json as List<dynamic>).map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList());
-}
-if (responseMediaTypeMatches(contentType, 'application/vnd.github.v3.star+json')) {
+return  ActivityListReposStarredByAuthenticatedUserSuccess200ApplicationJson((json as List<dynamic>).map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList()); } else if (responseMediaTypeMatches(contentType, 'application/vnd.github.v3.star+json', )) {
 final json = jsonDecode(response.body);
-return ActivityListReposStarredByAuthenticatedUserSuccess200StarJson((json as List<dynamic>).map((e) => StarredRepository.fromJson(e as Map<String, dynamic>)).toList());
-}
+return  ActivityListReposStarredByAuthenticatedUserSuccess200StarJson((json as List<dynamic>).map((e) => StarredRepository.fromJson(e as Map<String, dynamic>)).toList()); } else {
 final json = jsonDecode(response.body);
-return ActivityListReposStarredByAuthenticatedUserSuccess200ApplicationJson((json as List<dynamic>).map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList());
-
-default:
-return ActivityListReposStarredByAuthenticatedUserSuccessUnknown(response);
-}
-}
+return  ActivityListReposStarredByAuthenticatedUserSuccess200ApplicationJson((json as List<dynamic>).map((e) => Repository.fromJson(e as Map<String, dynamic>)).toList()); }default:
+return  ActivityListReposStarredByAuthenticatedUserSuccessUnknown(response); }}
 }
 /// Response for 200 (application/json).
 final class ActivityListReposStarredByAuthenticatedUserSuccess200ApplicationJson extends ActivityListReposStarredByAuthenticatedUserSuccess {const ActivityListReposStarredByAuthenticatedUserSuccess200ApplicationJson(this.data);

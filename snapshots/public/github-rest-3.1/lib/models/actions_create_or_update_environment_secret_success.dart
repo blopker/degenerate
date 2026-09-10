@@ -7,13 +7,9 @@ sealed class ActionsCreateOrUpdateEnvironmentSecretSuccess {const ActionsCreateO
 static ActionsCreateOrUpdateEnvironmentSecretSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 201:
 final json = jsonDecode(response.body);
-return ActionsCreateOrUpdateEnvironmentSecretSuccess201(EmptyObject.fromJson(json as Map<String, dynamic>));
-case 204:
-return const ActionsCreateOrUpdateEnvironmentSecretSuccess204();
-default:
-return ActionsCreateOrUpdateEnvironmentSecretSuccessUnknown(response);
-}
-}
+return  ActionsCreateOrUpdateEnvironmentSecretSuccess201(EmptyObject.fromJson(json as Map<String, dynamic>));case 204:
+return  const ActionsCreateOrUpdateEnvironmentSecretSuccess204();default:
+return  ActionsCreateOrUpdateEnvironmentSecretSuccessUnknown(response); }}
 }
 /// Response for 201 (application/json).
 final class ActionsCreateOrUpdateEnvironmentSecretSuccess201 extends ActionsCreateOrUpdateEnvironmentSecretSuccess {const ActionsCreateOrUpdateEnvironmentSecretSuccess201(this.data);

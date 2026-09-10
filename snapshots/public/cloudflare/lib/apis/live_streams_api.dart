@@ -33,14 +33,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetLivestreamAnalyticsCompleteResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetLivestreamAnalyticsCompleteResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch all livestreams
 ///
 /// Returns details of livestreams associated with the given App ID. It includes livestreams created by your App and RealtimeKit meetings that are livestreamed by your App. If you only want details of livestreams created by your App and not RealtimeKit meetings, you can use the `exclude_meetings` query parameter.
@@ -81,14 +76,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return FetchAllLivestreamsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  FetchAllLivestreamsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Create an independent livestream
 ///
 /// Creates a livestream for the given App ID and returns ingest server, stream key, and playback URL. You can pass custom input to the ingest server and stream key, and freely distribute the content using the playback URL on any player that supports HLS/LHLS.
@@ -105,14 +95,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  PostAccountsaccountIdRealtimeKitappIdLivestreamsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch livestream details using livestream ID
 ///
 /// Returns details of a livestream with sessions for the given livestream ID. Retreive the livestream ID using the `Start livestreaming a meeting` API.
@@ -138,14 +123,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return LivestreamSessionLivestreamIdResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  LivestreamSessionLivestreamIdResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch active livestream session details
 ///
 /// Returns details of all active livestreams for the given livestream ID. Retreive the livestream ID using the `Start livestreaming a meeting` API.
@@ -160,14 +140,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ActiveLivestreamSessionDetailsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ActiveLivestreamSessionDetailsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch livestream session details using livestream session ID
 ///
 /// Returns livestream session details for the given livestream session ID. Retrieve the `livestream_session_id`using the `Fetch livestream session details using a session ID` API.
@@ -182,14 +157,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return LivestreamsLivestreamSessionIdResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  LivestreamsLivestreamSessionIdResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch active livestreams for a meeting
 ///
 /// Returns details of all active livestreams for the given meeting ID.
@@ -204,14 +174,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return MeetingsMeetingIdActiveLivestreamResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  MeetingsMeetingIdActiveLivestreamResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Stop livestreaming a meeting
 ///
 /// Stops the active livestream of a meeting associated with the given meeting ID. Retreive the meeting ID using the `Create a meeting` API.
@@ -226,14 +191,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return StopLivestreamingResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  StopLivestreamingResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch livestream session details for a meeting
 ///
 /// Returns livestream session details for the given meeting ID. Retreive the meeting ID using the `Create a meeting` API.
@@ -259,14 +219,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return LivestreamSessionDetailsResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  LivestreamSessionDetailsResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Start livestreaming a meeting
 ///
 /// Starts livestream of a meeting associated with the given meeting ID. Retreive the meeting ID using the `Create a meeting` API.
@@ -283,14 +238,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return StartLivestreamingResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  StartLivestreamingResponse.fromJson(json as Map<String, dynamic>);}, );}
 /// Fetch livestream session details using a session ID
 ///
 /// Returns livestream session details for the given session ID. Retreive the session ID using the `Fetch all sessions of an App` API.
@@ -316,12 +266,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return LivestreamsessionSessionMeetingIdActiveLivestreamResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  LivestreamsessionSessionMeetingIdActiveLivestreamResponse.fromJson(json as Map<String, dynamic>);}, );}
 }

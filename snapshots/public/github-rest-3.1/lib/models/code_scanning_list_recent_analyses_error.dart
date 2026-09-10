@@ -7,17 +7,12 @@ sealed class CodeScanningListRecentAnalysesError {const CodeScanningListRecentAn
 static CodeScanningListRecentAnalysesError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return CodeScanningListRecentAnalysesError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CodeScanningListRecentAnalysesError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CodeScanningListRecentAnalysesError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  CodeScanningListRecentAnalysesError404(BasicError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return CodeScanningListRecentAnalysesError503(CodeScanningListRecentAnalysesResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return CodeScanningListRecentAnalysesErrorUnknown(response);
-}
-}
+return  CodeScanningListRecentAnalysesError503(CodeScanningListRecentAnalysesResponse503.fromJson(json as Map<String, dynamic>));default:
+return  CodeScanningListRecentAnalysesErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class CodeScanningListRecentAnalysesError403 extends CodeScanningListRecentAnalysesError {const CodeScanningListRecentAnalysesError403(this.data);

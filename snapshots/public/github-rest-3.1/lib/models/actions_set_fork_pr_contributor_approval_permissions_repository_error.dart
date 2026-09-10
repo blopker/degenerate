@@ -7,14 +7,10 @@ sealed class ActionsSetForkPrContributorApprovalPermissionsRepositoryError {cons
 static ActionsSetForkPrContributorApprovalPermissionsRepositoryError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ActionsSetForkPrContributorApprovalPermissionsRepositoryError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ActionsSetForkPrContributorApprovalPermissionsRepositoryError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ActionsSetForkPrContributorApprovalPermissionsRepositoryError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ActionsSetForkPrContributorApprovalPermissionsRepositoryErrorUnknown(response);
-}
-}
+return  ActionsSetForkPrContributorApprovalPermissionsRepositoryError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ActionsSetForkPrContributorApprovalPermissionsRepositoryErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class ActionsSetForkPrContributorApprovalPermissionsRepositoryError404 extends ActionsSetForkPrContributorApprovalPermissionsRepositoryError {const ActionsSetForkPrContributorApprovalPermissionsRepositoryError404(this.data);

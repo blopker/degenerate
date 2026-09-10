@@ -7,14 +7,10 @@ sealed class PatchIndicatorUpdateError {const PatchIndicatorUpdateError();
 static PatchIndicatorUpdateError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return PatchIndicatorUpdateError400(PatchIndicatorUpdateResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  PatchIndicatorUpdateError400(PatchIndicatorUpdateResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return PatchIndicatorUpdateError404(PatchIndicatorUpdateResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return PatchIndicatorUpdateErrorUnknown(response);
-}
-}
+return  PatchIndicatorUpdateError404(PatchIndicatorUpdateResponse404.fromJson(json as Map<String, dynamic>));default:
+return  PatchIndicatorUpdateErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class PatchIndicatorUpdateError400 extends PatchIndicatorUpdateError {const PatchIndicatorUpdateError400(this.data);

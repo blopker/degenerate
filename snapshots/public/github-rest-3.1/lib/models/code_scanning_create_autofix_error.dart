@@ -7,22 +7,15 @@ sealed class CodeScanningCreateAutofixError {const CodeScanningCreateAutofixErro
 static CodeScanningCreateAutofixError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return CodeScanningCreateAutofixError400(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  CodeScanningCreateAutofixError400(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return CodeScanningCreateAutofixError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CodeScanningCreateAutofixError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CodeScanningCreateAutofixError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
-return const CodeScanningCreateAutofixError422();
-case 503:
+return  CodeScanningCreateAutofixError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
+return  const CodeScanningCreateAutofixError422();case 503:
 final json = jsonDecode(response.body);
-return CodeScanningCreateAutofixError503(CodeScanningCreateAutofixResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return CodeScanningCreateAutofixErrorUnknown(response);
-}
-}
+return  CodeScanningCreateAutofixError503(CodeScanningCreateAutofixResponse503.fromJson(json as Map<String, dynamic>));default:
+return  CodeScanningCreateAutofixErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class CodeScanningCreateAutofixError400 extends CodeScanningCreateAutofixError {const CodeScanningCreateAutofixError400(this.data);

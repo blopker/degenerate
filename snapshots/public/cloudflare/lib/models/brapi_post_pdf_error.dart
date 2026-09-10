@@ -7,20 +7,14 @@ sealed class BrapiPostPdfError {const BrapiPostPdfError();
 static BrapiPostPdfError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return BrapiPostPdfError400(BrapiPostPdfResponse400.fromJson(json as Map<String, dynamic>));
-case 422:
+return  BrapiPostPdfError400(BrapiPostPdfResponse400.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return BrapiPostPdfError422(BrapiPostPdfResponse422.fromJson(json as Map<String, dynamic>));
-case 429:
+return  BrapiPostPdfError422(BrapiPostPdfResponse422.fromJson(json as Map<String, dynamic>));case 429:
 final json = jsonDecode(response.body);
-return BrapiPostPdfError429(BrapiPostPdfResponse429.fromJson(json as Map<String, dynamic>));
-case 500:
+return  BrapiPostPdfError429(BrapiPostPdfResponse429.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return BrapiPostPdfError500(BrapiPostPdfResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return BrapiPostPdfErrorUnknown(response);
-}
-}
+return  BrapiPostPdfError500(BrapiPostPdfResponse500.fromJson(json as Map<String, dynamic>));default:
+return  BrapiPostPdfErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class BrapiPostPdfError400 extends BrapiPostPdfError {const BrapiPostPdfError400(this.data);

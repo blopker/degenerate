@@ -7,14 +7,10 @@ sealed class OrgsListOrgRolesError {const OrgsListOrgRolesError();
 static OrgsListOrgRolesError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return OrgsListOrgRolesError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  OrgsListOrgRolesError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return OrgsListOrgRolesError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return OrgsListOrgRolesErrorUnknown(response);
-}
-}
+return  OrgsListOrgRolesError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  OrgsListOrgRolesErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class OrgsListOrgRolesError404 extends OrgsListOrgRolesError {const OrgsListOrgRolesError404(this.data);

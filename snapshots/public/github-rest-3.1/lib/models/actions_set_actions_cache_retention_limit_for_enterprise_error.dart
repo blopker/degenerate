@@ -7,27 +7,18 @@ sealed class ActionsSetActionsCacheRetentionLimitForEnterpriseError {const Actio
 static ActionsSetActionsCacheRetentionLimitForEnterpriseError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return ActionsSetActionsCacheRetentionLimitForEnterpriseError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  ActionsSetActionsCacheRetentionLimitForEnterpriseError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return ActionsSetActionsCacheRetentionLimitForEnterpriseError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  ActionsSetActionsCacheRetentionLimitForEnterpriseError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return ActionsSetActionsCacheRetentionLimitForEnterpriseError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 403:
+return  ActionsSetActionsCacheRetentionLimitForEnterpriseError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }case 403:
 final json = jsonDecode(response.body);
-return ActionsSetActionsCacheRetentionLimitForEnterpriseError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  ActionsSetActionsCacheRetentionLimitForEnterpriseError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return ActionsSetActionsCacheRetentionLimitForEnterpriseError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ActionsSetActionsCacheRetentionLimitForEnterpriseErrorUnknown(response);
-}
-}
+return  ActionsSetActionsCacheRetentionLimitForEnterpriseError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ActionsSetActionsCacheRetentionLimitForEnterpriseErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class ActionsSetActionsCacheRetentionLimitForEnterpriseError400ApplicationJson extends ActionsSetActionsCacheRetentionLimitForEnterpriseError {const ActionsSetActionsCacheRetentionLimitForEnterpriseError400ApplicationJson(this.data);

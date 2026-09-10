@@ -6,23 +6,16 @@ sealed class UsersBlockError {const UsersBlockError();
 /// Decodes the payload for its declared status and content type.
 static UsersBlockError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const UsersBlockError304();
-case 401:
+return  const UsersBlockError304();case 401:
 final json = jsonDecode(response.body);
-return UsersBlockError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  UsersBlockError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return UsersBlockError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  UsersBlockError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return UsersBlockError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  UsersBlockError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return UsersBlockError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return UsersBlockErrorUnknown(response);
-}
-}
+return  UsersBlockError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  UsersBlockErrorUnknown(response); }}
 }
 /// Response for 304.
 final class UsersBlockError304 extends UsersBlockError {const UsersBlockError304();

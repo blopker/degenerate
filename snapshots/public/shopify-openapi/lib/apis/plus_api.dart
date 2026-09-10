@@ -39,11 +39,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a gift card
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#create-2020-01
@@ -60,11 +57,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single gift card by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#show-2020-01
@@ -79,11 +73,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing gift card.
 ///           The gift card's balance can't be changed via the API. You can change only the expiry date, note, and template suffix.
 ///
@@ -101,11 +92,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of gift cards
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#count-2020-01
@@ -128,11 +116,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Disables a gift card. Disabling a gift card can't be undone.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#disable-2020-01
@@ -149,11 +134,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Searches for gift cards that match a supplied query. The following fields are indexed by search:
 /// 
 ///             created_at
@@ -196,11 +178,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of gift cards. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#index-2020-04
@@ -232,11 +211,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a gift card
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#create-2020-04
@@ -253,11 +229,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single gift card by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#show-2020-04
@@ -272,11 +245,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing gift card.
 ///           The gift card's balance can't be changed via the API. You can change only the expiry date, note, and template suffix.
 ///
@@ -294,11 +264,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of gift cards
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#count-2020-04
@@ -321,11 +288,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Disables a gift card. Disabling a gift card can't be undone.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#disable-2020-04
@@ -342,11 +306,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Searches for gift cards that match a supplied query. The following fields are indexed by search:
 /// 
 ///             created_at
@@ -389,11 +350,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of gift cards. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#index-2020-07
@@ -425,11 +383,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a gift card
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#create-2020-07
@@ -446,11 +401,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single gift card by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#show-2020-07
@@ -465,11 +417,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing gift card.
 ///           The gift card's balance can't be changed via the API. You can change only the expiry date, note, and template suffix.
 ///
@@ -487,11 +436,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of gift cards
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#count-2020-07
@@ -514,11 +460,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Disables a gift card. Disabling a gift card can't be undone.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#disable-2020-07
@@ -535,11 +478,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Searches for gift cards that match a supplied query. The following fields are indexed by search:
 /// 
 ///             created_at
@@ -582,11 +522,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of gift cards. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#index-2020-10
@@ -618,11 +555,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a gift card
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#create-2020-10
@@ -639,11 +573,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single gift card by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#show-2020-10
@@ -658,11 +589,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing gift card.
 ///           The gift card's balance can't be changed via the API. You can change only the expiry date, note, and template suffix.
 ///
@@ -680,11 +608,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of gift cards
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#count-2020-10
@@ -707,11 +632,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Disables a gift card. Disabling a gift card can't be undone.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#disable-2020-10
@@ -728,11 +650,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Searches for gift cards that match a supplied query. The following fields are indexed by search:
 /// 
 ///             created_at
@@ -775,11 +694,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of gift cards. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#index-2021-01
@@ -811,11 +727,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a gift card
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#create-2021-01
@@ -832,11 +745,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single gift card by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#show-2021-01
@@ -851,11 +761,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing gift card.
 ///           The gift card's balance can't be changed via the API. You can change only the expiry date, note, and template suffix.
 ///
@@ -873,11 +780,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of gift cards
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#count-2021-01
@@ -900,11 +804,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Disables a gift card. Disabling a gift card can't be undone.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#disable-2021-01
@@ -921,11 +822,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Searches for gift cards that match a supplied query. The following fields are indexed by search:
 /// 
 ///             created_at
@@ -968,11 +866,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of gift cards. Note: As of version 2019-10, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#index-unstable
@@ -1004,11 +899,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a gift card
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#create-unstable
@@ -1025,11 +917,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single gift card by its ID
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#show-unstable
@@ -1044,11 +933,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates an existing gift card.
 ///           The gift card's balance can't be changed via the API. You can change only the expiry date, note, and template suffix.
 ///
@@ -1066,11 +952,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a count of gift cards
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#count-unstable
@@ -1093,11 +976,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Disables a gift card. Disabling a gift card can't be undone.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/giftcard#disable-unstable
@@ -1114,11 +994,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Searches for gift cards that match a supplied query. The following fields are indexed by search:
 /// 
 ///             created_at
@@ -1161,11 +1038,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all users. Note: As of version 2021-01, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#index-2020-01
@@ -1191,11 +1065,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single user
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#show-2020-01
@@ -1210,11 +1081,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves information about the user account associated with the access token used to make this API request. This request works only when the access token was created for a specific user of the shop.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#current-2020-01
@@ -1229,11 +1097,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all users. Note: As of version 2021-01, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#index-2020-04
@@ -1259,11 +1124,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single user
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#show-2020-04
@@ -1278,11 +1140,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves information about the user account associated with the access token used to make this API request. This request works only when the access token was created for a specific user of the shop.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#current-2020-04
@@ -1297,11 +1156,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all users. Note: As of version 2021-01, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#index-2020-07
@@ -1327,11 +1183,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single user
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#show-2020-07
@@ -1346,11 +1199,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves information about the user account associated with the access token used to make this API request. This request works only when the access token was created for a specific user of the shop.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#current-2020-07
@@ -1365,11 +1215,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all users. Note: As of version 2021-01, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#index-2020-10
@@ -1395,11 +1242,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single user
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#show-2020-10
@@ -1414,11 +1258,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves information about the user account associated with the access token used to make this API request. This request works only when the access token was created for a specific user of the shop.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#current-2020-10
@@ -1433,11 +1274,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all users. Note: As of version 2021-01, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#index-2021-01
@@ -1463,11 +1301,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single user
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#show-2021-01
@@ -1482,11 +1317,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves information about the user account associated with the access token used to make this API request. This request works only when the access token was created for a specific user of the shop.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#current-2021-01
@@ -1501,11 +1333,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of all users. Note: As of version 2021-01, this endpoint implements pagination by using links that are provided in the response header. Sending the page parameter will return an error. To learn more, see Making requests to paginated REST Admin API endpoints.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#index-unstable
@@ -1531,11 +1360,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single user
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#show-unstable
@@ -1550,11 +1376,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves information about the user account associated with the access token used to make this API request. This request works only when the access token was created for a specific user of the shop.
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/plus/user#current-unstable
@@ -1569,9 +1392,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }

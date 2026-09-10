@@ -7,26 +7,18 @@ sealed class UpdateWorkerError {const UpdateWorkerError();
 static UpdateWorkerError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return UpdateWorkerError400(UpdateWorkerResponse400.fromJson(json as Map<String, dynamic>));
-case 401:
+return  UpdateWorkerError400(UpdateWorkerResponse400.fromJson(json as Map<String, dynamic>));case 401:
 final json = jsonDecode(response.body);
-return UpdateWorkerError401(UpdateWorkerResponse401.fromJson(json as Map<String, dynamic>));
-case 403:
+return  UpdateWorkerError401(UpdateWorkerResponse401.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return UpdateWorkerError403(UpdateWorkerResponse403.fromJson(json as Map<String, dynamic>));
-case 404:
+return  UpdateWorkerError403(UpdateWorkerResponse403.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return UpdateWorkerError404(UpdateWorkerResponse404.fromJson(json as Map<String, dynamic>));
-case 409:
+return  UpdateWorkerError404(UpdateWorkerResponse404.fromJson(json as Map<String, dynamic>));case 409:
 final json = jsonDecode(response.body);
-return UpdateWorkerError409(UpdateWorkerResponse409.fromJson(json as Map<String, dynamic>));
-case 500:
+return  UpdateWorkerError409(UpdateWorkerResponse409.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return UpdateWorkerError500(UpdateWorkerResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return UpdateWorkerErrorUnknown(response);
-}
-}
+return  UpdateWorkerError500(UpdateWorkerResponse500.fromJson(json as Map<String, dynamic>));default:
+return  UpdateWorkerErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class UpdateWorkerError400 extends UpdateWorkerError {const UpdateWorkerError400(this.data);

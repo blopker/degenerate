@@ -7,13 +7,9 @@ sealed class ActivityGetRepoSubscriptionError {const ActivityGetRepoSubscription
 static ActivityGetRepoSubscriptionError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return ActivityGetRepoSubscriptionError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
-return const ActivityGetRepoSubscriptionError404();
-default:
-return ActivityGetRepoSubscriptionErrorUnknown(response);
-}
-}
+return  ActivityGetRepoSubscriptionError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
+return  const ActivityGetRepoSubscriptionError404();default:
+return  ActivityGetRepoSubscriptionErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class ActivityGetRepoSubscriptionError403 extends ActivityGetRepoSubscriptionError {const ActivityGetRepoSubscriptionError403(this.data);

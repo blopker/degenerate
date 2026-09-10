@@ -6,14 +6,10 @@ sealed class CodesOfConductGetConductCodeError {const CodesOfConductGetConductCo
 /// Decodes the payload for its declared status and content type.
 static CodesOfConductGetConductCodeError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const CodesOfConductGetConductCodeError304();
-case 404:
+return  const CodesOfConductGetConductCodeError304();case 404:
 final json = jsonDecode(response.body);
-return CodesOfConductGetConductCodeError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return CodesOfConductGetConductCodeErrorUnknown(response);
-}
-}
+return  CodesOfConductGetConductCodeError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  CodesOfConductGetConductCodeErrorUnknown(response); }}
 }
 /// Response for 304.
 final class CodesOfConductGetConductCodeError304 extends CodesOfConductGetConductCodeError {const CodesOfConductGetConductCodeError304();

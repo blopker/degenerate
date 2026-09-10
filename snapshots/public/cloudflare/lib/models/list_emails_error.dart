@@ -7,14 +7,10 @@ sealed class ListEmailsError {const ListEmailsError();
 static ListEmailsError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return ListEmailsError400(ListEmailsResponse400.fromJson(json as Map<String, dynamic>));
-case 500:
+return  ListEmailsError400(ListEmailsResponse400.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return ListEmailsError500(ListEmailsResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return ListEmailsErrorUnknown(response);
-}
-}
+return  ListEmailsError500(ListEmailsResponse500.fromJson(json as Map<String, dynamic>));default:
+return  ListEmailsErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class ListEmailsError400 extends ListEmailsError {const ListEmailsError400(this.data);

@@ -22,14 +22,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? EmailEmailSettingsProperties.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? EmailEmailSettingsProperties.fromJson(json['result'] as Map<String, dynamic>) : null;}, );}
 /// Email Routing - DNS settings
 ///
 /// Show the DNS records needed to configure your Email Routing zone.
@@ -52,14 +47,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OneOf2.parse(json, fromA: (v) => EmailEmailRoutingDnsQueryResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => EmailDnsSettingsResponseCollection.fromJson(v as Map<String, dynamic>),);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OneOf2.parse(json, fromA: (v) => EmailEmailRoutingDnsQueryResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => EmailDnsSettingsResponseCollection.fromJson(v as Map<String, dynamic>),);}, );}
 /// Enable Email Routing
 ///
 /// Enable you Email Routing zone. Add and lock the necessary MX and SPF records.
@@ -76,14 +66,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? EmailEmailSettingsProperties.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? EmailEmailSettingsProperties.fromJson(json['result'] as Map<String, dynamic>) : null;}, );}
 /// Unlock Email Routing
 ///
 /// Unlock MX Records previously locked by Email Routing.
@@ -100,14 +85,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return json['result'] != null ? EmailEmailSettingsProperties.fromJson(json['result'] as Map<String, dynamic>) : null;
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  json['result'] != null ? EmailEmailSettingsProperties.fromJson(json['result'] as Map<String, dynamic>) : null;}, );}
 /// Disable Email Routing
 ///
 /// Disable your Email Routing zone. Also removes additional MX records previously required for Email Routing to work.
@@ -124,12 +104,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return OneOf2.parse(json, fromA: (v) => ResponseCommon30.fromJson(v as Map<String, dynamic>), fromB: (v) => EmailDnsSettingsResponseCollection.fromJson(v as Map<String, dynamic>),);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  OneOf2.parse(json, fromA: (v) => ResponseCommon30.fromJson(v as Map<String, dynamic>), fromB: (v) => EmailDnsSettingsResponseCollection.fromJson(v as Map<String, dynamic>),);}, );}
 }

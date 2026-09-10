@@ -7,17 +7,12 @@ sealed class ReposUpdateOrgRulesetError {const ReposUpdateOrgRulesetError();
 static ReposUpdateOrgRulesetError parse(ApiResponse response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return ReposUpdateOrgRulesetError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  ReposUpdateOrgRulesetError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return ReposUpdateOrgRulesetError422(ValidationError.fromJson(json as Map<String, dynamic>));
-case 500:
+return  ReposUpdateOrgRulesetError422(ValidationError.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return ReposUpdateOrgRulesetError500(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposUpdateOrgRulesetErrorUnknown(response);
-}
-}
+return  ReposUpdateOrgRulesetError500(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ReposUpdateOrgRulesetErrorUnknown(response); }}
 }
 /// Response for 404 (application/json).
 final class ReposUpdateOrgRulesetError404 extends ReposUpdateOrgRulesetError {const ReposUpdateOrgRulesetError404(this.data);

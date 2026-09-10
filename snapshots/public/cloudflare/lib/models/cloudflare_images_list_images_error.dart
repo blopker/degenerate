@@ -7,14 +7,10 @@ sealed class CloudflareImagesListImagesError {const CloudflareImagesListImagesEr
 static CloudflareImagesListImagesError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return CloudflareImagesListImagesError400(CloudflareImagesListImagesResponse400.fromJson(json as Map<String, dynamic>));
-case >= 401 && < 500:
+return  CloudflareImagesListImagesError400(CloudflareImagesListImagesResponse400.fromJson(json as Map<String, dynamic>));case >= 401 && < 500:
 final json = jsonDecode(response.body);
-return CloudflareImagesListImagesError4xx(CloudflareImagesListImagesResponse4xx2.fromJson(json as Map<String, dynamic>));
-default:
-return CloudflareImagesListImagesErrorUnknown(response);
-}
-}
+return  CloudflareImagesListImagesError4xx(CloudflareImagesListImagesResponse4xx2.fromJson(json as Map<String, dynamic>));default:
+return  CloudflareImagesListImagesErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class CloudflareImagesListImagesError400 extends CloudflareImagesListImagesError {const CloudflareImagesListImagesError400(this.data);

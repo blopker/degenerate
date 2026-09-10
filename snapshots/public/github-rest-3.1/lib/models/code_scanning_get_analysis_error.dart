@@ -7,20 +7,14 @@ sealed class CodeScanningGetAnalysisError {const CodeScanningGetAnalysisError();
 static CodeScanningGetAnalysisError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return CodeScanningGetAnalysisError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CodeScanningGetAnalysisError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CodeScanningGetAnalysisError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  CodeScanningGetAnalysisError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return CodeScanningGetAnalysisError422(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  CodeScanningGetAnalysisError422(BasicError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return CodeScanningGetAnalysisError503(CodeScanningGetAnalysisResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return CodeScanningGetAnalysisErrorUnknown(response);
-}
-}
+return  CodeScanningGetAnalysisError503(CodeScanningGetAnalysisResponse503.fromJson(json as Map<String, dynamic>));default:
+return  CodeScanningGetAnalysisErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class CodeScanningGetAnalysisError403 extends CodeScanningGetAnalysisError {const CodeScanningGetAnalysisError403(this.data);

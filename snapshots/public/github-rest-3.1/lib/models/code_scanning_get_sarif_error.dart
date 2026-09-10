@@ -7,16 +7,11 @@ sealed class CodeScanningGetSarifError {const CodeScanningGetSarifError();
 static CodeScanningGetSarifError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return CodeScanningGetSarifError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
-return const CodeScanningGetSarifError404();
-case 503:
+return  CodeScanningGetSarifError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
+return  const CodeScanningGetSarifError404();case 503:
 final json = jsonDecode(response.body);
-return CodeScanningGetSarifError503(CodeScanningGetSarifResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return CodeScanningGetSarifErrorUnknown(response);
-}
-}
+return  CodeScanningGetSarifError503(CodeScanningGetSarifResponse503.fromJson(json as Map<String, dynamic>));default:
+return  CodeScanningGetSarifErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class CodeScanningGetSarifError403 extends CodeScanningGetSarifError {const CodeScanningGetSarifError403(this.data);

@@ -7,17 +7,12 @@ sealed class SecurityAdvisoriesCreateRepositoryAdvisoryError {const SecurityAdvi
 static SecurityAdvisoriesCreateRepositoryAdvisoryError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return SecurityAdvisoriesCreateRepositoryAdvisoryError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  SecurityAdvisoriesCreateRepositoryAdvisoryError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return SecurityAdvisoriesCreateRepositoryAdvisoryError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  SecurityAdvisoriesCreateRepositoryAdvisoryError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return SecurityAdvisoriesCreateRepositoryAdvisoryError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return SecurityAdvisoriesCreateRepositoryAdvisoryErrorUnknown(response);
-}
-}
+return  SecurityAdvisoriesCreateRepositoryAdvisoryError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  SecurityAdvisoriesCreateRepositoryAdvisoryErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class SecurityAdvisoriesCreateRepositoryAdvisoryError403 extends SecurityAdvisoriesCreateRepositoryAdvisoryError {const SecurityAdvisoriesCreateRepositoryAdvisoryError403(this.data);

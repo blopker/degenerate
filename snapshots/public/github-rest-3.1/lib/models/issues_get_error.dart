@@ -7,19 +7,13 @@ sealed class IssuesGetError {const IssuesGetError();
 static IssuesGetError parse(ApiResponse response) {switch (response.statusCode) {
 case 301:
 final json = jsonDecode(response.body);
-return IssuesGetError301(BasicError.fromJson(json as Map<String, dynamic>));
-case 304:
-return const IssuesGetError304();
-case 404:
+return  IssuesGetError301(BasicError.fromJson(json as Map<String, dynamic>));case 304:
+return  const IssuesGetError304();case 404:
 final json = jsonDecode(response.body);
-return IssuesGetError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 410:
+return  IssuesGetError404(BasicError.fromJson(json as Map<String, dynamic>));case 410:
 final json = jsonDecode(response.body);
-return IssuesGetError410(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return IssuesGetErrorUnknown(response);
-}
-}
+return  IssuesGetError410(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  IssuesGetErrorUnknown(response); }}
 }
 /// Response for 301 (application/json).
 final class IssuesGetError301 extends IssuesGetError {const IssuesGetError301(this.data);

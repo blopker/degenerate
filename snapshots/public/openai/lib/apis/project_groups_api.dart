@@ -34,14 +34,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ProjectGroupListResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ProjectGroupListResource.fromJson(json as Map<String, dynamic>);}, );}
 /// Grants a group access to a project.
 ///
 /// `POST /organization/projects/{project_id}/groups`
@@ -56,14 +51,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ProjectGroup.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ProjectGroup.fromJson(json as Map<String, dynamic>);}, );}
 /// Revokes a group's access to a project.
 ///
 /// `DELETE /organization/projects/{project_id}/groups/{group_id}`
@@ -76,12 +66,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ProjectGroupDeletedResource.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ProjectGroupDeletedResource.fromJson(json as Map<String, dynamic>);}, );}
 }

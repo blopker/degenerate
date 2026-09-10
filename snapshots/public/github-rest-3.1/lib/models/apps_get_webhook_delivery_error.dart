@@ -7,24 +7,16 @@ sealed class AppsGetWebhookDeliveryError {const AppsGetWebhookDeliveryError();
 static AppsGetWebhookDeliveryError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final contentType = response.headers.entries.where((e) => e.key.toLowerCase() == 'content-type').firstOrNull?.value;
-if (responseMediaTypeMatches(contentType, 'application/json')) {
+if (responseMediaTypeMatches(contentType, 'application/json', )) {
 final json = jsonDecode(response.body);
-return AppsGetWebhookDeliveryError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-}
-if (responseMediaTypeMatches(contentType, 'application/scim+json')) {
+return  AppsGetWebhookDeliveryError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); } else if (responseMediaTypeMatches(contentType, 'application/scim+json', )) {
 final json = jsonDecode(response.body);
-return AppsGetWebhookDeliveryError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>));
-}
+return  AppsGetWebhookDeliveryError400ApplicationScimJson(ScimError.fromJson(json as Map<String, dynamic>)); } else {
 final json = jsonDecode(response.body);
-return AppsGetWebhookDeliveryError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>));
-
-case 422:
+return  AppsGetWebhookDeliveryError400ApplicationJson(BasicError.fromJson(json as Map<String, dynamic>)); }case 422:
 final json = jsonDecode(response.body);
-return AppsGetWebhookDeliveryError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return AppsGetWebhookDeliveryErrorUnknown(response);
-}
-}
+return  AppsGetWebhookDeliveryError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  AppsGetWebhookDeliveryErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class AppsGetWebhookDeliveryError400ApplicationJson extends AppsGetWebhookDeliveryError {const AppsGetWebhookDeliveryError400ApplicationJson(this.data);

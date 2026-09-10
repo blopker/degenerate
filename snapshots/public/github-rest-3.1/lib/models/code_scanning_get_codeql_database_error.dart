@@ -6,20 +6,14 @@ sealed class CodeScanningGetCodeqlDatabaseError {const CodeScanningGetCodeqlData
 /// Decodes the payload for its declared status and content type.
 static CodeScanningGetCodeqlDatabaseError parse(ApiResponse response) {switch (response.statusCode) {
 case 302:
-return const CodeScanningGetCodeqlDatabaseError302();
-case 403:
+return  const CodeScanningGetCodeqlDatabaseError302();case 403:
 final json = jsonDecode(response.body);
-return CodeScanningGetCodeqlDatabaseError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  CodeScanningGetCodeqlDatabaseError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return CodeScanningGetCodeqlDatabaseError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 503:
+return  CodeScanningGetCodeqlDatabaseError404(BasicError.fromJson(json as Map<String, dynamic>));case 503:
 final json = jsonDecode(response.body);
-return CodeScanningGetCodeqlDatabaseError503(CodeScanningGetCodeqlDatabaseResponse503.fromJson(json as Map<String, dynamic>));
-default:
-return CodeScanningGetCodeqlDatabaseErrorUnknown(response);
-}
-}
+return  CodeScanningGetCodeqlDatabaseError503(CodeScanningGetCodeqlDatabaseResponse503.fromJson(json as Map<String, dynamic>));default:
+return  CodeScanningGetCodeqlDatabaseErrorUnknown(response); }}
 }
 /// Response for 302.
 final class CodeScanningGetCodeqlDatabaseError302 extends CodeScanningGetCodeqlDatabaseError {const CodeScanningGetCodeqlDatabaseError302();

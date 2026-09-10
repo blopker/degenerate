@@ -22,22 +22,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map(MagicVisibilityPcapsPcapsCollectionResponseResult.fromJson).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map(MagicVisibilityPcapsPcapsCollectionResponseResult.fromJson).toList();}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return OneOf2.parse(json, fromA: (v) => MagicVisibilityPcapsPcapsCollectionResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),);
-}
-
-  },
-);
-}
+return  OneOf2.parse(json, fromA: (v) => MagicVisibilityPcapsPcapsCollectionResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),); }}, );}
 /// Create PCAP request
 ///
 /// Create new PCAP request for account.
@@ -54,22 +44,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return MagicVisibilityPcapsPcapsSingleResponseResult.fromJson(json['result']);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  MagicVisibilityPcapsPcapsSingleResponseResult.fromJson(json['result']);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return OneOf2.parse(json, fromA: (v) => MagicVisibilityPcapsPcapsSingleResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),);
-}
-
-  },
-);
-}
+return  OneOf2.parse(json, fromA: (v) => MagicVisibilityPcapsPcapsSingleResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),); }}, );}
 /// Get PCAP request
 ///
 /// Get information for a PCAP request by id.
@@ -84,22 +64,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return MagicVisibilityPcapsPcapsSingleResponseResult.fromJson(json['result']);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  MagicVisibilityPcapsPcapsSingleResponseResult.fromJson(json['result']);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return OneOf2.parse(json, fromA: (v) => MagicVisibilityPcapsPcapsSingleResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),);
-}
-
-  },
-);
-}
+return  OneOf2.parse(json, fromA: (v) => MagicVisibilityPcapsPcapsSingleResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),); }}, );}
 /// Download Simple PCAP
 ///
 /// Download PCAP information into a file. Response is a binary PCAP file.
@@ -114,11 +84,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Stop full PCAP
 ///
 /// Stop full PCAP.
@@ -133,19 +100,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (_) {}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return ResponseCommonFailure49.fromJson(json as Map<String, dynamic>);
-}
-
-  },
-);
-}
+return  ResponseCommonFailure49.fromJson(json as Map<String, dynamic>); }}, );}
 /// List PCAPs Bucket Ownership
 ///
 /// List all buckets configured for use with PCAPs API.
@@ -160,22 +119,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>?)?.map((e) => MagicVisibilityPcapsPcapsOwnershipResponse.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>?)?.map((e) => MagicVisibilityPcapsPcapsOwnershipResponse.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return OneOf2.parse(json, fromA: (v) => MagicVisibilityPcapsPcapsOwnershipCollection.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),);
-}
-
-  },
-);
-}
+return  OneOf2.parse(json, fromA: (v) => MagicVisibilityPcapsPcapsOwnershipCollection.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),); }}, );}
 /// Add buckets for full packet captures
 ///
 /// Adds an AWS or GCP bucket to use with full packet captures.
@@ -192,22 +141,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return MagicVisibilityPcapsPcapsOwnershipResponse.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  MagicVisibilityPcapsPcapsOwnershipResponse.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return OneOf2.parse(json, fromA: (v) => MagicVisibilityPcapsPcapsOwnershipSingleResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),);
-}
-
-  },
-);
-}
+return  OneOf2.parse(json, fromA: (v) => MagicVisibilityPcapsPcapsOwnershipSingleResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),); }}, );}
 /// Delete buckets for full packet captures
 ///
 /// Deletes buckets added to the packet captures API.
@@ -222,11 +161,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Validate buckets for full packet captures
 ///
 /// Validates buckets added to the packet captures API.
@@ -243,20 +179,10 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return MagicVisibilityPcapsPcapsOwnershipResponse.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  MagicVisibilityPcapsPcapsOwnershipResponse.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 default:
 final json = jsonDecode(response.body);
-return OneOf2.parse(json, fromA: (v) => MagicVisibilityPcapsPcapsOwnershipSingleResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),);
-}
-
-  },
-);
-}
+return  OneOf2.parse(json, fromA: (v) => MagicVisibilityPcapsPcapsOwnershipSingleResponse.fromJson(v as Map<String, dynamic>), fromB: (v) => ResponseCommonFailure49.fromJson(v as Map<String, dynamic>),); }}, );}
 }

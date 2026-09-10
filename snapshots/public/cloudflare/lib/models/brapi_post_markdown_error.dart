@@ -7,20 +7,14 @@ sealed class BrapiPostMarkdownError {const BrapiPostMarkdownError();
 static BrapiPostMarkdownError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return BrapiPostMarkdownError400(BrapiPostMarkdownResponse400.fromJson(json as Map<String, dynamic>));
-case 422:
+return  BrapiPostMarkdownError400(BrapiPostMarkdownResponse400.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return BrapiPostMarkdownError422(BrapiPostMarkdownResponse422.fromJson(json as Map<String, dynamic>));
-case 429:
+return  BrapiPostMarkdownError422(BrapiPostMarkdownResponse422.fromJson(json as Map<String, dynamic>));case 429:
 final json = jsonDecode(response.body);
-return BrapiPostMarkdownError429(BrapiPostMarkdownResponse429.fromJson(json as Map<String, dynamic>));
-case 500:
+return  BrapiPostMarkdownError429(BrapiPostMarkdownResponse429.fromJson(json as Map<String, dynamic>));case 500:
 final json = jsonDecode(response.body);
-return BrapiPostMarkdownError500(BrapiPostMarkdownResponse500.fromJson(json as Map<String, dynamic>));
-default:
-return BrapiPostMarkdownErrorUnknown(response);
-}
-}
+return  BrapiPostMarkdownError500(BrapiPostMarkdownResponse500.fromJson(json as Map<String, dynamic>));default:
+return  BrapiPostMarkdownErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class BrapiPostMarkdownError400 extends BrapiPostMarkdownError {const BrapiPostMarkdownError400(this.data);

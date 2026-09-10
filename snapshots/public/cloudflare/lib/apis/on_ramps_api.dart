@@ -39,24 +39,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => McnOnramp.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => McnOnramp.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create On-ramp
 ///
 /// Create a new On-ramp (Closed Beta).
@@ -76,24 +65,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return McnOnramp.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  McnOnramp.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 409 || 422 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Read On-ramp
 ///
 /// Read an On-ramp (Closed Beta).
@@ -125,24 +103,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return McnOnramp.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  McnOnramp.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update On-ramp
 ///
 /// Update an On-ramp (Closed Beta).
@@ -159,24 +126,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return McnOnramp.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  McnOnramp.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 409 || 422 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Patch On-ramp
 ///
 /// Update an On-ramp (Closed Beta).
@@ -193,24 +149,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return McnOnramp.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  McnOnramp.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 409 || 422 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Delete On-ramp
 ///
 /// Delete an On-ramp (Closed Beta).
@@ -236,24 +181,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return McnDeletedOnramp.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  McnDeletedOnramp.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 409 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Apply On-ramp
 ///
 /// Apply an On-ramp (Closed Beta).
@@ -268,24 +202,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return McnGoodResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  McnGoodResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 409 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Export as Terraform
 ///
 /// Export an On-ramp to terraform ready file(s) (Closed Beta).
@@ -300,23 +223,12 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-return Uint8List.fromList(response.bodyBytes);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {return  Uint8List.fromList(response.bodyBytes);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 409 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Plan On-ramp
 ///
 /// Plan an On-ramp (Closed Beta).
@@ -331,24 +243,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return McnGoodResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  McnGoodResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 409 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Read Magic WAN Address Space
 ///
 /// Read the Magic WAN Address Space (Closed Beta).
@@ -363,24 +264,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return McnMagicWanAddressSpace.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  McnMagicWanAddressSpace.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Update Magic WAN Address Space
 ///
 /// Update the Magic WAN Address Space (Closed Beta).
@@ -397,24 +287,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return McnMagicWanAddressSpace.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  McnMagicWanAddressSpace.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 422 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Patch Magic WAN Address Space
 ///
 /// Update the Magic WAN Address Space (Closed Beta).
@@ -431,22 +310,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return McnMagicWanAddressSpace.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  McnMagicWanAddressSpace.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400 || 401 || 403 || 404 || 422 || 500:
 final json = jsonDecode(response.body);
-return McnBadResponse.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  McnBadResponse.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

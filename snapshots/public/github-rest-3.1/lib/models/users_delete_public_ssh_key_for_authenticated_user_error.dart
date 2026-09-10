@@ -6,20 +6,14 @@ sealed class UsersDeletePublicSshKeyForAuthenticatedUserError {const UsersDelete
 /// Decodes the payload for its declared status and content type.
 static UsersDeletePublicSshKeyForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const UsersDeletePublicSshKeyForAuthenticatedUserError304();
-case 401:
+return  const UsersDeletePublicSshKeyForAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return UsersDeletePublicSshKeyForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  UsersDeletePublicSshKeyForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return UsersDeletePublicSshKeyForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  UsersDeletePublicSshKeyForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return UsersDeletePublicSshKeyForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return UsersDeletePublicSshKeyForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  UsersDeletePublicSshKeyForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  UsersDeletePublicSshKeyForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class UsersDeletePublicSshKeyForAuthenticatedUserError304 extends UsersDeletePublicSshKeyForAuthenticatedUserError {const UsersDeletePublicSshKeyForAuthenticatedUserError304();

@@ -40,24 +40,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => AiSearchListInstancesResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => AiSearchListInstancesResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return AiSearchListInstancesResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AiSearchListInstancesResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Create new instances.
 ///
 /// Create a new instances.
@@ -74,24 +63,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AiSearchCreateInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AiSearchCreateInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return AiSearchCreateInstancesResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AiSearchCreateInstancesResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Read instances.
 ///
 /// `GET /accounts/{account_id}/ai-search/instances/{id}`
@@ -104,15 +82,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AiSearchFetchInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: AiSearchFetchInstancesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AiSearchFetchInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: AiSearchFetchInstancesError.parse, );}
 /// Update instances.
 ///
 /// `PUT /accounts/{account_id}/ai-search/instances/{id}`
@@ -127,15 +99,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AiSearchUpdateInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: AiSearchUpdateInstancesError.parse,
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AiSearchUpdateInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: AiSearchUpdateInstancesError.parse, );}
 /// Delete instances.
 ///
 /// `DELETE /accounts/{account_id}/ai-search/instances/{id}`
@@ -148,24 +114,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AiSearchDeleteInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AiSearchDeleteInstancesResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return AiSearchDeleteInstancesResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AiSearchDeleteInstancesResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Chat Completions
 ///
 /// Performs a chat completion request against an AI Search instance, using indexed content as context for generating responses.
@@ -182,24 +137,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AiSearchInstanceChatCompletionResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AiSearchInstanceChatCompletionResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return AiSearchInstanceChatCompletionResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AiSearchInstanceChatCompletionResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Search
 ///
 /// Executes a semantic search query against an AI Search instance to find relevant indexed content.
@@ -216,24 +160,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AiSearchInstanceSearchResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AiSearchInstanceSearchResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return AiSearchInstanceSearchResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AiSearchInstanceSearchResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Stats
 ///
 /// Retrieves usage statistics for AI Search instances.
@@ -248,22 +181,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return AiSearchStatsResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  AiSearchStatsResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 404:
 final json = jsonDecode(response.body);
-return AiSearchStatsResponse404.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  AiSearchStatsResponse404.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

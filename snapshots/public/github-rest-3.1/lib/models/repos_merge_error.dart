@@ -7,18 +7,12 @@ sealed class ReposMergeError {const ReposMergeError();
 static ReposMergeError parse(ApiResponse response) {switch (response.statusCode) {
 case 403:
 final json = jsonDecode(response.body);
-return ReposMergeError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
-return const ReposMergeError404();
-case 409:
-return const ReposMergeError409();
-case 422:
+return  ReposMergeError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
+return  const ReposMergeError404();case 409:
+return  const ReposMergeError409();case 422:
 final json = jsonDecode(response.body);
-return ReposMergeError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposMergeErrorUnknown(response);
-}
-}
+return  ReposMergeError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  ReposMergeErrorUnknown(response); }}
 }
 /// Response for 403 (application/json).
 final class ReposMergeError403 extends ReposMergeError {const ReposMergeError403(this.data);

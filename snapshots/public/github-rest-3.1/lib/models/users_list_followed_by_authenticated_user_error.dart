@@ -6,17 +6,12 @@ sealed class UsersListFollowedByAuthenticatedUserError {const UsersListFollowedB
 /// Decodes the payload for its declared status and content type.
 static UsersListFollowedByAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const UsersListFollowedByAuthenticatedUserError304();
-case 401:
+return  const UsersListFollowedByAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return UsersListFollowedByAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  UsersListFollowedByAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return UsersListFollowedByAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return UsersListFollowedByAuthenticatedUserErrorUnknown(response);
-}
-}
+return  UsersListFollowedByAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  UsersListFollowedByAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class UsersListFollowedByAuthenticatedUserError304 extends UsersListFollowedByAuthenticatedUserError {const UsersListFollowedByAuthenticatedUserError304();

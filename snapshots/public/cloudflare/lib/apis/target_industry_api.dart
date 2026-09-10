@@ -20,24 +20,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTargetIndustryListByDatasetResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTargetIndustryListByDatasetResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return GetTargetIndustryListByDatasetResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  GetTargetIndustryListByDatasetResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Lists target industries across multiple datasets
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/targetIndustries`
@@ -60,24 +49,13 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTargetIndustryListResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTargetIndustryListResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return GetTargetIndustryListResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  GetTargetIndustryListResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 /// Lists all target industries from industry map catalog
 ///
 /// `GET /accounts/{account_id}/cloudforce-one/events/targetIndustries/catalog`
@@ -90,22 +68,11 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return GetTargetIndustryListCompleteResponse.fromJson(json as Map<String, dynamic>);
-  },
-  onError: (response) {
-switch (response.statusCode) {
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  GetTargetIndustryListCompleteResponse.fromJson(json as Map<String, dynamic>);}, onError: (response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return GetTargetIndustryListCompleteResponse400.fromJson(json as Map<String, dynamic>);
-default:
-return null;
-}
-
-  },
-);
-}
+return  GetTargetIndustryListCompleteResponse400.fromJson(json as Map<String, dynamic>);default:
+return  null; }}, );}
 }

@@ -7,14 +7,10 @@ sealed class ReposCreateDeploymentSuccess {const ReposCreateDeploymentSuccess();
 static ReposCreateDeploymentSuccess parse(ApiResponse response) {switch (response.statusCode) {
 case 201:
 final json = jsonDecode(response.body);
-return ReposCreateDeploymentSuccess201(Deployment.fromJson(json as Map<String, dynamic>));
-case 202:
+return  ReposCreateDeploymentSuccess201(Deployment.fromJson(json as Map<String, dynamic>));case 202:
 final json = jsonDecode(response.body);
-return ReposCreateDeploymentSuccess202(ReposCreateDeploymentResponse202.fromJson(json as Map<String, dynamic>));
-default:
-return ReposCreateDeploymentSuccessUnknown(response);
-}
-}
+return  ReposCreateDeploymentSuccess202(ReposCreateDeploymentResponse202.fromJson(json as Map<String, dynamic>));default:
+return  ReposCreateDeploymentSuccessUnknown(response); }}
 }
 /// Response for 201 (application/json).
 final class ReposCreateDeploymentSuccess201 extends ReposCreateDeploymentSuccess {const ReposCreateDeploymentSuccess201(this.data);

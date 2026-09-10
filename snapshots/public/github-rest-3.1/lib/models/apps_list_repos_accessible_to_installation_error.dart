@@ -6,17 +6,12 @@ sealed class AppsListReposAccessibleToInstallationError {const AppsListReposAcce
 /// Decodes the payload for its declared status and content type.
 static AppsListReposAccessibleToInstallationError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const AppsListReposAccessibleToInstallationError304();
-case 401:
+return  const AppsListReposAccessibleToInstallationError304();case 401:
 final json = jsonDecode(response.body);
-return AppsListReposAccessibleToInstallationError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  AppsListReposAccessibleToInstallationError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return AppsListReposAccessibleToInstallationError403(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return AppsListReposAccessibleToInstallationErrorUnknown(response);
-}
-}
+return  AppsListReposAccessibleToInstallationError403(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  AppsListReposAccessibleToInstallationErrorUnknown(response); }}
 }
 /// Response for 304.
 final class AppsListReposAccessibleToInstallationError304 extends AppsListReposAccessibleToInstallationError {const AppsListReposAccessibleToInstallationError304();

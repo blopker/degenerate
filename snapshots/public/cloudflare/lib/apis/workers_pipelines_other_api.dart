@@ -33,14 +33,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => PipelinesResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => PipelinesResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Create Pipeline
 ///
 /// Create a new Pipeline.
@@ -57,14 +52,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return PipelinesResponse2Result.fromJson(json['result'] as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  PipelinesResponse2Result.fromJson(json['result'] as Map<String, dynamic>);}, );}
 /// Get Pipeline Details
 ///
 /// Get Pipelines Details.
@@ -79,14 +69,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return PipelinesByPipelineIdResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  PipelinesByPipelineIdResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, );}
 /// Delete Pipelines
 ///
 /// Delete Pipeline in Account.
@@ -101,11 +86,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List Sinks
 ///
 /// List/Filter Sinks in Account.
@@ -134,14 +116,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => SinksResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => SinksResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Create Sink
 ///
 /// Create a new Sink.
@@ -158,14 +135,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return SinksResponse2Result.fromJson(json['result'] as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  SinksResponse2Result.fromJson(json['result'] as Map<String, dynamic>);}, );}
 /// Get Sink Details
 ///
 /// Get Sink Details.
@@ -180,14 +152,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return SinksBySinkIdResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  SinksBySinkIdResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, );}
 /// Delete Sink
 ///
 /// Delete Pipeline in Account.
@@ -210,11 +177,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// List Streams
 ///
 /// List/Filter Streams in Account.
@@ -243,14 +207,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return (json['result'] as List<dynamic>).map((e) => StreamsResponseResult.fromJson(e as Map<String, dynamic>)).toList();
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  (json['result'] as List<dynamic>).map((e) => StreamsResponseResult.fromJson(e as Map<String, dynamic>)).toList();}, );}
 /// Create Stream
 ///
 /// Create a new Stream.
@@ -267,14 +226,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return StreamsResponse2Result.fromJson(json['result'] as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  StreamsResponse2Result.fromJson(json['result'] as Map<String, dynamic>);}, );}
 /// Get Stream Details
 ///
 /// Get Stream Details.
@@ -289,14 +243,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return StreamsByStreamIdResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  StreamsByStreamIdResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, );}
 /// Update Stream
 ///
 /// Update a Stream.
@@ -313,14 +262,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return StreamsByStreamIdResponse2Result.fromJson(json['result'] as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  StreamsByStreamIdResponse2Result.fromJson(json['result'] as Map<String, dynamic>);}, );}
 /// Delete Stream
 ///
 /// Delete Stream in Account.
@@ -343,11 +287,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Validate SQL
 ///
 /// Validate Arroyo SQL.
@@ -364,12 +305,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body) as Map<String, dynamic>;
-return ValidateSqlResponseResult.fromJson(json['result'] as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body) as Map<String, dynamic>;
+return  ValidateSqlResponseResult.fromJson(json['result'] as Map<String, dynamic>);}, );}
 }

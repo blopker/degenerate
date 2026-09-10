@@ -7,14 +7,10 @@ sealed class WorDeleteWorkflowError {const WorDeleteWorkflowError();
 static WorDeleteWorkflowError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return WorDeleteWorkflowError400(WorDeleteWorkflowResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  WorDeleteWorkflowError400(WorDeleteWorkflowResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return WorDeleteWorkflowError404(WorDeleteWorkflowResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return WorDeleteWorkflowErrorUnknown(response);
-}
-}
+return  WorDeleteWorkflowError404(WorDeleteWorkflowResponse404.fromJson(json as Map<String, dynamic>));default:
+return  WorDeleteWorkflowErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class WorDeleteWorkflowError400 extends WorDeleteWorkflowError {const WorDeleteWorkflowError400(this.data);

@@ -20,14 +20,9 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return AccountCallCallNotificationInstance.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  AccountCallCallNotificationInstance.fromJson(json as Map<String, dynamic>);}, );}
 /// 
 ///
 /// `GET /2010-04-01/Accounts/{AccountSid}/Calls/{CallSid}/Notifications.json`
@@ -66,12 +61,7 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (response) {
-final json = jsonDecode(response.body);
-return ListCallNotificationResponse.fromJson(json as Map<String, dynamic>);
-  },
-);
-}
+
+return   await execute(request, onSuccess: (response) {final json = jsonDecode(response.body);
+return  ListCallNotificationResponse.fromJson(json as Map<String, dynamic>);}, );}
 }

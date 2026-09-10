@@ -6,23 +6,16 @@ sealed class UsersCreateSshSigningKeyForAuthenticatedUserError {const UsersCreat
 /// Decodes the payload for its declared status and content type.
 static UsersCreateSshSigningKeyForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const UsersCreateSshSigningKeyForAuthenticatedUserError304();
-case 401:
+return  const UsersCreateSshSigningKeyForAuthenticatedUserError304();case 401:
 final json = jsonDecode(response.body);
-return UsersCreateSshSigningKeyForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  UsersCreateSshSigningKeyForAuthenticatedUserError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return UsersCreateSshSigningKeyForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  UsersCreateSshSigningKeyForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return UsersCreateSshSigningKeyForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 422:
+return  UsersCreateSshSigningKeyForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));case 422:
 final json = jsonDecode(response.body);
-return UsersCreateSshSigningKeyForAuthenticatedUserError422(ValidationError.fromJson(json as Map<String, dynamic>));
-default:
-return UsersCreateSshSigningKeyForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  UsersCreateSshSigningKeyForAuthenticatedUserError422(ValidationError.fromJson(json as Map<String, dynamic>));default:
+return  UsersCreateSshSigningKeyForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class UsersCreateSshSigningKeyForAuthenticatedUserError304 extends UsersCreateSshSigningKeyForAuthenticatedUserError {const UsersCreateSshSigningKeyForAuthenticatedUserError304();

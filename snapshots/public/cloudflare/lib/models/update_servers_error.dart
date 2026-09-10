@@ -7,14 +7,10 @@ sealed class UpdateServersError {const UpdateServersError();
 static UpdateServersError parse(ApiResponse response) {switch (response.statusCode) {
 case 400:
 final json = jsonDecode(response.body);
-return UpdateServersError400(UpdateServersResponse400.fromJson(json as Map<String, dynamic>));
-case 404:
+return  UpdateServersError400(UpdateServersResponse400.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return UpdateServersError404(UpdateServersResponse404.fromJson(json as Map<String, dynamic>));
-default:
-return UpdateServersErrorUnknown(response);
-}
-}
+return  UpdateServersError404(UpdateServersResponse404.fromJson(json as Map<String, dynamic>));default:
+return  UpdateServersErrorUnknown(response); }}
 }
 /// Response for 400 (application/json).
 final class UpdateServersError400 extends UpdateServersError {const UpdateServersError400(this.data);

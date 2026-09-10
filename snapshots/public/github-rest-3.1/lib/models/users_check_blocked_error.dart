@@ -6,20 +6,14 @@ sealed class UsersCheckBlockedError {const UsersCheckBlockedError();
 /// Decodes the payload for its declared status and content type.
 static UsersCheckBlockedError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const UsersCheckBlockedError304();
-case 401:
+return  const UsersCheckBlockedError304();case 401:
 final json = jsonDecode(response.body);
-return UsersCheckBlockedError401(BasicError.fromJson(json as Map<String, dynamic>));
-case 403:
+return  UsersCheckBlockedError401(BasicError.fromJson(json as Map<String, dynamic>));case 403:
 final json = jsonDecode(response.body);
-return UsersCheckBlockedError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  UsersCheckBlockedError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return UsersCheckBlockedError404(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return UsersCheckBlockedErrorUnknown(response);
-}
-}
+return  UsersCheckBlockedError404(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  UsersCheckBlockedErrorUnknown(response); }}
 }
 /// Response for 304.
 final class UsersCheckBlockedError304 extends UsersCheckBlockedError {const UsersCheckBlockedError304();

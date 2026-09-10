@@ -6,20 +6,14 @@ sealed class ReposDeclineInvitationForAuthenticatedUserError {const ReposDecline
 /// Decodes the payload for its declared status and content type.
 static ReposDeclineInvitationForAuthenticatedUserError parse(ApiResponse response) {switch (response.statusCode) {
 case 304:
-return const ReposDeclineInvitationForAuthenticatedUserError304();
-case 403:
+return  const ReposDeclineInvitationForAuthenticatedUserError304();case 403:
 final json = jsonDecode(response.body);
-return ReposDeclineInvitationForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));
-case 404:
+return  ReposDeclineInvitationForAuthenticatedUserError403(BasicError.fromJson(json as Map<String, dynamic>));case 404:
 final json = jsonDecode(response.body);
-return ReposDeclineInvitationForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));
-case 409:
+return  ReposDeclineInvitationForAuthenticatedUserError404(BasicError.fromJson(json as Map<String, dynamic>));case 409:
 final json = jsonDecode(response.body);
-return ReposDeclineInvitationForAuthenticatedUserError409(BasicError.fromJson(json as Map<String, dynamic>));
-default:
-return ReposDeclineInvitationForAuthenticatedUserErrorUnknown(response);
-}
-}
+return  ReposDeclineInvitationForAuthenticatedUserError409(BasicError.fromJson(json as Map<String, dynamic>));default:
+return  ReposDeclineInvitationForAuthenticatedUserErrorUnknown(response); }}
 }
 /// Response for 304.
 final class ReposDeclineInvitationForAuthenticatedUserError304 extends ReposDeclineInvitationForAuthenticatedUserError {const ReposDeclineInvitationForAuthenticatedUserError304();

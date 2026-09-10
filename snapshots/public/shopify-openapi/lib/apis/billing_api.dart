@@ -33,11 +33,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#create-2020-01
@@ -54,11 +51,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves an application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#show-2020-01
@@ -81,11 +75,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   This endpoint is no longer required and is deprecated as of
 ///   API version 2021-01.
@@ -107,11 +98,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of application charges
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#index-2020-04
@@ -137,11 +125,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#create-2020-04
@@ -158,11 +143,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves an application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#show-2020-04
@@ -185,11 +167,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   This endpoint is no longer required and is deprecated as of
 ///   API version 2021-01.
@@ -211,11 +190,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of application charges
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#index-2020-07
@@ -241,11 +217,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#create-2020-07
@@ -262,11 +235,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves an application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#show-2020-07
@@ -289,11 +259,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   This endpoint is no longer required and is deprecated as of
 ///   API version 2021-01.
@@ -315,11 +282,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of application charges
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#index-2020-10
@@ -345,11 +309,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#create-2020-10
@@ -366,11 +327,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves an application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#show-2020-10
@@ -393,11 +351,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   This endpoint is no longer required and is deprecated as of
 ///   API version 2021-01.
@@ -419,11 +374,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of application charges
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#index-2021-01
@@ -449,11 +401,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#create-2021-01
@@ -470,11 +419,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves an application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#show-2021-01
@@ -497,11 +443,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of application charges
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#index-unstable
@@ -527,11 +470,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#create-unstable
@@ -548,11 +488,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves an application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcharge#show-unstable
@@ -575,11 +512,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves all application credits
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#index-2020-01
@@ -602,11 +536,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an application credit
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#create-2020-01
@@ -623,11 +554,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single application credit
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#show-2020-01
@@ -650,11 +578,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves all application credits
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#index-2020-04
@@ -677,11 +602,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an application credit
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#create-2020-04
@@ -698,11 +620,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single application credit
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#show-2020-04
@@ -725,11 +644,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves all application credits
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#index-2020-07
@@ -752,11 +668,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an application credit
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#create-2020-07
@@ -773,11 +686,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single application credit
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#show-2020-07
@@ -800,11 +710,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves all application credits
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#index-2020-10
@@ -827,11 +734,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an application credit
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#create-2020-10
@@ -848,11 +752,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single application credit
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#show-2020-10
@@ -875,11 +776,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves all application credits
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#index-2021-01
@@ -902,11 +800,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an application credit
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#create-2021-01
@@ -923,11 +818,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single application credit
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#show-2021-01
@@ -950,11 +842,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves all application credits
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#index-unstable
@@ -977,11 +866,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates an application credit
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#create-unstable
@@ -998,11 +884,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single application credit
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/applicationcredit#show-unstable
@@ -1025,11 +908,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of recurring application charges
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#index-2020-01
@@ -1055,11 +935,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a recurring application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#create-2020-01
@@ -1076,11 +953,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#show-2020-01
@@ -1103,11 +977,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Cancels a recurring application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#destroy-2020-01
@@ -1122,11 +993,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   This endpoint is no longer required and is deprecated as of
 ///   API version 2021-01.
@@ -1148,11 +1016,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates the capped amount of an active recurring application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#customize-2020-01
@@ -1175,11 +1040,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of recurring application charges
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#index-2020-04
@@ -1205,11 +1067,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a recurring application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#create-2020-04
@@ -1226,11 +1085,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#show-2020-04
@@ -1253,11 +1109,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Cancels a recurring application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#destroy-2020-04
@@ -1272,11 +1125,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   This endpoint is no longer required and is deprecated as of
 ///   API version 2021-01.
@@ -1298,11 +1148,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates the capped amount of an active recurring application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#customize-2020-04
@@ -1325,11 +1172,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of recurring application charges
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#index-2020-07
@@ -1355,11 +1199,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a recurring application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#create-2020-07
@@ -1376,11 +1217,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#show-2020-07
@@ -1403,11 +1241,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Cancels a recurring application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#destroy-2020-07
@@ -1422,11 +1257,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   This endpoint is no longer required and is deprecated as of
 ///   API version 2021-01.
@@ -1448,11 +1280,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates the capped amount of an active recurring application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#customize-2020-07
@@ -1475,11 +1304,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of recurring application charges
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#index-2020-10
@@ -1505,11 +1331,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a recurring application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#create-2020-10
@@ -1526,11 +1349,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#show-2020-10
@@ -1553,11 +1373,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Cancels a recurring application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#destroy-2020-10
@@ -1572,11 +1389,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Caution
 ///   This endpoint is no longer required and is deprecated as of
 ///   API version 2021-01.
@@ -1598,11 +1412,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates the capped amount of an active recurring application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#customize-2020-10
@@ -1625,11 +1436,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of recurring application charges
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#index-2021-01
@@ -1655,11 +1463,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a recurring application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#create-2021-01
@@ -1676,11 +1481,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#show-2021-01
@@ -1703,11 +1505,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Cancels a recurring application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#destroy-2021-01
@@ -1722,11 +1521,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates the capped amount of an active recurring application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#customize-2021-01
@@ -1749,11 +1545,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of recurring application charges
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#index-unstable
@@ -1779,11 +1572,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a recurring application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#create-unstable
@@ -1800,11 +1590,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#show-unstable
@@ -1827,11 +1614,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Cancels a recurring application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#destroy-unstable
@@ -1846,11 +1630,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Updates the capped amount of an active recurring application charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/recurringapplicationcharge#customize-unstable
@@ -1873,11 +1654,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of usage charges
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#index-2020-01
@@ -1900,11 +1678,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a usage charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#create-2020-01
@@ -1921,11 +1696,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#show-2020-01
@@ -1948,11 +1720,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of usage charges
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#index-2020-04
@@ -1975,11 +1744,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a usage charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#create-2020-04
@@ -1996,11 +1762,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#show-2020-04
@@ -2023,11 +1786,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of usage charges
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#index-2020-07
@@ -2050,11 +1810,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a usage charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#create-2020-07
@@ -2071,11 +1828,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#show-2020-07
@@ -2098,11 +1852,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of usage charges
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#index-2020-10
@@ -2125,11 +1876,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a usage charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#create-2020-10
@@ -2146,11 +1894,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#show-2020-10
@@ -2173,11 +1918,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of usage charges
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#index-2021-01
@@ -2200,11 +1942,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a usage charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#create-2021-01
@@ -2221,11 +1960,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#show-2021-01
@@ -2248,11 +1984,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a list of usage charges
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#index-unstable
@@ -2275,11 +2008,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Creates a usage charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#create-unstable
@@ -2296,11 +2026,8 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 /// Retrieves a single charge
 ///
 /// https://shopify.dev/docs/admin-api/rest/reference/billing/usagecharge#show-unstable
@@ -2323,9 +2050,6 @@ final request = ApiRequest(
   options: options,
 );
 
-return await execute(
-  request,
-  onSuccess: (_) {},
-);
-}
+
+return   await execute(request, onSuccess: (_) {}, );}
 }
