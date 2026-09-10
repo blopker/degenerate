@@ -10,6 +10,7 @@
   <p>
     <a href="#features">Features</a> &middot;
     <a href="#quick-start">Quick Start</a> &middot;
+    <a href="#migrating-from-04x">Migration</a> &middot;
     <a href="#usage">Usage</a> &middot;
     <a href="#streaming">Streaming</a> &middot;
     <a href="#middleware">Middleware</a> &middot;
@@ -27,9 +28,10 @@
 
 - **Strives for full OpenAPI 3.0, 3.1, and 3.2 compatibility** including `allOf`, `oneOf`, `anyOf`, discriminated unions, `additionalProperties`, nullable types, circular references, external `$ref` file resolution, and the OAS 3.2 `query` method + `additionalOperations`. [File a bug](https://github.com/blopker/degenerate/issues) if something doesn't work
 - **Forward-compatible**: unknown enum values preserve their raw string for round-trip fidelity; unknown union discriminators produce typed `$Unknown` variants
-- **Typed unions**: `oneOf` schemas use generic `OneOf` containers with pattern matching; `anyOf` classes retain the original JSON and expose every matching typed view
+- **Typed unions**: untagged `oneOf` schemas use generic `OneOf` containers with pattern matching; untagged `anyOf` classes retain the original JSON and expose every matching typed view
+- **Responses by status and media type**: operations with multiple response shapes generate sealed success/error variants for exhaustive matching, including empty responses and unknown statuses
 - **Typed streaming**: SSE (`text/event-stream`) and JSONL (`application/jsonl`) responses with `itemSchema` return `Stream<T>` with typed deserialization
-- **Omittable fields (JSON Merge Patch)**: optional nullable fields generate as `Omittable<T>` so "omitted", "explicit null", and "value" all survive serialization — PATCH endpoints can clear a field with `Omittable(null)`
+- **Omittable fields (JSON Merge Patch)**: optional nullable fields generate as `Omittable<T?>` so "omitted", "explicit null", and "value" all survive serialization — PATCH endpoints can clear a field with `Omittable(null)`
 - **Response envelope unwrapping**: `--unwrap-fields=result` returns the inner type directly instead of the full envelope, matching how Stainless generates Cloudflare/OpenAI SDKs
 - **Zero analysis issues**: generated code passes default `dart analyze` with no errors, warnings, or hints
 - **Fast**: generates ~14,000 files from the Cloudflare spec in ~6 seconds (AOT compiled)
@@ -41,6 +43,9 @@
 - **Modular output**: one file per model, small types inlined into their parent, barrel file for convenient imports
 
 ## Quick Start
+
+The generator requires Dart 3.11.1 or later. Generated clients and the runtime
+packages require Dart 3.8.0 or later.
 
 ```bash
 # Add to your pubspec.yaml
@@ -96,6 +101,35 @@ void main() async {
 ```
 
 See [`example/`](https://github.com/blopker/degenerate/tree/main/example) for a full working example against the live Petstore API, [`example_workspace/`](https://github.com/blopker/degenerate/tree/main/example_workspace) for a Dart workspace setup, and [`example.md`](https://github.com/blopker/degenerate/blob/main/packages/degenerate/example/example.md) for more usage patterns including OpenAI, streaming, and Riverpod.
+
+## Migrating from 0.4.x
+
+Version 0.5.0 changes generated model types and the middleware response contract.
+Upgrade `degenerate`, `degenerate_runtime`, and your adapter (`degenerate_http`
+or `degenerate_dio`) together to the 0.5.x release line, then regenerate and
+format your client using the same schema and CLI options. Regenerated clients
+require the new runtime; the 0.4.x runtime does not provide `Omittable`.
+
+| Change | Migration |
+|--------|-----------|
+| Optional nullable fields use `Omittable<T?>` in request and response models | Wrap supplied values with `Omittable(value)`, read with `.value`, and check `.isPresent` when absence matters. Omit a field by leaving the constructor argument out. |
+| Schema defaults no longer populate absent fields | Use `fieldOrDefault` when you want the schema's fallback. Supply every required constructor argument, even if its schema has a default. |
+| Untagged `anyOf` exposes all matching views | Replace `.a(value)` / `.b(value)` constructors with named views such as `Combined(a: Omittable(value))`. Read each view through `.value`. |
+| `readOnly` / `writeOnly` can produce separate models | Use the operation's generated `NameRequest` and `NameResponse` types where their shapes differ. |
+| Multiple response shapes use sealed variants | Match on typed success/error variants such as `PostAuthSuccess200(:final data)`. Single-shape operations keep plain payload types. Update references to inline models whose names now include status codes. |
+| Middleware receives streamed responses | Change custom `intercept` return types and `retryWhen` parameters to `StreamedApiResponse`. Buffer and re-wrap a response if you inspect its body. |
+
+Run `dart analyze` and your application tests after regeneration. Also review
+comparisons, null checks, string interpolation, and values passed to `dynamic`
+APIs: reading an `Omittable` wrapper instead of its `.value` can still compile.
+For example, change `user.name == name` to `user.name.value == name`, and
+`'Hello ${user.name}'` to `'Hello ${user.name.value ?? "there"}'`.
+
+See [presence and defaults](#omittable-fields-json-merge-patch),
+[response variants](#request-and-response-models), [anyOf](#overlapping-unions-anyof),
+and [middleware](#middleware) for examples. The
+[changelog](https://github.com/blopker/degenerate/blob/main/CHANGELOG.md)
+lists all release changes.
 
 ## Usage
 
@@ -197,7 +231,7 @@ The runtime is split into separate packages so generated code has no opinion on 
 
 | Package | Purpose | Dependencies |
 |---------|---------|-------------|
-| `degenerate_runtime` | Core interfaces (`ApiClient`, `ApiConfig`, `ApiResult`), middleware chain, built-in interceptors | None |
+| `degenerate_runtime` | Core interfaces (`ApiClient`, `ApiConfig`, `ApiResult`), presence and union types, middleware | `meta` |
 | `degenerate_http` | `HttpApiClient` adapter using `package:http` | `http`, `degenerate_runtime` |
 | `degenerate_dio` | `DioApiClient` adapter using `package:dio` | `dio`, `degenerate_runtime` |
 
@@ -291,6 +325,26 @@ the server sent the key at all, and `fromJson`/`toJson` round-trip all three
 states exactly. Required fields always serialize their key (a required
 nullable field sends an explicit `null`), and optional non-nullable fields
 stay plain `T?` since `null` isn't a legal wire value for them.
+
+When adapting a method where a nullable argument means "leave unchanged",
+preserve that meaning explicitly:
+
+```dart
+UserPatch profilePatch({String? displayName}) => UserPatch(
+  displayName: displayName == null
+      ? const Omittable.absent()
+      : Omittable(displayName),
+);
+```
+
+Wrapping that argument unconditionally with `Omittable(displayName)` would send
+an explicit null when it is unspecified. To let callers choose between all
+three states, accept an `Omittable<String?>` parameter with a default of
+`const Omittable.absent()` instead.
+
+For these fields, `copyWith(displayName: Omittable(null))` sets explicit null,
+`copyWith(displayName: const Omittable.absent())` removes the field from the
+serialized object, and `copyWith()` preserves the current state.
 
 Escape hatches for non-conforming servers: `--omittable=all` wraps *every*
 optional field so you can send explicit nulls the spec doesn't declare, and
@@ -402,8 +456,10 @@ extension type Timestamp(DateTime value) {
 // Pattern match on the union value
 void handleNotification(Notification notification) {
   switch (notification.value) {
-    case EmailDetails email => print('Email to ${email.to}'),
-    case SmsDetails sms => print('SMS to ${sms.phone}'),
+    case EmailDetails email:
+      print('Email to ${email.to}');
+    case SmsDetails sms:
+      print('SMS to ${sms.phone}');
   }
 }
 
@@ -516,7 +572,11 @@ reads a body and then forwards it must return
 `StreamedApiResponse.fromResponse(bufferedResponse)` so downstream code can read
 it. The same factory supports cached responses without calling `next`.
 
-**RetryInterceptor**: exponential backoff on 429 and 5xx:
+**RetryInterceptor**: exponential backoff with jitter on 429, 5xx, and network
+exceptions. By default, only GET, HEAD, OPTIONS, TRACE, PUT, and DELETE are
+retried. Use `shouldRetryRequest` to override the method policy; `retryWhen`
+only controls which response statuses trigger a retry. `Retry-After` is honored,
+and `maxDelay` can cap the wait:
 
 ```dart
 RetryInterceptor(
@@ -567,8 +627,10 @@ ApiConfig(
   client: client,
   interceptors: [
     LoggingInterceptor(),    // 1. logs the request
-    AuthInterceptor(...),    // 2. adds auth header
-    RetryInterceptor(...),   // 3. retries on failure (retries include auth)
+    RetryInterceptor(maxRetries: 3), // 2. retries the downstream chain
+    AuthInterceptor(                // 3. obtains a token for each attempt
+      getToken: () async => myTokenStore.accessToken,
+    ),
   ],
 )
 ```

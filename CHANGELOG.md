@@ -2,9 +2,15 @@
 
 Important user-facing changes only. For full details see commit log.
 
-## Unreleased
+## 0.5.0
 
 **Presence-aware models, lossless overlapping unions, directional schemas, complete response types, and streaming middleware.**
+
+Upgrade the generator, `degenerate_runtime`, and your HTTP adapter together to
+0.5.x, then regenerate your client. The generator requires Dart 3.11.1 or later;
+generated clients and runtime packages require Dart 3.8.0 or later. See the
+[migration guide](https://github.com/blopker/degenerate/blob/main/README.md#migrating-from-04x)
+for the upgrade steps and examples.
 
 ### Breaking changes
 
@@ -13,6 +19,8 @@ Important user-facing changes only. For full details see commit log.
   - Read with `field.value` / `field.isPresent`; `fromJson`/`toJson` round-trip all three states exactly.
   - `copyWith` takes the `Omittable` directly for these fields instead of a thunk.
   - Migration: `model.field` → `model.field.value`, `copyWith(field: () => v)` → `copyWith(field: Omittable(v))`. Or pass `--omittable=off` to restore the previous plain-`T?` output (Dart `null` serializes as omitted).
+  - Review comparisons, null checks, interpolation, and arguments passed to `dynamic` APIs even if they still compile. Wrappers must be unwrapped before using their payloads.
+  - Preserve omit-on-null behavior in existing request helpers with `value == null ? const Omittable.absent() : Omittable(value)`. Unconditionally wrapping a nullable argument sends an explicit null instead of omitting the field.
   - `--omittable=all` additionally wraps optional *non-nullable* fields, for servers that accept null-clears the spec doesn't declare.
   - Generated code now requires the matching `degenerate_runtime` version (which adds `Omittable`).
   - Fields declared directly on discriminated-union variants follow the same presence rules.
@@ -22,9 +30,14 @@ Important user-facing changes only. For full details see commit log.
 - **Named response variants** (#5): operations with multiple response shapes return sealed success/error classes with typed variants per status and media type. Body-or-empty responses have payload-free variants for empty statuses. Operations with one shape keep plain `ApiResult<T, E>`. Match variants such as `PostAuthSuccess200(:final data)` instead of inspecting `OneOf.value`; an `Unknown` variant retains the full response when no declared status or default applies. Decoding respects exact statuses, ranges, and content types. Declared `2xx` responses determine success types; `default` supplies fallback errors and contributes to success only when no `2xx` is declared.
 - **Inline response model names include status codes**: the primary success keeps `PostAuthResponse`; additional statuses use names such as `PostAuthResponse201` and `PostAuthResponseDefault` instead of `PostAuthResponse2` and `PostAuthResponsedefault`. Update explicit type annotations after regeneration.
 - **Interceptors return `StreamedApiResponse`**: `Handler`, custom `intercept` methods, and `retryWhen` callbacks now use the streamed response. Status-based auth refresh, retry, logging, and cached responses work for streaming operations. Wrap buffered cached responses with `StreamedApiResponse.fromResponse`; body inspection consumes the stream and requires wrapping the buffered response before forwarding.
+- **Previously dropped schema details now appear in generated types** (#14, #16): `allOf` models retain inherited and overridden properties and required fields; partial discriminator mappings retain unmapped variants; inline enum names avoid collisions. Collections preserve nullable item types in fields, `copyWith`, and API results. Regeneration can therefore add required constructor arguments, union variants, and nullable type arguments.
 
 ### Bug fixes
 
+- **Nullable collection items decode correctly** (#14, thanks @josher8a): lists and maps containing null items no longer throw during `fromJson`, including API response payloads.
+- **Parameter values use their wire formats** (#19): dates use ISO 8601, bytes use base64, and durations use milliseconds. Object and array query parameters respect their style and explode settings; simple-style path parameters encode values while preserving separators. Nullable parameters, fields, and collection items are guarded before conversion.
+- **Spec text is escaped throughout generated source** (#15, #18, thanks @josher8a): quotes, dollar signs, backslashes, and line breaks in paths, descriptions, field names, media types, and discriminator/security metadata no longer corrupt Dart literals or escape comments into source code.
+- **Schema composition preserves data** (#16): nested `allOf` chains and variant-specific fields survive merging, explicit discriminator mappings keep the remaining implicit variants, and conflicting mappings emit diagnostics for unreachable variants.
 - **Stable additional-properties hashes**: equal overflow maps hash equally regardless of insertion order, and repeated reads of an unchanged model's hash remain stable.
 - **Recursive `OneOf` serialization**: collection variants serialize nested models, enums, dates, URIs, big integers, durations, and bytes through their wire codecs.
 - **JSON string responses decode their JSON value**, removing the surrounding wire quotes.
@@ -34,6 +47,10 @@ Important user-facing changes only. For full details see commit log.
 - **Required nullable fields always serialize their key** (#21): a field that is both `required` and nullable (`nullable: true` / `type: [T, 'null']`) dropped its key from `toJson()` when the value was null. A required field must always be present on the wire, so it now serializes as an explicit `"field": null`.
 - **`canParse` accepts explicit null for required nullable fields**: a payload like `{"mode": null}` failed `canParse` even when the spec declares `mode` required and nullable; the generated type check now tolerates null for nullable types.
 - **Binary fields compare by content**: `Uint8List` (`format: binary`/`byte`) fields used identity `==`/`hashCode`, so byte-identical models compared unequal. They now use `listEquals`/`Object.hashAll` like list fields.
+
+### Improvements
+
+- **Updated code emission**: upgraded to `code_builder` 4.12 and its structured control-flow builders for response dispatch. Raw generated output may have spacing changes; run `dart format` on the generated directory to apply your project's formatting preferences.
 
 ## 0.4.2
 
