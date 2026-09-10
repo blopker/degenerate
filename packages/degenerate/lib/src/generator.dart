@@ -22,7 +22,7 @@ export 'package:degenerate/src/emitter/emit_utils.dart' show OmittableMode;
 
 // packageVersion updated by scripts/release.dart
 /// Current package version.
-const packageVersion = '0.4.2';
+const packageVersion = '0.5.0';
 
 /// Default name for generated API client packages.
 const defaultPackageName = 'api_client';
