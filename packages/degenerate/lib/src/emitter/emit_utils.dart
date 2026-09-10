@@ -727,6 +727,8 @@ String primitiveToJsonExpr(
   PrimitiveKind.dateTime => '$accessor$q.toIso8601String()',
   PrimitiveKind.uri || PrimitiveKind.bigInt => '$accessor$q.toString()',
   PrimitiveKind.duration => '$accessor$q.inMilliseconds',
-  PrimitiveKind.bytes => 'base64Encode($accessor)',
+  PrimitiveKind.bytes => q.isEmpty
+      ? 'base64Encode($accessor)'
+      : 'switch ($accessor) { final bytes? => base64Encode(bytes), _ => null }',
   _ => accessor,
 };

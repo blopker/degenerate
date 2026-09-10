@@ -12,7 +12,7 @@ final Uint8List? file;
 final String? fileName;
 
 Map<String, dynamic> toJson() { return {
-  'file': ?file,
+  if (file != null) 'file': switch (file) { final bytes? => base64Encode(bytes), _ => null },
   'file_name': ?fileName,
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'file', 'file_name'}.contains(key)); } 

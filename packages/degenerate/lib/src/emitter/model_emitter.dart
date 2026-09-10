@@ -293,6 +293,7 @@ class ModelEmitter {
         PrimitiveKind.uri => '${f.name}${_q}toString()',
         PrimitiveKind.bigInt => '${f.name}${_q}toString()',
         PrimitiveKind.duration => '${f.name}${_q}inMilliseconds',
+        PrimitiveKind.bytes => buildToJsonCode(type, f.name, nullable: true),
         _ => f.name,
       },
       IrEnum() => '${f.name}${_q}toJson()',

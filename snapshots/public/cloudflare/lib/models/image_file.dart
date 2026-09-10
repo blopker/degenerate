@@ -9,7 +9,7 @@ factory ImageFile.fromJson(Map<String, dynamic> json) { return ImageFile(
 final Uint8List? image;
 
 Map<String, dynamic> toJson() { return {
-  'image': ?image,
+  if (image != null) 'image': switch (image) { final bytes? => base64Encode(bytes), _ => null },
 }; } 
 static bool canParse(Map<String, dynamic> json) { return json.keys.any((key) => const {'image'}.contains(key)); } 
 ImageFile copyWith({Uint8List? Function()? image}) { return ImageFile(

@@ -254,7 +254,7 @@ final CreateImageEditRequestQuality? quality;
 Map<String, dynamic> toJson() { return {
   'image': image.toJson(),
   'prompt': prompt,
-  'mask': ?mask,
+  if (mask != null) 'mask': switch (mask) { final bytes? => base64Encode(bytes), _ => null },
   if (background != null) 'background': background?.toJson(),
   if (model.isPresent) 'model': model.value?.toJson(),
   'n': ?n,

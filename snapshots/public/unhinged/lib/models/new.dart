@@ -311,7 +311,11 @@ final class New {
       'class': ?$class,
       if ($import != null) 'import': $import?.map((e) => e.toJson()).toList(),
       'return': $return,
-      'void': ?$void,
+      if ($void != null)
+        'void': switch ($void) {
+          final bytes? => base64Encode(bytes),
+          _ => null,
+        },
       'package': ?package,
     };
   }

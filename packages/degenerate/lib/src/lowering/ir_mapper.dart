@@ -1219,8 +1219,9 @@ class IrMapper {
   String _uniqueTypeName(String rawName) {
     final pascal = toPascalCase(rawName);
     final sanitized = sanitizeDartName(pascal);
-    // Avoid shadowing dart:core types
-    final candidate = dartCoreTypeNames.contains(sanitized)
+    // Avoid shadowing core and runtime types used in generated code.
+    final candidate = dartCoreTypeNames.contains(sanitized) ||
+            runtimeTypeNames.contains(sanitized)
         ? '${sanitized}Model'
         : sanitized;
     final unique = deduplicateName(candidate, _usedNames);

@@ -98,7 +98,8 @@ class SchemaNormalizer {
   static String _uniqueTypeName(String rawName, Set<String> usedNames) {
     final pascal = toPascalCase(rawName);
     final sanitized = sanitizeDartName(pascal);
-    final candidate = dartCoreTypeNames.contains(sanitized)
+    final candidate = dartCoreTypeNames.contains(sanitized) ||
+            runtimeTypeNames.contains(sanitized)
         ? '${sanitized}Model'
         : sanitized;
     final unique = deduplicateName(candidate, usedNames);

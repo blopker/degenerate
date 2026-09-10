@@ -60,7 +60,7 @@ final VideoSize? size;
 Map<String, dynamic> toJson() { return {
   if (model != null) 'model': model?.toJson(),
   'prompt': prompt,
-  'input_reference': ?inputReference,
+  if (inputReference != null) 'input_reference': switch (inputReference) { final bytes? => base64Encode(bytes), _ => null },
   if (imageReference != null) 'image_reference': imageReference?.toJson(),
   if (seconds != null) 'seconds': seconds?.toJson(),
   if (size != null) 'size': size?.toJson(),
